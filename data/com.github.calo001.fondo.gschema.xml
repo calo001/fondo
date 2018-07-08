@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+
+    <schema id="com.github.calo001.fondo" path="/com/github/calo001/fondo/">
+        <key name="window-x" type="i">
+            <default>-1</default>
+            <summary>Most recent x position of Fondo</summary>
+            <description>Most recent x position of Fondo</description>
+        </key>
+    
+        <key name="window-y" type="i">
+            <default>-1</default>
+            <summary>Most recent y position of Fondo</summary>
+            <description>Most recent y position of Fondo</description>
+        </key>
+    </schema>
+
+</schemalist>

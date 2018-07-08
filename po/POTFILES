@@ -1,0 +1,5 @@
+src/controllers/AppController.vala
+src/views/AppView.vala
+src/widgets/ColorWidget.vala
+src/widgets/HeaderBar.vala
+src/widgets/LibraryRow.vala

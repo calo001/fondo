@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Fondo
+Comment=
+Icon=com.github.calo001.fondo
+Exec=com.github.calo001.fondo
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;
+Keywords=app;vala;
