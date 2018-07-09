@@ -16,7 +16,6 @@
 * 
 */
 
-using App.Configs;
 using App.Widgets;
 
 namespace App.Views {
@@ -33,27 +32,18 @@ namespace App.Views {
          */
         public AppView () {
 
+            // Add orientation to Grid and margins
             this.orientation = Gtk.Orientation.VERTICAL;
             this.margin_start = 20;
             this.margin_end = 20;
 
+            // Create CustomCard (be ware with margins)
             var image = new CardPhotoView();
-
+            
+            // Create test butto
             var button_hello = new Gtk.Button.with_label ("Click me!");
-            button_hello.margin = 12;
             button_hello.height_request = 50;
             button_hello.width_request = 100;
-
-            var button_hello2 = new Gtk.Button.with_label ("Click me!");
-            button_hello2.margin = 12;
-            button_hello2.height_request = 50;
-            button_hello2.width_request = 100;
-
-            var button_hello3 = new Gtk.Button.with_label ("Click me!");
-            button_hello3.margin = 12;
-            button_hello3.height_request = 50;
-            button_hello3.width_request = 100;
-
 
             button_hello.clicked.connect (() => {
                 button_hello.label = "Hello World!";
@@ -62,8 +52,6 @@ namespace App.Views {
             button_hello.get_style_context ().add_class ("button-test");
 
             this.add (button_hello);
-            this.add (button_hello2);
-            this.add (button_hello3);
             this.add(image);
         }
     }

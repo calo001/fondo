@@ -16,16 +16,27 @@
 * 
 */
 
+using App.Configs;
+using App.Configs;
+
 namespace App.Views {
 
     public class CardPhotoView : Gtk.Grid {
+
+        // Construct
         public CardPhotoView () {
+            
+            // Setup styles
             this.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
 
-            var file = File.new_for_uri ("https://images.unsplash.com/photo-1502913625325-725506829ddc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjMwODIyfQ&s=9b9f1c49ad1e443388cc3daf691b976d");
-            var image = new Granite.AsyncImage();
-            image.set_from_file_async(file, 494, 282, true);
+            // Create File Object
+            var file = File.new_for_uri (Constants.ACCESS_KEY_UNSPLASH);
+            
+            // Create AsyncImage object
+            var image = new Granite.AsyncImage(true, true);
+            image.set_from_file_async(file, 200, 100, false); // Width, Heigth
 
+            // Add view to custom Grid            
             this.add(image);
         }
     }
