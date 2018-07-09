@@ -18,7 +18,6 @@
 
 using App.Configs;
 using App.Controllers;
-using App.Views;
 
 namespace App {
 
@@ -42,7 +41,6 @@ namespace App {
             Object (
                 application: app,
                 icon_name: Constants.APP_ICON,
-                //resizable: false
                 resizable: false
             );
 

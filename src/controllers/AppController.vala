@@ -29,8 +29,8 @@ namespace App.Controllers {
     public class AppController {
 
         private Gtk.Application            application;
-        private AppView                    app_view;
         private Gtk.HeaderBar              headerbar;
+        private AppView                    app_view; 
         private Gtk.ApplicationWindow      window { get; private set; default = null; }
 
         /**
@@ -43,17 +43,16 @@ namespace App.Controllers {
             this.app_view = new AppView ();
 
             this.window.add (this.app_view);
-            this.window.set_default_size (640, 480);
-            this.window.set_size_request (640, 480);
+            this.window.set_default_size (900, 700);
+            this.window.set_size_request (900, 700);
             this.window.set_titlebar (this.headerbar);
             this.application.add_window (window);
-
             
         }
 
         public void activate () {
             window.show_all ();
-            app_view.activate ();
+            //app_view.activate ();
         }
 
         public void quit () {
