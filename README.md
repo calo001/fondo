@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
   <span align="center"> <img width="80" height="70" class="center" src="{{ repo-url }}/blob/master/data/images/com.github.calo001.fondo.png" alt="Icon"></span>
   <h1 align="center">Fondo</h1>
@@ -90,3 +91,7 @@ To help, access the links below:
 ### License
 
 This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE.md) file for details.
+=======
+# fondo
+Unsplash wallpaper App for elementary OS
+>>>>>>> fb18c57e20b3f621ef26c2a2b1e8c9b6c28c7d02
