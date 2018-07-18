@@ -27,6 +27,7 @@ namespace App.Views {
      */
     public class AppView : Gtk.Grid {
 
+        private Gtk.Button                  btn_load;
         /**
          * Constructs a new {@code AppView} object.
          */
@@ -34,25 +35,30 @@ namespace App.Views {
 
             // Add orientation to Grid and margins
             this.orientation = Gtk.Orientation.VERTICAL;
-            this.margin_start = 20;
-            this.margin_end = 20;
+            this.row_spacing = 30;
+            this.column_spacing = 30;
+            this.margin_start = 30;
+            this.margin_end = 30;
 
             // Create CustomCard (be ware with margins)
-            var image = new CardPhotoView();
-            
-            // Create test butto
-            var button_hello = new Gtk.Button.with_label ("Click me!");
-            button_hello.height_request = 50;
-            button_hello.width_request = 100;
+            var card_1 = new CardPhotoView();
+            var card_2 = new CardPhotoView();
+            var card_3 = new CardPhotoView();
+            var card_4 = new CardPhotoView();
+            var card_5 = new CardPhotoView();
+            var card_6 = new CardPhotoView();
 
-            button_hello.clicked.connect (() => {
-                button_hello.label = "Hello World!";
-            });
+            //Create Button Load
+            btn_load = new Gtk.Button.with_label (_("See more"));
+            btn_load.get_style_context ().add_class ("button-blue");
 
-            button_hello.get_style_context ().add_class ("button-test");
-
-            this.add (button_hello);
-            this.add(image);
+            this.attach(card_1, 0, 0, 1, 1);
+            this.attach(card_2, 1, 0, 1, 1);
+            this.attach(card_3, 2, 0, 1, 1);
+            this.attach(card_4, 0, 1, 1, 1);
+            this.attach(card_5, 1, 1, 1, 1);
+            this.attach(card_6, 2, 1, 1, 1);
+            this.attach(btn_load, 1, 2, 1, 2);
         }
     }
 }

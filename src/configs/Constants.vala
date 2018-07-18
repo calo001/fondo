@@ -41,7 +41,10 @@ namespace App.Configs {
         public abstract const string TEXT_FOR_ABOUT_DIALOG_WEBSITE_URL = "{{ website-url }}";
         public abstract const string URL_CSS = "/com/github/calo001/fondo/css/style.css";
         public abstract const string [] ABOUT_AUTHORS = { "Calo001 <calo_lrc@hotmail.com>" };
-        public abstract const string ACCESS_KEY_UNSPLASH = "https://images.unsplash.com/photo-1502913625325-725506829ddc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjMwODIyfQ&s=9b9f1c49ad1e443388cc3daf691b976d";
+        public abstract const string IMAGE ="https://images.unsplash.com/photo-1502913625325-725506829ddc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjMwODIyfQ&s=9b9f1c49ad1e443388cc3daf691b976d";
+        public abstract const string API_UNSPLASH = "https://api.unsplash.com/";
+        public abstract const string API_PARAMS = "&orientation=landscape&count=6";
+        public abstract const string ACCESS_KEY_UNSPLASH = "db4d69677b2838dfc4f9ef73ee79dcde8412472617bc96adefde321bd08a76f2";
         public abstract const Gtk.License ABOUT_LICENSE_TYPE = Gtk.License.CUSTOM;
     }
 }

@@ -33,7 +33,46 @@
     background-color: @colorPrimary;
 }
 
-.button-test {
+.photo:hover {
+    opacity: 0.5;
+    border:1px solid colorAccent;
+}
+
+.button-green {
     background-color: @colorAccent;
+    color: #000;
+    border: none;
+    margin: 10px;
+    text-shadow: none;
+    font-weight: 600;
+}
+
+.button-blue {
+    background-color: #0d52bf;
     color: #FFF;
+    border: none;
+    margin: 10px;
+    text-shadow: none;
+}
+
+.button-green:hover {
+    background-color: #f37329;
+}
+
+.button-blue:hover {
+    background-color: #f37329;
+}
+
+.label_autor {
+    color: #FFF;
+    background: #1B2836;
+}
+
+.transition {
+    transition: .3s;
+    transition-timing-function: ease;
+}
+
+.grid_actions {
+    background: #1B2836;
 }

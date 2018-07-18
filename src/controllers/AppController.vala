@@ -18,6 +18,7 @@
 
 using App.Widgets;
 using App.Views;
+using App.Connection;
 
 namespace App.Controllers {
 
@@ -33,6 +34,7 @@ namespace App.Controllers {
         private AppView                    app_view; 
         private Gtk.ApplicationWindow      window { get; private set; default = null; }
 
+        private AppConnection              connection;
         /**
          * Constructs a new {@code AppController} object.
          */
@@ -43,11 +45,13 @@ namespace App.Controllers {
             this.app_view = new AppView ();
 
             this.window.add (this.app_view);
-            this.window.set_default_size (900, 700);
-            this.window.set_size_request (900, 700);
+            this.window.set_default_size (900, 770);
+            this.window.set_size_request (900, 770);
             this.window.set_titlebar (this.headerbar);
             this.application.add_window (window);
             
+            connection = new AppConnection();
+            connection.api_connection();
         }
 
         public void activate () {
