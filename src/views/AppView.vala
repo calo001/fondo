@@ -17,6 +17,7 @@
 */
 
 using App.Widgets;
+using App.Connection;
 
 namespace App.Views {
 
@@ -28,6 +29,7 @@ namespace App.Views {
     public class AppView : Gtk.Grid {
 
         private Gtk.Button                  btn_load;
+        private AppConnection               connection;
         /**
          * Constructs a new {@code AppView} object.
          */
@@ -35,22 +37,25 @@ namespace App.Views {
 
             // Add orientation to Grid and margins
             this.orientation = Gtk.Orientation.VERTICAL;
-            this.row_spacing = 30;
-            this.column_spacing = 30;
-            this.margin_start = 30;
-            this.margin_end = 30;
+            this.margin_top = 10;
+            this.margin_bottom = 10;
+            //this.row_spacing = 0;
+            //this.column_spacing = 0;
+
+            // Create photo list
+            connection = new AppConnection();
+            List<string> photos = connection.api_connection();
 
             // Create CustomCard (be ware with margins)
-            var card_1 = new CardPhotoView();
-            var card_2 = new CardPhotoView();
-            var card_3 = new CardPhotoView();
-            var card_4 = new CardPhotoView();
-            var card_5 = new CardPhotoView();
-            var card_6 = new CardPhotoView();
+            var card_1 = new CardPhotoView(photos.nth_data(0));
+            var card_2 = new CardPhotoView(photos.nth_data(1));
+            var card_3 = new CardPhotoView(photos.nth_data(2));
+            var card_4 = new CardPhotoView(photos.nth_data(3));
+            var card_5 = new CardPhotoView(photos.nth_data(4));
+            var card_6 = new CardPhotoView(photos.nth_data(5));
 
             //Create Button Load
             btn_load = new Gtk.Button.with_label (_("See more"));
-            btn_load.get_style_context ().add_class ("button-blue");
 
             this.attach(card_1, 0, 0, 1, 1);
             this.attach(card_2, 1, 0, 1, 1);
@@ -58,7 +63,7 @@ namespace App.Views {
             this.attach(card_4, 0, 1, 1, 1);
             this.attach(card_5, 1, 1, 1, 1);
             this.attach(card_6, 2, 1, 1, 1);
-            this.attach(btn_load, 1, 2, 1, 2);
+            //this.attach(btn_load, 1, 2, 1, 2);
         }
     }
 }

@@ -28,6 +28,7 @@ namespace App.Widgets {
      */
     public class HeaderBar : Gtk.HeaderBar {
 
+        private Gtk.Button              btn_more;
         /**
          * Constructs a new {@code HeaderBar} object.
          *
@@ -36,10 +37,14 @@ namespace App.Widgets {
          */
         public HeaderBar () {
             get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-            get_style_context ().add_class ("main-theme");
-
+            //get_style_context ().add_class ("default-decoration");
+            //get_style_context ().add_class ("main-theme");
+            btn_more = new Gtk.Button.with_label(_("Load more ..."));
+            btn_more.get_style_context ().add_class ("suggest-action");
             this.set_title ("Fondo");
             this.show_close_button = true;
+
+            this.pack_end(btn_more);
         }
     }
 }

@@ -16,63 +16,45 @@
 * 
 */
 
-@define-color colorPrimary #141D26;
-@define-color textColorPrimary #FFFFFF;
-@define-color textColorPrimaryShadow #ABACAE;
-@define-color colorAccent #3A9104;
+@define-color colorPrimary #F5F5F5;
+@define-color textColorPrimary #909090;
+@define-color textColorPrimaryShadow #FFFFFF;
+@define-color colorAccent #68b723;
 @define-color bg_highlight_color shade (@colorPrimary, 1.4);
-
-.main-theme {
-    background-color: @colorPrimary;
-    color: #fff;
-    -gtk-icon-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
-    text-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
-}
-
-.background {
-    background-color: @colorPrimary;
-}
 
 .photo:hover {
     opacity: 0.5;
-    border:1px solid colorAccent;
+    border: 10px solid @colorAccent;
+}
+
+.photo {
+    border: 5px solid #FFFFFF;
 }
 
 .button-green {
-    background-color: @colorAccent;
-    color: #000;
-    border: none;
-    margin: 10px;
+    background-color: #FFFFFF;
+    color: #3a9104;
+    border: 1px solid @colorAccent;
     text-shadow: none;
-    font-weight: 600;
 }
 
-.button-blue {
-    background-color: #0d52bf;
-    color: #FFF;
-    border: none;
-    margin: 10px;
-    text-shadow: none;
+.opacity-image:hover {
+    transition: .3s;
+    transition-timing-function: ease;
+    opacity: 0.5;
 }
 
 .button-green:hover {
-    background-color: #f37329;
-}
-
-.button-blue:hover {
-    background-color: #f37329;
+    background-color: #d1ff82;
+    color: #3a9104;
+    border: 1px solid @colorAccent;
 }
 
 .label_autor {
-    color: #FFF;
-    background: #1B2836;
+    background: @colorPrimary;
 }
 
 .transition {
     transition: .3s;
     transition-timing-function: ease;
-}
-
-.grid_actions {
-    background: #1B2836;
 }

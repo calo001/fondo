@@ -25,51 +25,36 @@ namespace App.Views {
         private File                    file;
         private Granite.AsyncImage      image;
         private Gtk.Button              btn_view;
-        private Gtk.Button              btn_use;
 
         // Construct
-        public CardPhotoView () {
-            
-            // Setup styles
-            //this.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
+        public CardPhotoView (string link_photo) {
+
             this.orientation = Gtk.Orientation.VERTICAL;
+            this.get_style_context ().add_class ("card-hover");
+            this.margin_bottom = 10;
 
             // Create File Object
-            this.file = File.new_for_uri (Constants.IMAGE);
+            this.file = File.new_for_uri (link_photo);
             
             // Create AsyncImage object
             this.image = new Granite.AsyncImage(true, true);
             image.set_from_file_async(file, 280, 180, false); // Width, Heigth
-            image.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
-            image.get_style_context ().add_class ("transition");
-            image.get_style_context ().add_class ("photo");
 
-            // Create Buttons
-            this.btn_view = new Gtk.Button.with_label(_("View"));
-            this.btn_use = new Gtk.Button.with_label(_("Use"));
+            // Create Button
+            this.btn_view = new Gtk.Button.with_label(_("Preview"));
             btn_view.get_style_context ().add_class ("button-green");
             btn_view.get_style_context ().add_class ("transition");
-            btn_use.get_style_context ().add_class ("button-green");
-            btn_use.get_style_context ().add_class ("transition");
-            btn_view.margin = 10;
-            btn_view.margin_right= 5;
-            btn_use.margin = 10;
-            btn_use.margin_left =5;
+            btn_view.halign = Gtk.Align.CENTER;
 
             // Create labelAutor
             var label_autor = new Gtk.Label(_("Autor name"));
-            label_autor.get_style_context ().add_class ("label_autor");
-            label_autor.margin = 15;
-            label_autor.width_request =120;
+            label_autor.get_style_context ().add_class ("h2");
+            label_autor.xalign = 0.5f;
 
             // Create Horizontal Grid
-            var grid_actions = new Gtk.Grid();
-            grid_actions.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
-            grid_actions.get_style_context ().add_class ("grid_actions");
-            //grid_actions.column_spacing= 2;
-            grid_actions.attach(label_autor, 0, 0, 4, 1);
-            grid_actions.attach(btn_view, 4, 0, 2, 1);
-            grid_actions.attach(btn_use, 6, 0, 2, 1);
+            var grid_actions = new Gtk.Box(Gtk.Orientation.VERTICAL, 3);
+            grid_actions.pack_start(label_autor, true, true, 0);
+            grid_actions.pack_end(btn_view, false, false, 0);
 
             // Add view to custom Grid
             this.add(image);

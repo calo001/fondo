@@ -17,6 +17,7 @@
 */
 
 using App.Configs;
+using App.Structs;
 
 namespace App.Connection {
 
@@ -31,7 +32,7 @@ namespace App.Connection {
 
         }
 
-        public int api_connection() {
+        public List<string> api_connection() {
             var session = new Soup.Session ();
             string uri = Constants.API_UNSPLASH +
                          "photos/random/?client_id=" +
@@ -45,24 +46,30 @@ namespace App.Connection {
                 stdout.printf ("Name: %s -> Value: %s\n", name, val);
             });
 
-            stdout.printf ("Message length: %lld\n%s\n",
-                       message.response_body.length,
-                       cadenas(message));
-        return 0;
+            //stdout.printf ("Message length: %lld\n%s\n", message.response_body.length, cadenas(message));
+            return get_images(message);
         }
 
-        public string cadenas(Soup.Message message) {
+        public List<Photo> get_images(Soup.Message message) {
+            List<Photo> list_thumbs = new List<Photo> ();
             var parser = new Json.Parser ();
-            parser.load_from_data(message.response_body.data);
-            var node = parser.get_root ();
-            unowned Json.Array array = node.get_array ();
+            try {
+                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                var node = parser.get_root ();
+                unowned Json.Array array = node.get_array ();
 
-            //foreach (unowned Json.Node item in array.get_elements ()) {
-		    //    process_role (item, i);
-		    //    i++;
-	        //}
+                var link = "Vacio";
+                foreach (unowned Json.Node item in array.get_elements ()) {
+                    var obj_res = item.get_object().get_object_member ("urls");
+                    link = obj_res.get_string_member ("thumb");
+                    list_thumbs.append(link);
+	            }
+            } catch (Error e) {
+                print ("Unable to parse the string: %s\n", e.message);
+                return list_thumbs;
+            }
 
-            return "gua";
+            return list_thumbs;
         }
     }
 }
