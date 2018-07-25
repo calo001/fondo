@@ -18,13 +18,14 @@
 
 namespace App.Structs {
     public struct Photo {
-        public int      width {get; set;}
-        public int      height {get; set;}
-        public string   color {get; set;}
-        public string   urls_thumb {get; set;}
-        public string   links_download_location {get; set;}
-        public string   username {get; set;}
-        public string   name {get; set;}
-        public string   profile_image_small {get; set;}
+        public int64    width;
+        public int64    height;
+        public string   color;
+        public string   urls_thumb;
+        public string   links_download_location;
+        public string   username;
+        public string   name;
+        public string   profile_image_small;
+        public string   location;
     }
 }

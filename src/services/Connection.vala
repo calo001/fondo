@@ -32,7 +32,7 @@ namespace App.Connection {
 
         }
 
-        public List<string> api_connection() {
+        public List<Photo?> api_connection() {
             var session = new Soup.Session ();
             string uri = Constants.API_UNSPLASH +
                          "photos/random/?client_id=" +
@@ -50,19 +50,28 @@ namespace App.Connection {
             return get_images(message);
         }
 
-        public List<Photo> get_images(Soup.Message message) {
-            List<Photo> list_thumbs = new List<Photo> ();
+        public List<Photo?> get_images(Soup.Message message) {
+            List<Photo?> list_thumbs = new List<Photo?> ();
             var parser = new Json.Parser ();
             try {
                 parser.load_from_data ((string) message.response_body.flatten ().data, -1);
                 var node = parser.get_root ();
                 unowned Json.Array array = node.get_array ();
 
-                var link = "Vacio";
                 foreach (unowned Json.Node item in array.get_elements ()) {
-                    var obj_res = item.get_object().get_object_member ("urls");
-                    link = obj_res.get_string_member ("thumb");
-                    list_thumbs.append(link);
+                    var photo_info = Photo() {
+                        width = item.get_object().get_int_member ("width"),
+                        height = item.get_object().get_int_member ("height"),
+                        color = item.get_object().get_string_member ("color"),
+                        urls_thumb = item.get_object().get_object_member ("urls").get_string_member ("thumb"),
+                        links_download_location = item.get_object().get_object_member ("links").get_string_member ("download_location"),
+                        username = item.get_object().get_object_member ("user").get_string_member ("username"),
+                        name = item.get_object().get_object_member ("user").get_string_member ("name"),
+                        profile_image_small = item.get_object().get_object_member ("user").get_object_member("profile_image").get_string_member ("small"),
+                        location = item.get_object().get_object_member ("location").get_string_member ("title")
+                    };
+
+                    list_thumbs.append (photo_info);
 	            }
             } catch (Error e) {
                 print ("Unable to parse the string: %s\n", e.message);

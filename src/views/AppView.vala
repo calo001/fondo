@@ -18,6 +18,7 @@
 
 using App.Widgets;
 using App.Connection;
+using App.Structs;
 
 namespace App.Views {
 
@@ -44,7 +45,7 @@ namespace App.Views {
 
             // Create photo list
             connection = new AppConnection();
-            List<string> photos = connection.api_connection();
+            List<Photo?> photos = connection.api_connection();
 
             // Create CustomCard (be ware with margins)
             var card_1 = new CardPhotoView(photos.nth_data(0));
