@@ -38,25 +38,29 @@ namespace App.Views {
 
             // Add orientation to Grid and margins
             this.orientation = Gtk.Orientation.VERTICAL;
-            this.margin_top = 10;
-            this.margin_bottom = 10;
-            //this.row_spacing = 0;
-            //this.column_spacing = 0;
+            this.margin = 10;
+            this.column_spacing = 10;
+            this.row_spacing = 10;
 
             // Create photo list
             connection = new AppConnection();
-            List<Photo?> photos = connection.api_connection();
+            List<Photo?> photos = connection.get_thumbs ();
 
             // Create CustomCard (be ware with margins)
-            var card_1 = new CardPhotoView(photos.nth_data(0));
-            var card_2 = new CardPhotoView(photos.nth_data(1));
-            var card_3 = new CardPhotoView(photos.nth_data(2));
-            var card_4 = new CardPhotoView(photos.nth_data(3));
-            var card_5 = new CardPhotoView(photos.nth_data(4));
-            var card_6 = new CardPhotoView(photos.nth_data(5));
+            var card_1 = new CardPhotoView (photos.nth_data(0));
+            var card_2 = new CardPhotoView (photos.nth_data(1));
+            var card_3 = new CardPhotoView (photos.nth_data(2));
+            var card_4 = new CardPhotoView (photos.nth_data(3));
+            var card_5 = new CardPhotoView (photos.nth_data(4));
+            var card_6 = new CardPhotoView (photos.nth_data(5));
 
-            //Create Button Load
-            btn_load = new Gtk.Button.with_label (_("See more"));
+            //Create label unsplash
+            var link_unsplash = new Gtk.LinkButton.with_label("https://unsplash.com/?utm_source=Foto&utm_medium=referral", "Photos from Unsplash");
+            link_unsplash.get_style_context ().add_class ("link");
+            link_unsplash.get_style_context ().remove_class ("button");
+            link_unsplash.get_style_context ().remove_class ("flat");
+            link_unsplash.get_style_context ().add_class ("h4");
+            link_unsplash.has_tooltip = false;
 
             this.attach(card_1, 0, 0, 1, 1);
             this.attach(card_2, 1, 0, 1, 1);
@@ -64,7 +68,7 @@ namespace App.Views {
             this.attach(card_4, 0, 1, 1, 1);
             this.attach(card_5, 1, 1, 1, 1);
             this.attach(card_6, 2, 1, 1, 1);
-            //this.attach(btn_load, 1, 2, 1, 2);
+            this.attach(link_unsplash, 1, 2, 1, 1);
         }
     }
 }

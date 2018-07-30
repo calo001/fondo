@@ -36,15 +36,40 @@ namespace App.Widgets {
          * @see icon_settings
          */
         public HeaderBar () {
-            get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-            //get_style_context ().add_class ("default-decoration");
-            //get_style_context ().add_class ("main-theme");
-            btn_more = new Gtk.Button.with_label(_("Load more ..."));
-            btn_more.get_style_context ().add_class ("suggest-action");
             this.set_title ("Fondo");
             this.show_close_button = true;
+            get_style_context ().add_class ("transition");
+            get_style_context ().add_class ("fondo-header");
+            get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            get_style_context ().add_class ("default-decoration");
 
-            this.pack_end(btn_more);
+            var randomize_button = new Gtk.Button.from_icon_name ("media-playlist-shuffle-symbolic");
+            randomize_button.margin_end = 12;
+            randomize_button.tooltip_text = _("Load a random principle");
+
+            var gtk_settings = Gtk.Settings.get_default ();
+
+            var mode_switch = new ModeSwitch (
+                "display-brightness-symbolic",
+                "weather-clear-night-symbolic"
+            );
+            mode_switch.margin_end = 6;
+            mode_switch.primary_icon_tooltip_text = _("Light background");
+            mode_switch.secondary_icon_tooltip_text = _("Dark background");
+            mode_switch.valign = Gtk.Align.CENTER;
+            mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
+
+            var context = get_style_context ();
+            mode_switch.notify["active"].connect (() => {
+                if (gtk_settings.gtk_application_prefer_dark_theme) {
+                    context.add_class ("dark");
+                } else {
+                    context.remove_class ("dark");
+                }
+            });
+
+            this.pack_end (mode_switch);
+            this.pack_end (randomize_button);
         }
     }
 }

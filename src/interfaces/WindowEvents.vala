@@ -16,17 +16,8 @@
 *
 */
 
-namespace App.Structs {
-    public struct Photo {
-        public string    id;
-        public int64    width;
-        public int64    height;
-        public string   color;
-        public string   urls_thumb;
-        public string   links_download_location;
-        public string   username;
-        public string   name;
-        public string   profile_image_small;
-        public string   location;
+namespace App.Interface {
+    public interface WindowEvents {
+
     }
 }

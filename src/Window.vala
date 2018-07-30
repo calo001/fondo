@@ -44,7 +44,7 @@ namespace App {
                 resizable: false
             );
 
-            get_style_context ().add_class ("rounded");
+            //get_style_context ().add_class ("rounded");
 
             var settings = App.Configs.Settings.get_instance ();
             int x = settings.window_x;
@@ -62,6 +62,7 @@ namespace App {
                 css_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
+            get_style_context ().add_class ("transition");
 
             // Save the window's position on close
             delete_event.connect (() => {

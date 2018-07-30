@@ -42,7 +42,8 @@ dependencies = [
     dependency('json-glib-1.0'),
     dependency('libsoup-2.4'),
     dependency('json-glib-1.0'),
-    dependency('gio-2.0')
+    dependency('gio-2.0'),
+    dependency('unity')
 ]
 
 e = executable('com.github.calo001.fondo',

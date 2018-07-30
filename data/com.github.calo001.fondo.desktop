@@ -8,3 +8,4 @@ Type=Application
 StartupNotify=true
 Categories=Utility;Accesories;
 Keywords=wallpaper;unsplash;foto;image;photo;
+X-GNOME-UsesNotifications=true

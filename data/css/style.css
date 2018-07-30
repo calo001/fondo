@@ -16,45 +16,37 @@
 * 
 */
 
-@define-color colorPrimary #F5F5F5;
-@define-color textColorPrimary #909090;
-@define-color textColorPrimaryShadow #FFFFFF;
 @define-color colorAccent #68b723;
-@define-color bg_highlight_color shade (@colorPrimary, 1.4);
 
-.photo:hover {
-    opacity: 0.5;
-    border: 10px solid @colorAccent;
+.revealer {
+    background-color: #abacae;
+    border: none;
 }
 
-.photo {
-    border: 5px solid #FFFFFF;
+.link {
+    color: @colorAccent;
 }
 
 .button-green {
-    background-color: #FFFFFF;
-    color: #3a9104;
-    border: 1px solid @colorAccent;
-    text-shadow: none;
-}
-
-.opacity-image:hover {
-    transition: .3s;
-    transition-timing-function: ease;
-    opacity: 0.5;
+    border: none;
+    background: none;
 }
 
 .button-green:hover {
-    background-color: #d1ff82;
-    color: #3a9104;
-    border: 1px solid @colorAccent;
-}
-
-.label_autor {
-    background: @colorPrimary;
+    background-color: @colorAccent;
+    color: #FFFFFF;
 }
 
 .transition {
-    transition: .3s;
+    transition: 500ms;
     transition-timing-function: ease;
+}
+
+.fondo-header {
+    color: black;
+
+}
+
+.fondo-header.dark {
+    color: white;
 }

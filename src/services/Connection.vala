@@ -28,29 +28,45 @@ namespace App.Connection {
      */
     public class AppConnection {
 
+        private const string URI_UNSPLASH = Constants.API_UNSPLASH +
+                         "photos/random/?client_id=" +
+                         Constants.ACCESS_KEY_UNSPLASH +
+                         Constants.API_PARAMS;
+
         public AppConnection() {
 
         }
 
-        public List<Photo?> api_connection() {
+        public Soup.Message api_connection(string uri) {
             var session = new Soup.Session ();
-            string uri = Constants.API_UNSPLASH +
-                         "photos/random/?client_id=" +
-                         Constants.ACCESS_KEY_UNSPLASH +
-                         Constants.API_PARAMS;
             var message = new Soup.Message ("GET", uri);
 
-            /* send a sync request */
-            session.send_message (message);
-            message.response_headers.foreach ((name, val) => {
-                stdout.printf ("Name: %s -> Value: %s\n", name, val);
-            });
+            MainLoop loop = new MainLoop ();
 
-            //stdout.printf ("Message length: %lld\n%s\n", message.response_body.length, cadenas(message));
-            return get_images(message);
+            // Send a request:
+	        session.queue_message (message, (sess, mess) => {
+		        // Process the result:
+		        print ("Status Code: %u\n", mess.status_code);
+		        print ("Message length: %lld\n", mess.response_body.length);
+		        print ("Data: \n%s\n", (string) mess.response_body.data);
+		        loop.quit ();
+	        });
+
+	        loop.run ();
+
+            /* send a sync request */
+            //session.send_message (message);
+            //message.response_headers.foreach ((name, val) => {
+            //    stdout.printf ("Name: %s -> Value: %s\n", name, val);
+            //});
+
+            return message;
         }
 
-        public List<Photo?> get_images(Soup.Message message) {
+
+        public List<Photo?> get_thumbs () {
+            Soup.Message message = api_connection(URI_UNSPLASH);
+
             List<Photo?> list_thumbs = new List<Photo?> ();
             var parser = new Json.Parser ();
             try {
@@ -60,15 +76,16 @@ namespace App.Connection {
 
                 foreach (unowned Json.Node item in array.get_elements ()) {
                     var photo_info = Photo() {
-                        width = item.get_object().get_int_member ("width"),
-                        height = item.get_object().get_int_member ("height"),
-                        color = item.get_object().get_string_member ("color"),
-                        urls_thumb = item.get_object().get_object_member ("urls").get_string_member ("thumb"),
-                        links_download_location = item.get_object().get_object_member ("links").get_string_member ("download_location"),
-                        username = item.get_object().get_object_member ("user").get_string_member ("username"),
-                        name = item.get_object().get_object_member ("user").get_string_member ("name"),
-                        profile_image_small = item.get_object().get_object_member ("user").get_object_member("profile_image").get_string_member ("small"),
-                        location = item.get_object().get_object_member ("location").get_string_member ("title")
+                        id =                        item.get_object().get_string_member ("id"),
+                        width =                     item.get_object().get_int_member ("width"),
+                        height =                    item.get_object().get_int_member ("height"),
+                        color =                     item.get_object().get_string_member ("color"),
+                        urls_thumb =                item.get_object().get_object_member ("urls").get_string_member ("thumb"),
+                        links_download_location =   item.get_object().get_object_member ("links").get_string_member ("download_location"),
+                        username =                  item.get_object().get_object_member ("user").get_string_member ("username"),
+                        name =                      item.get_object().get_object_member ("user").get_string_member ("name"),
+                        profile_image_small =       item.get_object().get_object_member ("user").get_object_member("profile_image").get_string_member ("small"),
+                        location =                  item.get_object().get_object_member ("location").get_string_member ("title")
                     };
 
                     list_thumbs.append (photo_info);
@@ -79,6 +96,22 @@ namespace App.Connection {
             }
 
             return list_thumbs;
+        }
+
+        public string get_url_photo (string links_download_location) {
+            string uri = links_download_location + "/?client_id=" + Constants.ACCESS_KEY_UNSPLASH;
+            Soup.Message message = api_connection(uri);
+            string url = "";
+            var parser = new Json.Parser ();
+            try {
+                parser.load_from_data ((string) message.response_body.data, -1);
+                var node = parser.get_root ();
+                url = node.get_object ().get_string_member ("url");
+            } catch (Error e) {
+                print ("Unable to parse the string: %s\n", e.message);
+                return url;
+            }
+            return url;
         }
     }
 }
