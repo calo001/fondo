@@ -38,9 +38,9 @@ namespace App.Views {
 
             // Add orientation to Grid and margins
             this.orientation = Gtk.Orientation.VERTICAL;
-            this.margin = 10;
-            this.column_spacing = 10;
-            this.row_spacing = 10;
+            this.margin = 15;
+            this.column_spacing = 20;
+            this.row_spacing = 15;
 
             // Create photo list
             connection = new AppConnection();

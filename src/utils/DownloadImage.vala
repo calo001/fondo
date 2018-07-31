@@ -25,6 +25,7 @@ namespace App.Utils {
     class DownloadImage {
 
         private string              id_photo;
+        private string              username;
         private string              url_endpoint;
         private string              picture_url;
         private string              picture_path;
@@ -32,10 +33,11 @@ namespace App.Utils {
         private Gtk.ProgressBar     bar;
         private AppConnection       connection;
 
-        public DownloadImage(string uri_endpoint, string id_photo, Gtk.ProgressBar bar) {
+        public DownloadImage(string uri_endpoint, string id_photo, string username, Gtk.ProgressBar bar) {
             this.url_endpoint = uri_endpoint;
             this.id_photo = id_photo;
             this.bar = bar;
+            this.username = username;
         }
 
         // Build file picture
@@ -53,7 +55,8 @@ namespace App.Utils {
 
         // Create directory
         public void create_directory () {
-            this.base_dir = Environment.get_home_dir () + "/.config/" + Constants.ID + "/backgrounds/";
+            //this.base_dir = Environment.get_home_dir () + "/.config/" + Constants.ID + "/backgrounds/";
+            this.base_dir = Environment.get_home_dir () + "/.local/share/backgrounds/";
 		    var dir = File.new_for_path (this.base_dir);
 		    if (!dir.query_exists ()) {
 			    try{
@@ -69,7 +72,7 @@ namespace App.Utils {
             MainLoop loop = new MainLoop ();
 
             var launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.calo001.fondo.desktop");
-            string file_image_name = id_photo + ".jpeg";
+            string file_image_name = "fondo" + username + "_" + id_photo + ".jpeg";
             this.picture_path = this.base_dir + file_image_name;
             this.bar.set_visible (true);
 
@@ -115,9 +118,11 @@ namespace App.Utils {
         }
 
         public void set_wallpaper () {
-            var wall_settings = new WallpaperSettings();
-			wall_settings.picture_options = PictureMode.ZOOMED;
-			wall_settings.picture_uri = this.picture_path;
+            //var wall_settings = new WallpaperSettings();
+			//wall_settings.picture_options = PictureMode.ZOOMED;
+			//wall_settings.picture_uri = "file://" + this.picture_path;
+			new GLib.Settings("org.gnome.desktop.background").set_string("picture-uri", ("file://" + this.picture_path));
+            new GLib.Settings("org.gnome.desktop.background").set_string("picture-options", "stretched");
         }
 
         public void show_notify () {

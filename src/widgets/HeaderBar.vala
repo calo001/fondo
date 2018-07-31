@@ -16,8 +16,6 @@
 * 
 */
 
-using App.Configs;
-
 namespace App.Widgets {
 
     /**
@@ -45,7 +43,7 @@ namespace App.Widgets {
 
             var randomize_button = new Gtk.Button.from_icon_name ("media-playlist-shuffle-symbolic");
             randomize_button.margin_end = 12;
-            randomize_button.tooltip_text = _("Load a random principle");
+            randomize_button.tooltip_text = _("Load more photos");
 
             var gtk_settings = Gtk.Settings.get_default ();
 
@@ -53,6 +51,7 @@ namespace App.Widgets {
                 "display-brightness-symbolic",
                 "weather-clear-night-symbolic"
             );
+
             mode_switch.margin_end = 6;
             mode_switch.primary_icon_tooltip_text = _("Light background");
             mode_switch.secondary_icon_tooltip_text = _("Dark background");
@@ -61,15 +60,22 @@ namespace App.Widgets {
 
             var context = get_style_context ();
             mode_switch.notify["active"].connect (() => {
-                if (gtk_settings.gtk_application_prefer_dark_theme) {
-                    context.add_class ("dark");
-                } else {
-                    context.remove_class ("dark");
-                }
+                detect_dark_mode (gtk_settings, context);
             });
 
+            App.Application.settings.bind ("use-dark-theme", mode_switch, "active", GLib.SettingsBindFlags.DEFAULT);
             this.pack_end (mode_switch);
             this.pack_end (randomize_button);
+        }
+
+        public void detect_dark_mode (Gtk.Settings gtk_settings, Gtk.StyleContext context) {
+            if (gtk_settings.gtk_application_prefer_dark_theme) {
+                App.Configs.Settings.get_instance ().use_dark_theme = true;
+                context.add_class ("dark");
+            } else {
+                App.Configs.Settings.get_instance ().use_dark_theme = false;
+                context.remove_class ("dark");
+            }
         }
     }
 }

@@ -25,6 +25,13 @@
 
 .link {
     color: @colorAccent;
+    border: none;
+    background: none;
+}
+
+.autor {
+    border: none;
+    background: none;
 }
 
 .button-green {

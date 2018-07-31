@@ -30,6 +30,7 @@ namespace App {
      */
     public class Window : Gtk.ApplicationWindow {
          
+        public static GLib.Settings g_settings;
         /**
          * Constructs a new {@code Window} object.
          *
@@ -49,6 +50,7 @@ namespace App {
             var settings = App.Configs.Settings.get_instance ();
             int x = settings.window_x;
             int y = settings.window_y;
+            bool dark = settings.use_dark_theme;
 
             if (x != -1 && y != -1) {
                 move (x, y);

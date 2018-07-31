@@ -43,7 +43,12 @@ namespace App.Configs {
          * Variable of type {@code int} as declared.
          */
         public int window_y { get; set; }
-       
+
+        /**
+         * This property will represent the prefer dark theme.
+         * Variable of type {@code bool} as declared.
+         */
+        public bool use_dark_theme {get; set;}
         /**
          * Constructs a new {@code Settings} object 
          * and sets the default exit folder.

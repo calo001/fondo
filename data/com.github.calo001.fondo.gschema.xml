@@ -13,6 +13,12 @@
             <summary>Most recent y position of Fondo</summary>
             <description>Most recent y position of Fondo</description>
         </key>
+
+      <key name="use-dark-theme" type="b">
+            <default>false</default>
+            <summary>Dark Theme</summary>
+            <description>Prefer Dark Theme for Fondo</description>
+        </key>
     </schema>
 
 </schemalist>

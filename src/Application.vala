@@ -29,8 +29,8 @@ namespace App {
      */
     public class Application : Granite.Application {
 
-        public AppController controller;
-
+        public AppController            controller;
+        public static GLib.Settings     settings;
         /**
          * Constructs a new {@code Application} object.
          */
@@ -41,12 +41,15 @@ namespace App {
             );
 
             var quit_action = new SimpleAction ("quit", null);
+
             quit_action.activate.connect (() => {
                 controller.quit ();
             });
 
             add_action (quit_action);
+            set_accels_for_action ("app.quit", {"Escape"});
             add_accelerator ("<Control>q", "app.quit", null);
+            settings = new GLib.Settings (Constants.ID);
         }
 
         /**

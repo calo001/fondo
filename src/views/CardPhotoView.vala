@@ -56,7 +56,7 @@ namespace App.Views {
                 revealer.set_reveal_child (true);
                 connection = new AppConnection();
                 string url_photo = connection.get_url_photo(photo.links_download_location);
-                download_image = new DownloadImage (url_photo, photo.id, bar);
+                download_image = new DownloadImage (url_photo, photo.id, photo.username, bar);
                 download_image.build_file_jpeg ();
                 return true;
             });
@@ -79,18 +79,23 @@ namespace App.Views {
 
             // Create labelAutor
             var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
-            label_autor = new Gtk.LinkButton.with_label(link, photo.name);
+            label_autor = new Gtk.LinkButton.with_label(link, "   " + photo.name);
             this.label_autor.get_style_context ().remove_class ("button");
             this.label_autor.get_style_context ().remove_class ("flat");
-            this.label_autor.get_style_context ().add_class ("h3");
+            this.label_autor.get_style_context ().add_class ("h4");
+            this.label_autor.get_style_context ().add_class ("autor");
             this.label_autor.halign = Gtk.Align.START;
             this.label_autor.xalign = 0f;
+            //this.label_autor.spacing = 8;
+            this.label_autor.margin_start = 8;
             this.label_autor.has_tooltip = false;
+            this.label_autor.always_show_image = true;
+            this.label_autor.set_image (logo);
 
             // Create Horizontal Grid
             var grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
-            grid_actions.margin_top = 5;
-            grid_actions.pack_start(logo, true, true, 0);
+            grid_actions.margin_top = 10;
+            //grid_actions.pack_start(logo, true, true, 0);
             grid_actions.pack_start(label_autor, true, true, 0);
             grid_actions.pack_end(btn_view, false, false, 0);
 
@@ -98,7 +103,7 @@ namespace App.Views {
             this.bar = new Gtk.ProgressBar ();
             this.bar.get_style_context ().remove_class ("trough");
             this.bar.get_style_context ().add_class ("revealer");
-
+            this.bar.margin_top = 10;
             // Reveal
             this.revealer = new Gtk.Revealer ();
             this.revealer.add (bar);
