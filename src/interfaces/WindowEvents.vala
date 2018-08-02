@@ -17,7 +17,7 @@
 */
 
 namespace App.Interface {
-    public interface WindowEvents {
-
+    public interface WindowEvents : Object {
+        public abstract void toogle_stack();
     }
 }

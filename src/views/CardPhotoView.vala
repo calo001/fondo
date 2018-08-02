@@ -34,10 +34,11 @@ namespace App.Views {
         private AppConnection           connection;
         private Gtk.ProgressBar         bar;
         private Gtk.Revealer            revealer;
+        private Photo                   photo;
 
         // Construct
         public CardPhotoView (Photo photo) {
-
+            this.photo = photo;
             this.orientation = Gtk.Orientation.VERTICAL;
             this.margin_bottom = 10;
 
@@ -53,11 +54,7 @@ namespace App.Views {
 
             this.eventbox_photo = new Gtk.EventBox();
             this.eventbox_photo.button_press_event.connect (() => {
-                revealer.set_reveal_child (true);
-                connection = new AppConnection();
-                string url_photo = connection.get_url_photo(photo.links_download_location);
-                download_image = new DownloadImage (url_photo, photo.id, photo.username, bar);
-                download_image.build_file_jpeg ();
+                set_as_wallpaper ();
                 return true;
             });
             this.eventbox_photo.add(image);
@@ -73,8 +70,7 @@ namespace App.Views {
                 prev_win.show_all ();
 		    });
 
-
-            // autor photo logo
+            // Autor photo logo
             var logo = new Granite.AsyncImage.from_icon_name_async ("emblem-photos-symbolic", Gtk.IconSize.BUTTON);
 
             // Create labelAutor
@@ -86,7 +82,6 @@ namespace App.Views {
             this.label_autor.get_style_context ().add_class ("autor");
             this.label_autor.halign = Gtk.Align.START;
             this.label_autor.xalign = 0f;
-            //this.label_autor.spacing = 8;
             this.label_autor.margin_start = 8;
             this.label_autor.has_tooltip = false;
             this.label_autor.always_show_image = true;
@@ -95,7 +90,6 @@ namespace App.Views {
             // Create Horizontal Grid
             var grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
             grid_actions.margin_top = 10;
-            //grid_actions.pack_start(logo, true, true, 0);
             grid_actions.pack_start(label_autor, true, true, 0);
             grid_actions.pack_end(btn_view, false, false, 0);
 
@@ -113,6 +107,15 @@ namespace App.Views {
             this.add(revealer);
             this.add(grid_actions);
 
+        }
+
+        public void set_as_wallpaper () {
+            print ("Intento poner wallpaper");
+            this.revealer.set_reveal_child (true);
+            this.connection = new AppConnection();
+            string url_photo = connection.get_url_photo(photo.links_download_location);
+            this.download_image = new DownloadImage (url_photo, photo.id, photo.username, bar);
+            this.download_image.build_file_jpeg ();
         }
     }
 

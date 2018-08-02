@@ -19,6 +19,7 @@
 using App.Connection;
 using App.Configs;
 using App.Utils;
+using Gtk;
 
 namespace App.Utils {
 
@@ -33,7 +34,7 @@ namespace App.Utils {
         private Gtk.ProgressBar     bar;
         private AppConnection       connection;
 
-        public DownloadImage(string uri_endpoint, string id_photo, string username, Gtk.ProgressBar bar) {
+        public DownloadImage(string uri_endpoint, string id_photo, string username, ProgressBar bar) {
             this.url_endpoint = uri_endpoint;
             this.id_photo = id_photo;
             this.bar = bar;
@@ -42,9 +43,10 @@ namespace App.Utils {
 
         // Build file picture
         public void build_file_jpeg () {
-            //get_picture_URL();
             create_directory();
             white_picture();
+            set_wallpaper ();
+            show_notify ();
         }
 
         // Get picture url
@@ -71,8 +73,8 @@ namespace App.Utils {
         public void white_picture () {
             MainLoop loop = new MainLoop ();
 
-            var launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.calo001.fondo.desktop");
-            string file_image_name = "fondo" + username + "_" + id_photo + ".jpeg";
+            var launcher = Unity.LauncherEntry.get_for_desktop_id (Constants.ID);
+            string file_image_name = username + "_" + id_photo + ".jpeg";
             this.picture_path = this.base_dir + file_image_name;
             this.bar.set_visible (true);
 
@@ -98,9 +100,9 @@ namespace App.Utils {
 			                bool tmp = file_from_uri.copy_async.end (res);
 			                print ("Result: %s\n", tmp.to_string ());
 			                launcher.progress_visible = false;
-                            set_wallpaper ();
-                            show_notify ();
-                            copy_to_greeter ();
+			                copy_to_greeter ();
+                            //set_wallpaper ();
+                            //show_notify ();
 		                } catch (Error e) {
 			                print ("Error: %s\n", e.message);
 		                }
@@ -118,27 +120,50 @@ namespace App.Utils {
         }
 
         public void set_wallpaper () {
+            // Old way to put wallapaper
             //var wall_settings = new WallpaperSettings();
 			//wall_settings.picture_options = PictureMode.ZOOMED;
 			//wall_settings.picture_uri = "file://" + this.picture_path;
-			new GLib.Settings("org.gnome.desktop.background").set_string("picture-uri", ("file://" + this.picture_path));
-            new GLib.Settings("org.gnome.desktop.background").set_string("picture-options", "stretched");
+			GLib.Settings settings = new GLib.Settings ("org.gnome.desktop.background");
+            settings.set_string ("picture-uri", "file://" + this.picture_path);
+            settings.reset ("color-shading-type");
+            if (settings.get_string ("picture-options") == "none") {
+                settings.reset ("picture-options");
+            }
+            settings.apply ();
+            GLib.Settings.sync ();
         }
 
         public void show_notify () {
             var notification = new Notification (_("Wallpaper ready!"));
-            notification.set_body (_("Your wallapaer is ready!"));
+            notification.set_body (_("🖼️ Your wallpaper is ready!"));
             notification.add_button ("click", "action");
             GLib.Application.get_default ().send_notification ("notify.app", notification);
-
         }
 
-        public void copy_to_greeter () {
+         public void copy_to_greeter () {
             MainLoop loop = new MainLoop ();
+            File? dest = null;
             var file_path = File.new_for_path (this.picture_path);
-            var local_share_back = File.new_for_path (Environment.get_home_dir () + "/.local/share/backgrounds/" + id_photo + ".jpeg");
+            var file_image_name = username + "_" + id_photo + ".jpeg";
+            var greeter_data_dir = Path.build_filename (Environment.get_variable ("XDG_GREETER_DATA_DIR"), "wallpaper");
 
-            file_path.copy_async.begin(local_share_back, FileCopyFlags.NONE, GLib.Priority.DEFAULT, null,
+            var folder = File.new_for_path (greeter_data_dir);
+            if (folder.query_exists ()) {
+                var enumerator = folder.enumerate_children ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
+                FileInfo? info = null;
+                while ((info = enumerator.next_file ()) != null) {
+                    enumerator.get_child (info).@delete ();
+                }
+            } else {
+                folder.make_directory_with_parents ();
+            }
+
+            dest = File.new_for_path (Path.build_filename (greeter_data_dir, file_image_name));
+
+            file_path.copy_async.begin(dest,
+                                       FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA,
+                                       GLib.Priority.DEFAULT, null,
             (current_num_bytes, total_num_bytes) => {
 		        // Report copy-status:
 		        print ("USR %" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);

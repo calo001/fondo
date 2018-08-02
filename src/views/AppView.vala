@@ -29,22 +29,24 @@ namespace App.Views {
      */
     public class AppView : Gtk.Grid {
 
-        private Gtk.Button                  btn_load;
-        private AppConnection               connection;
+        public CardPhotoView    card_1 {get; set;}
+        public CardPhotoView    card_2 {get; set;}
+        public CardPhotoView    card_3 {get; set;}
+        public CardPhotoView    card_4 {get; set;}
+        public CardPhotoView    card_5 {get; set;}
+        public CardPhotoView    card_6 {get; set;}
         /**
          * Constructs a new {@code AppView} object.
          */
-        public AppView () {
+        public AppView (List<Photo?> photos) {
 
             // Add orientation to Grid and margins
             this.orientation = Gtk.Orientation.VERTICAL;
-            this.margin = 15;
+            this.margin_top = 10;
+            this.margin_left = 15;
+            this.margin_right = 15;
             this.column_spacing = 20;
             this.row_spacing = 15;
-
-            // Create photo list
-            connection = new AppConnection();
-            List<Photo?> photos = connection.get_thumbs ();
 
             // Create CustomCard (be ware with margins)
             var card_1 = new CardPhotoView (photos.nth_data(0));
@@ -54,21 +56,22 @@ namespace App.Views {
             var card_5 = new CardPhotoView (photos.nth_data(4));
             var card_6 = new CardPhotoView (photos.nth_data(5));
 
-            //Create label unsplash
-            var link_unsplash = new Gtk.LinkButton.with_label("https://unsplash.com/?utm_source=Foto&utm_medium=referral", "Photos from Unsplash");
-            link_unsplash.get_style_context ().add_class ("link");
-            link_unsplash.get_style_context ().remove_class ("button");
-            link_unsplash.get_style_context ().remove_class ("flat");
-            link_unsplash.get_style_context ().add_class ("h4");
-            link_unsplash.has_tooltip = false;
-
             this.attach(card_1, 0, 0, 1, 1);
             this.attach(card_2, 1, 0, 1, 1);
             this.attach(card_3, 2, 0, 1, 1);
             this.attach(card_4, 0, 1, 1, 1);
             this.attach(card_5, 1, 1, 1, 1);
             this.attach(card_6, 2, 1, 1, 1);
-            this.attach(link_unsplash, 1, 2, 1, 1);
+        }
+
+        public void use_card_for_wallpaper (int num) {
+            switch (num) {
+                case 1: this.card_1.set_as_wallpaper (); break;
+                case 2: this.card_2.set_as_wallpaper (); break;
+                case 3: this.card_3.set_as_wallpaper (); break;
+                case 4: this.card_4.set_as_wallpaper (); break;
+                case 5: this.card_5.set_as_wallpaper (); break;
+            }
         }
     }
 }

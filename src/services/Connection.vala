@@ -28,14 +28,14 @@ namespace App.Connection {
      */
     public class AppConnection {
 
+        private static List<Photo?> list_thumbs = new List<Photo?> ();
+
         private const string URI_UNSPLASH = Constants.API_UNSPLASH +
                          "photos/random/?client_id=" +
                          Constants.ACCESS_KEY_UNSPLASH +
                          Constants.API_PARAMS;
 
-        public AppConnection() {
-
-        }
+        public AppConnection() {}
 
         public Soup.Message api_connection(string uri) {
             var session = new Soup.Session ();
@@ -54,48 +54,45 @@ namespace App.Connection {
 
 	        loop.run ();
 
-            /* send a sync request */
-            //session.send_message (message);
-            //message.response_headers.foreach ((name, val) => {
-            //    stdout.printf ("Name: %s -> Value: %s\n", name, val);
-            //});
-
             return message;
         }
 
 
-        public List<Photo?> get_thumbs () {
+        public void load_pages () {
             Soup.Message message = api_connection(URI_UNSPLASH);
 
-            List<Photo?> list_thumbs = new List<Photo?> ();
             var parser = new Json.Parser ();
             try {
                 parser.load_from_data ((string) message.response_body.flatten ().data, -1);
-                var node = parser.get_root ();
-                unowned Json.Array array = node.get_array ();
-
-                foreach (unowned Json.Node item in array.get_elements ()) {
-                    var photo_info = Photo() {
-                        id =                        item.get_object().get_string_member ("id"),
-                        width =                     item.get_object().get_int_member ("width"),
-                        height =                    item.get_object().get_int_member ("height"),
-                        color =                     item.get_object().get_string_member ("color"),
-                        urls_thumb =                item.get_object().get_object_member ("urls").get_string_member ("thumb"),
-                        links_download_location =   item.get_object().get_object_member ("links").get_string_member ("download_location"),
-                        username =                  item.get_object().get_object_member ("user").get_string_member ("username"),
-                        name =                      item.get_object().get_object_member ("user").get_string_member ("name"),
-                        profile_image_small =       item.get_object().get_object_member ("user").get_object_member("profile_image").get_string_member ("small"),
-                        location =                  item.get_object().get_object_member ("location").get_string_member ("title")
-                    };
-
-                    list_thumbs.append (photo_info);
-	            }
+                get_data (parser);
             } catch (Error e) {
                 print ("Unable to parse the string: %s\n", e.message);
-                return list_thumbs;
             }
+        }
 
-            return list_thumbs;
+        private void get_data (Json.Parser parser) {
+            var node = parser.get_root ();
+            unowned Json.Array array = node.get_array ();
+            foreach (unowned Json.Node item in array.get_elements ()) {
+                var object = item.get_object();
+                var photo_info = Photo() {
+                    id =                        object.get_string_member ("id"),
+                    width =                     object.get_int_member ("width"),
+                    height =                    object.get_int_member ("height"),
+                    color =                     object.get_string_member ("color"),
+                    urls_thumb =                object.get_object_member ("urls")
+                                                      .get_string_member ("small"),
+                    links_download_location =   object.get_object_member ("links")
+                                                      .get_string_member ("download_location"),
+                    username =                  object.get_object_member ("user")
+                                                      .get_string_member ("username"),
+                    name =                      object.get_object_member ("user")
+                                                      .get_string_member ("name"),
+                    location =                  object.get_object_member ("location")
+                                                      .get_string_member ("title")
+                    };
+                    list_thumbs.append (photo_info);
+	            }
         }
 
         public string get_url_photo (string links_download_location) {
@@ -112,6 +109,14 @@ namespace App.Connection {
                 return url;
             }
             return url;
+        }
+
+        public List<Photo?> get_thumbs_page (int start, int end) {
+            var page = new List<Photo?> ();
+            for (int i = start; i < end; i++) {
+                page.append (list_thumbs.nth_data (i));
+            }
+            return page;
         }
     }
 }

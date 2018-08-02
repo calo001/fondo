@@ -15,6 +15,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * 
 */
+using App.Views;
 
 namespace App.Widgets {
 
@@ -26,7 +27,7 @@ namespace App.Widgets {
      */
     public class HeaderBar : Gtk.HeaderBar {
 
-        private Gtk.Button              btn_more;
+        public Gtk.Button randomize_button { get; set; }
         /**
          * Constructs a new {@code HeaderBar} object.
          *
@@ -36,14 +37,15 @@ namespace App.Widgets {
         public HeaderBar () {
             this.set_title ("Fondo");
             this.show_close_button = true;
+
             get_style_context ().add_class ("transition");
             get_style_context ().add_class ("fondo-header");
             get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             get_style_context ().add_class ("default-decoration");
 
-            var randomize_button = new Gtk.Button.from_icon_name ("media-playlist-shuffle-symbolic");
-            randomize_button.margin_end = 12;
-            randomize_button.tooltip_text = _("Load more photos");
+            this.randomize_button = new Gtk.Button.from_icon_name ("document-new-symbolic");
+            this.randomize_button.margin_end = 12;
+            this.randomize_button.tooltip_text = _("Load more photos");
 
             var gtk_settings = Gtk.Settings.get_default ();
 
@@ -65,7 +67,7 @@ namespace App.Widgets {
 
             App.Application.settings.bind ("use-dark-theme", mode_switch, "active", GLib.SettingsBindFlags.DEFAULT);
             this.pack_end (mode_switch);
-            this.pack_end (randomize_button);
+            this.pack_end (this.randomize_button);
         }
 
         public void detect_dark_mode (Gtk.Settings gtk_settings, Gtk.StyleContext context) {

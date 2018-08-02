@@ -50,7 +50,6 @@ namespace App {
             var settings = App.Configs.Settings.get_instance ();
             int x = settings.window_x;
             int y = settings.window_y;
-            bool dark = settings.use_dark_theme;
 
             if (x != -1 && y != -1) {
                 move (x, y);
@@ -75,6 +74,19 @@ namespace App {
                 settings.window_y = root_y;
                 return false;
             });
+        }
+
+        protected bool match_keycode (int keyval, uint code) {
+            Gdk.KeymapKey [] keys;
+            Gdk.Keymap keymap = Gdk.Keymap.get_for_display (Gdk.Display.get_default ());
+            if (keymap.get_entries_for_keyval (keyval, out keys)) {
+                foreach (var key in keys) {
+                    if (code == key.keycode)
+                        return true;
+                    }
+                }
+
+            return false;
         }
     }
 }
