@@ -24,9 +24,12 @@
 }
 
 .link {
-    color: @colorAccent;
     border: none;
     background: none;
+}
+
+.h1 {
+    color: white;
 }
 
 .autor {

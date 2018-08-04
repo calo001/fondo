@@ -60,7 +60,17 @@ namespace App.Views {
             } catch (Error e) {
                 message ("error loading CSS provider");
             }
+
 		    fullscreen ();
+
+            this.key_press_event.connect ((e) => {
+                uint keycode = e.hardware_keycode;
+                print ("Key" + keycode.to_string());
+                    if (keycode == 9) {
+                        close ();
+                    }
+                return true;
+            });
 
             var label = new Gtk.Label("Loading ...");
             label.get_style_context ().add_class ("h1");

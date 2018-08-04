@@ -109,6 +109,8 @@ namespace App.Controllers {
                         set_wallpaper_by_number (5, this.stack.visible_child_name);
                     } else if (keycode == 15) {
                         set_wallpaper_by_number (6, this.stack.visible_child_name);
+                    } else if (keycode == 9) {
+                        this.window.close ();
                     }
                 return true;
             });
