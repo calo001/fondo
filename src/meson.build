@@ -10,7 +10,7 @@ sources += files(
 
     'structs/Photo.vala',
 
-    'utils/DownloadImage.vala',
+    'utils/Wallpaper.vala',
     'utils/WallpaperSettings.vala',
 
     'widgets/HeaderBar.vala',

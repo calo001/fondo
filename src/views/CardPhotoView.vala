@@ -30,7 +30,7 @@ namespace App.Views {
         private Gtk.Button              btn_view;
         private Gtk.EventBox            eventbox_photo;
         private Gtk.LinkButton          label_autor;
-        private DownloadImage           download_image;
+        private Wallpaper               wallpaper;
         private AppConnection           connection;
         private Gtk.ProgressBar         bar;
         private Gtk.Revealer            revealer;
@@ -66,8 +66,9 @@ namespace App.Views {
             btn_view.halign = Gtk.Align.CENTER;
 
             btn_view.clicked.connect (() => {
-                var prev_win = new PreviewWindow();
+                var prev_win = new PreviewWindow(photo);
                 prev_win.show_all ();
+                prev_win.load_content();
 		    });
 
             // Autor photo logo
@@ -114,8 +115,8 @@ namespace App.Views {
             this.revealer.set_reveal_child (true);
             this.connection = new AppConnection();
             string url_photo = connection.get_url_photo(photo.links_download_location);
-            this.download_image = new DownloadImage (url_photo, photo.id, photo.username, bar);
-            this.download_image.build_file_jpeg ();
+            this.wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
+            this.wallpaper.update_wallpaper ();
         }
     }
 
