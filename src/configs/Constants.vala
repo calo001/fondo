@@ -46,5 +46,6 @@ namespace App.Configs {
         public abstract const string API_PARAMS = "&orientation=landscape&count=30";
         public abstract const string ACCESS_KEY_UNSPLASH = "db4d69677b2838dfc4f9ef73ee79dcde8412472617bc96adefde321bd08a76f2";
         public abstract const Gtk.License ABOUT_LICENSE_TYPE = Gtk.License.CUSTOM;
+        public abstract const int SIZE_IMAGE_AVERAGE = 3000000;
     }
 }

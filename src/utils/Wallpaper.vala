@@ -25,7 +25,7 @@ namespace App.Utils {
     class Wallpaper {
 
         private string              uri_endpoint;   // URI http of picture in unsplash
-        public string              full_picture_path {get; set;}   // Path for wallpaper picture
+        public  string              full_picture_path {get; set;}   // Path for wallpaper picture
         private ProgressBar         bar;            // Downloading Progress
         private string              img_file_name;  // Based on id_photo & username
         // Base path for wallpaper picture
@@ -57,7 +57,7 @@ namespace App.Utils {
 			    try{
 			    	dir. make_directory_with_parents();
 			    } catch (Error e){
-				    print ("Error: %s\n", e.message);
+				    show_message ("Error", e.message, "dialog-error");
 				    return false;
 			    }
             }
@@ -71,11 +71,11 @@ namespace App.Utils {
             var file_path = File.new_for_path (full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
 
-            try {
                 if (!file_path.query_exists ()) {
                     this.launcher = LauncherEntry.get_for_desktop_id (Constants.ID);
                     file_from_uri.copy_async.begin (file_path, FileCopyFlags.NONE, GLib.Priority.DEFAULT, null, (current_num_bytes, total_num_bytes) => {
 		            // Report copy-status:
+		                total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
 		                print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
 			            show_progress ((double) current_num_bytes / total_num_bytes);
 	                }, (obj, res) => {
@@ -84,7 +84,7 @@ namespace App.Utils {
 			                print ("Result: %s\n", tmp.to_string ());
 			                this.launcher.progress_visible = false;
 		                } catch (Error e) {
-			                print ("Error: %s\n", e.message);
+			                show_message ("Error", e.message, "dialog-error");
 		                }
 		                loop.quit ();
 	                });
@@ -93,10 +93,7 @@ namespace App.Utils {
 					bar.set_fraction (1.0);
 					return true;
                 }
-            } catch (Error e) {
-               print ("Write picture: %s\n", e.message);
-               return false;
-            }
+
             loop.run ();
             return true;
         }
@@ -123,7 +120,7 @@ namespace App.Utils {
         // Show desktop notification
         public void show_notify () {
             var notification = new Notification (_("Wallpaper ready!"));
-            notification.set_body (_("🖼️ Your wallpaper is ready!"));
+            notification.set_body (_("Your wallpaper is ready!"));
             notification.add_button ("click", "action");
             GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
@@ -137,13 +134,21 @@ namespace App.Utils {
 
             var folder = File.new_for_path (greeter_data_dir);
             if (folder.query_exists ()) {
-                var enumerator = folder.enumerate_children ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
-                FileInfo? info = null;
-                while ((info = enumerator.next_file ()) != null) {
-                    enumerator.get_child (info).@delete ();
+                try {
+                    var enumerator = folder.enumerate_children ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
+                    FileInfo? info = null;
+                    while ((info = enumerator.next_file ()) != null) {
+                        enumerator.get_child (info).@delete ();
+                    }
+                } catch (Error e) {
+                    show_message ("Error", e.message, "dialog-error");
                 }
             } else {
-                folder.make_directory_with_parents ();
+                try{
+			    	folder.make_directory_with_parents();
+			    } catch (Error e){
+				    show_message ("Error", e.message, "dialog-error");
+			    }
             }
 
             dest = File.new_for_path (Path.build_filename (greeter_data_dir, img_file_name));
@@ -157,10 +162,22 @@ namespace App.Utils {
 			        bool tmp = file_path.copy_async.end (res);
 			        print ("USR Result: %s\n", tmp.to_string ());
 		        } catch (Error e) {
-			        print ("USR Error: %s\n", e.message);
+			        show_message ("Error", e.message, "dialog-error");
 		        }
 		            loop.quit ();
 	        });
+        }
+
+        private void show_message (string txt_primary, string txt_secondary, string icon) {
+            var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                txt_primary,
+                txt_secondary,
+                icon,
+                Gtk.ButtonsType.CLOSE
+            );
+
+            message_dialog.run ();
+            message_dialog.destroy ();
         }
     }
 }

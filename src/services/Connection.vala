@@ -48,7 +48,7 @@ namespace App.Connection {
 		        // Process the result:
 		        print ("Status Code: %u\n", mess.status_code);
 		        print ("Message length: %lld\n", mess.response_body.length);
-		        print ("Data: \n%s\n", (string) mess.response_body.data);
+		        //print ("Data: \n%s\n", (string) mess.response_body.data);
 		        loop.quit ();
 	        });
 
@@ -58,7 +58,7 @@ namespace App.Connection {
         }
 
 
-        public void load_pages () {
+        public bool load_pages () {
             Soup.Message message = api_connection(URI_UNSPLASH);
 
             var parser = new Json.Parser ();
@@ -67,7 +67,9 @@ namespace App.Connection {
                 get_data (parser);
             } catch (Error e) {
                 print ("Unable to parse the string: %s\n", e.message);
+                return false;
             }
+            return true;
         }
 
         private void get_data (Json.Parser parser) {
@@ -79,7 +81,6 @@ namespace App.Connection {
                     id =                        object.get_string_member ("id"),
                     width =                     object.get_int_member ("width"),
                     height =                    object.get_int_member ("height"),
-                    color =                     object.get_string_member ("color"),
                     urls_thumb =                object.get_object_member ("urls")
                                                       .get_string_member ("small"),
                     links_download_location =   object.get_object_member ("links")

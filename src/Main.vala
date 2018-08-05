@@ -62,8 +62,7 @@ public class Main {
         }
         else {
             var app = new App.Application ();
-            app.run (args);
-        }
+            app.run (args);       }
 
         return 0;
     }

@@ -43,24 +43,25 @@ namespace App.Views {
             this.margin_bottom = 10;
 
             // Create File Object
-            this.file_photo = File.new_for_uri (photo.urls_thumb);
+            file_photo = File.new_for_uri (photo.urls_thumb);
             
             // Create AsyncImage object
-            this.image = new Granite.AsyncImage(true, true);
-            this.image.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
+            image = new Granite.AsyncImage(true, true);
+            image.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
             image.set_from_file_async(file_photo, 280, 180, false); // Width, Heigth
             image.has_tooltip = true;
-            image.set_tooltip_text (photo.location);
+            var txt_tooltip = photo.location == null ? "📍  An amazing place, In the world" : "📍  " + photo.location;
+            image.set_tooltip_text (txt_tooltip);
 
-            this.eventbox_photo = new Gtk.EventBox();
-            this.eventbox_photo.button_press_event.connect (() => {
+            eventbox_photo = new Gtk.EventBox();
+            eventbox_photo.button_press_event.connect (() => {
                 set_as_wallpaper ();
                 return true;
             });
-            this.eventbox_photo.add(image);
+            eventbox_photo.add(image);
 
             // Create Button
-            this.btn_view = new Gtk.Button.from_icon_name ("window-maximize-symbolic");
+            btn_view = new Gtk.Button.from_icon_name ("window-maximize-symbolic");
             btn_view.get_style_context ().add_class ("button-green");
             btn_view.get_style_context ().add_class ("transition");
             btn_view.halign = Gtk.Align.CENTER;
@@ -77,16 +78,16 @@ namespace App.Views {
             // Create labelAutor
             var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
             label_autor = new Gtk.LinkButton.with_label(link, "   " + photo.name);
-            this.label_autor.get_style_context ().remove_class ("button");
-            this.label_autor.get_style_context ().remove_class ("flat");
-            this.label_autor.get_style_context ().add_class ("h4");
-            this.label_autor.get_style_context ().add_class ("autor");
-            this.label_autor.halign = Gtk.Align.START;
-            this.label_autor.xalign = 0f;
-            this.label_autor.margin_start = 8;
-            this.label_autor.has_tooltip = false;
-            this.label_autor.always_show_image = true;
-            this.label_autor.set_image (logo);
+            label_autor.get_style_context ().remove_class ("button");
+            label_autor.get_style_context ().remove_class ("flat");
+            label_autor.get_style_context ().add_class ("h4");
+            label_autor.get_style_context ().add_class ("autor");
+            label_autor.halign = Gtk.Align.START;
+            label_autor.xalign = 0f;
+            label_autor.margin_start = 8;
+            label_autor.has_tooltip = false;
+            label_autor.always_show_image = true;
+            label_autor.set_image (logo);
 
             // Create Horizontal Grid
             var grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
@@ -95,13 +96,13 @@ namespace App.Views {
             grid_actions.pack_end(btn_view, false, false, 0);
 
             // ProgressBar
-            this.bar = new Gtk.ProgressBar ();
-            this.bar.get_style_context ().remove_class ("trough");
-            this.bar.get_style_context ().add_class ("revealer");
-            this.bar.margin_top = 10;
+            bar = new Gtk.ProgressBar ();
+            bar.get_style_context ().remove_class ("trough");
+            bar.get_style_context ().add_class ("revealer");
+            bar.margin_top = 10;
             // Reveal
-            this.revealer = new Gtk.Revealer ();
-            this.revealer.add (bar);
+            revealer = new Gtk.Revealer ();
+            revealer.add (bar);
 
             // Add view to custom Grid
             this.add(eventbox_photo);

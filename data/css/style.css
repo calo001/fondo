@@ -42,6 +42,11 @@
     background: none;
 }
 
+.button-network {
+    color: white;
+    background: @colorAccent;
+}
+
 .button-green:hover {
     background-color: @colorAccent;
     color: #FFFFFF;

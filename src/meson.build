@@ -11,7 +11,7 @@ sources += files(
     'structs/Photo.vala',
 
     'utils/Wallpaper.vala',
-    'utils/WallpaperSettings.vala',
+    'utils/Networking.vala',
 
     'widgets/HeaderBar.vala',
     'widgets/ModeSwitch.vala',

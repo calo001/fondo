@@ -32,11 +32,11 @@ namespace App.Controllers {
         private Gtk.Application            application;
         private App.Widgets.HeaderBar      headerbar;
         private Gtk.Stack                  stack;
-        private AppView                    page_1;
-        private AppView                    page_2;
-        private AppView                    page_3;
-        private AppView                    page_4;
-        private AppView                    page_5;
+        private AppView?                    page_1;
+        private AppView?                    page_2;
+        private AppView?                    page_3;
+        private AppView?                    page_4;
+        private AppView?                    page_5;
         private AppConnection              connection;
         private Gtk.Box                    screen;
         private Gtk.ApplicationWindow      window { get; private set; default = null; }
@@ -46,28 +46,100 @@ namespace App.Controllers {
         public AppController (Gtk.Application application) {
             // Base instances
             this.application = application;
-            this.window = new Window (this.application);
-
-            // Load data from unsplash
-            this.connection = new AppConnection ();
-            this.connection.load_pages ();
-
-            // Create pages
-            this.page_1 = new AppView (connection.get_thumbs_page(0, 6));
-            this.page_2 = new AppView (connection.get_thumbs_page(6, 12));
-            this.page_3 = new AppView (connection.get_thumbs_page(12, 18));
-            this.page_4 = new AppView (connection.get_thumbs_page(18, 24));
-            this.page_5 = new AppView (connection.get_thumbs_page(24, 30));
+            window = new Window (this.application);
 
             // Stack
-            this.stack = new Gtk.Stack();
-            this.stack.set_transition_duration (500);
-            this.stack.add_named (page_1, "page_1");
-            this.stack.add_named (page_2, "page_2");
-            this.stack.add_named (page_3, "page_3");
-            this.stack.add_named (page_4, "page_4");
-            this.stack.add_named (page_5, "page_5");
-            this.stack.set_visible_child_name ("page_1");
+            stack = new Gtk.Stack();
+            stack.set_transition_duration (500);
+            stack.homogeneous = false;
+            stack.interpolate_size = true;
+
+            // Screen box
+            screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            screen.pack_start (this.stack);
+
+            if (App.Utils.check_internet_connection ()) {
+                if (make_connection ()) {
+                    set_ui ();
+                }
+            } else {
+                set_error_ui ();
+            }
+
+            // Keyboard actions
+            this.window.key_press_event.connect ((e) => {
+                uint keycode = e.hardware_keycode;
+                print ("Key" + keycode.to_string());
+                    if (keycode == 65 || keycode == 114) {
+                        next_stack ();
+                    } else if (keycode == 113) {
+                        prev_stack ();
+                    } else if (keycode == 9) {
+                        this.window.close ();
+                    }
+                return true;
+            });
+
+            window.add (this.screen);
+            application.add_window (window);
+        }
+
+        private void set_error_ui () {
+            // Header bar
+            var header_simple = new Gtk.HeaderBar ();
+            header_simple.set_title ("Fondo");
+            header_simple.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            window.set_titlebar (header_simple);
+
+            // Configuring UI
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+            var image = new Gtk.Image.from_icon_name  ("network-error", Gtk.IconSize.DIALOG);
+		    var label_title = new Gtk.Label ("Network Error");
+		    var label_description = new Gtk.Label ("Check the network connection.");
+            var button_check_network = new Gtk.Button.with_label ("Exit");
+
+		    label_title.get_style_context ().add_class ("h2");
+		    label_description.get_style_context ().add_class ("h3");
+            button_check_network.get_style_context ().add_class ("destructive-action");
+
+            // Button click
+            button_check_network.clicked.connect ( () => {
+                window.close();
+            } );
+
+            // Set margins
+            box.margin = 20;
+
+            // Add content
+            box.add(image);
+            box.add(label_title);
+            box.add(label_description);
+            box.add(button_check_network);
+            stack.add_named (box, "error_page");
+            stack.set_visible_child_name ("error_page");
+        }
+
+        private void set_ui () {
+            // Headerbar setup
+            headerbar = new App.Widgets.HeaderBar ();
+            headerbar.randomize_button.clicked.connect (() => next_stack () );
+            window.set_titlebar (this.headerbar);
+
+            // Create pages
+            page_1 = new AppView (connection.get_thumbs_page(0, 6));
+            page_2 = new AppView (connection.get_thumbs_page(6, 12));
+            page_3 = new AppView (connection.get_thumbs_page(12, 18));
+            page_4 = new AppView (connection.get_thumbs_page(18, 24));
+            page_5 = new AppView (connection.get_thumbs_page(24, 30));
+
+            // Stack
+            stack.add_named (page_1, "page_1");
+            stack.add_named (page_2, "page_2");
+            stack.add_named (page_3, "page_3");
+            stack.add_named (page_4, "page_4");
+            stack.add_named (page_5, "page_5");
+
+            stack.set_visible_child_name ("page_1");
 
             //Create label unsplash
             var unsplash_link = "https://unsplash.com/?utm_source=Foto&utm_medium=referral";
@@ -81,43 +153,14 @@ namespace App.Controllers {
             link_unsplash.has_tooltip = false;
 
             // Screen box
-            this.screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            this.screen.pack_start (this.stack);
-            this.screen.pack_start (link_unsplash);
+            screen.pack_start (link_unsplash);
 
-            // Headerbar setup
-            this.headerbar = new App.Widgets.HeaderBar ();
-            this.headerbar.randomize_button.clicked.connect (() => next_stack () );
+            print ("Fin de set UI");
+        }
 
-            // Keyboard actions
-            this.window.key_press_event.connect ((e) => {
-                uint keycode = e.hardware_keycode;
-                print ("Key" + keycode.to_string());
-                    if (keycode == 65 || keycode == 114) {
-                        next_stack ();
-                    } else if (keycode == 113) {
-                        prev_stack ();
-                    } else if (keycode == 10) {
-                        set_wallpaper_by_number (1, this.stack.visible_child_name);
-                    } else if (keycode == 11) {
-                        set_wallpaper_by_number (2, this.stack.visible_child_name);
-                    } else if (keycode == 12) {
-                        set_wallpaper_by_number (3, this.stack.visible_child_name);
-                    } else if (keycode == 13) {
-                        set_wallpaper_by_number (4, this.stack.visible_child_name);
-                    } else if (keycode == 14) {
-                        set_wallpaper_by_number (5, this.stack.visible_child_name);
-                    } else if (keycode == 15) {
-                        set_wallpaper_by_number (6, this.stack.visible_child_name);
-                    } else if (keycode == 9) {
-                        this.window.close ();
-                    }
-                return true;
-            });
-
-            this.window.add (this.screen);
-            this.window.set_titlebar (this.headerbar);
-            this.application.add_window (window);
+        private bool make_connection () {
+            connection = new AppConnection ();
+            return connection.load_pages ();
         }
 
         protected void set_wallpaper_by_number (int num_card, string page) {
