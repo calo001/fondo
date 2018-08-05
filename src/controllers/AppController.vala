@@ -48,16 +48,17 @@ namespace App.Controllers {
             this.application = application;
             window = new Window (this.application);
 
-            // Stack
+            // Stack, constains 6 cards
             stack = new Gtk.Stack();
             stack.set_transition_duration (500);
             stack.homogeneous = false;
             stack.interpolate_size = true;
 
-            // Screen box
+            // Screen box, contains stack and link label to unsplash
             screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             screen.pack_start (this.stack);
 
+            // Checking if internet connection is enabled
             if (App.Utils.check_internet_connection ()) {
                 if (make_connection ()) {
                     set_ui ();
@@ -66,10 +67,18 @@ namespace App.Controllers {
                 set_error_ui ();
             }
 
-            // Keyboard actions
+            /* Setup keyboard actions
+             *
+             * Key code 65: Spacebar/Blanck
+             * Key code 113: Arrow key Left
+             * Key code 114: Arrow key Right
+             * Key code 9: Esc
+             *
+             */
             this.window.key_press_event.connect ((e) => {
                 uint keycode = e.hardware_keycode;
                 print ("Key" + keycode.to_string());
+
                     if (keycode == 65 || keycode == 114) {
                         next_stack ();
                     } else if (keycode == 113) {
@@ -84,6 +93,7 @@ namespace App.Controllers {
             application.add_window (window);
         }
 
+        // UI for no internet connectio
         private void set_error_ui () {
             // Header bar
             var header_simple = new Gtk.HeaderBar ();
@@ -119,6 +129,7 @@ namespace App.Controllers {
             stack.set_visible_child_name ("error_page");
         }
 
+        // Main UI
         private void set_ui () {
             // Headerbar setup
             headerbar = new App.Widgets.HeaderBar ();
@@ -177,6 +188,7 @@ namespace App.Controllers {
             }
         }
 
+        // Dectec key pressed
         protected bool match_keycode (int keyval, uint code) {
             Gdk.KeymapKey [] keys;
             Gdk.Keymap keymap = Gdk.Keymap.get_for_display (Gdk.Display.get_default ());
@@ -221,7 +233,6 @@ namespace App.Controllers {
 
         public void activate () {
             window.show_all ();
-            //app_view.activate ();
         }
 
         public void quit () {

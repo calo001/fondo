@@ -74,13 +74,6 @@ case $1 in
     initialize
     ./com.github.calo001.fondo "${@:2}"
     ;;
-"test")
-    test
-    ;;
-"test-run")
-    test
-    ./com.github.calo001.fondo "${@:2}"
-    ;;
 "uninstall")
     initialize
     sudo ninja uninstall
@@ -95,8 +88,6 @@ case $1 in
     echo "  install           Builds and installs application to the system (requires sudo)"
     echo "  install-deps      Installs missing build dependencies"
     echo "  run               Builds and runs the application"
-    echo "  test              Builds and runs testing for the application"
-    echo "  test-run          Builds application, runs testing and if successful application is started"
     echo "  uninstall         Removes the application from the system (requires sudo)"
     ;;
 esac

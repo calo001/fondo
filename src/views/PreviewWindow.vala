@@ -19,8 +19,16 @@
 using App.Structs;
 using App.Utils;
 using App.Connection;
+using Granite.Widgets;
 
 namespace App.Views {
+
+    /**
+     * The {@code PreviewWindow} class.
+     *
+     * @since 1.0.0
+     */
+
     public class PreviewWindow : Gtk.Window {
         private Granite.AsyncImage      image;
         private Wallpaper               wallpaper;
@@ -28,6 +36,7 @@ namespace App.Views {
         private Gtk.Stack               stack;
         private AppConnection           connection;
         private Photo                   photo;
+        private Toast                   toast;
         private int                     w_photo;
         private int                     h_photo;
 
@@ -67,8 +76,8 @@ namespace App.Views {
                 uint keycode = e.hardware_keycode;
                 print ("Key" + keycode.to_string());
                     if (keycode == 9) {
-                        close ();
-                    }
+                         close ();
+                     }
                 return true;
             });
 
@@ -84,7 +93,13 @@ namespace App.Views {
             box.pack_start(bar, true, true, 0);
 
             // Image
+            var box_img = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+            box_img.valign = Gtk.Align.START;
+            box_img.halign = Gtk.Align.CENTER;
+            toast = new Toast ("Press Esc to Exit");
             image = new Granite.AsyncImage ();
+            box_img.pack_start(toast, true, true, 0);
+            box_img.pack_end(image, true, true, 0);
 
             // Stack
             stack = new Gtk.Stack();
@@ -92,14 +107,13 @@ namespace App.Views {
             stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
 
             stack.add_named (box, "box");
-            stack.add_named (image, "image");
+            stack.add_named (box_img, "image");
             stack.set_visible_child_name ("box");
 
             this.add (stack);
         }
 
         public void load_content () {
-
 		    connection = new AppConnection();
             var url_photo = connection.get_url_photo(photo.links_download_location);
             wallpaper = new Wallpaper(url_photo, photo.id, photo.username, bar);
@@ -108,7 +122,6 @@ namespace App.Views {
 
             // Create File Object
             var file_photo = File.new_for_path (path_wallpaper);
-            //var file_photo = File.new_for_path ("/home/carlos/.local/share/backgrounds/AGe9S2Uj8Lg.jpeg");
 
             // Calc Screen Width & Heigth
             int w_screen;
@@ -123,6 +136,10 @@ namespace App.Views {
             // Show image
             image.set_from_file_async (file_photo, w_photo, h_photo, true);
             stack.set_visible_child_name ("image");
+
+            // Show Toast
+            toast.send_notification ();
+            toast.margin = 0;
         }
 
         private void scale (int w_h_photo, int w_h_screen) {

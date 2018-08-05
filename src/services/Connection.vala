@@ -26,10 +26,13 @@ namespace App.Connection {
      *
      * @since 1.0.0
      */
+
     public class AppConnection {
 
+        // List that contains the image thumbs for CardPhotoView
         private static List<Photo?> list_thumbs = new List<Photo?> ();
 
+        // Unsplash API location
         private const string URI_UNSPLASH = Constants.API_UNSPLASH +
                          "photos/random/?client_id=" +
                          Constants.ACCESS_KEY_UNSPLASH +
@@ -37,6 +40,7 @@ namespace App.Connection {
 
         public AppConnection() {}
 
+        // Make a GET Request to API
         public Soup.Message api_connection(string uri) {
             var session = new Soup.Session ();
             var message = new Soup.Message ("GET", uri);
@@ -57,7 +61,7 @@ namespace App.Connection {
             return message;
         }
 
-
+        // Parse data from API
         public bool load_pages () {
             Soup.Message message = api_connection(URI_UNSPLASH);
 
@@ -72,6 +76,7 @@ namespace App.Connection {
             return true;
         }
 
+        // Create all structure Photo
         private void get_data (Json.Parser parser) {
             var node = parser.get_root ();
             unowned Json.Array array = node.get_array ();
@@ -96,6 +101,7 @@ namespace App.Connection {
 	            }
         }
 
+        // Get an image from: links_download_location
         public string get_url_photo (string links_download_location) {
             string uri = links_download_location + "/?client_id=" + Constants.ACCESS_KEY_UNSPLASH;
             Soup.Message message = api_connection(uri);
@@ -112,6 +118,12 @@ namespace App.Connection {
             return url;
         }
 
+        /* Get one page of thumbs
+         *
+         * Start: Firts image in a page
+         * End: Last image in  a page
+         *
+         */
         public List<Photo?> get_thumbs_page (int start, int end) {
             var page = new List<Photo?> ();
             for (int i = start; i < end; i++) {

@@ -31,14 +31,11 @@ namespace App.Configs {
         public abstract const string PROGRAME_NAME = "Fondo";
         public abstract const string APP_YEARS = "2018";
         public abstract const string APP_ICON = "com.github.calo001.fondo";
-        public abstract const string ABOUT_COMMENTS = "";
+        public abstract const string ABOUT_COMMENTS = "Unsplash wallpaper App for elementary OS";
         public abstract const string TRANSLATOR_CREDITS = "Translators";
-        public abstract const string MAIN_URL = "{{ website-url }}";
-        public abstract const string BUG_URL = "{{ repo-url }}/issues";
-        public abstract const string HELP_URL = "{{ repo-url }}/wiki";
-        public abstract const string TRANSLATE_URL = "{{ repo-url }}";
-        public abstract const string TEXT_FOR_ABOUT_DIALOG_WEBSITE = "Website";
-        public abstract const string TEXT_FOR_ABOUT_DIALOG_WEBSITE_URL = "{{ website-url }}";
+        public abstract const string MAIN_URL = "https://github.com/calo001/fondo";
+        public abstract const string BUG_URL = "https://github.com/calo001/issues";
+        public abstract const string HELP_URL = "https://github.com/calo001/wiki";
         public abstract const string URL_CSS = "/com/github/calo001/fondo/css/style.css";
         public abstract const string [] ABOUT_AUTHORS = { "Calo001 <calo_lrc@hotmail.com>" };
         public abstract const string IMAGE ="https://images.unsplash.com/photo-1502913625325-725506829ddc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjMwODIyfQ&s=9b9f1c49ad1e443388cc3daf691b976d";

@@ -29,12 +29,12 @@ namespace App.Views {
      */
     public class AppView : Gtk.Grid {
 
-        public CardPhotoView    card_1 {get; set;}
-        public CardPhotoView    card_2 {get; set;}
-        public CardPhotoView    card_3 {get; set;}
-        public CardPhotoView    card_4 {get; set;}
-        public CardPhotoView    card_5 {get; set;}
-        public CardPhotoView    card_6 {get; set;}
+        public CardPhotoView    card_1;
+        public CardPhotoView    card_2;
+        public CardPhotoView    card_3;
+        public CardPhotoView    card_4;
+        public CardPhotoView    card_5;
+        public CardPhotoView    card_6;
         /**
          * Constructs a new {@code AppView} object.
          */

@@ -17,6 +17,12 @@
 */
 
 namespace App.Utils {
+    /**
+     * The {@code check_internet_connection} method.
+     *
+     * @since 1.0.0
+     */
+
     bool check_internet_connection () {
         var host = "www.google.com";
 

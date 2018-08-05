@@ -23,6 +23,12 @@ using App.Utils;
 
 namespace App.Views {
 
+    /**
+     * The {@code CardPhotoView} class.
+     *
+     * @since 1.0.0
+     */
+
     public class CardPhotoView : Gtk.Grid {
 
         private File                    file_photo;
@@ -54,7 +60,7 @@ namespace App.Views {
             image.set_tooltip_text (txt_tooltip);
 
             eventbox_photo = new Gtk.EventBox();
-            eventbox_photo.button_press_event.connect (() => {
+            eventbox_photo.button_release_event.connect (() => {
                 set_as_wallpaper ();
                 return true;
             });

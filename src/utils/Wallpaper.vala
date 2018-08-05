@@ -17,19 +17,28 @@
 */
 
 using Gtk;
-using Unity;
 using App.Configs;
+using Unity;
 
 namespace App.Utils {
 
+    /**
+     * The {@code Wallpaper} class.
+     *
+     * @since 1.0.0
+     */
+
     class Wallpaper {
 
-        private string              uri_endpoint;   // URI http of picture in unsplash
+        private string              uri_endpoint;                   // URI http of picture in unsplash
         public  string              full_picture_path {get; set;}   // Path for wallpaper picture
-        private ProgressBar         bar;            // Downloading Progress
-        private string              img_file_name;  // Based on id_photo & username
+        private ProgressBar         bar;                            // Downloading Progress
+        private string              img_file_name;                  // Based on id_photo & username
+
         // Base path for wallpaper picture
         private string BASE_DIR = Path.build_filename (Environment.get_user_data_dir (), "backgrounds") + "/";
+
+        // Progress bar in plank
         private LauncherEntry launcher;
 
         public Wallpaper (string uri_endpoint, string id_photo, string username, ProgressBar bar) {
@@ -37,6 +46,7 @@ namespace App.Utils {
             this.bar = bar;
             this.img_file_name = username + "_" + id_photo + ".jpeg";
             this.full_picture_path = BASE_DIR + img_file_name;
+            this.launcher = LauncherEntry.get_for_desktop_id (Constants.ID + ".desktop");
         }
 
         // Update picture
@@ -70,29 +80,31 @@ namespace App.Utils {
 
             var file_path = File.new_for_path (full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
+            var progress = 0.0;
 
-                if (!file_path.query_exists ()) {
-                    this.launcher = LauncherEntry.get_for_desktop_id (Constants.ID);
-                    file_from_uri.copy_async.begin (file_path, FileCopyFlags.NONE, GLib.Priority.DEFAULT, null, (current_num_bytes, total_num_bytes) => {
-		            // Report copy-status:
-		                total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
-		                print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
-			            show_progress ((double) current_num_bytes / total_num_bytes);
-	                }, (obj, res) => {
-		                try {
-			                bool tmp = file_from_uri.copy_async.end (res);
-			                print ("Result: %s\n", tmp.to_string ());
-			                this.launcher.progress_visible = false;
-		                } catch (Error e) {
-			                show_message ("Error", e.message, "dialog-error");
-		                }
+            if (!file_path.query_exists ()) {
+                launcher.progress_visible = true;
+                file_from_uri.copy_async.begin (file_path, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null, (current_num_bytes, total_num_bytes) => {
+		        // Report copy-status:
+                    progress = (double) current_num_bytes / total_num_bytes;
+		            total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
+		            print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
+			        show_progress (progress);
+	            }, (obj, res) => {
+		            try {
+			            bool tmp = file_from_uri.copy_async.end (res);
+			            print ("Result: %s\n", tmp.to_string ());
+			            launcher.progress_visible = false;
+		            } catch (Error e) {
+			            show_message ("Error", e.message, "dialog-error");
+		            }
 		                loop.quit ();
 	                });
-			    } else {
-					print ("Picture %s already exist\n", img_file_name);
-					bar.set_fraction (1.0);
-					return true;
-                }
+			} else {
+				print ("Picture %s already exist\n", img_file_name);
+				bar.set_fraction (1.0);
+				return true;
+            }
 
             loop.run ();
             return true;
@@ -113,8 +125,7 @@ namespace App.Utils {
         // Show progress in download
         private void show_progress (double progress) {
             bar.set_fraction (progress);
-			this.launcher.progress_visible = true;
-            this.launcher.progress = progress;
+            launcher.progress = progress;
         }
 
         // Show desktop notification
@@ -168,6 +179,7 @@ namespace App.Utils {
 	        });
         }
 
+        // Dialog that show error messages
         private void show_message (string txt_primary, string txt_secondary, string icon) {
             var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 txt_primary,

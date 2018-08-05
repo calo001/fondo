@@ -17,8 +17,6 @@ sources += files(
     'widgets/ModeSwitch.vala',
     'services/Connection.vala',
 
-    'interfaces/WindowEvents.vala',
-
     'Application.vala',
     'Main.vala',
     'Window.vala'
