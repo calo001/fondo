@@ -28,10 +28,6 @@
     background: none;
 }
 
-.h1 {
-    color: white;
-}
-
 .autor {
     border: none;
     background: none;
@@ -42,11 +38,6 @@
     background: none;
 }
 
-.button-network {
-    color: white;
-    background: @colorAccent;
-}
-
 .button-green:hover {
     background-color: @colorAccent;
     color: #FFFFFF;
@@ -55,11 +46,6 @@
 .transition {
     transition: 500ms;
     transition-timing-function: ease;
-}
-
-.fondo-header {
-    color: black;
-
 }
 
 .fondo-header.dark {

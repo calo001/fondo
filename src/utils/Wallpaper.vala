@@ -131,7 +131,7 @@ namespace App.Utils {
         // Show desktop notification
         public void show_notify () {
             var notification = new Notification (_("Wallpaper ready!"));
-            notification.set_body (_("Your wallpaper is ready!"));
+            notification.set_body (_("Your new awesome wallpaper is ready!"));
             notification.add_button ("click", "action");
             GLib.Application.get_default ().send_notification ("notify.app", notification);
         }

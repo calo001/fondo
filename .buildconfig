@@ -1,0 +1,9 @@
+[default]
+name=Default
+runtime=host
+config-opts=
+run-opts=
+prefix=/home/carlos/.cache/gnome-builder/install/widgets/host
+app-id=
+postbuild=
+prebuild=

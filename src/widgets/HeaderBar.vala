@@ -45,7 +45,7 @@ namespace App.Widgets {
 
             this.randomize_button = new Gtk.Button.from_icon_name ("document-new-symbolic");
             this.randomize_button.margin_end = 12;
-            this.randomize_button.tooltip_text = _("Load more photos");
+            this.randomize_button.tooltip_text = _("✨  See more");
 
             var gtk_settings = Gtk.Settings.get_default ();
 
@@ -55,8 +55,8 @@ namespace App.Widgets {
             );
 
             mode_switch.margin_end = 6;
-            mode_switch.primary_icon_tooltip_text = _("Light background");
-            mode_switch.secondary_icon_tooltip_text = _("Dark background");
+            mode_switch.primary_icon_tooltip_text = _("🌞  Light background");
+            mode_switch.secondary_icon_tooltip_text = _("🌛  Dark background");
             mode_switch.valign = Gtk.Align.CENTER;
             mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
 

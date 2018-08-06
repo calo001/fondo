@@ -156,11 +156,13 @@ namespace App.Controllers {
             var unsplash_link = "https://unsplash.com/?utm_source=Foto&utm_medium=referral";
             var unsplash_text = "Photos from Unsplash";
             var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
-            link_unsplash.margin_bottom = 10;
-            link_unsplash.get_style_context ().add_class ("link");
-            link_unsplash.get_style_context ().remove_class ("button");
+            link_unsplash.margin_bottom = 20;
+            link_unsplash.margin_top = 5;
+            link_unsplash.halign = Gtk.Align.CENTER;
             link_unsplash.get_style_context ().remove_class ("flat");
-            link_unsplash.get_style_context ().add_class ("h4");
+            link_unsplash.get_style_context ().remove_class ("link");
+            link_unsplash.get_style_context ().add_class ("suggested-action");
+
             link_unsplash.has_tooltip = false;
 
             // Screen box
