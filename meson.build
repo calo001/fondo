@@ -51,6 +51,4 @@ e = executable('com.github.calo001.fondo',
     install : true
 )
 
-#test('tests', e, args : ['--run-tests'])
-
 meson.add_install_script('meson/post_install.py')

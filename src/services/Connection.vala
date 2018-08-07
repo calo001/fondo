@@ -84,8 +84,8 @@ namespace App.Connection {
                 var object = item.get_object();
                 var photo_info = Photo() {
                     id =                        object.get_string_member ("id"),
-                    width =                     object.get_int_member ("width"),
-                    height =                    object.get_int_member ("height"),
+                    width =                     object.get_int_member    ("width"),
+                    height =                    object.get_int_member    ("height"),
                     urls_thumb =                object.get_object_member ("urls")
                                                       .get_string_member ("small"),
                     links_download_location =   object.get_object_member ("links")

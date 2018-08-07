@@ -104,9 +104,9 @@ namespace App.Controllers {
             // Configuring UI
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
             var image = new Gtk.Image.from_icon_name  ("network-error", Gtk.IconSize.DIALOG);
-		    var label_title = new Gtk.Label ("Network Error");
-		    var label_description = new Gtk.Label ("Check the network connection.");
-            var button_check_network = new Gtk.Button.with_label ("Exit");
+		    var label_title = new Gtk.Label (_("Network Error"));
+		    var label_description = new Gtk.Label (_("Check the network connection."));
+            var button_check_network = new Gtk.Button.with_label (_("Exit"));
 
 		    label_title.get_style_context ().add_class ("h2");
 		    label_description.get_style_context ().add_class ("h3");
@@ -154,7 +154,7 @@ namespace App.Controllers {
 
             //Create label unsplash
             var unsplash_link = "https://unsplash.com/?utm_source=Foto&utm_medium=referral";
-            var unsplash_text = "Photos from Unsplash";
+            var unsplash_text = "_(Photos from Unsplash)";
             var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
             link_unsplash.margin_bottom = 20;
             link_unsplash.margin_top = 5;

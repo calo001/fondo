@@ -54,9 +54,9 @@ namespace App.Views {
             // Create AsyncImage object
             image = new Granite.AsyncImage(true, true);
             image.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
-            image.set_from_file_async(file_photo, 280, 180, false); // Width, Heigth
+            image.set_from_file_async.begin(file_photo, 280, 180, false); // Width, Heigth
             image.has_tooltip = true;
-            var txt_tooltip = photo.location == null ? "🌎  An amazing place, In the world" : "🌎  " + photo.location;
+            var txt_tooltip = photo.location == null ? _("🌎  An amazing place, In the world") : "🌎  " + photo.location;
             image.set_tooltip_text (txt_tooltip);
 
             eventbox_photo = new Gtk.EventBox();
@@ -83,13 +83,14 @@ namespace App.Views {
 
             // Create labelAutor
             var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
-            label_autor = new Gtk.LinkButton.with_label(link, "   " + photo.name);
+            label_autor = new Gtk.LinkButton.with_label(link, " " + photo.name);
             label_autor.get_style_context ().remove_class ("button");
             label_autor.get_style_context ().remove_class ("flat");
-            label_autor.get_style_context ().add_class ("h4");
+            label_autor.get_style_context ().remove_class ("link");
+            label_autor.get_style_context ().add_class ("h3");
             label_autor.get_style_context ().add_class ("autor");
+            label_autor.get_style_context ().add_class ("flat");
             label_autor.halign = Gtk.Align.START;
-            label_autor.xalign = 0f;
             label_autor.margin_start = 8;
             label_autor.has_tooltip = false;
             label_autor.always_show_image = true;
@@ -103,9 +104,8 @@ namespace App.Views {
 
             // ProgressBar
             bar = new Gtk.ProgressBar ();
-            bar.get_style_context ().remove_class ("trough");
-            bar.get_style_context ().add_class ("revealer");
             bar.margin_top = 10;
+
             // Reveal
             revealer = new Gtk.Revealer ();
             revealer.add (bar);
@@ -118,7 +118,6 @@ namespace App.Views {
         }
 
         public void set_as_wallpaper () {
-            print ("Intento poner wallpaper");
             this.revealer.set_reveal_child (true);
             this.connection = new AppConnection();
             string url_photo = connection.get_url_photo(photo.links_download_location);

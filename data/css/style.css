@@ -18,9 +18,15 @@
 
 @define-color colorAccent #68b723;
 
-.revealer {
-    background-color: #abacae;
-    border: none;
+progressbar progress {
+	background: linear-gradient(to right, #11998e, #38ef7d);;
+	border: none;
+}
+
+progressbar trough {
+	background: #abacae;
+	border: none;
+	opacity: 0.3;
 }
 
 .link {

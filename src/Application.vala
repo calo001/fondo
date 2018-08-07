@@ -47,7 +47,8 @@ namespace App {
             });
 
             add_action (quit_action);
-            add_accelerator ("Escape", "app.quit", null);
+            set_accels_for_action ("app.quit", {"Escape"});
+
             settings = new GLib.Settings (Constants.ID);
         }
 

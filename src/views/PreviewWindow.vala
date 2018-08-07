@@ -81,7 +81,7 @@ namespace App.Views {
                 return true;
             });
 
-            var label = new Gtk.Label("Loading ...");
+            var label = new Gtk.Label(_("Loading ..."));
             label.get_style_context ().add_class ("h1");
             bar = new Gtk.ProgressBar ();
 
@@ -134,7 +134,7 @@ namespace App.Views {
                 }
             }
             // Show image
-            image.set_from_file_async (file_photo, w_photo, h_photo, true);
+            image.set_from_file_async.begin (file_photo, w_photo, h_photo, true);
             stack.set_visible_child_name ("image");
 
             // Show Toast

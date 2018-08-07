@@ -43,8 +43,8 @@ namespace App.Views {
             // Add orientation to Grid and margins
             this.orientation = Gtk.Orientation.VERTICAL;
             this.margin_top = 10;
-            this.margin_left = 15;
-            this.margin_right = 15;
+            this.margin_start = 15;
+            this.margin_end = 15;
             this.column_spacing = 20;
             this.row_spacing = 15;
 
