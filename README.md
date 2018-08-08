@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 <div align="center">
-  <span align="center"> <img width="80" height="70" class="center" src="{{ repo-url }}/blob/master/data/images/com.github.calo001.fondo.png" alt="Icon"></span>
+  <span align="center"> <img width="80" height="70" class="center" src="https://github.com/calo001/fondo/blob/master/data/images/com.github.calo001.fondo.png" alt="Icon"></span>
   <h1 align="center">Fondo</h1>
   <h3 align="center"></h3>
 </div>
@@ -14,17 +14,17 @@
 </p>
 
 <p align="center">
-  <a href="{{ repo-url }}/blob/master/LICENSE">
+  <a href="https://github.com/calo001/fondo/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-AGPL-3.0-blue.svg">
   </a>
-  <a href="{{ repo-url }}/releases">
+  <a href="https://github.com/calo001/fondo/releases">
     <img src="https://img.shields.io/badge/Release-v%201.0.0-orange.svg">
   </a>
 </p>
 
 <p align="center">
-    <img  src="{{ repo-url }}/blob/master/data/images/screenshot.png" alt="Screenshot"> <br>
-  <a href="{{ repo-url }}/issues/new"> Report a problem! </a>
+    <img  src="https://github.com/calo001/fondo/blob/master/data/images/screenshot_1.png" alt="Screenshot"> <br>
+  <a href="https://github.com/calo001/fondo/issues/new"> Report a problem! </a>
 </p>
 
 ## Installation
@@ -70,22 +70,8 @@ Options:
   install           Builds and installs application to the system (requires sudo)
   install-deps      Installs missing build dependencies
   run               Builds and runs the application
-  test              Builds and runs testing for the application
-  test-run          Builds application, runs testing and if successful application is started
   uninstall         Removes the application from the system (requires sudo)
 ```
-
-### Contributing
-
-To help, access the links below:
-
-- [Guide on Code Style]({{ repo-url }}/wiki/Guide-on-code-style)
-
-- [Proposing Design Changes]({{ repo-url }}/wiki/Proposing-Design-Changes)
-
-- [Reporting Bugs]({{ repo-url }}/wiki/Reporting-Bugs)
-
-- [Translate]({{ repo-url }}/wiki/Translate)
 
 
 ### License
