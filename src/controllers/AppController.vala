@@ -154,7 +154,7 @@ namespace App.Controllers {
 
             //Create label unsplash
             var unsplash_link = "https://unsplash.com/?utm_source=Foto&utm_medium=referral";
-            var unsplash_text = "_(Photos from Unsplash)";
+            var unsplash_text = _("Photos from Unsplash");
             var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
             link_unsplash.margin_bottom = 20;
             link_unsplash.margin_top = 5;
