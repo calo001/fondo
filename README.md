@@ -33,12 +33,12 @@
 These dependencies must be present before building:
  - `meson`
  - `valac`
- - `debhelper`
- - `libappindicator3-dev`
  - `libgranite-dev`
  - `libgtk-3-dev`
  - `libjson-glib-dev`
  - `libsoup2.4-dev`
+ - `libunity-dev`
+ - `glib-2.0`
 
 
 Use the App script to simplify installation by running `./app install-deps`
