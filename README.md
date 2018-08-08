@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 <div align="center">
-  <span align="center"> <img width="80" height="70" class="center" src="https://github.com/calo001/fondo/blob/master/data/images/com.github.calo001.fondo.png" alt="Icon"></span>
+  <span align="center"> <img width="80" height="70" class="center" src="https://raw.githubusercontent.com/calo001/fondo/develop/data/images/com.github.calo001.fondo.png" alt="Icon"></span>
   <h1 align="center">Fondo</h1>
   <h3 align="center"></h3>
 </div>
@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-    <img  src="https://github.com/calo001/fondo/blob/master/data/images/screenshot_1.png" alt="Screenshot"> <br>
+    <img  src="https://raw.githubusercontent.com/calo001/fondo/develop/data/images/screenshot_1.png" alt="Screenshot"> <br>
   <a href="https://github.com/calo001/fondo/issues/new"> Report a problem! </a>
 </p>
 
