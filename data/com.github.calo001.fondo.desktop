@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Fondo
-Comment=
+Comment=Find the most beautiful wallpapers for your desktop.
 Icon=com.github.calo001.fondo
 Exec=com.github.calo001.fondo
 Terminal=false

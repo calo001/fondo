@@ -5,18 +5,27 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>AGPL-3.0</project_license>
     <name>Fondo</name>
-    <summary></summary>
+    <summary>Find the most beautiful wallpapers for your desktop.</summary>
     <developer_name>Calo001</developer_name>
     <provides>
         <binary>com.github.calo001.fondo</binary>
     </provides>
     <screenshots>
         <screenshot type="default">
-            <image>{{ screenshot-url }}</image>
+            <image>https://raw.githubusercontent.com/calo001/fondo/develop/data/images/screenshot_1.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/calo001/fondo/develop/data/images/screenshot_2.png</image>
         </screenshot>
     </screenshots>
     <description>
-        <p></p>
+        <p>Find a variety of the most beautiful wallpapers. The application shows five pages of six amazing photographs that with a click you can use as wallpaper.</p>
+        <ul>
+l         <li>Use Arrow Key Right to move next page.</li>
+          <li>Use Arrow Key Left to move previus page.</li>
+          <li>Use Spacebar to move next page.</li>
+          <li>Use ESC to exit.</li>
+        </ul>
     </description>  
     <releases>
       <release version="1.0.0" date="2018-06-04">
@@ -54,13 +63,13 @@
       <content_attribute id="money-purchasing">none</content_attribute>
       <content_attribute id="money-gambling">none</content_attribute>
     </content_rating> 
-    <url type="homepage">{{ website-url }}</url>
-    <url type="bugtracker">{{ repo-url }}/issues</url>
-    <url type="help">{{ repo-url }}/issues</url>
+    <url type="homepage">https://github.com/calo001/fondo</url>
+    <url type="bugtracker">https://github.com/calo001/fondo/issues</url>
+    <url type="help">https://github.com/calo001/fondo/issues</url>
     <update_contact>calo_lrc@hotmail.com</update_contact>
     <custom>
-        <value key="x-appcenter-color-primary">#273445</value>
-        <value key="x-appcenter-color-primary-text">#FFFFFF</value>
+        <value key="x-appcenter-color-primary">#d1ff82</value>
+        <value key="x-appcenter-color-primary-text">#000000</value>
         <value key="x-appcenter-suggested-price">0</value>
     </custom>
 </component>
