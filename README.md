@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
   <span align="center"> <img width="80" height="80" class="center" src="https://raw.githubusercontent.com/calo001/fondo/develop/data/images/com.github.calo001.fondo.png" alt="Icon"></span>
   <h1 align="center">Fondo</h1>
@@ -11,15 +10,6 @@
     <a href="https://appcenter.elementary.io/com.github.calo001.fondo">
         <img src="https://appcenter.elementary.io/badge.svg">
     </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/calo001/fondo/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/License-AGPL-3.0-blue.svg">
-  </a>
-  <a href="https://github.com/calo001/fondo/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.0.0-orange.svg">
-  </a>
 </p>
 
 <p align="center">
@@ -76,7 +66,3 @@ Options:
 ### License
 
 This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE.md) file for details.
-=======
-# fondo
-Unsplash wallpaper App for elementary OS
->>>>>>> fb18c57e20b3f621ef26c2a2b1e8c9b6c28c7d02
