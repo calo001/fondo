@@ -46,8 +46,8 @@ msgid "Your new wallpaper is ready!"
 msgstr "¡Tu nuevo fondo de pantalla está listo!"
 
 #: src/views/CardPhotoView.vala:59
-msgid "🌎  An amazing place, In the world"
-msgstr "🌎  Un lugar asombroso, en el mundo"
+msgid "🌎  An amazing place in the world"
+msgstr "🌎  Un lugar asombroso en el mundo"
 
 #: src/views/PreviewWindow.vala:84
 msgid "Loading ..."

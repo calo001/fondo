@@ -56,7 +56,7 @@ namespace App.Views {
             image.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
             image.set_from_file_async.begin(file_photo, 280, 180, false); // Width, Heigth
             image.has_tooltip = true;
-            var txt_tooltip = photo.location == null ? _("🌎  An amazing place, In the world") : "🌎  " + photo.location;
+            var txt_tooltip = photo.location == null ? _("🌎  An amazing place in the world") : "🌎  " + photo.location;
             image.set_tooltip_text (txt_tooltip);
 
             eventbox_photo = new Gtk.EventBox();
