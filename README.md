@@ -61,7 +61,10 @@ Options:
   run               Builds and runs the application
   uninstall         Removes the application from the system (requires sudo)
 ```
-
+### Special thanks
+[KJ Lawrence](https://github.com/kjlaw89) for making easier the development of apps for elementary OS with [Archetype](https://appcenter.elementary.io/com.github.kjlaw89.archetype/)
+[Cassidy James Blaede](https://github.com/cassidyjames) for his apps to use as code examples
+[Daniel Foré](https://github.com/danrabbit) for his help in the google + community
 
 ### License
 
