@@ -12,6 +12,9 @@
     </a>
 </p>
 
+#### Soon available in AppCenter
+#### Actually waiting for response to API KEY update in Unsplash
+
 <p align="center">
     <img  src="https://raw.githubusercontent.com/calo001/fondo/develop/data/images/screenshot_1.png" alt="Screenshot"> <br>
   <a href="https://github.com/calo001/fondo/issues/new"> Report a problem! </a>
