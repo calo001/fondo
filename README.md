@@ -35,7 +35,7 @@ Use the App script to simplify installation by running `./app install-deps`
  ### Building
 
 ```
-git clone {{ repo-url }}.git com.github.calo001.fondo && cd com.github.calo001.fondo
+git clone https://github.com/calo001/fondo.git && cd com.github.calo001.fondo
 ./app install-deps && ./app install
 ```
 
