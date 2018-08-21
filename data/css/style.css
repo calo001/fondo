@@ -40,6 +40,11 @@ progressbar trough {
     background: none;
 }
 
+.photo {
+    border-radius: 2px;
+    border: 2px solid rgba(0,0,0,0.2);
+}
+
 .autor:hover {
     color: @colorAccent;
 }

@@ -54,9 +54,9 @@ namespace App.Views {
             
             // Create AsyncImage object
             image = new Granite.AsyncImage(true, true);
-            //image.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
             image.set_from_file_async.begin(file_photo, 280, 180, false); // Width, Heigth
             image.has_tooltip = true;
+            image.get_style_context ().add_class ("photo");            
             var txt_tooltip = photo.location == null ? _("🌎  An amazing place in the world") : "🌎  " + photo.location;
             image.set_tooltip_text (txt_tooltip);
 
@@ -95,7 +95,6 @@ namespace App.Views {
 
             overlay.width_request = 280;
             overlay.height_request = 180;
-            overlay.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
 
             // Create labelAutor
             var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
