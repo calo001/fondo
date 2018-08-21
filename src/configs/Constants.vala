@@ -27,7 +27,7 @@ namespace App.Configs {
     public class Constants {
     
         public abstract const string ID = "com.github.calo001.fondo";
-        public abstract const string VERSION = "1.0.0";
+        public abstract const string VERSION = "1.0.1";
         public abstract const string PROGRAME_NAME = "Fondo";
         public abstract const string APP_YEARS = "2018";
         public abstract const string APP_ICON = "com.github.calo001.fondo";
