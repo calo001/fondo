@@ -40,6 +40,7 @@ namespace App.Views {
         private AppConnection           connection;
         private Gtk.ProgressBar         bar;
         private Gtk.Revealer            revealer;
+        private Gtk.Overlay             overlay;
         private Photo                   photo;
         
         // Construct
@@ -53,7 +54,7 @@ namespace App.Views {
             
             // Create AsyncImage object
             image = new Granite.AsyncImage(true, true);
-            image.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
+            //image.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
             image.set_from_file_async.begin(file_photo, 280, 180, false); // Width, Heigth
             image.has_tooltip = true;
             var txt_tooltip = photo.location == null ? _("🌎  An amazing place in the world") : "🌎  " + photo.location;
@@ -67,11 +68,14 @@ namespace App.Views {
             });
             eventbox_photo.add(image);
 
-            // Create Button
+            // Create Button full screen
             btn_view = new Gtk.Button.from_icon_name ("window-maximize-symbolic");
             btn_view.get_style_context ().add_class ("button-green");
+            btn_view.get_style_context ().remove_class ("button");
             btn_view.get_style_context ().add_class ("transition");
-            btn_view.halign = Gtk.Align.CENTER;
+            btn_view.margin = 7;
+            btn_view.halign = Gtk.Align.END;
+            btn_view.valign = Gtk.Align.START;
 
             btn_view.clicked.connect (() => {
                 this.set_sensitive (false);
@@ -83,24 +87,30 @@ namespace App.Views {
                 prev_win.load_content();
 		    });
 
+            // setup overlay
+            overlay = new Gtk.Overlay();
+            overlay.add_overlay (eventbox_photo);
+            overlay.add_overlay (btn_view);
+            overlay.width_request = 280;
+            overlay.height_request = 180;
+            overlay.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
+
             // Create labelAutor
             var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
-            label_autor = new Gtk.LinkButton.with_label(link, " " + photo.name);
+            label_autor = new Gtk.LinkButton.with_label(link, _("By ") + photo.name);
             label_autor.get_style_context ().remove_class ("button");
-            label_autor.get_style_context ().remove_class ("flat");
             label_autor.get_style_context ().remove_class ("link");
-            label_autor.get_style_context ().add_class ("h3");
+            label_autor.get_style_context ().add_class ("transition");
             label_autor.get_style_context ().add_class ("autor");
-            label_autor.get_style_context ().add_class ("flat");
+            label_autor.get_style_context ().remove_class ("flat");
             label_autor.halign = Gtk.Align.CENTER;
-            label_autor.margin_start = 28;
             label_autor.has_tooltip = false;
 
             // Create Horizontal Grid
             var grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
             grid_actions.margin_top = 5;
             grid_actions.pack_start(label_autor, true, true, 0);
-            grid_actions.pack_end(btn_view, false, false, 0);
+            //grid_actions.pack_end(btn_view, false, false, 0);
 
             // ProgressBar
             bar = new Gtk.ProgressBar ();
@@ -111,7 +121,8 @@ namespace App.Views {
             revealer.add (bar);
 
             // Add view to custom Grid
-            this.add(eventbox_photo);
+            //this.add(eventbox_photo);
+            this.add(overlay);            
             this.add(revealer);
             this.add(grid_actions);
 

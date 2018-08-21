@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-09 22:07-0500\n"
+"POT-Creation-Date: 2018-08-21 15:23-0500\n"
 "PO-Revision-Date: 2018-08-09 22:07-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -26,29 +26,36 @@ msgid "Photos from Unsplash"
 msgstr "Fotos de Unsplash"
 
 #: src/widgets/HeaderBar.vala:48
-msgid "✨  See more"
-msgstr "✨  Ver mas"
+#, fuzzy
+msgid "See more"
+msgstr "Ver más"
 
 #: src/widgets/HeaderBar.vala:58
-msgid "🌞  Light background"
-msgstr "🌞  Fondo claro"
+#, fuzzy
+msgid "Light background"
+msgstr "Fondo claro"
 
 #: src/widgets/HeaderBar.vala:59
-msgid "🌛  Dark background"
-msgstr "🌛  Fondo oscuro"
+#, fuzzy
+msgid "Dark background"
+msgstr "Fondo oscuro"
 
-#: src/utils/Wallpaper.vala:133
+#: src/utils/Wallpaper.vala:138
 msgid "Wallpaper ready!"
 msgstr "¡Fondo de pantalla listo!"
 
-#: src/utils/Wallpaper.vala:134
+#: src/utils/Wallpaper.vala:139
 msgid "Your new wallpaper is ready!"
 msgstr "¡Tu nuevo fondo de pantalla está listo!"
 
-#: src/views/CardPhotoView.vala:59
+#: src/views/CardPhotoView.vala:60
 msgid "🌎  An amazing place in the world"
 msgstr "🌎  Un lugar asombroso en el mundo"
 
-#: src/views/PreviewWindow.vala:84
+#: src/views/CardPhotoView.vala:100
+msgid "By "
+msgstr "Por "
+
+#: src/views/PreviewWindow.vala:89
 msgid "Loading ..."
 msgstr "Cargando ..."

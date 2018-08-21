@@ -38,22 +38,28 @@ progressbar trough {
     font-size: 10px;
     border: none;
     background: none;
-    text-decoration: none;
+}
+
+.autor:hover {
+    color: @colorAccent;
 }
 
 .button-green {
-    border-radius: 50%;
+    color: #FFFFFF;
     border: none;
-    background: none;
+	border-radius: 50%;
+	padding: 5px;
+    background-color: rgba(0,0,0,0.1);
 }
 
 .button-green:hover {
     background-color: @colorAccent;
     color: #FFFFFF;
+    border: none;
 }
 
 .transition {
-    transition: 500ms;
+    transition: 200ms;
     transition-timing-function: ease;
 }
 
