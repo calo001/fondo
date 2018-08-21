@@ -89,10 +89,8 @@ namespace App.Views {
 
             // setup overlay
             overlay = new Gtk.Overlay();
-            
-            overlay.add (eventbox_photo);
-            overlay.add_overlay (btn_view);            
-
+            overlay.add_overlay (eventbox_photo);
+            overlay.add_overlay (btn_view);
             overlay.width_request = 280;
             overlay.height_request = 180;
             overlay.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
