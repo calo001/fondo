@@ -111,6 +111,7 @@ namespace App.Views {
             var grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
             grid_actions.margin_top = 5;
             grid_actions.pack_start(label_autor, true, true, 0);
+            //grid_actions.pack_end(btn_view, false, false, 0);
 
             // ProgressBar
             bar = new Gtk.ProgressBar ();
@@ -121,6 +122,7 @@ namespace App.Views {
             revealer.add (bar);
 
             // Add view to custom Grid
+            //this.add(eventbox_photo);
             this.add(overlay);            
             this.add(revealer);
             this.add(grid_actions);

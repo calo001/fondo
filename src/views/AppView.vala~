@@ -46,7 +46,7 @@ namespace App.Views {
             this.margin_start = 15;
             this.margin_end = 15;
             this.column_spacing = 20;
-            this.row_spacing = 10;
+            this.row_spacing = 15;
 
             // Create CustomCard (be ware with margins)
             var card_1 = new CardPhotoView (photos.nth_data(0));
