@@ -28,7 +28,7 @@ namespace App.Utils {
      * @since 1.0.0
      */
 
-    class Wallpaper {
+    public class Wallpaper {
 
         private string              uri_endpoint;                   // URI http of picture in unsplash
         public  string              full_picture_path {get; set;}   // Path for wallpaper picture
@@ -48,6 +48,9 @@ namespace App.Utils {
             this.full_picture_path = BASE_DIR + img_file_name;
             this.launcher = LauncherEntry.get_for_desktop_id (Constants.ID + ".desktop");
         }
+
+        // Signal to inform that download is finished
+        public signal void finish_download ();
 
         // Update picture
         public void update_wallpaper () {
@@ -95,6 +98,7 @@ namespace App.Utils {
 			            bool tmp = file_from_uri.copy_async.end (res);
 			            print ("Result: %s\n", tmp.to_string ());
 			            launcher.progress_visible = false;
+                        finish_download ();
 		            } catch (Error e) {
 			            show_message ("Error", e.message, "dialog-error");
 		            }
@@ -103,6 +107,7 @@ namespace App.Utils {
 			} else {
 				print ("Picture %s already exist\n", img_file_name);
 				bar.set_fraction (1.0);
+                finish_download ();
 				return true;
             }
 

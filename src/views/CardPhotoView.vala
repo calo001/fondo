@@ -41,7 +41,7 @@ namespace App.Views {
         private Gtk.ProgressBar         bar;
         private Gtk.Revealer            revealer;
         private Photo                   photo;
-
+        
         // Construct
         public CardPhotoView (Photo photo) {
             this.photo = photo;
@@ -61,7 +61,8 @@ namespace App.Views {
 
             eventbox_photo = new Gtk.EventBox();
             eventbox_photo.button_release_event.connect (() => {
-                set_as_wallpaper ();
+                this.set_sensitive (false);  
+                set_as_wallpaper ();          
                 return true;
             });
             eventbox_photo.add(image);
@@ -73,13 +74,14 @@ namespace App.Views {
             btn_view.halign = Gtk.Align.CENTER;
 
             btn_view.clicked.connect (() => {
+                this.set_sensitive (false);
                 var prev_win = new PreviewWindow(photo);
+                prev_win.closed_preview.connect (() => {
+                    this.set_sensitive (true);            
+                });
                 prev_win.show_all ();
                 prev_win.load_content();
 		    });
-
-            // Autor photo logo
-            var logo = new Granite.AsyncImage.from_icon_name_async ("emblem-photos-symbolic", Gtk.IconSize.BUTTON);
 
             // Create labelAutor
             var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
@@ -90,15 +92,13 @@ namespace App.Views {
             label_autor.get_style_context ().add_class ("h3");
             label_autor.get_style_context ().add_class ("autor");
             label_autor.get_style_context ().add_class ("flat");
-            label_autor.halign = Gtk.Align.START;
-            label_autor.margin_start = 8;
+            label_autor.halign = Gtk.Align.CENTER;
+            label_autor.margin_start = 28;
             label_autor.has_tooltip = false;
-            label_autor.always_show_image = true;
-            label_autor.set_image (logo);
 
             // Create Horizontal Grid
             var grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
-            grid_actions.margin_top = 10;
+            grid_actions.margin_top = 5;
             grid_actions.pack_start(label_autor, true, true, 0);
             grid_actions.pack_end(btn_view, false, false, 0);
 
@@ -118,11 +118,14 @@ namespace App.Views {
         }
 
         public void set_as_wallpaper () {
-            this.revealer.set_reveal_child (true);
-            this.connection = new AppConnection();
+            revealer.set_reveal_child (true);
+            connection = new AppConnection();
             string url_photo = connection.get_url_photo(photo.links_download_location);
-            this.wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
-            this.wallpaper.update_wallpaper ();
+            wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
+            wallpaper.finish_download.connect (() => {
+                this.set_sensitive (true);            
+            });
+            wallpaper.update_wallpaper ();
         }
     }
 

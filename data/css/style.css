@@ -35,11 +35,14 @@ progressbar trough {
 }
 
 .autor {
+    font-size: 10px;
     border: none;
     background: none;
+    text-decoration: none;
 }
 
 .button-green {
+    border-radius: 50%;
     border: none;
     background: none;
 }

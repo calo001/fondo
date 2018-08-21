@@ -31,7 +31,6 @@ namespace App.Views {
 
     public class PreviewWindow : Gtk.Window {
         private Granite.AsyncImage      image;
-        private Wallpaper               wallpaper;
         private Gtk.ProgressBar         bar;
         private Gtk.Stack               stack;
         private AppConnection           connection;
@@ -39,6 +38,8 @@ namespace App.Views {
         private Toast                   toast;
         private int                     w_photo;
         private int                     h_photo;
+        public  Wallpaper               wallpaper {get; set;}
+        public signal void closed_preview ();
 
         public PreviewWindow (Photo photo){
             this.w_photo = (int) photo.width;
@@ -80,6 +81,10 @@ namespace App.Views {
                      }
                 return true;
             });
+
+            this.destroy.connect (() => {
+                closed_preview ();
+		    });
 
             var label = new Gtk.Label(_("Loading ..."));
             label.get_style_context ().add_class ("h1");
