@@ -21,12 +21,12 @@
     <description>
         <p>Find a variety of the most beautiful wallpapers. The application shows five pages of six amazing photographs that with a click you can use as wallpaper.</p>
         <ul>
-l         <li>Use Arrow Key Right to move next page.</li>
+          <li>Use Arrow Key Right to move next page.</li>
           <li>Use Arrow Key Left to move previus page.</li>
           <li>Use Spacebar to move next page.</li>
           <li>Use ESC to exit.</li>
         </ul>
-    </description>  
+    </description>
     <releases>
       <release version="1.0.0" date="2018-06-04">
         <description>
@@ -67,7 +67,7 @@ l         <li>Use Arrow Key Right to move next page.</li>
       <content_attribute id="social-contacts">none</content_attribute>
       <content_attribute id="money-purchasing">none</content_attribute>
       <content_attribute id="money-gambling">none</content_attribute>
-    </content_rating> 
+    </content_rating>
     <url type="homepage">https://github.com/calo001/fondo</url>
     <url type="bugtracker">https://github.com/calo001/fondo/issues</url>
     <url type="help">https://github.com/calo001/fondo/issues</url>
