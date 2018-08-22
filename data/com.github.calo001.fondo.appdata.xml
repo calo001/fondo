@@ -38,6 +38,11 @@
           <p>Improved UI.</p>
         </description>
       </release>
+      <release version="1.0.2" date="2018-08-22">
+        <description>
+          <p>Fix details.</p>
+        </description>
+      </release>
     </releases>
     <content_rating type="oars-1.1">
       <content_attribute id="violence-cartoon">none</content_attribute>
