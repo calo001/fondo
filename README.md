@@ -45,6 +45,11 @@ git clone https://github.com/calo001/fondo.git && cd com.github.calo001.fondo
 ./app uninstall
 ```
 
+### Arch Linux
+Arch Linux users can find Fondo under the name [fondo-git](https://aur.archlinux.org/packages/fondo-git/) in the **AUR**:
+
+`$ aurman -S fondo-git`
+
 ### Development & Testing
 
 Fondo includes a script to simplify the development process. This script can be accessed in the main project directory through `./app`.
