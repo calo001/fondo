@@ -63,6 +63,18 @@ progressbar trough {
     border: none;
 }
 
+.button-green-popup {
+    border: none;
+	padding: 5px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.button-green-popup:hover {
+    background-color: @colorAccent;
+    color: #FFFFFF;
+    border: none;
+}
+
 .transition {
     transition: 200ms;
     transition-timing-function: ease;
@@ -70,4 +82,12 @@ progressbar trough {
 
 .fondo-header.dark {
     color: white;
+}
+
+.title-popup {
+    font-weight: bold;
+} 
+
+.title-text {
+    color: gray;
 }

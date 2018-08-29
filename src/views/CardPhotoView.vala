@@ -20,6 +20,8 @@ using App.Configs;
 using App.Structs;
 using App.Connection;
 using App.Utils;
+using App.Widgets;
+using Gtk;
 
 namespace App.Views {
 
@@ -33,15 +35,17 @@ namespace App.Views {
 
         private File                    file_photo;
         private Granite.AsyncImage      image;
-        private Gtk.Button              btn_view;
-        private Gtk.EventBox            eventbox_photo;
-        private Gtk.LinkButton          label_autor;
+        private Button              btn_view;
+        private EventBox            eventbox_photo;
+        private LinkButton          label_autor;
         private Wallpaper               wallpaper;
         private AppConnection           connection;
-        private Gtk.ProgressBar         bar;
-        private Gtk.Revealer            revealer;
-        private Gtk.Overlay             overlay;
-        private Photo                   photo;
+        private ProgressBar         bar;
+        private Revealer            revealer;
+        private Overlay             overlay;
+        private Photo               photo;
+        private PopupWallpaper      popup_content;
+        private Popover             popup;
         
         // Construct
         public CardPhotoView (Photo photo) {
@@ -60,10 +64,22 @@ namespace App.Views {
             var txt_tooltip = photo.location == null ? _("🌎  An amazing place in the world") : "🌎  " + photo.location;
             image.set_tooltip_text (txt_tooltip);
 
+            // Create and attach popup
+            popup = new Popover(this);
+            popup.position = Gtk.PositionType.BOTTOM;
+            popup.modal = true;
+            popup_content = new PopupWallpaper(photo.width, photo.height);
+            popup.add(popup_content);
+
             eventbox_photo = new Gtk.EventBox();
-            eventbox_photo.button_release_event.connect (() => {
-                this.set_sensitive (false);  
-                set_as_wallpaper ();          
+            eventbox_photo.button_release_event.connect ((event) => {
+                if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
+                    print("click derecho");
+                    popup.set_visible (true);
+                } else {
+                    this.set_sensitive (false);  
+                    set_as_wallpaper ();
+                }
                 return true;
             });
             eventbox_photo.add(image);

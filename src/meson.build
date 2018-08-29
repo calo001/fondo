@@ -15,6 +15,7 @@ sources += files(
 
     'widgets/HeaderBar.vala',
     'widgets/ModeSwitch.vala',
+    'widgets/PopupWallpaper.vala',
     'services/Connection.vala',
 
     'Application.vala',
