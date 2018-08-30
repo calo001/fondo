@@ -27,6 +27,8 @@ namespace App.Widgets {
      * @since 1.1.0
      */
     public class PopupWallpaper : Gtk.Grid {
+        public signal void wallpaper_option(string option_wall);
+
         public PopupWallpaper(int64 width, int64 height) {
 
             this.margin = 12;
@@ -34,10 +36,8 @@ namespace App.Widgets {
             this.row_spacing = 8;
 
             var label = new Label(_("Set wallpaper as"));
-            var buttom_wall = new Button.with_label(_("Wallpaper"));
             var buttom_cen = new Button.with_label(_("Centered"));
             var buttom_scal = new Button.with_label(_("Scaled"));
-            var buttom_stret = new Button.with_label(_("Stretched"));
             var buttom_zoom = new Button.with_label(_("Zoom"));
             var buttom_span = new Button.with_label(_("Spanned"));
             string size = width.to_string() + " x " + height.to_string();
@@ -45,45 +45,33 @@ namespace App.Widgets {
 
             label.get_style_context ().add_class ("title-popup");
             label_size.get_style_context ().add_class ("title-text");
-            buttom_wall.get_style_context ().add_class("button-green-popup");
             buttom_cen.get_style_context ().add_class("button-green-popup");
             buttom_scal.get_style_context ().add_class("button-green-popup");
-            buttom_stret.get_style_context ().add_class("button-green-popup");
             buttom_zoom.get_style_context ().add_class("button-green-popup");
             buttom_span.get_style_context ().add_class("button-green-popup");
 
-            buttom_wall.clicked.connect ( ()=>{
-                print("Wall");
-            } );
-
             buttom_cen.clicked.connect ( ()=>{
-                print("center");
+                wallpaper_option("centered");
             } );
 
             buttom_scal.clicked.connect ( ()=>{
-                print("scaled");
-            } );
-
-            buttom_stret.clicked.connect ( ()=>{
-                print("stretch");
+                wallpaper_option("scaled");
             } );
 
             buttom_zoom.clicked.connect ( ()=>{
-                print("zoom");
+                wallpaper_option("zoom");
             } );
 
             buttom_span.clicked.connect ( ()=>{
-                print("spanned");
+                wallpaper_option("spanned");
             } );
 
-            this.attach(label, 0, 0, 2, 1);
-            this.attach(buttom_wall, 0, 1, 1, 1);
-            this.attach(buttom_cen, 1, 1, 1, 1);
+            this.attach(label, 0, 0, 1, 1);         
+            this.attach(buttom_cen, 0, 1, 1, 1);
             this.attach(buttom_scal, 0, 2, 1, 1);
-            this.attach(buttom_stret, 1, 2, 1, 1);
             this.attach(buttom_span, 0, 3, 1, 1);
-            this.attach(buttom_zoom, 1, 3, 1, 1);
-            this.attach(label_size, 0, 4, 2, 1);
+            this.attach(buttom_zoom, 0, 4, 1, 1);
+            this.attach(label_size, 0, 5, 1, 1);
             this.show_all();
         }
     }

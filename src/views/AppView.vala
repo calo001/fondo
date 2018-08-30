@@ -27,7 +27,7 @@ namespace App.Views {
      *
      * @since 1.0.0
      */
-    public class AppView : Gtk.Grid {
+    public class AppView : Gtk.FlowBox {
 
         public CardPhotoView    card_1;
         public CardPhotoView    card_2;
@@ -41,12 +41,14 @@ namespace App.Views {
         public AppView (List<Photo?> photos) {
 
             // Add orientation to Grid and margins
-            this.orientation = Gtk.Orientation.VERTICAL;
             this.margin_top = 10;
             this.margin_start = 15;
             this.margin_end = 15;
             this.column_spacing = 20;
             this.row_spacing = 10;
+            this.max_children_per_line = 3;
+            this.min_children_per_line = 1;
+            this.selection_mode = Gtk.SelectionMode.NONE;
 
             // Create CustomCard (be ware with margins)
             var card_1 = new CardPhotoView (photos.nth_data(0));
@@ -56,12 +58,12 @@ namespace App.Views {
             var card_5 = new CardPhotoView (photos.nth_data(4));
             var card_6 = new CardPhotoView (photos.nth_data(5));
 
-            this.attach(card_1, 0, 0, 1, 1);
-            this.attach(card_2, 1, 0, 1, 1);
-            this.attach(card_3, 2, 0, 1, 1);
-            this.attach(card_4, 0, 1, 1, 1);
-            this.attach(card_5, 1, 1, 1, 1);
-            this.attach(card_6, 2, 1, 1, 1);
+            this.add(card_1);
+            this.add(card_2);
+            this.add(card_3);
+            this.add(card_4);
+            this.add(card_5);
+            this.add(card_6);
         }
 
         public void use_card_for_wallpaper (int num) {

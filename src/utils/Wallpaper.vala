@@ -53,10 +53,10 @@ namespace App.Utils {
         public signal void finish_download ();
 
         // Update picture
-        public void update_wallpaper () {
+        public void update_wallpaper (string opt) {
             if (check_directory ()) {
                 if (download_picture ()) {
-                    set_wallpaper ();
+                    set_wallpaper (opt);
                     show_notify ();
                     set_to_greeter ();
                 }
@@ -116,9 +116,10 @@ namespace App.Utils {
         }
 
         // Change the picture-uri property in GSettings
-        public void set_wallpaper () {
+        public void set_wallpaper (string picture_options = "zoom") {
 			GLib.Settings settings = new GLib.Settings ("org.gnome.desktop.background");
             settings.set_string ("picture-uri", "file://" + this.full_picture_path);
+            settings.set_string ("picture-options", picture_options);
             settings.reset ("color-shading-type");
             if (settings.get_string ("picture-options") == "none") {
                 settings.reset ("picture-options");

@@ -54,9 +54,14 @@ namespace App.Controllers {
             stack.homogeneous = false;
             stack.interpolate_size = true;
 
+            // Scroll
+            Gtk.ScrolledWindow scrolled = new Gtk.ScrolledWindow (null, null);
+		    scrolled.add (stack);
+
             // Screen box, contains stack and link label to unsplash
             screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            screen.pack_start (this.stack);
+            screen.pack_start (scrolled);
+            //screen.align.Gtk.START;
 
             // Checking if internet connection is enabled
             if (App.Utils.check_internet_connection ()) {
@@ -74,7 +79,7 @@ namespace App.Controllers {
              * Key code 114: Arrow key Right
              * Key code 9: Esc
              *
-             */
+             
             this.window.key_press_event.connect ((e) => {
                 uint keycode = e.hardware_keycode;
                 print ("Key" + keycode.to_string());
@@ -88,6 +93,7 @@ namespace App.Controllers {
                     }
                 return true;
             });
+            */
 
             window.add (this.screen);
             application.add_window (window);
@@ -156,9 +162,10 @@ namespace App.Controllers {
             var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
             var unsplash_text = _("Photos from Unsplash");
             var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
-            link_unsplash.margin_bottom = 20;
-            link_unsplash.margin_top = 5;
+            //link_unsplash.margin_bottom = 20;
+            //link_unsplash.margin_top = 5;
             link_unsplash.halign = Gtk.Align.CENTER;
+            link_unsplash.valign = Gtk.Align.END;
             link_unsplash.get_style_context ().remove_class ("flat");
             link_unsplash.get_style_context ().remove_class ("link");
             link_unsplash.get_style_context ().add_class ("suggested-action");
@@ -166,7 +173,7 @@ namespace App.Controllers {
             link_unsplash.has_tooltip = false;
 
             // Screen box
-            screen.pack_start (link_unsplash);
+            //screen.pack_end (link_unsplash);
 
             print ("Fin de set UI");
         }

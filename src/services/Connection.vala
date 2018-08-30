@@ -38,7 +38,9 @@ namespace App.Connection {
                          Constants.ACCESS_KEY_UNSPLASH +
                          Constants.API_PARAMS;
 
-        public AppConnection() {}
+        public AppConnection() {
+            
+        }
 
         // Make a GET Request to API
         public Soup.Message api_connection(string uri) {

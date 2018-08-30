@@ -42,7 +42,7 @@ namespace App {
             Object (
                 application: app,
                 icon_name: Constants.APP_ICON,
-                resizable: false
+                resizable: true
             );
 
             //get_style_context ().add_class ("rounded");
@@ -51,9 +51,13 @@ namespace App {
             int x = settings.window_x;
             int y = settings.window_y;
 
+            // Set save position
             if (x != -1 && y != -1) {
                 move (x, y);
             }
+
+            // Set window size
+            this.set_default_size (1094, 660);
 
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource (Constants.URL_CSS);

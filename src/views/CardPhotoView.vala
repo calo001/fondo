@@ -52,6 +52,8 @@ namespace App.Views {
             this.photo = photo;
             this.orientation = Gtk.Orientation.VERTICAL;
             this.margin_bottom = 10;
+            this.halign = Gtk.Align.CENTER;
+            this.valign = Gtk.Align.CENTER;
 
             // Create File Object
             file_photo = File.new_for_uri (photo.urls_thumb);
@@ -70,6 +72,12 @@ namespace App.Views {
             popup.modal = true;
             popup_content = new PopupWallpaper(photo.width, photo.height);
             popup.add(popup_content);
+
+            // Detect signal
+            popup_content.wallpaper_option.connect((opt) => {
+                popup.set_visible (false);
+                set_as_wallpaper(opt);
+            });
 
             eventbox_photo = new Gtk.EventBox();
             eventbox_photo.button_release_event.connect ((event) => {
@@ -143,7 +151,7 @@ namespace App.Views {
 
         }
 
-        public void set_as_wallpaper () {
+        public void set_as_wallpaper (string option = "zoom") {
             revealer.set_reveal_child (true);
             connection = new AppConnection();
             string url_photo = connection.get_url_photo(photo.links_download_location);
@@ -151,7 +159,7 @@ namespace App.Views {
             wallpaper.finish_download.connect (() => {
                 this.set_sensitive (true);            
             });
-            wallpaper.update_wallpaper ();
+            wallpaper.update_wallpaper (option);
         }
     }
 
