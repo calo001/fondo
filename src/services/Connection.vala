@@ -29,57 +29,88 @@ namespace App.Connection {
 
     public class AppConnection {
 
-        // List that contains the image thumbs for CardPhotoView
-        private static List<Photo?> list_thumbs = new List<Photo?> ();
+        // Signals for Classes tha use this class
+        public signal void request_page_success(List<Photo?> list);
+        public signal void request_page_fail(Error e);
+        public signal void request_URL_photo_success();
+        public signal void request_URL_photo_fail();
+        public signal void end_message(string msg);
 
-        // Unsplash API location
-        private const string URI_UNSPLASH = Constants.API_UNSPLASH +
-                         "photos/random/?client_id=" +
-                         Constants.ACCESS_KEY_UNSPLASH +
-                         Constants.API_PARAMS;
+        private static AppConnection? instance;
+        private Soup.Session session;
 
         public AppConnection() {
-            
+            this.session = new Soup.Session();
         }
 
         // Make a GET Request to API
-        public Soup.Message api_connection(string uri) {
-            var session = new Soup.Session ();
+        public void api_connection(string uri) {
             var message = new Soup.Message ("GET", uri);
-
-            MainLoop loop = new MainLoop ();
-
             // Send a request:
 	        session.queue_message (message, (sess, mess) => {
 		        // Process the result:
 		        print ("Status Code: %u\n", mess.status_code);
 		        print ("Message length: %lld\n", mess.response_body.length);
-		        //print ("Data: \n%s\n", (string) mess.response_body.data);
-		        loop.quit ();
-	        });
-
-	        loop.run ();
-
-            return message;
-        }
+                //print ("Data: \n%s\n", (string) mess.response_body.data);
+                //print("DATA DE LA RESPUESTA");
+                end_message((string) mess.response_body.data);
+            });
+            
+        }  
 
         // Parse data from API
-        public bool load_pages () {
-            Soup.Message message = api_connection(URI_UNSPLASH);
+        public async void load_page (int num_page) {
+            //MainLoop loop = new MainLoop ();
+            print("\n\nPAGINA #" + num_page.to_string() + "\n\n");
+            var uri = Constants.URI_PAGE + "&page=" + num_page.to_string() + "&per_page=" + "18";
+            
+            print(uri + "\n");
+            var message = new Soup.Message ("GET", uri);
+            //api_connection(uri);
 
-            var parser = new Json.Parser ();
-            try {
-                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
-                get_data (parser);
-            } catch (Error e) {
-                print ("Unable to parse the string: %s\n", e.message);
-                return false;
-            }
-            return true;
+            session.queue_message (message, (sess, mess) => {
+                // Process the result:
+		        print ("Status Code: %u\n", mess.status_code);
+		        print ("Message length: %lld\n", mess.response_body.length);
+                //print ("Data: \n%s\n", (string) mess.response_body.data);
+                //print("DATA DE LA RESPUESTA");
+                //end_message((string) mess.response_body.data);
+                
+                var parser = new Json.Parser ();
+                try {
+                    //parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                    parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
+                    var list = get_data (parser);
+                    request_page_success(list);
+                    print("\nEMITO SEÑAL ENVIO DE LISTA!\n");
+                } catch (Error e) {
+                    request_page_fail(e);
+                    print ("Unable to parse the string: %s\n", e.message);
+                }
+                //loop.run ();
+            });
+
+            end_message.connect( (message) => {
+                print("\nME LLEGÖ MSG\n");
+                var parser = new Json.Parser ();
+                try {
+                    //parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                    parser.load_from_data (message, -1);
+                    var list = get_data (parser);
+                    request_page_success(list);
+                    print("\nEMITO SEÑAL ENVIO DE LISTA!\n");
+                } catch (Error e) {
+                    request_page_fail(e);
+                    print ("Unable to parse the string: %s\n", e.message);
+                }
+            });
+            //loop.quit ();
         }
 
         // Create all structure Photo
-        private void get_data (Json.Parser parser) {
+        private List<Photo?> get_data (Json.Parser parser) {
+            List<Photo?> list_thumbs = new List<Photo?> ();
+
             var node = parser.get_root ();
             unowned Json.Array array = node.get_array ();
             foreach (unowned Json.Node item in array.get_elements ()) {
@@ -89,7 +120,7 @@ namespace App.Connection {
                     width =                     object.get_int_member    ("width"),
                     height =                    object.get_int_member    ("height"),
                     urls_thumb =                object.get_object_member ("urls")
-                                                      .get_string_member ("small"),
+                                                      .get_string_member ("thumb"),
                     links_download_location =   object.get_object_member ("links")
                                                       .get_string_member ("download_location"),
                     username =                  object.get_object_member ("user")
@@ -100,17 +131,18 @@ namespace App.Connection {
                                                       .get_string_member ("title")
                     };
                     list_thumbs.append (photo_info);
-	            }
+                }
+            return list_thumbs;
         }
 
         // Get an image from: links_download_location
         public string get_url_photo (string links_download_location) {
             string uri = links_download_location + "/?client_id=" + Constants.ACCESS_KEY_UNSPLASH;
-            Soup.Message message = api_connection(uri);
+            //Soup.Message message = api_connection(uri);
             string url = "";
             var parser = new Json.Parser ();
             try {
-                parser.load_from_data ((string) message.response_body.data, -1);
+                //parser.load_from_data ((string) message.response_body.data, -1);
                 var node = parser.get_root ();
                 url = node.get_object ().get_string_member ("url");
             } catch (Error e) {
@@ -120,18 +152,16 @@ namespace App.Connection {
             return url;
         }
 
-        /* Get one page of thumbs
-         *
-         * Start: Firts image in a page
-         * End: Last image in  a page
-         *
+        /**
+         * Returns a single instance of this class.
+         * 
+         * @return {@code Settings}
          */
-        public List<Photo?> get_thumbs_page (int start, int end) {
-            var page = new List<Photo?> ();
-            for (int i = start; i < end; i++) {
-                page.append (list_thumbs.nth_data (i));
+        public static unowned AppConnection get_instance () {
+            if (instance == null) {
+                instance = new AppConnection ();
             }
-            return page;
+            return instance;
         }
     }
 }

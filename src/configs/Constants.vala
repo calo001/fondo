@@ -27,7 +27,11 @@ namespace App.Configs {
     public class Constants {
     
         // API KEY in development, this must to change on production release
+        
+        public abstract const string API_UNSPLASH = "https://api.unsplash.com/";
+        public abstract const string GET = "photos/?client_id=";
         public abstract const string ACCESS_KEY_UNSPLASH = "51531311dfa090ab81321cd2655e73c59b3d952b5966ed42e861fa7d50da47e8";
+        public abstract const string URI_PAGE = API_UNSPLASH + GET + ACCESS_KEY_UNSPLASH;
 
         public abstract const string ID = "com.github.calo001.fondo";
         public abstract const string VERSION = "1.0.2";
@@ -41,8 +45,7 @@ namespace App.Configs {
         public abstract const string HELP_URL = "https://github.com/calo001/wiki";
         public abstract const string URL_CSS = "/com/github/calo001/fondo/css/style.css";
         public abstract const string [] ABOUT_AUTHORS = { "Calo001 <calo_lrc@hotmail.com>" };
-        public abstract const string API_UNSPLASH = "https://api.unsplash.com/";
-        public abstract const string API_PARAMS = "&orientation=landscape&count=30";
+        //public abstract const string API_PARAMS = "&orientation=landscape&count=30";
         public abstract const Gtk.License ABOUT_LICENSE_TYPE = Gtk.License.CUSTOM;
         public abstract const int SIZE_IMAGE_AVERAGE = 10000000;
     }

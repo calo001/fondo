@@ -35,23 +35,27 @@ namespace App.Views {
 
         private File                    file_photo;
         private Granite.AsyncImage      image;
-        private Button              btn_view;
-        private EventBox            eventbox_photo;
-        private LinkButton          label_autor;
-        private Wallpaper               wallpaper;
-        private AppConnection           connection;
-        private ProgressBar         bar;
-        private Revealer            revealer;
-        private Overlay             overlay;
-        private Photo               photo;
-        private PopupWallpaper      popup_content;
-        private Popover             popup;
+        private Button                  btn_view;
+        private EventBox                eventbox_photo;
+        private LinkButton              label_autor;
+        //private Wallpaper               wallpaper;
+        //private AppConnection           connection;
+        private ProgressBar             bar;
+        private Revealer                revealer;
+        private Overlay                 overlay;
+        private Photo                   photo;
+        private PopupWallpaper          popup_content;
+        private Popover                 popup;
+        private Gtk.Box                 grid_actions;
         
         // Construct
         public CardPhotoView (Photo photo) {
             this.photo = photo;
             this.orientation = Gtk.Orientation.VERTICAL;
             this.margin_bottom = 10;
+            this.margin_top = 10;
+            this.margin_start = 10;
+            this.margin_end = 10;
             this.halign = Gtk.Align.CENTER;
             this.valign = Gtk.Align.CENTER;
 
@@ -76,7 +80,7 @@ namespace App.Views {
             // Detect signal
             popup_content.wallpaper_option.connect((opt) => {
                 popup.set_visible (false);
-                set_as_wallpaper(opt);
+                //set_as_wallpaper(opt);
             });
 
             eventbox_photo = new Gtk.EventBox();
@@ -86,18 +90,19 @@ namespace App.Views {
                     popup.set_visible (true);
                 } else {
                     this.set_sensitive (false);  
-                    set_as_wallpaper ();
+                    //set_as_wallpaper ();
                 }
                 return true;
             });
             eventbox_photo.add(image);
-
+    
             // Create Button full screen
             btn_view = new Gtk.Button.from_icon_name ("window-maximize-symbolic");
             btn_view.get_style_context ().add_class ("button-green");
             btn_view.get_style_context ().remove_class ("button");
             btn_view.get_style_context ().add_class ("transition");
-            btn_view.margin = 7;
+            btn_view.can_focus = false;
+            btn_view.margin = 8;
             btn_view.halign = Gtk.Align.END;
             btn_view.valign = Gtk.Align.START;
 
@@ -130,9 +135,10 @@ namespace App.Views {
             label_autor.get_style_context ().remove_class ("flat");
             label_autor.halign = Gtk.Align.CENTER;
             label_autor.has_tooltip = false;
+            label_autor.can_focus = false;
 
             // Create Horizontal Grid
-            var grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
+            grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
             grid_actions.margin_top = 5;
             grid_actions.pack_start(label_autor, true, true, 0);
 
@@ -149,18 +155,30 @@ namespace App.Views {
             this.add(revealer);
             this.add(grid_actions);
 
+            show_all_controls();
         }
 
-        public void set_as_wallpaper (string option = "zoom") {
+        private void show_all_controls() {
+            overlay.show();
+            eventbox_photo.show();
+            btn_view.show();
+            label_autor.show();
+            image.show();
+            revealer.show();
+            bar.show();
+            grid_actions.show();
+        }
+
+        /*  public void set_as_wallpaper (string option = "zoom") {
             revealer.set_reveal_child (true);
             connection = new AppConnection();
             string url_photo = connection.get_url_photo(photo.links_download_location);
             wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
             wallpaper.finish_download.connect (() => {
                 this.set_sensitive (true);            
+                wallpaper.update_wallpaper (option);
             });
-            wallpaper.update_wallpaper (option);
-        }
+        }  */
     }
 
 }

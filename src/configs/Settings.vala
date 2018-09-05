@@ -45,10 +45,28 @@ namespace App.Configs {
         public int window_y { get; set; }
 
         /**
+         * This property will represent the width of the screen.
+         * Variable of type {@code int} as declared.
+         */
+        public int window_width { get; set; }
+
+        /**
+         * This property will represent the height of the screen.
+         * Variable of type {@code int} as declared.
+         */
+        public int window_height { get; set; }
+
+        /**
          * This property will represent the prefer dark theme.
          * Variable of type {@code bool} as declared.
          */
         public bool use_dark_theme {get; set;}
+        
+        /**
+         * This property will represent window must to open in maximized
+         * Variable of type {@code bool} as declared.
+         */
+        public bool maximized {get; set;}
         /**
          * Constructs a new {@code Settings} object 
          * and sets the default exit folder.

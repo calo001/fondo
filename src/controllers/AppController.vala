@@ -19,6 +19,7 @@
 using App.Widgets;
 using App.Views;
 using App.Connection;
+using App.Configs;
 
 namespace App.Controllers {
 
@@ -31,213 +32,150 @@ namespace App.Controllers {
 
         private Gtk.Application            application;
         private App.Widgets.HeaderBar      headerbar;
-        private Gtk.Stack                  stack;
-        private AppView?                    page_1;
-        private AppView?                    page_2;
-        private AppView?                    page_3;
-        private AppView?                    page_4;
-        private AppView?                    page_5;
+        private AppView                    view;
+        private AppViewError               view_error;
         private AppConnection              connection;
-        private Gtk.Box                    screen;
-        private Gtk.ApplicationWindow      window { get; private set; default = null; }
+        private Gtk.ScrolledWindow         scrolled;
+        private Gtk.Stack                  stack;
+        private App.Window                 window { get; private set; default = null; }
+        private int                        num_page;
         /**
          * Constructs a new {@code AppController} object.
          */
         public AppController (Gtk.Application application) {
             // Base instances
             this.application = application;
-            window = new Window (this.application);
+            this.connection = AppConnection.get_instance();
+            this.num_page = 1;
 
-            // Stack, constains 6 cards
-            stack = new Gtk.Stack();
-            stack.set_transition_duration (500);
-            stack.homogeneous = false;
-            stack.interpolate_size = true;
+            window = new App.Window (this.application);
 
             // Scroll
-            Gtk.ScrolledWindow scrolled = new Gtk.ScrolledWindow (null, null);
-		    scrolled.add (stack);
+            scrolled = new Gtk.ScrolledWindow (null, null);
+            scrolled.min_content_width = 400;
+            scrolled.min_content_height = 240;
+            //scrolled.margin = 10;
 
-            // Screen box, contains stack and link label to unsplash
-            screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            screen.pack_start (scrolled);
-            //screen.align.Gtk.START;
+            view = new AppView ();
+            scrolled.add(view);
+            view.show();
 
-            // Checking if internet connection is enabled
-            if (App.Utils.check_internet_connection ()) {
-                if (make_connection ()) {
-                    set_ui ();
+            // Create next pages
+            /* 
+            scrolled.edge_overshot.connect( (pos)=> {
+                if (pos == Gtk.PositionType.BOTTOM) {
+                    connection.load_page(num_page);
+ 
+                    connection.request_new_page_success.connect ( (list) => {
+                        print("\n\nLISTA " + num_page.to_string() + "\n\n");
+                        foreach (var item in list) {
+                            print(item.name);
+                        }
+                        view.insert_cards(list);
+                        num_page++;
+                    } );
                 }
-            } else {
-                set_error_ui ();
-            }
-
-            /* Setup keyboard actions
-             *
-             * Key code 65: Spacebar/Blanck
-             * Key code 113: Arrow key Left
-             * Key code 114: Arrow key Right
-             * Key code 9: Esc
-             *
-             
-            this.window.key_press_event.connect ((e) => {
-                uint keycode = e.hardware_keycode;
-                print ("Key" + keycode.to_string());
-
-                    if (keycode == 65 || keycode == 114) {
-                        next_stack ();
-                    } else if (keycode == 113) {
-                        prev_stack ();
-                    } else if (keycode == 9) {
-                        this.window.close ();
-                    }
-                return true;
+            } );
+            */
+            
+            /*
+            view.load_more.connect(()=>{
+                //print("RECIVED CLICK");
+                num_page++;
+                connection.load_page(num_page);
+                connection.request_new_page_success.connect ( (list) => {
+                    //print("\n\nLISTA " + num_page.to_string() + "\n\n");
+                    //foreach (var item in list) {
+                    //    print(item.name);
+                    //}
+                    view.insert_cards(list);
+                } );
             });
+
+            view.load_more.connect(()=>{
+                //print("RECIVED CLICK");
+                ++num_page;
+                connection.load_page(num_page);
+            });
+
             */
 
-            window.add (this.screen);
+            connection.request_page_success.connect ( (list) => {
+                print("\nSIGNAL RECIVED LENGHT: "+ list.length().to_string() + "\n" );
+                foreach (var item in list) {
+                    print(item.name + "\n");
+                }
+
+                if (num_page > 1) {
+                    view.insert_cards(list);
+                } else if (num_page == 1) {
+                    view.insert_cards(list);
+                    stack.set_visible_child_name ("scrolled");
+                }
+            } );
+
+            scrolled.edge_reached.connect( (pos)=> {
+                if (pos == Gtk.PositionType.BOTTOM) {
+                    num_page++;
+                    connection.load_page(num_page);
+                }
+            } );
+
+            check_internet();
+            
+            Gtk.Spinner spinner = new Gtk.Spinner ();
+            spinner.active = true;
+            spinner.halign = Gtk.Align.CENTER;
+
+            stack = new Gtk.Stack ();
+            stack.add_named(spinner, "spinner");
+            stack.add_named(scrolled, "scrolled");
+            stack.set_visible_child_name ("spinner"); 
+            stack.set_transition_type (Gtk.StackTransitionType.SLIDE_UP);
+            stack.set_transition_duration (1000);
+
+            window.add (stack);
             application.add_window (window);
         }
 
-        // UI for no internet connectio
+        private void check_internet() {
+            // Checking if internet connection is enabled
+            if (App.Utils.check_internet_connection ()) {
+                set_ui ();
+            } else {
+                set_error_ui ();
+            }
+        }
+
+        // UI for no internet connection
         private void set_error_ui () {
             // Header bar
             var header_simple = new Gtk.HeaderBar ();
-            header_simple.set_title ("Fondo");
+            header_simple.set_title (Constants.PROGRAME_NAME);
             header_simple.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             window.set_titlebar (header_simple);
 
-            // Configuring UI
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-            var image = new Gtk.Image.from_icon_name  ("network-error", Gtk.IconSize.DIALOG);
-		    var label_title = new Gtk.Label ("Network Error");
-		    var label_description = new Gtk.Label ("Check the network connection.");
-            var button_check_network = new Gtk.Button.with_label (_("Exit"));
-
-		    label_title.get_style_context ().add_class ("h2");
-		    label_description.get_style_context ().add_class ("h3");
-            button_check_network.get_style_context ().add_class ("destructive-action");
-
-            // Button click
-            button_check_network.clicked.connect ( () => {
+            view_error = new AppViewError();
+            view_error.close_window.connect(() => {
                 window.close();
-            } );
+            }); 
 
-            // Set margins
-            box.margin = 20;
-
-            // Add content
-            box.add(image);
-            box.add(label_title);
-            box.add(label_description);
-            box.add(button_check_network);
-            stack.add_named (box, "error_page");
-            stack.set_visible_child_name ("error_page");
+            scrolled.add (view_error);
         }
 
         // Main UI
         private void set_ui () {
             // Headerbar setup
             headerbar = new App.Widgets.HeaderBar ();
-            headerbar.randomize_button.clicked.connect (() => next_stack () );
             window.set_titlebar (this.headerbar);
 
-            // Create pages
-            page_1 = new AppView (connection.get_thumbs_page(0, 6));
-            page_2 = new AppView (connection.get_thumbs_page(6, 12));
-            page_3 = new AppView (connection.get_thumbs_page(12, 18));
-            page_4 = new AppView (connection.get_thumbs_page(18, 24));
-            page_5 = new AppView (connection.get_thumbs_page(24, 30));
+            connection.load_page(num_page);
 
-            // Stack
-            stack.add_named (page_1, "page_1");
-            stack.add_named (page_2, "page_2");
-            stack.add_named (page_3, "page_3");
-            stack.add_named (page_4, "page_4");
-            stack.add_named (page_5, "page_5");
-
-            stack.set_visible_child_name ("page_1");
-
-            //Create label unsplash
-            var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
-            var unsplash_text = _("Photos from Unsplash");
-            var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
-            //link_unsplash.margin_bottom = 20;
-            //link_unsplash.margin_top = 5;
-            link_unsplash.halign = Gtk.Align.CENTER;
-            link_unsplash.valign = Gtk.Align.END;
-            link_unsplash.get_style_context ().remove_class ("flat");
-            link_unsplash.get_style_context ().remove_class ("link");
-            link_unsplash.get_style_context ().add_class ("suggested-action");
-
-            link_unsplash.has_tooltip = false;
-
-            // Screen box
-            //screen.pack_end (link_unsplash);
-
-            print ("Fin de set UI");
-        }
-
-        private bool make_connection () {
-            connection = new AppConnection ();
-            return connection.load_pages ();
-        }
-
-        protected void set_wallpaper_by_number (int num_card, string page) {
-            if (page == "page_1") {
-                page_1.use_card_for_wallpaper (num_card);
-            } else if (page == "page_2") {
-                page_2.use_card_for_wallpaper (num_card);
-            } else if (page == "page_3") {
-                page_3.use_card_for_wallpaper (num_card);
-            } else if (page == "page_4") {
-                page_4.use_card_for_wallpaper (num_card);
-            } else if (page == "page_5") {
-                page_5.use_card_for_wallpaper (num_card);
-            }
-        }
-
-        // Dectec key pressed
-        protected bool match_keycode (int keyval, uint code) {
-            Gdk.KeymapKey [] keys;
-            Gdk.Keymap keymap = Gdk.Keymap.get_for_display (Gdk.Display.get_default ());
-            if (keymap.get_entries_for_keyval (keyval, out keys)) {
-                foreach (var key in keys) {
-                    if (code == key.keycode)
-                        return true;
-                    }
-                }
-            return false;
-        }
-
-        public void next_stack () {
-            this.stack.set_transition_type (Gtk.StackTransitionType.SLIDE_LEFT);
-            if (this.stack.visible_child_name == "page_1") {
-                this.stack.visible_child_name = "page_2";
-            } else if (this.stack.visible_child_name == "page_2") {
-                this.stack.visible_child_name = "page_3";
-            } else if (this.stack.visible_child_name == "page_3") {
-                this.stack.visible_child_name = "page_4";
-            } else if (this.stack.visible_child_name == "page_4") {
-                this.stack.visible_child_name = "page_5";
-            } else if (this.stack.visible_child_name == "page_5") {
-                this.stack.visible_child_name = "page_1";
-            }
-        }
-
-        public void prev_stack () {
-            this.stack.set_transition_type (Gtk.StackTransitionType.SLIDE_RIGHT);
-            if (this.stack.visible_child_name == "page_1") {
-                this.stack.visible_child_name = "page_5";
-            } else if (this.stack.visible_child_name == "page_2") {
-                this.stack.visible_child_name = "page_1";
-            } else if (this.stack.visible_child_name == "page_3") {
-                this.stack.visible_child_name = "page_2";
-            } else if (this.stack.visible_child_name == "page_4") {
-                this.stack.visible_child_name = "page_3";
-            } else if (this.stack.visible_child_name == "page_5") {
-                this.stack.visible_child_name = "page_4";
-            }
+            // Create first pages
+            //connection.request_page_success.connect( (list) => {
+            //    view.insert_cards(list);
+            //    stack.set_visible_child_name ("scrolled");
+            //});
         }
 
         public void activate () {
