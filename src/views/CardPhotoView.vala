@@ -72,8 +72,8 @@ namespace App.Views {
             ******************************************/
             
             image = new Granite.AsyncImage(true, true);
-            var w = 
-            var h =
+            //var w = 
+            //var h =
             image.set_from_file_async.begin(file_photo, 280, 180, false); // Width, Heigth
             image.has_tooltip = true;
             image.get_style_context ().add_class ("photo");            
