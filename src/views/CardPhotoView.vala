@@ -190,8 +190,8 @@ namespace App.Views {
 
         private void scale (int w_h_photo, int w_h_card) {
             double card_scale = (double) w_h_card / (double) w_h_photo;
-            w_photo = (int)(w_photo * card_scale);
-            h_photo = (int)(h_photo* card_scale);
+            //w_photo = (int)(w_photo * card_scale);
+            //h_photo = (int)(h_photo* card_scale);
         }
 
         private void setup_wallpaper (string url, string opt = "zoom") {
