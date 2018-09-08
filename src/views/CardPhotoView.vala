@@ -160,7 +160,7 @@ namespace App.Views {
             label_autor.get_style_context ().remove_class ("link");
             label_autor.get_style_context ().add_class ("transition");
             label_autor.get_style_context ().add_class ("autor");
-            label_autor.get_style_context ().remove_class ("flat");
+            label_autor.get_style_context ().add_class ("flat");
             label_autor.margin_top = 8;
             label_autor.halign = Gtk.Align.CENTER;
             label_autor.has_tooltip = false;

@@ -16,7 +16,10 @@
 * 
 */
 
-@define-color colorAccent #68b723;
+@define-color colorAccent2 #68b723;
+@define-color colorAccent #00C3A4;
+@define-color colorText #149782;
+
 
 progressbar progress {
 	background: linear-gradient(to right, #11998e, #38ef7d);;
@@ -37,9 +40,9 @@ progressbar trough {
 .autor {
     font-size: 12px;
     border: none;
-    border-radius: 2px;
+    border-radius: 20px;
     padding: 5px 10px;
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255,255,255,0.1);
 }
 
 .photo {
@@ -48,7 +51,7 @@ progressbar trough {
 }
 
 .autor:hover {
-    color: @colorAccent;
+    color: @colorText;
 }
 
 .button-green {
