@@ -30,6 +30,9 @@ namespace App.Utils {
 
     public class Wallpaper {
 
+        // Signal to inform that download is finished
+        public signal void finish_download ();
+
         private string              uri_endpoint;                   // URI http of picture in unsplash
         public  string              full_picture_path {get; set;}   // Path for wallpaper picture
         private ProgressBar         bar;                            // Downloading Progress
@@ -49,11 +52,8 @@ namespace App.Utils {
             this.launcher = LauncherEntry.get_for_desktop_id (Constants.ID + ".desktop");
         }
 
-        // Signal to inform that download is finished
-        public signal void finish_download ();
-
         // Update picture
-        public void update_wallpaper (string opt) {
+        public void update_wallpaper (string opt = "zoom") {
             if (check_directory ()) {
                 if (download_picture ()) {
                     set_wallpaper (opt);
@@ -65,6 +65,7 @@ namespace App.Utils {
 
         // Create directory
         private bool check_directory () {
+            print("ERROR DIRECTORY");
 		    var dir = File.new_for_path (BASE_DIR);
 		    if (!dir.query_exists ()) {
 			    try{
@@ -91,13 +92,13 @@ namespace App.Utils {
 		        // Report copy-status:
                     progress = (double) current_num_bytes / total_num_bytes;
 		            total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
-		            print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
+		            //print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
 			        show_progress (progress);
 	            }, (obj, res) => {
 		            try {
 			            bool tmp = file_from_uri.copy_async.end (res);
 			            print ("Result: %s\n", tmp.to_string ());
-			            launcher.progress_visible = false;
+                        launcher.progress_visible = false;
                         finish_download ();
 		            } catch (Error e) {
 			            show_message ("Error", e.message, "dialog-error");
@@ -105,12 +106,12 @@ namespace App.Utils {
 		                loop.quit ();
 	                });
 			} else {
-				print ("Picture %s already exist\n", img_file_name);
-				bar.set_fraction (1.0);
+                print ("Picture %s already exist\n", img_file_name);
                 finish_download ();
+				bar.set_fraction (1.0);
 				return true;
             }
-
+            print("\nDOWNLOAD END\n");
             loop.run ();
             return true;
         }

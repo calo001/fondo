@@ -35,16 +35,17 @@ namespace App.Views {
          * Constructs a new {@code AppView} object.
          */
         public AppView () {
-            //this.connection = AppConnection.get_instance();
-            // Config FlowBox
-            //this.column_spacing = 5;
-            //this.row_spacing = 5;
             this.margin_right = 10;
             this.margin_left = 10;
             this.max_children_per_line = 3;
             this.min_children_per_line = 1;
+            this.homogeneous = true;
             this.set_selection_mode(Gtk.SelectionMode.SINGLE);
             this.num_card = 0;
+
+            //this.child_activated.connect( (child)=>{
+            //    print("Me active!");
+            //});
         }
 
         public void insert_cards (List<Photo?> photos) {

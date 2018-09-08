@@ -41,7 +41,8 @@ namespace App.Views {
         public  Wallpaper               wallpaper {get; set;}
         public signal void closed_preview ();
 
-        public PreviewWindow (Photo photo){
+        public PreviewWindow (Photo photo) {
+            this.connection = AppConnection.get_instance();
             this.w_photo = (int) photo.width;
             this.h_photo = (int) photo.height;
             this.photo = photo;
@@ -119,8 +120,8 @@ namespace App.Views {
         }
 
         public void load_content () {
-		    connection = new AppConnection();
-            var url_photo = connection.get_url_photo(photo.links_download_location);
+            print("Load content");
+            string? url_photo = connection.get_url_photo(photo.links_download_location);
             wallpaper = new Wallpaper(url_photo, photo.id, photo.username, bar);
             wallpaper.download_picture ();
             var path_wallpaper = wallpaper.full_picture_path;

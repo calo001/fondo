@@ -37,7 +37,9 @@ progressbar trough {
 .autor {
     font-size: 12px;
     border: none;
-    background: none;
+    border-radius: 2px;
+    padding: 5px 10px;
+    background-color: rgba(255,255,255,0.15);
 }
 
 .photo {

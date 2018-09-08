@@ -32,8 +32,8 @@ namespace App.Connection {
         // Signals for Classes tha use this class
         public signal void request_page_success(List<Photo?> list);
         public signal void request_page_fail(Error e);
-        public signal void request_URL_photo_success();
-        public signal void request_URL_photo_fail();
+        public signal void request_URL_photo_success(string image);
+        public signal void request_URL_photo_fail(Error e);
         public signal void end_message(string msg);
 
         private static AppConnection? instance;
@@ -59,22 +59,20 @@ namespace App.Connection {
         }  
 
         // Parse data from API
-        public async void load_page (int num_page) {
-            //MainLoop loop = new MainLoop ();
-            print("\n\nPAGINA #" + num_page.to_string() + "\n\n");
-            var uri = Constants.URI_PAGE + "&page=" + num_page.to_string() + "&per_page=" + "18";
+        public void load_page (int num_page) {
+            //print("\n\nPAGINA #" + num_page.to_string() + "\n\n");
+            var uri = Constants.URI_PAGE + 
+                      "&page=" + num_page.to_string() + 
+                      "&per_page=" + "18";
             
             print(uri + "\n");
             var message = new Soup.Message ("GET", uri);
-            //api_connection(uri);
 
             session.queue_message (message, (sess, mess) => {
                 // Process the result:
-		        print ("Status Code: %u\n", mess.status_code);
-		        print ("Message length: %lld\n", mess.response_body.length);
+		        //print ("Status Code: %u\n", mess.status_code);
+		        //print ("Message length: %lld\n", mess.response_body.length);
                 //print ("Data: \n%s\n", (string) mess.response_body.data);
-                //print("DATA DE LA RESPUESTA");
-                //end_message((string) mess.response_body.data);
                 
                 var parser = new Json.Parser ();
                 try {
@@ -82,29 +80,12 @@ namespace App.Connection {
                     parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
                     var list = get_data (parser);
                     request_page_success(list);
-                    print("\nEMITO SEÑAL ENVIO DE LISTA!\n");
+                    //print("\nEMITO SEÑAL ENVIO DE LISTA!\n");
                 } catch (Error e) {
                     request_page_fail(e);
-                    print ("Unable to parse the string: %s\n", e.message);
-                }
-                //loop.run ();
-            });
-
-            end_message.connect( (message) => {
-                print("\nME LLEGÖ MSG\n");
-                var parser = new Json.Parser ();
-                try {
-                    //parser.load_from_data ((string) message.response_body.flatten ().data, -1);
-                    parser.load_from_data (message, -1);
-                    var list = get_data (parser);
-                    request_page_success(list);
-                    print("\nEMITO SEÑAL ENVIO DE LISTA!\n");
-                } catch (Error e) {
-                    request_page_fail(e);
-                    print ("Unable to parse the string: %s\n", e.message);
+                    //print ("Unable to parse the string: %s\n", e.message);
                 }
             });
-            //loop.quit ();
         }
 
         // Create all structure Photo
@@ -136,20 +117,37 @@ namespace App.Connection {
         }
 
         // Get an image from: links_download_location
-        public string get_url_photo (string links_download_location) {
-            string uri = links_download_location + "/?client_id=" + Constants.ACCESS_KEY_UNSPLASH;
-            //Soup.Message message = api_connection(uri);
-            string url = "";
-            var parser = new Json.Parser ();
-            try {
-                //parser.load_from_data ((string) message.response_body.data, -1);
-                var node = parser.get_root ();
-                url = node.get_object ().get_string_member ("url");
-            } catch (Error e) {
-                print ("Unable to parse the string: %s\n", e.message);
-                return url;
-            }
-            return url;
+        public string? get_url_photo (string links_download_location) {
+            string uri = links_download_location + 
+                         "/?client_id=" + 
+                         Constants.ACCESS_KEY_UNSPLASH;
+            
+            //print(uri + "\n");
+            print("\nGET URL PHOTO\n");
+            var message = new Soup.Message ("GET", uri);
+            string? image = null;
+
+            MainLoop loop = new MainLoop ();
+            session.queue_message (message, (sess, mess) => {
+                // Process the result:
+		        //print ("Status Code: %u\n", mess.status_code);
+		        //print ("Message length: %lld\n", mess.response_body.length);
+                //print ("Data: \n%s\n", (string) mess.response_body.data);
+                
+                var parser = new Json.Parser ();
+                try {
+                    //parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                    parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
+                    var node = parser.get_root ();
+                    image = node.get_object ().get_string_member ("url");
+                    loop.quit ();     
+                } catch (Error e) {
+                    request_URL_photo_fail(e);
+                    print ("Unable to parse the string: %s\n", e.message);
+                }
+            });
+            loop.run ();
+            return image;
         }
 
         /**

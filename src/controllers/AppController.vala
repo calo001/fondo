@@ -60,67 +60,6 @@ namespace App.Controllers {
             scrolled.add(view);
             view.show();
 
-            // Create next pages
-            /* 
-            scrolled.edge_overshot.connect( (pos)=> {
-                if (pos == Gtk.PositionType.BOTTOM) {
-                    connection.load_page(num_page);
- 
-                    connection.request_new_page_success.connect ( (list) => {
-                        print("\n\nLISTA " + num_page.to_string() + "\n\n");
-                        foreach (var item in list) {
-                            print(item.name);
-                        }
-                        view.insert_cards(list);
-                        num_page++;
-                    } );
-                }
-            } );
-            */
-            
-            /*
-            view.load_more.connect(()=>{
-                //print("RECIVED CLICK");
-                num_page++;
-                connection.load_page(num_page);
-                connection.request_new_page_success.connect ( (list) => {
-                    //print("\n\nLISTA " + num_page.to_string() + "\n\n");
-                    //foreach (var item in list) {
-                    //    print(item.name);
-                    //}
-                    view.insert_cards(list);
-                } );
-            });
-
-            view.load_more.connect(()=>{
-                //print("RECIVED CLICK");
-                ++num_page;
-                connection.load_page(num_page);
-            });
-
-            */
-
-            connection.request_page_success.connect ( (list) => {
-                print("\nSIGNAL RECIVED LENGHT: "+ list.length().to_string() + "\n" );
-                foreach (var item in list) {
-                    print(item.name + "\n");
-                }
-
-                if (num_page > 1) {
-                    view.insert_cards(list);
-                } else if (num_page == 1) {
-                    view.insert_cards(list);
-                    stack.set_visible_child_name ("scrolled");
-                }
-            } );
-
-            scrolled.edge_reached.connect( (pos)=> {
-                if (pos == Gtk.PositionType.BOTTOM) {
-                    num_page++;
-                    connection.load_page(num_page);
-                }
-            } );
-
             check_internet();
             
             Gtk.Spinner spinner = new Gtk.Spinner ();
@@ -171,11 +110,26 @@ namespace App.Controllers {
 
             connection.load_page(num_page);
 
-            // Create first pages
-            //connection.request_page_success.connect( (list) => {
-            //    view.insert_cards(list);
-            //    stack.set_visible_child_name ("scrolled");
-            //});
+            connection.request_page_success.connect ( (list) => {
+                print("\nSIGNAL RECIVED LENGHT: "+ list.length().to_string() + "\n" );
+                foreach (var item in list) {
+                    print(item.name + "\n");
+                }
+
+                if (num_page > 1) {
+                    view.insert_cards(list);
+                } else if (num_page == 1) {
+                    view.insert_cards(list);
+                    stack.set_visible_child_name ("scrolled");
+                }
+            } );
+
+            scrolled.edge_reached.connect( (pos)=> {
+                if (pos == Gtk.PositionType.BOTTOM) {
+                    num_page++;
+                    connection.load_page(num_page);
+                }
+            } );
         }
 
         public void activate () {
