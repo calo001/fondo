@@ -42,7 +42,7 @@ progressbar trough {
     border: none;
     border-radius: 20px;
     padding: 5px 10px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(0,0,0,0.1);
 }
 
 .photo {
