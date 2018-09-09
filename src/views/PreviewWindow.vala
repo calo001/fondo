@@ -61,6 +61,7 @@ namespace App.Views {
                         background-color: #131313;
                         background-size: 20px 20px;
                     }
+
                     """
                 );
                 Gtk.StyleContext.add_provider_for_screen (
@@ -89,6 +90,7 @@ namespace App.Views {
 
             var label = new Gtk.Label(_("Loading ..."));
             label.get_style_context ().add_class ("h1");
+            label.get_style_context ().add_class ("label_loading");
             bar = new Gtk.ProgressBar ();
 
             // Container

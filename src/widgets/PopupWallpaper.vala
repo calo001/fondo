@@ -50,6 +50,11 @@ namespace App.Widgets {
             buttom_zoom.get_style_context ().add_class("button-green-popup");
             buttom_span.get_style_context ().add_class("button-green-popup");
 
+            buttom_cen.get_style_context ().add_class("flat");
+            buttom_scal.get_style_context ().add_class("flat");
+            buttom_zoom.get_style_context ().add_class("flat");
+            buttom_span.get_style_context ().add_class("flat");
+
             buttom_cen.clicked.connect ( ()=>{
                 wallpaper_option("centered");
             } );

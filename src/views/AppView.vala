@@ -35,29 +35,25 @@ namespace App.Views {
          * Constructs a new {@code AppView} object.
          */
         public AppView () {
-            this.margin_right = 10;
-            this.margin_left = 10;
-            this.max_children_per_line = 3;
-            this.min_children_per_line = 1;
-            this.homogeneous = false;
+            this.margin_end = 10;
+            this.margin_start = 10;
             this.set_selection_mode(Gtk.SelectionMode.SINGLE);
             this.activate_on_single_click = false;
             this.num_card = 0;
 
             this.child_activated.connect( (child)=>{
                 var card = (CardPhotoView) child.get_child();
-                card.setup_wallpaper();
+                card.popup.set_visible (true);
             });
         }
 
         public void insert_cards (List<Photo?> photos) {
             foreach (var photo in photos) {
                 var card = new CardPhotoView (photo);   
-                print(num_card.to_string());
                 this.insert(card, num_card);
                 num_card++;
-                card.show();
-            }           
+                card.show_all();
+            }
         }
     }
 }

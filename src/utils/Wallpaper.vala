@@ -139,7 +139,6 @@ namespace App.Utils {
         public void show_notify () {
             var notification = new Notification (_("Wallpaper ready!"));
             notification.set_body (_("Your new wallpaper is ready!"));
-            notification.add_button ("click", "action");
             GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
 

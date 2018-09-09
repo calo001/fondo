@@ -47,13 +47,14 @@ namespace App.Views {
         private Overlay                 overlay;
         private Photo                   photo;
         private PopupWallpaper          popup_content;
-        private Popover                 popup;
-        private Box                     grid_actions;
+        public  Popover                 popup;
 
         private int                     w_photo;
         private int                     h_photo;
         
-        /*********************************** 
+        public signal void unlock_child ();
+
+        /***********************************
                     Constructor
         ************************************/
         public CardPhotoView (Photo photo) {
@@ -118,11 +119,6 @@ namespace App.Views {
             ******************************************/
             eventbox_photo = new Gtk.EventBox();
             eventbox_photo.button_release_event.connect ( (event) => {
-
-                var child = (Gtk.FlowBoxChild) this.get_parent ();
-                var flow = (Gtk.FlowBox) child.get_parent ();
-                flow.select_child (child);
-
                 if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
                     popup.set_visible (true);
                 } else {
@@ -198,8 +194,6 @@ namespace App.Views {
             this.add(overlay);            
             this.add(revealer);
             this.add(label_autor);
-
-            show_all_controls();
         }
 
         /*********************************** 
@@ -221,24 +215,11 @@ namespace App.Views {
             string? url_photo = connection.get_url_photo(photo.links_download_location);
             wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
             wallpaper.finish_download.connect (() => {
-                this.set_sensitive (true);    
+                this.set_sensitive (true);
+                unlock_child ();
                 print("Finish download");        
             });
             wallpaper.update_wallpaper (opt);
-        }
-
-        /***********************************
-        Requiered for FlowBox to avoid that all widgets get hidden
-        ************************************/
-        private void show_all_controls() {
-            overlay.show();
-            eventbox_photo.show();
-            btn_view.show();
-            label_autor.show();
-            image.show();
-            revealer.show();
-            bar.show();
-            grid_actions.show();
         }
     }
 

@@ -93,8 +93,8 @@ namespace App.Connection {
                                                       .get_string_member ("username"),
                     name =                      object.get_object_member ("user")
                                                       .get_string_member ("name"),
-                    location =                  object.get_object_member ("location")
-                                                      .get_string_member ("title")
+                    location =                  object.get_object_member ("user")
+                                                      .get_string_member ("location")
                     };
                     list_thumbs.append (photo_info);
                 }

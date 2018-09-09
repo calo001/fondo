@@ -51,6 +51,8 @@ scrollbar contents trough slider {
 }
 
 .photo {
+    background: #06beb6;
+    background: linear-gradient(-45deg, #06beb6, #48b1bf);
     border-radius: 2px;
     border: 2px solid rgba(0,0,0,0.2);
 }
@@ -70,14 +72,18 @@ scrollbar contents trough slider {
 }
 
 .button-green-popup {
-    border: none;
+    border: 1px solid rgba(18, 144, 141, 0);
 	padding: 5px;
     background-color: rgba(0,0,0,0.2);
 }
 
 .button-green-popup:hover {
     background-color: @colorAccentOpaque;
-    border: none;
+    border: 1px solid @colorAccentOpaque;
+}
+
+.button-green-popup:focus {
+    border: 1px solid @colorAccentOpaque;
 }
 
 .transition {
@@ -91,4 +97,8 @@ scrollbar contents trough slider {
 
 .title-text {
     color: gray;
+}
+
+.label_loading {
+    color: white;
 }
