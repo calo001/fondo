@@ -48,7 +48,10 @@ namespace App.Views {
         private Photo                   photo;
         private PopupWallpaper          popup_content;
         private Popover                 popup;
-        private Gtk.Box                 grid_actions;
+        private Box                     grid_actions;
+
+        private int                     w_photo;
+        private int                     h_photo;
         
         // Construct
         public CardPhotoView (Photo photo) {
@@ -72,9 +75,19 @@ namespace App.Views {
             ******************************************/
             
             image = new Granite.AsyncImage(true, true);
-            //var w = 
-            //var h =
-            image.set_from_file_async.begin(file_photo, 280, 180, false); // Width, Heigth
+            var w_max = 320;
+            var h_max = 500;
+            w_photo = (int) photo.width;
+            h_photo = (int) photo.height;
+
+            if (w_photo > w_max) {
+                scale (w_photo, w_max);
+                if (h_photo > h_max) {
+                    scale (h_photo, h_max);
+                }
+            }
+
+            image.set_from_file_async.begin(file_photo, w_photo, h_photo, false); // Width, Heigth
             image.has_tooltip = true;
             image.get_style_context ().add_class ("photo");            
             var txt_tooltip = photo.location == null ? 
@@ -93,12 +106,10 @@ namespace App.Views {
 
             // Detect signal
             popup_content.wallpaper_option.connect((opt) => {
-                this.set_sensitive (false);
+                //this.set_sensitive (false);
                 popup.set_visible (false);
-                revealer.set_reveal_child (true);
-                string? url_photo = connection.get_url_photo(photo.links_download_location);
-                setup_wallpaper(url_photo, opt);
-                
+                //revealer.set_reveal_child (true);
+                setup_wallpaper(opt);
             });
 
             /******************************************
@@ -106,13 +117,17 @@ namespace App.Views {
             ******************************************/
             eventbox_photo = new Gtk.EventBox();
             eventbox_photo.button_release_event.connect ( (event) => {
+
+                var child = (Gtk.FlowBoxChild) this.get_parent ();
+                var flow = (Gtk.FlowBox) child.get_parent ();
+                flow.select_child (child);
+
                 if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
                     popup.set_visible (true);
                 } else {
-                    this.set_sensitive (false);  
-                    revealer.set_reveal_child (true);
-                    string? url_photo = connection.get_url_photo(photo.links_download_location);
-                    setup_wallpaper(url_photo);
+                    //this.set_sensitive (false);  
+                    //revealer.set_reveal_child (true);
+                    setup_wallpaper();
                 }
                 return true;
             } );
@@ -138,7 +153,6 @@ namespace App.Views {
                     this.set_sensitive (true);            
                 });
                 prev_win.show_all ();
-                // MUST TO BE REIMPLEMENTED
                 prev_win.load_content();
 		    });
 
@@ -148,8 +162,8 @@ namespace App.Views {
             overlay = new Gtk.Overlay();
             overlay.add (eventbox_photo);
             overlay.add_overlay (btn_view);            
-            overlay.width_request = 280;
-            overlay.height_request = 180;
+            overlay.width_request = w_photo;
+            overlay.height_request = h_photo;
 
             /******************************************
                         Create Label Autor
@@ -190,12 +204,16 @@ namespace App.Views {
 
         private void scale (int w_h_photo, int w_h_card) {
             double card_scale = (double) w_h_card / (double) w_h_photo;
-            //w_photo = (int)(w_photo * card_scale);
-            //h_photo = (int)(h_photo* card_scale);
+            w_photo = (int)(w_photo * card_scale);
+            h_photo = (int)(h_photo* card_scale);
         }
 
-        private void setup_wallpaper (string url, string opt = "zoom") {
-            wallpaper = new Wallpaper (url, photo.id, photo.username, bar);
+        public void setup_wallpaper (string opt = "zoom") {
+            this.set_sensitive (false);  
+            revealer.set_reveal_child (true);
+
+            string? url_photo = connection.get_url_photo(photo.links_download_location);
+            wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
             wallpaper.finish_download.connect (() => {
                 this.set_sensitive (true);    
                 print("Finish download");        

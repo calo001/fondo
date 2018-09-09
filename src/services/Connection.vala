@@ -101,7 +101,7 @@ namespace App.Connection {
                     width =                     object.get_int_member    ("width"),
                     height =                    object.get_int_member    ("height"),
                     urls_thumb =                object.get_object_member ("urls")
-                                                      .get_string_member ("thumb"),
+                                                      .get_string_member ("small"),
                     links_download_location =   object.get_object_member ("links")
                                                       .get_string_member ("download_location"),
                     username =                  object.get_object_member ("user")

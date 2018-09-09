@@ -39,13 +39,15 @@ namespace App.Views {
             this.margin_left = 10;
             this.max_children_per_line = 3;
             this.min_children_per_line = 1;
-            this.homogeneous = true;
+            this.homogeneous = false;
             this.set_selection_mode(Gtk.SelectionMode.SINGLE);
+            this.activate_on_single_click = false;
             this.num_card = 0;
 
-            //this.child_activated.connect( (child)=>{
-            //    print("Me active!");
-            //});
+            this.child_activated.connect( (child)=>{
+                var card = (CardPhotoView) child.get_child();
+                card.setup_wallpaper();
+            });
         }
 
         public void insert_cards (List<Photo?> photos) {
