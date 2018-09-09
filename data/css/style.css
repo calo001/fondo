@@ -102,3 +102,8 @@ scrollbar contents trough slider {
 .label_loading {
     color: white;
 }
+
+.unsplash_btn {
+    color: gray;
+    background: none;
+}

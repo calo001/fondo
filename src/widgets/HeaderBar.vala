@@ -61,6 +61,21 @@ namespace App.Widgets {
             });
 
             App.Application.settings.bind ("use-dark-theme", mode_switch, "active", GLib.SettingsBindFlags.DEFAULT);
+            
+            var img = new Gtk.Image.from_icon_name ("camera-photo-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
+            var unsplash_text = _(" By Unsplash");
+            var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
+            link_unsplash.get_style_context ().remove_class ("link");
+            link_unsplash.get_style_context ().remove_class ("button");
+            link_unsplash.get_style_context ().remove_class ("flat");
+            link_unsplash.get_style_context ().add_class ("unsplash_btn");
+            link_unsplash.valign = Gtk.Align.CENTER;
+            link_unsplash.has_tooltip = false;
+            link_unsplash.set_image (img);
+            link_unsplash.set_always_show_image (true);
+
+            this.pack_start(link_unsplash);
             this.pack_end (mode_switch);
         }
 
