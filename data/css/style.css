@@ -17,17 +17,20 @@
 */
 
 @define-color colorAccent rgba(18, 144, 141, 0.5);
+@define-color colorAccentOpaque #2BB5CF;
 
 
 progressbar progress {
-	background: #f12711;
-    background: linear-gradient(to right, #FF512F, #f12711);
-	border: none;
+	background: #f7ff00;
+    background: linear-gradient(to right, #f7ff00, #db36a4);;
 }
 
-progressbar trough {
-	background: #d4d4d4;
-	border: none;
+switch {
+	background-color: @colorAccentOpaque;
+}
+
+scrollbar contents trough slider {
+    background-color: @colorAccentOpaque;
 }
 
 .link {
@@ -61,7 +64,7 @@ progressbar trough {
 }
 
 .button-green:hover {
-    background-color: @colorAccent;
+    background-color: @colorAccentOpaque;
     color: #FFFFFF;
     border: none;
 }
@@ -73,7 +76,7 @@ progressbar trough {
 }
 
 .button-green-popup:hover {
-    background-color: @colorAccent;
+    background-color: @colorAccentOpaque;
     border: none;
 }
 
