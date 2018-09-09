@@ -16,20 +16,18 @@
 * 
 */
 
-@define-color colorAccent2 #68b723;
-@define-color colorAccent #00C3A4;
-@define-color colorText #149782;
+@define-color colorAccent rgba(18, 144, 141, 0.5);
 
 
 progressbar progress {
-	background: linear-gradient(to right, #11998e, #38ef7d);;
+	background: #f12711;
+    background: linear-gradient(to right, #FF512F, #f12711);
 	border: none;
 }
 
 progressbar trough {
-	background: #abacae;
+	background: #d4d4d4;
 	border: none;
-	opacity: 0.3;
 }
 
 .link {
@@ -38,20 +36,20 @@ progressbar trough {
 }
 
 .autor {
-    font-size: 12px;
+    font-size: 14px;
     border: none;
     border-radius: 20px;
     padding: 5px 10px;
+    background: none;
+}
+
+.autor:hover {
     background-color: rgba(0,0,0,0.1);
 }
 
 .photo {
     border-radius: 2px;
     border: 2px solid rgba(0,0,0,0.2);
-}
-
-.autor:hover {
-    color: @colorText;
 }
 
 .button-green {
@@ -76,17 +74,12 @@ progressbar trough {
 
 .button-green-popup:hover {
     background-color: @colorAccent;
-    color: #FFFFFF;
     border: none;
 }
 
 .transition {
     transition: 200ms;
     transition-timing-function: ease;
-}
-
-.fondo-header.dark {
-    color: white;
 }
 
 .title-popup {

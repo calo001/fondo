@@ -38,8 +38,8 @@ namespace App.Widgets {
             this.show_close_button = true;
 
             get_style_context ().add_class ("transition");
-            get_style_context ().add_class ("fondo-header");
             get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            get_style_context ().add_class ("output-header");
             get_style_context ().add_class ("default-decoration");
 
             var gtk_settings = Gtk.Settings.get_default ();
