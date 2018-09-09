@@ -43,21 +43,6 @@ namespace App.Connection {
             this.session = new Soup.Session();
         }
 
-        // Make a GET Request to API
-        public void api_connection(string uri) {
-            var message = new Soup.Message ("GET", uri);
-            // Send a request:
-	        session.queue_message (message, (sess, mess) => {
-		        // Process the result:
-		        print ("Status Code: %u\n", mess.status_code);
-		        print ("Message length: %lld\n", mess.response_body.length);
-                //print ("Data: \n%s\n", (string) mess.response_body.data);
-                //print("DATA DE LA RESPUESTA");
-                end_message((string) mess.response_body.data);
-            });
-            
-        }  
-
         // Parse data from API
         public void load_page (int num_page) {
             //print("\n\nPAGINA #" + num_page.to_string() + "\n\n");

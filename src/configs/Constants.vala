@@ -45,7 +45,6 @@ namespace App.Configs {
         public abstract const string HELP_URL = "https://github.com/calo001/wiki";
         public abstract const string URL_CSS = "/com/github/calo001/fondo/css/style.css";
         public abstract const string [] ABOUT_AUTHORS = { "Calo001 <calo_lrc@hotmail.com>" };
-        //public abstract const string API_PARAMS = "&orientation=landscape&count=30";
         public abstract const Gtk.License ABOUT_LICENSE_TYPE = Gtk.License.CUSTOM;
         public abstract const int SIZE_IMAGE_AVERAGE = 10000000;
     }

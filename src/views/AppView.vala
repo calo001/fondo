@@ -30,7 +30,7 @@ namespace App.Views {
      */
     public class AppView : Gtk.FlowBox {
         public signal void load_more();
-        private int                        num_card;
+        private int        num_card;
         /**
          * Constructs a new {@code AppView} object.
          */
@@ -52,7 +52,7 @@ namespace App.Views {
 
         public void insert_cards (List<Photo?> photos) {
             foreach (var photo in photos) {
-                var card = new CardPhotoView (photo);    
+                var card = new CardPhotoView (photo);   
                 print(num_card.to_string());
                 this.insert(card, num_card);
                 num_card++;

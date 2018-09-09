@@ -53,7 +53,9 @@ namespace App.Views {
         private int                     w_photo;
         private int                     h_photo;
         
-        // Construct
+        /*********************************** 
+                    Constructor
+        ************************************/
         public CardPhotoView (Photo photo) {
             this.connection = AppConnection.get_instance();
             this.photo = photo;
@@ -80,6 +82,7 @@ namespace App.Views {
             w_photo = (int) photo.width;
             h_photo = (int) photo.height;
 
+            // Resize photo with a max height and width
             if (w_photo > w_max) {
                 scale (w_photo, w_max);
                 if (h_photo > h_max) {
@@ -104,11 +107,9 @@ namespace App.Views {
             popup_content = new PopupWallpaper(photo.width, photo.height);
             popup.add(popup_content);
 
-            // Detect signal
+            // Detect signal from click on an option from popup
             popup_content.wallpaper_option.connect((opt) => {
-                //this.set_sensitive (false);
                 popup.set_visible (false);
-                //revealer.set_reveal_child (true);
                 setup_wallpaper(opt);
             });
 
@@ -125,8 +126,6 @@ namespace App.Views {
                 if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
                     popup.set_visible (true);
                 } else {
-                    //this.set_sensitive (false);  
-                    //revealer.set_reveal_child (true);
                     setup_wallpaper();
                 }
                 return true;
@@ -146,6 +145,7 @@ namespace App.Views {
             btn_view.halign = Gtk.Align.END;
             btn_view.valign = Gtk.Align.START;
 
+            // Click on button to launch Fullscreen window
             btn_view.clicked.connect (() => {
                 this.set_sensitive (false);
                 var prev_win = new PreviewWindow(photo);
@@ -202,12 +202,18 @@ namespace App.Views {
             show_all_controls();
         }
 
+        /*********************************** 
+            Scale a size with a max size
+        ************************************/
         private void scale (int w_h_photo, int w_h_card) {
             double card_scale = (double) w_h_card / (double) w_h_photo;
             w_photo = (int)(w_photo * card_scale);
             h_photo = (int)(h_photo* card_scale);
         }
 
+        /*********************************** 
+        Set the wallpaper with option "zoom" by default
+        ************************************/
         public void setup_wallpaper (string opt = "zoom") {
             this.set_sensitive (false);  
             revealer.set_reveal_child (true);
@@ -221,6 +227,9 @@ namespace App.Views {
             wallpaper.update_wallpaper (opt);
         }
 
+        /***********************************
+        Requiered for FlowBox to avoid that all widgets get hidden
+        ************************************/
         private void show_all_controls() {
             overlay.show();
             eventbox_photo.show();
