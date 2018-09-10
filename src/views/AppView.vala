@@ -29,8 +29,6 @@ namespace App.Views {
      * @since 1.0.0
      */
     public class AppView : Gtk.FlowBox {
-        public signal void load_more();
-        private int        num_card;
         /**
          * Constructs a new {@code AppView} object.
          */
@@ -39,7 +37,6 @@ namespace App.Views {
             this.margin_start = 10;
             this.set_selection_mode(Gtk.SelectionMode.SINGLE);
             this.activate_on_single_click = false;
-            this.num_card = 0;
             this.set_homogeneous (false);
 
             this.child_activated.connect( (child)=>{
@@ -48,14 +45,14 @@ namespace App.Views {
             });
         }
 
+        /********************************************
+           Method to insert new photos from a list
+        ********************************************/
         public void insert_cards (List<Photo?> photos) {
             foreach (var photo in photos) {
                 var card = new CardPhotoView (photo);
                 card.valign = Gtk.Align.START;
-
-                this.insert(card, num_card);
-                num_card++;
-
+                this.add(card);
                 card.show_all();
             }
         }

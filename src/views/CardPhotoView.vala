@@ -51,8 +51,6 @@ namespace App.Views {
 
         private int                     w_photo;
         private int                     h_photo;
-        
-        public signal void unlock_child ();
 
         /***********************************
                     Constructor
@@ -205,9 +203,12 @@ namespace App.Views {
             h_photo = (int)(h_photo* card_scale);
         }
 
-        /*********************************** 
+        /************************************************* 
         Set the wallpaper with option "zoom" by default
-        ************************************/
+        * Get url of image from and set the url to a Wallpaper Object
+        * Finish signal is recived and  enabled the View
+        * Update the wallpaper
+        **************************************************/
         public void setup_wallpaper (string opt = "zoom") {
             this.set_sensitive (false);  
             revealer.set_reveal_child (true);
@@ -216,8 +217,7 @@ namespace App.Views {
             wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
             wallpaper.finish_download.connect (() => {
                 this.set_sensitive (true);
-                unlock_child ();
-                print("Finish download");        
+                //print("Finish download");        
             });
             wallpaper.update_wallpaper (opt);
         }

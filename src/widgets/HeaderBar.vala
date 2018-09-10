@@ -44,6 +44,9 @@ namespace App.Widgets {
 
             var gtk_settings = Gtk.Settings.get_default ();
 
+            /************************
+                Mode Switch widget
+            ************************/
             var mode_switch = new ModeSwitch (
                 "display-brightness-symbolic",
                 "weather-clear-night-symbolic"
@@ -55,6 +58,7 @@ namespace App.Widgets {
             mode_switch.valign = Gtk.Align.CENTER;
             mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
 
+
             var context = get_style_context ();
             mode_switch.notify["active"].connect (() => {
                 detect_dark_mode (gtk_settings, context);
@@ -62,6 +66,9 @@ namespace App.Widgets {
 
             App.Application.settings.bind ("use-dark-theme", mode_switch, "active", GLib.SettingsBindFlags.DEFAULT);
             
+            /*******************
+             * Unsplash button 
+            *******************/
             var img = new Gtk.Image.from_icon_name ("camera-photo-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
             var unsplash_text = _(" By Unsplash");
@@ -70,7 +77,6 @@ namespace App.Widgets {
             link_unsplash.get_style_context ().remove_class ("button");
             link_unsplash.get_style_context ().add_class ("flat");
             link_unsplash.get_style_context ().add_class ("unsplash_btn");
-            link_unsplash.valign = Gtk.Align.CENTER;
             link_unsplash.has_tooltip = false;
             link_unsplash.set_image (img);
             link_unsplash.set_always_show_image (true);
@@ -79,6 +85,9 @@ namespace App.Widgets {
             this.pack_end (mode_switch);
         }
 
+        /************************ 
+         * Toogle the dark mode
+        ************************/
         public void detect_dark_mode (Gtk.Settings gtk_settings, Gtk.StyleContext context) {
             if (gtk_settings.gtk_application_prefer_dark_theme) {
                 App.Configs.Settings.get_instance ().use_dark_theme = true;

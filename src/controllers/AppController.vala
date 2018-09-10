@@ -124,10 +124,10 @@ namespace App.Controllers {
 
             // Signal catched when request is success and setup the photos 
             connection.request_page_success.connect ( (list) => {
-                print("\nSIGNAL RECIVED LENGHT: "+ list.length().to_string() + "\n" );
-                foreach (var item in list) {
-                    print(item.name + "\n");
-                }
+                //print("\nSIGNAL RECIVED LENGHT: "+ list.length().to_string() + "\n" );
+                //foreach (var item in list) {
+                //    print(item.name + "\n");
+                //}
 
                 if (num_page > 1) {
                     view.insert_cards(list);

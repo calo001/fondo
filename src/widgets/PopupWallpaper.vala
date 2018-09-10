@@ -21,7 +21,7 @@ using Gtk;
 namespace App.Widgets {
 
     /**
-     * The {@code PopupWallpaper} class is responsible for displaying a popup menu.
+     * The {@code PopupWallpaper} class is responsible for displaying a popup menu content.
      *
      * @see Gtk.HeaderBar
      * @since 1.1.0

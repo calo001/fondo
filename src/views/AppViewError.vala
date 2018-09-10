@@ -29,6 +29,7 @@ namespace App.Views {
      */
     public class AppViewError : Gtk.Box {
         public signal void close_window();
+        
         public AppViewError() {
             // Configuring UI
             this.orientation = Gtk.Orientation.VERTICAL;

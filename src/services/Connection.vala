@@ -31,10 +31,6 @@ namespace App.Connection {
 
         // Signals for Classes tha use this class
         public signal void request_page_success(List<Photo?> list);
-        public signal void request_page_fail(Error e);
-        public signal void request_URL_photo_success(string image);
-        public signal void request_URL_photo_fail(Error e);
-        public signal void end_message(string msg);
 
         private static AppConnection? instance;
         private Soup.Session session;
@@ -46,11 +42,11 @@ namespace App.Connection {
         // Parse data from API
         public void load_page (int num_page) {
             //print("\n\nPAGINA #" + num_page.to_string() + "\n\n");
+            //print(uri + "\n");
             var uri = Constants.URI_PAGE + 
                       "&page=" + num_page.to_string() + 
                       "&per_page=" + "24";
             
-            print(uri + "\n");
             var message = new Soup.Message ("GET", uri);
 
             session.queue_message (message, (sess, mess) => {
@@ -61,14 +57,13 @@ namespace App.Connection {
                 
                 var parser = new Json.Parser ();
                 try {
-                    //parser.load_from_data ((string) message.response_body.flatten ().data, -1);
                     parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
                     var list = get_data (parser);
                     request_page_success(list);
-                    //print("\nEMITO SEÑAL ENVIO DE LISTA!\n");
                 } catch (Error e) {
-                    request_page_fail(e);
-                    //print ("Unable to parse the string: %s\n", e.message);
+                    show_message("Request page fail", 
+                                  e.message,
+                                  "dialog-error");
                 }
             });
         }
@@ -108,7 +103,7 @@ namespace App.Connection {
                          Constants.ACCESS_KEY_UNSPLASH;
             
             //print(uri + "\n");
-            print("\nGET URL PHOTO\n");
+            //print("\nGET URL PHOTO\n");
             var message = new Soup.Message ("GET", uri);
             string? image = null;
 
@@ -127,8 +122,9 @@ namespace App.Connection {
                     image = node.get_object ().get_string_member ("url");
                     loop.quit ();     
                 } catch (Error e) {
-                    request_URL_photo_fail(e);
-                    print ("Unable to parse the string: %s\n", e.message);
+                    show_message("Unable to parse the string", 
+                                  e.message,
+                                  "dialog-error");
                 }
             });
             loop.run ();
@@ -145,6 +141,21 @@ namespace App.Connection {
                 instance = new AppConnection ();
             }
             return instance;
+        }
+
+        /************************************
+           Dialog that show error messages
+        ************************************/
+        private void show_message (string txt_primary, string txt_secondary, string icon) {
+            var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                txt_primary,
+                txt_secondary,
+                icon,
+                Gtk.ButtonsType.CLOSE
+            );
+
+            message_dialog.run ();
+            message_dialog.destroy ();
         }
     }
 }

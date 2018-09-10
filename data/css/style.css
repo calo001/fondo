@@ -51,8 +51,8 @@ scrollbar contents trough slider {
 }
 
 .photo {
-    background: #06beb6;
-    background: linear-gradient(-45deg, #06beb6, #48b1bf);
+    background: #2ebf91;
+    background: linear-gradient(-45deg, #8360c3, #2ebf91);
     border-radius: 2px;
     border: 2px solid rgba(0,0,0,0.2);
 }
@@ -106,4 +106,16 @@ scrollbar contents trough slider {
 .unsplash_btn {
     color: gray;
     background: none;
+}
+
+.prev-window {
+    background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
 }

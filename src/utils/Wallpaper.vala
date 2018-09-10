@@ -44,6 +44,13 @@ namespace App.Utils {
         // Progress bar in plank
         private LauncherEntry launcher;
 
+        /*********************************** 
+            Constructor
+            * uri_endpoint is the direct url image
+            * id_photo is used for naming the file
+            * username is used for naming the file
+            * bar to update progress
+        ************************************/
         public Wallpaper (string uri_endpoint, string id_photo, string username, ProgressBar bar) {
             this.uri_endpoint = uri_endpoint;
             this.bar = bar;
@@ -52,18 +59,30 @@ namespace App.Utils {
             this.launcher = LauncherEntry.get_for_desktop_id (Constants.ID + ".desktop");
         }
 
-        // Update picture
+        /*********************************************************************** 
+            Method to manage all process to download and put a new Wallpaper
+            * opt is used to put in GSetting the wallpaper size
+            * Show notification
+            * Finally set the configuration to change the wallpaper greeter
+        ***********************************************************************/
         public void update_wallpaper (string opt = "zoom") {
             if (check_directory ()) {
                 if (download_picture ()) {
                     set_wallpaper (opt);
                     show_notify ();
                     set_to_greeter ();
+                } else {
+                    show_message ("Error", "Download issue", "dialog-warning");    
                 }
+            } else {
+                show_message ("Error", "Directory issue", "dialog-warning");
             }
         }
 
-        // Create directory
+        /*********************************************************************** 
+            Method to create if is necessary the directory 
+            in /home/user/.local/share/backgrounds/
+        ***********************************************************************/
         private bool check_directory () {
             print("ERROR DIRECTORY");
 		    var dir = File.new_for_path (BASE_DIR);
@@ -78,7 +97,12 @@ namespace App.Utils {
             return true;
         }
 
-        // Write the picture using url in '/home/user/.local/share/backgrounds/'
+        /*********************************************************************** 
+            Method to download a photo from API unsplash
+            * Using the copy_async method to white the file
+            * Update progress via show_progress method
+            * Emit finish_download signal
+        ***********************************************************************/
         public bool download_picture () {
             MainLoop loop = new MainLoop ();
 
@@ -95,20 +119,20 @@ namespace App.Utils {
 		            //print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
 			        show_progress (progress);
 	            }, (obj, res) => {
-		            try {
-			            bool tmp = file_from_uri.copy_async.end (res);
-			            print ("Result: %s\n", tmp.to_string ());
+		            //try {
+			            //bool tmp = file_from_uri.copy_async.end (res);
+			            //print ("Result: %s\n", tmp.to_string ());
                         launcher.progress_visible = false;
                         finish_download ();
-		            } catch (Error e) {
-			            show_message ("Error", e.message, "dialog-error");
-		            }
+		            //} catch (Error e) {
+			            //show_message ("Error", e.message, "dialog-error");
+		            //}
 		                loop.quit ();
 	                });
 			} else {
-                print ("Picture %s already exist\n", img_file_name);
+                //print ("Picture %s already exist\n", img_file_name);
                 finish_download ();
-				bar.set_fraction (1.0);
+				bar.set_fraction (1);
 				return true;
             }
             print("\nDOWNLOAD END\n");
@@ -116,7 +140,9 @@ namespace App.Utils {
             return true;
         }
 
-        // Change the picture-uri property in GSettings
+        /*********************************************************************** 
+            Method to update GSetting properties
+        ***********************************************************************/
         public void set_wallpaper (string picture_options = "zoom") {
 			GLib.Settings settings = new GLib.Settings ("org.gnome.desktop.background");
             settings.set_string ("picture-uri", "file://" + this.full_picture_path);
@@ -129,20 +155,31 @@ namespace App.Utils {
             GLib.Settings.sync ();
         }
 
-        // Show progress in download
+        /*********************************************************************** 
+            Method to show progress in download
+        ***********************************************************************/
         private void show_progress (double progress) {
             bar.set_fraction (progress);
             launcher.progress = progress;
         }
 
-        // Show desktop notification
+        /*********************************************************************** 
+            Method to show desktop notification
+        ***********************************************************************/
         public void show_notify () {
             var notification = new Notification (_("Wallpaper ready!"));
             notification.set_body (_("Your new wallpaper is ready!"));
             GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
 
-        // Copy the downloaded background to '/var/lib/lightdm-data/user/wallpaper/'
+        /*********************************************************************** 
+            Method to copy the downloaded background to 
+            '/var/lib/lightdm-data/user/wallpaper/'
+            * Check if directory exist
+            * Copy image process
+            * Base from:
+            * https://github.com/elementary/switchboard-plug-pantheon-shell/blob/master/set-wallpaper-contract/set-wallpaper.vala
+        ***********************************************************************/
          public void set_to_greeter () {
             MainLoop loop = new MainLoop ();
             File? dest = null;
@@ -185,7 +222,9 @@ namespace App.Utils {
 	        });
         }
 
-        // Dialog that show error messages
+        /************************************
+           Dialog that show error messages
+        ************************************/
         private void show_message (string txt_primary, string txt_secondary, string icon) {
             var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 txt_primary,
