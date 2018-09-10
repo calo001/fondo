@@ -58,7 +58,7 @@ namespace App.Controllers {
             scrolled = new Gtk.ScrolledWindow (null, null);
             // default 400 x 260
             scrolled.min_content_width = 380;
-            scrolled.min_content_height = 520;
+            scrolled.min_content_height = 493;
             
             // View that contains all card with photos
             view = new AppView ();
