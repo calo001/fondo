@@ -48,7 +48,7 @@ namespace App.Connection {
             //print("\n\nPAGINA #" + num_page.to_string() + "\n\n");
             var uri = Constants.URI_PAGE + 
                       "&page=" + num_page.to_string() + 
-                      "&per_page=" + "18";
+                      "&per_page=" + "24";
             
             print(uri + "\n");
             var message = new Soup.Message ("GET", uri);

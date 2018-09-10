@@ -78,8 +78,8 @@ namespace App.Views {
             ******************************************/
             
             image = new Granite.AsyncImage(true, true);
-            var w_max = 320;
-            var h_max = 500;
+            var w_max = 280;
+            var h_max = 460;
             w_photo = (int) photo.width;
             h_photo = (int) photo.height;
 
@@ -103,7 +103,7 @@ namespace App.Views {
                     Create Popover
             ******************************************/
             popup = new Popover(this);
-            popup.position = Gtk.PositionType.BOTTOM;
+            popup.position = Gtk.PositionType.TOP;
             popup.modal = true;
             popup_content = new PopupWallpaper(photo.width, photo.height);
             popup.add(popup_content);

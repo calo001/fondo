@@ -40,6 +40,7 @@ namespace App.Views {
             this.set_selection_mode(Gtk.SelectionMode.SINGLE);
             this.activate_on_single_click = false;
             this.num_card = 0;
+            this.set_homogeneous (false);
 
             this.child_activated.connect( (child)=>{
                 var card = (CardPhotoView) child.get_child();
@@ -49,9 +50,12 @@ namespace App.Views {
 
         public void insert_cards (List<Photo?> photos) {
             foreach (var photo in photos) {
-                var card = new CardPhotoView (photo);   
+                var card = new CardPhotoView (photo);
+                card.valign = Gtk.Align.START;
+
                 this.insert(card, num_card);
                 num_card++;
+
                 card.show_all();
             }
         }

@@ -76,7 +76,6 @@ namespace App {
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
             get_style_context ().add_class ("transition");
-            get_style_context ().add_class ("window-cool");
 
             // Save the window's position on close
             delete_event.connect (() => {
