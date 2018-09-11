@@ -35,7 +35,7 @@ namespace App.Widgets {
             this.column_spacing = 8;
             this.row_spacing = 8;
 
-            var label = new Label(_("Wallpaper as"));
+            var label = new Label(_("Options"));
             var buttom_cen = new Button.with_label(_("Centered"));
             var buttom_scal = new Button.with_label(_("Scaled"));
             var buttom_zoom = new Button.with_label(_("Zoom"));

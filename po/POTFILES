@@ -5,3 +5,4 @@ src/utils/Wallpaper.vala
 src/views/CardPhotoView.vala
 src/views/PreviewWindow.vala
 src/widgets/HeaderBar.vala
+src/widgets/PopupWallpaper.vala

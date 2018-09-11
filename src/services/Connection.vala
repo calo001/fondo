@@ -45,7 +45,8 @@ namespace App.Connection {
             //print(uri + "\n");
             var uri = Constants.URI_PAGE + 
                       "&page=" + num_page.to_string() + 
-                      "&per_page=" + "24";
+                      "&per_page=" + "24" +
+                      "&order_by=" + "latest";
             
             var message = new Soup.Message ("GET", uri);
 

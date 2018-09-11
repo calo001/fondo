@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-21 15:23-0500\n"
-"PO-Revision-Date: 2018-08-09 22:07-0500\n"
+"POT-Creation-Date: 2018-09-11 11:51-0500\n"
+"PO-Revision-Date: 2018-09-11 11:49-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -17,45 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/controllers/AppController.vala:109
-msgid "Exit"
-msgstr "Salir"
-
-#: src/controllers/AppController.vala:157
-msgid "Photos from Unsplash"
-msgstr "Fotos de Unsplash"
-
-#: src/widgets/HeaderBar.vala:48
-#, fuzzy
-msgid "See more"
-msgstr "Ver más"
-
-#: src/widgets/HeaderBar.vala:58
-#, fuzzy
+#: src/widgets/HeaderBar.vala:56
 msgid "Light background"
 msgstr "Fondo claro"
 
-#: src/widgets/HeaderBar.vala:59
-#, fuzzy
+#: src/widgets/HeaderBar.vala:57
 msgid "Dark background"
 msgstr "Fondo oscuro"
 
-#: src/utils/Wallpaper.vala:138
+#: src/widgets/HeaderBar.vala:74
+msgid " By Unsplash"
+msgstr "Por Unsplash"
+
+#: src/utils/Wallpaper.vala:170
 msgid "Wallpaper ready!"
 msgstr "¡Fondo de pantalla listo!"
 
-#: src/utils/Wallpaper.vala:139
+#: src/utils/Wallpaper.vala:171
 msgid "Your new wallpaper is ready!"
-msgstr "¡Tu nuevo fondo de pantalla está listo!"
+msgstr "Tu nuevo fondo de pantalla está listo"
 
-#: src/views/CardPhotoView.vala:60
+#: src/views/CardPhotoView.vala:96
 msgid "🌎  An amazing place in the world"
-msgstr "🌎  Un lugar asombroso en el mundo"
+msgstr "🌎  Un lugar increíble en el mundo"
 
-#: src/views/CardPhotoView.vala:100
+#: src/views/CardPhotoView.vala:166
 msgid "By "
 msgstr "Por "
 
-#: src/views/PreviewWindow.vala:89
+#: src/views/PreviewWindow.vala:68
 msgid "Loading ..."
 msgstr "Cargando ..."
+
+#: src/widgets/PopupWallpaper.vala:38
+msgid "Options"
+msgstr "Opciones"
+
+#: src/widgets/PopupWallpaper.vala:39
+msgid "Centered"
+msgstr "Centrado"
+
+#: src/widgets/PopupWallpaper.vala:40
+msgid "Scaled"
+msgstr "Escalado"
+
+#: src/widgets/PopupWallpaper.vala:41
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/widgets/PopupWallpaper.vala:42
+msgid "Spanned"
+msgstr "Extendido"
