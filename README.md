@@ -13,6 +13,7 @@
 </p>
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/calo001/fondo/blob/master/LICENSE.md)
+[![Build Status](https://travis-ci.org/calo001/fondo.svg?branch=master)](https://travis-ci.org/calo001/fondo)
 
 <p align="center">
     <img  src="https://raw.githubusercontent.com/calo001/fondo/develop/data/images/screenshot_1.png" alt="Screenshot"> <br>
