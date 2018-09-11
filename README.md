@@ -12,8 +12,12 @@
     </a>
 </p>
 
+<p>
+  [![GitHub license](https://img.shields.io/github/license/calo001/fondo.svg?style=flat-square)](https://github.com/calo001/fondo/blob/master/LICENSE.md)  
+</p>
+
 <p align="center">
-    <img  src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_1.png" alt="Screenshot"> <br>
+    <img  src="https://raw.githubusercontent.com/calo001/fondo/develop/data/images/screenshot_1.png" alt="Screenshot"> <br>
   <a href="https://github.com/calo001/fondo/issues/new"> Report a problem! </a>
 </p>
 
