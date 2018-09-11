@@ -84,7 +84,6 @@ msgid "Carlos Lopez"
 msgstr "Carlos Lopez"
 
 #: data/com.github.calo001.fondo.appdata.xml:28
-msgid ""
 msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
 msgstr "Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash.com la comunidad de fotógrafos más generosa del mundo"
 
