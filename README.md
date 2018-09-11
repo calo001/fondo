@@ -13,7 +13,7 @@
 </p>
 
 <p>
-  [![GitHub license](https://img.shields.io/github/license/calo001/fondo.svg?style=flat-square)](https://github.com/calo001/fondo/blob/master/LICENSE.md)  
+  [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/calo001/fondo/blob/master/LICENSE.md)
 </p>
 
 <p align="center">
