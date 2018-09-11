@@ -42,18 +42,30 @@ namespace App {
             Object (
                 application: app,
                 icon_name: Constants.APP_ICON,
-                resizable: false
+                resizable: true
             );
-
-            //get_style_context ().add_class ("rounded");
 
             var settings = App.Configs.Settings.get_instance ();
             int x = settings.window_x;
             int y = settings.window_y;
+            int width = settings.window_width;
+            int height = settings.window_height;
+            bool maximized = settings.maximized;
 
+            // Set save position
             if (x != -1 && y != -1) {
                 move (x, y);
             }
+
+            // Set save size
+            if (width != -1 && height != -1) {
+                set_default_size (width, height);
+            } else {
+                set_default_size (1094, 690);
+            }
+
+            // Set maximized window
+            if (maximized) maximize ();
 
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource (Constants.URL_CSS);
@@ -68,25 +80,19 @@ namespace App {
             // Save the window's position on close
             delete_event.connect (() => {
                 int root_x, root_y;
+                int root_w, root_h;
+                bool max;
                 get_position (out root_x, out root_y);
+                get_size (out root_w, out root_h);
+                max = is_maximized;
 
                 settings.window_x = root_x;
                 settings.window_y = root_y;
+                settings.window_width = root_w;
+                settings.window_height = root_h;
+                settings.maximized = max;
                 return false;
             });
-        }
-
-        protected bool match_keycode (int keyval, uint code) {
-            Gdk.KeymapKey [] keys;
-            Gdk.Keymap keymap = Gdk.Keymap.get_for_display (Gdk.Display.get_default ());
-            if (keymap.get_entries_for_keyval (keyval, out keys)) {
-                foreach (var key in keys) {
-                    if (code == key.keycode)
-                        return true;
-                    }
-                }
-
-            return false;
         }
     }
 }

@@ -5,6 +5,7 @@ sources += files(
     'controllers/AppController.vala',
 
     'views/AppView.vala',
+    'views/AppViewError.vala',
     'views/CardPhotoView.vala',
     'views/PreviewWindow.vala',
 
@@ -15,6 +16,7 @@ sources += files(
 
     'widgets/HeaderBar.vala',
     'widgets/ModeSwitch.vala',
+    'widgets/PopupWallpaper.vala',
     'services/Connection.vala',
 
     'Application.vala',

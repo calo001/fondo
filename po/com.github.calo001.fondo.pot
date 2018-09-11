@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-21 15:23-0500\n"
+"POT-Creation-Date: 2018-09-11 15:44-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,42 +17,104 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/controllers/AppController.vala:109
-msgid "Exit"
-msgstr ""
-
-#: src/controllers/AppController.vala:157
-msgid "Photos from Unsplash"
-msgstr ""
-
-#: src/widgets/HeaderBar.vala:48
-msgid "See more"
-msgstr ""
-
-#: src/widgets/HeaderBar.vala:58
+#: src/widgets/HeaderBar.vala:56
 msgid "Light background"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:59
+#: src/widgets/HeaderBar.vala:57
 msgid "Dark background"
 msgstr ""
 
-#: src/utils/Wallpaper.vala:138
+#: src/widgets/HeaderBar.vala:74
+msgid " By Unsplash"
+msgstr ""
+
+#: src/utils/Wallpaper.vala:170
 msgid "Wallpaper ready!"
 msgstr ""
 
-#: src/utils/Wallpaper.vala:139
+#: src/utils/Wallpaper.vala:171
 msgid "Your new wallpaper is ready!"
 msgstr ""
 
-#: src/views/CardPhotoView.vala:60
+#: src/views/CardPhotoView.vala:96
 msgid "🌎  An amazing place in the world"
 msgstr ""
 
-#: src/views/CardPhotoView.vala:100
+#: src/views/CardPhotoView.vala:166
 msgid "By "
 msgstr ""
 
-#: src/views/PreviewWindow.vala:89
+#: src/views/PreviewWindow.vala:68
 msgid "Loading ..."
+msgstr ""
+
+#: src/widgets/PopupWallpaper.vala:38
+msgid "Options"
+msgstr ""
+
+#: src/widgets/PopupWallpaper.vala:39
+msgid "Centered"
+msgstr ""
+
+#: src/widgets/PopupWallpaper.vala:40
+msgid "Scaled"
+msgstr ""
+
+#: src/widgets/PopupWallpaper.vala:41
+msgid "Zoom"
+msgstr ""
+
+#: src/widgets/PopupWallpaper.vala:42
+msgid "Spanned"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+#: data/com.github.calo001.fondo.desktop.in:3
+msgid "Fondo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+#: data/com.github.calo001.fondo.desktop.in:4
+msgid "Find the most beautiful wallpapers for elementary OS."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:28
+msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:30
+msgid "Scroll down to load more and more photos."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:31
+msgid "A single click on the photo to put as a wallpaper."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:32
+msgid "Right click for more wallpaper display options"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+msgid "See the photo in full screen."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+msgid "Change the size of the window, the design is responsive"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:35
+msgid "Use ESC to exit."
+msgstr ""
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
 msgstr ""

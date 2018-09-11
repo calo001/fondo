@@ -41,38 +41,16 @@ namespace App.Views {
         public  Wallpaper               wallpaper {get; set;}
         public signal void closed_preview ();
 
-        public PreviewWindow (Photo photo){
+        public PreviewWindow (Photo photo) {
+            this.connection = AppConnection.get_instance();
             this.w_photo = (int) photo.width;
             this.h_photo = (int) photo.height;
             this.photo = photo;
-            var css_provider = new Gtk.CssProvider ();
-            try {
-                css_provider.load_from_data (
-                """
-                    .prev-window {
-                        background:
-                        linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-                        linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-                        linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-                        linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-                        linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-                        linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-                        background-color: #131313;
-                        background-size: 20px 20px;
-                    }
-                    """
-                );
-                Gtk.StyleContext.add_provider_for_screen (
-                    Gdk.Screen.get_default (),
-                    css_provider,
-                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION );
-                get_style_context ().add_class ("prev-window");
-            } catch (Error e) {
-                message ("error loading CSS provider");
-            }
-
+            get_style_context ().add_class ("prev-window");
+            
 		    fullscreen ();
 
+            // Detect ESC key to close window
             this.key_press_event.connect ((e) => {
                 uint keycode = e.hardware_keycode;
                 print ("Key" + keycode.to_string());
@@ -86,8 +64,10 @@ namespace App.Views {
                 closed_preview ();
 		    });
 
+            // Loading label
             var label = new Gtk.Label(_("Loading ..."));
             label.get_style_context ().add_class ("h1");
+            label.get_style_context ().add_class ("label_loading");
             bar = new Gtk.ProgressBar ();
 
             // Container
@@ -118,9 +98,14 @@ namespace App.Views {
             this.add (stack);
         }
 
+        /****************************
+            Method to setup the window
+            * Get direct url photo
+            * Resize the image to current screen
+            * Show message (ESC to exit)
+        *****************************/
         public void load_content () {
-		    connection = new AppConnection();
-            var url_photo = connection.get_url_photo(photo.links_download_location);
+            string? url_photo = connection.get_url_photo(photo.links_download_location);
             wallpaper = new Wallpaper(url_photo, photo.id, photo.username, bar);
             wallpaper.download_picture ();
             var path_wallpaper = wallpaper.full_picture_path;
@@ -147,6 +132,10 @@ namespace App.Views {
             toast.margin = 0;
         }
 
+        /***************************
+        Recived a size original and a standar size
+        * monitor_scale get a decimal to resize a photo
+        ****************************/
         private void scale (int w_h_photo, int w_h_screen) {
             double monitor_scale = (double) w_h_screen / (double) w_h_photo;
             w_photo = (int)(w_photo * monitor_scale);

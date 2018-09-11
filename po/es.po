@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-21 15:23-0500\n"
-"PO-Revision-Date: 2018-08-09 22:07-0500\n"
+"POT-Creation-Date: 2018-09-11 15:44-0500\n"
+"PO-Revision-Date: 2018-09-11 11:49-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -17,45 +17,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/controllers/AppController.vala:109
-msgid "Exit"
-msgstr "Salir"
-
-#: src/controllers/AppController.vala:157
-msgid "Photos from Unsplash"
-msgstr "Fotos de Unsplash"
-
-#: src/widgets/HeaderBar.vala:48
-#, fuzzy
-msgid "See more"
-msgstr "Ver más"
-
-#: src/widgets/HeaderBar.vala:58
-#, fuzzy
+#: src/widgets/HeaderBar.vala:56
 msgid "Light background"
 msgstr "Fondo claro"
 
-#: src/widgets/HeaderBar.vala:59
-#, fuzzy
+#: src/widgets/HeaderBar.vala:57
 msgid "Dark background"
 msgstr "Fondo oscuro"
 
-#: src/utils/Wallpaper.vala:138
+#: src/widgets/HeaderBar.vala:74
+msgid " By Unsplash"
+msgstr "Por Unsplash"
+
+#: src/utils/Wallpaper.vala:170
 msgid "Wallpaper ready!"
 msgstr "¡Fondo de pantalla listo!"
 
-#: src/utils/Wallpaper.vala:139
+#: src/utils/Wallpaper.vala:171
 msgid "Your new wallpaper is ready!"
-msgstr "¡Tu nuevo fondo de pantalla está listo!"
+msgstr "Tu nuevo fondo de pantalla está listo"
 
-#: src/views/CardPhotoView.vala:60
+#: src/views/CardPhotoView.vala:96
 msgid "🌎  An amazing place in the world"
-msgstr "🌎  Un lugar asombroso en el mundo"
+msgstr "🌎  Un lugar increíble en el mundo"
 
-#: src/views/CardPhotoView.vala:100
+#: src/views/CardPhotoView.vala:166
 msgid "By "
 msgstr "Por "
 
-#: src/views/PreviewWindow.vala:89
+#: src/views/PreviewWindow.vala:68
 msgid "Loading ..."
 msgstr "Cargando ..."
+
+#: src/widgets/PopupWallpaper.vala:38
+msgid "Options"
+msgstr "Opciones"
+
+#: src/widgets/PopupWallpaper.vala:39
+msgid "Centered"
+msgstr "Centrado"
+
+#: src/widgets/PopupWallpaper.vala:40
+msgid "Scaled"
+msgstr "Escalado"
+
+#: src/widgets/PopupWallpaper.vala:41
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/widgets/PopupWallpaper.vala:42
+msgid "Spanned"
+msgstr "Extendido"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+#: data/com.github.calo001.fondo.desktop.in:3
+msgid "Fondo"
+msgstr "Fondo"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+#: data/com.github.calo001.fondo.desktop.in:4
+msgid "Find the most beautiful wallpapers for elementary OS."
+msgstr "Encuentra los fondos de pantalla más incríbles para elementary OS."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr "Carlos Lopez"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:28
+msgid ""
+"Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
+msgstr ""
+"Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash.com la comunidad de fotógrafos más generosa del mundo"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:30
+msgid "Scroll down to load more and more photos."
+msgstr "Desplazate hacia abajo para cargas más y más fotos."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:31
+msgid "A single click on the photo to put as a wallpaper."
+msgstr "Un solo click en la foto para usar como fondo de pantalla"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:32
+msgid "Right click for more wallpaper display options"
+msgstr "Click derecho para mas opciones del fondo de pantalla"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+msgid "See the photo in full screen."
+msgstr "Ve la foto en pantalla completa."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+msgid "Change the size of the window, the design is responsive"
+msgstr "Cambia el tamaño de la ventana, el diseño es responsivo."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:35
+msgid "Use ESC to exit."
+msgstr "Usa ESC para salir."
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr "com.github.calo001.fondo"
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr "wallpaper;unsplash;foto;image;photo;background;"

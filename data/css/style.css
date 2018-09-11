@@ -16,17 +16,21 @@
 * 
 */
 
-@define-color colorAccent #68b723;
+@define-color colorAccent rgba(18, 144, 141, 0.5);
+@define-color colorAccentOpaque #2BB5CF;
+
 
 progressbar progress {
-	background: linear-gradient(to right, #11998e, #38ef7d);;
-	border: none;
+	background: #f7ff00;
+    background: linear-gradient(to right, #f7ff00, #db36a4);;
 }
 
-progressbar trough {
-	background: #abacae;
-	border: none;
-	opacity: 0.3;
+switch {
+	background-color: @colorAccentOpaque;
+}
+
+scrollbar contents trough slider {
+    background-color: @colorAccentOpaque;
 }
 
 .link {
@@ -35,18 +39,22 @@ progressbar trough {
 }
 
 .autor {
-    font-size: 12px;
+    font-size: 14px;
     border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
     background: none;
 }
 
-.photo {
-    border-radius: 2px;
-    border: 2px solid rgba(0,0,0,0.2);
+.autor:hover {
+    background-color: rgba(0,0,0,0.1);
 }
 
-.autor:hover {
-    color: @colorAccent;
+.photo {
+    background: #2ebf91;
+    background: linear-gradient(-45deg, #8360c3, #2ebf91);
+    border-radius: 2px;
+    border: 2px solid rgba(0,0,0,0.2);
 }
 
 .button-green {
@@ -58,9 +66,24 @@ progressbar trough {
 }
 
 .button-green:hover {
-    background-color: @colorAccent;
+    background-color: @colorAccentOpaque;
     color: #FFFFFF;
     border: none;
+}
+
+.button-green-popup {
+    border: 1px solid rgba(18, 144, 141, 0);
+	padding: 5px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.button-green-popup:hover {
+    background-color: @colorAccentOpaque;
+    border: 1px solid @colorAccentOpaque;
+}
+
+.button-green-popup:focus {
+    border: 1px solid @colorAccentOpaque;
 }
 
 .transition {
@@ -68,6 +91,30 @@ progressbar trough {
     transition-timing-function: ease;
 }
 
-.fondo-header.dark {
+.title-popup {
+    font-weight: bold;
+} 
+
+.title-text {
+    color: gray;
+}
+
+.label_loading {
     color: white;
+}
+
+.unsplash_btn {
+    background: none;
+}
+
+.prev-window {
+    background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
 }

@@ -5,8 +5,8 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>AGPL-3.0</project_license>
     <name>Fondo</name>
-    <summary>Find the most beautiful wallpapers for your desktop.</summary>
-    <developer_name>Calo001</developer_name>
+    <summary>Find the most beautiful wallpapers for elementary OS.</summary>
+    <developer_name>Carlos Lopez</developer_name>
     <provides>
         <binary>com.github.calo001.fondo</binary>
     </provides>
@@ -17,13 +17,21 @@
         <screenshot>
             <image>https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_2.png</image>
         </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_3.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_4.png</image>
+        </screenshot>
     </screenshots>
     <description>
-        <p>Find a variety of the most beautiful wallpapers. The application shows five pages of six amazing photographs that with a click you can use as wallpaper.</p>
+        <p>Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers. </p>
         <ul>
-          <li>Use Arrow Key Right to move next page.</li>
-          <li>Use Arrow Key Left to move previus page.</li>
-          <li>Use Spacebar to move next page.</li>
+          <li>Scroll down to load more and more photos.</li>
+          <li>A single click on the photo to put as a wallpaper.</li>
+          <li>Right click for more wallpaper display options</li>
+          <li>See the photo in full screen.</li>
+          <li>Change the size of the window, the design is responsive</li>
           <li>Use ESC to exit.</li>
         </ul>
     </description>
@@ -41,6 +49,11 @@
       <release version="1.0.2" date="2018-08-22">
         <description>
           <p>Fix details.</p>
+        </description>
+      </release>
+      <release version="1.0.2" date="2018-08-22">
+        <description>
+          <p>A very nice update.</p>
         </description>
       </release>
     </releases>
@@ -78,7 +91,7 @@
     <url type="help">https://github.com/calo001/fondo/issues</url>
     <update_contact>calo_lrc@hotmail.com</update_contact>
     <custom>
-        <value key="x-appcenter-color-primary">#d1ff82</value>
+        <value key="x-appcenter-color-primary">#82ffc4</value>
         <value key="x-appcenter-color-primary-text">#000000</value>
         <value key="x-appcenter-suggested-price">0</value>
     </custom>

@@ -13,7 +13,19 @@
 </p>
 
 <p align="center">
-    <img  src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_1.png" alt="Screenshot"> <br>
+  <a href="https://github.com/calo001/fondo">
+    <img src="https://img.shields.io/badge/Version-1.1.0-orange.svg">
+  </a>
+  <a href="https://github.com/calo001/fondo/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
+  </a>
+  <a href="https://travis-ci.org/calo001/fondo">
+    <img src="https://travis-ci.org/calo001/fondo.svg?branch=master">
+  </a>
+</p>
+
+<p align="center">
+    <img  src="https://raw.githubusercontent.com/calo001/fondo/develop/data/images/screenshot_1.png" alt="Screenshot"> <br>
   <a href="https://github.com/calo001/fondo/issues/new"> Report a problem! </a>
 </p>
 

@@ -20,6 +20,8 @@ using App.Configs;
 using App.Structs;
 using App.Connection;
 using App.Utils;
+using App.Widgets;
+using Gtk;
 
 namespace App.Views {
 
@@ -30,53 +32,114 @@ namespace App.Views {
      */
 
     public class CardPhotoView : Gtk.Grid {
+        
+        public signal void set_as_wallpaper(string opt = "zoom");
 
         private File                    file_photo;
         private Granite.AsyncImage      image;
-        private Gtk.Button              btn_view;
-        private Gtk.EventBox            eventbox_photo;
-        private Gtk.LinkButton          label_autor;
+        private Button                  btn_view;
+        private EventBox                eventbox_photo;
+        private LinkButton              label_autor;
         private Wallpaper               wallpaper;
         private AppConnection           connection;
-        private Gtk.ProgressBar         bar;
-        private Gtk.Revealer            revealer;
-        private Gtk.Overlay             overlay;
+        private ProgressBar             bar;
+        private Revealer                revealer;
+        private Overlay                 overlay;
         private Photo                   photo;
-        
-        // Construct
+        private PopupWallpaper          popup_content;
+        public  Popover                 popup;
+
+        private int                     w_photo;
+        private int                     h_photo;
+
+        /***********************************
+                    Constructor
+        ************************************/
         public CardPhotoView (Photo photo) {
+            this.connection = AppConnection.get_instance();
             this.photo = photo;
             this.orientation = Gtk.Orientation.VERTICAL;
             this.margin_bottom = 10;
+            this.margin_top = 10;
+            this.margin_start = 10;
+            this.margin_end = 10;
+            this.halign = Gtk.Align.CENTER;
+            this.valign = Gtk.Align.CENTER;
 
-            // Create File Object
+            /******************************************
+                    File from url thumb
+            ******************************************/
             file_photo = File.new_for_uri (photo.urls_thumb);
             
-            // Create AsyncImage object
+            /******************************************
+                    Create AsyncImage object
+            ******************************************/
+            
             image = new Granite.AsyncImage(true, true);
-            image.set_from_file_async.begin(file_photo, 280, 180, false); // Width, Heigth
+            var w_max = 280;
+            var h_max = 460;
+            w_photo = (int) photo.width;
+            h_photo = (int) photo.height;
+
+            // Resize photo with a max height and width
+            if (w_photo > w_max) {
+                scale (w_photo, w_max);
+                if (h_photo > h_max) {
+                    scale (h_photo, h_max);
+                }
+            }
+
+            image.set_from_file_async.begin(file_photo, w_photo, h_photo, false); // Width, Heigth
             image.has_tooltip = true;
             image.get_style_context ().add_class ("photo");            
-            var txt_tooltip = photo.location == null ? _("🌎  An amazing place in the world") : "🌎  " + photo.location;
+            var txt_tooltip = photo.location == null ? 
+                _("🌎  An amazing place in the world") : 
+                "🌎  " + photo.location;
             image.set_tooltip_text (txt_tooltip);
 
-            eventbox_photo = new Gtk.EventBox();
-            eventbox_photo.button_release_event.connect (() => {
-                this.set_sensitive (false);  
-                set_as_wallpaper ();          
-                return true;
+            /******************************************
+                    Create Popover
+            ******************************************/
+            popup = new Popover(this);
+            popup.position = Gtk.PositionType.TOP;
+            popup.modal = true;
+            popup_content = new PopupWallpaper(photo.width, photo.height);
+            popup.add(popup_content);
+
+            // Detect signal from click on an option from popup
+            popup_content.wallpaper_option.connect((opt) => {
+                popup.set_visible (false);
+                setup_wallpaper(opt);
             });
+
+            /******************************************
+                    Create EventBox for Image
+            ******************************************/
+            eventbox_photo = new Gtk.EventBox();
+            eventbox_photo.button_release_event.connect ( (event) => {
+                if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
+                    popup.set_visible (true);
+                } else {
+                    setup_wallpaper();
+                }
+                return true;
+            } );
+
             eventbox_photo.add(image);
 
-            // Create Button full screen
+            /******************************************
+                        Fullscreen button
+            ******************************************/
             btn_view = new Gtk.Button.from_icon_name ("window-maximize-symbolic");
             btn_view.get_style_context ().add_class ("button-green");
             btn_view.get_style_context ().remove_class ("button");
             btn_view.get_style_context ().add_class ("transition");
-            btn_view.margin = 7;
+            btn_view.can_focus = false;
+            btn_view.margin = 8;
             btn_view.halign = Gtk.Align.END;
             btn_view.valign = Gtk.Align.START;
 
+            // Click on button to launch Fullscreen window
             btn_view.clicked.connect (() => {
                 this.set_sensitive (false);
                 var prev_win = new PreviewWindow(photo);
@@ -87,55 +150,76 @@ namespace App.Views {
                 prev_win.load_content();
 		    });
 
-            // setup overlay
+            /********************************************************
+                    Create Overlay (contain img, btnFullScreen)
+            ********************************************************/
             overlay = new Gtk.Overlay();
-            
             overlay.add (eventbox_photo);
             overlay.add_overlay (btn_view);            
+            overlay.width_request = w_photo;
+            overlay.height_request = h_photo;
 
-            overlay.width_request = 280;
-            overlay.height_request = 180;
-
-            // Create labelAutor
+            /******************************************
+                        Create Label Autor
+            ******************************************/
             var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
             label_autor = new Gtk.LinkButton.with_label(link, _("By ") + photo.name);
             label_autor.get_style_context ().remove_class ("button");
             label_autor.get_style_context ().remove_class ("link");
             label_autor.get_style_context ().add_class ("transition");
             label_autor.get_style_context ().add_class ("autor");
-            label_autor.get_style_context ().remove_class ("flat");
+            label_autor.get_style_context ().add_class ("flat");
+            label_autor.margin_top = 8;
             label_autor.halign = Gtk.Align.CENTER;
             label_autor.has_tooltip = false;
+            label_autor.can_focus = false;
 
-            // Create Horizontal Grid
-            var grid_actions = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
-            grid_actions.margin_top = 5;
-            grid_actions.pack_start(label_autor, true, true, 0);
-
-            // ProgressBar
+            /******************************************
+                        Progressbar card
+            ******************************************/
             bar = new Gtk.ProgressBar ();
-            bar.margin_top = 10;
+            bar.margin_top = 8;
 
-            // Reveal
+            /******************************************
+                        Revealer for progress
+            ******************************************/
             revealer = new Gtk.Revealer ();
             revealer.add (bar);
 
-            // Add view to custom Grid
+            /******************************************
+                        Add all views
+            ******************************************/
             this.add(overlay);            
             this.add(revealer);
-            this.add(grid_actions);
-
+            this.add(label_autor);
         }
 
-        public void set_as_wallpaper () {
+        /*********************************** 
+            Scale a size with a max size
+        ************************************/
+        private void scale (int w_h_photo, int w_h_card) {
+            double card_scale = (double) w_h_card / (double) w_h_photo;
+            w_photo = (int)(w_photo * card_scale);
+            h_photo = (int)(h_photo* card_scale);
+        }
+
+        /************************************************* 
+        Set the wallpaper with option "zoom" by default
+        * Get url of image from and set the url to a Wallpaper Object
+        * Finish signal is recived and  enabled the View
+        * Update the wallpaper
+        **************************************************/
+        public void setup_wallpaper (string opt = "zoom") {
+            this.set_sensitive (false);  
             revealer.set_reveal_child (true);
-            connection = new AppConnection();
-            string url_photo = connection.get_url_photo(photo.links_download_location);
+
+            string? url_photo = connection.get_url_photo(photo.links_download_location);
             wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
             wallpaper.finish_download.connect (() => {
-                this.set_sensitive (true);            
+                this.set_sensitive (true);
+                //print("Finish download");        
             });
-            wallpaper.update_wallpaper ();
+            wallpaper.update_wallpaper (opt);
         }
     }
 

@@ -27,7 +27,6 @@ namespace App.Widgets {
      */
     public class HeaderBar : Gtk.HeaderBar {
 
-        public Gtk.Button randomize_button { get; set; }
         /**
          * Constructs a new {@code HeaderBar} object.
          *
@@ -39,16 +38,15 @@ namespace App.Widgets {
             this.show_close_button = true;
 
             get_style_context ().add_class ("transition");
-            get_style_context ().add_class ("fondo-header");
             get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            get_style_context ().add_class ("output-header");
             get_style_context ().add_class ("default-decoration");
-
-            this.randomize_button = new Gtk.Button.from_icon_name ("document-new-symbolic");
-            this.randomize_button.margin_end = 12;
-            this.randomize_button.tooltip_text = _("See more");
 
             var gtk_settings = Gtk.Settings.get_default ();
 
+            /************************
+                Mode Switch widget
+            ************************/
             var mode_switch = new ModeSwitch (
                 "display-brightness-symbolic",
                 "weather-clear-night-symbolic"
@@ -60,16 +58,36 @@ namespace App.Widgets {
             mode_switch.valign = Gtk.Align.CENTER;
             mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
 
+
             var context = get_style_context ();
             mode_switch.notify["active"].connect (() => {
                 detect_dark_mode (gtk_settings, context);
             });
 
             App.Application.settings.bind ("use-dark-theme", mode_switch, "active", GLib.SettingsBindFlags.DEFAULT);
+            
+            /*******************
+             * Unsplash button 
+            *******************/
+            var img = new Gtk.Image.from_icon_name ("camera-photo-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
+            var unsplash_text = _(" By Unsplash");
+            var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
+            link_unsplash.get_style_context ().remove_class ("link");
+            link_unsplash.get_style_context ().remove_class ("button");
+            link_unsplash.get_style_context ().add_class ("flat");
+            link_unsplash.get_style_context ().add_class ("unsplash_btn");
+            link_unsplash.has_tooltip = false;
+            link_unsplash.set_image (img);
+            link_unsplash.set_always_show_image (true);
+
+            this.pack_start(link_unsplash);
             this.pack_end (mode_switch);
-            this.pack_end (this.randomize_button);
         }
 
+        /************************ 
+         * Toogle the dark mode
+        ************************/
         public void detect_dark_mode (Gtk.Settings gtk_settings, Gtk.StyleContext context) {
             if (gtk_settings.gtk_application_prefer_dark_theme) {
                 App.Configs.Settings.get_instance ().use_dark_theme = true;
