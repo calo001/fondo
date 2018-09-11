@@ -119,4 +119,4 @@ msgstr "com.github.calo001.fondo"
 
 #: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
-msgstr "wallpaper;unsplash;foto;image;photo;background;fondo;pantalla;escritorio"
+msgstr "wallpaper;unsplash;foto;image;photo;background;"
