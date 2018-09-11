@@ -6,3 +6,5 @@ src/views/CardPhotoView.vala
 src/views/PreviewWindow.vala
 src/widgets/HeaderBar.vala
 src/widgets/PopupWallpaper.vala
+data/com.github.calo001.fondo.appdata.xml
+data/com.github.calo001.fondo.desktop
