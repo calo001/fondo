@@ -1,5 +1,5 @@
-com.github.calo001.fondo (1.0.2) xenial; urgency=low
+com.github.calo001.fondo (1.1.0) xenial; urgency=low
 
-  * Fix details.
+  * Responsive window, infinete scrolling and wallpaper options
 
- -- Calo001 <calo_lrc@hotmail.com>  Wed, 23 Aug 2018 22:10:00 -0500
+ -- Calo001 <calo_lrc@hotmail.com>  Wed, 11 Sep 2018 22:10:00 -0500
