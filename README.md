@@ -12,7 +12,7 @@
     </a>
 </p>
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-orange.svg)
+[![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-orange.svg)](https://github.com/calo001/fondo)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/calo001/fondo/blob/master/LICENSE.md)
 [![Build Status](https://travis-ci.org/calo001/fondo.svg?branch=master)](https://travis-ci.org/calo001/fondo)
 
