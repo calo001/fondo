@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 15:20-0500\n"
+"POT-Creation-Date: 2018-09-11 15:44-0500\n"
 "PO-Revision-Date: 2018-09-11 11:49-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -69,52 +69,54 @@ msgstr "Zoom"
 msgid "Spanned"
 msgstr "Extendido"
 
-#: data/com.github.calo001.fondo.appdata.xml:7
-#: data/com.github.calo001.fondo.desktop:3
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+#: data/com.github.calo001.fondo.desktop.in:3
 msgid "Fondo"
 msgstr "Fondo"
 
-#: data/com.github.calo001.fondo.appdata.xml:8
-#: data/com.github.calo001.fondo.desktop:4
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+#: data/com.github.calo001.fondo.desktop.in:4
 msgid "Find the most beautiful wallpapers for elementary OS."
 msgstr "Encuentra los fondos de pantalla más incríbles para elementary OS."
 
-#: data/com.github.calo001.fondo.appdata.xml:9
+#: data/com.github.calo001.fondo.appdata.xml.in:9
 msgid "Carlos Lopez"
 msgstr "Carlos Lopez"
 
-#: data/com.github.calo001.fondo.appdata.xml:28
-msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
-msgstr "Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash.com la comunidad de fotógrafos más generosa del mundo"
+#: data/com.github.calo001.fondo.appdata.xml.in:28
+msgid ""
+"Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
+msgstr ""
+"Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash.com la comunidad de fotógrafos más generosa del mundo"
 
-#: data/com.github.calo001.fondo.appdata.xml:30
+#: data/com.github.calo001.fondo.appdata.xml.in:30
 msgid "Scroll down to load more and more photos."
 msgstr "Desplazate hacia abajo para cargas más y más fotos."
 
-#: data/com.github.calo001.fondo.appdata.xml:31
+#: data/com.github.calo001.fondo.appdata.xml.in:31
 msgid "A single click on the photo to put as a wallpaper."
 msgstr "Un solo click en la foto para usar como fondo de pantalla"
 
-#: data/com.github.calo001.fondo.appdata.xml:32
+#: data/com.github.calo001.fondo.appdata.xml.in:32
 msgid "Right click for more wallpaper display options"
 msgstr "Click derecho para mas opciones del fondo de pantalla"
 
-#: data/com.github.calo001.fondo.appdata.xml:33
+#: data/com.github.calo001.fondo.appdata.xml.in:33
 msgid "See the photo in full screen."
 msgstr "Ve la foto en pantalla completa."
 
-#: data/com.github.calo001.fondo.appdata.xml:34
+#: data/com.github.calo001.fondo.appdata.xml.in:34
 msgid "Change the size of the window, the design is responsive"
 msgstr "Cambia el tamaño de la ventana, el diseño es responsivo."
 
-#: data/com.github.calo001.fondo.appdata.xml:35
+#: data/com.github.calo001.fondo.appdata.xml.in:35
 msgid "Use ESC to exit."
 msgstr "Usa ESC para salir."
 
-#: data/com.github.calo001.fondo.desktop:5
+#: data/com.github.calo001.fondo.desktop.in:5
 msgid "com.github.calo001.fondo"
 msgstr "com.github.calo001.fondo"
 
-#: data/com.github.calo001.fondo.desktop:11
+#: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
 msgstr "wallpaper;unsplash;foto;image;photo;background;fondo;pantalla;escritorio"
