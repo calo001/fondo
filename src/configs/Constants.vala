@@ -27,9 +27,10 @@ namespace App.Configs {
     public class Constants {
     
         // API KEY in development, this must to change on production release
+            // * Already changed :)
         
         public abstract const string API_UNSPLASH = "https://api.unsplash.com/";
-        public abstract const string GET = "photos/curated/?client_id=";
+        public abstract const string GET = "photos/?client_id=";
         public abstract const string ACCESS_KEY_UNSPLASH = "db4d69677b2838dfc4f9ef73ee79dcde8412472617bc96adefde321bd08a76f2";
         public abstract const string URI_PAGE = API_UNSPLASH + GET + ACCESS_KEY_UNSPLASH;
 
