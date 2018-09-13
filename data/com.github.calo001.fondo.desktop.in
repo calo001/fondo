@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Fondo
-Comment=Find the most beautiful wallpapers for elementary OS.
+Comment=Find the most beautiful wallpapers
 Icon=com.github.calo001.fondo
 Exec=com.github.calo001.fondo
 Terminal=false

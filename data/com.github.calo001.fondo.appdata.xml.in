@@ -5,7 +5,7 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>AGPL-3.0</project_license>
     <name>Fondo</name>
-    <summary>Find the most beautiful wallpapers for elementary OS.</summary>
+    <summary>Find the most beautiful wallpapers</summary>
     <developer_name>Carlos Lopez</developer_name>
     <provides>
         <binary>com.github.calo001.fondo</binary>
@@ -51,9 +51,15 @@
           <p>Fix details.</p>
         </description>
       </release>
-      <release version="1.1.1" date="2018-09-12">
+      <release version="1.1.2" date="2018-09-13">
         <description>
           <p>A very nice update.</p>
+          <ul>
+            <li>Responsive, resizable window</li>
+            <li>Infinite scrolling: just scroll to keep loading new photos</li>
+            <li>Wallpaper options: set zoom, centered, and more</li>
+            <li>Improved icon and styling</li>
+        </ul>
         </description>
       </release>
     </releases>
