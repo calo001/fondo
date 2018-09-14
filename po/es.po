@@ -76,8 +76,8 @@ msgstr "Fondo"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:8
 #: data/com.github.calo001.fondo.desktop.in:4
-msgid "Find the most beautiful wallpapers for elementary OS."
-msgstr "Encuentra los fondos de pantalla más incríbles para elementary OS."
+msgid "Find the most beautiful wallpapers"
+msgstr "Encuentra los fondos de pantalla más incríbles"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:9
 msgid "Carlos Lopez"
@@ -89,7 +89,7 @@ msgstr "Encuentra una variedad de los fondos de pantalla más increíbles de Uns
 
 #: data/com.github.calo001.fondo.appdata.xml.in:30
 msgid "Scroll down to load more and more photos."
-msgstr "Desplazate hacia abajo para cargas más y más fotos."
+msgstr "Desplazáte hacia abajo para cargas más y más fotos."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:31
 msgid "A single click on the photo to put as a wallpaper."

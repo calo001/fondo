@@ -76,7 +76,7 @@ msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:8
 #: data/com.github.calo001.fondo.desktop.in:4
-msgid "Find the most beautiful wallpapers for elementary OS."
+msgid "Find the most beautiful wallpapers"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:9

@@ -1,5 +1,15 @@
-com.github.calo001.fondo (1.1.1) xenial; urgency=low
+com.github.calo001.fondo (1.1.2) xenial; urgency=low
 
-  * Responsive window, infinete scrolling and wallpaper options
+[NEW]
+  * Responsive, resizable window
+  * Infinite scrolling: just scroll to keep loading new photos
+  * Wallpaper options: set zoom, centered, and more
+  * Improved icon and styling
 
- -- Calo001 <calo_lrc@hotmail.com>  Wed, 11 Sep 2018 22:10:00 -0500
+ -- Calo001 <calo_lrc@hotmail.com>  Wed, 13 Sep 2018 22:10:00 -0500
+
+ com.github.calo001.fondo (1.0.2) xenial; urgency=low
+
+  * Initial public release.
+
+-- Calo001 <calo_lrc@hotmail.com> Wed, 23 Aug 2018 22:10:00 -0500
