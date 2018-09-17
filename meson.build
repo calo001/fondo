@@ -1,5 +1,5 @@
 project('com.github.calo001.fondo', ['vala', 'c'],
-    version : '1.1.2',
+    version : '1.1.3',
     license: 'GPL-3.0'
 )
 
