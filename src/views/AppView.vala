@@ -49,6 +49,9 @@ namespace App.Views {
            Method to insert new photos from a list
         ********************************************/
         public void insert_cards (List<Photo?> photos) {
+            // A simple solution to sort photos by height
+            photos.sort(compare);
+
             foreach (var photo in photos) {
                 var card = new CardPhotoView (photo);
                 card.valign = Gtk.Align.START;
@@ -56,5 +59,11 @@ namespace App.Views {
                 card.show_all();
             }
         }
+
+        CompareFunc<Photo?> compare = (a, b) => {
+            double c = (int) a.width / (int) a.height;
+            double d = (int) b.width / (int) b.height;
+            return (int) (c > d) - (int) (c < d);
+        };
     }
 }
