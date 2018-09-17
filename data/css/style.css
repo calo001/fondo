@@ -54,6 +54,7 @@ scrollbar contents trough slider {
     background: #2ebf91;
     background: linear-gradient(-45deg, #8360c3, #2ebf91);
     border-radius: 2px;
+    box-shadow: none;
     border: 0.5px solid rgba(0,0,0,0.2);
 }
 
@@ -62,6 +63,7 @@ scrollbar contents trough slider {
     border: none;
 	border-radius: 50%;
 	padding: 5px;
+    box-shadow: none;
     background-color: rgba(0,0,0,0.2);
 }
 
