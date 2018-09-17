@@ -54,7 +54,7 @@ scrollbar contents trough slider {
     background: #2ebf91;
     background: linear-gradient(-45deg, #8360c3, #2ebf91);
     border-radius: 2px;
-    border: 2px solid rgba(0,0,0,0.2);
+    border: 0.5px solid rgba(0,0,0,0.2);
 }
 
 .button-green {
