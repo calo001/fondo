@@ -88,7 +88,7 @@ msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the wor
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:30
-msgid "Scroll down to load more and more photos."
+msgid "Scroll down to load more photos."
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:31

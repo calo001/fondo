@@ -27,7 +27,7 @@
     <description>
         <p>Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers. </p>
         <ul>
-          <li>Scroll down to load more and more photos</li>
+          <li>Scroll down to load more photos</li>
           <li>A single click on the photo to put as a wallpaper</li>
           <li>Right click for more wallpaper display options</li>
           <li>See the photo in full screen</li>
@@ -94,7 +94,7 @@
       <content_attribute id="language-humor">none</content_attribute>
       <content_attribute id="language-discrimination">none</content_attribute>
       <content_attribute id="social-chat">none</content_attribute>
-      <content_attribute id="social-info">none</content_attribute>
+      <content_attribute id="social-info">mild</content_attribute>
       <content_attribute id="social-audio">none</content_attribute>
       <content_attribute id="social-location">none</content_attribute>
       <content_attribute id="social-contacts">none</content_attribute>

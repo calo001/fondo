@@ -88,8 +88,8 @@ msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the wor
 msgstr "Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash.com la comunidad de fotógrafos más generosa del mundo"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:30
-msgid "Scroll down to load more and more photos."
-msgstr "Desplázate hacia abajo para cargas más y más fotos."
+msgid "Scroll down to load more photos."
+msgstr "Desplázate hacia abajo para cargas más fotos."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:31
 msgid "A single click on the photo to put as a wallpaper."
@@ -97,11 +97,11 @@ msgstr "Un solo click en la foto para usar como fondo de pantalla"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:32
 msgid "Right click for more wallpaper display options"
-msgstr "Click derecho para más opciones del fondo de pantalla"
+msgstr "Click derecho para más opciones"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:33
 msgid "See the photo in full screen."
-msgstr "Ve la foto en pantalla completa."
+msgstr "Visualiza la foto en pantalla completa."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:34
 msgid "Change the size of the window, the design is responsive"
