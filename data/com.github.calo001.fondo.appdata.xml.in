@@ -23,6 +23,9 @@
         <screenshot>
             <image>https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_4.png</image>
         </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_5.png</image>
+        </screenshot>
     </screenshots>
     <description>
         <p>Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers. </p>
@@ -46,11 +49,6 @@
           <p>Improved UI.</p>
         </description>
       </release>
-      <release version="1.0.2" date="2018-08-22">
-        <description>
-          <p>Fix details.</p>
-        </description>
-      </release>
       <release version="1.1.2" date="2018-09-13">
         <description>
           <p>A very nice update.</p>
@@ -68,6 +66,15 @@
           <ul>
             <li>Orthographic corrections in the Spanish translation.</li>
             <li>The photos are sorted from highest to lowest according to height.</li>
+        </ul>
+        </description>
+      </release>
+      <release version="1.1.4" date="2018-09-22">
+        <description>
+          <p>Updates</p>
+          <ul>
+            <li>New screenshots.</li>
+            <li>OARS data.</li>
         </ul>
         </description>
       </release>

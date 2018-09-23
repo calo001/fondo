@@ -1,16 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.calo001.fondo package.
-# FIRST AUTHOR <calo_lrc@hotmail.com>, 2018.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 15:44-0500\n"
+"POT-Creation-Date: 2018-09-22 22:21-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <calo_lrc@hotmail.com>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -83,32 +83,32 @@ msgstr ""
 msgid "Carlos Lopez"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:28
+#: data/com.github.calo001.fondo.appdata.xml.in:31
 msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:30
-msgid "Scroll down to load more photos."
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:31
-msgid "A single click on the photo to put as a wallpaper."
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:32
-msgid "Right click for more wallpaper display options"
-msgstr ""
-
 #: data/com.github.calo001.fondo.appdata.xml.in:33
-msgid "See the photo in full screen."
+msgid "Scroll down to load more photos"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:34
-msgid "Change the size of the window, the design is responsive"
+msgid "A single click on the photo to put as a wallpaper"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:35
-msgid "Use ESC to exit."
+msgid "Right click for more wallpaper display options"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:36
+msgid "See the photo in full screen"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:37
+msgid "Change the size of the window, the design is responsive"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+msgid "Use ESC to exit"
 msgstr ""
 
 #: data/com.github.calo001.fondo.desktop.in:5

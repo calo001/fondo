@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 15:44-0500\n"
+"POT-Creation-Date: 2018-09-22 22:21-0500\n"
 "PO-Revision-Date: 2018-09-11 11:49-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -83,32 +83,36 @@ msgstr "Encuentra los fondos de pantalla más increíbles"
 msgid "Carlos Lopez"
 msgstr "Carlos Lopez"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:28
+#: data/com.github.calo001.fondo.appdata.xml.in:31
 msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
 msgstr "Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash.com la comunidad de fotógrafos más generosa del mundo"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:30
-msgid "Scroll down to load more photos."
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+#, fuzzy
+msgid "Scroll down to load more photos"
 msgstr "Desplázate hacia abajo para cargas más fotos."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:31
-msgid "A single click on the photo to put as a wallpaper."
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+#, fuzzy
+msgid "A single click on the photo to put as a wallpaper"
 msgstr "Un solo click en la foto para usar como fondo de pantalla"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:32
+#: data/com.github.calo001.fondo.appdata.xml.in:35
 msgid "Right click for more wallpaper display options"
 msgstr "Click derecho para más opciones"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:33
-msgid "See the photo in full screen."
+#: data/com.github.calo001.fondo.appdata.xml.in:36
+#, fuzzy
+msgid "See the photo in full screen"
 msgstr "Visualiza la foto en pantalla completa."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:34
+#: data/com.github.calo001.fondo.appdata.xml.in:37
 msgid "Change the size of the window, the design is responsive"
 msgstr "Cambia el tamaño de la ventana, el diseño es responsivo."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:35
-msgid "Use ESC to exit."
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+#, fuzzy
+msgid "Use ESC to exit"
 msgstr "Usa ESC para salir."
 
 #: data/com.github.calo001.fondo.desktop.in:5

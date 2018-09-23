@@ -41,7 +41,7 @@ namespace App.Configs {
         public abstract const string URI_PAGE = API_UNSPLASH + GET + ACCESS_KEY_UNSPLASH;
 
         public abstract const string ID = "com.github.calo001.fondo";
-        public abstract const string VERSION = "1.1.3";
+        public abstract const string VERSION = "1.1.4";
         public abstract const string PROGRAME_NAME = "Fondo";
         public abstract const string APP_YEARS = "2018";
         public abstract const string APP_ICON = "com.github.calo001.fondo";
