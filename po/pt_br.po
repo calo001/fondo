@@ -1,0 +1,120 @@
+# Brazilian Portuguese translations for com.github.calo001.fondo package.
+# Copyright (C) 2018 THE com.github.calo001.fondo'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.calo001.fondo package.
+# Rafael Campos Nunes <rafaelnunes@engineer.com> 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.calo001.fondo\n"
+"Report-Msgid-Bugs-To: rafaelcn\n"
+"POT-Creation-Date: 2018-09-22 22:21-0500\n"
+"PO-Revision-Date: 2018-10-19 8:58-0300\n"
+"Last-Translator: Rafael Campos Nunes <rafaelnunes@engineer.com>\n"
+"Language-Team: Nenhum\n"
+"Language: Brazilian Portuguese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/widgets/HeaderBar.vala:56
+msgid "Light background"
+msgstr "Fundo de tela branco"
+
+#: src/widgets/HeaderBar.vala:57
+msgid "Dark background"
+msgstr "Fundo de tela preto"
+
+#: src/widgets/HeaderBar.vala:74
+msgid " By Unsplash"
+msgstr " Por Unsplash"
+
+#: src/utils/Wallpaper.vala:170
+msgid "Wallpaper ready!"
+msgstr "Wallpaper pronto!"
+
+#: src/utils/Wallpaper.vala:171
+msgid "Your new wallpaper is ready!"
+msgstr "Seu novo wallpaper está pronto"
+
+#: src/views/CardPhotoView.vala:96
+msgid "🌎  An amazing place in the world"
+msgstr "🌎  Um lugar incrível no mundo"
+
+#: src/views/CardPhotoView.vala:166
+msgid "By "
+msgstr "Por "
+
+#: src/views/PreviewWindow.vala:68
+msgid "Loading ..."
+msgstr "Carregando ..."
+
+#: src/widgets/PopupWallpaper.vala:38
+msgid "Options"
+msgstr "Opções"
+
+#: src/widgets/PopupWallpaper.vala:39
+msgid "Centered"
+msgstr "Centralizado"
+
+#: src/widgets/PopupWallpaper.vala:40
+msgid "Scaled"
+msgstr "Escalonado"
+
+#: src/widgets/PopupWallpaper.vala:41
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/widgets/PopupWallpaper.vala:42
+msgid "Spanned"
+msgstr "Esticado"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+#: data/com.github.calo001.fondo.desktop.in:3
+msgid "Fondo"
+msgstr "Fondo"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+#: data/com.github.calo001.fondo.desktop.in:4
+msgid "Find the most beautiful wallpapers"
+msgstr "Encontre os wallpapers mais bonitos"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr "Carlos Lopez"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:31
+msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
+msgstr "Encontre uma variedade dos mais lindos wallpapers por Unsplash.com a comunidade mais generosa de fotógrafos do mundo."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+msgid "Scroll down to load more photos"
+msgstr "Role para baixo para carregar mais fotos"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+msgid "A single click on the photo to put as a wallpaper"
+msgstr "Um único click na foto para configurá-la como wallpaper"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:35
+msgid "Right click for more wallpaper display options"
+msgstr "Clique com botão direito para obter mais opções sobre o wallpaper"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:36
+msgid "See the photo in full screen"
+msgstr "Veja a foto em tela cheia"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:37
+msgid "Change the size of the window, the design is responsive"
+msgstr "Mude o tamanho da janela, o design é responsivo"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+msgid "Use ESC to exit"
+msgstr "Utilize ESC para sair"
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr "com.github.calo001.fondo"
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr "wallpaper;unsplash;foto;imagem;photo;background;"
