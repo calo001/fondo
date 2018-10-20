@@ -57,7 +57,7 @@ git clone https://github.com/calo001/fondo.git && cd com.github.calo001.fondo
 ./app uninstall
 ```
 
-### Development & Testing
+### Development
 
 Fondo includes a script to simplify the development process. This script can be accessed in the main project directory through `./app`.
 
@@ -78,6 +78,9 @@ Options:
 - [Cassidy James Blaede](https://github.com/cassidyjames) for his apps to use as code examples
 - [Daniel Foré](https://github.com/danrabbit) for his help in the google + community
 - [Unsplash](http://unsplash.com) for providing an amazing API of photographs
+
+### Translators
+- [Rafael C. Nunes] (https://github.com/rafaelcn) Brazilian Portuguese
 
 ### License
 
