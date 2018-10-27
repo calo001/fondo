@@ -80,7 +80,7 @@ Options:
 - [Unsplash](http://unsplash.com) for providing an amazing API of photographs
 
 ### Translators
-- [Rafael C. Nunes] (https://github.com/rafaelcn) Brazilian Portuguese
+- [Rafael C. Nunes](https://github.com/rafaelcn) Brazilian Portuguese
 
 ### License
 
