@@ -4,10 +4,16 @@ sources += files(
     
     'controllers/AppController.vala',
 
-    'views/AppView.vala',
+    'views/PhotosView.vala',
     'views/AppViewError.vala',
     'views/CardPhotoView.vala',
     'views/PreviewWindow.vala',
+    'views/ButtonCategory.vala',
+    'views/CategoriesView.vala',
+
+    'popovers/MenuPopover.vala',
+    'popovers/SearchPopover.vala',
+    'popovers/WallpaperPopover.vala',
 
     'structs/Photo.vala',
 
@@ -16,7 +22,6 @@ sources += files(
 
     'widgets/HeaderBar.vala',
     'widgets/ModeSwitch.vala',
-    'widgets/PopupWallpaper.vala',
     'services/Connection.vala',
 
     'Application.vala',

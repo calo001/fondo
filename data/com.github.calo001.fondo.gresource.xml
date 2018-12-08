@@ -13,5 +13,6 @@
         <file alias="48-com.github.calo001.fondo.svg" compressed="true" preprocess="xml-stripblanks">images/icons/48/com.github.calo001.fondo.svg</file>
         <file alias="64-com.github.calo001.fondo.svg" compressed="true" preprocess="xml-stripblanks">images/icons/64/com.github.calo001.fondo.svg</file>
         <file alias="128-com.github.calo001.fondo.svg" compressed="true" preprocess="xml-stripblanks">images/icons/128/com.github.calo001.fondo.svg</file>
+        <file alias="unsplashlogo.svg" compressed="true" preprocess="xml-stripblanks">images/unsplashlogo.svg</file>
     </gresource>
 </gresources>

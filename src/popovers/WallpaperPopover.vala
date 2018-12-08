@@ -18,7 +18,7 @@
 
 using Gtk;
 
-namespace App.Widgets {
+namespace App.Popover {
 
     /**
      * The {@code PopupWallpaper} class is responsible for displaying a popup menu content.
@@ -26,10 +26,10 @@ namespace App.Widgets {
      * @see Gtk.HeaderBar
      * @since 1.1.0
      */
-    public class PopupWallpaper : Gtk.Grid {
+    public class WallpaperPopover : Gtk.Grid {
         public signal void wallpaper_option(string option_wall);
 
-        public PopupWallpaper(int64 width, int64 height) {
+        public WallpaperPopover(int64 width, int64 height) {
 
             this.margin = 12;
             this.column_spacing = 8;

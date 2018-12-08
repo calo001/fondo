@@ -24,18 +24,18 @@ using App.Connection;
 namespace App.Views {
 
     /**
-     * The {@code AppView} class.
+     * The {@code PhotosView} class.
      *
      * @since 1.0.0
      */
-    public class AppView : Gtk.FlowBox {
+    public class PhotosView : Gtk.FlowBox {
         /**
-         * Constructs a new {@code AppView} object.
+         * Constructs a new {@code PhotosView} object.
          */
-        public AppView () {
+        public PhotosView () {
             this.margin_end = 10;
             this.margin_start = 10;
-            this.set_selection_mode(Gtk.SelectionMode.SINGLE);
+            this.set_selection_mode(Gtk.SelectionMode.NONE);
             this.activate_on_single_click = false;
             this.set_homogeneous (false);
 
@@ -54,7 +54,6 @@ namespace App.Views {
 
             foreach (var photo in photos) {
                 var card = new CardPhotoView (photo);
-                card.valign = Gtk.Align.START;
                 this.add(card);
                 card.show_all();
             }

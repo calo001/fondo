@@ -43,7 +43,7 @@ namespace App {
 
             var quit_action = new SimpleAction ("quit", null);
             add_action (quit_action);
-            set_accels_for_action ("app.quit", {"Escape"});
+            set_accels_for_action ("app.quit", {"<Control>q"});
 
             quit_action.activate.connect (() => {
                 if (controller != null) {
@@ -51,7 +51,6 @@ namespace App {
                 }
             });
 
-            new AppConnection();
             settings = new GLib.Settings (Constants.ID);
         }
 

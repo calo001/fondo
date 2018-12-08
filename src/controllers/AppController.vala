@@ -32,10 +32,13 @@ namespace App.Controllers {
 
         private Gtk.Application            application;
         private App.Widgets.HeaderBar      headerbar;
-        private AppView                    view;
+        private CategoriesView             categories;
+        private PhotosView                 view;
+        private PhotosView                 result_search_view;
         private AppViewError               view_error;
         private AppConnection              connection;
-        private Gtk.ScrolledWindow         scrolled;
+        private Gtk.ScrolledWindow         scrolled_main;
+        private Gtk.ScrolledWindow         scrolled_search;
         private Gtk.Stack                  stack;
         private App.Window                 window { get; private set; default = null; }
         private int                        num_page;
@@ -51,35 +54,63 @@ namespace App.Controllers {
             this.connection = AppConnection.get_instance();
             this.num_page = 1;
 
-            // Create Main Window instance
             window = new App.Window (this.application);
-
-            // Scroll for AppView
-            scrolled = new Gtk.ScrolledWindow (null, null);
-            // default 400 x 260
-            scrolled.min_content_width = 380;
-            scrolled.min_content_height = 493;
+            scrolled_main = new Gtk.ScrolledWindow (null, null);
+            scrolled_search = new Gtk.ScrolledWindow (null, null);
             
             // View that contains all card with photos
-            view = new AppView ();
-            scrolled.add(view);
-            view.show();
+            view = new PhotosView ();
+            result_search_view = new PhotosView ();
+
+            // Container for Title and scrolledWindow
+            var content_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+            var content_search_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+            var header_photos = new Gtk.Label (_("Today"));
+            header_photos.get_style_context ().add_class ("hphoto");
+            header_photos.wrap = true;
+            header_photos.margin_start = 20;
+            header_photos.margin_end = 20;
+
+            content_scroll.add (header_photos);
+            content_scroll.add (view);
+
+            content_search_scroll.add (header_photos);
+            content_search_scroll.add (result_search_view);
+
+            scrolled_main.add (content_scroll);
+            scrolled_search.add (content_search_scroll);
 
             // Check the internet connection
             check_internet();
 
+            // Categories stack
+            categories = new CategoriesView ();
+
+            var content_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+            content_categories.add (header_photos);
+            content_categories.add (categories);
+
             // Show when GET request is in progress
-            Gtk.Spinner spinner = new Gtk.Spinner ();
+            var box_loading = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+            box_loading.halign = Gtk.Align.CENTER;
+            box_loading.valign = Gtk.Align.CENTER;
+            
+            var spinner = new Gtk.Spinner();
             spinner.active = true;
-            spinner.halign = Gtk.Align.CENTER;
+            spinner.get_style_context ().add_class ("card");
+            spinner.get_style_context ().add_class ("card_spinner");
+            box_loading.add(spinner);
+            
 
             // Contains the spinner and scroll and chances theirs visibility
             stack = new Gtk.Stack ();
-            stack.add_named(spinner, "spinner");
-            stack.add_named(scrolled, "scrolled");
-            stack.set_visible_child_name ("spinner"); 
-            stack.set_transition_type (Gtk.StackTransitionType.SLIDE_UP);
-            stack.set_transition_duration (1000);
+            stack.set_transition_duration (500);
+            
+            stack.add_named(box_loading, "spinner");
+            stack.add_named(content_categories, "categories");
+            stack.add_named(scrolled_main, "scrolled");
+            stack.add_named(scrolled_search, "search"); 
+            stack.visible_child_name = "spinner";
 
             window.add (stack);
             application.add_window (window);
@@ -110,7 +141,7 @@ namespace App.Controllers {
                 window.close();
             }); 
 
-            scrolled.add (view_error);
+            scrolled_main.add (view_error);
         }
 
         /****************************************** 
@@ -120,25 +151,30 @@ namespace App.Controllers {
             headerbar = new App.Widgets.HeaderBar ();
             window.set_titlebar (this.headerbar);
 
+            headerbar.search_view.connect ( () => {
+                stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
+                stack.set_visible_child_name ("categories");
+            });
+
+            headerbar.home_view.connect ( () => {
+                stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
+                stack.set_visible_child_name ("scrolled");
+            });
+
             connection.load_page(num_page);
 
             // Signal catched when request is success and setup the photos 
             connection.request_page_success.connect ( (list) => {
-                //print("\nSIGNAL RECIVED LENGHT: "+ list.length().to_string() + "\n" );
-                //foreach (var item in list) {
-                //    print(item.name + "\n");
-                //}
-
                 if (num_page > 1) {
                     view.insert_cards(list);
                 } else if (num_page == 1) {
                     view.insert_cards(list);
-                    stack.set_visible_child_name ("scrolled");
+                    stack.set_visible_child_full ("scrolled", Gtk.StackTransitionType.SLIDE_UP);
                 }
             } );
 
             // signal catched when scroll reaches the edge
-            scrolled.edge_reached.connect( (pos)=> {
+            scrolled_main.edge_reached.connect( (pos)=> {
                 if (pos == Gtk.PositionType.BOTTOM) {
                     num_page++;
                     connection.load_page(num_page);

@@ -16,6 +16,7 @@
 * 
 */
 using App.Views;
+using App.Popover;
 
 namespace App.Widgets {
 
@@ -26,6 +27,12 @@ namespace App.Widgets {
      * @since 1.0.0
      */
     public class HeaderBar : Gtk.HeaderBar {
+
+        private Gtk.Popover         pop_search;
+        private Gtk.SearchEntry     search;
+        private Gtk.Revealer        revealer;
+        public signal void search_view ();
+        public signal void home_view ();
 
         /**
          * Constructs a new {@code HeaderBar} object.
@@ -40,7 +47,6 @@ namespace App.Widgets {
             get_style_context ().add_class ("transition");
             get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             get_style_context ().add_class ("output-header");
-            get_style_context ().add_class ("default-decoration");
 
             var gtk_settings = Gtk.Settings.get_default ();
 
@@ -58,7 +64,6 @@ namespace App.Widgets {
             mode_switch.valign = Gtk.Align.CENTER;
             mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
 
-
             var context = get_style_context ();
             mode_switch.notify["active"].connect (() => {
                 detect_dark_mode (gtk_settings, context);
@@ -71,17 +76,63 @@ namespace App.Widgets {
             *******************/
             var img = new Gtk.Image.from_icon_name ("camera-photo-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
-            var unsplash_text = _(" By Unsplash");
+            var unsplash_text = "Unsplash";
             var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
             link_unsplash.get_style_context ().remove_class ("link");
             link_unsplash.get_style_context ().remove_class ("button");
             link_unsplash.get_style_context ().add_class ("flat");
             link_unsplash.get_style_context ().add_class ("unsplash_btn");
-            link_unsplash.has_tooltip = false;
+            link_unsplash.tooltip_text = _("Photos from Unsplash: Beautiful Free Images & Pictures 🎁");
             link_unsplash.set_image (img);
             link_unsplash.set_always_show_image (true);
 
-            this.pack_start(link_unsplash);
+            /********************
+             * Search Input
+             *******************/
+
+            search = new Gtk.SearchEntry();
+            search.placeholder_text = _("Search photos Unsplash");
+            search.margin = 5;
+            search.expand = true;
+
+            search.button_press_event.connect ( ()=>{
+                revealer.set_reveal_child (true);
+                search_view ();
+                return false;
+            } );
+
+            /*
+             * Menú options button
+             */
+            var menu_button = new Gtk.Button.from_icon_name ("view-more-horizontal-symbolic", Gtk.IconSize.LARGE_TOOLBAR );
+            menu_button.tooltip_text = _("Options");
+
+            var pop_content_menu = new MenuPopover();
+            var pop_menu = new Gtk.Popover(menu_button);
+            pop_menu.get_style_context ().add_class ("pop-menu");
+            pop_menu.add(pop_content_menu);
+            pop_menu.set_modal (true);
+
+            menu_button.clicked.connect ( ()=> {
+                pop_menu.popup ();
+            });
+
+            /*
+             * daly home
+             */
+            revealer = new Gtk.Revealer ();
+            var daily_button = new Gtk.Button.from_icon_name ("go-home-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            daily_button.tooltip_text = _("Back to daily photos");
+            revealer.add (daily_button);
+            revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            daily_button.clicked.connect ( ()=>{
+                revealer.set_reveal_child (false);
+                home_view ();
+            } );
+
+            this.pack_start(revealer);
+            this.set_custom_title (search);
+            this.pack_end (menu_button);
             this.pack_end (mode_switch);
         }
 
