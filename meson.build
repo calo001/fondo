@@ -26,7 +26,7 @@ config_h_dir = include_directories('.')
 c_args = [
   '-include', 'config.h'
 ]
-
+vala_args = []
 sources = files()
 
 subdir('data')
@@ -39,14 +39,19 @@ dependencies = [
     dependency('granite'),
     dependency('gtk+-3.0'),
     dependency('json-glib-1.0'),
-    dependency('libsoup-2.4'),
-    dependency('unity')
+    dependency('libsoup-2.4')
 ]
+unity_dep = dependency('unity', required: false)
+if unity_dep.found()
+    dependencies += [unity_dep]
+    vala_args += ['-D', 'WITH_UNITY']
+endif
 
 e = executable('com.github.calo001.fondo',
     sources,
     gresource,
     c_args: c_args,
+    vala_args: vala_args,
     dependencies: dependencies,
     install : true
 )
