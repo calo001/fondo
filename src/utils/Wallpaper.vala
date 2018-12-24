@@ -20,7 +20,7 @@ using Gtk;
 using App.Configs;
 #if WITH_UNITY
 using Unity;
-endif
+#endif
 namespace App.Utils {
 
     /**
