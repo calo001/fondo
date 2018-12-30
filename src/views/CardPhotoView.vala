@@ -39,6 +39,7 @@ namespace App.Views {
         private File                    file_photo;
         private Granite.AsyncImage      image;
         private Button                  btn_view;
+        private Button                  btn_share;
         private Button                  photo_button;
         private LinkButton              label_autor;
         private Wallpaper               wallpaper;
@@ -50,6 +51,7 @@ namespace App.Views {
         private WallpaperPopover        popup_content;
         private Box                     grid_container;
         public  Gtk.Popover             popup;
+        public  SharePopover            popupShare;
 
         private int                     w_photo;
         private int                     h_photo;
@@ -60,10 +62,14 @@ namespace App.Views {
         public CardPhotoView (Photo photo) {
             this.connection = AppConnection.get_instance();
             this.photo = photo;
+            this.can_focus = false;
             this.orientation = Gtk.Orientation.VERTICAL;
             this.halign = Gtk.Align.CENTER;
             this.valign = Gtk.Align.START;
-            this.margin = 4;
+            this.margin_start = 8;
+            this.margin_end = 8;
+            this.margin_top = 12;
+            this.margin_bottom = 12;
             this.get_style_context ().add_class ("mycard");
 
             /******************************************
@@ -74,8 +80,8 @@ namespace App.Views {
             /******************************************
                     Create AsyncImage object
             ******************************************/
-            
             image = new Granite.AsyncImage(true, true);
+            image.get_style_context ().add_class ("backimg");
             var w_max = 280;
             var h_max = 460;
             w_photo = (int) photo.width;
@@ -89,8 +95,7 @@ namespace App.Views {
                 }
             }
 
-            image.set_from_file_async.begin(file_photo, w_photo, h_photo, false); // Width, Heigth
-            //image.get_style_context ().add_class ("photo");
+            image.set_from_file_async.begin(file_photo, w_photo, h_photo, false);
             image.has_tooltip = true;            
             var txt_tooltip = photo.location == null ? 
                 _("🌎  An amazing place in the world") : 
@@ -98,7 +103,7 @@ namespace App.Views {
             image.set_tooltip_text (txt_tooltip);
 
             /******************************************
-                    Create Popover
+                    Create Popover for options
             ******************************************/
             popup = new Gtk.Popover(this);
             popup.position = Gtk.PositionType.TOP;
@@ -111,17 +116,6 @@ namespace App.Views {
                 popup.set_visible (false);
                 setup_wallpaper(opt);
             });
-            
-            // eventbox_photo.button_release_event.connect ( (event) => {
-            //     if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
-            //         popup.set_visible (true);
-            //     } else {
-            //         setup_wallpaper();
-            //     }
-            //     return true;
-            // } );
-
-            //photo_button.add(image);
 
             /******************************************
                         Fullscreen button
@@ -134,16 +128,45 @@ namespace App.Views {
             btn_view.margin = 8;
             btn_view.halign = Gtk.Align.END;
             btn_view.valign = Gtk.Align.START;
+            btn_view.can_default = true;
+
+            /******************************************
+                        Share button
+            ******************************************/
+            btn_share = new Gtk.Button.from_icon_name ("mail-send-symbolic");
+            btn_share.get_style_context ().add_class ("button-green");
+            btn_share.get_style_context ().remove_class ("button");
+            btn_share.get_style_context ().add_class ("transition");
+            btn_share.can_focus = false;
+            btn_share.margin = 8;
+            btn_share.margin_top = 42;
+            btn_share.halign = Gtk.Align.END;
+            btn_share.valign = Gtk.Align.START;
+            btn_share.can_default = true;
+
+            /******************************************
+                    Popover for share
+            ******************************************/
+            popupShare = new SharePopover (this.photo.name, this.photo.id);
+            popupShare.position = Gtk.PositionType.BOTTOM;
+            popupShare.modal = true;
+            popupShare.set_relative_to (btn_share);
+
+            btn_share.button_release_event.connect ( () => {
+                popupShare.set_visible (true);
+                return true;
+		    });
 
             // Click on button to launch Fullscreen window
             btn_view.clicked.connect (() => {
                 this.set_sensitive (false);
                 var prev_win = new PreviewWindow(photo);
+                prev_win.show_all ();
+                prev_win.load_content();
+
                 prev_win.closed_preview.connect (() => {
                     this.set_sensitive (true);            
                 });
-                prev_win.show_all ();
-                prev_win.load_content();
 		    });
 
             /********************************************************
@@ -152,8 +175,10 @@ namespace App.Views {
             overlay = new Gtk.Overlay();
             overlay.can_focus = false;
             overlay.halign = Gtk.Align.CENTER;
+            
+            overlay.add_overlay (btn_view);  
+            overlay.add_overlay (btn_share);            
             overlay.add (image);
-            overlay.add_overlay (btn_view);            
             overlay.width_request = w_photo;
             overlay.height_request = h_photo;
 
@@ -163,13 +188,23 @@ namespace App.Views {
             photo_button = new Button();
             photo_button.get_style_context ().add_class ("photo");
             photo_button.add(overlay);
+            photo_button.can_focus = false;
+
+            photo_button.button_release_event.connect ( (event) => {
+                if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
+                    popup.set_visible (true);
+                } else {
+                    setup_wallpaper();
+                }
+                return true;
+            } );
 
             /******************************************
                         Create Label Autor
             ******************************************/
             var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
             label_autor = new Gtk.LinkButton.with_label(link, photo.name);
-            label_autor.get_style_context ().remove_class ("button");
+            label_autor.get_style_context ().add_class ("button");
             label_autor.get_style_context ().remove_class ("link");
             label_autor.get_style_context ().add_class ("transition");
             label_autor.get_style_context ().add_class ("autor");
@@ -184,12 +219,13 @@ namespace App.Views {
             ******************************************/
             bar = new Gtk.ProgressBar ();
             bar.margin_top = 8;
+            bar.margin_start = 4;
+            bar.margin_end = 4;
 
             /******************************************
                         Revealer for progress
             ******************************************/
             revealer = new Gtk.Revealer ();
-            revealer.can_focus = false;
             revealer.add (bar);
 
             /******************************************

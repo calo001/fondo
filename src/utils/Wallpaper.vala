@@ -84,7 +84,6 @@ namespace App.Utils {
             in /home/user/.local/share/backgrounds/
         ***********************************************************************/
         private bool check_directory () {
-            print("ERROR DIRECTORY");
 		    var dir = File.new_for_path (BASE_DIR);
 		    if (!dir.query_exists ()) {
 			    try{
@@ -135,7 +134,6 @@ namespace App.Utils {
 				bar.set_fraction (1);
 				return true;
             }
-            print("\nDOWNLOAD END\n");
             loop.run ();
             return true;
         }
@@ -181,45 +179,49 @@ namespace App.Utils {
             * https://github.com/elementary/switchboard-plug-pantheon-shell/blob/master/set-wallpaper-contract/set-wallpaper.vala
         ***********************************************************************/
          public void set_to_greeter () {
-            MainLoop loop = new MainLoop ();
-            File? dest = null;
-            var file_path = File.new_for_path (full_picture_path);
-            var greeter_data_dir = Path.build_filename (Environment.get_variable ("XDG_GREETER_DATA_DIR"), "wallpaper");
-
-            var folder = File.new_for_path (greeter_data_dir);
-            if (folder.query_exists ()) {
-                try {
-                    var enumerator = folder.enumerate_children ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
-                    FileInfo? info = null;
-                    while ((info = enumerator.next_file ()) != null) {
-                        enumerator.get_child (info).@delete ();
+            var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
+            if (variable != null) {
+                MainLoop loop = new MainLoop ();
+                File? dest = null;
+                var file_path = File.new_for_path (full_picture_path);
+                var greeter_data_dir = Path.build_filename (variable, "wallpaper");
+                var folder = File.new_for_path (greeter_data_dir);
+                if (folder.query_exists ()) {
+                    try {
+                        var enumerator = folder.enumerate_children ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
+                        FileInfo? info = null;
+                        while ((info = enumerator.next_file ()) != null) {
+                            enumerator.get_child (info).@delete ();
+                        }
+                    } catch (Error e) {
+                        show_message ("Error", e.message, "dialog-error");
                     }
-                } catch (Error e) {
-                    show_message ("Error", e.message, "dialog-error");
+                } else {
+                    try{
+                        folder.make_directory_with_parents();
+                    } catch (Error e){
+                        show_message ("Error", e.message, "dialog-error");
+                    }
                 }
+    
+                dest = File.new_for_path (Path.build_filename (greeter_data_dir, img_file_name));
+    
+                file_path.copy_async.begin(dest, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null,
+                (current_num_bytes, total_num_bytes) => {
+                    // Report copy-status:
+                    print ("USR %" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
+                }, (obj, res) => {
+                    try {
+                        bool tmp = file_path.copy_async.end (res);
+                        print ("USR Result: %s\n", tmp.to_string ());
+                    } catch (Error e) {
+                        show_message ("Error", e.message, "dialog-error");
+                    }
+                        loop.quit ();
+                });
             } else {
-                try{
-			    	folder.make_directory_with_parents();
-			    } catch (Error e){
-				    show_message ("Error", e.message, "dialog-error");
-			    }
+                show_message ("Error", _("Greeter not found"), "dialog-error");
             }
-
-            dest = File.new_for_path (Path.build_filename (greeter_data_dir, img_file_name));
-
-            file_path.copy_async.begin(dest, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null,
-            (current_num_bytes, total_num_bytes) => {
-		        // Report copy-status:
-		        print ("USR %" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
-	        }, (obj, res) => {
-		        try {
-			        bool tmp = file_path.copy_async.end (res);
-			        print ("USR Result: %s\n", tmp.to_string ());
-		        } catch (Error e) {
-			        show_message ("Error", e.message, "dialog-error");
-		        }
-		            loop.quit ();
-	        });
         }
 
         /************************************

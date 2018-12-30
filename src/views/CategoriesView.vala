@@ -50,18 +50,18 @@ namespace App.Views {
             this.margin = 8;
             this.homogeneous = true;
             
-            btn_nature = new ButtonCategory(_("Nature"), "btn-nature");
-            btn_animal = new ButtonCategory(_("Animal"), "btn_animal");
-            btn_food_drink = new ButtonCategory(_("Food & drink"), "btn_food_drink");
-            btn_space = new ButtonCategory(_("Space"), "btn_space");
-            btn_sport = new ButtonCategory(_("Sport"), "btn_sport");
-            btn_business_work = new ButtonCategory(_("Business\n& work"), "btn_business_work");
-            btn_woman = new ButtonCategory(_("Woman"), "btn_woman");
-            btn_man = new ButtonCategory(_("Man"), "btn_man");
-            btn_architecture = new ButtonCategory(_("Architecture"), "btn_architecture");
-            btn_technology = new ButtonCategory(_("Technology"), "btn_technology");
-            btn_texture_pattern = new ButtonCategory(_("Texture\n& pattern"), "btn_texture_pattern");
-            btn_flatlay = new ButtonCategory(_("Flat lay"), "btn_flatlay");
+            btn_nature = new ButtonCategory(_("🌻 Nature"), "btn-nature");
+            btn_animal = new ButtonCategory(_("🐹 Animal"), "btn_animal");
+            btn_food_drink = new ButtonCategory(_("☕ Food & drink"), "btn_food_drink");
+            btn_space = new ButtonCategory(_("🌙 Space"), "btn_space");
+            btn_sport = new ButtonCategory(_("🏸 Sport"), "btn_sport");
+            btn_business_work = new ButtonCategory(_("📊 Business & work"), "btn_business_work");
+            btn_woman = new ButtonCategory(_("‍👩 Woman"), "btn_woman");
+            btn_man = new ButtonCategory(_("👨 Man"), "btn_man");
+            btn_architecture = new ButtonCategory(_("🏦 Architecture"), "btn_architecture");
+            btn_technology = new ButtonCategory(_("💻 Technology"), "btn_technology");
+            btn_texture_pattern = new ButtonCategory(_("🍁 Texture & pattern"), "btn_texture_pattern");
+            btn_flatlay = new ButtonCategory(_("📑 Flat lay"), "btn_flatlay");
 
             btn_nature.clicked.connect ( ()=> {
                 search_category ("Nature");
@@ -120,8 +120,8 @@ namespace App.Views {
             this.add (btn_woman);
             this.add (btn_man);
             this.add (btn_architecture);
-            this.add (btn_technology);
             this.add (btn_texture_pattern);
+            this.add (btn_technology);
             this.add (btn_flatlay);
         }
 

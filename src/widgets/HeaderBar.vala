@@ -29,10 +29,11 @@ namespace App.Widgets {
     public class HeaderBar : Gtk.HeaderBar {
 
         private Gtk.Popover         pop_search;
-        private Gtk.SearchEntry     search;
         private Gtk.Revealer        revealer;
+        public Gtk.SearchEntry      search {get; set;}
         public signal void search_view ();
         public signal void home_view ();
+        public signal void search_activated (string value);
 
         /**
          * Constructs a new {@code HeaderBar} object.
@@ -70,21 +71,6 @@ namespace App.Widgets {
             });
 
             App.Application.settings.bind ("use-dark-theme", mode_switch, "active", GLib.SettingsBindFlags.DEFAULT);
-            
-            /*******************
-             * Unsplash button 
-            *******************/
-            var img = new Gtk.Image.from_icon_name ("camera-photo-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
-            var unsplash_text = "Unsplash";
-            var link_unsplash = new Gtk.LinkButton.with_label(unsplash_link, unsplash_text);
-            link_unsplash.get_style_context ().remove_class ("link");
-            link_unsplash.get_style_context ().remove_class ("button");
-            link_unsplash.get_style_context ().add_class ("flat");
-            link_unsplash.get_style_context ().add_class ("unsplash_btn");
-            link_unsplash.tooltip_text = _("Photos from Unsplash: Beautiful Free Images & Pictures 🎁");
-            link_unsplash.set_image (img);
-            link_unsplash.set_always_show_image (true);
 
             /********************
              * Search Input
@@ -94,12 +80,26 @@ namespace App.Widgets {
             search.placeholder_text = _("Search photos Unsplash");
             search.margin = 5;
             search.expand = true;
+            search.sensitive = false;
 
-            search.button_press_event.connect ( ()=>{
+            search.button_press_event.connect ( (event)=>{
+                search.grab_focus_without_selecting ();
+                return true;
+            });
+
+            search.button_release_event.connect_after ( ()=>{
                 revealer.set_reveal_child (true);
-                search_view ();
-                return false;
+                search_view ();                
+                return true;
             } );
+
+            search.activate.connect (() => {
+                unowned string value = search.get_text ();
+                if (value.strip ().length > 0) {
+                    search_activated (value.strip ());
+                    search.sensitive = false;
+                }
+            });
 
             /*
              * Menú options button

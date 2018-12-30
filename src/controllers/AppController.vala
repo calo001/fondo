@@ -35,13 +35,18 @@ namespace App.Controllers {
         private CategoriesView             categories;
         private PhotosView                 view;
         private PhotosView                 result_search_view;
+        private EmptyView                  empty_view;
         private AppViewError               view_error;
         private AppConnection              connection;
         private Gtk.ScrolledWindow         scrolled_main;
         private Gtk.ScrolledWindow         scrolled_search;
         private Gtk.Stack                  stack;
         private App.Window                 window { get; private set; default = null; }
+        private Gtk.Label                  search_label;
+
         private int                        num_page;
+        private int                        num_page_search;
+        private string                     current_query;
         /**
          * Constructs a new {@code AppController} object.
          */
@@ -53,14 +58,16 @@ namespace App.Controllers {
             this.application = application;
             this.connection = AppConnection.get_instance();
             this.num_page = 1;
+            this.num_page_search = 1;
 
             window = new App.Window (this.application);
             scrolled_main = new Gtk.ScrolledWindow (null, null);
             scrolled_search = new Gtk.ScrolledWindow (null, null);
             
-            // View that contains all card with photos
+            // Views used in Stock
             view = new PhotosView ();
             result_search_view = new PhotosView ();
+            empty_view = new EmptyView ();         
 
             // Container for Title and scrolledWindow
             var content_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
@@ -71,10 +78,24 @@ namespace App.Controllers {
             header_photos.margin_start = 20;
             header_photos.margin_end = 20;
 
+            // Drag header
+            //content_scroll.button_press_event.connect ((e) => {
+            //    if (e.button == Gdk.BUTTON_PRIMARY) {
+            //        window.begin_move_drag ((int) e.button, (int) e.x_root, (int) e.y_root, e.time);
+            //        return true;
+            //    }
+            //    return false;
+            //});
+
             content_scroll.add (header_photos);
             content_scroll.add (view);
 
-            content_search_scroll.add (header_photos);
+            search_label = new Gtk.Label ("Búsqueda");
+            search_label.get_style_context ().add_class ("hphoto");
+            search_label.wrap = true;
+            search_label.margin_start = 20;
+            search_label.margin_end = 20;
+            content_search_scroll.add (search_label);
             content_search_scroll.add (result_search_view);
 
             scrolled_main.add (content_scroll);
@@ -85,6 +106,14 @@ namespace App.Controllers {
 
             // Categories stack
             categories = new CategoriesView ();
+
+            categories.search_category.connect ( ( search )=>{
+                search_query (search);
+            });
+
+            headerbar.search_activated.connect ( ( search )=>{
+                search_query (search);
+            });
 
             var content_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
             content_categories.add (header_photos);
@@ -104,12 +133,15 @@ namespace App.Controllers {
 
             // Contains the spinner and scroll and chances theirs visibility
             stack = new Gtk.Stack ();
-            stack.set_transition_duration (500);
+            stack.set_transition_duration (350);
+            stack.hhomogeneous = false;
+            stack.interpolate_size = true;
             
             stack.add_named(box_loading, "spinner");
             stack.add_named(content_categories, "categories");
             stack.add_named(scrolled_main, "scrolled");
             stack.add_named(scrolled_search, "search"); 
+            stack.add_named(empty_view, "empty"); 
             stack.visible_child_name = "spinner";
 
             window.add (stack);
@@ -154,11 +186,13 @@ namespace App.Controllers {
             headerbar.search_view.connect ( () => {
                 stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
                 stack.set_visible_child_name ("categories");
+                view.set_sensitive (false);
             });
 
             headerbar.home_view.connect ( () => {
                 stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
                 stack.set_visible_child_name ("scrolled");
+                view.set_sensitive (true);
             });
 
             connection.load_page(num_page);
@@ -168,8 +202,20 @@ namespace App.Controllers {
                 if (num_page > 1) {
                     view.insert_cards(list);
                 } else if (num_page == 1) {
+                    headerbar.search.sensitive = true;
                     view.insert_cards(list);
                     stack.set_visible_child_full ("scrolled", Gtk.StackTransitionType.SLIDE_UP);
+                }
+            } );
+
+            // Signal catched when a search request is success and setup the photos 
+            connection.request_page_search_success.connect ( (list) => {
+                headerbar.search.sensitive = true;
+                if (list.length () > 0) {
+                    result_search_view.insert_cards(list);
+                    stack.set_visible_child_full ("search", Gtk.StackTransitionType.SLIDE_UP);
+                } else {
+                    stack.set_visible_child_full ("empty", Gtk.StackTransitionType.SLIDE_UP);
                 }
             } );
 
@@ -180,6 +226,26 @@ namespace App.Controllers {
                     connection.load_page(num_page);
                 }
             } );
+
+            // signal catched when scroll reaches the edge
+            scrolled_search.edge_reached.connect( (pos)=> {
+                if (pos == Gtk.PositionType.BOTTOM) {
+                    num_page_search++;
+                    connection.load_search_page(num_page_search, current_query);
+                }
+            } );
+        }
+
+        private void search_query (string search) {
+            headerbar.search.sensitive = false;
+            scrolled_search.get_vadjustment ().set_value (0);
+            stack.set_transition_type (Gtk.StackTransitionType.SLIDE_DOWN);
+            stack.set_visible_child_name ("spinner");
+            result_search_view.clean_list ();
+            num_page_search = 1;
+            connection.load_search_page(num_page_search, search);
+            search_label.label = search;
+            current_query = search;
         }
 
         /*****************

@@ -28,26 +28,26 @@ namespace App.Popover {
         private string unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
 
         public MenuPopover() {
-            this.margin = 8;
-            this.column_spacing = 8;
-            this.row_spacing = 8;
-
+            this.margin = 0;
+            this.row_spacing = 0;
+            
+            var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
             var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
             var logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/unsplashlogo.svg");
             var lbl_powered = new Gtk.Label (_("Powered by"));
-            var button_visit = new Gtk.Button.with_label (_("Visit web site"));;
-            var open_folder_btn = new Gtk.Button.with_label (_("Open wallpaper folder"));
-
+            var button_visit = new Gtk.LinkButton.with_label (unsplash_link, _("Visit web site"));;
+            
+            button_visit.get_style_context ().remove_class ("link");
+            button_visit.get_style_context ().remove_class ("flat");
             button_visit.get_style_context ().add_class ("menu-btn");
-            open_folder_btn.get_style_context ().add_class ("menu-btn");
+            button_visit.has_tooltip = false;
+            lbl_powered.margin_top = 8;
             content_box.add (lbl_powered);
             content_box.add (logo);
-            content_box.margin_bottom = 8;
 
             content_box.tooltip_text = _("Photos from Unsplash: Beautiful Free Images & Pictures 🎁");
             this.attach(content_box, 0, 1, 1, 1);
             this.attach(button_visit, 0, 2, 1, 1);
-            this.attach(open_folder_btn, 0, 3, 1, 1);
             this.show_all();
         }
     }

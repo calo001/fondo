@@ -32,6 +32,9 @@ namespace App.Views {
         /**
          * Constructs a new {@code PhotosView} object.
          */
+
+        private unowned List<Photo?> photos;
+
         public PhotosView () {
             this.margin_end = 10;
             this.margin_start = 10;
@@ -50,13 +53,20 @@ namespace App.Views {
         ********************************************/
         public void insert_cards (List<Photo?> photos) {
             // A simple solution to sort photos by height
-            photos.sort(compare);
+            this.photos = photos;
+            this.photos.sort(compare);
 
-            foreach (var photo in photos) {
+            foreach (var photo in this.photos) {
                 var card = new CardPhotoView (photo);
                 this.add(card);
                 card.show_all();
             }
+        }
+
+        public void clean_list () {
+            this.@foreach ( (widget) => {
+                widget.destroy();
+            });
         }
 
         CompareFunc<Photo?> compare = (a, b) => {

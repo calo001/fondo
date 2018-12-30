@@ -10,10 +10,12 @@ sources += files(
     'views/PreviewWindow.vala',
     'views/ButtonCategory.vala',
     'views/CategoriesView.vala',
+    'views/EmptyView.vala',
 
     'popovers/MenuPopover.vala',
     'popovers/SearchPopover.vala',
     'popovers/WallpaperPopover.vala',
+    'popovers/SharePopover.vala',
 
     'structs/Photo.vala',
 
@@ -26,5 +28,5 @@ sources += files(
 
     'Application.vala',
     'Main.vala',
-    'Window.vala'
+    'windows/Window.vala'
 )

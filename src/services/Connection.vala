@@ -31,6 +31,7 @@ namespace App.Connection {
 
         // Signals for Classes tha use this class
         public signal void request_page_success(List<Photo?> list);
+        public signal void request_page_search_success(List<Photo?> list);
 
         private static AppConnection? instance;
         private Soup.Session session;
@@ -41,8 +42,6 @@ namespace App.Connection {
 
         // Parse data from API
         public void load_page (int num_page) {
-            //print("\n\nPAGINA #" + num_page.to_string() + "\n\n");
-            //print(uri + "\n");
             var uri = Constants.URI_PAGE + 
                       "&page=" + num_page.to_string() + 
                       "&per_page=" + "24" +
@@ -51,20 +50,33 @@ namespace App.Connection {
             var message = new Soup.Message ("GET", uri);
 
             session.queue_message (message, (sess, mess) => {
-                // Process the result:
-		        //print ("Status Code: %u\n", mess.status_code);
-		        //print ("Message length: %lld\n", mess.response_body.length);
-                //print ("Data: \n%s\n", (string) mess.response_body.data);
-                
                 var parser = new Json.Parser ();
                 try {
                     parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
                     var list = get_data (parser);
                     request_page_success(list);
                 } catch (Error e) {
-                    show_message("Request page fail", 
-                                  e.message,
-                                  "dialog-error");
+                    show_message("Request page fail", e.message, "dialog-error");
+                }
+            });
+        }
+
+        public void load_search_page (int num_page, string query) {
+            var uri = Constants.URI_SEARCH_PAGE + 
+            "&query=" + query +
+            "&page=" + num_page.to_string() + 
+            "&per_page=" + "24";
+
+            var message = new Soup.Message ("GET", uri);
+
+            session.queue_message (message, (sess, mess) => {
+                var parser = new Json.Parser ();
+                try {
+                    parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
+                    var list = get_data_search (parser);
+                    request_page_search_success(list);
+                } catch (Error e) {
+                    show_message("Request page fail", e.message, "dialog-error");
                 }
             });
         }
@@ -75,6 +87,34 @@ namespace App.Connection {
 
             var node = parser.get_root ();
             unowned Json.Array array = node.get_array ();
+            foreach (unowned Json.Node item in array.get_elements ()) {
+                var object = item.get_object();
+                var photo_info = Photo() {
+                    id =                        object.get_string_member ("id"),
+                    width =                     object.get_int_member    ("width"),
+                    height =                    object.get_int_member    ("height"),
+                    urls_thumb =                object.get_object_member ("urls")
+                                                      .get_string_member ("small"),
+                    links_download_location =   object.get_object_member ("links")
+                                                      .get_string_member ("download_location"),
+                    username =                  object.get_object_member ("user")
+                                                      .get_string_member ("username"),
+                    name =                      object.get_object_member ("user")
+                                                      .get_string_member ("name"),
+                    location =                  object.get_object_member ("user")
+                                                      .get_string_member ("location")
+                    };
+                    list_thumbs.append (photo_info);
+                }
+            return list_thumbs;
+        }
+
+        // Create all structure Photo
+        private List<Photo?> get_data_search (Json.Parser parser) {
+            List<Photo?> list_thumbs = new List<Photo?> ();
+
+            var node = parser.get_root ();
+            unowned Json.Array array = node.get_object ().get_array_member ("results");
             foreach (unowned Json.Node item in array.get_elements ()) {
                 var object = item.get_object();
                 var photo_info = Photo() {
@@ -110,11 +150,6 @@ namespace App.Connection {
 
             MainLoop loop = new MainLoop ();
             session.queue_message (message, (sess, mess) => {
-                // Process the result:
-		        //print ("Status Code: %u\n", mess.status_code);
-		        //print ("Message length: %lld\n", mess.response_body.length);
-                //print ("Data: \n%s\n", (string) mess.response_body.data);
-                
                 var parser = new Json.Parser ();
                 try {
                     //parser.load_from_data ((string) message.response_body.flatten ().data, -1);
