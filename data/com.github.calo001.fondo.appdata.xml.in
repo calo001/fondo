@@ -29,29 +29,42 @@
     </screenshots>
     <description>
         <p>Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers. </p>
+        <p>Fondo allows you to see thousands of beautiful photographs from the most recent to the one you are to looking for. Give a simple click on a picture to set as wallpaper, wait until the download is complete and ready!</p>
+        Main features:
+        <p>Have a simple and elegant interface, you can change from light mode to dark mode as you prefer.</p>
         <ul>
           <li>Scroll down to load more photos</li>
           <li>A single click on the photo to put as a wallpaper</li>
           <li>Right click for more wallpaper display options</li>
           <li>See the photo in full screen</li>
-          <li>Change the size of the window, the design is responsive</li>
-          <li>Use ESC to exit</li>
+          <li>Change the size of the window, the window is responsive</li>
+          <li>Share with your friends a link to photo from Unsplash</li>
+          <li>Search by categories or write what you want to search in the top input</li>
+          <li>Use Ctrl + Q to exit</li>
         </ul>
     </description>
     <releases>
-      <release version="1.0.0" date="2018-06-04">
+      <release version="1.1.4" date="2018-09-22">
         <description>
-          <p>Initial 1.0.0 release!</p>
+          Updates
+          <ul>
+            <li>New screenshots with awesome photos</li>
+            <li>OARS data social-info set to mild</li>
+        </ul>
         </description>
       </release>
-      <release version="1.0.1" date="2018-08-21">
+      <release version="1.1.3" date="2018-09-16">
         <description>
-          <p>Improved UI.</p>
+          Fixes and improvements
+          <ul>
+            <li>Orthographic corrections in the Spanish translation</li>
+            <li>The photos are sorted from highest to lowest according to height</li>
+        </ul>
         </description>
       </release>
       <release version="1.1.2" date="2018-09-13">
         <description>
-          <p>A very nice update.</p>
+          A very nice update with new features
           <ul>
             <li>Responsive, resizable window</li>
             <li>Infinite scrolling: just scroll to keep loading new photos</li>
@@ -60,22 +73,14 @@
         </ul>
         </description>
       </release>
-      <release version="1.1.3" date="2018-09-16">
+      <release version="1.0.1" date="2018-08-21">
         <description>
-          <p>Fixes and improvements</p>
-          <ul>
-            <li>Orthographic corrections in the Spanish translation.</li>
-            <li>The photos are sorted from highest to lowest according to height.</li>
-        </ul>
+          Improved UI.
         </description>
       </release>
-      <release version="1.1.4" date="2018-09-22">
+      <release version="1.0.0" date="2018-06-04">
         <description>
-          <p>Updates</p>
-          <ul>
-            <li>New screenshots.</li>
-            <li>OARS data.</li>
-        </ul>
+          Initial 1.0.0 release!
         </description>
       </release>
     </releases>
