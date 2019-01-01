@@ -61,7 +61,22 @@ namespace App.Controllers {
             this.num_page = 1;
             this.num_page_search = 1;
 
-            window = new App.Window (this.application);
+            // window setup
+            window  =       new App.Window (this.application);
+            headerbar =     new App.Widgets.HeaderBar ();
+            window.set_titlebar (this.headerbar);
+
+            headerbar.search_view.connect ( () => {
+                stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
+                stack.set_visible_child_name ("categories");
+                view.set_sensitive (false);
+            });
+
+            headerbar.home_view.connect ( () => {
+                stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
+                stack.set_visible_child_name ("scrolled");
+                view.set_sensitive (true);
+            });
 
             // Views used in Stock
             scrolled_main =         new Gtk.ScrolledWindow (null, null);
@@ -71,6 +86,7 @@ namespace App.Controllers {
             empty_view =            new EmptyView ();         
             view =                  new PhotosView ();
             result_search_view =    new PhotosView ();
+            view_error =            new AppViewError();
 
             // Daily photos container
             var content_scroll =        new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
@@ -87,13 +103,11 @@ namespace App.Controllers {
             scrolled_main.add (content_scroll);
             scrolled_search.add (content_search_scroll);
 
-            // 
+            // Categories
             var content_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
             var header_categories =  new LabelTop (_("Categories"));
             content_categories.add (header_categories);
             content_categories.add (categories);
-
-            check_internet();
 
             // Setup signals
             categories.search_category.connect ( ( search )=>{
@@ -103,6 +117,10 @@ namespace App.Controllers {
             headerbar.search_activated.connect ( ( search )=>{
                 search_query (search);
             });
+
+            view_error.close_window.connect(() => {
+                window.close();
+            }); 
 
             // Contains the spinner and scroll and chances theirs visibility
             stack = new Gtk.Stack ();
@@ -115,7 +133,9 @@ namespace App.Controllers {
             stack.add_named(scrolled_main, "scrolled");
             stack.add_named(scrolled_search, "search"); 
             stack.add_named(empty_view, "empty"); 
-            stack.visible_child_name = "spinner";
+            stack.add_named(view_error, "error");
+
+            check_internet();
 
             window.add (stack);
             application.add_window (window);
@@ -127,7 +147,9 @@ namespace App.Controllers {
         private void check_internet() {
             if (App.Utils.check_internet_connection ()) {
                 set_ui ();
+                print ("Connection available");
             } else {
+                print ("Connection NO available");
                 set_error_ui ();
             }
         }
@@ -136,38 +158,13 @@ namespace App.Controllers {
          UI for no internet connection
         ******************************************/
         private void set_error_ui () {
-            var header_simple = new Gtk.HeaderBar ();
-            header_simple.set_title (Constants.PROGRAME_NAME);
-            header_simple.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-            window.set_titlebar (header_simple);
-
-            view_error = new AppViewError();
-            view_error.close_window.connect(() => {
-                window.close();
-            }); 
-
-            scrolled_main.add (view_error);
+            stack.set_visible_child_name ("error");
         }
 
         /****************************************** 
          UI for main content
         ******************************************/
         private void set_ui () {
-            headerbar = new App.Widgets.HeaderBar ();
-            window.set_titlebar (this.headerbar);
-
-            headerbar.search_view.connect ( () => {
-                stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
-                stack.set_visible_child_name ("categories");
-                view.set_sensitive (false);
-            });
-
-            headerbar.home_view.connect ( () => {
-                stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
-                stack.set_visible_child_name ("scrolled");
-                view.set_sensitive (true);
-            });
-
             connection.load_page(num_page);
 
             // Signal catched when request is success and setup the photos 
