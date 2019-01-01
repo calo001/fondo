@@ -52,9 +52,9 @@ namespace App.Connection {
 
             session.queue_message (message, (sess, mess) => {
                 // Process the result:
-		        //print ("Status Code: %u\n", mess.status_code);
-		        //print ("Message length: %lld\n", mess.response_body.length);
-                //print ("Data: \n%s\n", (string) mess.response_body.data);
+		        print ("Status Code: %u\n", mess.status_code);
+		        print ("Message length: %lld\n", mess.response_body.length);
+                print ("Data: \n%s\n", (string) mess.response_body.data);
                 
                 var parser = new Json.Parser ();
                 try {
