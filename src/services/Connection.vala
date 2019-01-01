@@ -44,13 +44,13 @@ namespace App.Connection {
             //print("\n\nPAGINA #" + num_page.to_string() + "\n\n");
             //print(uri + "\n");
             
-            //  var uri = Constants.URI_PAGE + 
-            //            "&page=" + num_page.to_string() + 
-            //            "&per_page=" + "24" +
-            //            "&order_by=" + "latest";
+            //    var uri = Constants.URI_PAGE + 
+            //              "&page=" + num_page.to_string() + 
+            //              "&per_page=" + "24" +
+            //              "&order_by=" + "latest";
             
             var uri = "https://jsonplaceholder.typicode.com/todos/1";
-            var message = new Soup.Message ("GET", uri);
+            var message = new Soup.Message ("POST", uri);
 
             session.queue_message (message, (sess, mess) => {
                 // Process the result:
