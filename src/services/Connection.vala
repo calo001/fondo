@@ -48,7 +48,7 @@ namespace App.Connection {
                       "&per_page=" + "24" +
                       "&order_by=" + "latest";
             
-            var message = new Soup.Message ("GET", uri);
+            var message = new Soup.Message ("GET", "https://jsonplaceholder.typicode.com/todos/1");
 
             session.queue_message (message, (sess, mess) => {
                 // Process the result:
