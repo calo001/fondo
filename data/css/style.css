@@ -55,6 +55,7 @@ scrollbar slider {
     font-weight: normal;
     font-size: 1em;
     padding: 12px;
+    background: none;
 }
 
 .menu-btn:hover {
@@ -207,6 +208,15 @@ progressbar trough{
 
 .btn-category:hover {
     opacity: 0.8;
+}
+
+.h1 {
+    font-weight: 500;
+    font-size: 2.7em;
+}
+
+.h2 {
+    font-size: 2em;
 }
 
 .btn-nature {

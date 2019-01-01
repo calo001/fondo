@@ -11,6 +11,7 @@ sources += files(
     'views/ButtonCategory.vala',
     'views/CategoriesView.vala',
     'views/EmptyView.vala',
+    'views/LoadingView.vala',
 
     'popovers/MenuPopover.vala',
     'popovers/SearchPopover.vala',
@@ -24,6 +25,8 @@ sources += files(
 
     'widgets/HeaderBar.vala',
     'widgets/ModeSwitch.vala',
+    'widgets/LabelTop.vala',
+
     'services/Connection.vala',
 
     'Application.vala',

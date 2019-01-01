@@ -36,6 +36,7 @@ namespace App.Controllers {
         private PhotosView                 view;
         private PhotosView                 result_search_view;
         private EmptyView                  empty_view;
+        private LoadingView                box_loading;
         private AppViewError               view_error;
         private AppConnection              connection;
         private Gtk.ScrolledWindow         scrolled_main;
@@ -61,52 +62,40 @@ namespace App.Controllers {
             this.num_page_search = 1;
 
             window = new App.Window (this.application);
-            scrolled_main = new Gtk.ScrolledWindow (null, null);
-            scrolled_search = new Gtk.ScrolledWindow (null, null);
-            
+
             // Views used in Stock
-            view = new PhotosView ();
-            result_search_view = new PhotosView ();
-            empty_view = new EmptyView ();         
+            scrolled_main =         new Gtk.ScrolledWindow (null, null);
+            scrolled_search =       new Gtk.ScrolledWindow (null, null);
+            box_loading =           new LoadingView ();
+            categories =            new CategoriesView ();
+            empty_view =            new EmptyView ();         
+            view =                  new PhotosView ();
+            result_search_view =    new PhotosView ();
 
-            // Container for Title and scrolledWindow
-            var content_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-            var content_search_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-            var header_photos = new Gtk.Label (_("Today"));
-            header_photos.get_style_context ().add_class ("hphoto");
-            header_photos.wrap = true;
-            header_photos.margin_start = 20;
-            header_photos.margin_end = 20;
-
-            // Drag header
-            //content_scroll.button_press_event.connect ((e) => {
-            //    if (e.button == Gdk.BUTTON_PRIMARY) {
-            //        window.begin_move_drag ((int) e.button, (int) e.x_root, (int) e.y_root, e.time);
-            //        return true;
-            //    }
-            //    return false;
-            //});
-
+            // Daily photos container
+            var content_scroll =        new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+            var header_photos =         new LabelTop (_("Today"));
             content_scroll.add (header_photos);
             content_scroll.add (view);
 
-            search_label = new Gtk.Label ("Búsqueda");
-            search_label.get_style_context ().add_class ("hphoto");
-            search_label.wrap = true;
-            search_label.margin_start = 20;
-            search_label.margin_end = 20;
+            // Search photos conatiner
+            var content_search_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+            search_label = new LabelTop ("Search");
             content_search_scroll.add (search_label);
             content_search_scroll.add (result_search_view);
 
             scrolled_main.add (content_scroll);
             scrolled_search.add (content_search_scroll);
 
-            // Check the internet connection
+            // 
+            var content_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+            var header_categories =  new LabelTop (_("Categories"));
+            content_categories.add (header_categories);
+            content_categories.add (categories);
+
             check_internet();
 
-            // Categories stack
-            categories = new CategoriesView ();
-
+            // Setup signals
             categories.search_category.connect ( ( search )=>{
                 search_query (search);
             });
@@ -114,22 +103,6 @@ namespace App.Controllers {
             headerbar.search_activated.connect ( ( search )=>{
                 search_query (search);
             });
-
-            var content_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-            content_categories.add (header_photos);
-            content_categories.add (categories);
-
-            // Show when GET request is in progress
-            var box_loading = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-            box_loading.halign = Gtk.Align.CENTER;
-            box_loading.valign = Gtk.Align.CENTER;
-            
-            var spinner = new Gtk.Spinner();
-            spinner.active = true;
-            spinner.get_style_context ().add_class ("card");
-            spinner.get_style_context ().add_class ("card_spinner");
-            box_loading.add(spinner);
-            
 
             // Contains the spinner and scroll and chances theirs visibility
             stack = new Gtk.Stack ();

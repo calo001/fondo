@@ -74,7 +74,7 @@ namespace App.Utils {
                 if (download_picture ()) {
                     set_wallpaper (opt);
                     show_notify ();
-                    set_to_greeter ();
+                    set_to_login_screen ();
                 } else {
                     show_message ("Error", "Download issue", "dialog-warning");    
                 }
@@ -190,10 +190,17 @@ namespace App.Utils {
             * Base from:
             * https://github.com/elementary/switchboard-plug-pantheon-shell/blob/master/set-wallpaper-contract/set-wallpaper.vala
         ***********************************************************************/
-         public void set_to_greeter () {
+         public void set_to_login_screen () {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
-                MainLoop loop = new MainLoop ();
+                set_to_greeter (variable);
+            } else {
+                show_message ("Error", _("Greeter not found"), "dialog-error");
+            }
+        }
+
+        private void set_to_greeter (string variable) {
+            MainLoop loop = new MainLoop ();
                 File? dest = null;
                 var file_path = File.new_for_path (full_picture_path);
                 var greeter_data_dir = Path.build_filename (variable, "wallpaper");
@@ -231,9 +238,6 @@ namespace App.Utils {
                     }
                         loop.quit ();
                 });
-            } else {
-                show_message ("Error", _("Greeter not found"), "dialog-error");
-            }
         }
 
         /************************************
