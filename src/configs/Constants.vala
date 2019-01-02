@@ -29,7 +29,7 @@ namespace App.Configs {
         // API KEY in development, this must to change on production release
         // * Already changed to production KEY
 
-        public abstract const string API_UNSPLASH = "http://api.unsplash.com/";
+        public abstract const string API_UNSPLASH = "https://api.unsplash.com/";
         public abstract const string GET = "photos/?client_id=";
         
         // API KEY for production, only use this key in releases for AppCenter
