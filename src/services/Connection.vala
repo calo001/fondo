@@ -49,8 +49,8 @@ namespace App.Connection {
             //              "&per_page=" + "24" +
             //              "&order_by=" + "latest";
             
-            var uri = "https://jsonplaceholder.typicode.com/todos/1";
-            var message = new Soup.Message ("POST", uri);
+            var uri = "http://jsonplaceholder.typicode.com/todos/1";
+            var message = new Soup.Message ("GET", uri);
 
             session.queue_message (message, (sess, mess) => {
                 // Process the result:
