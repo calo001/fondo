@@ -37,6 +37,7 @@ namespace App.Connection {
 
         public AppConnection() {
             this.session = new Soup.Session();
+            this.session.ssl_strict = false;
         }
 
         // Parse data from API
