@@ -108,7 +108,7 @@ namespace App.Connection {
                          Constants.ACCESS_KEY_UNSPLASH;
             
             //print(uri + "\n");
-            //print("\nGET URL PHOTO\n");
+            print("\nGET URL PHOTO\n");
             var message = new Soup.Message ("GET", uri);
             string? image = null;
 
