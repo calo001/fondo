@@ -95,7 +95,7 @@ namespace App.Utils {
                     print ("make directory with parents");
 			    	dir. make_directory_with_parents();
 			    } catch (Error e){
-				    show_message ("Error", e.message, "dialog-error");
+				    show_message ("Error check Directory", e.message, "dialog-error");
 				    return false;
 			    }
             }
