@@ -88,10 +88,10 @@ namespace App.Utils {
             in /home/user/.local/share/backgrounds/
         ***********************************************************************/
         private bool check_directory () {
-            print("ERROR DIRECTORY");
 		    var dir = File.new_for_path (BASE_DIR);
 		    if (!dir.query_exists ()) {
 			    try{
+                    print ('make_directory_with_parents()');
 			    	dir. make_directory_with_parents();
 			    } catch (Error e){
 				    show_message ("Error", e.message, "dialog-error");
@@ -113,6 +113,8 @@ namespace App.Utils {
             var file_path = File.new_for_path (full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
             var progress = 0.0;
+
+            print ('download_picture ()');
 
             if (!file_path.query_exists ()) {
                 #if WITH_UNITY
