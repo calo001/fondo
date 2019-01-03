@@ -92,7 +92,6 @@ namespace App.Utils {
             print ("make directory with parents");
 		    if (!dir.query_exists ()) {
                 try{
-                    print ("make directory with parents");
 			    	dir. make_directory_with_parents();
 			    } catch (Error e){
 				    show_message ("Error check Directory", e.message, "dialog-error");
@@ -122,11 +121,12 @@ namespace App.Utils {
                 
                 file_from_uri.copy_async.begin (file_path, 
                 FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, 
-                GLib.Priority.DEFAULT, null, (current_num_bytes, total_num_bytes) => {
+                GLib.Priority.DEFAULT, null, 
+                (current_num_bytes, total_num_bytes) => {
 		        // Report copy-status:
                     progress = (double) current_num_bytes / total_num_bytes;
 		            total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
-		            //print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
+		            print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
 			        show_progress (progress);
 	            }, (obj, res) => {
 		            try {
@@ -137,7 +137,7 @@ namespace App.Utils {
                         #endif
                         finish_download ();
 		            } catch (Error e) {
-			            //show_message ("Error", e.message, "dialog-error");
+			            show_message ("Error Copiar de URI a folder", e.message, "dialog-error");
 		            }
 		                loop.quit ();
 	                });
