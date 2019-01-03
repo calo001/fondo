@@ -90,7 +90,8 @@ namespace App.Utils {
         private bool check_directory () {
 		    var dir = File.new_for_path (BASE_DIR);
 		    if (!dir.query_exists ()) {
-			    try{
+                print ("make directory with parents");
+                try{
                     print ("make directory with parents");
 			    	dir. make_directory_with_parents();
 			    } catch (Error e){
