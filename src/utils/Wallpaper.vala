@@ -88,9 +88,9 @@ namespace App.Utils {
             in /home/user/.local/share/backgrounds/
         ***********************************************************************/
         private bool check_directory () {
-		    var dir = File.new_for_path (BASE_DIR);
+            var dir = File.new_for_path (BASE_DIR);
+            print ("make directory with parents");
 		    if (!dir.query_exists ()) {
-                print ("make directory with parents");
                 try{
                     print ("make directory with parents");
 			    	dir. make_directory_with_parents();
