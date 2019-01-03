@@ -118,23 +118,26 @@ namespace App.Utils {
                 #if WITH_UNITY
                 launcher.progress_visible = true;
                 #endif
-                file_from_uri.copy_async.begin (file_path, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null, (current_num_bytes, total_num_bytes) => {
+                
+                file_from_uri.copy_async.begin (file_path, 
+                FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, 
+                GLib.Priority.DEFAULT, null, (current_num_bytes, total_num_bytes) => {
 		        // Report copy-status:
                     progress = (double) current_num_bytes / total_num_bytes;
 		            total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
 		            //print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
 			        show_progress (progress);
 	            }, (obj, res) => {
-		            //try {
-			            //bool tmp = file_from_uri.copy_async.end (res);
-                        //print ("Result: %s\n", tmp.to_string ());
+		            try {
+			            bool tmp = file_from_uri.copy_async.end (res);
+                        print ("Result: %s\n", tmp.to_string ());
                         #if WITH_UNITY
                         launcher.progress_visible = false;
                         #endif
                         finish_download ();
-		            //} catch (Error e) {
+		            } catch (Error e) {
 			            //show_message ("Error", e.message, "dialog-error");
-		            //}
+		            }
 		                loop.quit ();
 	                });
 			} else {
@@ -143,7 +146,6 @@ namespace App.Utils {
 				bar.set_fraction (1);
 				return true;
             }
-            print("\nDOWNLOAD END\n");
             loop.run ();
             return true;
         }
