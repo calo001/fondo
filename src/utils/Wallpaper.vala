@@ -196,6 +196,7 @@ namespace App.Utils {
         public void set_to_greeter () {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
+                print ("Variable encontrada");
                 MainLoop loop = new MainLoop ();
                 File? dest = null;
                 var file_path = File.new_for_path (full_picture_path);
@@ -235,6 +236,7 @@ namespace App.Utils {
                         loop.quit ();
                 });
             } else {
+                print ("Variable encontrada");
                 show_message ("Error", _("Greeter not found"), "dialog-error");
             }
         }
