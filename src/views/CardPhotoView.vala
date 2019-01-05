@@ -89,7 +89,12 @@ namespace App.Views {
                 }
             }
 
-            image.set_from_file_async.begin(file_photo, w_photo, h_photo, false); // Width, Heigth
+            try {
+                image.set_from_file_async.begin(file_photo, w_photo, h_photo, false); // Width, Heigth
+            } catch (Error e) {
+                print (e.message);
+            }
+            
             image.has_tooltip = true;
             image.get_style_context ().add_class ("photo");            
             var txt_tooltip = photo.location == null ? 
