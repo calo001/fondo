@@ -70,7 +70,7 @@ namespace App.Views {
                     File from url thumb
             ******************************************/
             file_photo = File.new_for_uri (photo.urls_thumb);
-            
+            print (photo.urls_thumb);
             /******************************************
                     Create AsyncImage object
             ******************************************/
