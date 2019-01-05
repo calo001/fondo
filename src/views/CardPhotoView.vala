@@ -70,7 +70,7 @@ namespace App.Views {
                     File from url thumb
             ******************************************/
             file_photo = File.new_for_uri (photo.urls_thumb);
-            print (photo.urls_thumb);
+
             /******************************************
                     Create AsyncImage object
             ******************************************/
@@ -92,6 +92,7 @@ namespace App.Views {
             try {
                 image.set_from_file_async.begin(file_photo, w_photo, h_photo, false); // Width, Heigth
             } catch (Error e) {
+                print ("Error cargando la imagen");
                 print (e.message);
             }
             
