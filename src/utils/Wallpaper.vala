@@ -193,7 +193,8 @@ namespace App.Utils {
             if (variable != null) {
                 set_to_greeter (variable);
             } else {
-                show_message ("Error", _("Greeter not found"), "dialog-error");
+                print ("Greeter not found");
+                //show_message ("Error", "Greeter not found", "dialog-error");
             }
         }
 
