@@ -124,7 +124,7 @@ namespace App.Utils {
 		            print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
 			        show_progress (progress);
 	            }, (obj, res) => {
-		            //try {
+		            try {
 			            //bool tmp = file_from_uri.copy_async.end (res);
                         //print ("Result: %s\n", tmp.to_string ());
                         #if WITH_UNITY
