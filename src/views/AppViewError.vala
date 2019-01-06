@@ -29,6 +29,7 @@ namespace App.Views {
      */
     public class AppViewError : Gtk.Box {
         public signal void close_window();
+        public signal void retry();
         
         public AppViewError() {
             // Configuring UI
@@ -40,16 +41,16 @@ namespace App.Views {
             var image = new Gtk.Image.from_icon_name  ("network-error", Gtk.IconSize.DIALOG);
 		    var label_title = new Gtk.Label ("Network Error");
 		    var label_description = new Gtk.Label ("Check the network connection.");
-            var button_check_network = new Gtk.Button.with_label (_("Exit"));
+            var button_check_network = new Gtk.Button.with_label (_("Retry"));
 
 		    label_title.get_style_context ().add_class ("h2");
 		    label_description.get_style_context ().add_class ("h4");
-            button_check_network.get_style_context ().add_class ("destructive-action");
+            button_check_network.get_style_context ().add_class ("suggested-action");
             button_check_network.margin = 32;
 
             // Button click
             button_check_network.clicked.connect ( () => {
-                close_window();
+                retry();
             } );
 
             // Add content

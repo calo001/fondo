@@ -46,7 +46,7 @@ namespace App.Utils {
         #if WITH_UNITY
         private LauncherEntry launcher;
         #endif
-        /*********************************** 
+        /***********************************
             Constructor
             * uri_endpoint is the direct url image
             * id_photo is used for naming the file
@@ -60,10 +60,10 @@ namespace App.Utils {
             this.full_picture_path = BASE_DIR + img_file_name;
             #if WITH_UNITY
                 this.launcher = LauncherEntry.get_for_desktop_id (Constants.ID + ".desktop");
-            #endif    
+            #endif
         }
 
-        /*********************************************************************** 
+        /***********************************************************************
             Method to manage all process to download and put a new Wallpaper
             * opt is used to put in GSetting the wallpaper size
             * Show notification
@@ -74,22 +74,21 @@ namespace App.Utils {
                 if (download_picture ()) {
                     set_wallpaper (opt);
                     show_notify ();
-                    set_to_greeter ();
+                    set_to_login_screen ();
                 } else {
-                    show_message ("Error", "Download issue", "dialog-warning");    
+                    show_message ("Error", "Download issue", "dialog-warning");
                 }
             } else {
                 show_message ("Error", "Directory issue", "dialog-warning");
             }
         }
 
-        /*********************************************************************** 
-            Method to create if is necessary the directory 
+        /***********************************************************************
+            Method to create if is necessary the directory
             in /home/user/.local/share/backgrounds/
         ***********************************************************************/
         private bool check_directory () {
-            var dir = File.new_for_path (BASE_DIR);
-            print ("make directory with parents");
+		    var dir = File.new_for_path (BASE_DIR);
 		    if (!dir.query_exists ()) {
                 try{
 			    	dir. make_directory_with_parents();
@@ -101,7 +100,7 @@ namespace App.Utils {
             return true;
         }
 
-        /*********************************************************************** 
+        /***********************************************************************
             Method to download a photo from API unsplash
             * Using the copy_async method to white the file
             * Update progress via show_progress method
@@ -118,20 +117,16 @@ namespace App.Utils {
                 #if WITH_UNITY
                 launcher.progress_visible = true;
                 #endif
-                
-                file_from_uri.copy_async.begin (file_path, 
-                FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, 
-                GLib.Priority.DEFAULT, null, 
-                (current_num_bytes, total_num_bytes) => {
+                file_from_uri.copy_async.begin (file_path, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null, (current_num_bytes, total_num_bytes) => {
 		        // Report copy-status:
                     progress = (double) current_num_bytes / total_num_bytes;
 		            total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
 		            print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
 			        show_progress (progress);
 	            }, (obj, res) => {
-		            try {
-			            bool tmp = file_from_uri.copy_async.end (res);
-                        print ("Result: %s\n", tmp.to_string ());
+		            //try {
+			            //bool tmp = file_from_uri.copy_async.end (res);
+                        //print ("Result: %s\n", tmp.to_string ());
                         #if WITH_UNITY
                         launcher.progress_visible = false;
                         #endif
@@ -151,7 +146,7 @@ namespace App.Utils {
             return true;
         }
 
-        /*********************************************************************** 
+        /***********************************************************************
             Method to update GSetting properties
         ***********************************************************************/
         public void set_wallpaper (string picture_options = "zoom") {
@@ -166,7 +161,7 @@ namespace App.Utils {
             GLib.Settings.sync ();
         }
 
-        /*********************************************************************** 
+        /***********************************************************************
             Method to show progress in download
         ***********************************************************************/
         private void show_progress (double progress) {
@@ -176,7 +171,7 @@ namespace App.Utils {
             #endif
         }
 
-        /*********************************************************************** 
+        /***********************************************************************
             Method to show desktop notification
         ***********************************************************************/
         public void show_notify () {
@@ -185,20 +180,25 @@ namespace App.Utils {
             GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
 
-        /*********************************************************************** 
-            Method to copy the downloaded background to 
+        /***********************************************************************
+            Method to copy the downloaded background to
             '/var/lib/lightdm-data/user/wallpaper/'
             * Check if directory exist
             * Copy image process
             * Base from:
             * https://github.com/elementary/switchboard-plug-pantheon-shell/blob/master/set-wallpaper-contract/set-wallpaper.vala
         ***********************************************************************/
-        public void set_to_greeter () {
-            print ("\nCopying to greeter\n");
+         public void set_to_login_screen () {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
-                print ("Variable encontrada");
-                MainLoop loop = new MainLoop ();
+                set_to_greeter (variable);
+            } else {
+                show_message ("Error", _("Greeter not found"), "dialog-error");
+            }
+        }
+
+        private void set_to_greeter (string variable) {
+            MainLoop loop = new MainLoop ();
                 File? dest = null;
                 var file_path = File.new_for_path (full_picture_path);
                 var greeter_data_dir = Path.build_filename (variable, "wallpaper");
@@ -220,9 +220,9 @@ namespace App.Utils {
                         show_message ("Error", e.message, "dialog-error");
                     }
                 }
-    
+
                 dest = File.new_for_path (Path.build_filename (greeter_data_dir, img_file_name));
-    
+
                 file_path.copy_async.begin(dest, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null,
                 (current_num_bytes, total_num_bytes) => {
                     // Report copy-status:
@@ -236,10 +236,6 @@ namespace App.Utils {
                     }
                         loop.quit ();
                 });
-            } else {
-                print ("Variable encontrada");
-                show_message ("Error", _("Greeter not found"), "dialog-error");
-            }
         }
 
         /************************************

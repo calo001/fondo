@@ -39,7 +39,7 @@ dependencies = [
     dependency('granite'),
     dependency('gtk+-3.0'),
     dependency('json-glib-1.0'),
-    dependency('libsoup-2.4')
+    dependency('libsoup-2.4'),
 ]
 unity_dep = dependency('unity', required: false)
 if unity_dep.found()

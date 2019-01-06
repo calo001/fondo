@@ -35,7 +35,6 @@ namespace App.Views {
         private Gtk.Stack               stack;
         private AppConnection           connection;
         private Photo                   photo;
-        private Toast                   toast;
         private int                     w_photo;
         private int                     h_photo;
         public  Wallpaper               wallpaper {get; set;}
@@ -78,21 +77,38 @@ namespace App.Views {
             box.pack_start(bar, true, true, 0);
 
             // Image
-            var box_img = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-            box_img.valign = Gtk.Align.START;
-            box_img.halign = Gtk.Align.CENTER;
-            toast = new Toast ("Press Esc to Exit");
+            //var box_img = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+            //box_img.valign = Gtk.Align.START;
+            //box_img.halign = Gtk.Align.CENTER;
             image = new Granite.AsyncImage ();
-            box_img.pack_start(toast, true, true, 0);
-            box_img.pack_end(image, true, true, 0);
+            image.valign = Gtk.Align.START;
+            image.halign = Gtk.Align.CENTER;
+            //box_img.pack_end(image, true, true, 0);
 
+            // Close Button
+            var btn_close = new Gtk.Button.from_icon_name ("window-close-symbolic",Gtk.IconSize.MENU);
+            btn_close.get_style_context ().add_class ("button-green");
+            btn_close.get_style_context ().remove_class ("button");
+            btn_close.get_style_context ().add_class ("transition");
+            btn_close.margin = 8;
+            btn_close.halign = Gtk.Align.START;
+            btn_close.valign = Gtk.Align.START;
+            btn_close.set_tooltip_text (_("Press Esc to Exit"));
+            
+            btn_close.clicked.connect ( ()=>{
+                close ();
+            });
+
+            var overlay = new Gtk.Overlay ();
+            overlay.add_overlay (image);
+            overlay.add_overlay (btn_close);
             // Stack
             stack = new Gtk.Stack();
             stack.set_transition_duration (500);
             stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
 
             stack.add_named (box, "box");
-            stack.add_named (box_img, "image");
+            stack.add_named (overlay, "image");
             stack.set_visible_child_name ("box");
 
             this.add (stack);
@@ -126,10 +142,6 @@ namespace App.Views {
             // Show image
             image.set_from_file_async.begin (file_photo, w_photo, h_photo, true);
             stack.set_visible_child_name ("image");
-
-            // Show Toast
-            toast.send_notification ();
-            toast.margin = 0;
         }
 
         /***************************

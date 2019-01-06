@@ -24,18 +24,21 @@ using App.Connection;
 namespace App.Views {
 
     /**
-     * The {@code AppView} class.
+     * The {@code PhotosView} class.
      *
      * @since 1.0.0
      */
-    public class AppView : Gtk.FlowBox {
+    public class PhotosView : Gtk.FlowBox {
         /**
-         * Constructs a new {@code AppView} object.
+         * Constructs a new {@code PhotosView} object.
          */
-        public AppView () {
+
+        private unowned List<Photo?> photos;
+
+        public PhotosView () {
             this.margin_end = 10;
             this.margin_start = 10;
-            this.set_selection_mode(Gtk.SelectionMode.SINGLE);
+            this.set_selection_mode(Gtk.SelectionMode.NONE);
             this.activate_on_single_click = false;
             this.set_homogeneous (false);
 
@@ -50,14 +53,20 @@ namespace App.Views {
         ********************************************/
         public void insert_cards (List<Photo?> photos) {
             // A simple solution to sort photos by height
-            photos.sort(compare);
+            this.photos = photos;
+            this.photos.sort(compare);
 
-            foreach (var photo in photos) {
+            foreach (var photo in this.photos) {
                 var card = new CardPhotoView (photo);
-                card.valign = Gtk.Align.START;
                 this.add(card);
                 card.show_all();
             }
+        }
+
+        public void clean_list () {
+            this.@foreach ( (widget) => {
+                widget.destroy();
+            });
         }
 
         CompareFunc<Photo?> compare = (a, b) => {

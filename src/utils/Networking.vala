@@ -40,4 +40,21 @@ namespace App.Utils {
         }
         return true;
     }
+
+    //  bool check_internet_connection () {
+
+    //      NetworkMonitor monitor = NetworkMonitor.get_default ();
+    //      bool available = monitor.get_network_available ();
+    //      bool internet = false;
+
+    //      NetworkAddress address = new NetworkAddress ("www.valadoc.org", 80); 
+	//      if (available == true) {
+    //          try {
+    //              internet = monitor.can_reach (address);
+    //          } catch (Error e) {
+    //              internet = false;
+    //          }
+    //      }
+    //      return internet;
+    //  }
 }
