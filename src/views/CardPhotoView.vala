@@ -131,7 +131,7 @@ namespace App.Views {
                 return true;
             } );
 
-            //eventbox_photo.add(image);
+            eventbox_photo.add(image);
 
             /******************************************
                         Fullscreen button
@@ -160,7 +160,7 @@ namespace App.Views {
                     Create Overlay (contain img, btnFullScreen)
             ********************************************************/
             overlay = new Gtk.Overlay();
-            overlay.add (image);
+            overlay.add (eventbox_photo);
             overlay.add_overlay (btn_view);            
             overlay.width_request = w_photo;
             overlay.height_request = h_photo;

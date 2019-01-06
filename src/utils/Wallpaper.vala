@@ -194,6 +194,7 @@ namespace App.Utils {
             * https://github.com/elementary/switchboard-plug-pantheon-shell/blob/master/set-wallpaper-contract/set-wallpaper.vala
         ***********************************************************************/
         public void set_to_greeter () {
+            print ("\nCopying to greeter\n");
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
                 print ("Variable encontrada");
