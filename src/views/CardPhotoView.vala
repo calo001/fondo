@@ -48,8 +48,7 @@ namespace App.Views {
         private Revealer                revealer;
         private Overlay                 overlay;
         private Photo                   photo;
-        private WallpaperPopover        popup_content;
-        public  Gtk.Popover             popup;
+        public  WallpaperPopover        popup;
         public  SharePopover            popupShare;
 
         private int                     w_photo;
@@ -104,14 +103,9 @@ namespace App.Views {
             /******************************************
                     Create Popover for options
             ******************************************/
-            popup = new Gtk.Popover(this);
-            popup.position = Gtk.PositionType.TOP;
-            popup.modal = true;
-            popup_content = new WallpaperPopover(photo.width, photo.height);
-            popup.add(popup_content);
-
+            popup = new WallpaperPopover(photo.width, photo.height, this);
             // Detect signal from click on an option from popup
-            popup_content.wallpaper_option.connect((opt) => {
+            popup.wallpaper_option.connect((opt) => {
                 popup.set_visible (false);
                 setup_wallpaper(opt);
             });
@@ -146,11 +140,7 @@ namespace App.Views {
             /******************************************
                     Popover for share
             ******************************************/
-            popupShare = new SharePopover (this.photo.name, this.photo.id);
-            popupShare.position = Gtk.PositionType.BOTTOM;
-            popupShare.modal = true;
-            popupShare.set_relative_to (btn_share);
-
+            popupShare = new SharePopover (this.photo.name, this.photo.id, btn_share);
             btn_share.button_release_event.connect ( () => {
                 popupShare.set_visible (true);
                 return true;

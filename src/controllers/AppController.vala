@@ -124,16 +124,16 @@ namespace App.Controllers {
                 search_query (search);
             });
 
-            view_error.close_window.connect(() => {
-                window.close();
+            view_error.retry.connect(() => {
+                check_internet();
             }); 
             
-            stack.add_named(box_loading, "spinner");
+            stack.add_named(box_loading,        "spinner");
             stack.add_named(content_categories, "categories");
-            stack.add_named(scrolled_main, "scrolled");
-            stack.add_named(scrolled_search, "search"); 
-            stack.add_named(empty_view, "empty"); 
-            stack.add_named(view_error, "error");
+            stack.add_named(scrolled_main,      "scrolled");
+            stack.add_named(scrolled_search,    "search"); 
+            stack.add_named(empty_view,         "empty"); 
+            stack.add_named(view_error,         "error");
 
             window.add (stack);
             application.add_window (window);
@@ -147,9 +147,7 @@ namespace App.Controllers {
         private void check_internet() {
             if (App.Utils.check_internet_connection ()) {
                 set_ui ();
-                print ("Connection available");
             } else {
-                print ("Connection NO available");
                 set_error_ui ();
             }
         }
@@ -158,13 +156,16 @@ namespace App.Controllers {
          UI for no internet connection
         ******************************************/
         private void set_error_ui () {
-            stack.set_visible_child_full ("error", Gtk.StackTransitionType.SLIDE_UP);
+            stack.show.connect ( ()=>{
+                stack.set_visible_child_full ("error", Gtk.StackTransitionType.SLIDE_UP);
+            });
         }
 
         /****************************************** 
          UI for main content
         ******************************************/
         private void set_ui () {
+            stack.set_visible_child_full ("spinner", Gtk.StackTransitionType.SLIDE_UP);
             connection.load_page(num_page);
 
             // Signal catched when request is success and setup the photos 

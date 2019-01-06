@@ -51,13 +51,17 @@ namespace App.Connection {
             var message = new Soup.Message ("GET", uri);
 
             session.queue_message (message, (sess, mess) => {
-                var parser = new Json.Parser ();
-                try {
-                    parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
-                    var list = get_data (parser);
-                    request_page_success(list);
-                } catch (Error e) {
-                    show_message("Request page fail", e.message, "dialog-error");
+                if (mess.status_code == 200) {
+                    var parser = new Json.Parser ();
+                    try {
+                        parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
+                        var list = get_data (parser);
+                        request_page_success(list);
+                    } catch (Error e) {
+                        show_message("Request page fail", e.message, "dialog-error");
+                    }
+                } else {
+                    show_message("Request page fail", @"status code: $(mess.status_code)", "dialog-error");
                 }
             });
         }
@@ -71,13 +75,17 @@ namespace App.Connection {
             var message = new Soup.Message ("GET", uri);
 
             session.queue_message (message, (sess, mess) => {
-                var parser = new Json.Parser ();
-                try {
-                    parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
-                    var list = get_data_search (parser);
-                    request_page_search_success(list);
-                } catch (Error e) {
-                    show_message("Request page fail", e.message, "dialog-error");
+                if (mess.status_code == 200) {
+                    var parser = new Json.Parser ();
+                    try {
+                        parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
+                        var list = get_data_search (parser);
+                        request_page_search_success(list);
+                    } catch (Error e) {
+                        show_message("Request page fail", e.message, "dialog-error");
+                    }
+                } else {
+                    show_message("Request page fail", @"status code: $(mess.status_code)", "dialog-error");
                 }
             });
         }

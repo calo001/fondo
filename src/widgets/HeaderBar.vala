@@ -52,14 +52,9 @@ namespace App.Widgets {
             /************************
                 Mode Switch widget
             ************************/
-            var mode_switch = new ModeSwitch (
-                "display-brightness-symbolic",
-                "weather-clear-night-symbolic"
-            );
-
-            mode_switch.margin_end = 6;
-            mode_switch.primary_icon_tooltip_text = _("Light background");
-            mode_switch.secondary_icon_tooltip_text = _("Dark background");
+            var mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
+            mode_switch.primary_icon_tooltip_text = ("Light background");
+            mode_switch.secondary_icon_tooltip_text = ("Dark background");
             mode_switch.valign = Gtk.Align.CENTER;
             mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
 
@@ -105,12 +100,7 @@ namespace App.Widgets {
             var menu_button = new Gtk.Button.from_icon_name ("view-more-horizontal-symbolic", Gtk.IconSize.LARGE_TOOLBAR );
             menu_button.tooltip_text = _("Options");
 
-            var pop_content_menu = new MenuPopover();
-            var pop_menu = new Gtk.Popover(menu_button);
-            pop_menu.get_style_context ().add_class ("pop-menu");
-            pop_menu.add(pop_content_menu);
-            pop_menu.set_modal (true);
-
+            var pop_menu = new MenuPopover (menu_button);
             menu_button.clicked.connect ( ()=> {
                 pop_menu.popup ();
             });

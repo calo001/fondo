@@ -23,11 +23,15 @@ namespace App.Popover {
      *
      * @since 1.3.0
      */
-    public class MenuPopover : Gtk.Grid {
-        public MenuPopover() {
-            this.margin = 0;
-            this.row_spacing = 0;
-            
+    public class MenuPopover : Gtk.Popover {
+        public MenuPopover(Gtk.Widget relative_to) {
+            Object (
+                relative_to: relative_to
+            );          
+            get_style_context ().add_class ("pop-menu");
+            set_modal (true);
+
+            var grid = new Gtk.Grid ();
             var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
             var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
             var logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/unsplashlogo.svg");
@@ -41,11 +45,14 @@ namespace App.Popover {
             lbl_powered.margin_top = 8;
             content_box.add (lbl_powered);
             content_box.add (logo);
+            grid.margin = 0;
+            grid.row_spacing = 0;
 
             content_box.tooltip_text = _("Photos from Unsplash: Beautiful Free Images & Pictures 🎁");
-            this.attach(content_box, 0, 1, 1, 1);
-            this.attach(button_visit, 0, 2, 1, 1);
-            this.show_all();
+            grid.attach(content_box, 0, 1, 1, 1);
+            grid.attach(button_visit, 0, 2, 1, 1);
+            grid.show_all();
+            add (grid);
         }
     }
 }

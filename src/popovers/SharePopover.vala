@@ -24,13 +24,16 @@ namespace App.Popover {
         public string uri { get; set; }
         public string autor { get; set; }
     
-        public SharePopover (string autor, string uri) {
+        public SharePopover (string autor, string uri, Gtk.Widget relative_to) {
             Object (
                 autor: autor,
                 body: _(@"Photo by $autor on Unsplash"),
-                uri: _(@"https://unsplash.com/photos/$uri")
+                uri: _(@"https://unsplash.com/photos/$uri"),
+                relative_to: relative_to,
+                position: Gtk.PositionType.BOTTOM,
+                modal: true
             );
-        
+       
             var share_label = new Gtk.Label (_("Share"));
             var autor_label = new Gtk.Label (body);
             autor_label.hexpand = true;

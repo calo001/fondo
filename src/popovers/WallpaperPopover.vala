@@ -26,14 +26,24 @@ namespace App.Popover {
      * @see Gtk.HeaderBar
      * @since 1.1.0
      */
-    public class WallpaperPopover : Gtk.Grid {
+    public class WallpaperPopover : Gtk.Popover {
         public signal void wallpaper_option(string option_wall);
+        public int64 width {get; set;}
+        public int64 height {get; set;}
 
-        public WallpaperPopover(int64 width, int64 height) {
+        public WallpaperPopover(int64 width, int64 height, Gtk.Widget relative_to) {
+            Object (
+                width: width,
+                height: height,
+                relative_to: relative_to,
+                position: Gtk.PositionType.TOP,
+                modal: true
+            );
 
-            this.margin = 12;
-            this.column_spacing = 8;
-            this.row_spacing = 8;
+            var grid_content = new Gtk.Grid ();
+            grid_content.margin = 12;
+            grid_content.column_spacing = 8;
+            grid_content.row_spacing = 8;
 
             var label = new Label(_("Options"));
             var buttom_cen = new Button.with_label(_("Centered"));
@@ -71,13 +81,14 @@ namespace App.Popover {
                 wallpaper_option("spanned");
             } );
 
-            this.attach(label, 0, 0, 1, 1);         
-            this.attach(buttom_cen, 0, 1, 1, 1);
-            this.attach(buttom_scal, 0, 2, 1, 1);
-            this.attach(buttom_span, 0, 3, 1, 1);
-            this.attach(buttom_zoom, 0, 4, 1, 1);
-            this.attach(label_size, 0, 5, 1, 1);
-            this.show_all();
+            grid_content.attach(label, 0, 0, 1, 1);         
+            grid_content.attach(buttom_cen, 0, 1, 1, 1);
+            grid_content.attach(buttom_scal, 0, 2, 1, 1);
+            grid_content.attach(buttom_span, 0, 3, 1, 1);
+            grid_content.attach(buttom_zoom, 0, 4, 1, 1);
+            grid_content.attach(label_size, 0, 5, 1, 1);
+            grid_content.show_all();
+            add (grid_content);
         }
     }
 }

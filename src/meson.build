@@ -14,7 +14,6 @@ sources += files(
     'views/LoadingView.vala',
 
     'popovers/MenuPopover.vala',
-    'popovers/SearchPopover.vala',
     'popovers/WallpaperPopover.vala',
     'popovers/SharePopover.vala',
 
@@ -24,7 +23,6 @@ sources += files(
     'utils/Networking.vala',
 
     'widgets/HeaderBar.vala',
-    'widgets/ModeSwitch.vala',
     'widgets/LabelTop.vala',
 
     'services/Connection.vala',
