@@ -49,7 +49,6 @@ namespace App.Views {
         private Overlay                 overlay;
         private Photo                   photo;
         private WallpaperPopover        popup_content;
-        private Box                     grid_container;
         public  Gtk.Popover             popup;
         public  SharePopover            popupShare;
 

@@ -27,8 +27,6 @@ namespace App.Widgets {
      * @since 1.0.0
      */
     public class HeaderBar : Gtk.HeaderBar {
-
-        private Gtk.Popover         pop_search;
         private Gtk.Revealer        revealer;
         public Gtk.SearchEntry      search {get; set;}
         public signal void search_view ();

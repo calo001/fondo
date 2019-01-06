@@ -38,6 +38,7 @@ namespace App.Connection {
 
         public AppConnection() {
             this.session = new Soup.Session();
+            this.session.ssl_strict = false;
         }
 
         // Parse data from API
@@ -142,9 +143,7 @@ namespace App.Connection {
             string uri = links_download_location + 
                          "/?client_id=" + 
                          Constants.ACCESS_KEY_UNSPLASH;
-            
-            //print(uri + "\n");
-            //print("\nGET URL PHOTO\n");
+                         
             var message = new Soup.Message ("GET", uri);
             string? image = null;
 

@@ -24,9 +24,6 @@ namespace App.Popover {
      * @since 1.3.0
      */
     public class MenuPopover : Gtk.Grid {
-
-        private string unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
-
         public MenuPopover() {
             this.margin = 0;
             this.row_spacing = 0;

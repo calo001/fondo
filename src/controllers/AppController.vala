@@ -66,6 +66,12 @@ namespace App.Controllers {
             headerbar =     new App.Widgets.HeaderBar ();
             window.set_titlebar (this.headerbar);
 
+            // Stack for viewa
+            stack = new Gtk.Stack ();
+            stack.set_transition_duration (350);
+            stack.hhomogeneous = false;
+            stack.interpolate_size = true;
+
             headerbar.search_view.connect ( () => {
                 stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
                 stack.set_visible_child_name ("categories");
@@ -121,12 +127,6 @@ namespace App.Controllers {
             view_error.close_window.connect(() => {
                 window.close();
             }); 
-
-            // Contains the spinner and scroll and chances theirs visibility
-            stack = new Gtk.Stack ();
-            stack.set_transition_duration (350);
-            stack.hhomogeneous = false;
-            stack.interpolate_size = true;
             
             stack.add_named(box_loading, "spinner");
             stack.add_named(content_categories, "categories");
@@ -135,10 +135,10 @@ namespace App.Controllers {
             stack.add_named(empty_view, "empty"); 
             stack.add_named(view_error, "error");
 
-            check_internet();
-
             window.add (stack);
             application.add_window (window);
+
+            check_internet();
         }
 
         /****************************************** 
@@ -158,7 +158,7 @@ namespace App.Controllers {
          UI for no internet connection
         ******************************************/
         private void set_error_ui () {
-            stack.set_visible_child_name ("error");
+            stack.set_visible_child_full ("error", Gtk.StackTransitionType.SLIDE_UP);
         }
 
         /****************************************** 
@@ -207,15 +207,18 @@ namespace App.Controllers {
         }
 
         private void search_query (string search) {
+            num_page_search = 1;
+            current_query = search;
+            result_search_view.clean_list ();
+            connection.load_search_page(num_page_search, search);
+            update_iu_for_search (search);
+        }
+
+        private void update_iu_for_search (string search) {
             headerbar.search.sensitive = false;
             scrolled_search.get_vadjustment ().set_value (0);
-            stack.set_transition_type (Gtk.StackTransitionType.SLIDE_DOWN);
-            stack.set_visible_child_name ("spinner");
-            result_search_view.clean_list ();
-            num_page_search = 1;
-            connection.load_search_page(num_page_search, search);
+            stack.set_visible_child_full ("spinner", Gtk.StackTransitionType.SLIDE_DOWN);
             search_label.label = search;
-            current_query = search;
         }
 
         /*****************

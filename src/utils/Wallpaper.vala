@@ -88,7 +88,6 @@ namespace App.Utils {
             in /home/user/.local/share/backgrounds/
         ***********************************************************************/
         private bool check_directory () {
-            print("ERROR DIRECTORY");
 		    var dir = File.new_for_path (BASE_DIR);
 		    if (!dir.query_exists ()) {
 			    try{
@@ -143,7 +142,6 @@ namespace App.Utils {
 				bar.set_fraction (1);
 				return true;
             }
-            print("\nDOWNLOAD END\n");
             loop.run ();
             return true;
         }
