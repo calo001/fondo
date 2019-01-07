@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the com.github.calo001.fondo package.
 # Rafael Campos Nunes <rafaelnunes@engineer.com> 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
@@ -19,44 +18,43 @@ msgstr ""
 
 #: src/configs/Strings.vala:28
 msgid "Today"
-msgstr ""
+msgstr "Hoje"
 
 #: src/configs/Strings.vala:29
 msgid "Categories"
-msgstr ""
+msgstr "Categorias"
 
 #: src/configs/Strings.vala:30
 msgid "Powered by"
-msgstr ""
+msgstr "Fotos de"
 
 #: src/configs/Strings.vala:31
 msgid "Visit web site"
-msgstr ""
+msgstr "Visite o site"
 
 #: src/configs/Strings.vala:32
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr ""
+msgstr "Unsplash fotos: Belas fotos e fotos grátis 🎁"
 
 #: src/configs/Strings.vala:33
 msgid "Photo by "
-msgstr ""
+msgstr "Foto por"
 
 #: src/configs/Strings.vala:34
-#, fuzzy
 msgid " on Unsplash"
 msgstr " Por Unsplash"
 
 #: src/configs/Strings.vala:35
 msgid "Share"
-msgstr ""
+msgstr "Compartilhar"
 
 #: src/configs/Strings.vala:36
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: src/configs/Strings.vala:37
 msgid "Copy link"
-msgstr ""
+msgstr "Copiar link"
 
 #: src/configs/Strings.vala:38
 msgid "Options"
@@ -88,11 +86,11 @@ msgstr "Seu novo wallpaper está pronto"
 
 #: src/configs/Strings.vala:45
 msgid "Check the network connection."
-msgstr ""
+msgstr "Verifique a conexão de rede."
 
 #: src/configs/Strings.vala:46
 msgid "Retry"
-msgstr ""
+msgstr "Tente novamente"
 
 #: src/configs/Strings.vala:47
 msgid "🌎  An amazing place in the world"
@@ -100,72 +98,71 @@ msgstr "🌎  Um lugar incrível no mundo"
 
 #: src/configs/Strings.vala:48
 msgid "🌻 Nature"
-msgstr ""
+msgstr "🌻 Natureza"
 
 #: src/configs/Strings.vala:49
 msgid "🐹 Animal"
-msgstr ""
+msgstr "🐹 Animal"
 
 #: src/configs/Strings.vala:50
 msgid "☕ Food & drink"
-msgstr ""
+msgstr "☕ Comida e bebida"
 
 #: src/configs/Strings.vala:51
 msgid "🌙 Space"
-msgstr ""
+msgstr "🌙 Espaço"
 
 #: src/configs/Strings.vala:52
 msgid "🏸 Sport"
-msgstr ""
+msgstr "🏸 Esporte"
 
 #: src/configs/Strings.vala:53
 msgid "📊 Business & work"
-msgstr ""
+msgstr "📊 Negócios e trabalho"
 
 #: src/configs/Strings.vala:54
 msgid "‍👩 Woman"
-msgstr ""
+msgstr "👩 Mulher"
 
 #: src/configs/Strings.vala:55
 msgid "👨 Man"
-msgstr ""
+msgstr "👨 Homem"
 
 #: src/configs/Strings.vala:56
 msgid "🏦 Architecture"
-msgstr ""
+msgstr "🏦 Arquitetura"
 
 #: src/configs/Strings.vala:57
 msgid "💻 Technology"
-msgstr ""
+msgstr "💻 Tecnologia"
 
 #: src/configs/Strings.vala:58
 msgid "🍁 Texture & pattern"
-msgstr ""
+msgstr "🍁 Textura e padrão"
 
 #: src/configs/Strings.vala:59
 msgid "📑 Flat lay"
-msgstr ""
+msgstr "📑 Flat lay"
 
 #: src/configs/Strings.vala:60
 msgid "Photos not found"
-msgstr ""
+msgstr "Fotos não encontradas"
 
 #: src/configs/Strings.vala:61
 msgid "Loading ..."
 msgstr "Carregando ..."
 
 #: src/configs/Strings.vala:62
-#, fuzzy
 msgid "Press Esc to Exit"
 msgstr "Utilize ESC para sair"
 
 #: src/configs/Strings.vala:63
 msgid "Search photos Unsplash"
-msgstr ""
+msgstr "Pesquisar fotos Unsplash"
 
 #: src/configs/Strings.vala:64
 msgid "Back to today's photos"
-msgstr ""
+msgstr "De volta às fotos de hoje"
 
 #: src/configs/Strings.vala:65
 msgid "Light background"
@@ -177,7 +174,7 @@ msgstr "Fundo de tela preto"
 
 #: src/configs/Strings.vala:67
 msgid "About"
-msgstr ""
+msgstr "Cerca de"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:7
 #: data/com.github.calo001.fondo.desktop.in:3
@@ -207,16 +204,20 @@ msgid ""
 "recent to the one you are to looking for. Give a simple click on a picture "
 "to set as wallpaper, wait until the download is complete and enjoy!"
 msgstr ""
+"Fondo te permite ver milhas de hermosas fotografías desde la más reciente "
+"hasta la que estás buscando. Da un solo clic en una imagen para usar como "
+"fondo de pantalla, aguarde que a descarga termine e disfruta! "
 
 #: data/com.github.calo001.fondo.appdata.xml.in:33
 msgid ""
 "Have a simple and elegant interface, you can change from light mode to dark "
 "mode as you prefer."
-msgstr ""
+msgstr "Usa una interfaz simple y elegante, puedes cambiar del modo claro o "
+"asco como prefieras"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:34
 msgid "Main features:"
-msgstr ""
+msgstr "Principais características:"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:36
 msgid "Scroll down to load more photos"
@@ -235,22 +236,20 @@ msgid "See the photo in full screen"
 msgstr "Veja a foto em tela cheia"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:40
-#, fuzzy
 msgid "Change the size of the window, the window is responsive"
 msgstr "Mude o tamanho da janela, o design é responsivo"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:41
 msgid "Share with your friends a link to photo from Unsplash"
-msgstr ""
+msgstr "Compartilhe com seus amigos um link para foto do Unsplash"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:42
 msgid "Search by categories or write what you want to search in the top input"
-msgstr ""
+msgstr "Pesquise por categorias ou escreva o que você deseja pesquisar na entrada superior"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:43
-#, fuzzy
 msgid "Use Ctrl + Q to exit"
-msgstr "Utilize ESC para sair"
+msgstr "Utilize Ctrl + Q para sair"
 
 #: data/com.github.calo001.fondo.desktop.in:5
 msgid "com.github.calo001.fondo"
@@ -259,6 +258,3 @@ msgstr "com.github.calo001.fondo"
 #: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
 msgstr "wallpaper;unsplash;foto;imagem;photo;background;"
-
-#~ msgid "By "
-#~ msgstr "Por "
