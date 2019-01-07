@@ -117,23 +117,25 @@ namespace App.Utils {
                 #if WITH_UNITY
                 launcher.progress_visible = true;
                 #endif
-                file_from_uri.copy_async.begin (file_path, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null, (current_num_bytes, total_num_bytes) => {
-		        // Report copy-status:
-                    progress = (double) current_num_bytes / total_num_bytes;
-		            total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
-		            print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
-			        show_progress (progress);
-	            }, (obj, res) => {
-		            try {
-			            //bool tmp = file_from_uri.copy_async.end (res);
-                        //print ("Result: %s\n", tmp.to_string ());
-                        #if WITH_UNITY
-                        launcher.progress_visible = false;
-                        #endif
-                        finish_download ();
-		            } catch (Error e) {
-			            show_message ("Error Copiar de URI a folder", e.message, "dialog-error");
-		            }
+                file_from_uri.copy_async.begin (file_path, 
+                    FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, 
+                    null, (current_num_bytes, total_num_bytes) => {
+                        // Report copy-status:
+                        progress = (double) current_num_bytes / total_num_bytes;
+                        total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
+                        print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
+                        show_progress (progress);
+	                }, (obj, res) => {
+                        try {
+                            bool tmp = file_from_uri.copy_async.end (res);
+                            print ("Result: %s\n", tmp.to_string ());
+                            #if WITH_UNITY
+                            launcher.progress_visible = false;
+                            #endif
+                            finish_download ();
+                        } catch (Error e) {
+                            show_message ("Error Copiar de URI a folder", e.message, "dialog-error");
+                        }
 		                loop.quit ();
 	                });
 			} else {
@@ -175,8 +177,8 @@ namespace App.Utils {
             Method to show desktop notification
         ***********************************************************************/
         public void show_notify () {
-            var notification = new Notification (_("Wallpaper ready!"));
-            notification.set_body (_("Your new wallpaper is ready!"));
+            var notification = new Notification (S.WALLPAPER_READY);
+            notification.set_body (S.WALLPAPER_READY_BODY);
             GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
 

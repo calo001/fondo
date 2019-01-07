@@ -15,7 +15,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * 
 */
-
+using App.Configs;
 namespace App.Popover {
 
     /**
@@ -35,8 +35,8 @@ namespace App.Popover {
             var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
             var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
             var logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/unsplashlogo.svg");
-            var lbl_powered = new Gtk.Label (_("Powered by"));
-            var button_visit = new Gtk.LinkButton.with_label (unsplash_link, _("Visit web site"));;
+            var lbl_powered = new Gtk.Label (S.POWERED_BY);
+            var button_visit = new Gtk.LinkButton.with_label (unsplash_link, S.VISIT_WEB_SITE);;
             
             button_visit.get_style_context ().remove_class ("link");
             button_visit.get_style_context ().remove_class ("flat");
@@ -48,7 +48,7 @@ namespace App.Popover {
             grid.margin = 0;
             grid.row_spacing = 0;
 
-            content_box.tooltip_text = _("Photos from Unsplash: Beautiful Free Images & Pictures 🎁");
+            content_box.tooltip_text = S.UNSPLASH_DESCRIPTION;
             grid.attach(content_box, 0, 1, 1, 1);
             grid.attach(button_visit, 0, 2, 1, 1);
             grid.show_all();

@@ -1,10 +1,3 @@
-src/controllers/AppController.vala
-src/views/AppView.vala
-src/widgets/HeaderBar.vala
-src/utils/Wallpaper.vala
-src/views/CardPhotoView.vala
-src/views/PreviewWindow.vala
-src/widgets/HeaderBar.vala
-src/widgets/PopupWallpaper.vala
+src/configs/Strings.vala
 data/com.github.calo001.fondo.appdata.xml.in
 data/com.github.calo001.fondo.desktop.in

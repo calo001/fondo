@@ -20,6 +20,7 @@ using App.Structs;
 using App.Utils;
 using App.Connection;
 using Granite.Widgets;
+using App.Configs;
 
 namespace App.Views {
 
@@ -64,7 +65,7 @@ namespace App.Views {
 		    });
 
             // Loading label
-            var label = new Gtk.Label(_("Loading ..."));
+            var label = new Gtk.Label(S.LOADING);
             label.get_style_context ().add_class ("h1");
             label.get_style_context ().add_class ("label_loading");
             bar = new Gtk.ProgressBar ();
@@ -93,7 +94,7 @@ namespace App.Views {
             btn_close.margin = 8;
             btn_close.halign = Gtk.Align.START;
             btn_close.valign = Gtk.Align.START;
-            btn_close.set_tooltip_text (_("Press Esc to Exit"));
+            btn_close.set_tooltip_text (S.PRESS_ESC_TO_EXIT);
             
             btn_close.clicked.connect ( ()=>{
                 close ();

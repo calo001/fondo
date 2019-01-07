@@ -15,6 +15,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * 
 */
+using App.Configs;
 
 namespace App.Popover {
     public class SharePopover : Gtk.Popover {
@@ -27,14 +28,14 @@ namespace App.Popover {
         public SharePopover (string autor, string uri, Gtk.Widget relative_to) {
             Object (
                 autor: autor,
-                body: _(@"Photo by $autor on Unsplash"),
-                uri: _(@"https://unsplash.com/photos/$uri"),
+                body: S.PHOTO_BY + autor + S.ON_UNSPLASH,
+                uri: @"https://unsplash.com/photos/$uri",
                 relative_to: relative_to,
                 position: Gtk.PositionType.BOTTOM,
                 modal: true
             );
        
-            var share_label = new Gtk.Label (_("Share"));
+            var share_label = new Gtk.Label (S.SHARE);
             var autor_label = new Gtk.Label (body);
             autor_label.hexpand = true;
             autor_label.halign = Gtk.Align.START;
@@ -43,53 +44,53 @@ namespace App.Popover {
             share_label.get_style_context ().add_class ("h1");
 
             var email_button = new Gtk.Button.from_icon_name ("internet-mail", Gtk.IconSize.DND);
-            email_button.tooltip_text = _("Email");
+            email_button.tooltip_text = S.EMAIL;
             email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var facebook_button = new Gtk.Button();
             var face_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-facebook.svg");
             facebook_button.set_image (face_logo);
-            facebook_button.tooltip_text = _("Facebook");
+            facebook_button.tooltip_text = "Facebook";
             facebook_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var google_button = new Gtk.Button();
             var google_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-google-plus.svg");
             google_button.set_image (google_logo);
-            google_button.tooltip_text = _("Google+");
+            google_button.tooltip_text = "Google+";
             google_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var twitter_button = new Gtk.Button();
             var twitter_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-twitter.svg");
             twitter_button.set_image (twitter_logo);
-            twitter_button.tooltip_text = _("Twitter");
+            twitter_button.tooltip_text = "Twitter";
             twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var tumblr_button = new Gtk.Button();
             var tumblr_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-tumblr.svg");
             tumblr_button.set_image (tumblr_logo);
-            tumblr_button.tooltip_text = _("Tumblr");
+            tumblr_button.tooltip_text = "Tumblr";
             tumblr_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var reddit_button = new Gtk.Button ();
             var reddit_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-reddit.svg");
             reddit_button.set_image (reddit_logo);
-            reddit_button.tooltip_text = _("Reddit");
+            reddit_button.tooltip_text = "Reddit";
             reddit_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
             var telegram_button = new Gtk.Button();
             var telegram_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-telegram.svg");
             telegram_button.set_image (telegram_logo);
-            telegram_button.tooltip_text = _("Telegram");
+            telegram_button.tooltip_text = "Telegram";
             telegram_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var whatsapp_button = new Gtk.Button();
             var whatsapp_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-whatsapp.svg");
             whatsapp_button.set_image (whatsapp_logo);
-            whatsapp_button.tooltip_text = _("WhatsApp");
+            whatsapp_button.tooltip_text = "WhatsApp";
             whatsapp_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-            copy_link_button.tooltip_text = _("Copy link");
+            copy_link_button.tooltip_text = S.COPY_LINK;
             copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);

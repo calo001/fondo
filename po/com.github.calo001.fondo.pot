@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-22 22:21-0500\n"
+"POT-Creation-Date: 2019-01-06 18:35-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,56 +17,164 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/widgets/HeaderBar.vala:56
-msgid "Light background"
+#: src/configs/Strings.vala:28
+msgid "Today"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:57
-msgid "Dark background"
+#: src/configs/Strings.vala:29
+msgid "Categories"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:74
-msgid " By Unsplash"
+#: src/configs/Strings.vala:30
+msgid "Powered by"
 msgstr ""
 
-#: src/utils/Wallpaper.vala:170
-msgid "Wallpaper ready!"
+#: src/configs/Strings.vala:31
+msgid "Visit web site"
 msgstr ""
 
-#: src/utils/Wallpaper.vala:171
-msgid "Your new wallpaper is ready!"
+#: src/configs/Strings.vala:32
+msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
 msgstr ""
 
-#: src/views/CardPhotoView.vala:96
-msgid "🌎  An amazing place in the world"
+#: src/configs/Strings.vala:33
+msgid "Photo by "
 msgstr ""
 
-#: src/views/CardPhotoView.vala:166
-msgid "By "
+#: src/configs/Strings.vala:34
+msgid " on Unsplash"
 msgstr ""
 
-#: src/views/PreviewWindow.vala:68
-msgid "Loading ..."
+#: src/configs/Strings.vala:35
+msgid "Share"
 msgstr ""
 
-#: src/widgets/PopupWallpaper.vala:38
+#: src/configs/Strings.vala:36
+msgid "Email"
+msgstr ""
+
+#: src/configs/Strings.vala:37
+msgid "Copy link"
+msgstr ""
+
+#: src/configs/Strings.vala:38
 msgid "Options"
 msgstr ""
 
-#: src/widgets/PopupWallpaper.vala:39
+#: src/configs/Strings.vala:39
 msgid "Centered"
 msgstr ""
 
-#: src/widgets/PopupWallpaper.vala:40
+#: src/configs/Strings.vala:40
 msgid "Scaled"
 msgstr ""
 
-#: src/widgets/PopupWallpaper.vala:41
+#: src/configs/Strings.vala:41
 msgid "Zoom"
 msgstr ""
 
-#: src/widgets/PopupWallpaper.vala:42
+#: src/configs/Strings.vala:42
 msgid "Spanned"
+msgstr ""
+
+#: src/configs/Strings.vala:43
+msgid "Wallpaper ready!"
+msgstr ""
+
+#: src/configs/Strings.vala:44
+msgid "Your new wallpaper is ready!"
+msgstr ""
+
+#: src/configs/Strings.vala:45
+msgid "Check the network connection."
+msgstr ""
+
+#: src/configs/Strings.vala:46
+msgid "Retry"
+msgstr ""
+
+#: src/configs/Strings.vala:47
+msgid "🌎  An amazing place in the world"
+msgstr ""
+
+#: src/configs/Strings.vala:48
+msgid "🌻 Nature"
+msgstr ""
+
+#: src/configs/Strings.vala:49
+msgid "🐹 Animal"
+msgstr ""
+
+#: src/configs/Strings.vala:50
+msgid "☕ Food & drink"
+msgstr ""
+
+#: src/configs/Strings.vala:51
+msgid "🌙 Space"
+msgstr ""
+
+#: src/configs/Strings.vala:52
+msgid "🏸 Sport"
+msgstr ""
+
+#: src/configs/Strings.vala:53
+msgid "📊 Business & work"
+msgstr ""
+
+#: src/configs/Strings.vala:54
+msgid "‍👩 Woman"
+msgstr ""
+
+#: src/configs/Strings.vala:55
+msgid "👨 Man"
+msgstr ""
+
+#: src/configs/Strings.vala:56
+msgid "🏦 Architecture"
+msgstr ""
+
+#: src/configs/Strings.vala:57
+msgid "💻 Technology"
+msgstr ""
+
+#: src/configs/Strings.vala:58
+msgid "🍁 Texture & pattern"
+msgstr ""
+
+#: src/configs/Strings.vala:59
+msgid "📑 Flat lay"
+msgstr ""
+
+#: src/configs/Strings.vala:60
+msgid "Photos not found"
+msgstr ""
+
+#: src/configs/Strings.vala:61
+msgid "Loading ..."
+msgstr ""
+
+#: src/configs/Strings.vala:62
+msgid "Press Esc to Exit"
+msgstr ""
+
+#: src/configs/Strings.vala:63
+msgid "Search photos Unsplash"
+msgstr ""
+
+#: src/configs/Strings.vala:64
+msgid "Back to today's photos"
+msgstr ""
+
+#: src/configs/Strings.vala:65
+msgid "Light background"
+msgstr ""
+
+#: src/configs/Strings.vala:66
+msgid "Dark background"
+msgstr ""
+
+#: src/configs/Strings.vala:67
+msgid "About"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:7
@@ -84,31 +192,58 @@ msgid "Carlos Lopez"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:31
-msgid "Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers."
+msgid ""
+"Find a variety of the most beautiful wallpapers from Unsplash.com the "
+"world’s most generous community of photographers."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:32
+msgid ""
+"Fondo allows you to see thousands of beautiful photographs from the most "
+"recent to the one you are to looking for. Give a simple click on a picture "
+"to set as wallpaper, wait until the download is complete and enjoy!"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:33
-msgid "Scroll down to load more photos"
+msgid ""
+"Have a simple and elegant interface, you can change from light mode to dark "
+"mode as you prefer."
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:34
-msgid "A single click on the photo to put as a wallpaper"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:35
-msgid "Right click for more wallpaper display options"
+msgid "Main features:"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:36
-msgid "See the photo in full screen"
+msgid "Scroll down to load more photos"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:37
-msgid "Change the size of the window, the design is responsive"
+msgid "A single click on the photo to put as a wallpaper"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:38
-msgid "Use ESC to exit"
+msgid "Right click for more wallpaper display options"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:39
+msgid "See the photo in full screen"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:40
+msgid "Change the size of the window, the window is responsive"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:41
+msgid "Share with your friends a link to photo from Unsplash"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:42
+msgid "Search by categories or write what you want to search in the top input"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:43
+msgid "Use Ctrl + Q to exit"
 msgstr ""
 
 #: data/com.github.calo001.fondo.desktop.in:5

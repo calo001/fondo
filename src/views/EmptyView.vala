@@ -15,7 +15,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * 
 */
-
+using App.Configs;
 namespace App.Views {
 
     /**
@@ -34,7 +34,7 @@ namespace App.Views {
                 valign: Gtk.Align.CENTER
             );
 
-            var empty_label = new Gtk.Label ("Photos not found");
+            var empty_label = new Gtk.Label (S.PHOTOS_NOT_FOUND);
             empty_label.get_style_context ().add_class ("h2");
             empty_label.margin = 8;
             var icon_empty = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/empty.svg");

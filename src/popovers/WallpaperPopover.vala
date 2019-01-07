@@ -17,7 +17,7 @@
 */
 
 using Gtk;
-
+using App.Configs;
 namespace App.Popover {
 
     /**
@@ -45,11 +45,11 @@ namespace App.Popover {
             grid_content.column_spacing = 8;
             grid_content.row_spacing = 8;
 
-            var label = new Label(_("Options"));
-            var buttom_cen = new Button.with_label(_("Centered"));
-            var buttom_scal = new Button.with_label(_("Scaled"));
-            var buttom_zoom = new Button.with_label(_("Zoom"));
-            var buttom_span = new Button.with_label(_("Spanned"));
+            var label = new Label(S.OPTIONS);
+            var buttom_cen = new Button.with_label(S.CENTERED);
+            var buttom_scal = new Button.with_label(S.SCALED);
+            var buttom_zoom = new Button.with_label(S.ZOOM);
+            var buttom_span = new Button.with_label(S.SPANNED);
             string size = width.to_string() + " x " + height.to_string();
             var label_size = new Label(size);
 

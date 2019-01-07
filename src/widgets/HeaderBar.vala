@@ -17,6 +17,7 @@
 */
 using App.Views;
 using App.Popover;
+using App.Configs;
 
 namespace App.Widgets {
 
@@ -53,8 +54,8 @@ namespace App.Widgets {
                 Mode Switch widget
             ************************/
             var mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
-            mode_switch.primary_icon_tooltip_text = ("Light background");
-            mode_switch.secondary_icon_tooltip_text = ("Dark background");
+            mode_switch.primary_icon_tooltip_text = S.LIGHT_BACKGROUND;
+            mode_switch.secondary_icon_tooltip_text = S.DARK_BACKGROUND;
             mode_switch.valign = Gtk.Align.CENTER;
             mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
 
@@ -70,7 +71,7 @@ namespace App.Widgets {
              *******************/
 
             search = new Gtk.SearchEntry();
-            search.placeholder_text = _("Search photos Unsplash");
+            search.placeholder_text = S.SEARCH_PHOTOS_UNSPLASH;
             search.margin = 5;
             search.expand = true;
             search.sensitive = false;
@@ -98,7 +99,7 @@ namespace App.Widgets {
              * Menú options button
              */
             var menu_button = new Gtk.Button.from_icon_name ("view-more-horizontal-symbolic", Gtk.IconSize.LARGE_TOOLBAR );
-            menu_button.tooltip_text = _("Options");
+            menu_button.tooltip_text = S.ABOUT;
 
             var pop_menu = new MenuPopover (menu_button);
             menu_button.clicked.connect ( ()=> {
@@ -110,7 +111,7 @@ namespace App.Widgets {
              */
             revealer = new Gtk.Revealer ();
             var daily_button = new Gtk.Button.from_icon_name ("go-home-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-            daily_button.tooltip_text = _("Back to daily photos");
+            daily_button.tooltip_text = S.BACK_TO_DAILY_PHOTOS;
             revealer.add (daily_button);
             revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             daily_button.clicked.connect ( ()=>{

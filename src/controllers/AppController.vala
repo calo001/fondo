@@ -48,6 +48,14 @@ namespace App.Controllers {
         private int                        num_page;
         private int                        num_page_search;
         private string                     current_query;
+
+        private const string STACK_CATEGORIES = "categories";
+        private const string STACK_LOADING = "spinner";
+        private const string STACK_DAILY = "daily";
+        private const string STACK_SEARCH = "search";
+        private const string STACK_EMPTY = "empty";
+        private const string STACK_ERROR = "error"; 
+        
         /**
          * Constructs a new {@code AppController} object.
          */
@@ -74,13 +82,13 @@ namespace App.Controllers {
 
             headerbar.search_view.connect ( () => {
                 stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
-                stack.set_visible_child_name ("categories");
+                stack.set_visible_child_name (STACK_CATEGORIES);
                 view.set_sensitive (false);
             });
 
             headerbar.home_view.connect ( () => {
                 stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
-                stack.set_visible_child_name ("scrolled");
+                stack.set_visible_child_name (STACK_DAILY);
                 view.set_sensitive (true);
             });
 
@@ -96,13 +104,13 @@ namespace App.Controllers {
 
             // Daily photos container
             var content_scroll =        new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-            var header_photos =         new LabelTop (_("Today"));
+            var header_photos =         new LabelTop (S.TODAY);
             content_scroll.add (header_photos);
             content_scroll.add (view);
 
             // Search photos conatiner
             var content_search_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-            search_label = new LabelTop ("Search");
+            search_label = new LabelTop (S.SEARCH_PHOTOS_UNSPLASH);
             content_search_scroll.add (search_label);
             content_search_scroll.add (result_search_view);
 
@@ -111,7 +119,7 @@ namespace App.Controllers {
 
             // Categories
             var content_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-            var header_categories =  new LabelTop (_("Categories"));
+            var header_categories =  new LabelTop (S.CATEGORIES);
             content_categories.add (header_categories);
             content_categories.add (categories);
 
@@ -128,12 +136,12 @@ namespace App.Controllers {
                 check_internet();
             }); 
             
-            stack.add_named(box_loading,        "spinner");
-            stack.add_named(content_categories, "categories");
-            stack.add_named(scrolled_main,      "scrolled");
-            stack.add_named(scrolled_search,    "search"); 
-            stack.add_named(empty_view,         "empty"); 
-            stack.add_named(view_error,         "error");
+            stack.add_named(box_loading,        STACK_LOADING);
+            stack.add_named(content_categories, STACK_CATEGORIES);
+            stack.add_named(scrolled_main,      STACK_DAILY);
+            stack.add_named(scrolled_search,    STACK_SEARCH); 
+            stack.add_named(empty_view,         STACK_EMPTY); 
+            stack.add_named(view_error,         STACK_ERROR);
 
             window.add (stack);
             application.add_window (window);
@@ -157,7 +165,7 @@ namespace App.Controllers {
         ******************************************/
         private void set_error_ui () {
             stack.show.connect ( ()=>{
-                stack.set_visible_child_full ("error", Gtk.StackTransitionType.SLIDE_UP);
+                stack.set_visible_child_full (STACK_ERROR, Gtk.StackTransitionType.SLIDE_UP);
             });
         }
 
@@ -165,7 +173,7 @@ namespace App.Controllers {
          UI for main content
         ******************************************/
         private void set_ui () {
-            stack.set_visible_child_full ("spinner", Gtk.StackTransitionType.SLIDE_UP);
+            stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.SLIDE_UP);
             connection.load_page(num_page);
 
             // Signal catched when request is success and setup the photos 
@@ -175,7 +183,7 @@ namespace App.Controllers {
                 } else if (num_page == 1) {
                     headerbar.search.sensitive = true;
                     view.insert_cards(list);
-                    stack.set_visible_child_full ("scrolled", Gtk.StackTransitionType.SLIDE_UP);
+                    stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
                 }
             } );
 
@@ -184,9 +192,9 @@ namespace App.Controllers {
                 headerbar.search.sensitive = true;
                 if (list.length () > 0) {
                     result_search_view.insert_cards(list);
-                    stack.set_visible_child_full ("search", Gtk.StackTransitionType.SLIDE_UP);
+                    stack.set_visible_child_full (STACK_SEARCH, Gtk.StackTransitionType.SLIDE_UP);
                 } else {
-                    stack.set_visible_child_full ("empty", Gtk.StackTransitionType.SLIDE_UP);
+                    stack.set_visible_child_full (STACK_EMPTY, Gtk.StackTransitionType.SLIDE_UP);
                 }
             } );
 
@@ -218,7 +226,7 @@ namespace App.Controllers {
         private void update_iu_for_search (string search) {
             headerbar.search.sensitive = false;
             scrolled_search.get_vadjustment ().set_value (0);
-            stack.set_visible_child_full ("spinner", Gtk.StackTransitionType.SLIDE_DOWN);
+            stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.SLIDE_DOWN);
             search_label.label = search;
         }
 

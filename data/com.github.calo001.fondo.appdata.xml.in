@@ -29,9 +29,9 @@
     </screenshots>
     <description>
         <p>Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers. </p>
-        <p>Fondo allows you to see thousands of beautiful photographs from the most recent to the one you are to looking for. Give a simple click on a picture to set as wallpaper, wait until the download is complete and ready!</p>
-        Main features:
+        <p>Fondo allows you to see thousands of beautiful photographs from the most recent to the one you are to looking for. Give a simple click on a picture to set as wallpaper, wait until the download is complete and enjoy!</p>
         <p>Have a simple and elegant interface, you can change from light mode to dark mode as you prefer.</p>
+        <p>Main features:</p>
         <ul>
           <li>Scroll down to load more photos</li>
           <li>A single click on the photo to put as a wallpaper</li>
@@ -44,6 +44,16 @@
         </ul>
     </description>
     <releases>
+      <release version="1.2.0" date="2019-01-13">
+        <description>
+          Updates
+          <ul>
+            <li>Search by category and query</li>
+            <li>New look and feel on hover a photo</li>
+            <li>Add gradients to scrollbar and mode switch</li>
+        </ul>
+        </description>
+      </release>
       <release version="1.1.4" date="2018-09-22">
         <description>
           Updates

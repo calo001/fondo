@@ -19,6 +19,7 @@
 using App.Widgets;
 using App.Connection;
 using App.Structs;
+using App.Configs;
 
 namespace App.Views {
 
@@ -32,7 +33,6 @@ namespace App.Views {
         public signal void retry();
         
         public AppViewError() {
-            // Configuring UI
             this.orientation = Gtk.Orientation.VERTICAL;
             this.halign = Gtk.Align.CENTER;
             this.valign = Gtk.Align.CENTER;
@@ -40,20 +40,18 @@ namespace App.Views {
             
             var image = new Gtk.Image.from_icon_name  ("network-error", Gtk.IconSize.DIALOG);
 		    var label_title = new Gtk.Label ("Network Error");
-		    var label_description = new Gtk.Label ("Check the network connection.");
-            var button_check_network = new Gtk.Button.with_label (_("Retry"));
+		    var label_description = new Gtk.Label (S.CHECK_NETWORK_CONNECTION);
+            var button_check_network = new Gtk.Button.with_label (S.RETRY);
 
 		    label_title.get_style_context ().add_class ("h2");
 		    label_description.get_style_context ().add_class ("h4");
             button_check_network.get_style_context ().add_class ("suggested-action");
             button_check_network.margin = 32;
 
-            // Button click
             button_check_network.clicked.connect ( () => {
                 retry();
             } );
 
-            // Add content
             add(image);
             add(label_title);
             add(label_description);

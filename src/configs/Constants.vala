@@ -43,18 +43,9 @@ namespace App.Configs {
         public abstract const string URI_SEARCH_PAGE = API_UNSPLASH + SEARCH + GET + ACCESS_KEY_UNSPLASH;
 
         public abstract const string ID = "com.github.calo001.fondo";
-        public abstract const string VERSION = "1.1.4";
         public abstract const string PROGRAME_NAME = "Fondo";
-        public abstract const string APP_YEARS = "2018";
         public abstract const string APP_ICON = "com.github.calo001.fondo";
-        public abstract const string ABOUT_COMMENTS = "Unsplash wallpaper App for elementary OS";
-        public abstract const string TRANSLATOR_CREDITS = "Translators";
-        public abstract const string MAIN_URL = "https://github.com/calo001/fondo";
-        public abstract const string BUG_URL = "https://github.com/calo001/issues";
-        public abstract const string HELP_URL = "https://github.com/calo001/wiki";
         public abstract const string URL_CSS = "/com/github/calo001/fondo/css/style.css";
-        public abstract const string [] ABOUT_AUTHORS = { "Calo001 <calo_lrc@hotmail.com>" };
-        public abstract const Gtk.License ABOUT_LICENSE_TYPE = Gtk.License.CUSTOM;
         public abstract const int SIZE_IMAGE_AVERAGE = 10000000;
     }
 }

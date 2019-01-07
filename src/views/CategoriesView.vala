@@ -15,6 +15,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * 
 */
+using App.Configs;
 
 namespace App.Views {
 
@@ -50,18 +51,18 @@ namespace App.Views {
             this.margin = 8;
             this.homogeneous = true;
             
-            btn_nature = new ButtonCategory(_("🌻 Nature"), "btn-nature");
-            btn_animal = new ButtonCategory(_("🐹 Animal"), "btn_animal");
-            btn_food_drink = new ButtonCategory(_("☕ Food & drink"), "btn_food_drink");
-            btn_space = new ButtonCategory(_("🌙 Space"), "btn_space");
-            btn_sport = new ButtonCategory(_("🏸 Sport"), "btn_sport");
-            btn_business_work = new ButtonCategory(_("📊 Business & work"), "btn_business_work");
-            btn_woman = new ButtonCategory(_("‍👩 Woman"), "btn_woman");
-            btn_man = new ButtonCategory(_("👨 Man"), "btn_man");
-            btn_architecture = new ButtonCategory(_("🏦 Architecture"), "btn_architecture");
-            btn_technology = new ButtonCategory(_("💻 Technology"), "btn_technology");
-            btn_texture_pattern = new ButtonCategory(_("🍁 Texture & pattern"), "btn_texture_pattern");
-            btn_flatlay = new ButtonCategory(_("📑 Flat lay"), "btn_flatlay");
+            btn_nature = new ButtonCategory(S.CATEGORY_NATURE, "btn-nature");
+            btn_animal = new ButtonCategory(S.CATEGOTY_ANIMAL, "btn_animal");
+            btn_food_drink = new ButtonCategory(S.CATEGOTY_FOOD_DRINK, "btn_food_drink");
+            btn_space = new ButtonCategory(S.CATEGORY_SPACE, "btn_space");
+            btn_sport = new ButtonCategory(S.CATEGORY_SPORT, "btn_sport");
+            btn_business_work = new ButtonCategory(S.CATEGORY_BUSINESS_WORK, "btn_business_work");
+            btn_woman = new ButtonCategory(S.CATEGORY_WOMAN, "btn_woman");
+            btn_man = new ButtonCategory(S.CATEGORY_MAN, "btn_man");
+            btn_architecture = new ButtonCategory(S.CATEGORY_ARCHITECTURE, "btn_architecture");
+            btn_technology = new ButtonCategory(S.CATEGORY_TECHNOLOGY, "btn_technology");
+            btn_texture_pattern = new ButtonCategory(S.CATEGORY_TEXTURE_PATTERN, "btn_texture_pattern");
+            btn_flatlay = new ButtonCategory(S.CATEGORY_FLATLAY, "btn_flatlay");
 
             btn_nature.clicked.connect ( ()=> {
                 search_category ("Nature");
