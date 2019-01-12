@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 18:35-0600\n"
+"POT-Creation-Date: 2019-01-12 09:54-0600\n"
 "PO-Revision-Date: 2018-09-11 11:49-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -122,12 +122,12 @@ msgid "📊 Business & work"
 msgstr "📊 Negocio & trabajo"
 
 #: src/configs/Strings.vala:54
-msgid "‍👩 Woman"
-msgstr "👩 Mujer"
+msgid "‍🎩 Fashion"
+msgstr "🎩 Moda"
 
 #: src/configs/Strings.vala:55
-msgid "👨 Man"
-msgstr "👨 Hombre"
+msgid "🎨 Art & culture"
+msgstr "🎨 Arte & cultura"
 
 #: src/configs/Strings.vala:56
 msgid "🏦 Architecture"
@@ -206,8 +206,8 @@ msgid ""
 "to set as wallpaper, wait until the download is complete and enjoy!"
 msgstr ""
 "Fondo te permite ver miles de hermosas fotografías desde la más reciente "
-"hasta la que estás buscando. Da un solo clic en una imagen para usar como fondo "
-"de pantalla, espera a que la descarga termine y ¡disfruta!"
+"hasta la que estás buscando. Da un solo clic en una imagen para usar como "
+"fondo de pantalla, espera a que la descarga termine y ¡disfruta!"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:33
 msgid ""
@@ -246,7 +246,8 @@ msgid "Share with your friends a link to photo from Unsplash"
 msgstr "Comparte con tus amigos el link a una foto de Unsplash"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:42
-msgid "Search by categories or write what you want to find in the top input"
+#, fuzzy
+msgid "Search by categories or write what you want to search in the top input"
 msgstr "Busca por categoría o escribe lo que buscas en la barra de busqueda"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:43

@@ -193,7 +193,7 @@ namespace App.Controllers {
                 if (list.length () > 0) {
                     result_search_view.insert_cards(list);
                     stack.set_visible_child_full (STACK_SEARCH, Gtk.StackTransitionType.SLIDE_UP);
-                } else {
+                } else if (num_page_search == 1) {
                     stack.set_visible_child_full (STACK_EMPTY, Gtk.StackTransitionType.SLIDE_UP);
                 }
             } );

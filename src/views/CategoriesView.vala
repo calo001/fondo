@@ -31,8 +31,8 @@ namespace App.Views {
         private ButtonCategory btn_space;
         private ButtonCategory btn_sport;
         private ButtonCategory btn_business_work;
-        private ButtonCategory btn_woman;
-        private ButtonCategory btn_man;
+        private ButtonCategory btn_fashion;
+        private ButtonCategory btn_arts_culture;
         private ButtonCategory btn_architecture;
         private ButtonCategory btn_technology;
         private ButtonCategory btn_texture_pattern;
@@ -57,8 +57,8 @@ namespace App.Views {
             btn_space = new ButtonCategory(S.CATEGORY_SPACE, "btn_space");
             btn_sport = new ButtonCategory(S.CATEGORY_SPORT, "btn_sport");
             btn_business_work = new ButtonCategory(S.CATEGORY_BUSINESS_WORK, "btn_business_work");
-            btn_woman = new ButtonCategory(S.CATEGORY_WOMAN, "btn_woman");
-            btn_man = new ButtonCategory(S.CATEGORY_MAN, "btn_man");
+            btn_fashion = new ButtonCategory(S.CATEGORY_FASHION, "btn_fashion");
+            btn_arts_culture = new ButtonCategory(S.CATEGORY_ARTS_CULTURE, "btn_arts_culture");
             btn_architecture = new ButtonCategory(S.CATEGORY_ARCHITECTURE, "btn_architecture");
             btn_technology = new ButtonCategory(S.CATEGORY_TECHNOLOGY, "btn_technology");
             btn_texture_pattern = new ButtonCategory(S.CATEGORY_TEXTURE_PATTERN, "btn_texture_pattern");
@@ -88,12 +88,12 @@ namespace App.Views {
                 search_category ("Business & work");
             } );
 
-            btn_woman.clicked.connect ( ()=> {
-                search_category ("Woman");
+            btn_fashion.clicked.connect ( ()=> {
+                search_category ("Fashion");
             } );
 
-            btn_man.clicked.connect ( ()=> {
-                search_category ("Man");
+            btn_arts_culture.clicked.connect ( ()=> {
+                search_category ("Art & Culture");
             } );
 
             btn_architecture.clicked.connect ( ()=> {
@@ -118,8 +118,8 @@ namespace App.Views {
             this.add (btn_space);
             this.add (btn_sport);
             this.add (btn_business_work);
-            this.add (btn_woman);
-            this.add (btn_man);
+            this.add (btn_fashion);
+            this.add (btn_arts_culture);
             this.add (btn_architecture);
             this.add (btn_texture_pattern);
             this.add (btn_technology);

@@ -51,8 +51,8 @@ namespace App.Configs {
         public abstract const string CATEGORY_SPACE = _("🌙 Space");
         public abstract const string CATEGORY_SPORT = _("🏸 Sport");
         public abstract const string CATEGORY_BUSINESS_WORK = _("📊 Business & work");
-        public abstract const string CATEGORY_WOMAN = _("‍👩 Woman");
-        public abstract const string CATEGORY_MAN = _("👨 Man");
+        public abstract const string CATEGORY_FASHION = _("‍🎩 Fashion");
+        public abstract const string CATEGORY_ARTS_CULTURE = _("🎨 Art & culture");
         public abstract const string CATEGORY_ARCHITECTURE = _("🏦 Architecture");
         public abstract const string CATEGORY_TECHNOLOGY = _("💻 Technology");
         public abstract const string CATEGORY_TEXTURE_PATTERN = _("🍁 Texture & pattern");

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 18:35-0600\n"
+"POT-Creation-Date: 2019-01-12 09:54-0600\n"
 "PO-Revision-Date: 2018-10-19 8:58-0300\n"
 "Last-Translator: Rafael Campos Nunes <rafaelnunes@engineer.com>\n"
 "Language-Team: Nenhum\n"
@@ -121,12 +121,13 @@ msgid "📊 Business & work"
 msgstr "📊 Negócios e trabalho"
 
 #: src/configs/Strings.vala:54
-msgid "‍👩 Woman"
-msgstr "👩 Mulher"
+msgid "‍🎩 Fashion"
+msgstr "🎩 Moda"
 
 #: src/configs/Strings.vala:55
-msgid "👨 Man"
-msgstr "👨 Homem"
+#, fuzzy
+msgid "🎨 Art & culture"
+msgstr "🎨 Arte y cultura"
 
 #: src/configs/Strings.vala:56
 msgid "🏦 Architecture"
@@ -212,8 +213,9 @@ msgstr ""
 msgid ""
 "Have a simple and elegant interface, you can change from light mode to dark "
 "mode as you prefer."
-msgstr "Usa una interfaz simple y elegante, puedes cambiar del modo claro o "
-"asco como prefieras"
+msgstr ""
+"Usa una interfaz simple y elegante, puedes cambiar del modo claro o asco "
+"como prefieras"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:34
 msgid "Main features:"
@@ -245,7 +247,9 @@ msgstr "Compartilhe com seus amigos um link para foto do Unsplash"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:42
 msgid "Search by categories or write what you want to search in the top input"
-msgstr "Pesquise por categorias ou escreva o que você deseja pesquisar na entrada superior"
+msgstr ""
+"Pesquise por categorias ou escreva o que você deseja pesquisar na entrada "
+"superior"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:43
 msgid "Use Ctrl + Q to exit"
@@ -258,3 +262,9 @@ msgstr "com.github.calo001.fondo"
 #: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
 msgstr "wallpaper;unsplash;foto;imagem;photo;background;"
+
+#~ msgid "‍👩 Woman"
+#~ msgstr "👩 Mulher"
+
+#~ msgid "👨 Man"
+#~ msgstr "👨 Homem"

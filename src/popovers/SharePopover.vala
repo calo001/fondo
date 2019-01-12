@@ -18,9 +18,7 @@
 using App.Configs;
 
 namespace App.Popover {
-    public class SharePopover : Gtk.Popover {
-        public signal void link_copied ();
-    
+    public class SharePopover : Gtk.Popover {  
         public string body { get; set; }
         public string uri { get; set; }
         public string autor { get; set; }
@@ -47,45 +45,31 @@ namespace App.Popover {
             email_button.tooltip_text = S.EMAIL;
             email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
-            var facebook_button = new Gtk.Button();
-            var face_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-facebook.svg");
-            facebook_button.set_image (face_logo);
+            var facebook_button = new Gtk.Button.from_icon_name ("online-account-facebook", Gtk.IconSize.DND);
             facebook_button.tooltip_text = "Facebook";
             facebook_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
-            var google_button = new Gtk.Button();
-            var google_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-google-plus.svg");
-            google_button.set_image (google_logo);
+            var google_button = new Gtk.Button.from_icon_name ("online-account-google-plus", Gtk.IconSize.DND);
             google_button.tooltip_text = "Google+";
             google_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
-            var twitter_button = new Gtk.Button();
-            var twitter_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-twitter.svg");
-            twitter_button.set_image (twitter_logo);
+            var twitter_button = new Gtk.Button.from_icon_name ("online-account-twitter", Gtk.IconSize.DND);
             twitter_button.tooltip_text = "Twitter";
             twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
-            var tumblr_button = new Gtk.Button();
-            var tumblr_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-tumblr.svg");
-            tumblr_button.set_image (tumblr_logo);
+            var tumblr_button = new Gtk.Button.from_icon_name ("online-account-tumblr", Gtk.IconSize.DND);
             tumblr_button.tooltip_text = "Tumblr";
             tumblr_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
-            var reddit_button = new Gtk.Button ();
-            var reddit_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-reddit.svg");
-            reddit_button.set_image (reddit_logo);
+            var reddit_button = new Gtk.Button.from_icon_name ("online-account-reddit", Gtk.IconSize.DND);
             reddit_button.tooltip_text = "Reddit";
             reddit_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-            var telegram_button = new Gtk.Button();
-            var telegram_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-telegram.svg");
-            telegram_button.set_image (telegram_logo);
+            var telegram_button = new Gtk.Button.from_icon_name ("online-account-telegram", Gtk.IconSize.DND);
             telegram_button.tooltip_text = "Telegram";
             telegram_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
-            var whatsapp_button = new Gtk.Button();
-            var whatsapp_logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/online-account-whatsapp.svg");
-            whatsapp_button.set_image (whatsapp_logo);
+            var whatsapp_button = new Gtk.Button.from_icon_name ("online-account-whatsapp", Gtk.IconSize.DND);
             whatsapp_button.tooltip_text = "WhatsApp";
             whatsapp_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
@@ -121,14 +105,13 @@ namespace App.Popover {
             grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             grid.add (service_grid);
             grid.show_all ();
+            copy_link_button.grab_focus ();
     
             add (grid);
     
             copy_link_button.clicked.connect (() => {
                 var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
                 clipboard.set_text (this.uri, -1);
-    
-                link_copied ();
                 hide ();
             });
     

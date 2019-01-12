@@ -38,7 +38,8 @@ scrollbar slider {
 }
 
 .pop-menu {
-	background: black;
+	background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+    background-blend-mode: multiply;
     color: white;
 	font-weight: bold;
 	font-size: 1.1em;
@@ -54,15 +55,16 @@ scrollbar slider {
     box-shadow: none;
     font-weight: normal;
     font-size: 1em;
-    padding: 12px;
+    padding: 8px;
     background: none;
+    border-radius: 20px;
+    margin: 6px;
 }
 
 .menu-btn:hover {
     color: #2af5f5;
     background: #35393E;
 }
-
 
 .hphoto {
     font-weight: bold;
@@ -243,11 +245,11 @@ progressbar trough{
     background: linear-gradient(-45deg, #3C171A, #5D293A);
 }
 
-.btn_woman {
+.btn_fashion {
     background: linear-gradient(-45deg, #E16145, #FE337C);
 }
 
-.btn_man {
+.btn_arts_culture {
     background: linear-gradient(-45deg, #4481EB, #04BEFE);
 }
 

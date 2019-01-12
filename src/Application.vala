@@ -51,6 +51,10 @@ namespace App {
                 }
             });
 
+             // Default Icon Theme
+            weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
+            default_theme.add_resource_path ("/com/github/calo001/fondo/images");
+
             settings = new GLib.Settings (Constants.ID);
         }
 

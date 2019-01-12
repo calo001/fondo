@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 18:35-0600\n"
+"POT-Creation-Date: 2019-01-12 09:54-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,11 +122,11 @@ msgid "📊 Business & work"
 msgstr ""
 
 #: src/configs/Strings.vala:54
-msgid "‍👩 Woman"
+msgid "‍🎩 Fashion"
 msgstr ""
 
 #: src/configs/Strings.vala:55
-msgid "👨 Man"
+msgid "🎨 Art & culture"
 msgstr ""
 
 #: src/configs/Strings.vala:56
