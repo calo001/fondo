@@ -13,6 +13,15 @@
         <file alias="48-com.github.calo001.fondo.svg" compressed="true" preprocess="xml-stripblanks">images/icons/48/com.github.calo001.fondo.svg</file>
         <file alias="64-com.github.calo001.fondo.svg" compressed="true" preprocess="xml-stripblanks">images/icons/64/com.github.calo001.fondo.svg</file>
         <file alias="128-com.github.calo001.fondo.svg" compressed="true" preprocess="xml-stripblanks">images/icons/128/com.github.calo001.fondo.svg</file>
+
+        <file alias="com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/com.github.calo001.fondo.success.svg</file>
+        <file alias="16-com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/icons/16/com.github.calo001.fondo.success.svg</file>
+        <file alias="24-com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/icons/24/com.github.calo001.fondo.success.svg</file>
+        <file alias="32-com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/icons/32/com.github.calo001.fondo.success.svg</file>
+        <file alias="48-com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/icons/48/com.github.calo001.fondo.success.svg</file>
+        <file alias="64-com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/icons/64/com.github.calo001.fondo.success.svg</file>
+        <file alias="128-com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/icons/128/com.github.calo001.fondo.success.svg</file>
+
         <file alias="unsplashlogo.svg" compressed="true" preprocess="xml-stripblanks">images/unsplashlogo.svg</file>
         
         <file alias="empty.svg" compressed="true" preprocess="xml-stripblanks">images/empty.svg</file>

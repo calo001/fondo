@@ -175,10 +175,13 @@ namespace App.Utils {
 
         /***********************************************************************
             Method to show desktop notification
+            Update cache icons: sudo update-icon-caches /usr/share/icons/*
         ***********************************************************************/
         public void show_notify () {
             var notification = new Notification (S.WALLPAPER_READY);
             notification.set_body (S.WALLPAPER_READY_BODY);
+            var icon = new ThemedIcon ("com.github.calo001.fondo.success");
+            notification.set_icon (icon);
             GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
 
