@@ -22,7 +22,7 @@ using App.Connection;
 using Granite.Widgets;
 using App.Configs;
 
-namespace App.Views {
+namespace App.Windows {
 
     /**
      * The {@code PreviewWindow} class.

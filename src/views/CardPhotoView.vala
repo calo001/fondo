@@ -22,6 +22,7 @@ using App.Connection;
 using App.Utils;
 using App.Widgets;
 using App.Popover;
+using App.Windows;
 using Gtk;
 
 namespace App.Views {

@@ -20,6 +20,7 @@ using App.Widgets;
 using App.Views;
 using App.Connection;
 using App.Configs;
+using App.Windows;
 
 namespace App.Controllers {
 
@@ -42,7 +43,7 @@ namespace App.Controllers {
         private Gtk.ScrolledWindow         scrolled_main;
         private Gtk.ScrolledWindow         scrolled_search;
         private Gtk.Stack                  stack;
-        private App.Window                 window { get; private set; default = null; }
+        private Window                     window { get; private set; default = null; }
         private Gtk.Label                  search_label;
 
         private int                        num_page;
@@ -70,7 +71,7 @@ namespace App.Controllers {
             this.num_page_search = 1;
 
             // window setup
-            window  =       new App.Window (this.application);
+            window  =       new Window (this.application);
             headerbar =     new App.Widgets.HeaderBar ();
             window.set_titlebar (this.headerbar);
 

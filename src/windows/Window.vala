@@ -19,7 +19,7 @@
 using App.Configs;
 using App.Controllers;
 
-namespace App {
+namespace App.Windows {
 
     /**
      * Class responsible for creating the u window and will contain contain other widgets. 

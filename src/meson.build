@@ -8,11 +8,12 @@ sources += files(
     'views/PhotosView.vala',
     'views/AppViewError.vala',
     'views/CardPhotoView.vala',
-    'views/PreviewWindow.vala',
     'views/ButtonCategory.vala',
     'views/CategoriesView.vala',
     'views/EmptyView.vala',
     'views/LoadingView.vala',
+
+    'windows/PreviewWindow.vala',
 
     'popovers/MenuPopover.vala',
     'popovers/WallpaperPopover.vala',
