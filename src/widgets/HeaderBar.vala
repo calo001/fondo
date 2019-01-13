@@ -76,14 +76,19 @@ namespace App.Widgets {
             search.expand = true;
             search.sensitive = false;
 
+            // Magic for drag window while search entry is empty
             search.button_press_event.connect ( (event)=>{
                 search.grab_focus_without_selecting ();
-                return true;
+                if (search.text_length > 0) {
+                    return false;
+                } else {
+                    return true;
+                }
             });
 
             search.button_release_event.connect_after ( ()=>{
                 revealer.set_reveal_child (true);
-                search_view ();                
+                search_view ();
                 return true;
             } );
 
