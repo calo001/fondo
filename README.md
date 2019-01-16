@@ -77,10 +77,14 @@ Options:
 - [KJ Lawrence](https://github.com/kjlaw89) for making easier the development of apps for elementary OS with [Archetype](https://appcenter.elementary.io/com.github.kjlaw89.archetype/)
 - [Cassidy James Blaede](https://github.com/cassidyjames) for his apps to use as code examples
 - [Daniel Foré](https://github.com/danrabbit) for his help in the google + community
+- [Ricardho](https://github.com/ricdev2) ideas, support and UX
+- [Andres Lopez](https://github.com/andreslopezrm) ideas and support
+- [VeckCol](https://github.com/VeckCol) ideas, support and translations
 - [Unsplash](http://unsplash.com) for providing an amazing API of photographs
 
 ### Translators
 - [Rafael C. Nunes](https://github.com/rafaelcn) Brazilian Portuguese
+- [NathanBnm](https://github.com/NathanBnm) French
 
 ### License
 
