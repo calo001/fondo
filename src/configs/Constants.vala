@@ -27,17 +27,17 @@ namespace App.Configs {
     public class Constants {
     
         // API KEY in development, this must to change on production release
-        // * Development use
+        // * Already change to production key
 
         public abstract const string API_UNSPLASH = "https://api.unsplash.com/";
         public abstract const string GET = "photos/?client_id=";
         public abstract const string SEARCH = "search/";
         
         // API KEY for production, only use this key in releases for AppCenter
-        // public abstract const string ACCESS_KEY_UNSPLASH = "db4d69677b2838dfc4f9ef73ee79dcde8412472617bc96adefde321bd08a76f2";
+        public abstract const string ACCESS_KEY_UNSPLASH = "db4d69677b2838dfc4f9ef73ee79dcde8412472617bc96adefde321bd08a76f2";
         
         // API KEY for development, only use this key in updates and fixes
-        public abstract const string ACCESS_KEY_UNSPLASH = "51531311dfa090ab81321cd2655e73c59b3d952b5966ed42e861fa7d50da47e8";
+        //public abstract const string ACCESS_KEY_UNSPLASH = "51531311dfa090ab81321cd2655e73c59b3d952b5966ed42e861fa7d50da47e8";
         
         public abstract const string URI_PAGE = API_UNSPLASH + GET + ACCESS_KEY_UNSPLASH;
         public abstract const string URI_SEARCH_PAGE = API_UNSPLASH + SEARCH + GET + ACCESS_KEY_UNSPLASH;
