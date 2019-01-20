@@ -42,7 +42,9 @@
         </td>
       </tr>
     </table>
-  <a href="https://github.com/calo001/fondo/issues/new"> Report a problem! </a>
+</p>
+<p align="center">
+  <a href="https://github.com/calo001/fondo/issues/new">Report a problem!</a>
 </p>
 
 ## Installation
@@ -89,7 +91,7 @@ Options:
   run               Builds and runs the application
   uninstall         Removes the application from the system (requires sudo)
 ```
-### Special thanks
+## Special thanks
 - [KJ Lawrence](https://github.com/kjlaw89) for making easier the development of apps for elementary OS with [Archetype](https://appcenter.elementary.io/com.github.kjlaw89.archetype/)
 - [Cassidy James Blaede](https://github.com/cassidyjames) for his apps to use as code examples
 - [Daniel Foré](https://github.com/danrabbit) for his help in the google + community
@@ -98,10 +100,10 @@ Options:
 - [VeckCol](https://github.com/VeckCol) ideas, support and translations
 - [Unsplash](http://unsplash.com) for providing an amazing API of photographs
 
-### Translators
+## Translators
 - [Rafael C. Nunes](https://github.com/rafaelcn) Brazilian Portuguese
 - [NathanBnm](https://github.com/NathanBnm) French
 
-### License
+## License
 
 This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE.md) file for details.
