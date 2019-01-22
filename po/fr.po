@@ -196,7 +196,7 @@ msgid ""
 "Find a variety of the most beautiful wallpapers from Unsplash.com the "
 "world’s most generous community of photographers."
 msgstr ""
-"Trouvez une variété des plus beaux fonds d'écran issus de Unsplash.com la" ".
+"Trouvez une variété des plus beaux fonds d'écran issus de Unsplash.com la"
 "communauté de photographes la plus généreuse du monde."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:32
@@ -214,7 +214,7 @@ msgid ""
 "Have a simple and elegant interface, you can change from light mode to dark "
 "mode as you prefer."
 msgstr ""
-"Disposez d'une interface simple et élégante, vous pouvez passer du mode clair au mode sombre ".
+"Disposez d'une interface simple et élégante, vous pouvez passer du mode clair au mode sombre "
 "comme vous préférez."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:34
