@@ -44,6 +44,14 @@
         </ul>
     </description>
     <releases>
+      <release version="1.2.1" date="2019-01-22">
+        <description>
+          New
+          <ul>
+            <li>Add french translations</li>
+        </ul>
+        </description>
+      </release>
       <release version="1.2.0" date="2019-01-6">
         <description>
           Updates
