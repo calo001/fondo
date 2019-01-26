@@ -10,6 +10,7 @@
     <a href="https://appcenter.elementary.io/com.github.calo001.fondo">
         <img src="https://appcenter.elementary.io/badge.svg">
     </a>
+    <a href='https://flathub.org/apps/details/com.github.calo001.fondo'><img width='150' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 </p>
 
 <p align="center">
@@ -92,6 +93,8 @@ Options:
   uninstall         Removes the application from the system (requires sudo)
 ```
 ## Special thanks
+
+## Support help & inspiration
 - [KJ Lawrence](https://github.com/kjlaw89) for making easier the development of apps for elementary OS with [Archetype](https://appcenter.elementary.io/com.github.kjlaw89.archetype/)
 - [Cassidy James Blaede](https://github.com/cassidyjames) for his apps to use as code examples
 - [Daniel Foré](https://github.com/danrabbit) for his help in the google + community
@@ -100,7 +103,11 @@ Options:
 - [VeckCol](https://github.com/VeckCol) ideas, support and translations
 - [Unsplash](http://unsplash.com) for providing an amazing API of photographs
 
-## Translators
+### Flatpak maintainers
+- [Bilal Elmoussaoui](https://github.com/bilelmoussaoui)
+- [Yi-Soo An](https://github.com/memnoth)
+
+### Translators
 - [Rafael C. Nunes](https://github.com/rafaelcn) Brazilian Portuguese
 - [NathanBnm](https://github.com/NathanBnm) French
 
