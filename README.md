@@ -94,8 +94,6 @@ Options:
 ```
 ## Special thanks
 
-### Support, help & inspiration
-
 <p align="center">
   <a href="http://unsplash.com">
     <img src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/poweredunsplash.png" alt="Screenshot">
@@ -105,6 +103,8 @@ Options:
 Beautiful, free photos.
 Gifted by the world’s most generous community of photographers. 🎁
 </p>
+
+### Support, help & inspiration
 
 - [KJ Lawrence](https://github.com/kjlaw89) for making easier the development of apps for elementary OS with [Archetype](https://appcenter.elementary.io/com.github.kjlaw89.archetype/)
 - [Cassidy James Blaede](https://github.com/cassidyjames) for his apps to use as code examples
