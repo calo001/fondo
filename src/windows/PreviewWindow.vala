@@ -16,7 +16,7 @@
 *
 */
 
-using App.Structs;
+using App.Models;
 using App.Utils;
 using App.Connection;
 using Granite.Widgets;

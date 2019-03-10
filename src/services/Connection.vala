@@ -17,7 +17,7 @@
 */
 
 using App.Configs;
-using App.Structs;
+using App.Models;
 
 namespace App.Connection {
 
@@ -29,7 +29,6 @@ namespace App.Connection {
 
     public class AppConnection {
 
-        // Signals for Classes tha use this class
         public signal void request_page_success(List<Photo?> list);
         public signal void request_page_search_success(List<Photo?> list);
 
@@ -99,22 +98,18 @@ namespace App.Connection {
             unowned Json.Array array = node.get_array ();
             foreach (unowned Json.Node item in array.get_elements ()) {
                 var object = item.get_object();
-                var photo_info = Photo() {
-                    id =                        object.get_string_member ("id"),
-                    width =                     object.get_int_member    ("width"),
-                    height =                    object.get_int_member    ("height"),
-                    urls_thumb =                object.get_object_member ("urls")
-                                                      .get_string_member ("small"),
-                    links_download_location =   object.get_object_member ("links")
-                                                      .get_string_member ("download_location"),
-                    username =                  object.get_object_member ("user")
-                                                      .get_string_member ("username"),
-                    name =                      object.get_object_member ("user")
-                                                      .get_string_member ("name"),
-                    location =                  object.get_object_member ("user")
-                                                      .get_string_member ("location")
-                    };
-                    list_thumbs.append (photo_info);
+                
+                var photo = new PhotoBuilder (object.get_string_member ("id"))
+                    .add_width (object.get_int_member ("width"))
+                    .add_height (object.get_int_member ("height"))
+                    .add_thumb (object.get_object_member ("urls").get_string_member ("small"))
+                    .add_download_location (object.get_object_member ("links").get_string_member ("download_location"))
+                    .add_username (object.get_object_member ("user").get_string_member ("username"))
+                    .add_name (object.get_object_member ("user").get_string_member ("name"))
+                    .add_location (object.get_object_member ("user").get_string_member ("location"))
+                    .build ();
+
+                    list_thumbs.append (photo);
                 }
             return list_thumbs;
         }
@@ -127,22 +122,18 @@ namespace App.Connection {
             unowned Json.Array array = node.get_object ().get_array_member ("results");
             foreach (unowned Json.Node item in array.get_elements ()) {
                 var object = item.get_object();
-                var photo_info = Photo() {
-                    id =                        object.get_string_member ("id"),
-                    width =                     object.get_int_member    ("width"),
-                    height =                    object.get_int_member    ("height"),
-                    urls_thumb =                object.get_object_member ("urls")
-                                                      .get_string_member ("small"),
-                    links_download_location =   object.get_object_member ("links")
-                                                      .get_string_member ("download_location"),
-                    username =                  object.get_object_member ("user")
-                                                      .get_string_member ("username"),
-                    name =                      object.get_object_member ("user")
-                                                      .get_string_member ("name"),
-                    location =                  object.get_object_member ("user")
-                                                      .get_string_member ("location")
-                    };
-                    list_thumbs.append (photo_info);
+
+                var photo = new PhotoBuilder (object.get_string_member ("id"))
+                    .add_width (object.get_int_member ("width"))
+                    .add_height (object.get_int_member ("height"))
+                    .add_thumb (object.get_object_member ("urls").get_string_member ("small"))
+                    .add_download_location (object.get_object_member ("links").get_string_member ("download_location"))
+                    .add_username (object.get_object_member ("user").get_string_member ("username"))
+                    .add_name (object.get_object_member ("user").get_string_member ("name"))
+                    .add_location (object.get_object_member ("user").get_string_member ("location"))
+                    .build ();
+
+                    list_thumbs.append (photo);
                 }
             return list_thumbs;
         }

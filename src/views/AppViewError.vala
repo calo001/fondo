@@ -18,7 +18,7 @@
 
 using App.Widgets;
 using App.Connection;
-using App.Structs;
+using App.Models;
 using App.Configs;
 
 namespace App.Views {

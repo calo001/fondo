@@ -16,21 +16,14 @@
 *
 */
 
-namespace App.Structs {
+namespace App.Utils {
     /**
-     * The {@code Photo} struct.
+     * The {@code get random image for popup} method.
      *
      * @since 1.0.0
      */
 
-    public struct Photo {
-        public string   id;                         // Id from unplash photo
-        public int64    width;                      // Width of photo for download
-        public int64    height;                     // Height of photo for download
-        public string   urls_thumb;                 // URL to get thumb
-        public string   links_download_location;    // URL to get the download uri
-        public string   username;                   // Photo's user name
-        public string   name;                       // Autor name
-        public string   location;                   // Photo location
+    string random_back () {
+        return @"popup-background-$(Random.int_range (1, 12))";
     }
 }

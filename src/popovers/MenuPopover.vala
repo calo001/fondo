@@ -29,6 +29,7 @@ namespace App.Popover {
                 relative_to: relative_to
             );          
             get_style_context ().add_class ("pop-menu");
+            this.get_style_context ().add_class (App.Utils.random_back ());
             set_modal (true);
 
             var grid = new Gtk.Grid ();
@@ -37,7 +38,21 @@ namespace App.Popover {
             var logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/unsplashlogo.svg");
             var lbl_powered = new Gtk.Label (S.POWERED_BY);
             var button_visit = new Gtk.LinkButton.with_label (unsplash_link, S.VISIT_WEB_SITE);;
-            
+
+            var button_landscape = new Gtk.ToggleButton ();
+            button_landscape.set_image (new Gtk.Image.from_icon_name ("emblem-documents-symbolic", Gtk.IconSize.DND) );
+            button_landscape.tooltip_text = "Landscape";
+            button_landscape.margin = 8;
+            button_landscape.get_style_context ().add_class ("btn-orientation");
+
+            var button_portrait = new Gtk.ToggleButton ();
+            button_portrait.set_image (new Gtk.Image.from_icon_name ("emblem-documents-symbolic", Gtk.IconSize.DND) );
+            button_portrait.tooltip_text = "Portrait";
+            button_portrait.margin = 8;
+            button_portrait.get_style_context ().add_class ("btn-orientation");
+
+            var lbl_filter = new Gtk.Label ("Filter");
+
             button_visit.get_style_context ().remove_class ("link");
             button_visit.get_style_context ().remove_class ("flat");
             button_visit.get_style_context ().add_class ("menu-btn");
@@ -49,10 +64,18 @@ namespace App.Popover {
             grid.row_spacing = 0;
 
             content_box.tooltip_text = S.UNSPLASH_DESCRIPTION;
-            grid.attach(content_box, 0, 1, 1, 1);
-            grid.attach(button_visit, 0, 2, 1, 1);
-            grid.show_all();
+            grid.attach (content_box, 0, 1, 2, 1);
+            //grid.attach (button_visit, 0, 2, 2, 1);
+            grid.attach (lbl_filter, 0, 2, 2, 1);
+            grid.attach (button_landscape, 0, 3, 1, 1);
+            grid.attach (button_portrait, 1, 3, 1, 1);
+            grid.show_all ();
             add (grid);
         }
+    }
+
+    public void show_popup () {
+        //this.get_style_context ().add_class (App.Utils.random_back ());
+        //this.popup ();
     }
 }

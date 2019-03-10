@@ -17,7 +17,7 @@
 */
 
 using App.Configs;
-using App.Structs;
+using App.Models;
 using App.Connection;
 using App.Utils;
 using App.Widgets;
@@ -96,9 +96,7 @@ namespace App.Views {
 
             image.set_from_file_async.begin(file_photo, w_photo, h_photo, false);
             image.has_tooltip = true;
-            var txt_tooltip = photo.location == null ?
-                S.AN_AMAZING_PLACE:
-                "🌎  " + photo.location;
+            var txt_tooltip = photo.location;
             image.set_tooltip_text (txt_tooltip);
 
             /******************************************

@@ -222,6 +222,19 @@ progressbar trough{
     font-size: 2em;
 }
 
+.btn-orientation {
+    border-radius: 50%;
+    padding: 2em;
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+  
+  .btn-orientation:checked {
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 7px 12px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
 .btn-nature {
     background: linear-gradient(-45deg, #B5AC49, #11998E);
 }
@@ -268,4 +281,52 @@ progressbar trough{
 
 .btn_flatlay {
     background: linear-gradient(-45deg, #AAA600, #E99C00);
+}
+
+.popup-background-1 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_1.png");
+}
+
+.popup-background-2 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_2.png");
+}
+
+.popup-background-3 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_3.png");
+}
+
+.popup-background-4 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_4.png");
+}
+
+.popup-background-5 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_5.png");
+}
+
+.popup-background-6 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_6.png");
+}
+
+.popup-background-7 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_7.png");
+}
+
+.popup-background-8 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_8.png");
+}
+
+.popup-background-9 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_9.png");
+}
+
+.popup-background-10 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_10.png");
+}
+
+.popup-background-11 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_11.png");
+}
+
+.popup-background-12 {
+    background-image: url("/com/github/calo001/fondo/images/popup_back_12.png");
 }

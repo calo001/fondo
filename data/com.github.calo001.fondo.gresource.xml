@@ -23,6 +23,18 @@
         <file alias="128-com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/icons/128/com.github.calo001.fondo.success.svg</file>
 
         <file alias="unsplashlogo.svg" compressed="true" preprocess="xml-stripblanks">images/unsplashlogo.svg</file>
+        <file alias="popup_back_1.png" compressed="true">images/popup_back_1.png</file>
+        <file alias="popup_back_2.png" compressed="true">images/popup_back_2.png</file>
+        <file alias="popup_back_3.png" compressed="true">images/popup_back_3.png</file>
+        <file alias="popup_back_4.png" compressed="true">images/popup_back_4.png</file>
+        <file alias="popup_back_5.png" compressed="true">images/popup_back_5.png</file>
+        <file alias="popup_back_6.png" compressed="true">images/popup_back_6.png</file>
+        <file alias="popup_back_7.png" compressed="true">images/popup_back_7.png</file>
+        <file alias="popup_back_8.png" compressed="true">images/popup_back_8.png</file>
+        <file alias="popup_back_9.png" compressed="true">images/popup_back_9.png</file>
+        <file alias="popup_back_10.png" compressed="true">images/popup_back_10.png</file>
+        <file alias="popup_back_11.png" compressed="true">images/popup_back_11.png</file>
+        <file alias="popup_back_12.png" compressed="true">images/popup_back_12.png</file>
         
         <file alias="empty.svg" compressed="true" preprocess="xml-stripblanks">images/empty.svg</file>
         <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">images/online-account-facebook.svg</file>
