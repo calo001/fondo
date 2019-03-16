@@ -38,8 +38,7 @@ scrollbar slider {
 }
 
 .pop-menu {
-	background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
-    background-blend-mode: multiply;
+	background: alpha(black, 0.97);
     color: white;
 	font-weight: bold;
 	font-size: 1.1em;
@@ -281,52 +280,4 @@ progressbar trough{
 
 .btn_flatlay {
     background: linear-gradient(-45deg, #AAA600, #E99C00);
-}
-
-.popup-background-1 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_1.png");
-}
-
-.popup-background-2 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_2.png");
-}
-
-.popup-background-3 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_3.png");
-}
-
-.popup-background-4 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_4.png");
-}
-
-.popup-background-5 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_5.png");
-}
-
-.popup-background-6 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_6.png");
-}
-
-.popup-background-7 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_7.png");
-}
-
-.popup-background-8 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_8.png");
-}
-
-.popup-background-9 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_9.png");
-}
-
-.popup-background-10 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_10.png");
-}
-
-.popup-background-11 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_11.png");
-}
-
-.popup-background-12 {
-    background-image: url("/com/github/calo001/fondo/images/popup_back_12.png");
 }

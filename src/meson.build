@@ -24,7 +24,6 @@ sources += files(
 
     'utils/Wallpaper.vala',
     'utils/Networking.vala',
-    'utils/RandomImage.vala',
 
     'widgets/HeaderBar.vala',
     'widgets/LabelTop.vala',

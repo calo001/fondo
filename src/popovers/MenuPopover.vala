@@ -29,7 +29,6 @@ namespace App.Popover {
                 relative_to: relative_to
             );          
             get_style_context ().add_class ("pop-menu");
-            this.get_style_context ().add_class (App.Utils.random_back ());
             set_modal (true);
 
             var grid = new Gtk.Grid ();
@@ -72,10 +71,5 @@ namespace App.Popover {
             grid.show_all ();
             add (grid);
         }
-    }
-
-    public void show_popup () {
-        //this.get_style_context ().add_class (App.Utils.random_back ());
-        //this.popup ();
     }
 }
