@@ -44,12 +44,12 @@
         </ul>
     </description>
     <releases>
-      <release version="1.2.1" date="2019-01-22">
+      <release version="1.2.1" date="2019-03-15">
         <description>
           New
           <ul>
             <li>Added Dutch (Netherlands) translation</li>
-        </ul>
+          </ul>
         </description>
       </release>
       <release version="1.2.1" date="2019-01-22">
