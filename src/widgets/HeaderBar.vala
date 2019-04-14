@@ -28,10 +28,8 @@ namespace App.Widgets {
      * @since 1.0.0
      */
     public class HeaderBar : Gtk.HeaderBar {
-        private Gtk.Revealer        revealer;
         public Gtk.SearchEntry      search {get; set;}
         public signal void search_view ();
-        public signal void home_view ();
         public signal void search_activated (string value);
 
         /**
@@ -87,7 +85,6 @@ namespace App.Widgets {
             });
 
             search.button_release_event.connect_after ( ()=>{
-                revealer.set_reveal_child (true);
                 search_view ();
                 return true;
             } );
@@ -111,20 +108,6 @@ namespace App.Widgets {
                 pop_menu.popup ();
             });
 
-            /*
-             * daly home
-             */
-            revealer = new Gtk.Revealer ();
-            var daily_button = new Gtk.Button.from_icon_name ("go-home-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-            daily_button.tooltip_text = S.BACK_TO_DAILY_PHOTOS;
-            revealer.add (daily_button);
-            revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            daily_button.clicked.connect ( ()=>{
-                revealer.set_reveal_child (false);
-                home_view ();
-            } );
-
-            this.pack_start(revealer);
             this.set_custom_title (search);
             this.pack_end (menu_button);
             this.pack_end (mode_switch);

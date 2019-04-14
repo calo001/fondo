@@ -43,6 +43,8 @@ namespace App.Controllers {
         private Gtk.ScrolledWindow         scrolled_main;
         private Gtk.ScrolledWindow         scrolled_search;
         private Gtk.Stack                  stack;
+        private Gtk.Overlay                overlay_stack;
+        private ButtonNavbar               buttonNavbar;
         private Window                     window { get; private set; default = null; }
         private Gtk.Label                  search_label;
 
@@ -75,23 +77,11 @@ namespace App.Controllers {
             headerbar =     new App.Widgets.HeaderBar ();
             window.set_titlebar (this.headerbar);
 
-            // Stack for viewa
+            // Stack for views
             stack = new Gtk.Stack ();
             stack.set_transition_duration (350);
             stack.hhomogeneous = false;
             stack.interpolate_size = true;
-
-            headerbar.search_view.connect ( () => {
-                stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
-                stack.set_visible_child_name (STACK_CATEGORIES);
-                view.set_sensitive (false);
-            });
-
-            headerbar.home_view.connect ( () => {
-                stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
-                stack.set_visible_child_name (STACK_DAILY);
-                view.set_sensitive (true);
-            });
 
             // Views used in Stock
             scrolled_main =         new Gtk.ScrolledWindow (null, null);
@@ -144,7 +134,30 @@ namespace App.Controllers {
             stack.add_named(empty_view,         STACK_EMPTY); 
             stack.add_named(view_error,         STACK_ERROR);
 
-            window.add (stack);
+            // Navigationbar
+            buttonNavbar = new ButtonNavbar ();
+            buttonNavbar.halign = Gtk.Align.START;
+            buttonNavbar.valign = Gtk.Align.END;
+            buttonNavbar.halign = Gtk.Align.FILL;
+            buttonNavbar.hexpand = true;
+
+            buttonNavbar.daily.connect ( () => {
+                stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
+            });
+
+            buttonNavbar.categories.connect ( () => {
+                stack.set_visible_child_full (STACK_CATEGORIES, Gtk.StackTransitionType.SLIDE_UP);
+            });
+
+            buttonNavbar.history.connect ( () => {
+                
+            });
+
+            // Window Overlay
+            overlay_stack = new Gtk.Overlay ();
+            overlay_stack.add_overlay (stack);
+            overlay_stack.add_overlay (buttonNavbar);
+            window.add (overlay_stack);
             application.add_window (window);
 
             check_internet();
@@ -186,6 +199,7 @@ namespace App.Controllers {
                     view.insert_cards(list);
                     stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
                 }
+                scrolled_main.margin_bottom = 0;
             } );
 
             // Signal catched when a search request is success and setup the photos 
@@ -194,6 +208,7 @@ namespace App.Controllers {
                 if (list.length () > 0) {
                     result_search_view.insert_cards(list);
                     stack.set_visible_child_full (STACK_SEARCH, Gtk.StackTransitionType.SLIDE_UP);
+                    scrolled_search.margin_bottom = 0;
                 } else if (num_page_search == 1) {
                     stack.set_visible_child_full (STACK_EMPTY, Gtk.StackTransitionType.SLIDE_UP);
                 }
@@ -204,6 +219,7 @@ namespace App.Controllers {
                 if (pos == Gtk.PositionType.BOTTOM) {
                     num_page++;
                     connection.load_page(num_page);
+                    scrolled_main.margin_bottom = 55;
                 }
             } );
 
@@ -212,6 +228,7 @@ namespace App.Controllers {
                 if (pos == Gtk.PositionType.BOTTOM) {
                     num_page_search++;
                     connection.load_search_page(num_page_search, current_query);
+                    scrolled_search.margin_bottom = 55;
                 }
             } );
         }

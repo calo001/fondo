@@ -68,6 +68,11 @@ namespace App.Configs {
          */
         public bool maximized {get; set;}
         /**
+         * This property will represent the filter status to show
+         * Variable of type {@code String} as declared.
+         */
+        public string filter_mode {get; set;}
+        /**
          * Constructs a new {@code Settings} object 
          * and sets the default exit folder.
          */

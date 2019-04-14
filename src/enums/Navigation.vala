@@ -16,21 +16,16 @@
 * 
 */
 
-namespace App.Widgets {
+namespace App.Enums {
 
     /**
-     * The {@code LabelTop} class is responsible for displaying a Header top on photos scroll.
+     * The {@code Navigation} enum.
      *
+     * @since 1.0.0
      */
-    public class LabelTop : Gtk.Label {
-        public LabelTop (string header) {
-            Object (    
-                label: header,
-                wrap: true,
-                margin_start: 20,
-                margin_end: 20
-            );
-            get_style_context ().add_class ("hphoto");
-        }
+    public enum Navigation {
+        DAILY,
+        CATEGORIES,
+        HISTORY;
     }
 }

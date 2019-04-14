@@ -16,7 +16,7 @@
 * 
 */
 
-@define-color colorAccent rgba(18, 144, 141, 0.5);
+@define-color colorAccent rgb(18, 144, 141);
 @define-color colorAccentOpaque #2BB5CF;
 
 progressbar progress {
@@ -40,12 +40,29 @@ scrollbar slider {
 .pop-menu {
 	background: alpha(black, 0.97);
     color: white;
-	font-weight: bold;
 	font-size: 1.1em;
     box-shadow: none;
     padding: 0;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 
                 0 2px 4px 0 rgba(0,0,0,0.08);
+    font-size: 1.2em;
+}
+
+.filter-popover {
+    border-radius: 8px 8px 0 0; 
+    background: rgba(255,255,255,0.05);
+}
+
+radio {
+  border: none;
+  box-shadow: none;
+  background: #3C4147;
+}
+
+radio:checked {
+  border: none;
+  box-shadow: none;
+  background: @colorAccentOpaque;
 }
 
 .menu-btn {
@@ -142,7 +159,6 @@ progressbar trough{
 }
 
 .button-green:hover {
-    /* background: @colorAccentOpaque; */
     background: linear-gradient(#ff5858, #db36a4);
     color: #FFFFFF;
     border: none;
@@ -221,18 +237,39 @@ progressbar trough{
     font-size: 2em;
 }
 
-.btn-orientation {
-    border-radius: 50%;
-    padding: 2em;
-    background: none;
+.h4 {
+    color: #B1B0A1;
     box-shadow: none;
-    border: none;
-  }
-  
-  .btn-orientation:checked {
-    background: rgba(255,255,255,0.1);
-    box-shadow: 0 7px 12px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
+}
+
+.buttonnavbar {
+    background: alpha(@theme_bg_color, 0.95);
+    padding: 0.5em;
+}
+
+.btn_round {
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    opacity: 0.6;
+}
+
+.active {
+    opacity: 1;
+}
+
+.btn-orientation {
+  border-radius: 50%;
+  padding: 2em;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+.btn-orientation:checked {
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 7px 12px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
 
 .btn-nature {
     background: linear-gradient(-45deg, #B5AC49, #11998E);

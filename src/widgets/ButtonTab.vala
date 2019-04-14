@@ -19,18 +19,28 @@
 namespace App.Widgets {
 
     /**
-     * The {@code LabelTop} class is responsible for displaying a Header top on photos scroll.
+     * The {@code ButtonTab} class is responsible for displaying a Button on ButtonNavbar.
      *
      */
-    public class LabelTop : Gtk.Label {
-        public LabelTop (string header) {
+    public class ButtonTab : Gtk.Button {
+        public ButtonTab (string icon_name, string name) {
             Object (    
-                label: header,
-                wrap: true,
-                margin_start: 20,
-                margin_end: 20
+                label: name,
+                always_show_image: true,
+                expand: true,
+                image: new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR)
             );
-            get_style_context ().add_class ("hphoto");
+
+            get_style_context ().add_class ("flat");
+            get_style_context ().add_class ("btn_round");
+        }
+
+        public void on_active () {
+            get_style_context ().add_class ("active");
+        }
+
+        public void on_inactive () {
+            get_style_context ().remove_class ("active");
         }
     }
 }

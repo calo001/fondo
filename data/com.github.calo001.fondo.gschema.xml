@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-
+    <enum id="com.github.calo001.fondo.photos-mode">
+        <value nick="any" value="0"/>
+        <value nick="landscape" value="1"/>
+        <value nick="portrait" value="2"/>
+    </enum>
     <schema id="com.github.calo001.fondo" path="/com/github/calo001/fondo/">
         <key name="window-x" type="i">
             <default>-1</default>
@@ -36,6 +40,12 @@
             <default>false</default>
             <summary>Is maximized window</summary>
             <description>Open maximized window on start for Fondo</description>
+        </key>
+
+        <key name="filter-mode" enum="com.github.calo001.fondo.photos-mode">
+            <default>"any"</default>
+            <summary>Filter photos</summary>
+            <description>Filter photos in landscape, portrait or any</description>
         </key>
     </schema>
 

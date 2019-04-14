@@ -33,43 +33,50 @@ namespace App.Popover {
 
             var grid = new Gtk.Grid ();
             var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
-            var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
             var logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/unsplashlogo.svg");
-            var lbl_powered = new Gtk.Label (S.POWERED_BY);
-            var button_visit = new Gtk.LinkButton.with_label (unsplash_link, S.VISIT_WEB_SITE);;
+            var unsplash_button = new Gtk.LinkButton(unsplash_link);
+            unsplash_button.always_show_image = true;
+            unsplash_button.image = logo;
+            unsplash_button.label = null;
+            unsplash_button.tooltip_text = S.UNSPLASH_DESCRIPTION;
 
-            var button_landscape = new Gtk.ToggleButton ();
-            button_landscape.set_image (new Gtk.Image.from_icon_name ("emblem-documents-symbolic", Gtk.IconSize.DND) );
-            button_landscape.tooltip_text = "Landscape";
-            button_landscape.margin = 8;
-            button_landscape.get_style_context ().add_class ("btn-orientation");
+            var filter_grid = new Gtk.Grid();
 
-            var button_portrait = new Gtk.ToggleButton ();
-            button_portrait.set_image (new Gtk.Image.from_icon_name ("emblem-documents-symbolic", Gtk.IconSize.DND) );
-            button_portrait.tooltip_text = "Portrait";
-            button_portrait.margin = 8;
-            button_portrait.get_style_context ().add_class ("btn-orientation");
+            var button_landscape = new Gtk.RadioButton.with_label (null, "Landscape");
+            button_landscape.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+            button_landscape.expand = true;
 
-            var lbl_filter = new Gtk.Label ("Filter");
+            var button_portrait = new Gtk.RadioButton.with_label (null, "Portrait");
+            button_portrait.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+            button_portrait.expand = true;
 
-            button_visit.get_style_context ().remove_class ("link");
-            button_visit.get_style_context ().remove_class ("flat");
-            button_visit.get_style_context ().add_class ("menu-btn");
-            button_visit.has_tooltip = false;
-            lbl_powered.margin_top = 8;
-            content_box.add (lbl_powered);
-            content_box.add (logo);
+            var button_any = new Gtk.RadioButton.with_label (null, "Any");
+            button_any.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+            button_any.expand = true;
+
+            button_portrait.join_group (button_landscape);
+            button_any.join_group (button_landscape);
+
+            var lbl_filter = new Gtk.Label ("Orientation");
+            lbl_filter.get_style_context ().add_class ("h4");
+
             grid.margin = 0;
             grid.row_spacing = 0;
 
-            content_box.tooltip_text = S.UNSPLASH_DESCRIPTION;
-            grid.attach (content_box, 0, 1, 2, 1);
-            //grid.attach (button_visit, 0, 2, 2, 1);
-            grid.attach (lbl_filter, 0, 2, 2, 1);
-            grid.attach (button_landscape, 0, 3, 1, 1);
-            grid.attach (button_portrait, 1, 3, 1, 1);
+            filter_grid.attach (lbl_filter,   0, 0, 1, 1);
+            filter_grid.attach (button_landscape,   0, 1, 1, 1);
+            filter_grid.attach (button_portrait,    0, 2, 1, 1);
+            filter_grid.attach (button_any,         0, 3, 1, 1);
+
+            filter_grid.get_style_context ().add_class ("filter-popover");
+            filter_grid.expand = true;
+
+            grid.attach (unsplash_button,   0, 1, 1, 1);
+            grid.attach (filter_grid,       0, 2, 1, 1);
             grid.show_all ();
             add (grid);
+
+            button_any.active = true;
         }
     }
 }

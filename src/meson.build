@@ -25,10 +25,15 @@ sources += files(
     'utils/Wallpaper.vala',
     'utils/Networking.vala',
 
+    'widgets/ButtonNavbar.vala',
+    'widgets/ButtonTab.vala',
     'widgets/HeaderBar.vala',
     'widgets/LabelTop.vala',
+    'widgets/ButtonNavbar.vala',
 
     'services/Connection.vala',
+
+    'enums/Navigation.vala',
 
     'Application.vala',
     'Main.vala',
