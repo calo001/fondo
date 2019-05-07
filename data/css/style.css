@@ -152,7 +152,9 @@ progressbar trough{
 .button-green {
     color: #FFFFFF;
     border: none;
-	border-radius: 50%;
+    border-radius: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
 	padding: 5px;
     box-shadow: none;
     background-color: rgba(0,0,0,0.2);
@@ -240,6 +242,10 @@ progressbar trough{
 .h4 {
     color: #B1B0A1;
     box-shadow: none;
+}
+
+.text-button {
+    border-radius: 20px;
 }
 
 .buttonnavbar {

@@ -16,6 +16,8 @@
 *
 */
 
+using App.Configs;
+
 namespace App.Models {
     /**
      * The {@code Photo} class model.
@@ -31,7 +33,13 @@ namespace App.Models {
         public string   links_download_location { get; set; }
         public string   username { get; set; }
         public string   name { get; set; }
-        public string?  location { get; set;}
+        public string?  location { get; set; }
+        public string   created_at { get; set; }
+        public string?  description { get; set; }
+        public string   color { get; set; }
+        public string   profile_image { get; set; }
+        public string?  bio { get; set; }
+        public string   autor_link { get; set; }
 
         public Photo(PhotoBuilder builder) {
             id = builder.id;
@@ -42,6 +50,12 @@ namespace App.Models {
             username = builder.username;
             name = builder.name;
             location = builder.location;
+            created_at = builder.created_at;
+            description = builder.description;
+            color = builder.color;
+            profile_image = builder.profile_image;
+            bio = builder.bio;
+            autor_link = @"https://unsplash.com/@$(username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
         }
     }
 }

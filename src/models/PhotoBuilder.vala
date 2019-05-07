@@ -34,6 +34,11 @@ namespace App.Models {
         public string   username;
         public string   name;
         public string?  location;
+        public string   created_at;
+        public string?  description;
+        public string   color;
+        public string   profile_image;
+        public string?  bio;
 
         public PhotoBuilder (string id) {
             this.id = id;
@@ -71,6 +76,32 @@ namespace App.Models {
 
         public PhotoBuilder add_location (string? location) {
             this.location = (location != null) ? @"🌎  $location" : S.AN_AMAZING_PLACE;
+            return this;
+        }
+
+        public PhotoBuilder add_created_at (string created_at) {
+            this.created_at = created_at;
+            var date = new DateTime.from_iso8601 (created_at, new TimeZone.local ());
+            return this;
+        }
+
+        public PhotoBuilder add_description (string? description) {
+            this.description = (description != null) ? description : S.NO_DESCRIPTION_AVAILABLE;
+            return this;
+        }
+
+        public PhotoBuilder add_color (string color) {
+            this.color = color;
+            return this;
+        }
+
+        public PhotoBuilder add_profile_image (string profile_image) {
+            this.profile_image = profile_image;
+            return this;
+        }
+
+        public PhotoBuilder add_bio (string? bio) {
+            this.bio = (bio != null) ? bio : S.NO_DESCRIPTION_AVAILABLE;
             return this;
         }
 

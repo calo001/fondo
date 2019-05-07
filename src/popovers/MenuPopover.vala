@@ -16,6 +16,7 @@
 * 
 */
 using App.Configs;
+using App.Views;
 namespace App.Popover {
 
     /**
@@ -40,43 +41,12 @@ namespace App.Popover {
             unsplash_button.label = null;
             unsplash_button.tooltip_text = S.UNSPLASH_DESCRIPTION;
 
-            var filter_grid = new Gtk.Grid();
-
-            var button_landscape = new Gtk.RadioButton.with_label (null, "Landscape");
-            button_landscape.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
-            button_landscape.expand = true;
-
-            var button_portrait = new Gtk.RadioButton.with_label (null, "Portrait");
-            button_portrait.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
-            button_portrait.expand = true;
-
-            var button_any = new Gtk.RadioButton.with_label (null, "Any");
-            button_any.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
-            button_any.expand = true;
-
-            button_portrait.join_group (button_landscape);
-            button_any.join_group (button_landscape);
-
-            var lbl_filter = new Gtk.Label ("Orientation");
-            lbl_filter.get_style_context ().add_class ("h4");
-
-            grid.margin = 0;
-            grid.row_spacing = 0;
-
-            filter_grid.attach (lbl_filter,   0, 0, 1, 1);
-            filter_grid.attach (button_landscape,   0, 1, 1, 1);
-            filter_grid.attach (button_portrait,    0, 2, 1, 1);
-            filter_grid.attach (button_any,         0, 3, 1, 1);
-
-            filter_grid.get_style_context ().add_class ("filter-popover");
-            filter_grid.expand = true;
+            var filter_grid = new FilterOptionsView ();
 
             grid.attach (unsplash_button,   0, 1, 1, 1);
             grid.attach (filter_grid,       0, 2, 1, 1);
             grid.show_all ();
             add (grid);
-
-            button_any.active = true;
         }
     }
 }

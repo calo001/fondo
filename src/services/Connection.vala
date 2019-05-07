@@ -44,7 +44,7 @@ namespace App.Connection {
         public void load_page (int num_page) {
             var uri = Constants.URI_PAGE +
                       "&page=" + num_page.to_string() +
-                      "&per_page=" + "24" +
+                      "&per_page=" + "30" +
                       "&order_by=" + "latest";
 
             //var uri = "http://jsonplaceholder.typicode.com/todos/1";
@@ -107,6 +107,11 @@ namespace App.Connection {
                     .add_username (object.get_object_member ("user").get_string_member ("username"))
                     .add_name (object.get_object_member ("user").get_string_member ("name"))
                     .add_location (object.get_object_member ("user").get_string_member ("location"))
+                    .add_created_at (object.get_string_member ("created_at"))
+                    .add_description (object.get_string_member ("description"))
+                    .add_color (object.get_string_member ("color"))
+                    .add_profile_image (object.get_object_member ("user").get_object_member ("profile_image").get_string_member ("medium"))
+                    .add_bio (object.get_object_member ("user").get_string_member ("bio"))
                     .build ();
 
                     list_thumbs.append (photo);
@@ -131,6 +136,11 @@ namespace App.Connection {
                     .add_username (object.get_object_member ("user").get_string_member ("username"))
                     .add_name (object.get_object_member ("user").get_string_member ("name"))
                     .add_location (object.get_object_member ("user").get_string_member ("location"))
+                    .add_created_at (object.get_string_member ("created_at"))
+                    .add_description (object.get_string_member ("description"))
+                    .add_color (object.get_string_member ("color"))
+                    .add_profile_image (object.get_object_member ("user").get_object_member ("profile_image").get_string_member ("large"))
+                    .add_bio (object.get_object_member ("user").get_string_member ("bio"))
                     .build ();
 
                     list_thumbs.append (photo);

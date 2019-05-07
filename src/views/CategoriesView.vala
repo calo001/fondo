@@ -49,7 +49,6 @@ namespace App.Views {
             this.column_spacing = 12;
             this.row_spacing = 12;
             this.margin = 8;
-            this.margin_bottom = 55;
             this.homogeneous = true;
             
             btn_nature = new ButtonCategory(S.CATEGORY_NATURE, "btn-nature");

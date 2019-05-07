@@ -152,6 +152,10 @@ namespace App.Views {
                 prev_win.show_all ();
                 prev_win.load_content();
 
+                prev_win.set_as_wallpaper.connect (() => {
+                    setup_wallpaper ();
+                });
+
                 prev_win.closed_preview.connect (() => {
                     this.set_sensitive (true);
                 });
@@ -190,8 +194,7 @@ namespace App.Views {
             /******************************************
                         Create Label Autor
             ******************************************/
-            var link = @"https://unsplash.com/@$(photo.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
-            label_autor = new Gtk.LinkButton.with_label(link, photo.name);
+            label_autor = new Gtk.LinkButton.with_label(photo.autor_link, photo.name);
             label_autor.get_style_context ().add_class ("button");
             label_autor.get_style_context ().remove_class ("link");
             label_autor.get_style_context ().add_class ("transition");
@@ -249,6 +252,19 @@ namespace App.Views {
                 this.set_sensitive (true);
             });
             wallpaper.update_wallpaper (opt);
+        }
+
+        /*************************************************
+        Detect mode size of photo
+        **************************************************/
+        public string size () {
+            if ( w_photo > h_photo ) {
+                return Constants.LANDSCAPE;
+            } else if ( w_photo < h_photo ) {
+                return Constants.PORTRAIT;
+            } else {
+                return Constants.LANDSCAPE;   
+            }
         }
     }
 

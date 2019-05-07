@@ -12,12 +12,14 @@ sources += files(
     'views/CategoriesView.vala',
     'views/EmptyView.vala',
     'views/LoadingView.vala',
+    'views/FilterOptionsView.vala',
 
     'windows/PreviewWindow.vala',
 
     'popovers/MenuPopover.vala',
     'popovers/WallpaperPopover.vala',
     'popovers/SharePopover.vala',
+    'popovers/PhotoDetailPopover.vala',
 
     'models/Photo.vala',
     'models/PhotoBuilder.vala',
@@ -34,6 +36,8 @@ sources += files(
     'services/Connection.vala',
 
     'enums/Navigation.vala',
+
+    'interfaces/ObservablePattern.vala',
 
     'Application.vala',
     'Main.vala',

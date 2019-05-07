@@ -47,5 +47,9 @@ namespace App.Configs {
         public abstract const string APP_ICON = "com.github.calo001.fondo";
         public abstract const string URL_CSS = "/com/github/calo001/fondo/css/style.css";
         public abstract const int SIZE_IMAGE_AVERAGE = 10000000;
+
+        public abstract const string ANY = "any";
+        public abstract const string LANDSCAPE = "landscape";
+        public abstract const string PORTRAIT = "portrait";
     }
 }

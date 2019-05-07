@@ -37,6 +37,7 @@ namespace App.Widgets {
 
         public ButtonNavbar () {
             margin_end = 10;
+            vexpand = false;
             
             btnDaily = new ButtonTab ("go-home-symbolic", S.DAILY_TAB);
             btnCategories = new ButtonTab ("view-grid-symbolic.symbolic", S.CATEGORIES_TAB);

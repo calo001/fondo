@@ -20,6 +20,7 @@ using App.Widgets;
 using App.Connection;
 using App.Models;
 using App.Connection;
+using App.Configs;
 
 namespace App.Views {
 
@@ -32,6 +33,7 @@ namespace App.Views {
         /**
          * Constructs a new {@code PhotosView} object.
          */
+        public string filtermodeview { get; set; }
 
         private unowned List<Photo?> photos;
 
@@ -42,10 +44,45 @@ namespace App.Views {
             this.activate_on_single_click = false;
             this.set_homogeneous (false);
 
+            App.Application.settings.bind ("filter-mode", this, "filtermodeview", GLib.SettingsBindFlags.DEFAULT);
+            this.bind_property ("filtermodeview", App.Configs.Settings.get_instance (), "filter-mode");
+
+            this.notify["filtermodeview"].connect (() => {
+                updateVisibility ();
+            });
+
             this.child_activated.connect( (child)=>{
                 var card = (CardPhotoView) child.get_child();
                 card.popup.set_visible (true);
             });
+        }
+
+        /********************************************
+           Method to set visibility to childflowbox
+        ********************************************/
+        private void updateVisibility () {
+            forall ( ( child ) => {
+                var flowboxchild = ((Gtk.FlowBoxChild) child).get_child();
+                var photo_view_size = ((CardPhotoView) flowboxchild).size();
+                applyVisibility (flowboxchild, photo_view_size);
+            });
+        }
+
+        private void applyVisibility (Gtk.Widget flowb, string size) {
+            switch (filtermodeview) {
+                case Constants.LANDSCAPE:
+                    // if size == LANDCAPE then flowb.show else flowb.hide
+                    (size == Constants.LANDSCAPE) ? flowb.get_parent ().visible = true : flowb.get_parent ().visible = false;
+                    break;
+                case Constants.PORTRAIT:
+                    // if size == PORTRAIT then flowb.show else flowb.hide
+                    (size == Constants.PORTRAIT) ? flowb.get_parent ().visible = true : flowb.get_parent ().visible = false;
+                    break;
+                default:
+                    // flowb visible
+                    flowb.get_parent ().visible = true;
+                    break;
+            }
         }
 
         /********************************************
@@ -58,9 +95,10 @@ namespace App.Views {
 
             foreach (var photo in this.photos) {
                 var card = new CardPhotoView (photo);
-                this.add(card);
+                this.add(card);   
                 card.show_all();
             }
+            updateVisibility ();
         }
 
         public void clean_list () {

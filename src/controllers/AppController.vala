@@ -43,7 +43,7 @@ namespace App.Controllers {
         private Gtk.ScrolledWindow         scrolled_main;
         private Gtk.ScrolledWindow         scrolled_search;
         private Gtk.Stack                  stack;
-        private Gtk.Overlay                overlay_stack;
+        private Gtk.Box                    box_stack;
         private ButtonNavbar               buttonNavbar;
         private Window                     window { get; private set; default = null; }
         private Gtk.Label                  search_label;
@@ -99,7 +99,7 @@ namespace App.Controllers {
             content_scroll.add (header_photos);
             content_scroll.add (view);
 
-            // Search photos conatiner
+            // Search photos container
             var content_search_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
             search_label = new LabelTop (S.SEARCH_PHOTOS_UNSPLASH);
             content_search_scroll.add (search_label);
@@ -143,10 +143,12 @@ namespace App.Controllers {
 
             buttonNavbar.daily.connect ( () => {
                 stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
+                view.set_sensitive (true);
             });
 
             buttonNavbar.categories.connect ( () => {
                 stack.set_visible_child_full (STACK_CATEGORIES, Gtk.StackTransitionType.SLIDE_UP);
+                view.set_sensitive (false);
             });
 
             buttonNavbar.history.connect ( () => {
@@ -154,10 +156,10 @@ namespace App.Controllers {
             });
 
             // Window Overlay
-            overlay_stack = new Gtk.Overlay ();
-            overlay_stack.add_overlay (stack);
-            overlay_stack.add_overlay (buttonNavbar);
-            window.add (overlay_stack);
+            box_stack = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            box_stack.add (stack);
+            box_stack.add (buttonNavbar);
+            window.add (box_stack);
             application.add_window (window);
 
             check_internet();
@@ -199,7 +201,6 @@ namespace App.Controllers {
                     view.insert_cards(list);
                     stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
                 }
-                scrolled_main.margin_bottom = 0;
             } );
 
             // Signal catched when a search request is success and setup the photos 
@@ -208,7 +209,6 @@ namespace App.Controllers {
                 if (list.length () > 0) {
                     result_search_view.insert_cards(list);
                     stack.set_visible_child_full (STACK_SEARCH, Gtk.StackTransitionType.SLIDE_UP);
-                    scrolled_search.margin_bottom = 0;
                 } else if (num_page_search == 1) {
                     stack.set_visible_child_full (STACK_EMPTY, Gtk.StackTransitionType.SLIDE_UP);
                 }
@@ -219,7 +219,6 @@ namespace App.Controllers {
                 if (pos == Gtk.PositionType.BOTTOM) {
                     num_page++;
                     connection.load_page(num_page);
-                    scrolled_main.margin_bottom = 55;
                 }
             } );
 
@@ -228,7 +227,6 @@ namespace App.Controllers {
                 if (pos == Gtk.PositionType.BOTTOM) {
                     num_page_search++;
                     connection.load_search_page(num_page_search, current_query);
-                    scrolled_search.margin_bottom = 55;
                 }
             } );
         }

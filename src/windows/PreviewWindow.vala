@@ -21,6 +21,7 @@ using App.Utils;
 using App.Connection;
 using Granite.Widgets;
 using App.Configs;
+using App.Popover;
 
 namespace App.Windows {
 
@@ -40,6 +41,7 @@ namespace App.Windows {
         private int                     h_photo;
         public  Wallpaper               wallpaper {get; set;}
         public signal void closed_preview ();
+        public signal void set_as_wallpaper ();
 
         public PreviewWindow (Photo photo) {
             this.connection = AppConnection.get_instance();
@@ -78,32 +80,51 @@ namespace App.Windows {
             box.pack_start(bar, true, true, 0);
 
             // Image
-            //var box_img = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-            //box_img.valign = Gtk.Align.START;
-            //box_img.halign = Gtk.Align.CENTER;
             image = new Granite.AsyncImage ();
             image.valign = Gtk.Align.START;
             image.halign = Gtk.Align.CENTER;
-            //box_img.pack_end(image, true, true, 0);
 
             // Close Button
-            var btn_close = new Gtk.Button.from_icon_name ("window-close-symbolic",Gtk.IconSize.MENU);
+            var btn_close = new Gtk.Button.from_icon_name ("window-close-symbolic",Gtk.IconSize.LARGE_TOOLBAR );
             btn_close.get_style_context ().add_class ("button-green");
             btn_close.get_style_context ().remove_class ("button");
             btn_close.get_style_context ().add_class ("transition");
-            btn_close.margin = 8;
-            btn_close.halign = Gtk.Align.START;
-            btn_close.valign = Gtk.Align.START;
+            btn_close.margin = 16;
+            btn_close.halign = Gtk.Align.END;
+            btn_close.valign = Gtk.Align.END;
             btn_close.set_tooltip_text (S.PRESS_ESC_TO_EXIT);
+
+            // Detail Button
+            //var btn_detail = new Gtk.Button.from_icon_name ("camera-photo-symbolic",Gtk.IconSize.BUTTON  );
+            var btn_detail = new Gtk.Button.with_label (S.DETAILS);
+            btn_detail.get_style_context ().add_class ("button-green");
+            btn_detail.get_style_context ().remove_class ("button");
+            btn_detail.get_style_context ().add_class ("transition");
+            btn_detail.margin = 16;
+            btn_detail.margin_end = 60;
+            btn_detail.halign = Gtk.Align.END;
+            btn_detail.valign = Gtk.Align.END;
+
+            // Popup details
+            var popup_detail = new PhotoDetailPopover(photo, btn_detail);
+
+            popup_detail.set_as_wallpaper.connect (() => {
+                set_as_wallpaper ();
+            });
             
-            btn_close.clicked.connect ( ()=>{
+            btn_close.clicked.connect ( () => {
                 close ();
             });
+
+            btn_detail.clicked.connect ( () => {
+                popup_detail.popup ();
+            });            
 
             var overlay = new Gtk.Overlay ();
             overlay.add_overlay (image);
             overlay.add_overlay (btn_close);
-            // Stack
+            overlay.add_overlay (btn_detail);
+
             stack = new Gtk.Stack();
             stack.set_transition_duration (500);
             stack.set_transition_type (Gtk.StackTransitionType.CROSSFADE);
