@@ -16,6 +16,7 @@
 * 
 */
 using App.Configs;
+
 namespace App.Views {
 
     /**
@@ -34,6 +35,8 @@ namespace App.Views {
                 row_spacing: 0,
                 expand: true
             );
+
+            App.Application.settings.bind ("filter-mode", this, "filtermode", GLib.SettingsBindFlags.DEFAULT);
 
             var button_landscape = new Gtk.RadioButton.with_label (null, "Landscape");
             button_landscape.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
@@ -55,28 +58,41 @@ namespace App.Views {
 
             button_landscape.clicked.connect ( ()=> {
                 if (button_landscape.active) {
-                    filtermode = "landscape";
+                    filtermode = Constants.LANDSCAPE;
                 }
             });
 
             button_portrait.clicked.connect ( ()=> {
                 if (button_portrait.active) {
-                    filtermode = "portrait";
+                    filtermode = Constants.PORTRAIT;
                 }
             });
 
             button_any.clicked.connect ( ()=> {
                 if (button_any.active) {
-                    filtermode = "any";
+                    filtermode = Constants.ANY;
                 }
             });
-
-            App.Application.settings.bind ("filter-mode", this, "filtermode", GLib.SettingsBindFlags.DEFAULT);
 
             attach (lbl_filter,         0, 0, 1, 1);
             attach (button_any,         0, 1, 1, 1);
             attach (button_portrait,    0, 2, 1, 1);
             attach (button_landscape,   0, 3, 1, 1);
+
+            switch (filtermode) {
+                case Constants.LANDSCAPE:
+                    button_landscape.active = true;
+                    break;
+                case Constants.PORTRAIT:
+                    button_portrait.active = true;
+                    break;
+                case Constants.ANY:
+                    button_any.active = true;
+                    break;
+            default:
+                    button_any.active = true;
+                    break;
+            }
         }
     }
 }
