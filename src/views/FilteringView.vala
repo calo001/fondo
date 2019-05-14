@@ -16,29 +16,29 @@
 * 
 */
 
+using App.Configs;
+
 namespace App.Views {
 
     /**
-     * The {@code LoadingView} class.
+     * The {@code FilteringView} class.
      *
      * @since 1.0.0
      */
-    public class LoadingView : Gtk.Box {
+    public class FilteringView : Gtk.Box {
         /**
-         * Constructs a new {@code LoadingView} object.
+         * Constructs a new {@code FilteringView} object.
          */
-        public LoadingView () {
+        public FilteringView () {
             Object (
                 orientation: Gtk.Orientation.VERTICAL,
                 valign: Gtk.Align.CENTER,
                 halign: Gtk.Align.CENTER
             );
             
-            var spinner = new Gtk.Spinner();
-            spinner.active = true;
-            spinner.get_style_context ().add_class ("card");
-            spinner.get_style_context ().add_class ("card_spinner");
-            add(spinner);
+            var lbl_filtering = new Gtk.Label(S.FILTERING);
+            lbl_filtering.get_style_context ().add_class ("h1");
+            add(lbl_filtering);
         }
 
     }

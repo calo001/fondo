@@ -13,6 +13,7 @@ sources += files(
     'views/EmptyView.vala',
     'views/LoadingView.vala',
     'views/FilterOptionsView.vala',
+    'views/FilteringView.vala',
 
     'windows/PreviewWindow.vala',
 

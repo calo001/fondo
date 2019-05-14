@@ -38,6 +38,7 @@ namespace App.Controllers {
         private PhotosView                 result_search_view;
         private EmptyView                  empty_view;
         private LoadingView                box_loading;
+        private FilteringView              filtering_view;
         private AppViewError               view_error;
         private AppConnection              connection;
         private Gtk.ScrolledWindow         scrolled_main;
@@ -54,6 +55,7 @@ namespace App.Controllers {
 
         private const string STACK_CATEGORIES = "categories";
         private const string STACK_LOADING = "spinner";
+        private const string STACK_FILTERING = "filtering";
         private const string STACK_DAILY = "daily";
         private const string STACK_SEARCH = "search";
         private const string STACK_EMPTY = "empty";
@@ -87,11 +89,20 @@ namespace App.Controllers {
             scrolled_main =         new Gtk.ScrolledWindow (null, null);
             scrolled_search =       new Gtk.ScrolledWindow (null, null);
             box_loading =           new LoadingView ();
+            filtering_view =        new FilteringView ();
             categories =            new CategoriesView ();
             empty_view =            new EmptyView ();         
             view =                  new PhotosView ();
             result_search_view =    new PhotosView ();
             view_error =            new AppViewError();
+
+            view.applying_filter.connect ( () => {
+                var current_view = stack.get_visible_child_name ();
+                stack.get_visible_child ().sensitive = false;
+                if (current_view == STACK_DAILY || current_view == STACK_SEARCH ) {
+                    applying_filter (current_view);
+                }
+            });
 
             // Daily photos container
             var content_scroll =        new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
@@ -121,6 +132,7 @@ namespace App.Controllers {
 
             headerbar.search_activated.connect ( ( search )=>{
                 search_query (search);
+                buttonNavbar.clean_all ();
             });
 
             view_error.retry.connect(() => {
@@ -128,6 +140,7 @@ namespace App.Controllers {
             }); 
             
             stack.add_named(box_loading,        STACK_LOADING);
+            stack.add_named(filtering_view,     STACK_FILTERING);
             stack.add_named(content_categories, STACK_CATEGORIES);
             stack.add_named(scrolled_main,      STACK_DAILY);
             stack.add_named(scrolled_search,    STACK_SEARCH); 
@@ -136,7 +149,6 @@ namespace App.Controllers {
 
             // Navigationbar
             buttonNavbar = new ButtonNavbar ();
-            buttonNavbar.halign = Gtk.Align.START;
             buttonNavbar.valign = Gtk.Align.END;
             buttonNavbar.halign = Gtk.Align.FILL;
             buttonNavbar.hexpand = true;
@@ -152,7 +164,7 @@ namespace App.Controllers {
             });
 
             buttonNavbar.history.connect ( () => {
-                
+                view.set_sensitive (false);
             });
 
             // Window Overlay
@@ -163,6 +175,18 @@ namespace App.Controllers {
             application.add_window (window);
 
             check_internet();
+        }
+
+        private void applying_filter (string stack_back) {
+            stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.NONE);
+            MainLoop loop = new MainLoop ();
+            TimeoutSource time = new TimeoutSource (1000);
+            time.set_callback (() => {
+                stack.set_visible_child_full (stack_back, Gtk.StackTransitionType.CROSSFADE);
+                stack.get_visible_child ().sensitive = true;
+                return true;
+            });
+            time.attach (loop.get_context ());
         }
 
         /****************************************** 

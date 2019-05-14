@@ -36,7 +36,6 @@ namespace App.Widgets {
         public signal void history ();        
 
         public ButtonNavbar () {
-            margin_end = 10;
             vexpand = false;
             
             btnDaily = new ButtonTab ("go-home-symbolic", S.DAILY_TAB);
@@ -78,7 +77,7 @@ namespace App.Widgets {
             add (btnHistory);
         }
         
-        private void clean_all () {
+        public void clean_all () {
             btnHistory.on_inactive ();
             btnDaily.on_inactive ();
             btnCategories.on_inactive ();

@@ -71,6 +71,7 @@ namespace App.Configs {
         public abstract const string NO_DESCRIPTION_AVAILABLE = _("No description available");        
         public abstract const string SET_AS_WALLPAPER = _("Set as wallpaper");        
         public abstract const string DETAILS = _("Details");
-        public abstract const string USER_PROFILE = _("Visit profile");        
+        public abstract const string USER_PROFILE = _("Visit profile");   
+        public abstract const string FILTERING = _("Filtering...");        
     }
 }

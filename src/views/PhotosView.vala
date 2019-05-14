@@ -34,6 +34,7 @@ namespace App.Views {
          * Constructs a new {@code PhotosView} object.
          */
         public string filtermodeview { get; set; }
+        public signal void applying_filter ();
 
         private unowned List<Photo?> photos;
 
@@ -42,7 +43,7 @@ namespace App.Views {
             this.margin_start = 10;
             this.set_selection_mode(Gtk.SelectionMode.NONE);
             this.activate_on_single_click = false;
-            this.set_homogeneous (false);
+            this.homogeneous = false;
 
             App.Application.settings.bind ("filter-mode", this, "filtermodeview", GLib.SettingsBindFlags.DEFAULT);
             this.bind_property ("filtermodeview", App.Configs.Settings.get_instance (), "filter-mode");
@@ -71,15 +72,17 @@ namespace App.Views {
         private void applyVisibility (Gtk.Widget flowb, string size) {
             switch (filtermodeview) {
                 case Constants.LANDSCAPE:
-                    // if size == LANDCAPE then flowb.show else flowb.hide
-                    (size == Constants.LANDSCAPE) ? flowb.get_parent ().visible = true : flowb.get_parent ().visible = false;
+                    applying_filter ();
+                    (size == Constants.LANDSCAPE) ? 
+                        flowb.get_parent ().visible = true : flowb.get_parent ().visible = false;
                     break;
                 case Constants.PORTRAIT:
-                    // if size == PORTRAIT then flowb.show else flowb.hide
-                    (size == Constants.PORTRAIT) ? flowb.get_parent ().visible = true : flowb.get_parent ().visible = false;
+                    applying_filter ();
+                    (size == Constants.PORTRAIT) ? 
+                        flowb.get_parent ().visible = true : flowb.get_parent ().visible = false;
                     break;
                 default:
-                    // flowb visible
+                    applying_filter ();
                     flowb.get_parent ().visible = true;
                     break;
             }
@@ -89,7 +92,6 @@ namespace App.Views {
            Method to insert new photos from a list
         ********************************************/
         public void insert_cards (List<Photo?> photos) {
-            // A simple solution to sort photos by height
             this.photos = photos;
             this.photos.sort(compare);
 

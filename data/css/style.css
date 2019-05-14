@@ -249,7 +249,6 @@ progressbar trough{
 }
 
 .buttonnavbar {
-    background: alpha(@theme_bg_color, 0.95);
     padding: 0.5em;
 }
 
@@ -257,11 +256,30 @@ progressbar trough{
     border-radius: 20px;
     font-weight: bold;
     font-size: 1.2em;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 .active {
     opacity: 1;
+    background: none;
+}
+
+@keyframes fancy_turn {
+  0%   { -gtk-icon-transform: rotate(0deg); }
+  20%  { -gtk-icon-transform: rotate(-25deg); }
+  40%  { -gtk-icon-transform: rotate(0deg); }
+  80%  { -gtk-icon-transform: rotate(25deg); }
+  100% { -gtk-icon-transform: rotate(0deg); }
+}
+
+.btn_round:hover:not(.active) {
+  opacity: 0.8;
+}
+
+.active image {
+  animation-name: fancy_turn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
 }
 
 .btn-orientation {
