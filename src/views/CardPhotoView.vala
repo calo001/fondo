@@ -74,15 +74,15 @@ namespace App.Views {
             /******************************************
                     File from url thumb
             ******************************************/
-            file_photo = File.new_for_uri (photo.urls_thumb);
+            file_photo = File.new_for_uri (photo.urls.small);
 
             /******************************************
                     Create AsyncImage object
             ******************************************/
             image = new Granite.AsyncImage(true, true);
             image.get_style_context ().add_class ("backimg");
-            var w_max = 280;
-            var h_max = 460;
+            var w_max = 310;
+            var h_max = 430;
             w_photo = (int) photo.width;
             h_photo = (int) photo.height;
 
@@ -96,7 +96,7 @@ namespace App.Views {
 
             image.set_from_file_async.begin(file_photo, w_photo, h_photo, false);
             image.has_tooltip = true;
-            var txt_tooltip = photo.location;
+            var txt_tooltip = (photo.user.location != null) ? @"🌎  $(photo.user.location)" : S.AN_AMAZING_PLACE;;
             image.set_tooltip_text (txt_tooltip);
 
             /******************************************
@@ -139,7 +139,7 @@ namespace App.Views {
             /******************************************
                     Popover for share
             ******************************************/
-            popupShare = new SharePopover (this.photo.name, this.photo.id, btn_share);
+            popupShare = new SharePopover (this.photo.user.name, this.photo.id, btn_share);
             btn_share.button_release_event.connect ( () => {
                 popupShare.set_visible (true);
                 return true;
@@ -194,7 +194,7 @@ namespace App.Views {
             /******************************************
                         Create Label Autor
             ******************************************/
-            label_autor = new Gtk.LinkButton.with_label(photo.autor_link, photo.name);
+            label_autor = new Gtk.LinkButton.with_label(photo.autor_link (), photo.user.name);
             label_autor.get_style_context ().add_class ("button");
             label_autor.get_style_context ().remove_class ("link");
             label_autor.get_style_context ().add_class ("transition");
@@ -246,8 +246,8 @@ namespace App.Views {
             this.set_sensitive (false);
             revealer.set_reveal_child (true);
 
-            string? url_photo = connection.get_url_photo(photo.links_download_location);
-            wallpaper = new Wallpaper (url_photo, photo.id, photo.username, bar);
+            string? url_photo = connection.get_url_photo(photo.links.download_location);
+            wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name, bar);
             wallpaper.finish_download.connect (() => {
                 this.set_sensitive (true);
             });

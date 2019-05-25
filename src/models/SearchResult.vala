@@ -23,13 +23,30 @@ namespace App.Models {
      * @since 1.0.0
      */
 
-    public class SearchResult {
-        public unowned List<Photo?> list { get; set; }
+    public class SearchResult : Object {
         public int64 total { get; set; }
+        public int64 total_pages { get; set; }
+        public unowned List<Photo?> results { get; set; }
+    }
 
-        public SearchResult() {
-            this.list = new List<Photo?>();
-            this.total = 0;
+    public class SearchResultUtil {
+        public static SearchResult from_json(Json.Node root)
+        {
+            var search = Json.gobject_deserialize (typeof (SearchResult), root) as SearchResult;
+            
+            var array = root.get_object ().get_array_member ("results");
+            foreach (unowned Json.Node item in array.get_elements ()) {
+                Photo photo = PhotoUtil.photo_to_json (item);
+                if (photo != null) {
+                    search.results.append (photo);
+                }
+            }            
+            return search;
+        }
+
+        public static Json.Node from_object(SearchResult search)
+        {
+            return Json.gobject_serialize (search);
         }
     }
 }

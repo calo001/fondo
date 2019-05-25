@@ -70,7 +70,7 @@ namespace App.Widgets {
 
             search = new Gtk.SearchEntry();
             search.placeholder_text = S.SEARCH_PHOTOS_UNSPLASH;
-            search.margin = 5;
+            search.margin = 3;
             search.expand = true;
             search.sensitive = false;
 

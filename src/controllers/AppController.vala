@@ -246,11 +246,11 @@ namespace App.Controllers {
             } );
 
             // Signal catched when a search request is success and setup the photos 
-            connection.request_page_search_success.connect ( (result) => {
+            connection.request_page_search_success.connect ( (response) => {
                 headerbar.search.sensitive = true;
-                if (result.list.length () > 0) {
-                    search_view.insert_cards(result.list);
-                    total_label.update_total (result.total.to_string());
+                if (response.results.length () > 0) {
+                    search_view.insert_cards(response.results);
+                    total_label.update_total (response.total.to_string());
                     stack.set_visible_child_full (STACK_SEARCH, Gtk.StackTransitionType.SLIDE_UP);
                 } else if (num_page_search == 1) {
                     stack.set_visible_child_full (STACK_EMPTY, Gtk.StackTransitionType.SLIDE_UP);

@@ -65,9 +65,9 @@ namespace App.Configs {
         public abstract const string LIGHT_BACKGROUND = _("Light background");
         public abstract const string DARK_BACKGROUND = _("Dark background");
         public abstract const string ABOUT = _("About");
-        public abstract const string DAILY_TAB = _("Daily");
-        public abstract const string CATEGORIES_TAB = _("Categories");
-        public abstract const string HISTORY_TAB = _("History");
+        public abstract const string DAILY_TAB = _("DAILY");
+        public abstract const string CATEGORIES_TAB = _("CATEGORIES");
+        public abstract const string HISTORY_TAB = _("HISTORY");
         public abstract const string NO_DESCRIPTION_AVAILABLE = _("No description available");        
         public abstract const string SET_AS_WALLPAPER = _("Set as wallpaper");        
         public abstract const string DETAILS = _("Details");

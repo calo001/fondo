@@ -256,7 +256,7 @@ progressbar trough{
 }
 
 .active {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.13);
 }
 
 @keyframes fancy_turn {

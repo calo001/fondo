@@ -95,7 +95,7 @@ namespace App.Views {
 
             foreach (var photo in this.photos) {
                 var card = new CardPhotoView (photo);
-                this.add(card);   
+                this.add(card);
                 card.show_all();
             }
             updateVisibility ();

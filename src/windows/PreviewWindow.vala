@@ -143,8 +143,8 @@ namespace App.Windows {
             * Show message (ESC to exit)
         *****************************/
         public void load_content () {
-            string? url_photo = connection.get_url_photo(photo.links_download_location);
-            wallpaper = new Wallpaper(url_photo, photo.id, photo.username, bar);
+            string? url_photo = connection.get_url_photo(photo.links.download_location);
+            wallpaper = new Wallpaper(url_photo, photo.id, photo.user.name, bar);
             wallpaper.download_picture ();
             var path_wallpaper = wallpaper.full_picture_path;
 

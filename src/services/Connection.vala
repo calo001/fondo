@@ -30,7 +30,7 @@ namespace App.Connection {
     public class AppConnection {
 
         public signal void request_page_success(List<Photo?> list);
-        public signal void request_page_search_success(SearchResult list);
+        public signal void request_page_search_success(SearchResult result);
 
         private static AppConnection? instance;
         private Soup.Session session;
@@ -76,6 +76,7 @@ namespace App.Connection {
 
             session.queue_message (message, (sess, mess) => {
                 if (mess.status_code == 200) {
+                    print((string) mess.response_body);
                     var parser = new Json.Parser ();
                     try {
                         parser.load_from_data ((string) mess.response_body.flatten ().data, -1);
@@ -90,63 +91,15 @@ namespace App.Connection {
             });
         }
 
-        // Create all structure Photo
         private List<Photo?> get_data (Json.Parser parser) {
-            List<Photo?> list_thumbs = new List<Photo?> ();
-
-            var node = parser.get_root ();
-            unowned Json.Array array = node.get_array ();
-            foreach (unowned Json.Node item in array.get_elements ()) {
-                var object = item.get_object();
-                
-                var photo = new PhotoBuilder (object.get_string_member ("id"))
-                    .add_width (object.get_int_member ("width"))
-                    .add_height (object.get_int_member ("height"))
-                    .add_thumb (object.get_object_member ("urls").get_string_member ("small"))
-                    .add_download_location (object.get_object_member ("links").get_string_member ("download_location"))
-                    .add_username (object.get_object_member ("user").get_string_member ("username"))
-                    .add_name (object.get_object_member ("user").get_string_member ("name"))
-                    .add_location (object.get_object_member ("user").get_string_member ("location"))
-                    .add_created_at (object.get_string_member ("created_at"))
-                    .add_description (object.get_string_member ("description"))
-                    .add_color (object.get_string_member ("color"))
-                    .add_profile_image (object.get_object_member ("user").get_object_member ("profile_image").get_string_member ("medium"))
-                    .add_bio (object.get_object_member ("user").get_string_member ("bio"))
-                    .build ();
-
-                    list_thumbs.append (photo);
-                }
-            return list_thumbs;
+            Json.Node node = parser.get_root ();
+            return PhotoUtil.from_json (node);
         }
 
         // Create all structure Photo
         private SearchResult get_data_search (Json.Parser parser) {
-            SearchResult search_result = new SearchResult();
-
             var node = parser.get_root ();
-            unowned Json.Array array = node.get_object ().get_array_member ("results");
-            foreach (unowned Json.Node item in array.get_elements ()) {
-                var object = item.get_object();
-
-                var photo = new PhotoBuilder (object.get_string_member ("id"))
-                    .add_width (object.get_int_member ("width"))
-                    .add_height (object.get_int_member ("height"))
-                    .add_thumb (object.get_object_member ("urls").get_string_member ("small"))
-                    .add_download_location (object.get_object_member ("links").get_string_member ("download_location"))
-                    .add_username (object.get_object_member ("user").get_string_member ("username"))
-                    .add_name (object.get_object_member ("user").get_string_member ("name"))
-                    .add_location (object.get_object_member ("user").get_string_member ("location"))
-                    .add_created_at (object.get_string_member ("created_at"))
-                    .add_description (object.get_string_member ("description"))
-                    .add_color (object.get_string_member ("color"))
-                    .add_profile_image (object.get_object_member ("user").get_object_member ("profile_image").get_string_member ("large"))
-                    .add_bio (object.get_object_member ("user").get_string_member ("bio"))
-                    .build ();
-
-                    search_result.list.append (photo);
-                }
-                search_result.total = node.get_object ().get_int_member ("total");
-            return search_result;
+            return SearchResultUtil.from_json (node);
         }
 
         // Get an image from: links_download_location

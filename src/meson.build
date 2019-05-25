@@ -23,7 +23,6 @@ sources += files(
     'popovers/PhotoDetailPopover.vala',
 
     'models/Photo.vala',
-    'models/PhotoBuilder.vala',
     'models/SearchResult.vala',
 
     'utils/Wallpaper.vala',
