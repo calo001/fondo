@@ -72,6 +72,7 @@ namespace App.Configs {
         public abstract const string SET_AS_WALLPAPER = _("Set as wallpaper");        
         public abstract const string DETAILS = _("Details");
         public abstract const string USER_PROFILE = _("Visit profile");   
-        public abstract const string FILTERING = _("Filtering...");        
+        public abstract const string FILTERING = _("Filtering...");
+        public abstract const string TOTAL_RESULTS = _("Total results");        
     }
 }

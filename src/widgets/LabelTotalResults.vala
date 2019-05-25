@@ -22,15 +22,19 @@ namespace App.Widgets {
      * The {@code LabelTop} class is responsible for displaying a Header top on photos scroll.
      *
      */
-    public class LabelTop : Gtk.Label {
-        public LabelTop (string header) {
+    public class LabelTotalResults : Gtk.Label {
+        public LabelTotalResults (string total) {
             Object (    
-                label: header,
+                label: " results",
                 wrap: true,
                 margin_start: 25,
                 margin_end: 25
             );
-            get_style_context ().add_class ("hphoto");
+            get_style_context ().add_class ("h2");
+        }
+        
+        public void update_total (string total) {
+            this.label = total + " results";
         }
     }
 }

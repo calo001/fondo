@@ -69,7 +69,7 @@ namespace App.Widgets {
                 history ();
             });
 
-            get_style_context ().add_class ("buttonnavbar");
+            get_style_context ().add_class ("inline-toolbar");
             get_style_context ().add_class ("transition");
             
             add (btnDaily);

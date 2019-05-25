@@ -67,22 +67,20 @@ namespace App.Views {
                 var photo_view_size = ((CardPhotoView) flowboxchild).size();
                 applyVisibility (flowboxchild, photo_view_size);
             });
+            applying_filter ();
         }
 
         private void applyVisibility (Gtk.Widget flowb, string size) {
             switch (filtermodeview) {
                 case Constants.LANDSCAPE:
-                    applying_filter ();
                     (size == Constants.LANDSCAPE) ? 
                         flowb.get_parent ().visible = true : flowb.get_parent ().visible = false;
                     break;
                 case Constants.PORTRAIT:
-                    applying_filter ();
                     (size == Constants.PORTRAIT) ? 
                         flowb.get_parent ().visible = true : flowb.get_parent ().visible = false;
                     break;
                 default:
-                    applying_filter ();
                     flowb.get_parent ().visible = true;
                     break;
             }

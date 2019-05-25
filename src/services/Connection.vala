@@ -30,7 +30,7 @@ namespace App.Connection {
     public class AppConnection {
 
         public signal void request_page_success(List<Photo?> list);
-        public signal void request_page_search_success(List<Photo?> list);
+        public signal void request_page_search_success(SearchResult list);
 
         private static AppConnection? instance;
         private Soup.Session session;
@@ -120,8 +120,8 @@ namespace App.Connection {
         }
 
         // Create all structure Photo
-        private List<Photo?> get_data_search (Json.Parser parser) {
-            List<Photo?> list_thumbs = new List<Photo?> ();
+        private SearchResult get_data_search (Json.Parser parser) {
+            SearchResult search_result = new SearchResult();
 
             var node = parser.get_root ();
             unowned Json.Array array = node.get_object ().get_array_member ("results");
@@ -143,9 +143,10 @@ namespace App.Connection {
                     .add_bio (object.get_object_member ("user").get_string_member ("bio"))
                     .build ();
 
-                    list_thumbs.append (photo);
+                    search_result.list.append (photo);
                 }
-            return list_thumbs;
+                search_result.total = node.get_object ().get_int_member ("total");
+            return search_result;
         }
 
         // Get an image from: links_download_location

@@ -24,6 +24,7 @@ sources += files(
 
     'models/Photo.vala',
     'models/PhotoBuilder.vala',
+    'models/SearchResult.vala',
 
     'utils/Wallpaper.vala',
     'utils/Networking.vala',
@@ -33,6 +34,7 @@ sources += files(
     'widgets/HeaderBar.vala',
     'widgets/LabelTop.vala',
     'widgets/ButtonNavbar.vala',
+    'widgets/LabelTotalResults.vala',
 
     'services/Connection.vala',
 

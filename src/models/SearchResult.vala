@@ -1,36 +1,35 @@
 /*
 * Copyright (C) 2018  Calo001 <calo_lrc@hotmail.com>
-* 
+*
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License as published
 * by the Free Software Foundation, either version 3 of the License, or
 * (at your option) any later version.
-* 
+*
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU Affero General Public License for more details.
-* 
+*
 * You should have received a copy of the GNU Affero General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-* 
+*
 */
 
-namespace App.Widgets {
-
+namespace App.Models {
     /**
-     * The {@code LabelTop} class is responsible for displaying a Header top on photos scroll.
+     * The {@code Photo} class model.
      *
+     * @since 1.0.0
      */
-    public class LabelTop : Gtk.Label {
-        public LabelTop (string header) {
-            Object (    
-                label: header,
-                wrap: true,
-                margin_start: 25,
-                margin_end: 25
-            );
-            get_style_context ().add_class ("hphoto");
+
+    public class SearchResult {
+        public unowned List<Photo?> list { get; set; }
+        public int64 total { get; set; }
+
+        public SearchResult() {
+            this.list = new List<Photo?>();
+            this.total = 0;
         }
     }
 }

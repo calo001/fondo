@@ -224,6 +224,7 @@ progressbar trough{
 .btn-category {
     color: white;
     font-size: 2em;
+    border-radius: 4px;
 }
 
 .btn-category:hover {
@@ -248,20 +249,14 @@ progressbar trough{
     border-radius: 20px;
 }
 
-.buttonnavbar {
-    padding: 0.5em;
-}
-
 .btn_round {
-    border-radius: 20px;
     font-weight: bold;
     font-size: 1.2em;
-    opacity: 0.4;
+    padding: 4px;
 }
 
 .active {
-    opacity: 1;
-    background: none;
+    background: rgba(0,0,0,0.1);
 }
 
 @keyframes fancy_turn {
@@ -270,10 +265,6 @@ progressbar trough{
   40%  { -gtk-icon-transform: rotate(0deg); }
   80%  { -gtk-icon-transform: rotate(25deg); }
   100% { -gtk-icon-transform: rotate(0deg); }
-}
-
-.btn_round:hover:not(.active) {
-  opacity: 0.8;
 }
 
 .active image {
