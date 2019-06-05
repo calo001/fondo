@@ -110,11 +110,18 @@ namespace App.Controllers {
             view_error =            new AppViewError();
 
             view.applying_filter.connect ( () => {
-                var current_view = stack.get_visible_child_name ();
-                stack.get_visible_child ().sensitive = false;
-                if (current_view == STACK_DAILY || current_view == STACK_SEARCH ) {
-                    applying_filter (current_view);
-                }
+                check_filter ();
+                print ("FILTER DAILY");
+            });
+
+            search_view.applying_filter.connect ( () => {
+                check_filter ();
+                print ("FILTER SEARCH");
+            });
+
+            history_view.applying_filter.connect ( () => {
+                check_filter ();
+                print ("FILTER HISTORY");
             });
 
             // Daily photos container
@@ -183,28 +190,27 @@ namespace App.Controllers {
             buttonNavbar.daily.connect ( () => {
                 stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
                 view.set_sensitive (true);
+                search_view.set_sensitive (false);
+                history_view.set_sensitive (false);
             });
 
             buttonNavbar.categories.connect ( () => {
                 stack.set_visible_child_full (STACK_CATEGORIES, Gtk.StackTransitionType.SLIDE_UP);
                 view.set_sensitive (false);
+                search_view.set_sensitive (false);
+                history_view.set_sensitive (false);
             });
 
             buttonNavbar.history.connect ( () => {
-                if (!is_history_loaded) {
-                    var jsonManager = new JsonManager ();
-                    var history = jsonManager.load_from_file ();
-                    if (history.length () > 0) {
-                        history_view.insert_cards(history);
-                        is_history_loaded = true;
-                        stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
-                    } else {
-                        stack.set_visible_child_full (STACK_EMPTY, Gtk.StackTransitionType.SLIDE_UP);
-                    }
-                } else {
-                    stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
-                }
-                view.set_sensitive (false);
+                var jsonManager = new JsonManager ();
+                var history = jsonManager.load_from_file ();
+                history.reverse ();
+                stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
+                history_view.clean_list ();
+                history_view.insert_cards (history, false);
+                //view.set_sensitive (false);
+                //search_view.set_sensitive (false);
+                //history_view.set_sensitive (true);
             });
 
             // Window Overlay
@@ -222,7 +228,7 @@ namespace App.Controllers {
                 stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.NONE);
 
                 MainLoop loop = new MainLoop ();
-                TimeoutSource time = new TimeoutSource (1000);
+                TimeoutSource time = new TimeoutSource (400);
                 time.set_callback (() => {
                     stack.set_visible_child_full (stack_back, Gtk.StackTransitionType.CROSSFADE);
                     stack.get_visible_child ().sensitive = true;
@@ -231,10 +237,19 @@ namespace App.Controllers {
                     return false;
                 });
                 time.attach (loop.get_context ());
+                loop.run ();
             } else {
                 stack.get_visible_child ().sensitive = true;
             }
             this.is_scrolling = false;
+        }
+
+        private void check_filter () {
+            var current_view = stack.get_visible_child_name ();
+            if (current_view != STACK_CATEGORIES) stack.get_visible_child ().sensitive = false;
+            if (current_view == STACK_DAILY || current_view == STACK_SEARCH || current_view == STACK_HISTORY) {
+                applying_filter (current_view);
+            }
         }
 
         /****************************************** 
@@ -269,6 +284,7 @@ namespace App.Controllers {
                 if (num_page > 1) {
                     view.insert_cards(list);
                 } else if (num_page == 1) {
+                    buttonNavbar.sensitive = true;
                     headerbar.search.sensitive = true;
                     view.insert_cards(list);
                     stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
@@ -277,6 +293,7 @@ namespace App.Controllers {
 
             // Signal catched when a search request is success and setup the photos 
             connection.request_page_search_success.connect ( (response) => {
+                buttonNavbar.sensitive = true;
                 headerbar.search.sensitive = true;
                 if (response.results.length () > 0) {
                     search_view.insert_cards(response.results);
@@ -316,6 +333,7 @@ namespace App.Controllers {
 
         private void update_iu_for_search (string search) {
             headerbar.search.sensitive = false;
+            buttonNavbar.sensitive = false;
             scrolled_search.get_vadjustment ().set_value (0);
             stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.SLIDE_DOWN);
             search_label.label = search;

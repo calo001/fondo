@@ -90,9 +90,9 @@ namespace App.Views {
         /********************************************
            Method to insert new photos from a list
         ********************************************/
-        public void insert_cards (List<Photo?> photos) {
+        public void insert_cards (List<Photo?> photos, bool sort = true) {
             this.photos = photos;
-            this.photos.sort(compare);
+            if (sort) this.photos.sort(compare);
 
             foreach (var photo in this.photos) {
                 var card = new CardPhotoView (photo);
