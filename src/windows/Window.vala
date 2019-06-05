@@ -31,6 +31,7 @@ namespace App.Windows {
     public class Window : Gtk.ApplicationWindow {
          
         public static GLib.Settings g_settings;
+        public signal void search_accel ();
         /**
          * Constructs a new {@code Window} object.
          *
@@ -76,6 +77,24 @@ namespace App.Windows {
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
             get_style_context ().add_class ("transition");
+
+            /*
+             * Searh accel action
+             */
+
+            var accel_group = new Gtk.AccelGroup ();
+
+            accel_group.connect (
+            Gdk.Key.F,
+            Gdk.ModifierType.CONTROL_MASK,
+            Gtk.AccelFlags.VISIBLE | Gtk.AccelFlags.LOCKED,
+                () => {
+                    search_accel ();
+                    return true;
+                }
+            );
+
+            add_accel_group (accel_group);
 
             // Save the window's position on close
             delete_event.connect (() => {

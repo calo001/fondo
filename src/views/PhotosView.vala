@@ -44,6 +44,7 @@ namespace App.Views {
             this.set_selection_mode(Gtk.SelectionMode.NONE);
             this.activate_on_single_click = false;
             this.homogeneous = false;
+            this.orientation = Gtk.Orientation.HORIZONTAL;
 
             App.Application.settings.bind ("filter-mode", this, "filtermodeview", GLib.SettingsBindFlags.DEFAULT);
             this.bind_property ("filtermodeview", App.Configs.Settings.get_instance (), "filter-mode");

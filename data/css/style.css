@@ -24,17 +24,33 @@ progressbar progress {
     border:none;
     box-shadow: none;
     border-radius: 25px;
+    animation-name: gradient_progress;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes gradient_progress {
+    0%   { background: linear-gradient(to right, #ff5858, #db36a4); }
+    50%  { background: linear-gradient(to left, #ff5858, #db36a4); }
+    100% { background: linear-gradient(to right, #ff5858, #db36a4); }
 }
 
 switch {
     border: none;
     box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.25);
-    background: linear-gradient( #2af598 0%, #009efd 100%);
+    animation-name: gradient_anim;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 scrollbar slider {
     border: none;
-    background: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    animation-name: gradient_anim;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .pop-menu {
@@ -134,19 +150,48 @@ progressbar trough{
     box-shadow: none;
     padding: 3px;
     border: none;
+
 }
 
 .photo:hover {
     box-shadow: 0 14px 28px rgba(46,191,145,0.16), 0 10px 10px rgba(46,191,145,0.23);
     background: linear-gradient(-45deg, #2af598 0%, #009efd 100%);
     padding: 3px;
+    animation-name: gradient_anim;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;    
 }
 
 .backimg {
-    background: #2ebf91;
     background: linear-gradient(-45deg, #2af598 0%, #009efd 100%);
-    padding: 1px;
+    padding: 1.5px;
     border-radius: 2px;
+}
+
+.gradient_back {
+    animation-name: gradient_anim;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.start_anim {
+    animation-name: opacity_anim;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+
+@keyframes gradient_anim {
+    0%   { background: linear-gradient(-45deg, #2af598 0%, #009efd 100%); }
+    50%  { background: linear-gradient(-45deg, #009efd 0%, #2af598 100%); }
+    100% { background: linear-gradient(-45deg, #2af598 0%, #009efd 100%); }
+}
+
+@keyframes opacity_anim {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .button-green {
@@ -183,7 +228,7 @@ progressbar trough{
 
 .transition {
     transition: 200ms;
-    transition-timing-function: ease;
+    transition-timing-function: linear;
 }
 
 .title-popup {
@@ -247,6 +292,10 @@ progressbar trough{
 
 .text-button {
     border-radius: 20px;
+}
+
+.suggested-action {
+    background: linear-gradient(#ff5858, #db36a4);
 }
 
 .btn_round {

@@ -69,7 +69,8 @@ namespace App.Views {
             this.margin_end = 8;
             this.margin_top = 12;
             this.margin_bottom = 12;
-            this.get_style_context ().add_class ("mycard");
+
+            this.get_style_context(). add_class ("start_anim");
 
             /******************************************
                     File from url thumb
@@ -81,6 +82,8 @@ namespace App.Views {
             ******************************************/
             image = new Granite.AsyncImage(true, true);
             image.get_style_context ().add_class ("backimg");
+            image.get_style_context ().add_class ("gradient_back");
+            image.has_tooltip = true;
             var w_max = 310;
             var h_max = 430;
             w_photo = (int) photo.width;
@@ -94,8 +97,10 @@ namespace App.Views {
                 }
             }
 
-            image.set_from_file_async.begin(file_photo, w_photo, h_photo, false);
-            image.has_tooltip = true;
+            image.set_from_file_async.begin(file_photo, w_photo, h_photo, false, null, (res) => {
+                image.get_style_context ().remove_class ("gradient_back");
+            });
+
             var txt_tooltip = (photo.user.location != null) ? @"🌎  $(photo.user.location)" : S.AN_AMAZING_PLACE;;
             image.set_tooltip_text (txt_tooltip);
 
@@ -178,6 +183,7 @@ namespace App.Views {
                     Button to use hover effect
             ********************************************************/
             photo_button = new Button();
+            photo_button.get_style_context ().add_class ("transition");
             photo_button.get_style_context ().add_class ("photo");
             photo_button.add(overlay);
             photo_button.can_focus = false;
@@ -250,6 +256,9 @@ namespace App.Views {
             wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name, bar);
             wallpaper.finish_download.connect (() => {
                 this.set_sensitive (true);
+                JsonManager jsonManager = new JsonManager ();
+                var history = jsonManager.add_photo (photo);
+                jsonManager.save_history (history);
             });
             wallpaper.update_wallpaper (opt);
         }

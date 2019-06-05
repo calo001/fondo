@@ -36,7 +36,7 @@ namespace App.Models {
             
             var array = root.get_object ().get_array_member ("results");
             foreach (unowned Json.Node item in array.get_elements ()) {
-                Photo photo = PhotoUtil.photo_to_json (item);
+                Photo photo = PhotoUtil.one_from_json (item);
                 if (photo != null) {
                     search.results.append (photo);
                 }

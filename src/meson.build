@@ -27,6 +27,7 @@ sources += files(
 
     'utils/Wallpaper.vala',
     'utils/Networking.vala',
+    'utils/JsonManager.vala',
 
     'widgets/ButtonNavbar.vala',
     'widgets/ButtonTab.vala',

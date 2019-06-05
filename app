@@ -72,7 +72,7 @@ case $1 in
     ;;
 "run")
     initialize
-    ./com.github.calo001.fondo "${@:2}"
+    GOBJECT_DEBUG=instance-count ./com.github.calo001.fondo "${@:2}"
     ;;
 "uninstall")
     initialize

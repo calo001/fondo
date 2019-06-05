@@ -70,7 +70,7 @@ namespace App.Connection {
             var uri = Constants.URI_SEARCH_PAGE +
             "&query=" + query +
             "&page=" + num_page.to_string() +
-            "&per_page=" + "24";
+            "&per_page=" + "30";
 
             var message = new Soup.Message ("GET", uri);
 

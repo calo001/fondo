@@ -45,6 +45,7 @@ namespace App.Configs {
         public abstract const string ID = "com.github.calo001.fondo";
         public abstract const string PROGRAME_NAME = "Fondo";
         public abstract const string APP_ICON = "com.github.calo001.fondo";
+        public abstract const string APP_DATA = "/com.github.calo001.fondo";
         public abstract const string URL_CSS = "/com/github/calo001/fondo/css/style.css";
         public abstract const int SIZE_IMAGE_AVERAGE = 10000000;
 

@@ -21,6 +21,7 @@ using App.Views;
 using App.Connection;
 using App.Configs;
 using App.Windows;
+using App.Utils;
 
 namespace App.Controllers {
 
@@ -44,17 +45,21 @@ namespace App.Controllers {
         private AppConnection              connection;
         private Gtk.ScrolledWindow         scrolled_main;
         private Gtk.ScrolledWindow         scrolled_search;
+        private Gtk.ScrolledWindow         scrolled_history;
         private Gtk.Stack                  stack;
         private Gtk.Box                    box_stack;
         private ButtonNavbar               buttonNavbar;
         private Window                     window { get; private set; default = null; }
         private LabelTop                   search_label;
+        private LabelTop                   history_label;
         private LabelTotalResults          total_label;
 
         private int                        num_page;
         private int                        num_page_search;
-        private bool                       is_scrolling; 
         private string                     current_query;
+
+        private bool                       is_scrolling; 
+        private bool                       is_history_loaded;
 
         private const string STACK_CATEGORIES = "categories";
         private const string STACK_FILTERING = "filtering";
@@ -78,6 +83,7 @@ namespace App.Controllers {
             this.num_page = 1;
             this.num_page_search = 1;
             this.is_scrolling = false;
+            this.is_history_loaded = false;
 
             // window setup
             window  =       new Window (this.application);
@@ -93,6 +99,7 @@ namespace App.Controllers {
             // Views used in Stock
             scrolled_main =         new Gtk.ScrolledWindow (null, null);
             scrolled_search =       new Gtk.ScrolledWindow (null, null);
+            scrolled_history =      new Gtk.ScrolledWindow (null, null);
             box_loading =           new LoadingView ();
             filtering_view =        new FilteringView ();
             categories =            new CategoriesView ();
@@ -124,8 +131,15 @@ namespace App.Controllers {
             content_search_scroll.add (total_label);
             content_search_scroll.add (search_view);
 
+            // History photos container
+            var content_history_scroll = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+            history_label = new LabelTop (S.HISTORY);
+            content_history_scroll.add (history_label);
+            content_history_scroll.add (history_view);
+
             scrolled_main.add (content_scroll);
             scrolled_search.add (content_search_scroll);
+            scrolled_history.add (content_history_scroll);
 
             // Categories
             var content_categories = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
@@ -146,15 +160,19 @@ namespace App.Controllers {
             view_error.retry.connect(() => {
                 check_internet();
             }); 
+
+            window.search_accel.connect(() => {
+                headerbar.search.grab_focus ();
+            });
             
             stack.add_named(box_loading,        STACK_LOADING);
             stack.add_named(filtering_view,     STACK_FILTERING);
             stack.add_named(content_categories, STACK_CATEGORIES);
             stack.add_named(scrolled_main,      STACK_DAILY);
-            stack.add_named(scrolled_search,    STACK_SEARCH); 
+            stack.add_named(scrolled_search,    STACK_SEARCH);
+            stack.add_named(scrolled_history,   STACK_HISTORY); 
             stack.add_named(empty_view,         STACK_EMPTY); 
             stack.add_named(view_error,         STACK_ERROR);
-            stack.add_named(history_view,       STACK_HISTORY);
 
             // Navigationbar
             buttonNavbar = new ButtonNavbar ();
@@ -173,7 +191,19 @@ namespace App.Controllers {
             });
 
             buttonNavbar.history.connect ( () => {
-                stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
+                if (!is_history_loaded) {
+                    var jsonManager = new JsonManager ();
+                    var history = jsonManager.load_from_file ();
+                    if (history.length () > 0) {
+                        history_view.insert_cards(history);
+                        is_history_loaded = true;
+                        stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
+                    } else {
+                        stack.set_visible_child_full (STACK_EMPTY, Gtk.StackTransitionType.SLIDE_UP);
+                    }
+                } else {
+                    stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
+                }
                 view.set_sensitive (false);
             });
 

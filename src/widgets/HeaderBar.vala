@@ -29,8 +29,8 @@ namespace App.Widgets {
      */
     public class HeaderBar : Gtk.HeaderBar {
         public Gtk.SearchEntry      search {get; set;}
-        public signal void search_view ();
-        public signal void search_activated (string value);
+        public signal void          search_view ();
+        public signal void          search_activated (string value);
 
         /**
          * Constructs a new {@code HeaderBar} object.
@@ -73,6 +73,10 @@ namespace App.Widgets {
             search.margin = 3;
             search.expand = true;
             search.sensitive = false;
+            search.tooltip_markup = Granite.markup_accel_tooltip (
+                {"<Ctrl>F"},
+                S.SEARCH_TOOLTIP
+            );
 
             // Magic for drag window while search entry is empty
             search.button_press_event.connect ( (event)=>{

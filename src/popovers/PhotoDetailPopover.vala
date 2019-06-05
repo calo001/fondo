@@ -51,32 +51,32 @@ namespace App.Popover {
             image_profile_image.margin_end = 8;
             image_profile_image.set_from_file_async.begin(file_profile_image, 95, 95, false);
             image_profile_image.valign = Gtk.Align.CENTER;
+            grid_user.attach(image_profile_image, 0, 0, 1, 3);
 
             var name = new Gtk.Label (photo.user.name);
-            var location = new Gtk.Label (photo.user.location);
-            var bio = new Gtk.Label (photo.user.bio);
-
             name.expand = true;
             name.get_style_context ().add_class ("h1");
             name.expand = true;
             name.halign = Gtk.Align.START;
             name.selectable = true;
+            grid_user.attach(name,                2, 0, 1, 1);
 
+            if (photo.user.bio != null) {
+                var bio = new Gtk.Label (photo.user.bio);
+                bio.expand = true;
+                bio.halign = Gtk.Align.START;
+                bio.xalign = 0;
+                bio.selectable = true;
+                bio.wrap = true;
+                bio.width_chars = 1;
+                bio.max_width_chars = 50;
+                grid_user.attach(bio,                 2, 1, 1, 1);
+            }
+
+            var location = new Gtk.Label (photo.user.location);
             location.expand = true;
             location.halign = Gtk.Align.START;
             location.selectable = true;
-
-            bio.expand = true;
-            bio.halign = Gtk.Align.START;
-            bio.xalign = 0;
-            bio.selectable = true;
-            bio.wrap = true;
-            bio.width_chars = 1;
-            bio.max_width_chars = 50;
-
-            grid_user.attach(image_profile_image, 0, 0, 1, 3);
-            grid_user.attach(name,                2, 0, 1, 1);
-            grid_user.attach(bio,                 2, 1, 1, 1);
             grid_user.attach(location,            2, 2, 1, 1);
 
             var separator = new Separator (Orientation.HORIZONTAL);
@@ -93,34 +93,45 @@ namespace App.Popover {
             lbl_created_at.halign = Gtk.Align.START;
             lbl_created_at.selectable = true;
             var lbl_created_at_img = new Image.from_icon_name ("office-calendar-symbolic", IconSize.BUTTON);
+            grid_details.attach (lbl_created_at_img,    0, 0, 1, 1);
+            grid_details.attach (lbl_created_at,        1, 0, 1, 1);
 
             var lbl_width = new Gtk.Label (photo.width.to_string () + " px");
             lbl_width.expand = true;
             lbl_width.halign = Gtk.Align.START;
             lbl_width.selectable = true;
             var lbl_width_img = new Image.from_icon_name ("object-flip-horizontal-symbolic", IconSize.BUTTON);
+            grid_details.attach (lbl_width_img,         0, 1, 1, 1);
+            grid_details.attach (lbl_width,             1, 1, 1, 1);
 
             var lbl_height = new Gtk.Label (photo.height.to_string () + " px");
             lbl_height.expand = true;
             lbl_height.halign = Gtk.Align.START;
             lbl_height.selectable = true;
             var lbl_height_img = new Image.from_icon_name ("object-flip-vertical-symbolic", IconSize.BUTTON);
+            grid_details.attach (lbl_height_img,        0, 2, 1, 1);
+            grid_details.attach (lbl_height,            1, 2, 1, 1);
             
-
-            var lbl_description = new Gtk.Label (photo.description);
-            lbl_description.expand = true;
-            lbl_description.halign = Gtk.Align.START;
-            lbl_description.selectable = true;
-            lbl_description.wrap = true;
-            lbl_description.width_chars = 1;
-            lbl_description.max_width_chars = 50;
-            var lbl_description_img = new Image.from_icon_name ("format-justify-left-symbolic", IconSize.BUTTON);
+            if (photo.description != null) {
+                var lbl_description = new Gtk.Label (photo.description);
+                lbl_description.expand = true;
+                lbl_description.halign = Gtk.Align.START;
+                lbl_description.selectable = true;
+                lbl_description.wrap = true;
+                lbl_description.width_chars = 1;
+                lbl_description.max_width_chars = 50;
+                var lbl_description_img = new Image.from_icon_name ("format-justify-left-symbolic", IconSize.BUTTON);
+                grid_details.attach (lbl_description_img,   0, 3, 1, 1);
+                grid_details.attach (lbl_description,       1, 3, 1, 1);
+            }
 
             var lbl_color = new Gtk.Label (photo.color);
             lbl_color.expand = true;
             lbl_color.halign = Gtk.Align.START;
             lbl_color.selectable = true;
             var lbl_color_img = new Image.from_icon_name ("applications-graphics-symbolic", IconSize.BUTTON);
+            grid_details.attach (lbl_color_img,         0, 4, 1, 1);
+            grid_details.attach (lbl_color,             1, 4, 1, 1);
 
             /************************************************** */
 
@@ -142,16 +153,6 @@ namespace App.Popover {
                 set_as_wallpaper ();
             });
 
-            grid_details.attach (lbl_created_at_img,    0, 0, 1, 1);
-            grid_details.attach (lbl_created_at,        1, 0, 1, 1);
-            grid_details.attach (lbl_width_img,         0, 1, 1, 1);
-            grid_details.attach (lbl_width,             1, 1, 1, 1);
-            grid_details.attach (lbl_height_img,        0, 2, 1, 1);
-            grid_details.attach (lbl_height,            1, 2, 1, 1);
-            grid_details.attach (lbl_description_img,   0, 3, 1, 1);
-            grid_details.attach (lbl_description,       1, 3, 1, 1);
-            grid_details.attach (lbl_color_img,         0, 4, 1, 1);
-            grid_details.attach (lbl_color,             1, 4, 1, 1);
             grid_details.attach (box_btns,              1, 5, 1, 1);
 
             grid_details.show_all ();

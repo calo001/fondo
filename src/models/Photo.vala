@@ -116,7 +116,7 @@ namespace App.Models
             unowned Json.Array array = root.get_array ();
 
             foreach (unowned Json.Node item in array.get_elements ()) {
-                Photo photo = photo_to_json (item);
+                Photo photo = one_from_json (item);
                 if (photo != null) {
                     list.append (photo);
                 }
@@ -124,7 +124,7 @@ namespace App.Models
             return list;
         }
         
-        public static Photo photo_to_json(Json.Node root) {
+        public static Photo one_from_json(Json.Node root) {
             var photo = Json.gobject_deserialize (typeof (Photo) , root) as Photo;
             
             var tags = root.get_object ().get_array_member ("tags");
