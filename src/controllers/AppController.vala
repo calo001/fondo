@@ -32,6 +32,7 @@ namespace App.Controllers {
      */
     public class AppController {
 
+        private Window                     window { get; private set; default = null; }
         private Gtk.Application            application;
         private App.Widgets.HeaderBar      headerbar;
         private CategoriesView             categories;
@@ -49,7 +50,6 @@ namespace App.Controllers {
         private Gtk.Stack                  stack;
         private Gtk.Box                    box_stack;
         private ButtonNavbar               buttonNavbar;
-        private Window                     window { get; private set; default = null; }
         private LabelTop                   search_label;
         private LabelTop                   history_label;
         private LabelTotalResults          total_label;
@@ -111,17 +111,14 @@ namespace App.Controllers {
 
             view.applying_filter.connect ( () => {
                 check_filter ();
-                print ("FILTER DAILY");
             });
 
             search_view.applying_filter.connect ( () => {
                 check_filter ();
-                print ("FILTER SEARCH");
             });
 
             history_view.applying_filter.connect ( () => {
                 check_filter ();
-                print ("FILTER HISTORY");
             });
 
             // Daily photos container
@@ -188,29 +185,22 @@ namespace App.Controllers {
             buttonNavbar.hexpand = true;
 
             buttonNavbar.daily.connect ( () => {
-                stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
-                view.set_sensitive (true);
-                search_view.set_sensitive (false);
-                history_view.set_sensitive (false);
+                stack_visible (STACK_DAILY);
             });
 
             buttonNavbar.categories.connect ( () => {
-                stack.set_visible_child_full (STACK_CATEGORIES, Gtk.StackTransitionType.SLIDE_UP);
-                view.set_sensitive (false);
-                search_view.set_sensitive (false);
-                history_view.set_sensitive (false);
+                stack_visible (STACK_CATEGORIES);
             });
 
             buttonNavbar.history.connect ( () => {
                 var jsonManager = new JsonManager ();
                 var history = jsonManager.load_from_file ();
                 history.reverse ();
-                stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
+                
+                stack_visible (STACK_HISTORY);
+
                 history_view.clean_list ();
                 history_view.insert_cards (history, false);
-                //view.set_sensitive (false);
-                //search_view.set_sensitive (false);
-                //history_view.set_sensitive (true);
             });
 
             // Window Overlay
@@ -224,7 +214,7 @@ namespace App.Controllers {
         }
 
         private void applying_filter (string stack_back) {
-            if (!this.is_scrolling){
+            if (!this.is_scrolling) {
                 stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.NONE);
 
                 MainLoop loop = new MainLoop ();
@@ -298,7 +288,7 @@ namespace App.Controllers {
                 if (response.results.length () > 0) {
                     search_view.insert_cards(response.results);
                     total_label.update_total (response.total.to_string());
-                    stack.set_visible_child_full (STACK_SEARCH, Gtk.StackTransitionType.SLIDE_UP);
+                    stack_visible (STACK_SEARCH);
                 } else if (num_page_search == 1) {
                     stack.set_visible_child_full (STACK_EMPTY, Gtk.StackTransitionType.SLIDE_UP);
                 }
@@ -337,6 +327,38 @@ namespace App.Controllers {
             scrolled_search.get_vadjustment ().set_value (0);
             stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.SLIDE_DOWN);
             search_label.label = search;
+        }
+
+        private void stack_visible (string new_stack) {
+            switch (new_stack) {
+                case STACK_DAILY:
+                    view.set_sensitive (true);
+                    search_view.set_sensitive (false);
+                    history_view.set_sensitive (false);
+                    stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
+                    break;
+                case STACK_SEARCH:
+                    view.set_sensitive (false);
+                    search_view.set_sensitive (true);
+                    history_view.set_sensitive (false);
+                    stack.set_visible_child_full (STACK_SEARCH, Gtk.StackTransitionType.SLIDE_UP);
+                    break;
+                case STACK_HISTORY:
+                    view.set_sensitive (false);
+                    search_view.set_sensitive (false);
+                    history_view.set_sensitive (true);
+                    stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
+                    break;
+                case STACK_CATEGORIES:
+                    stack.set_visible_child_full (STACK_CATEGORIES, Gtk.StackTransitionType.SLIDE_UP);
+                    break;
+                default:
+                    view.set_sensitive (true);
+                    search_view.set_sensitive (false);
+                    history_view.set_sensitive (false);
+                    stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
+                    break;
+            }
         }
 
         /*****************

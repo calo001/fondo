@@ -56,19 +56,19 @@ namespace App.Views {
             var lbl_filter = new Gtk.Label ("Orientation");
             lbl_filter.get_style_context ().add_class ("h4");
 
-            button_landscape.clicked.connect ( ()=> {
+            button_landscape.clicked.connect ( () => {
                 if (button_landscape.active) {
                     filtermode = Constants.LANDSCAPE;
                 }
             });
 
-            button_portrait.clicked.connect ( ()=> {
+            button_portrait.clicked.connect ( () => {
                 if (button_portrait.active) {
                     filtermode = Constants.PORTRAIT;
                 }
             });
 
-            button_any.clicked.connect ( ()=> {
+            button_any.clicked.connect ( () => {
                 if (button_any.active) {
                     filtermode = Constants.ANY;
                 }
