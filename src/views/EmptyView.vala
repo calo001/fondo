@@ -28,19 +28,20 @@ namespace App.Views {
          * Constructs a new {@code EmptyView} object.
          */
         public EmptyView () {
-            Object (
-                orientation: Gtk.Orientation.VERTICAL,
-                spacing: 0,
-                valign: Gtk.Align.CENTER
-            );
+            this.orientation = Gtk.Orientation.VERTICAL;
+            this.halign = Gtk.Align.CENTER;
+            this.valign = Gtk.Align.CENTER;
 
-            var empty_label = new Gtk.Label (S.PHOTOS_NOT_FOUND);
-            empty_label.get_style_context ().add_class ("h2");
-            empty_label.margin = 8;
-            var icon_empty = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/empty.svg");
+            var image = new Gtk.Image.from_icon_name  ("system-search", Gtk.IconSize.DIALOG);
+		    var label_title = new Gtk.Label (S.PHOTOS_NOT_FOUND);
+		    var label_description = new Gtk.Label (S.EMPTY_SEARCH_DESCRIPTION);
 
-            add (icon_empty);
-            add (empty_label);
+		    label_title.get_style_context ().add_class ("h2");
+		    label_description.get_style_context ().add_class ("h4");
+        
+            add(image);
+            add(label_title);
+            add(label_description);
         }
 
     }

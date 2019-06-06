@@ -24,7 +24,6 @@
 
         <file alias="unsplashlogo.svg" compressed="true" preprocess="xml-stripblanks">images/unsplashlogo.svg</file>
         
-        <file alias="empty.svg" compressed="true" preprocess="xml-stripblanks">images/empty.svg</file>
         <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">images/online-account-facebook.svg</file>
         <file alias="online-account-google-plus.svg" compressed="true" preprocess="xml-stripblanks">images/online-account-google-plus.svg</file>
         <file alias="online-account-reddit.svg" compressed="true" preprocess="xml-stripblanks">images/online-account-reddit.svg</file>

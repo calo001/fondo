@@ -76,5 +76,7 @@ namespace App.Configs {
         public abstract const string FILTERING = _("Filtering...");
         public abstract const string TOTAL_RESULTS = _("Total results");      
         public abstract const string SEARCH_TOOLTIP = _("Find out what you like️");
+        public abstract const string EMPTY_SEARCH_DESCRIPTION = _("Try changing search terms.");
+        public abstract const string NETWORK_ERROR = _("Network Error");
     }
 }

@@ -39,7 +39,7 @@ namespace App.Views {
 
             
             var image = new Gtk.Image.from_icon_name  ("network-error", Gtk.IconSize.DIALOG);
-		    var label_title = new Gtk.Label ("Network Error");
+		    var label_title = new Gtk.Label (S.NETWORK_ERROR);
 		    var label_description = new Gtk.Label (S.CHECK_NETWORK_CONNECTION);
             var button_check_network = new Gtk.Button.with_label (S.RETRY);
 
