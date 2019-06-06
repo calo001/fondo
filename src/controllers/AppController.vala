@@ -214,7 +214,7 @@ namespace App.Controllers {
         }
 
         private void applying_filter (string stack_back) {
-            if (!this.is_scrolling) {
+            if (!this.is_scrolling){
                 stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.NONE);
 
                 MainLoop loop = new MainLoop ();
@@ -227,17 +227,16 @@ namespace App.Controllers {
                     return false;
                 });
                 time.attach (loop.get_context ());
-                loop.run ();
             } else {
                 stack.get_visible_child ().sensitive = true;
             }
-            this.is_scrolling = false;
+            is_scrolling = false;
         }
 
         private void check_filter () {
             var current_view = stack.get_visible_child_name ();
-            if (current_view != STACK_CATEGORIES) stack.get_visible_child ().sensitive = false;
             if (current_view == STACK_DAILY || current_view == STACK_SEARCH || current_view == STACK_HISTORY) {
+                stack.get_visible_child ().sensitive = false;
                 applying_filter (current_view);
             }
         }
@@ -332,33 +331,31 @@ namespace App.Controllers {
         private void stack_visible (string new_stack) {
             switch (new_stack) {
                 case STACK_DAILY:
-                    view.set_sensitive (true);
-                    search_view.set_sensitive (false);
-                    history_view.set_sensitive (false);
+                    views_sensitives (true, false, false);
                     stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
                     break;
                 case STACK_SEARCH:
-                    view.set_sensitive (false);
-                    search_view.set_sensitive (true);
-                    history_view.set_sensitive (false);
+                    views_sensitives (false, true, false);
                     stack.set_visible_child_full (STACK_SEARCH, Gtk.StackTransitionType.SLIDE_UP);
                     break;
                 case STACK_HISTORY:
-                    view.set_sensitive (false);
-                    search_view.set_sensitive (false);
-                    history_view.set_sensitive (true);
+                    views_sensitives (false, false, true);
                     stack.set_visible_child_full (STACK_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
                     break;
                 case STACK_CATEGORIES:
                     stack.set_visible_child_full (STACK_CATEGORIES, Gtk.StackTransitionType.SLIDE_UP);
                     break;
                 default:
-                    view.set_sensitive (true);
-                    search_view.set_sensitive (false);
-                    history_view.set_sensitive (false);
+                    views_sensitives (true, false, false);
                     stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
                     break;
             }
+        }
+
+        private void views_sensitives (bool daily, bool search, bool history) {
+            view.set_sensitive (daily);
+            search_view.set_sensitive (search);
+            history_view.set_sensitive (history);
         }
 
         /*****************
