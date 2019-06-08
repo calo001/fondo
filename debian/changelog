@@ -1,5 +1,19 @@
 com.github.calo001.fondo (1.2.4) bionic; urgency=low
 
+[NEW]
+  * Keep your favorite photos with you, the photo history has arrived!
+  * New way of navigating with a bottom bar that allows you to go to: Daily, Categories and History
+  * Speed up your search for the perfect wallpaper with the Photo Filter by Orientation: Portrait, Landscape or Any
+  * Learn more about the incredible with the Detail popup of the photo in Full Screen window
+  * Focus on Search entry with Ctrl+F
+  * When doing a search, the total number of results are displayed
+  * Gradient animation in scrollbar, mode switch and placeholder photo
+  * Use serialization and deserealization to parse json to class and viceversa
+
+ -- Calo001 <calo_lrc@hotmail.com>  Mon, 08 Jun 2019 22:10:00 -0500
+
+com.github.calo001.fondo (1.2.4) bionic; urgency=low
+
 Remove G+ option from Share popup
 
  -- Calo001 <calo_lrc@hotmail.com>  Tue, 14 May 2019 22:10:00 -0500
