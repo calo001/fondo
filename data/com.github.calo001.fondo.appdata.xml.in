@@ -29,24 +29,38 @@
     </screenshots>
     <description>
         <p>Find a variety of the most beautiful wallpapers from Unsplash.com the world’s most generous community of photographers. </p>
-        <p>Fondo allows you to see thousands of beautiful photographs from the most recent to the one you are to looking for. Give a simple click on a picture to set as wallpaper, wait until the download is complete and enjoy!</p>
-        <p>Have a simple and elegant interface, you can change from light mode to dark mode as you prefer.</p>
+        <p>Fondo allows you to see thousands of beautiful photographs from the most recent to the one you are to looking for. Give a single click on a picture, wait until the download is complete and enjoy your new wallpaper!</p>
+        <p>Have a minimalist, simple and elegant interface, additionally, you can change from light mode to dark mode as you prefer.</p>
         <p>Main features:</p>
         <ul>
-          <li>Scroll down to load more photos</li>
-          <li>A single click on the photo to put as a wallpaper</li>
-          <li>Right click for more wallpaper display options</li>
-          <li>See the photo in full screen</li>
-          <li>Change the size of the window, the window is responsive</li>
-          <li>Share with your friends a link to photo from Unsplash</li>
-          <li>Search by categories or write what you want to search in the top input</li>
-          <li>Use Ctrl + Q to exit</li>
+          <li>To infinity and beyond!: Use the infinite scroll to load more photos</li>
+          <li>Find out what you like: Search by categories or write what you want to search in the top input</li>
+          <li>Keep your favorite photos with you: Every new wallpaper is saved in the history</li>
+          <li>Share with your friends: select a number of options for sharing a link to the photo from Unsplash</li>
+          <li>Filter by Orientation: Portrait, Landscape or Any</li>
         </ul>
     </description>
     <releases>
+      <release version="1.3.0" date="2019-06-10">
+        <description>
+          New
+          <ul>
+            <li>Keep your favorite photos with you, the photo history has arrived!</li>
+            <li>New way of navigating with a bottom bar that allows you to go to: Daily, Categories and History</li>
+            <li>Speed up your search with the Photo Filter by Orientation: Portrait, Landscape or Any</li>
+            <li>Learn more about the incredible with the Detail popup of the photo in Full Screen window</li>
+            <li>Focus on Search entry with Ctrl+F</li>
+            <li>When doing a search, the total number of results are displayed</li>
+            <li>Gradient animation in scrollbar, mode switch and placeholder photo</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.2.4" date="2019-05-14">
         <description>
-          Remove G+ option from Share popup
+          New
+          <ul>
+            <li>Remove G+ option from Share popup</li>
+          </ul>
         </description>
       </release>
       <release version="1.2.3" date="2019-03-15">
