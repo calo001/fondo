@@ -27,11 +27,11 @@ namespace App.Widgets {
      */
     public class BottonNavbar : Gtk.Grid {
         public  Navigation  current_tab {get; set;}
-        private ButtonTab   btnDaily;
+        private ButtonTab   btnToday;
         private ButtonTab   btnCategories;
         private ButtonTab   btnHistory;
 
-        public signal void daily ();
+        public signal void today ();
         public signal void categories ();
         public signal void history ();        
 
@@ -39,19 +39,19 @@ namespace App.Widgets {
             vexpand = false;
             sensitive = false;
             
-            btnDaily = new ButtonTab ("go-home-symbolic", S.DAILY_TAB);
+            btnToday = new ButtonTab ("go-home-symbolic", S.TODAY_TAB);
             btnCategories = new ButtonTab ("view-grid-symbolic.symbolic", S.CATEGORIES_TAB);
             btnHistory = new ButtonTab ("preferences-system-time-symbolic", S.HISTORY_TAB);
 
-            current_tab = Navigation.DAILY;
-            btnDaily.on_active ();
+            current_tab = Navigation.TODAY;
+            btnToday.on_active ();
             
-            btnDaily.clicked.connect ( ()=> {
+            btnToday.clicked.connect ( ()=> {
                 clean_all ();
-                current_tab = Navigation.DAILY;
-                btnDaily.on_active ();
+                current_tab = Navigation.TODAY;
+                btnToday.on_active ();
 
-                daily ();
+                today ();
             });
 
             btnCategories.clicked.connect ( ()=> {
@@ -73,14 +73,14 @@ namespace App.Widgets {
             get_style_context ().add_class ("inline-toolbar");
             get_style_context ().add_class ("transition");
             
-            add (btnDaily);
+            add (btnToday);
             add (btnCategories);
             add (btnHistory);
         }
         
         public void clean_all () {
             btnHistory.on_inactive ();
-            btnDaily.on_inactive ();
+            btnToday.on_inactive ();
             btnCategories.on_inactive ();
         }
     }

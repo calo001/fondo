@@ -62,11 +62,10 @@ namespace App.Configs {
         public abstract const string PRESS_ESC_TO_EXIT = _("Press Esc to Exit");
         public abstract const string SEARCH_PHOTOS_UNSPLASH = _("Search photos Unsplash");
         public abstract const string HISTORY = _("History");
-        public abstract const string BACK_TO_DAILY_PHOTOS = _("Back to today's photos");
         public abstract const string LIGHT_BACKGROUND = _("Light background");
         public abstract const string DARK_BACKGROUND = _("Dark background");
         public abstract const string ABOUT = _("About");
-        public abstract const string DAILY_TAB = _("DAILY");
+        public abstract const string TODAY_TAB = _("TODAY");
         public abstract const string CATEGORIES_TAB = _("CATEGORIES");
         public abstract const string HISTORY_TAB = _("HISTORY");
         public abstract const string NO_DESCRIPTION_AVAILABLE = _("No description available");        

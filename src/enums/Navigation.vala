@@ -24,7 +24,7 @@ namespace App.Enums {
      * @since 1.0.0
      */
     public enum Navigation {
-        DAILY,
+        TODAY,
         CATEGORIES,
         HISTORY;
     }

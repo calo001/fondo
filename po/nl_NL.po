@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-12 09:54-0600\n"
+"POT-Creation-Date: 2019-06-08 18:54-0500\n"
 "PO-Revision-Date: 2019-03-14 12:26+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.1.1\n"
-"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
-"Language: nl_NL\n"
 
 #: src/configs/Strings.vala:28
 msgid "Today"
@@ -163,8 +163,8 @@ msgid "Search photos Unsplash"
 msgstr "Zoek foto's op Unsplash"
 
 #: src/configs/Strings.vala:64
-msgid "Back to today's photos"
-msgstr "Terug naar foto's van vandaag"
+msgid "History"
+msgstr ""
 
 #: src/configs/Strings.vala:65
 msgid "Light background"
@@ -177,6 +177,58 @@ msgstr "Donkere achtergrond"
 #: src/configs/Strings.vala:67
 msgid "About"
 msgstr "Over"
+
+#: src/configs/Strings.vala:68
+msgid "TODAY"
+msgstr ""
+
+#: src/configs/Strings.vala:69
+msgid "CATEGORIES"
+msgstr ""
+
+#: src/configs/Strings.vala:70
+msgid "HISTORY"
+msgstr ""
+
+#: src/configs/Strings.vala:71
+msgid "No description available"
+msgstr ""
+
+#: src/configs/Strings.vala:72
+msgid "Set as wallpaper"
+msgstr ""
+
+#: src/configs/Strings.vala:73
+msgid "Details"
+msgstr ""
+
+#: src/configs/Strings.vala:74
+msgid "Visit profile"
+msgstr ""
+
+#: src/configs/Strings.vala:75
+msgid "Filtering..."
+msgstr ""
+
+#: src/configs/Strings.vala:76
+msgid "Total results"
+msgstr ""
+
+#: src/configs/Strings.vala:77
+msgid "Find out what you like️"
+msgstr ""
+
+#: src/configs/Strings.vala:78
+msgid "Try changing search terms."
+msgstr ""
+
+#: src/configs/Strings.vala:79
+msgid "Click on a photo to add it to the history."
+msgstr ""
+
+#: src/configs/Strings.vala:80
+msgid "Network Error"
+msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:7
 #: data/com.github.calo001.fondo.desktop.in:3
@@ -201,19 +253,21 @@ msgstr ""
 "genereuze gemeenschap van fotografen."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:32
+#, fuzzy
 msgid ""
 "Fondo allows you to see thousands of beautiful photographs from the most "
-"recent to the one you are to looking for. Give a simple click on a picture "
-"to set as wallpaper, wait until the download is complete and enjoy!"
+"recent to the one you are to looking for. Give a single click on a picture, "
+"wait until the download is complete and enjoy your new wallpaper!"
 msgstr ""
 "Fondo stelt je in staat om duizenden foto's te bekijken - van de recentste "
 "tot dé foto waar je naar op zoek bent. Met één muisklik kun je een "
 "afbeelding downloaden en instellen als bureaubladachtergrond!"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:33
+#, fuzzy
 msgid ""
-"Have a simple and elegant interface, you can change from light mode to dark "
-"mode as you prefer."
+"Have a minimalist, simple and elegant interface, additionally, you can "
+"change from light mode to dark mode as you prefer."
 msgstr ""
 "Een eenvoudig, elegant uiterlijk, met keuze uit een lichte en donkere modus."
 
@@ -222,38 +276,138 @@ msgid "Main features:"
 msgstr "Mogelijkheden:"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:36
-msgid "Scroll down to load more photos"
-msgstr "Scroll omlaag om meer foto's te laden"
+msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
+msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:37
-msgid "A single click on the photo to put as a wallpaper"
-msgstr "Stel een foto met één muisklik in als bureaubladachtergrond"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:38
-msgid "Right click for more wallpaper display options"
-msgstr "Klik met de rechtermuisknop voor meer weergave-opties"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:39
-msgid "See the photo in full screen"
-msgstr "Bekijk foto's op volledig scherm"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:40
-msgid "Change the size of the window, the window is responsive"
-msgstr ""
-"Pas de grootte van het venster aan - de vensterinhoud past zich automatisch "
-"aan"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:41
-msgid "Share with your friends a link to photo from Unsplash"
-msgstr "Deel een fotolink met je vrienden"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:42
-msgid "Search by categories or write what you want to search in the top input"
+#, fuzzy
+msgid ""
+"Find out what you like: Search by categories or write what you want to "
+"search in the top input"
 msgstr "Verken categorieën of typ je zoekopdracht in het zoekvak"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:43
-msgid "Use Ctrl + Q to exit"
-msgstr "Gebruik Ctrl + Q om af te sluiten"
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+msgid ""
+"Keep your favorite photos with you: Every new wallpaper is saved in the "
+"history"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:39
+#, fuzzy
+msgid ""
+"Share with your friends: select a number of options for sharing a link to "
+"the photo from Unsplash"
+msgstr "Deel een fotolink met je vrienden"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:40
+msgid "Filter by Orientation: Portrait, Landscape or Any"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:48
+msgid "Keep your favorite photos with you, the photo history has arrived!"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:49
+msgid ""
+"New way of navigating with a bottom bar that allows you to go to: Today, "
+"Categories and History"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:50
+msgid ""
+"Speed up your search with the Photo Filter by Orientation: Portrait, "
+"Landscape or Any"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:51
+msgid ""
+"Learn more about the incredible with the Detail popup of the photo in Full "
+"Screen window"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:52
+msgid "Focus on Search entry with Ctrl+F"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:53
+msgid "When doing a search, the total number of results are displayed"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:54
+msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:62
+msgid "Remove G+ option from Share popup"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:70
+msgid "Update the set of screenshots"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:71
+msgid "Fix error in appdata"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:79
+msgid "Added Dutch (Netherlands) translation"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:87
+msgid "Add french translations"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:95
+msgid "Search by category and query"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:96
+msgid "New look and feel on hover a photo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:97
+msgid "Add gradients to scrollbar and mode switch"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:105
+msgid "New screenshots with awesome photos"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:106
+msgid "OARS data social-info set to mild"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:114
+msgid "Orthographic corrections in the Spanish translation"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:115
+msgid "The photos are sorted from highest to lowest according to height"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:123
+msgid "Responsive, resizable window"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:124
+msgid "Infinite scrolling: just scroll to keep loading new photos"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:125
+msgid "Wallpaper options: set zoom, centered, and more"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:126
+msgid "Improved icon and styling"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:131
+msgid "Improved UI."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:136
+msgid "Initial 1.0.0 release!"
+msgstr ""
 
 #: data/com.github.calo001.fondo.desktop.in:5
 msgid "com.github.calo001.fondo"
@@ -261,5 +415,27 @@ msgstr "com.github.calo001.fondo"
 
 #: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
-msgstr ""
-"bureaubladachtergrond;unsplash;foto;afbeelding;achtergrond;bureaublad;"
+msgstr "bureaubladachtergrond;unsplash;foto;afbeelding;achtergrond;bureaublad;"
+
+#~ msgid "Back to today's photos"
+#~ msgstr "Terug naar foto's van vandaag"
+
+#~ msgid "Scroll down to load more photos"
+#~ msgstr "Scroll omlaag om meer foto's te laden"
+
+#~ msgid "A single click on the photo to put as a wallpaper"
+#~ msgstr "Stel een foto met één muisklik in als bureaubladachtergrond"
+
+#~ msgid "Right click for more wallpaper display options"
+#~ msgstr "Klik met de rechtermuisknop voor meer weergave-opties"
+
+#~ msgid "See the photo in full screen"
+#~ msgstr "Bekijk foto's op volledig scherm"
+
+#~ msgid "Change the size of the window, the window is responsive"
+#~ msgstr ""
+#~ "Pas de grootte van het venster aan - de vensterinhoud past zich "
+#~ "automatisch aan"
+
+#~ msgid "Use Ctrl + Q to exit"
+#~ msgstr "Gebruik Ctrl + Q om af te sluiten"

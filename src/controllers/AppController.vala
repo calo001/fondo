@@ -66,7 +66,7 @@ namespace App.Controllers {
         private const string STACK_LOADING = "spinner";
         private const string STACK_HISTORY = "history";
         private const string STACK_SEARCH = "search";
-        private const string STACK_DAILY = "daily";
+        private const string STACK_TODAY = "today";
         private const string STACK_EMPTY = "empty";
         private const string STACK_ERROR = "error"; 
         
@@ -117,7 +117,7 @@ namespace App.Controllers {
                 check_filter ();
             });
 
-            // Daily photos container
+            // Today photos container
             var content_scroll =        new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
             var header_photos =         new LabelTop (S.TODAY);
             content_scroll.add (header_photos);
@@ -167,7 +167,7 @@ namespace App.Controllers {
             
             stack.add_named(box_loading,        STACK_LOADING);
             stack.add_named(content_categories, STACK_CATEGORIES);
-            stack.add_named(scrolled_main,      STACK_DAILY);
+            stack.add_named(scrolled_main,      STACK_TODAY);
             stack.add_named(scrolled_search,    STACK_SEARCH);
             stack.add_named(scrolled_history,   STACK_HISTORY); 
             stack.add_named(empty_view,         STACK_EMPTY); 
@@ -180,8 +180,8 @@ namespace App.Controllers {
             bottonNavbar.halign = Gtk.Align.FILL;
             bottonNavbar.hexpand = true;
 
-            bottonNavbar.daily.connect ( () => {
-                stack_visible (STACK_DAILY);
+            bottonNavbar.today.connect ( () => {
+                stack_visible (STACK_TODAY);
             });
 
             bottonNavbar.categories.connect ( () => {
@@ -235,7 +235,7 @@ namespace App.Controllers {
 
         private void check_filter () {
             var current_view = stack.get_visible_child_name ();
-            if (current_view == STACK_DAILY || current_view == STACK_SEARCH || current_view == STACK_HISTORY) {
+            if (current_view == STACK_TODAY || current_view == STACK_SEARCH || current_view == STACK_HISTORY) {
                 stack.get_visible_child ().sensitive = false;
                 applying_filter (current_view);
             }
@@ -275,7 +275,7 @@ namespace App.Controllers {
                 } else if (num_page == 1) {
                     block_ui (true);
                     view.insert_cards(list);
-                    stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
+                    stack.set_visible_child_full (STACK_TODAY, Gtk.StackTransitionType.SLIDE_UP);
                 }
             } );
 
@@ -327,9 +327,9 @@ namespace App.Controllers {
 
         private void stack_visible (string new_stack) {
             switch (new_stack) {
-                case STACK_DAILY:
+                case STACK_TODAY:
                     views_sensitives (true, false, false);
-                    stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
+                    stack.set_visible_child_full (STACK_TODAY, Gtk.StackTransitionType.SLIDE_UP);
                     break;
                 case STACK_SEARCH:
                     views_sensitives (false, true, false);
@@ -347,13 +347,13 @@ namespace App.Controllers {
                     break;
                 default:
                     views_sensitives (true, false, false);
-                    stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
+                    stack.set_visible_child_full (STACK_TODAY, Gtk.StackTransitionType.SLIDE_UP);
                     break;
             }
         }
 
-        private void views_sensitives (bool daily, bool search, bool history) {
-            view.sensitive          = daily;
+        private void views_sensitives (bool today, bool search, bool history) {
+            view.sensitive          = today;
             search_view.sensitive   = search;
             history_view.sensitive  = history;
         }
