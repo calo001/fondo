@@ -28,13 +28,9 @@ namespace App.Popover {
      */
     public class WallpaperPopover : Gtk.Popover {
         public signal void wallpaper_option(string option_wall);
-        public int64 width {get; set;}
-        public int64 height {get; set;}
 
-        public WallpaperPopover(int64 width, int64 height, Gtk.Widget relative_to) {
+        public WallpaperPopover(Gtk.Widget relative_to) {
             Object (
-                width: width,
-                height: height,
                 relative_to: relative_to,
                 position: Gtk.PositionType.TOP,
                 modal: true
@@ -50,15 +46,12 @@ namespace App.Popover {
             var buttom_scal = new Button.with_label(S.SCALED);
             var buttom_zoom = new Button.with_label(S.ZOOM);
             var buttom_span = new Button.with_label(S.SPANNED);
-            string size = width.to_string() + " x " + height.to_string();
-            var label_size = new Label(size);
 
-            label.get_style_context ().add_class ("title-popup");
-            label_size.get_style_context ().add_class ("title-text");
-            buttom_cen.get_style_context ().add_class("button-green-popup");
-            buttom_scal.get_style_context ().add_class("button-green-popup");
-            buttom_zoom.get_style_context ().add_class("button-green-popup");
-            buttom_span.get_style_context ().add_class("button-green-popup");
+            label.get_style_context ().add_class ("h3");
+            buttom_cen.get_style_context ().add_class("button-action-popup");
+            buttom_scal.get_style_context ().add_class("button-action-popup");
+            buttom_zoom.get_style_context ().add_class("button-action-popup");
+            buttom_span.get_style_context ().add_class("button-action-popup");
 
             buttom_cen.get_style_context ().add_class("flat");
             buttom_scal.get_style_context ().add_class("flat");
@@ -86,7 +79,6 @@ namespace App.Popover {
             grid_content.attach(buttom_scal, 0, 2, 1, 1);
             grid_content.attach(buttom_span, 0, 3, 1, 1);
             grid_content.attach(buttom_zoom, 0, 4, 1, 1);
-            grid_content.attach(label_size, 0, 5, 1, 1);
             grid_content.show_all();
             add (grid_content);
         }

@@ -18,9 +18,13 @@
 
 using App.Configs;
 
-namespace App.Models
-
-{
+namespace App.Models {
+    
+    /**
+     * The {@code Photo} class is used for json serialization and deserealization.
+     *
+     * @since 1.3.0
+     */
     public class Photo : Object {
         public string id { get; set; }
         public string created_at { get; set; }
@@ -35,7 +39,7 @@ namespace App.Models
         public unowned List<Object?> categories { get; set; }
         public bool sponsored { get; set; }
         public User sponsored_by { get; set; }
-        public int64? sponsored_impressions_id { get; set; }
+        public int64 sponsored_impressions_id { get; set; }
         public int64 likes { get; set; }
         public bool liked_by_user { get; set; }
         public unowned List<Object?> current_user_collections { get; set; }
@@ -48,6 +52,11 @@ namespace App.Models
         }
     }
 
+    /**
+     * The {@code PhotoLinks} class is part of the Photo class.
+     *
+     * @since 1.3.0
+     */
     public class PhotoLinks : Object {
         public string self { get; set; }
         public string html { get; set; }
@@ -55,11 +64,20 @@ namespace App.Models
         public string download_location { get; set; }
     }
 
-    public class Tag : Object
-    {
+    /**
+     * The {@code Tag} class is part of the Photo class.
+     *
+     * @since 1.3.0
+     */
+    public class Tag : Object{
         public string title { get; set; }
     }
 
+    /**
+     * The {@code User} class is part of the Photo class.
+     *
+     * @since 1.3.0
+     */
     public class User : Object {
         public string id { get; set; }
         public string updated_at { get; set; }
@@ -80,6 +98,11 @@ namespace App.Models
         public bool accepted_tos { get; set; }
     }
 
+    /**
+     * The {@code UserLinks} class is part of the User class.
+     *
+     * @since 1.3.0
+     */
     public class UserLinks : Object {
         public string self { get; set; }
         public string html { get; set; }
@@ -90,18 +113,33 @@ namespace App.Models
         public string followers { get; set; }
     }
 
+    /**
+     * The {@code ProfileImage} class is part of the User class.
+     *
+     * @since 1.3.0
+     */
     public class ProfileImage : Object {
         public string small { get; set; }
         public string medium { get; set; }
         public string large { get; set; }
     }
 
+    /**
+     * The {@code ProfileSponsorshipImage} class is part of the Photo class.
+     *
+     * @since 1.3.0
+     */
     public class Sponsorship : Object {
         public int64 impressions_id { get; set; }
         public string tagline { get; set; }
         public User sponsor { get; set; }
     }
 
+    /**
+     * The {@code ProfilUrlseImage} class is part of the Photo class.
+     *
+     * @since 1.3.0
+     */
     public class Urls : Object {
         public string raw { get; set; }
         public string full { get; set; }
@@ -110,6 +148,12 @@ namespace App.Models
         public string thumb { get; set; }
     }
 
+    /**
+     * The {@code ProfilUrlseImage} class is responsible to provide utils methods for
+     * convert from objects to jsons and viceversa.
+     *
+     * @since 1.3.0
+     */
     public class PhotoUtil {
         public static List<Photo?> from_json(Json.Node root) {
             List<Photo?> list = new List<Photo?> ();
@@ -135,12 +179,9 @@ namespace App.Models
             return photo;
         }
 
-        public static Json.Node from_object(Photo photo)
-        {
+        public static Json.Node from_object(Photo photo) {
             return Json.gobject_serialize (photo);
         }
-
-        
     }
 }
 

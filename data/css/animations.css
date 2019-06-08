@@ -16,30 +16,21 @@
 * 
 */
 
-using App.Configs;
+@keyframes gradient_anim {
+    0%   { background: linear-gradient(-45deg, @green 0%, @blue 100%); }
+    50%  { background: linear-gradient(-45deg, @blue 0%, @green 100%); }
+    100% { background: linear-gradient(-45deg, @green 0%, @blue 100%); }
+}
 
-namespace App.Views {
+@keyframes opacity_anim {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
 
-    /**
-     * The {@code FilteringView} class.
-     *
-     * @since 1.0.0
-     */
-    public class FilteringView : Gtk.Box {
-        /**
-         * Constructs a new {@code FilteringView} object.
-         */
-        public FilteringView () {
-            Object (
-                orientation: Gtk.Orientation.VERTICAL,
-                valign: Gtk.Align.CENTER,
-                halign: Gtk.Align.CENTER
-            );
-            
-            var lbl_filtering = new Gtk.Label(S.FILTERING);
-            lbl_filtering.get_style_context ().add_class ("h1");
-            add(lbl_filtering);
-        }
-
-    }
+@keyframes fancy_turn {
+    0%   { -gtk-icon-transform: rotate(0deg); }
+    20%  { -gtk-icon-transform: rotate(-30deg); }
+    40%  { -gtk-icon-transform: rotate(0deg); }
+    80%  { -gtk-icon-transform: rotate(30deg); }
+    100% { -gtk-icon-transform: rotate(0deg); }
 }

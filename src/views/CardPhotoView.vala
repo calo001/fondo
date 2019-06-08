@@ -107,7 +107,7 @@ namespace App.Views {
             /******************************************
                     Create Popover for options
             ******************************************/
-            popup = new WallpaperPopover(photo.width, photo.height, this);
+            popup = new WallpaperPopover(this);
             // Detect signal from click on an option from popup
             popup.wallpaper_option.connect((opt) => {
                 popup.set_visible (false);
@@ -118,7 +118,7 @@ namespace App.Views {
                         Fullscreen button
             ******************************************/
             btn_view = new Gtk.Button.from_icon_name ("window-maximize-symbolic");
-            btn_view.get_style_context ().add_class ("button-green");
+            btn_view.get_style_context ().add_class ("button-action");
             btn_view.get_style_context ().remove_class ("button");
             btn_view.get_style_context ().add_class ("transition");
             btn_view.can_focus = false;
@@ -131,7 +131,7 @@ namespace App.Views {
                         Share button
             ******************************************/
             btn_share = new Gtk.Button.from_icon_name ("mail-send-symbolic");
-            btn_share.get_style_context ().add_class ("button-green");
+            btn_share.get_style_context ().add_class ("button-action");
             btn_share.get_style_context ().remove_class ("button");
             btn_share.get_style_context ().add_class ("transition");
             btn_share.can_focus = false;

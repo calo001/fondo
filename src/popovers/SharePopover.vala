@@ -37,6 +37,7 @@ namespace App.Popover {
             var autor_label = new Gtk.Label (body);
             autor_label.hexpand = true;
             autor_label.halign = Gtk.Align.START;
+            autor_label.selectable = true;
             share_label.halign = Gtk.Align.START;
             autor_label.get_style_context ().add_class ("h3");
             share_label.get_style_context ().add_class ("h1");

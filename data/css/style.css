@@ -16,11 +16,17 @@
 * 
 */
 
+@import url("/com/github/calo001/fondo/css/animations.css");
+
 @define-color colorAccent rgb(18, 144, 141);
 @define-color colorAccentOpaque #2BB5CF;
+@define-color blue #009efd;
+@define-color green #2af598;
+@define-color red #ff5858;
+@define-color pink #db36a4;
 
 progressbar progress {
-    background: linear-gradient(to right, #ff5858, #db36a4);
+    background: linear-gradient(to right, @red, @pink);
     border:none;
     box-shadow: none;
     border-radius: 25px;
@@ -31,9 +37,9 @@ progressbar progress {
 }
 
 @keyframes gradient_progress {
-    0%   { background: linear-gradient(to right, #ff5858, #db36a4); }
-    50%  { background: linear-gradient(to left, #ff5858, #db36a4); }
-    100% { background: linear-gradient(to right, #ff5858, #db36a4); }
+    0%   { background: linear-gradient(to right, @red, @pink); }
+    50%  { background: linear-gradient(to left,  @red, @pink); }
+    100% { background: linear-gradient(to right, @red, @pink); }
 }
 
 switch {
@@ -69,6 +75,15 @@ scrollbar slider {
     background: rgba(255,255,255,0.05);
 }
 
+.unsplash_logo:hover {
+    opacity: 0.9;
+}
+
+.filter_option {
+    color: white;
+    font-weight: 600;
+}
+
 radio {
   border: none;
   box-shadow: none;
@@ -79,23 +94,6 @@ radio:checked {
   border: none;
   box-shadow: none;
   background: @colorAccentOpaque;
-}
-
-.menu-btn {
-    color: white;
-    border: none;
-    box-shadow: none;
-    font-weight: normal;
-    font-size: 1em;
-    padding: 8px;
-    background: none;
-    border-radius: 20px;
-    margin: 6px;
-}
-
-.menu-btn:hover {
-    color: #2af5f5;
-    background: #35393E;
 }
 
 .hphoto {
@@ -112,7 +110,7 @@ entry {
 }
 
 headerbar.dark entry {
-	background: rgba(255,255,255,0.05);
+	background: rgba(255,255,255,0.06);
 }
 
 flowboxchild:focus {
@@ -150,21 +148,20 @@ progressbar trough{
     box-shadow: none;
     padding: 3px;
     border: none;
-
 }
 
 .photo:hover {
     box-shadow: 0 14px 28px rgba(46,191,145,0.16), 0 10px 10px rgba(46,191,145,0.23);
-    background: linear-gradient(-45deg, #2af598 0%, #009efd 100%);
+    background: linear-gradient(-45deg, @green 0%, @blue 100%);
     padding: 3px;
     animation-name: gradient_anim;
     animation-duration: 2s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;    
+    animation-iteration-count: infinite;
 }
 
 .backimg {
-    background: linear-gradient(-45deg, #2af598 0%, #009efd 100%);
+    background: linear-gradient(-45deg, @green 0%, @blue 100%);
     padding: 1.5px;
     border-radius: 2px;
 }
@@ -183,18 +180,7 @@ progressbar trough{
     animation-iteration-count: 1;
 }
 
-@keyframes gradient_anim {
-    0%   { background: linear-gradient(-45deg, #2af598 0%, #009efd 100%); }
-    50%  { background: linear-gradient(-45deg, #009efd 0%, #2af598 100%); }
-    100% { background: linear-gradient(-45deg, #2af598 0%, #009efd 100%); }
-}
-
-@keyframes opacity_anim {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.button-green {
+.button-action {
     color: #FFFFFF;
     border: none;
     border-radius: 20px;
@@ -205,24 +191,25 @@ progressbar trough{
     background-color: rgba(0,0,0,0.2);
 }
 
-.button-green:hover {
-    background: linear-gradient(#ff5858, #db36a4);
+.button-action:hover {
+    background: linear-gradient(@red, @pink);
     color: #FFFFFF;
     border: none;
 }
 
-.button-green-popup {
-    border: 1px solid rgba(18, 144, 141, 0);
+.button-action-popup {
 	padding: 5px;
     background-color: rgba(0,0,0,0.2);
+    font-weight: 600;
+    border: 3px;
 }
 
-.button-green-popup:hover {
-    background-color: @colorAccentOpaque;
-    border: 1px solid @colorAccentOpaque;
+.button-action-popup:hover {
+    background: linear-gradient(@red, @pink);
+    color: #FFFFFF;
 }
 
-.button-green-popup:focus {
+.button-action-popup:focus {
     border: 1px solid @colorAccentOpaque;
 }
 
@@ -231,20 +218,8 @@ progressbar trough{
     transition-timing-function: linear;
 }
 
-.title-popup {
-    font-weight: bold;
-} 
-
-.title-text {
-    color: gray;
-}
-
 .label_loading {
     color: white;
-}
-
-.unsplash_btn {
-    background: none;
 }
 
 .card_spinner {
@@ -276,26 +251,12 @@ progressbar trough{
     opacity: 0.8;
 }
 
-.h1 {
-    font-weight: 500;
-    font-size: 2.7em;
-}
-
-.h2 {
-    font-size: 2em;
-}
-
-.h4 {
-    color: #B1B0A1;
-    box-shadow: none;
-}
-
 .text-button {
     border-radius: 20px;
 }
 
 .suggested-action {
-    background: linear-gradient(#ff5858, #db36a4);
+    background: linear-gradient(@red, @pink);
 }
 
 .btn_round {
@@ -306,14 +267,6 @@ progressbar trough{
 
 .active {
     background: rgba(0,0,0,0.13);
-}
-
-@keyframes fancy_turn {
-  0%   { -gtk-icon-transform: rotate(0deg); }
-  20%  { -gtk-icon-transform: rotate(-25deg); }
-  40%  { -gtk-icon-transform: rotate(0deg); }
-  80%  { -gtk-icon-transform: rotate(25deg); }
-  100% { -gtk-icon-transform: rotate(0deg); }
 }
 
 .active image {

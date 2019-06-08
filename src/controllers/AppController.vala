@@ -41,7 +41,6 @@ namespace App.Controllers {
         private PhotosView                 history_view;
         private EmptyView                  empty_view;
         private LoadingView                box_loading;
-        private FilteringView              filtering_view;
         private AppViewError               view_error;
         private AppConnection              connection;
         private Gtk.ScrolledWindow         scrolled_main;
@@ -49,7 +48,7 @@ namespace App.Controllers {
         private Gtk.ScrolledWindow         scrolled_history;
         private Gtk.Stack                  stack;
         private Gtk.Box                    box_stack;
-        private ButtonNavbar               buttonNavbar;
+        private BottonNavbar               bottonNavbar;
         private LabelTop                   search_label;
         private LabelTop                   history_label;
         private LabelTotalResults          total_label;
@@ -62,7 +61,6 @@ namespace App.Controllers {
         private bool                       is_history_loaded;
 
         private const string STACK_CATEGORIES = "categories";
-        private const string STACK_FILTERING = "filtering";
         private const string STACK_LOADING = "spinner";
         private const string STACK_HISTORY = "history";
         private const string STACK_SEARCH = "search";
@@ -74,10 +72,6 @@ namespace App.Controllers {
          * Constructs a new {@code AppController} object.
          */
         public AppController (Gtk.Application application) {
-            /************************************************************* 
-                    Base instance
-            * num page, indicate the number page for API UNSPLASH Endpoint
-            ***********************************************************/
             this.application = application;
             this.connection = AppConnection.get_instance();
             this.num_page = 1;
@@ -92,7 +86,7 @@ namespace App.Controllers {
 
             // Stack for views
             stack = new Gtk.Stack ();
-            stack.set_transition_duration (350);
+            stack.transition_duration = 400;
             stack.hhomogeneous = false;
             stack.interpolate_size = true;
 
@@ -101,7 +95,6 @@ namespace App.Controllers {
             scrolled_search =       new Gtk.ScrolledWindow (null, null);
             scrolled_history =      new Gtk.ScrolledWindow (null, null);
             box_loading =           new LoadingView ();
-            filtering_view =        new FilteringView ();
             categories =            new CategoriesView ();
             empty_view =            new EmptyView ();         
             view =                  new PhotosView ();
@@ -158,7 +151,7 @@ namespace App.Controllers {
 
             headerbar.search_activated.connect ( ( search )=>{
                 search_query (search);
-                buttonNavbar.clean_all ();
+                bottonNavbar.clean_all ();
             });
 
             view_error.retry.connect(() => {
@@ -170,7 +163,6 @@ namespace App.Controllers {
             });
             
             stack.add_named(box_loading,        STACK_LOADING);
-            stack.add_named(filtering_view,     STACK_FILTERING);
             stack.add_named(content_categories, STACK_CATEGORIES);
             stack.add_named(scrolled_main,      STACK_DAILY);
             stack.add_named(scrolled_search,    STACK_SEARCH);
@@ -179,20 +171,20 @@ namespace App.Controllers {
             stack.add_named(view_error,         STACK_ERROR);
 
             // Navigationbar
-            buttonNavbar = new ButtonNavbar ();
-            buttonNavbar.valign = Gtk.Align.END;
-            buttonNavbar.halign = Gtk.Align.FILL;
-            buttonNavbar.hexpand = true;
+            bottonNavbar = new BottonNavbar ();
+            bottonNavbar.valign = Gtk.Align.END;
+            bottonNavbar.halign = Gtk.Align.FILL;
+            bottonNavbar.hexpand = true;
 
-            buttonNavbar.daily.connect ( () => {
+            bottonNavbar.daily.connect ( () => {
                 stack_visible (STACK_DAILY);
             });
 
-            buttonNavbar.categories.connect ( () => {
+            bottonNavbar.categories.connect ( () => {
                 stack_visible (STACK_CATEGORIES);
             });
 
-            buttonNavbar.history.connect ( () => {
+            bottonNavbar.history.connect ( () => {
                 var jsonManager = new JsonManager ();
                 var history = jsonManager.load_from_file ();
                 history.reverse ();
@@ -206,7 +198,7 @@ namespace App.Controllers {
             // Window Overlay
             box_stack = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box_stack.add (stack);
-            box_stack.add (buttonNavbar);
+            box_stack.add (bottonNavbar);
             window.add (box_stack);
             application.add_window (window);
 
@@ -220,10 +212,11 @@ namespace App.Controllers {
                 MainLoop loop = new MainLoop ();
                 TimeoutSource time = new TimeoutSource (400);
                 time.set_callback (() => {
-                    stack.set_visible_child_full (stack_back, Gtk.StackTransitionType.CROSSFADE);
+                    stack.set_visible_child_full (stack_back, Gtk.StackTransitionType.SLIDE_UP);
                     stack.get_visible_child ().sensitive = true;
                     scrolled_search.get_vadjustment ().set_value (0);
                     scrolled_main.get_vadjustment ().set_value (0);
+                    scrolled_history.get_vadjustment ().set_value (0);
                     return false;
                 });
                 time.attach (loop.get_context ());
@@ -273,8 +266,7 @@ namespace App.Controllers {
                 if (num_page > 1) {
                     view.insert_cards(list);
                 } else if (num_page == 1) {
-                    buttonNavbar.sensitive = true;
-                    headerbar.search.sensitive = true;
+                    block_ui (true);
                     view.insert_cards(list);
                     stack.set_visible_child_full (STACK_DAILY, Gtk.StackTransitionType.SLIDE_UP);
                 }
@@ -282,8 +274,7 @@ namespace App.Controllers {
 
             // Signal catched when a search request is success and setup the photos 
             connection.request_page_search_success.connect ( (response) => {
-                buttonNavbar.sensitive = true;
-                headerbar.search.sensitive = true;
+                block_ui (true);
                 if (response.results.length () > 0) {
                     search_view.insert_cards(response.results);
                     total_label.update_total (response.total.to_string());
@@ -321,8 +312,7 @@ namespace App.Controllers {
         }
 
         private void update_iu_for_search (string search) {
-            headerbar.search.sensitive = false;
-            buttonNavbar.sensitive = false;
+            block_ui (false);
             scrolled_search.get_vadjustment ().set_value (0);
             stack.set_visible_child_full (STACK_LOADING, Gtk.StackTransitionType.SLIDE_DOWN);
             search_label.label = search;
@@ -353,9 +343,14 @@ namespace App.Controllers {
         }
 
         private void views_sensitives (bool daily, bool search, bool history) {
-            view.set_sensitive (daily);
-            search_view.set_sensitive (search);
-            history_view.set_sensitive (history);
+            view.sensitive          = daily;
+            search_view.sensitive   = search;
+            history_view.sensitive  = history;
+        }
+
+        private void block_ui (bool block) {
+            headerbar.search.sensitive  = block;
+            bottonNavbar.sensitive      = block;
         }
 
         /*****************

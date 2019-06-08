@@ -133,7 +133,7 @@ namespace App.Connection {
         /**
          * Returns a single instance of this class.
          *
-         * @return {@code Settings}
+         * @return {@code AppConnection}
          */
         public static unowned AppConnection get_instance () {
             if (instance == null) {

@@ -13,9 +13,6 @@ sources += files(
     'views/EmptyView.vala',
     'views/LoadingView.vala',
     'views/FilterOptionsView.vala',
-    'views/FilteringView.vala',
-
-    'windows/PreviewWindow.vala',
 
     'popovers/MenuPopover.vala',
     'popovers/WallpaperPopover.vala',
@@ -29,20 +26,19 @@ sources += files(
     'utils/Networking.vala',
     'utils/JsonManager.vala',
 
-    'widgets/ButtonNavbar.vala',
+    'widgets/BottonNavbar.vala',
     'widgets/ButtonTab.vala',
     'widgets/HeaderBar.vala',
     'widgets/LabelTop.vala',
-    'widgets/ButtonNavbar.vala',
     'widgets/LabelTotalResults.vala',
 
     'services/Connection.vala',
 
     'enums/Navigation.vala',
 
-    'interfaces/ObservablePattern.vala',
-
     'Application.vala',
     'Main.vala',
+
+    'windows/PreviewWindow.vala',
     'windows/Window.vala'
 )

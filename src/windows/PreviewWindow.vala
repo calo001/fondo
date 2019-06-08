@@ -86,7 +86,7 @@ namespace App.Windows {
 
             // Close Button
             var btn_close = new Gtk.Button.from_icon_name ("window-close-symbolic",Gtk.IconSize.LARGE_TOOLBAR );
-            btn_close.get_style_context ().add_class ("button-green");
+            btn_close.get_style_context ().add_class ("button-action");
             btn_close.get_style_context ().remove_class ("button");
             btn_close.get_style_context ().add_class ("transition");
             btn_close.margin = 16;
@@ -97,7 +97,7 @@ namespace App.Windows {
             // Detail Button
             //var btn_detail = new Gtk.Button.from_icon_name ("camera-photo-symbolic",Gtk.IconSize.BUTTON  );
             var btn_detail = new Gtk.Button.with_label (S.DETAILS);
-            btn_detail.get_style_context ().add_class ("button-green");
+            btn_detail.get_style_context ().add_class ("button-action");
             btn_detail.get_style_context ().remove_class ("button");
             btn_detail.get_style_context ().add_class ("transition");
             btn_detail.margin = 16;

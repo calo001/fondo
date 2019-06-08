@@ -3,6 +3,7 @@
 
     <gresource prefix="/com/github/calo001/fondo/css">
         <file alias="style.css" compressed="true">css/style.css</file>
+        <file alias="animations.css" compressed="true">css/animations.css</file>
     </gresource>
 
     <gresource prefix="/com/github/calo001/fondo/images">

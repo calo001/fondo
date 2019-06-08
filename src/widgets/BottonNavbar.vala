@@ -22,10 +22,10 @@ using App.Enums;
 namespace App.Widgets {
 
     /**
-     * The {@code ButtonNavbar} class is responsible for displaying a button navigation bar.
+     * The {@code BottonNavbar} class is responsible for displaying a button navigation bar.
      *
      */
-    public class ButtonNavbar : Gtk.Grid {
+    public class BottonNavbar : Gtk.Grid {
         public  Navigation  current_tab {get; set;}
         private ButtonTab   btnDaily;
         private ButtonTab   btnCategories;
@@ -35,7 +35,7 @@ namespace App.Widgets {
         public signal void categories ();
         public signal void history ();        
 
-        public ButtonNavbar () {
+        public BottonNavbar () {
             vexpand = false;
             sensitive = false;
             
