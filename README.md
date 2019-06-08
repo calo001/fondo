@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/calo001/fondo">
-    <img src="https://img.shields.io/badge/Version-1.2.1-orange.svg">
+    <img src="https://img.shields.io/badge/Version-1.2.4-orange.svg">
   </a>
   <a href="https://github.com/calo001/fondo/blob/master/LICENSE.md">
     <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
@@ -120,6 +120,7 @@ Gifted by the world’s most generous community of photographers. 🎁
 ### Translators
 - [Rafael C. Nunes](https://github.com/rafaelcn) Brazilian Portuguese
 - [NathanBnm](https://github.com/NathanBnm) French
+- [Heimen Stoffels](https://github.com/Vistaus) Dutch (Netherlands)
 
 ## License
 

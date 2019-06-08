@@ -44,6 +44,28 @@
         </ul>
     </description>
     <releases>
+      <release version="1.2.4" date="2019-05-14">
+        <description>
+          Remove G+ option from Share popup
+        </description>
+      </release>
+      <release version="1.2.3" date="2019-03-15">
+        <description>
+          New
+          <ul>
+            <li>Update the set of screenshots</li>
+            <li>Fix error in appdata</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.2.2" date="2019-03-15">
+        <description>
+          New
+          <ul>
+            <li>Added Dutch (Netherlands) translation</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.2.1" date="2019-01-22">
         <description>
           New

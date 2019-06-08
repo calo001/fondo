@@ -6,6 +6,6 @@ Exec=com.github.calo001.fondo
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Utility;
+Categories=Utility;Network;System;
 Keywords=wallpaper;unsplash;foto;image;photo;background;
 X-GNOME-UsesNotifications=true

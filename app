@@ -2,6 +2,18 @@
 
 arg=$1
 
+function prepare_gschema {
+    mkdir ~/.cache/temp_gschemas 2> /dev/null
+    cp data/com.github.calo001.fondo.gschema.xml ~/.cache/temp_gschemas/
+    glib-compile-schemas ~/.cache/temp_gschemas/
+    export GSETTINGS_SCHEMA_DIR=~/.cache/temp_gschemas/
+}
+
+function clear_gschema {
+    rm ~/.cache/temp_gschemas/* 2> /dev/null
+}
+
+
 function initialize {
     meson build --prefix=/usr
     result=$?
@@ -43,6 +55,7 @@ function test {
 
 case $1 in
 "clean")
+    clear_gschema
     sudo rm -rf ./build
     ;;
 "generate-i18n")
@@ -71,6 +84,7 @@ case $1 in
     $command
     ;;
 "run")
+    prepare_gschema
     initialize
     GOBJECT_DEBUG=instance-count ./com.github.calo001.fondo "${@:2}"
     ;;

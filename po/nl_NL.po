@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.calo001.fondo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.calo001.fondo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-12 09:54-0600\n"
+"PO-Revision-Date: 2019-03-14 12:26+0100\n"
+"Language-Team: Dutch <vistausss@outlook.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Language: nl_NL\n"
+
+#: src/configs/Strings.vala:28
+msgid "Today"
+msgstr "Vandaag"
+
+#: src/configs/Strings.vala:29
+msgid "Categories"
+msgstr "Categorieën"
+
+#: src/configs/Strings.vala:30
+msgid "Powered by"
+msgstr "Aangedreven door"
+
+#: src/configs/Strings.vala:31
+msgid "Visit web site"
+msgstr "Website bezoeken"
+
+#: src/configs/Strings.vala:32
+msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
+msgstr "Foto's van Unsplash: prachtige foto's, en helemaal gratis 🎁"
+
+#: src/configs/Strings.vala:33
+msgid "Photo by "
+msgstr "Foto gemaakt door "
+
+#: src/configs/Strings.vala:34
+msgid " on Unsplash"
+msgstr " op Unsplash"
+
+#: src/configs/Strings.vala:35
+msgid "Share"
+msgstr "Delen"
+
+#: src/configs/Strings.vala:36
+msgid "Email"
+msgstr "E-mail"
+
+#: src/configs/Strings.vala:37
+msgid "Copy link"
+msgstr "Link kopiëren"
+
+#: src/configs/Strings.vala:38
+msgid "Options"
+msgstr "Opties"
+
+#: src/configs/Strings.vala:39
+msgid "Centered"
+msgstr "Centreren"
+
+#: src/configs/Strings.vala:40
+msgid "Scaled"
+msgstr "Schalen"
+
+#: src/configs/Strings.vala:41
+msgid "Zoom"
+msgstr "Vergroten"
+
+#: src/configs/Strings.vala:42
+msgid "Spanned"
+msgstr "Omspannen"
+
+#: src/configs/Strings.vala:43
+msgid "Wallpaper ready!"
+msgstr "Achtergrond is klaar!"
+
+#: src/configs/Strings.vala:44
+msgid "Your new wallpaper is ready!"
+msgstr "Je nieuwe achtergrond is klaar voor gebruik!"
+
+#: src/configs/Strings.vala:45
+msgid "Check the network connection."
+msgstr "Controleer je internetverbinding."
+
+#: src/configs/Strings.vala:46
+msgid "Retry"
+msgstr "Opnieuw"
+
+#: src/configs/Strings.vala:47
+msgid "🌎  An amazing place in the world"
+msgstr "🌎  Een fantastische locatie, ergens op de wereld"
+
+#: src/configs/Strings.vala:48
+msgid "🌻 Nature"
+msgstr "🌻 Natuur"
+
+#: src/configs/Strings.vala:49
+msgid "🐹 Animal"
+msgstr "🐹 Dieren"
+
+#: src/configs/Strings.vala:50
+msgid "☕ Food & drink"
+msgstr "☕ Eten en drinken"
+
+#: src/configs/Strings.vala:51
+msgid "🌙 Space"
+msgstr "🌙 Het heelal"
+
+#: src/configs/Strings.vala:52
+msgid "🏸 Sport"
+msgstr "🏸 Sport"
+
+#: src/configs/Strings.vala:53
+msgid "📊 Business & work"
+msgstr "📊 Zakelijk en werk"
+
+#: src/configs/Strings.vala:54
+msgid "‍🎩 Fashion"
+msgstr "‍🎩 Mode"
+
+#: src/configs/Strings.vala:55
+msgid "🎨 Art & culture"
+msgstr "🎨 Kunst en cultuur"
+
+#: src/configs/Strings.vala:56
+msgid "🏦 Architecture"
+msgstr "🏦 Architectuur"
+
+#: src/configs/Strings.vala:57
+msgid "💻 Technology"
+msgstr "💻 Technologie"
+
+#: src/configs/Strings.vala:58
+msgid "🍁 Texture & pattern"
+msgstr "🍁 Textuur en patroon"
+
+#: src/configs/Strings.vala:59
+msgid "📑 Flat lay"
+msgstr "📑 Plat"
+
+#: src/configs/Strings.vala:60
+msgid "Photos not found"
+msgstr "Geen foto's gevonden"
+
+#: src/configs/Strings.vala:61
+msgid "Loading ..."
+msgstr "Bezig met laden..."
+
+#: src/configs/Strings.vala:62
+msgid "Press Esc to Exit"
+msgstr "Druk op Esc om te sluiten"
+
+#: src/configs/Strings.vala:63
+msgid "Search photos Unsplash"
+msgstr "Zoek foto's op Unsplash"
+
+#: src/configs/Strings.vala:64
+msgid "Back to today's photos"
+msgstr "Terug naar foto's van vandaag"
+
+#: src/configs/Strings.vala:65
+msgid "Light background"
+msgstr "Lichte achtergrond"
+
+#: src/configs/Strings.vala:66
+msgid "Dark background"
+msgstr "Donkere achtergrond"
+
+#: src/configs/Strings.vala:67
+msgid "About"
+msgstr "Over"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+#: data/com.github.calo001.fondo.desktop.in:3
+msgid "Fondo"
+msgstr "Fondo"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+#: data/com.github.calo001.fondo.desktop.in:4
+msgid "Find the most beautiful wallpapers"
+msgstr "Vind de mooiste bureaubladachtergronden"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr "Carlos Lopez"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:31
+msgid ""
+"Find a variety of the most beautiful wallpapers from Unsplash.com the "
+"world’s most generous community of photographers."
+msgstr ""
+"Vind de mooiste bureaubladachtergronden op Unsplash.com - 's werelds meest "
+"genereuze gemeenschap van fotografen."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:32
+msgid ""
+"Fondo allows you to see thousands of beautiful photographs from the most "
+"recent to the one you are to looking for. Give a simple click on a picture "
+"to set as wallpaper, wait until the download is complete and enjoy!"
+msgstr ""
+"Fondo stelt je in staat om duizenden foto's te bekijken - van de recentste "
+"tot dé foto waar je naar op zoek bent. Met één muisklik kun je een "
+"afbeelding downloaden en instellen als bureaubladachtergrond!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+msgid ""
+"Have a simple and elegant interface, you can change from light mode to dark "
+"mode as you prefer."
+msgstr ""
+"Een eenvoudig, elegant uiterlijk, met keuze uit een lichte en donkere modus."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+msgid "Main features:"
+msgstr "Mogelijkheden:"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:36
+msgid "Scroll down to load more photos"
+msgstr "Scroll omlaag om meer foto's te laden"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:37
+msgid "A single click on the photo to put as a wallpaper"
+msgstr "Stel een foto met één muisklik in als bureaubladachtergrond"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+msgid "Right click for more wallpaper display options"
+msgstr "Klik met de rechtermuisknop voor meer weergave-opties"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:39
+msgid "See the photo in full screen"
+msgstr "Bekijk foto's op volledig scherm"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:40
+msgid "Change the size of the window, the window is responsive"
+msgstr ""
+"Pas de grootte van het venster aan - de vensterinhoud past zich automatisch "
+"aan"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:41
+msgid "Share with your friends a link to photo from Unsplash"
+msgstr "Deel een fotolink met je vrienden"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:42
+msgid "Search by categories or write what you want to search in the top input"
+msgstr "Verken categorieën of typ je zoekopdracht in het zoekvak"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:43
+msgid "Use Ctrl + Q to exit"
+msgstr "Gebruik Ctrl + Q om af te sluiten"
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr "com.github.calo001.fondo"
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr ""
+"bureaubladachtergrond;unsplash;foto;afbeelding;achtergrond;bureaublad;"
