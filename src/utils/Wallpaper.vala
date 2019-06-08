@@ -91,7 +91,19 @@ namespace App.Utils {
 		    var dir = File.new_for_path (BASE_DIR);
 		    if (!dir.query_exists ()) {
                 try{
-			    	dir. make_directory_with_parents();
+			    	dir. make_directory_with_parents ();
+			    } catch (Error e){
+				    show_message ("Error check Directory", e.message, "dialog-error");
+				    return false;
+			    }
+            }
+
+            // Double check using mke_directory for issue #46
+            // https://github.com/calo001/fondo/issues/46
+
+            if (!dir.query_exists ()) {
+                try{
+			    	dir. make_directory ();
 			    } catch (Error e){
 				    show_message ("Error check Directory", e.message, "dialog-error");
 				    return false;
@@ -134,7 +146,7 @@ namespace App.Utils {
                             #endif
                             finish_download ();
                         } catch (Error e) {
-                            show_message ("Error Copiar de URI a folder", e.message, "dialog-error");
+                            show_message ("Error copy from URI to directory", e.message, "dialog-error");
                         }
 		                loop.quit ();
 	                });

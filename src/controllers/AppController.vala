@@ -39,6 +39,7 @@ namespace App.Controllers {
         private PhotosView                 view;
         private PhotosView                 search_view;
         private PhotosView                 history_view;
+        private EmptyHistoryView           empty_view_history;
         private EmptyView                  empty_view;
         private LoadingView                box_loading;
         private AppViewError               view_error;
@@ -60,6 +61,7 @@ namespace App.Controllers {
         private bool                       is_scrolling; 
         private bool                       is_history_loaded;
 
+        private const string STACK_EMPTY_HISTORY = "empty_history";
         private const string STACK_CATEGORIES = "categories";
         private const string STACK_LOADING = "spinner";
         private const string STACK_HISTORY = "history";
@@ -96,7 +98,8 @@ namespace App.Controllers {
             scrolled_history =      new Gtk.ScrolledWindow (null, null);
             box_loading =           new LoadingView ();
             categories =            new CategoriesView ();
-            empty_view =            new EmptyView ();         
+            empty_view =            new EmptyView ();
+            empty_view_history =    new EmptyHistoryView ();       
             view =                  new PhotosView ();
             search_view =           new PhotosView ();
             history_view =          new PhotosView ();
@@ -169,7 +172,8 @@ namespace App.Controllers {
             stack.add_named(scrolled_history,   STACK_HISTORY); 
             stack.add_named(empty_view,         STACK_EMPTY); 
             stack.add_named(view_error,         STACK_ERROR);
-
+            stack.add_named(empty_view_history, STACK_EMPTY_HISTORY);
+            
             // Navigationbar
             bottonNavbar = new BottonNavbar ();
             bottonNavbar.valign = Gtk.Align.END;
@@ -189,10 +193,13 @@ namespace App.Controllers {
                 var history = jsonManager.load_from_file ();
                 history.reverse ();
                 
-                stack_visible (STACK_HISTORY);
-
-                history_view.clean_list ();
-                history_view.insert_cards (history, false);
+                if (history.length () > 0) {
+                    stack_visible (STACK_HISTORY);
+                    history_view.clean_list ();
+                    history_view.insert_cards (history, false);
+                } else {
+                    stack_visible (STACK_EMPTY_HISTORY);
+                }
             });
 
             // Window Overlay
@@ -334,6 +341,9 @@ namespace App.Controllers {
                     break;
                 case STACK_CATEGORIES:
                     stack.set_visible_child_full (STACK_CATEGORIES, Gtk.StackTransitionType.SLIDE_UP);
+                    break;
+                case STACK_EMPTY_HISTORY:
+                    stack.set_visible_child_full (STACK_EMPTY_HISTORY, Gtk.StackTransitionType.SLIDE_UP);
                     break;
                 default:
                     views_sensitives (true, false, false);

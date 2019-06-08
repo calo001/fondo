@@ -10,6 +10,7 @@ sources += files(
     'views/CardPhotoView.vala',
     'views/ButtonCategory.vala',
     'views/CategoriesView.vala',
+    'views/EmptyHistoryView.vala',
     'views/EmptyView.vala',
     'views/LoadingView.vala',
     'views/FilterOptionsView.vala',
