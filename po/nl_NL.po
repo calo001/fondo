@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-08 22:27-0500\n"
-"PO-Revision-Date: 2019-03-14 12:26+0100\n"
+"PO-Revision-Date: 2019-06-09 21:16+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
 "Language: nl_NL\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: src/configs/Strings.vala:28
 msgid "Today"
@@ -347,75 +347,77 @@ msgstr "Gradiëntanimatie in schuifbalk, modusomschakeling en plaatshouderfoto"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:62
 msgid "Remove G+ option from Share popup"
-msgstr ""
+msgstr "Google+ verwijderd als deelmogelijkheid"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:70
 msgid "Update the set of screenshots"
-msgstr ""
+msgstr "Schermafbeeldingen bijgewerkt"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:71
 msgid "Fix error in appdata"
-msgstr ""
+msgstr "Fout opgelost in appdata"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:79
 msgid "Added Dutch (Netherlands) translation"
-msgstr ""
+msgstr "Nederlandse (Nederland) vertaling toegevoegd"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:87
 msgid "Add french translations"
-msgstr ""
+msgstr "Franse vertaling toegevoegd"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:95
 msgid "Search by category and query"
-msgstr ""
+msgstr "Zoeken op categorie en zoekopdracht"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:96
 msgid "New look and feel on hover a photo"
-msgstr ""
+msgstr "Nieuwe fotoweergave bij zweven over foto's"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:97
 msgid "Add gradients to scrollbar and mode switch"
-msgstr ""
+msgstr "Kleurverloop toegevoegd aan scrollbalk en schakelen tullen modi"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:105
 msgid "New screenshots with awesome photos"
-msgstr ""
+msgstr "Nieuwe schermafbeeldingen met fantastische foto's"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:106
 msgid "OARS data social-info set to mild"
-msgstr ""
+msgstr "OARS-gegevens voor social-info ingesteld op mild"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:114
 msgid "Orthographic corrections in the Spanish translation"
-msgstr ""
+msgstr "Verbeteringen aan de Spaanse vertaling"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:115
 msgid "The photos are sorted from highest to lowest according to height"
 msgstr ""
+"De foto's worden gesorteerd van grootste-naar-kleinste, op basis van de "
+"hoogte"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:123
 msgid "Responsive, resizable window"
-msgstr ""
+msgstr "Automatisch schaalbaar venster"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:124
 msgid "Infinite scrolling: just scroll to keep loading new photos"
-msgstr ""
+msgstr "Oneindig scrollen: blijf scrollen om meer foto's te laden"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:125
 msgid "Wallpaper options: set zoom, centered, and more"
-msgstr ""
+msgstr "Achtergrondopties: stel het zoomniveau, de uitlijning en meer in"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:126
 msgid "Improved icon and styling"
-msgstr ""
+msgstr "Pictogram en stijl verbeterd"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:131
 msgid "Improved UI."
-msgstr ""
+msgstr "Verbeterd uiterlijk"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:136
 msgid "Initial 1.0.0 release!"
-msgstr ""
+msgstr "Initiële uitgave '1.0.0'!"
 
 #: data/com.github.calo001.fondo.desktop.in:5
 msgid "com.github.calo001.fondo"
