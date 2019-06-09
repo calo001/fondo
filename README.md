@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/calo001/fondo">
-    <img src="https://img.shields.io/badge/Version-1.3.0-orange.svg">
+    <img src="https://img.shields.io/badge/Version-1.3.1-orange.svg">
   </a>
   <a href="https://github.com/calo001/fondo/blob/master/LICENSE.md">
     <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
