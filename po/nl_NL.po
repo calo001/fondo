@@ -152,7 +152,7 @@ msgstr "Bezig met laden..."
 
 #: src/configs/Strings.vala:61
 msgid "Close full screen"
-msgstr "Sluit het volledige scherm"
+msgstr "Volledig scherm afsluiten"
 
 #: src/configs/Strings.vala:62
 msgid "Search photos Unsplash"
@@ -351,7 +351,7 @@ msgstr "Google+ verwijderd als deelmogelijkheid"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:70
 msgid "Update the set of screenshots"
-msgstr "Schermafbeeldingen bijgewerkt"
+msgstr "Schermafdrukken bijgewerkt"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:71
 msgid "Fix error in appdata"
