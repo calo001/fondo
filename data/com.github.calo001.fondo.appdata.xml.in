@@ -34,10 +34,10 @@
         <p>Main features:</p>
         <ul>
           <li>To infinity and beyond!: Use the infinite scroll to load more photos</li>
-          <li>Find out what you like: Search by categories or write what you want to search in the top input</li>
+          <li>Find out what you like: Search by categories or type in the search bar</li>
           <li>Keep your favorite photos with you: Every new wallpaper is saved in the history</li>
-          <li>Share with your friends: select a number of options for sharing a link to the photo from Unsplash</li>
-          <li>Filter by Orientation: Portrait, Landscape or Any</li>
+          <li>Share with your friends: Select a variety of options for sharing an Unsplash link to the photo</li>
+          <li>Filter by orientation: Portrait, Landscape or Any</li>
         </ul>
     </description>
     <releases>
@@ -47,8 +47,8 @@
           <ul>
             <li>Keep your favorite photos with you, the photo history has arrived!</li>
             <li>New way of navigating with a bottom bar that allows you to go to: Today, Categories and History</li>
-            <li>Speed up your search with the Photo Filter by Orientation: Portrait, Landscape or Any</li>
-            <li>Learn more about the incredible with the Detail popup of the photo in Full Screen window</li>
+            <li>Speed up your search with the photo filter by Orientation: Portrait, Landscape or Any</li>
+            <li>Learn more about a photo with the Detail popup in the full screen view</li>
             <li>Focus on Search entry with Ctrl+F</li>
             <li>When doing a search, the total number of results are displayed</li>
             <li>Gradient animation in scrollbar, mode switch and placeholder photo</li>

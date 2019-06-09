@@ -92,7 +92,10 @@ namespace App.Windows {
             btn_close.margin = 16;
             btn_close.halign = Gtk.Align.END;
             btn_close.valign = Gtk.Align.END;
-            btn_close.set_tooltip_text (S.PRESS_ESC_TO_EXIT);
+            btn_close.tooltip_markup = Granite.markup_accel_tooltip (
+                {"Escape"},
+                S.CLOSE
+            );
 
             // Detail Button
             //var btn_detail = new Gtk.Button.from_icon_name ("camera-photo-symbolic",Gtk.IconSize.BUTTON  );

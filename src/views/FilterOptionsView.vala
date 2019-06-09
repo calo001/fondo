@@ -40,15 +40,15 @@ namespace App.Views {
             App.Application.settings.bind ("filter-mode", this, "filtermode", GLib.SettingsBindFlags.DEFAULT);
             this.popover = popover;
 
-            var button_landscape = new Gtk.RadioButton.with_label (null, "Landscape");
+            var button_landscape = new Gtk.RadioButton.with_label (null, S.LANDSCAPE);
             button_landscape.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
             button_landscape.expand = true;
 
-            var button_portrait = new Gtk.RadioButton.with_label (null, "Portrait");
+            var button_portrait = new Gtk.RadioButton.with_label (null, S.PORTRAIT);
             button_portrait.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
             button_portrait.expand = true;
 
-            var button_any = new Gtk.RadioButton.with_label (null, "Any");
+            var button_any = new Gtk.RadioButton.with_label (null, S.ANY);
             button_any.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
             button_any.expand = true;
 

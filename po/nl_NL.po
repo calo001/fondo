@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-08 18:54-0500\n"
+"POT-Creation-Date: 2019-06-08 22:27-0500\n"
 "PO-Revision-Date: 2019-03-14 12:26+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
@@ -27,208 +27,212 @@ msgid "Categories"
 msgstr "Categorieën"
 
 #: src/configs/Strings.vala:30
-msgid "Powered by"
-msgstr "Aangedreven door"
-
-#: src/configs/Strings.vala:31
 msgid "Visit web site"
 msgstr "Website bezoeken"
 
-#: src/configs/Strings.vala:32
+#: src/configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
 msgstr "Foto's van Unsplash: prachtige foto's, en helemaal gratis 🎁"
 
-#: src/configs/Strings.vala:33
+#: src/configs/Strings.vala:32
 msgid "Photo by "
 msgstr "Foto gemaakt door "
 
-#: src/configs/Strings.vala:34
+#: src/configs/Strings.vala:33
 msgid " on Unsplash"
 msgstr " op Unsplash"
 
-#: src/configs/Strings.vala:35
+#: src/configs/Strings.vala:34
 msgid "Share"
 msgstr "Delen"
 
-#: src/configs/Strings.vala:36
+#: src/configs/Strings.vala:35
 msgid "Email"
 msgstr "E-mail"
 
-#: src/configs/Strings.vala:37
+#: src/configs/Strings.vala:36
 msgid "Copy link"
 msgstr "Link kopiëren"
 
-#: src/configs/Strings.vala:38
+#: src/configs/Strings.vala:37
 msgid "Options"
 msgstr "Opties"
 
-#: src/configs/Strings.vala:39
+#: src/configs/Strings.vala:38
 msgid "Centered"
 msgstr "Centreren"
 
-#: src/configs/Strings.vala:40
+#: src/configs/Strings.vala:39
 msgid "Scaled"
 msgstr "Schalen"
 
-#: src/configs/Strings.vala:41
+#: src/configs/Strings.vala:40
 msgid "Zoom"
 msgstr "Vergroten"
 
-#: src/configs/Strings.vala:42
+#: src/configs/Strings.vala:41
 msgid "Spanned"
 msgstr "Omspannen"
 
-#: src/configs/Strings.vala:43
+#: src/configs/Strings.vala:42
 msgid "Wallpaper ready!"
 msgstr "Achtergrond is klaar!"
 
-#: src/configs/Strings.vala:44
+#: src/configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
 msgstr "Je nieuwe achtergrond is klaar voor gebruik!"
 
-#: src/configs/Strings.vala:45
+#: src/configs/Strings.vala:44
 msgid "Check the network connection."
 msgstr "Controleer je internetverbinding."
 
-#: src/configs/Strings.vala:46
+#: src/configs/Strings.vala:45
 msgid "Retry"
 msgstr "Opnieuw"
 
-#: src/configs/Strings.vala:47
+#: src/configs/Strings.vala:46
 msgid "🌎  An amazing place in the world"
 msgstr "🌎  Een fantastische locatie, ergens op de wereld"
 
-#: src/configs/Strings.vala:48
+#: src/configs/Strings.vala:47
 msgid "🌻 Nature"
 msgstr "🌻 Natuur"
 
-#: src/configs/Strings.vala:49
+#: src/configs/Strings.vala:48
 msgid "🐹 Animal"
 msgstr "🐹 Dieren"
 
-#: src/configs/Strings.vala:50
+#: src/configs/Strings.vala:49
 msgid "☕ Food & drink"
 msgstr "☕ Eten en drinken"
 
-#: src/configs/Strings.vala:51
+#: src/configs/Strings.vala:50
 msgid "🌙 Space"
 msgstr "🌙 Het heelal"
 
-#: src/configs/Strings.vala:52
+#: src/configs/Strings.vala:51
 msgid "🏸 Sport"
 msgstr "🏸 Sport"
 
-#: src/configs/Strings.vala:53
+#: src/configs/Strings.vala:52
 msgid "📊 Business & work"
 msgstr "📊 Zakelijk en werk"
 
-#: src/configs/Strings.vala:54
+#: src/configs/Strings.vala:53
 msgid "‍🎩 Fashion"
 msgstr "‍🎩 Mode"
 
-#: src/configs/Strings.vala:55
+#: src/configs/Strings.vala:54
 msgid "🎨 Art & culture"
 msgstr "🎨 Kunst en cultuur"
 
-#: src/configs/Strings.vala:56
+#: src/configs/Strings.vala:55
 msgid "🏦 Architecture"
 msgstr "🏦 Architectuur"
 
-#: src/configs/Strings.vala:57
+#: src/configs/Strings.vala:56
 msgid "💻 Technology"
 msgstr "💻 Technologie"
 
-#: src/configs/Strings.vala:58
+#: src/configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
 msgstr "🍁 Textuur en patroon"
 
-#: src/configs/Strings.vala:59
+#: src/configs/Strings.vala:58
 msgid "📑 Flat lay"
 msgstr "📑 Plat"
 
-#: src/configs/Strings.vala:60
+#: src/configs/Strings.vala:59
 msgid "Photos not found"
 msgstr "Geen foto's gevonden"
 
-#: src/configs/Strings.vala:61
+#: src/configs/Strings.vala:60
 msgid "Loading ..."
 msgstr "Bezig met laden..."
 
-#: src/configs/Strings.vala:62
-msgid "Press Esc to Exit"
-msgstr "Druk op Esc om te sluiten"
+#: src/configs/Strings.vala:61
+msgid "Close full screen"
+msgstr "Sluit het volledige scherm"
 
-#: src/configs/Strings.vala:63
+#: src/configs/Strings.vala:62
 msgid "Search photos Unsplash"
 msgstr "Zoek foto's op Unsplash"
 
-#: src/configs/Strings.vala:64
+#: src/configs/Strings.vala:63
 msgid "History"
-msgstr ""
+msgstr "Geschiedenis"
 
-#: src/configs/Strings.vala:65
+#: src/configs/Strings.vala:64
 msgid "Light background"
 msgstr "Lichte achtergrond"
 
-#: src/configs/Strings.vala:66
+#: src/configs/Strings.vala:65
 msgid "Dark background"
 msgstr "Donkere achtergrond"
 
-#: src/configs/Strings.vala:67
+#: src/configs/Strings.vala:66
 msgid "About"
 msgstr "Over"
 
-#: src/configs/Strings.vala:68
+#: src/configs/Strings.vala:67
 msgid "TODAY"
-msgstr ""
+msgstr "VANDAAG"
+
+#: src/configs/Strings.vala:68
+msgid "CATEGORIES"
+msgstr "CATEGORIEËN"
 
 #: src/configs/Strings.vala:69
-msgid "CATEGORIES"
-msgstr ""
+msgid "HISTORY"
+msgstr "GESCHIEDENIS"
 
 #: src/configs/Strings.vala:70
-msgid "HISTORY"
-msgstr ""
+msgid "No description available"
+msgstr "Geen beschrijving beschikbaar"
 
 #: src/configs/Strings.vala:71
-msgid "No description available"
-msgstr ""
+msgid "Set as wallpaper"
+msgstr "Als bureaubladachtergrond instellen"
 
 #: src/configs/Strings.vala:72
-msgid "Set as wallpaper"
-msgstr ""
+msgid "Details"
+msgstr "Gegevens"
 
 #: src/configs/Strings.vala:73
-msgid "Details"
-msgstr ""
+msgid "Visit profile"
+msgstr "Bezoek profiel"
 
 #: src/configs/Strings.vala:74
-msgid "Visit profile"
-msgstr ""
+msgid "Total results"
+msgstr "Totaal aantal resultaten"
 
 #: src/configs/Strings.vala:75
-msgid "Filtering..."
-msgstr ""
+msgid "Find out what you like️"
+msgstr "Ontdek wat je leuk vindt️"
 
 #: src/configs/Strings.vala:76
-msgid "Total results"
-msgstr ""
+msgid "Try changing search terms."
+msgstr "Probeer zoektermen te veranderen."
 
 #: src/configs/Strings.vala:77
-msgid "Find out what you like️"
-msgstr ""
+msgid "Click on a photo to add it to the history."
+msgstr "Klik op een foto om deze aan de geschiedenis toe te voegen."
 
 #: src/configs/Strings.vala:78
-msgid "Try changing search terms."
-msgstr ""
+msgid "Network Error"
+msgstr "Netwerkfout"
 
 #: src/configs/Strings.vala:79
-msgid "Click on a photo to add it to the history."
-msgstr ""
+msgid "Landscape"
+msgstr "Horizontaal"
 
 #: src/configs/Strings.vala:80
-msgid "Network Error"
-msgstr ""
+msgid "Portrait"
+msgstr "Verticaal"
+
+#: src/configs/Strings.vala:81
+msgid "Any"
+msgstr "Ieder"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:7
 #: data/com.github.calo001.fondo.desktop.in:3
@@ -253,7 +257,6 @@ msgstr ""
 "genereuze gemeenschap van fotografen."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:32
-#, fuzzy
 msgid ""
 "Fondo allows you to see thousands of beautiful photographs from the most "
 "recent to the one you are to looking for. Give a single click on a picture, "
@@ -264,7 +267,6 @@ msgstr ""
 "afbeelding downloaden en instellen als bureaubladachtergrond!"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:33
-#, fuzzy
 msgid ""
 "Have a minimalist, simple and elegant interface, additionally, you can "
 "change from light mode to dark mode as you prefer."
@@ -278,64 +280,70 @@ msgstr "Mogelijkheden:"
 #: data/com.github.calo001.fondo.appdata.xml.in:36
 msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
 msgstr ""
+"Tot in het oneindige en verder !: Gebruik de oneindige scroll om meer foto's "
+"te laden"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:37
-#, fuzzy
-msgid ""
-"Find out what you like: Search by categories or write what you want to "
-"search in the top input"
-msgstr "Verken categorieën of typ je zoekopdracht in het zoekvak"
+msgid "Find out what you like: Search by categories or type in the search bar"
+msgstr "Ontdek wat je leuk vindt: zoek op categorieën of typ in de zoekbalk"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:38
 msgid ""
 "Keep your favorite photos with you: Every new wallpaper is saved in the "
 "history"
 msgstr ""
+"Houd je favoriete foto's bij je: elke nieuwe achtergrond wordt in de "
+"geschiedenis opgeslagen"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:39
-#, fuzzy
 msgid ""
-"Share with your friends: select a number of options for sharing a link to "
-"the photo from Unsplash"
-msgstr "Deel een fotolink met je vrienden"
+"Share with your friends: Select a variety of options for sharing an Unsplash "
+"link to the photo"
+msgstr ""
+"Deel met je vrienden: Selecteer een aantal verschillende opties om een "
+"Unsplash-link naar de foto te delen"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:40
-msgid "Filter by Orientation: Portrait, Landscape or Any"
-msgstr ""
+msgid "Filter by orientation: Portrait, Landscape or Any"
+msgstr "Filteren op oriëntatie: horizontaal, verticaal of any"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:48
 msgid "Keep your favorite photos with you, the photo history has arrived!"
-msgstr ""
+msgstr "Houd je favoriete foto's bij je, de fotogeschiedenis is gearriveerd!"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:49
 msgid ""
 "New way of navigating with a bottom bar that allows you to go to: Today, "
 "Categories and History"
 msgstr ""
+"Nieuwe manier om te navigeren met een balk aan de onderzijde waarmee u naar: "
+"Vandaag, Categorieën en Geschiedenis kunt gaan"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:50
 msgid ""
-"Speed up your search with the Photo Filter by Orientation: Portrait, "
+"Speed up your search with the photo filter by Orientation: Portrait, "
 "Landscape or Any"
 msgstr ""
+"Versnel uw zoekopdracht met het fotofilter op Orientation: horizontaal, "
+"verticaal of any"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:51
-msgid ""
-"Learn more about the incredible with the Detail popup of the photo in Full "
-"Screen window"
+msgid "Learn more about a photo with the Detail popup in the full screen view"
 msgstr ""
+"Meer informatie over een foto met de detailpop-up in de weergave op volledig "
+"scherm"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:52
 msgid "Focus on Search entry with Ctrl+F"
-msgstr ""
+msgstr "Richt u op een zoekopdracht met Ctrl + F"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:53
 msgid "When doing a search, the total number of results are displayed"
-msgstr ""
+msgstr "Tijdens het zoeken wordt het totale aantal resultaten weergegeven"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:54
 msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
-msgstr ""
+msgstr "Gradiëntanimatie in schuifbalk, modusomschakeling en plaatshouderfoto"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:62
 msgid "Remove G+ option from Share popup"
@@ -416,26 +424,3 @@ msgstr "com.github.calo001.fondo"
 #: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
 msgstr "bureaubladachtergrond;unsplash;foto;afbeelding;achtergrond;bureaublad;"
-
-#~ msgid "Back to today's photos"
-#~ msgstr "Terug naar foto's van vandaag"
-
-#~ msgid "Scroll down to load more photos"
-#~ msgstr "Scroll omlaag om meer foto's te laden"
-
-#~ msgid "A single click on the photo to put as a wallpaper"
-#~ msgstr "Stel een foto met één muisklik in als bureaubladachtergrond"
-
-#~ msgid "Right click for more wallpaper display options"
-#~ msgstr "Klik met de rechtermuisknop voor meer weergave-opties"
-
-#~ msgid "See the photo in full screen"
-#~ msgstr "Bekijk foto's op volledig scherm"
-
-#~ msgid "Change the size of the window, the window is responsive"
-#~ msgstr ""
-#~ "Pas de grootte van het venster aan - de vensterinhoud past zich "
-#~ "automatisch aan"
-
-#~ msgid "Use Ctrl + Q to exit"
-#~ msgstr "Gebruik Ctrl + Q om af te sluiten"

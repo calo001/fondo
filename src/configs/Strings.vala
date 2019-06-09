@@ -27,7 +27,6 @@ namespace App.Configs {
     public class S {
         public abstract const string TODAY = _("Today");
         public abstract const string CATEGORIES = _("Categories");
-        public abstract const string POWERED_BY = _("Powered by");
         public abstract const string VISIT_WEB_SITE = _("Visit web site");
         public abstract const string UNSPLASH_DESCRIPTION = _("Photos from Unsplash: Beautiful Free Images & Pictures 🎁");
         public abstract const string PHOTO_BY = _("Photo by ");
@@ -59,7 +58,7 @@ namespace App.Configs {
         public abstract const string CATEGORY_FLATLAY = _("📑 Flat lay");
         public abstract const string PHOTOS_NOT_FOUND = _("Photos not found");
         public abstract const string LOADING = _("Loading ...");
-        public abstract const string PRESS_ESC_TO_EXIT = _("Press Esc to Exit");
+        public abstract const string CLOSE = _("Close full screen");
         public abstract const string SEARCH_PHOTOS_UNSPLASH = _("Search photos Unsplash");
         public abstract const string HISTORY = _("History");
         public abstract const string LIGHT_BACKGROUND = _("Light background");
@@ -72,11 +71,13 @@ namespace App.Configs {
         public abstract const string SET_AS_WALLPAPER = _("Set as wallpaper");        
         public abstract const string DETAILS = _("Details");
         public abstract const string USER_PROFILE = _("Visit profile");   
-        public abstract const string FILTERING = _("Filtering...");
         public abstract const string TOTAL_RESULTS = _("Total results");      
         public abstract const string SEARCH_TOOLTIP = _("Find out what you like️");
         public abstract const string EMPTY_SEARCH_DESCRIPTION = _("Try changing search terms.");
         public abstract const string EMPTY_HISTORY_DESCRIPTION = _("Click on a photo to add it to the history.");
         public abstract const string NETWORK_ERROR = _("Network Error");
+        public abstract const string LANDSCAPE = _("Landscape");
+        public abstract const string PORTRAIT = _("Portrait");
+        public abstract const string ANY = _("Any");
     }
 }

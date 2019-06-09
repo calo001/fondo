@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-08 18:54-0500\n"
+"POT-Creation-Date: 2019-06-08 22:27-0500\n"
 "PO-Revision-Date: 2018-09-11 11:49-0500\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: none\n"
@@ -26,208 +26,212 @@ msgid "Categories"
 msgstr "Catégories"
 
 #: src/configs/Strings.vala:30
-msgid "Powered by"
-msgstr "Propulsé par"
-
-#: src/configs/Strings.vala:31
 msgid "Visit web site"
 msgstr "Visiter le site web"
 
-#: src/configs/Strings.vala:32
+#: src/configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
 msgstr "Photos issues de Unsplash : Magnifiques images & photos gratuites 🎁"
 
-#: src/configs/Strings.vala:33
+#: src/configs/Strings.vala:32
 msgid "Photo by "
 msgstr "Photo par"
 
-#: src/configs/Strings.vala:34
+#: src/configs/Strings.vala:33
 msgid " on Unsplash"
 msgstr " sur Unsplash"
 
-#: src/configs/Strings.vala:35
+#: src/configs/Strings.vala:34
 msgid "Share"
 msgstr "Partager"
 
-#: src/configs/Strings.vala:36
+#: src/configs/Strings.vala:35
 msgid "Email"
 msgstr "E-mail"
 
-#: src/configs/Strings.vala:37
+#: src/configs/Strings.vala:36
 msgid "Copy link"
 msgstr "Copier le lien"
 
-#: src/configs/Strings.vala:38
+#: src/configs/Strings.vala:37
 msgid "Options"
 msgstr "Options"
 
-#: src/configs/Strings.vala:39
+#: src/configs/Strings.vala:38
 msgid "Centered"
 msgstr "Centré"
 
-#: src/configs/Strings.vala:40
+#: src/configs/Strings.vala:39
 msgid "Scaled"
 msgstr "Mis à l'échelle"
 
-#: src/configs/Strings.vala:41
+#: src/configs/Strings.vala:40
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/configs/Strings.vala:42
+#: src/configs/Strings.vala:41
 msgid "Spanned"
 msgstr "Étendu"
 
-#: src/configs/Strings.vala:43
+#: src/configs/Strings.vala:42
 msgid "Wallpaper ready!"
 msgstr "Fond d'écran prêt !"
 
-#: src/configs/Strings.vala:44
+#: src/configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
 msgstr "Votre nouveau fond d'écran est prêt !"
 
-#: src/configs/Strings.vala:45
+#: src/configs/Strings.vala:44
 msgid "Check the network connection."
 msgstr "Vérifiez la connexion réseau."
 
-#: src/configs/Strings.vala:46
+#: src/configs/Strings.vala:45
 msgid "Retry"
 msgstr "Réessayer"
 
-#: src/configs/Strings.vala:47
+#: src/configs/Strings.vala:46
 msgid "🌎  An amazing place in the world"
 msgstr "🌎  Un lieu étonnant dans le monde"
 
-#: src/configs/Strings.vala:48
+#: src/configs/Strings.vala:47
 msgid "🌻 Nature"
 msgstr "🌻 Nature"
 
-#: src/configs/Strings.vala:49
+#: src/configs/Strings.vala:48
 msgid "🐹 Animal"
 msgstr "🐹 Animal"
 
-#: src/configs/Strings.vala:50
+#: src/configs/Strings.vala:49
 msgid "☕ Food & drink"
 msgstr "☕ Aliments & boissons"
 
-#: src/configs/Strings.vala:51
+#: src/configs/Strings.vala:50
 msgid "🌙 Space"
 msgstr "🌙 Espace"
 
-#: src/configs/Strings.vala:52
+#: src/configs/Strings.vala:51
 msgid "🏸 Sport"
 msgstr "🏸 Sport"
 
-#: src/configs/Strings.vala:53
+#: src/configs/Strings.vala:52
 msgid "📊 Business & work"
 msgstr "📊 Affaires et travail"
 
-#: src/configs/Strings.vala:54
+#: src/configs/Strings.vala:53
 msgid "‍🎩 Fashion"
 msgstr "🎩 Mode"
 
-#: src/configs/Strings.vala:55
+#: src/configs/Strings.vala:54
 msgid "🎨 Art & culture"
 msgstr "🎨 Art & culture"
 
-#: src/configs/Strings.vala:56
+#: src/configs/Strings.vala:55
 msgid "🏦 Architecture"
 msgstr "🏦 Architecture"
 
-#: src/configs/Strings.vala:57
+#: src/configs/Strings.vala:56
 msgid "💻 Technology"
 msgstr "💻 Technologie"
 
-#: src/configs/Strings.vala:58
+#: src/configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
 msgstr "🍁 Texture & motif"
 
-#: src/configs/Strings.vala:59
+#: src/configs/Strings.vala:58
 msgid "📑 Flat lay"
 msgstr ""
 
-#: src/configs/Strings.vala:60
+#: src/configs/Strings.vala:59
 msgid "Photos not found"
 msgstr "Photos non trouvées"
 
-#: src/configs/Strings.vala:61
+#: src/configs/Strings.vala:60
 msgid "Loading ..."
 msgstr "Chargement…"
 
-#: src/configs/Strings.vala:62
-msgid "Press Esc to Exit"
-msgstr "Appuyez sur Échap pour quitter."
+#: src/configs/Strings.vala:61
+msgid "Close full screen"
+msgstr "Fermer en plein écran"
 
-#: src/configs/Strings.vala:63
+#: src/configs/Strings.vala:62
 msgid "Search photos Unsplash"
 msgstr "Rechercher des photos via Unsplash"
 
-#: src/configs/Strings.vala:64
+#: src/configs/Strings.vala:63
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
-#: src/configs/Strings.vala:65
+#: src/configs/Strings.vala:64
 msgid "Light background"
 msgstr "Thème clair"
 
-#: src/configs/Strings.vala:66
+#: src/configs/Strings.vala:65
 msgid "Dark background"
 msgstr "Thème sombre"
 
-#: src/configs/Strings.vala:67
+#: src/configs/Strings.vala:66
 msgid "About"
-msgstr " À propos"
+msgstr "À propos"
+
+#: src/configs/Strings.vala:67
+msgid "TODAY"
+msgstr "AUJOURD'HUI"
 
 #: src/configs/Strings.vala:68
-msgid "TODAY"
-msgstr ""
+msgid "CATEGORIES"
+msgstr "CATÉGORIES"
 
 #: src/configs/Strings.vala:69
-msgid "CATEGORIES"
-msgstr ""
+msgid "HISTORY"
+msgstr "HISTORIQUE"
 
 #: src/configs/Strings.vala:70
-msgid "HISTORY"
-msgstr ""
+msgid "No description available"
+msgstr "Pas de description disponible"
 
 #: src/configs/Strings.vala:71
-msgid "No description available"
-msgstr ""
+msgid "Set as wallpaper"
+msgstr "Définir en tant que fond d'écran"
 
 #: src/configs/Strings.vala:72
-msgid "Set as wallpaper"
-msgstr ""
+msgid "Details"
+msgstr "Details"
 
 #: src/configs/Strings.vala:73
-msgid "Details"
-msgstr ""
+msgid "Visit profile"
+msgstr "Visiter le profil"
 
 #: src/configs/Strings.vala:74
-msgid "Visit profile"
-msgstr ""
+msgid "Total results"
+msgstr "Total des résultats"
 
 #: src/configs/Strings.vala:75
-msgid "Filtering..."
-msgstr ""
+msgid "Find out what you like️"
+msgstr "Découvrez ce que vous aimez"
 
 #: src/configs/Strings.vala:76
-msgid "Total results"
-msgstr ""
+msgid "Try changing search terms."
+msgstr "Essayez de changer les termes de recherche."
 
 #: src/configs/Strings.vala:77
-msgid "Find out what you like️"
-msgstr ""
+msgid "Click on a photo to add it to the history."
+msgstr "Cliquez sur une photo pour l'ajouter à l'historique."
 
 #: src/configs/Strings.vala:78
-msgid "Try changing search terms."
-msgstr ""
+msgid "Network Error"
+msgstr "Erreur réseau"
 
 #: src/configs/Strings.vala:79
-msgid "Click on a photo to add it to the history."
-msgstr ""
+msgid "Landscape"
+msgstr "Horizontale"
 
 #: src/configs/Strings.vala:80
-msgid "Network Error"
-msgstr ""
+msgid "Portrait"
+msgstr "Verticale"
+
+#: src/configs/Strings.vala:81
+msgid "Any"
+msgstr "Toutes"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:7
 #: data/com.github.calo001.fondo.desktop.in:3
@@ -252,7 +256,6 @@ msgstr ""
 "lacommunauté de photographes la plus généreuse du monde."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:32
-#, fuzzy
 msgid ""
 "Fondo allows you to see thousands of beautiful photographs from the most "
 "recent to the one you are to looking for. Give a single click on a picture, "
@@ -264,13 +267,12 @@ msgstr ""
 "soit terminé et profitez-en !"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:33
-#, fuzzy
 msgid ""
 "Have a minimalist, simple and elegant interface, additionally, you can "
 "change from light mode to dark mode as you prefer."
 msgstr ""
-"Disposez d'une interface simple et élégante, vous pouvez passer du mode "
-"clair au mode sombre comme vous préférez."
+"Disposez d'une interface minimaliste, simple et élégante, vous pouvez passer "
+"du mode clair au mode sombre comme vous préférez."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:34
 msgid "Main features:"
@@ -279,66 +281,73 @@ msgstr "Caractéristiques principales :"
 #: data/com.github.calo001.fondo.appdata.xml.in:36
 msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
 msgstr ""
+"Vers l'infini et au-delà!: Utilisez le défilement infini pour charger plus "
+"de photos"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:37
-#, fuzzy
-msgid ""
-"Find out what you like: Search by categories or write what you want to "
-"search in the top input"
+msgid "Find out what you like: Search by categories or type in the search bar"
 msgstr ""
-"Recherchez par catégories ou écrivez ce que vous voulez rechercher dans la "
-"partie supérieure"
+"Découvrez ce que vous aimez: Recherchez par catégorie ou par type dans la "
+"barre de recherche"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:38
 msgid ""
 "Keep your favorite photos with you: Every new wallpaper is saved in the "
 "history"
 msgstr ""
+"Gardez vos photos préférées avec vous: chaque nouveau fond d'écran est "
+"enregistré dans l'historique"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:39
-#, fuzzy
 msgid ""
-"Share with your friends: select a number of options for sharing a link to "
-"the photo from Unsplash"
+"Share with your friends: Select a variety of options for sharing an Unsplash "
+"link to the photo"
 msgstr "Partagez avec vos amis un lien vers une photo via Unsplash"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:40
-msgid "Filter by Orientation: Portrait, Landscape or Any"
-msgstr ""
+msgid "Filter by orientation: Portrait, Landscape or Any"
+msgstr "Filtrer par orientation: Horizontale, Verticale ou Toutes"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:48
 msgid "Keep your favorite photos with you, the photo history has arrived!"
 msgstr ""
+"Gardez vos photos préférées avec vous, l'historique des photos est arrivé!"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:49
 msgid ""
 "New way of navigating with a bottom bar that allows you to go to: Today, "
 "Categories and History"
 msgstr ""
+"Nouveau mode de navigation avec une barre inférieure vous permettant "
+"d'accéder à: Aujourd'hui, Catégories et Historique"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:50
 msgid ""
-"Speed up your search with the Photo Filter by Orientation: Portrait, "
+"Speed up your search with the photo filter by Orientation: Portrait, "
 "Landscape or Any"
 msgstr ""
+"Accélérez votre recherche avec le filtre photo par Orientation: Horizontale, "
+"Verticale ou Toutes"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:51
-msgid ""
-"Learn more about the incredible with the Detail popup of the photo in Full "
-"Screen window"
+msgid "Learn more about a photo with the Detail popup in the full screen view"
 msgstr ""
+"En savoir plus sur une photo avec la fenêtre contextuelle Détail en plein "
+"écran"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:52
 msgid "Focus on Search entry with Ctrl+F"
-msgstr ""
+msgstr "Concentrez-vous sur l'entrée de recherche avec Ctrl + F"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:53
 msgid "When doing a search, the total number of results are displayed"
-msgstr ""
+msgstr "Lors d'une recherche, le nombre total de résultats est affiché."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:54
 msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
 msgstr ""
+"Animation de dégradé dans la barre de défilement, le commutateur de mode et "
+"la photo d'espace réservé"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:62
 msgid "Remove G+ option from Share popup"
@@ -419,24 +428,3 @@ msgstr "com.github.calo001.fondo"
 #: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
 msgstr "fond d'écran;unsplash;photo;image;arrière plan;"
-
-#~ msgid "Back to today's photos"
-#~ msgstr "Retour aux photos d'aujourd'hui"
-
-#~ msgid "Scroll down to load more photos"
-#~ msgstr "Défilez vers le bas pour charger plus de photos"
-
-#~ msgid "A single click on the photo to put as a wallpaper"
-#~ msgstr "Un simple clic sur la photo pour la mettre en fond d'écran"
-
-#~ msgid "Right click for more wallpaper display options"
-#~ msgstr "Clic droit pour plus d'options d'affichage des fonds d'écran"
-
-#~ msgid "See the photo in full screen"
-#~ msgstr "Visualisez la photo en plein-écran"
-
-#~ msgid "Change the size of the window, the window is responsive"
-#~ msgstr "Changez la taille de la fenêtre, la fenêtre est ajustable"
-
-#~ msgid "Use Ctrl + Q to exit"
-#~ msgstr "Utilisez Ctrl + Q pour quitter"
