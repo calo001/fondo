@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-08 22:27-0500\n"
+"POT-Creation-Date: 2019-06-09 16:45-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -295,106 +295,110 @@ msgid "Filter by orientation: Portrait, Landscape or Any"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:48
+msgid "Dutch (Netherlands) translation"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:56
 msgid "Keep your favorite photos with you, the photo history has arrived!"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:49
+#: data/com.github.calo001.fondo.appdata.xml.in:57
 msgid ""
 "New way of navigating with a bottom bar that allows you to go to: Today, "
 "Categories and History"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:50
+#: data/com.github.calo001.fondo.appdata.xml.in:58
 msgid ""
 "Speed up your search with the photo filter by Orientation: Portrait, "
 "Landscape or Any"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:51
+#: data/com.github.calo001.fondo.appdata.xml.in:59
 msgid "Learn more about a photo with the Detail popup in the full screen view"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:52
+#: data/com.github.calo001.fondo.appdata.xml.in:60
 msgid "Focus on Search entry with Ctrl+F"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:53
+#: data/com.github.calo001.fondo.appdata.xml.in:61
 msgid "When doing a search, the total number of results are displayed"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:54
+#: data/com.github.calo001.fondo.appdata.xml.in:62
 msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:62
+#: data/com.github.calo001.fondo.appdata.xml.in:70
 msgid "Remove G+ option from Share popup"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:70
+#: data/com.github.calo001.fondo.appdata.xml.in:78
 msgid "Update the set of screenshots"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:71
+#: data/com.github.calo001.fondo.appdata.xml.in:79
 msgid "Fix error in appdata"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:79
+#: data/com.github.calo001.fondo.appdata.xml.in:87
 msgid "Added Dutch (Netherlands) translation"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:87
+#: data/com.github.calo001.fondo.appdata.xml.in:95
 msgid "Add french translations"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:95
+#: data/com.github.calo001.fondo.appdata.xml.in:103
 msgid "Search by category and query"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:96
+#: data/com.github.calo001.fondo.appdata.xml.in:104
 msgid "New look and feel on hover a photo"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:97
+#: data/com.github.calo001.fondo.appdata.xml.in:105
 msgid "Add gradients to scrollbar and mode switch"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:105
+#: data/com.github.calo001.fondo.appdata.xml.in:113
 msgid "New screenshots with awesome photos"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:106
+#: data/com.github.calo001.fondo.appdata.xml.in:114
 msgid "OARS data social-info set to mild"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:114
+#: data/com.github.calo001.fondo.appdata.xml.in:122
 msgid "Orthographic corrections in the Spanish translation"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:115
+#: data/com.github.calo001.fondo.appdata.xml.in:123
 msgid "The photos are sorted from highest to lowest according to height"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:123
+#: data/com.github.calo001.fondo.appdata.xml.in:131
 msgid "Responsive, resizable window"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:124
+#: data/com.github.calo001.fondo.appdata.xml.in:132
 msgid "Infinite scrolling: just scroll to keep loading new photos"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:125
+#: data/com.github.calo001.fondo.appdata.xml.in:133
 msgid "Wallpaper options: set zoom, centered, and more"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:126
+#: data/com.github.calo001.fondo.appdata.xml.in:134
 msgid "Improved icon and styling"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:131
+#: data/com.github.calo001.fondo.appdata.xml.in:139
 msgid "Improved UI."
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:136
+#: data/com.github.calo001.fondo.appdata.xml.in:144
 msgid "Initial 1.0.0 release!"
 msgstr ""
 
