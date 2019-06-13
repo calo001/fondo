@@ -7,10 +7,10 @@
 <br/>
 
 <p align="center">
-    <a href="https://appcenter.elementary.io/com.github.calo001.fondo">
+    <a href="https://appcenter.elementary.io/com.github.calo001.fondo" target="_blank">
         <img src="https://appcenter.elementary.io/badge.svg">
     </a>
-    <a href='https://flathub.org/apps/details/com.github.calo001.fondo'><img width='150' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+    <a href='https://flathub.org/apps/details/com.github.calo001.fondo' target="_blank"><img width='150' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 </p>
 
 <p align="center">
@@ -98,7 +98,7 @@ Options:
 Fondo is and will always be free for the world 🌎️. If you like the project and would like to fund and contribute to my work, you can do it via Paypal.Me:
 
 <p align="center">
-  <a href="https://www.paypal.me/calo001">
+  <a href="https://www.paypal.me/calo001" target="_blank">
     <img src="resources/paypalme.png" alt="Screenshot">
   </a>
 </p>
@@ -107,7 +107,7 @@ Fondo is and will always be free for the world 🌎️. If you like the project 
 ## Special thanks
 
 <p align="center">
-  <a href="http://unsplash.com">
+  <a href="http://unsplash.com" target="_blank">
     <img src="resources/unsplash_logo.png" alt="Screenshot">
   </a>
 </p>
