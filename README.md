@@ -26,20 +26,20 @@
 </p>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_1.png" alt="Screenshot">
+    <img src="data/images/screenshot_1.png" alt="Screenshot">
     <table>
       <tr>
         <td>
-          <img src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_2.png" alt="Screenshot">
+          <img src="data/images/screenshot_2.png" alt="Screenshot">
         </td>
         <td>
-          <img src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_3.png" alt="Screenshot">
+          <img src="data/images/screenshot_3.png" alt="Screenshot">
         </td>
         <td>
-          <img src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_4.png" alt="Screenshot">
+          <img src="data/images/screenshot_4.png" alt="Screenshot">
         </td>
         <td>
-          <img src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/screenshot_5.png" alt="Screenshot">
+          <img src="data/images/screenshot_5.png" alt="Screenshot">
         </td>
       </tr>
     </table>
@@ -92,11 +92,23 @@ Options:
   run               Builds and runs the application
   uninstall         Removes the application from the system (requires sudo)
 ```
+
+## Support me
+
+Fondo is and will always be free for the world 🌎️. If you like the project and would like to fund and contribute to my work, you can do it via Paypal.Me:
+
+<p align="center">
+  <a href="https://www.paypal.me/calo001">
+    <img src="resources/paypalme.png" alt="Screenshot">
+  </a>
+</p>
+
+
 ## Special thanks
 
 <p align="center">
   <a href="http://unsplash.com">
-    <img src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/poweredunsplash.png" alt="Screenshot">
+    <img src="resources/unsplash_logo.png" alt="Screenshot">
   </a>
 </p>
 <p align="center">
