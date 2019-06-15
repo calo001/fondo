@@ -95,11 +95,16 @@ Options:
 
 ## Support me
 
-Fondo is and will always be free for the world 🌎️. If you like the project and would like to fund and contribute to my work, you can do it via Paypal.Me:
+Fondo is and will always be free for the world 🌎️. If you like the project and would like to fund and contribute to my work, you can do it via Patreon or Paypal.Me:
 
 <p align="center">
   <a href="https://www.paypal.me/calo001" target="_blank">
     <img src="resources/paypalme.png" alt="Screenshot">
+  </a>
+</p>
+<p align="center">
+  <a href="https://www.patreon.com/carloslr" target="_blank">
+      <img src="resources/become_a_patron_button.png" alt="Screenshot">
   </a>
 </p>
 
