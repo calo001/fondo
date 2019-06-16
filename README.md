@@ -61,7 +61,7 @@ These dependencies must be present before building:
  - `libunity-dev`
 
 
-Use the App script to simplify installation by running `./app install-deps`
+Use the App script to simplify installation by running `./app install-deps`, in this case, make sure that `dpkg-dev` package is installed
  
  ### Building
 
