@@ -68,19 +68,12 @@ case $1 in
     sudo ninja install
     ;;
 "install-deps")
-    output=$((dpkg-checkbuilddeps ) 2>&1)
-    result=$?
-
-    if [ $result -eq 0 ]; then
-        echo "All dependencies are installed"
-        exit 0
-    fi
-
-    replace="sudo apt install"
-    pattern="(\([>=<0-9. ]+\))+"
-    sudo_replace=${output/dpkg-checkbuilddeps: error: Unmet build dependencies:/$replace}
-    command=$(sed -r -e "s/$pattern//g" <<< "$sudo_replace")
-    
+    checkdeps=$(which dpkg-checkbuilddeps)
+    output=$(($checkdeps ) 2>&1)
+    [ "$?" -eq "0" ] && echo "All dependencies are installed" && exit 0 ;
+    packages=$(echo "$output" | sed 's/dpkg-checkbuilddeps: erro: Unmet build dependencies: //g')
+    packages=$(echo "$packages" | sed -r -e 's/(\([>=<0-9. ]+\))+//g')
+    command="sudo apt install $packages"
     $command
     ;;
 "run")
