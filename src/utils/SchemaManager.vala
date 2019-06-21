@@ -28,7 +28,7 @@ namespace App.Utils {
     public class SchemaManager {
         private GLib.Settings settings;
         private const string gnome_background_schema = "org.gnome.desktop.background";
-        private const string mate_background_schema = "org.mate.desktop.background";
+        private const string mate_background_schema = "org.mate.background";
         private string settings_dir = "/usr/share/glib-2.0/schemas/";
 
         private int env = Constants.IS_GNOME;
@@ -56,16 +56,17 @@ namespace App.Utils {
         public void set_wallpaper (string picture_path, string picture_options) {
             switch (env) {
                 case Constants.IS_GNOME:
-                    settings.set_string ("picture-uri", "file://" + picture_path);        
+                    settings.set_string ("picture-uri", "file://" + picture_path);
                     break;
-            default:
                 case Constants.IS_MATE:
-                    settings.set_string ("picture-filename", "file://" + picture_path);        
+                    //settings.set_string ("picture-filename", "file://" + picture_path);
+                    settings.set_string ("picture-filename", picture_path);
                     break;
-                break;
+                default:
+                    settings.set_string ("picture-uri", "file://" + picture_path);
+                    break;
             }
             settings.set_string ("picture-options", picture_options);
-            settings.reset ("color-shading-type");
             settings.apply ();
             GLib.Settings.sync ();
         }
