@@ -46,7 +46,7 @@
           <p>Important fixes</p>
           <ul>
             <li>Login screen does not use selected wallpaper</li>
-            <li>Wallpaper don't change when applying on Ubuntu Mate 18.04</li>
+            <li>Wallpaper doesn't change when applying on Ubuntu Mate 18.04</li>
           </ul>
         </description>
       </release>
