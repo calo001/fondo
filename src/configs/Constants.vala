@@ -52,5 +52,8 @@ namespace App.Configs {
         public abstract const string ANY = "any";
         public abstract const string LANDSCAPE = "landscape";
         public abstract const string PORTRAIT = "portrait";
+
+        public abstract const int IS_GNOME = 0;
+        public abstract const int IS_MATE = 1;
     }
 }

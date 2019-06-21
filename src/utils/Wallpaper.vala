@@ -164,15 +164,8 @@ namespace App.Utils {
             Method to update GSetting properties
         ***********************************************************************/
         public void set_wallpaper (string picture_options = "zoom") {
-			GLib.Settings settings = new GLib.Settings ("org.gnome.desktop.background");
-            settings.set_string ("picture-uri", "file://" + this.full_picture_path);
-            settings.set_string ("picture-options", picture_options);
-            settings.reset ("color-shading-type");
-            if (settings.get_string ("picture-options") == "none") {
-                settings.reset ("picture-options");
-            }
-            settings.apply ();
-            GLib.Settings.sync ();
+            var schemaManager = new SchemaManager();
+            schemaManager.set_wallpaper (this.full_picture_path, picture_options);
         }
 
         /***********************************************************************
@@ -209,9 +202,6 @@ namespace App.Utils {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
                 set_to_greeter (variable);
-            } else {
-                print ("Greeter not found");
-                //show_message ("Error", "Greeter not found", "dialog-error");
             }
         }
 
@@ -243,12 +233,12 @@ namespace App.Utils {
 
                 file_path.copy_async.begin(dest, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null,
                 (current_num_bytes, total_num_bytes) => {
-                    // Report copy-status:
                     print ("USR %" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
                 }, (obj, res) => {
                     try {
                         bool tmp = file_path.copy_async.end (res);
                         print ("USR Result: %s\n", tmp.to_string ());
+                        Posix.chmod (Path.build_filename (greeter_data_dir, img_file_name), 0644);
                     } catch (Error e) {
                         show_message ("Error", e.message, "dialog-error");
                     }
