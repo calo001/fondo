@@ -35,40 +35,45 @@ namespace App.Utils {
 
         public SchemaManager () {
             // check mate
-            SettingsSchemaSource sss = new SettingsSchemaSource.from_directory (settings_dir, null, false);
-		    SettingsSchema schema = sss.lookup (mate_background_schema, false);
-            
-            if (schema != null) {
-                settings = new GLib.Settings.full (schema, null, null);
-                env = Constants.IS_MATE;
-                return;
-            }
+            try {
+                SettingsSchemaSource sss = new SettingsSchemaSource.from_directory (settings_dir, null, false);
+                SettingsSchema schema = sss.lookup (mate_background_schema, false);
+                
+                if (schema != null) {
+                    settings = new GLib.Settings.full (schema, null, null);
+                    env = Constants.IS_MATE;
+                    return;
+                }
 
-            schema = sss.lookup (gnome_background_schema, false);
-            
-            if (schema != null) {
-                settings = new GLib.Settings.full (schema, null, null);
-                env = Constants.IS_GNOME;
-                return;
+                schema = sss.lookup (gnome_background_schema, false);
+                
+                if (schema != null) {
+                    settings = new GLib.Settings.full (schema, null, null);
+                    env = Constants.IS_GNOME;
+                    return;
+                }
+            } catch (Error e) {
+                print (e.message);
             }
         }
 
         public void set_wallpaper (string picture_path, string picture_options) {
-            switch (env) {
-                case Constants.IS_GNOME:
-                    settings.set_string ("picture-uri", "file://" + picture_path);
-                    break;
-                case Constants.IS_MATE:
-                    //settings.set_string ("picture-filename", "file://" + picture_path);
-                    settings.set_string ("picture-filename", picture_path);
-                    break;
-                default:
-                    settings.set_string ("picture-uri", "file://" + picture_path);
-                    break;
+            if (settings != null) {
+                switch (env) {
+                    case Constants.IS_GNOME:
+                        settings.set_string ("picture-uri", "file://" + picture_path);
+                        break;
+                    case Constants.IS_MATE:
+                        settings.set_string ("picture-filename", picture_path);
+                        break;
+                    default:
+                        settings.set_string ("picture-uri", "file://" + picture_path);
+                        break;
+                }
+                settings.set_string ("picture-options", picture_options);
+                settings.apply ();
+                GLib.Settings.sync ();
             }
-            settings.set_string ("picture-options", picture_options);
-            settings.apply ();
-            GLib.Settings.sync ();
         }
     }
 }
