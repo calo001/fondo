@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 16:45-0500\n"
+"POT-Creation-Date: 2019-06-21 16:44-0500\n"
 "PO-Revision-Date: 2018-09-11 11:49-0500\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: none\n"
@@ -308,16 +308,40 @@ msgstr "Partagez avec vos amis un lien vers une photo via Unsplash"
 msgid "Filter by orientation: Portrait, Landscape or Any"
 msgstr "Filtrer par orientation: Horizontale, Verticale ou Toutes"
 
+#: data/com.github.calo001.fondo.appdata.xml.in:46
+msgid "Important fixes"
+msgstr ""
+
 #: data/com.github.calo001.fondo.appdata.xml.in:48
+msgid "Login screen does not use selected wallpaper"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:49
+msgid "Wallpaper don't change when applying on Ubuntu Mate 18.04"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:55
+msgid "Update"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:57
 msgid "Dutch (Netherlands) translation"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:56
+#: data/com.github.calo001.fondo.appdata.xml.in:63
+#: data/com.github.calo001.fondo.appdata.xml.in:77
+#: data/com.github.calo001.fondo.appdata.xml.in:85
+#: data/com.github.calo001.fondo.appdata.xml.in:94
+#: data/com.github.calo001.fondo.appdata.xml.in:102
+msgid "New"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:65
 msgid "Keep your favorite photos with you, the photo history has arrived!"
 msgstr ""
 "Gardez vos photos préférées avec vous, l'historique des photos est arrivé!"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:57
+#: data/com.github.calo001.fondo.appdata.xml.in:66
 msgid ""
 "New way of navigating with a bottom bar that allows you to go to: Today, "
 "Categories and History"
@@ -325,7 +349,7 @@ msgstr ""
 "Nouveau mode de navigation avec une barre inférieure vous permettant "
 "d'accéder à: Aujourd'hui, Catégories et Historique"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:58
+#: data/com.github.calo001.fondo.appdata.xml.in:67
 msgid ""
 "Speed up your search with the photo filter by Orientation: Portrait, "
 "Landscape or Any"
@@ -333,95 +357,108 @@ msgstr ""
 "Accélérez votre recherche avec le filtre photo par Orientation: Horizontale, "
 "Verticale ou Toutes"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:59
+#: data/com.github.calo001.fondo.appdata.xml.in:68
 msgid "Learn more about a photo with the Detail popup in the full screen view"
 msgstr ""
 "En savoir plus sur une photo avec la fenêtre contextuelle Détail en plein "
 "écran"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:60
+#: data/com.github.calo001.fondo.appdata.xml.in:69
 msgid "Focus on Search entry with Ctrl+F"
 msgstr "Concentrez-vous sur l'entrée de recherche avec Ctrl + F"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:61
+#: data/com.github.calo001.fondo.appdata.xml.in:70
 msgid "When doing a search, the total number of results are displayed"
 msgstr "Lors d'une recherche, le nombre total de résultats est affiché."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:62
+#: data/com.github.calo001.fondo.appdata.xml.in:71
 msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
 msgstr ""
 "Animation de dégradé dans la barre de défilement, le commutateur de mode et "
 "la photo d'espace réservé"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:70
+#: data/com.github.calo001.fondo.appdata.xml.in:79
 msgid "Remove G+ option from Share popup"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:78
+#: data/com.github.calo001.fondo.appdata.xml.in:87
 msgid "Update the set of screenshots"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:79
+#: data/com.github.calo001.fondo.appdata.xml.in:88
 msgid "Fix error in appdata"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:87
+#: data/com.github.calo001.fondo.appdata.xml.in:96
 msgid "Added Dutch (Netherlands) translation"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:95
+#: data/com.github.calo001.fondo.appdata.xml.in:104
 msgid "Add french translations"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:103
+#: data/com.github.calo001.fondo.appdata.xml.in:110
+#: data/com.github.calo001.fondo.appdata.xml.in:120
+msgid "Updates"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:112
 msgid "Search by category and query"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:104
+#: data/com.github.calo001.fondo.appdata.xml.in:113
 msgid "New look and feel on hover a photo"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:105
+#: data/com.github.calo001.fondo.appdata.xml.in:114
 msgid "Add gradients to scrollbar and mode switch"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:113
+#: data/com.github.calo001.fondo.appdata.xml.in:122
 msgid "New screenshots with awesome photos"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:114
+#: data/com.github.calo001.fondo.appdata.xml.in:123
 msgid "OARS data social-info set to mild"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:122
-msgid "Orthographic corrections in the Spanish translation"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:123
-msgid "The photos are sorted from highest to lowest according to height"
+#: data/com.github.calo001.fondo.appdata.xml.in:129
+msgid "Fixes and improvements"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:131
-msgid "Responsive, resizable window"
+msgid "Orthographic corrections in the Spanish translation"
 msgstr ""
 
 #: data/com.github.calo001.fondo.appdata.xml.in:132
+msgid "The photos are sorted from highest to lowest according to height"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:138
+msgid "A very nice update with new features"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:140
+msgid "Responsive, resizable window"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:141
 msgid "Infinite scrolling: just scroll to keep loading new photos"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:133
+#: data/com.github.calo001.fondo.appdata.xml.in:142
 msgid "Wallpaper options: set zoom, centered, and more"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:134
+#: data/com.github.calo001.fondo.appdata.xml.in:143
 msgid "Improved icon and styling"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:139
+#: data/com.github.calo001.fondo.appdata.xml.in:148
 msgid "Improved UI."
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:144
+#: data/com.github.calo001.fondo.appdata.xml.in:153
 msgid "Initial 1.0.0 release!"
 msgstr ""
 

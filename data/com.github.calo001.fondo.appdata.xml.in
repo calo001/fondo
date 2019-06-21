@@ -41,9 +41,18 @@
         </ul>
     </description>
     <releases>
+      <release version="1.3.2" date="2019-06-21">
+        <description>
+          <p>Important fixes</p>
+          <ul>
+            <li>Login screen does not use selected wallpaper</li>
+            <li>Wallpaper don't change when applying on Ubuntu Mate 18.04</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.3.1" date="2019-06-09">
         <description>
-          Update
+          <p>Update</p>
           <ul>
             <li>Dutch (Netherlands) translation</li>
           </ul>
@@ -51,7 +60,7 @@
       </release>
       <release version="1.3.0" date="2019-06-08">
         <description>
-          New
+          <p>New</p>
           <ul>
             <li>Keep your favorite photos with you, the photo history has arrived!</li>
             <li>New way of navigating with a bottom bar that allows you to go to: Today, Categories and History</li>
@@ -65,7 +74,7 @@
       </release>
       <release version="1.2.4" date="2019-05-14">
         <description>
-          New
+          <p>New</p>
           <ul>
             <li>Remove G+ option from Share popup</li>
           </ul>
@@ -73,7 +82,7 @@
       </release>
       <release version="1.2.3" date="2019-03-15">
         <description>
-          New
+          <p>New</p>
           <ul>
             <li>Update the set of screenshots</li>
             <li>Fix error in appdata</li>
@@ -82,7 +91,7 @@
       </release>
       <release version="1.2.2" date="2019-03-15">
         <description>
-          New
+          <p>New</p>
           <ul>
             <li>Added Dutch (Netherlands) translation</li>
           </ul>
@@ -90,7 +99,7 @@
       </release>
       <release version="1.2.1" date="2019-01-22">
         <description>
-          New
+          <p>New</p>
           <ul>
             <li>Add french translations</li>
         </ul>
@@ -98,7 +107,7 @@
       </release>
       <release version="1.2.0" date="2019-01-6">
         <description>
-          Updates
+          <p>Updates</p>
           <ul>
             <li>Search by category and query</li>
             <li>New look and feel on hover a photo</li>
@@ -108,7 +117,7 @@
       </release>
       <release version="1.1.4" date="2018-09-22">
         <description>
-          Updates
+          <p>Updates</p>
           <ul>
             <li>New screenshots with awesome photos</li>
             <li>OARS data social-info set to mild</li>
@@ -117,7 +126,7 @@
       </release>
       <release version="1.1.3" date="2018-09-16">
         <description>
-          Fixes and improvements
+          <p>Fixes and improvements</p>
           <ul>
             <li>Orthographic corrections in the Spanish translation</li>
             <li>The photos are sorted from highest to lowest according to height</li>
@@ -126,7 +135,7 @@
       </release>
       <release version="1.1.2" date="2018-09-13">
         <description>
-          A very nice update with new features
+          <p>A very nice update with new features</p>
           <ul>
             <li>Responsive, resizable window</li>
             <li>Infinite scrolling: just scroll to keep loading new photos</li>

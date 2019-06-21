@@ -1,3 +1,11 @@
+com.github.calo001.fondo (1.3.2) bionic; urgency=low
+
+[FIX]
+  * Login screen does not use selected wallpaper
+  * Wallpaper don't change when applying on Ubuntu Mate 18.04
+
+ -- Calo001 <calo_lrc@hotmail.com>  Fri, 21 Jun 2019 22:10:00 -0500
+
 com.github.calo001.fondo (1.3.1) bionic; urgency=low
 
 [NEW]
