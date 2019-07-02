@@ -29,24 +29,24 @@ namespace App.Utils {
         private GLib.Settings settings;
         private const string gnome_background_schema = "org.gnome.desktop.background";
         private const string mate_background_schema = "org.mate.background";
-        private string settings_dir = "/usr/share/glib-2.0/schemas/";
 
         private int env = Constants.IS_GNOME;
 
         public SchemaManager () {
             // check mate
             try {
-                SettingsSchemaSource sss = new SettingsSchemaSource.from_directory (settings_dir, null, false);
-                SettingsSchema schema = sss.lookup (mate_background_schema, false);
-                
+                var schema_source = GLib.SettingsSchemaSource.get_default ();
+
+                var schema = schema_source.lookup (mate_background_schema, true);
+
                 if (schema != null) {
                     settings = new GLib.Settings.full (schema, null, null);
                     env = Constants.IS_MATE;
                     return;
                 }
 
-                schema = sss.lookup (gnome_background_schema, false);
-                
+                schema = schema_source.lookup (gnome_background_schema, true);
+
                 if (schema != null) {
                     settings = new GLib.Settings.full (schema, null, null);
                     env = Constants.IS_GNOME;
