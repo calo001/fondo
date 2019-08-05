@@ -1,0 +1,476 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.calo001.fondo package.
+# Onno Giesmann <nutzer3105@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.calo001.fondo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-21 16:54-0500\n"
+"PO-Revision-Date: 2019-08-05 11:49+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de_DE\n"
+
+#: src/configs/Strings.vala:28
+msgid "Today"
+msgstr "Heute"
+
+#: src/configs/Strings.vala:29
+msgid "Categories"
+msgstr "Kategorien"
+
+#: src/configs/Strings.vala:30
+msgid "Visit web site"
+msgstr "Internetseite besuchen"
+
+#: src/configs/Strings.vala:31
+msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
+msgstr "Fotos von Unsplash: Schöne kostenlose Bilder & Fotos 🎁"
+
+#: src/configs/Strings.vala:32
+msgid "Photo by "
+msgstr "Foto von "
+
+#: src/configs/Strings.vala:33
+msgid " on Unsplash"
+msgstr " auf Unsplash"
+
+#: src/configs/Strings.vala:34
+msgid "Share"
+msgstr "Teilen"
+
+#: src/configs/Strings.vala:35
+msgid "Email"
+msgstr "E-Mail"
+
+#: src/configs/Strings.vala:36
+msgid "Copy link"
+msgstr "Link kopieren"
+
+#: src/configs/Strings.vala:37
+msgid "Options"
+msgstr "Optionen"
+
+#: src/configs/Strings.vala:38
+msgid "Centered"
+msgstr "Zentriert"
+
+#: src/configs/Strings.vala:39
+msgid "Scaled"
+msgstr "Skaliert"
+
+#: src/configs/Strings.vala:40
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/configs/Strings.vala:41
+msgid "Spanned"
+msgstr "Gestreckt"
+
+#: src/configs/Strings.vala:42
+msgid "Wallpaper ready!"
+msgstr "Hintergrundbild ist fertig!"
+
+#: src/configs/Strings.vala:43
+msgid "Your new wallpaper is ready!"
+msgstr "Ihr neues Hintergrundbild ist da!"
+
+#: src/configs/Strings.vala:44
+msgid "Check the network connection."
+msgstr "Überprüfen Sie die Internetverbindung."
+
+#: src/configs/Strings.vala:45
+msgid "Retry"
+msgstr "Nochmal versuchen"
+
+#: src/configs/Strings.vala:46
+msgid "🌎  An amazing place in the world"
+msgstr "🌎  Ein besonderer Ort auf der Welt"
+
+#: src/configs/Strings.vala:47
+msgid "🌻 Nature"
+msgstr "🌻 Natur"
+
+#: src/configs/Strings.vala:48
+msgid "🐹 Animal"
+msgstr "🐹 Tiere"
+
+#: src/configs/Strings.vala:49
+msgid "☕ Food & drink"
+msgstr "☕ Essen & Trinken"
+
+#: src/configs/Strings.vala:50
+msgid "🌙 Space"
+msgstr "🌙 Weltraum"
+
+#: src/configs/Strings.vala:51
+msgid "🏸 Sport"
+msgstr "🏸 Sport"
+
+#: src/configs/Strings.vala:52
+msgid "📊 Business & work"
+msgstr "📊 Geschäft & Arbeit"
+
+#: src/configs/Strings.vala:53
+msgid "‍🎩 Fashion"
+msgstr "‍🎩 Mode"
+
+#: src/configs/Strings.vala:54
+msgid "🎨 Art & culture"
+msgstr "🎨 Kunst & Kultur"
+
+#: src/configs/Strings.vala:55
+msgid "🏦 Architecture"
+msgstr "🏦 Architektur"
+
+#: src/configs/Strings.vala:56
+msgid "💻 Technology"
+msgstr "💻 Technologie"
+
+#: src/configs/Strings.vala:57
+msgid "🍁 Texture & pattern"
+msgstr "🍁 Texturen & Muster"
+
+#: src/configs/Strings.vala:58
+msgid "📑 Flat lay"
+msgstr "📑 Legebild"
+
+#: src/configs/Strings.vala:59
+msgid "Photos not found"
+msgstr "Keine Fotos gefunden"
+
+#: src/configs/Strings.vala:60
+msgid "Loading ..."
+msgstr "Wird geladen ..."
+
+#: src/configs/Strings.vala:61
+msgid "Close full screen"
+msgstr "Vollbildansicht schließen"
+
+#: src/configs/Strings.vala:62
+msgid "Search photos Unsplash"
+msgstr "Suche nach Fotos auf Unsplash"
+
+#: src/configs/Strings.vala:63
+msgid "History"
+msgstr "Verlauf"
+
+#: src/configs/Strings.vala:64
+msgid "Light background"
+msgstr "Heller Hintergrund"
+
+#: src/configs/Strings.vala:65
+msgid "Dark background"
+msgstr "Dunkler Hintergrund"
+
+#: src/configs/Strings.vala:66
+msgid "About"
+msgstr "Über"
+
+#: src/configs/Strings.vala:67
+msgid "TODAY"
+msgstr "HEUTE"
+
+#: src/configs/Strings.vala:68
+msgid "CATEGORIES"
+msgstr "KATEGORIEN"
+
+#: src/configs/Strings.vala:69
+msgid "HISTORY"
+msgstr "VERLAUF"
+
+#: src/configs/Strings.vala:70
+msgid "No description available"
+msgstr "Keine Beschreibung verfügbar"
+
+#: src/configs/Strings.vala:71
+msgid "Set as wallpaper"
+msgstr "Als Hintergrundbild einstellen"
+
+#: src/configs/Strings.vala:72
+msgid "Details"
+msgstr "Details"
+
+#: src/configs/Strings.vala:73
+msgid "Visit profile"
+msgstr "Profil ansehen"
+
+#: src/configs/Strings.vala:74
+msgid "Total results"
+msgstr "Gesamtergebnisse"
+
+#: src/configs/Strings.vala:75
+msgid "Find out what you like️"
+msgstr "Suchen Sie sich heraus, was Ihnen gefällt"
+
+#: src/configs/Strings.vala:76
+msgid "Try changing search terms."
+msgstr "Versuchen Sie es mit anderen Suchbegriffen."
+
+#: src/configs/Strings.vala:77
+msgid "Click on a photo to add it to the history."
+msgstr "Klicken Sie auf ein Foto, um es dem Verlauf hinzuzufügen."
+
+#: src/configs/Strings.vala:78
+msgid "Network Error"
+msgstr "Netzwerkfehler"
+
+#: src/configs/Strings.vala:79
+msgid "Landscape"
+msgstr "Landschaft"
+
+#: src/configs/Strings.vala:80
+msgid "Portrait"
+msgstr "Portrait"
+
+#: src/configs/Strings.vala:81
+msgid "Any"
+msgstr "Alles"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+#: data/com.github.calo001.fondo.desktop.in:3
+msgid "Fondo"
+msgstr "Fondo"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+#: data/com.github.calo001.fondo.desktop.in:4
+msgid "Find the most beautiful wallpapers"
+msgstr "Finden Sie die allerschönsten Hintergrundbilder"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr "Carlos Lopez"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:31
+msgid ""
+"Find a variety of the most beautiful wallpapers from Unsplash.com the "
+"world’s most generous community of photographers."
+msgstr ""
+"Entdecken Sie eine Vielzahl der schönsten Hintergrundbilder von Unsplash."
+"com, der weltweit großzügigsten Gemeinschaft von Fotografen."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:32
+msgid ""
+"Fondo allows you to see thousands of beautiful photographs from the most "
+"recent to the one you are to looking for. Give a single click on a picture, "
+"wait until the download is complete and enjoy your new wallpaper!"
+msgstr ""
+"Fondo ermöglicht es Ihnen, tausende schöne Fotografien zu entdecken, von den "
+"Allerneusten bis hin zu denen, die Sie schon immer gesucht haben. Klicken "
+"Sie einfach auf ein Bild, warten Sie, bis es heruntergeladen ist und schon "
+"können Sie sich über Ihr neues Hintergrundbild freuen!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+msgid ""
+"Have a minimalist, simple and elegant interface, additionally, you can "
+"change from light mode to dark mode as you prefer."
+msgstr ""
+"Es hat eine minimalistische, einfache und elegante Benutzeroberfläche. "
+"Zusätzlich können Sie nach Belieben zwischen einem hellen und dunklen Modus "
+"wählen."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+msgid "Main features:"
+msgstr "Besondere Funktionen:"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:36
+msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
+msgstr ""
+"Bis zur Unendlichkeit und noch weiter!: Scrollen Sie unendlich weiter und "
+"laden Sie dadurch noch mehr Fotos"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:37
+msgid "Find out what you like: Search by categories or type in the search bar"
+msgstr ""
+"Finden Sie, was Sie mögen: Suchen Sie nach Kategorien oder geben Sie etwas "
+"in die Suchleiste ein"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+msgid ""
+"Keep your favorite photos with you: Every new wallpaper is saved in the "
+"history"
+msgstr ""
+"Behalten Sie Ihre Favoriten immer bei sich: Jedes neue Hintergrundbild wird "
+"im Verlauf gespeichert"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:39
+msgid ""
+"Share with your friends: Select a variety of options for sharing an Unsplash "
+"link to the photo"
+msgstr ""
+"Teilen Sie es mit Ihren Freunden: Wählen Sie aus den verschiedenen "
+"Möglichkeiten zum Teilen einen Link zum Foto auf Unsplash aus"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:40
+msgid "Filter by orientation: Portrait, Landscape or Any"
+msgstr "Nach Ausrichtung filtern: Portrait, Landschaft oder ohne Filter"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:46
+msgid "Important fixes"
+msgstr "Wichtige Fehlerbehebungen"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:48
+msgid "Login screen does not use selected wallpaper"
+msgstr "Anmeldebildschirm zeigt nicht das ausgewählte Hintergrundbild"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:49
+msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
+msgstr "Hintergrundbild wird nicht geändert (betrifft Ubuntu Mate 18.04)"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:55
+msgid "Update"
+msgstr "Aktualisierung"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:57
+msgid "Dutch (Netherlands) translation"
+msgstr "Holländische (Niederlande) Übersetzung"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:63
+#: data/com.github.calo001.fondo.appdata.xml.in:77
+#: data/com.github.calo001.fondo.appdata.xml.in:85
+#: data/com.github.calo001.fondo.appdata.xml.in:94
+#: data/com.github.calo001.fondo.appdata.xml.in:102
+msgid "New"
+msgstr "Neu"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:65
+msgid "Keep your favorite photos with you, the photo history has arrived!"
+msgstr ""
+"Behalten Sie Ihre Lieblingsfotos bei sich: Es gibt jetzt einen Foto-Verlauf!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:66
+msgid ""
+"New way of navigating with a bottom bar that allows you to go to: Today, "
+"Categories and History"
+msgstr ""
+"Neue Art der Navigation durch eine Leiste unten im Fenster. Dadurch können "
+"Sie direkt zu \"Heute\", \"Kategorien\" und \"Verlauf\" gehen"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:67
+msgid ""
+"Speed up your search with the photo filter by Orientation: Portrait, "
+"Landscape or Any"
+msgstr ""
+"Kommen Sie noch schneller zu Ihren Suchergebnissen durch den Fotofilter: "
+"Portrait, Landschaft oder ohne Filter"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:68
+msgid "Learn more about a photo with the Detail popup in the full screen view"
+msgstr ""
+"Erfahren Sie mehr über das Foto durch die Kurzinfo in der Vollbildansicht"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:69
+msgid "Focus on Search entry with Ctrl+F"
+msgstr "Setzen Sie den Fokus auf die Suche mit Strg+F"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:70
+msgid "When doing a search, the total number of results are displayed"
+msgstr ""
+"Wenn Sie etwas suchen, wird Ihnen die Gesamtanzahl der Ergebnisse angezeigt"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:71
+msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
+msgstr ""
+"Verlaufsanimation in Bildlaufleiste, Modus-Umschalter und Platzhalterfoto"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:79
+msgid "Remove G+ option from Share popup"
+msgstr "Vom Teilen-Popup die Option G+ entfernt"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:87
+msgid "Update the set of screenshots"
+msgstr "Aktualisierung der Bildschirmfotos"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:88
+msgid "Fix error in appdata"
+msgstr "Fehler behoben in den Anwendungsdaten"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:96
+msgid "Added Dutch (Netherlands) translation"
+msgstr "Holländische (Niederlande) Übersetzung hinzugefügt"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:104
+msgid "Add french translations"
+msgstr "Französische Übersetzung hinzugefügt"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:110
+#: data/com.github.calo001.fondo.appdata.xml.in:120
+msgid "Updates"
+msgstr "Aktualisierungen"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:112
+msgid "Search by category and query"
+msgstr "Suche nach Kategorie und Abfrage"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:113
+msgid "New look and feel on hover a photo"
+msgstr "Neues Erscheinungsbild beim Überfahren eines Fotos"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:114
+msgid "Add gradients to scrollbar and mode switch"
+msgstr ""
+"Hinzufügen von Farbverläufen zur Bildlaufleiste und zum Modus-Umschalter"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:122
+msgid "New screenshots with awesome photos"
+msgstr "Neue Bildschirmfotos mit echt guten Aufnahmen"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:123
+msgid "OARS data social-info set to mild"
+msgstr "OARS-Daten Social-Info auf \"mild\" gesetzt"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:129
+msgid "Fixes and improvements"
+msgstr "Fehlerbehebungen und Verbesserungen"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:131
+msgid "Orthographic corrections in the Spanish translation"
+msgstr "Orthographische Korrekturen in der spanischen Übersetzung"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:132
+msgid "The photos are sorted from highest to lowest according to height"
+msgstr "Die Fotos werden je nach Höhe vom höchsten zum niedrigsten sortiert"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:138
+msgid "A very nice update with new features"
+msgstr "Ein sehr schönes Update mit neuen Funktionen"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:140
+msgid "Responsive, resizable window"
+msgstr "Reaktionsschnelles, anpassbares Fenster"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:141
+msgid "Infinite scrolling: just scroll to keep loading new photos"
+msgstr ""
+"Unendliches Weiterblättern: einfach Scrollen, um weitere Fotos zu laden"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:142
+msgid "Wallpaper options: set zoom, centered, and more"
+msgstr "Optionen für Hintergrundbilder: Zoom, zentriert, und mehr"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:143
+msgid "Improved icon and styling"
+msgstr "Besseres Symbol und Aussehen"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:148
+msgid "Improved UI."
+msgstr "Verbesserte Benutzeroberfläche."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:153
+msgid "Initial 1.0.0 release!"
+msgstr "Erste Veröffentlichung der Version 1.0.0!"
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr "com.github.calo001.fondo"
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr "wallpaper;unsplash;foto;bild;photo;hintergrund;"
