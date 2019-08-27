@@ -140,7 +140,7 @@ msgstr "🍁 Doku & desen"
 
 #: src/configs/Strings.vala:58
 msgid "📑 Flat lay"
-msgstr "📑 Düz zemin"
+msgstr "📑 Düz çekim"
 
 #: src/configs/Strings.vala:59
 msgid "Photos not found"
