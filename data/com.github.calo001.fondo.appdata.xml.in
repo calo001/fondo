@@ -41,6 +41,18 @@
         </ul>
     </description>
     <releases>
+      <release version="1.3.4" date="2019-09-22">
+        <description>
+          <p>New</p>
+          <ul>
+            <li>Added Turkish translation</li>
+          </ul>
+          <p>Fix</p>
+          <ul>
+            <li>German translation don't work</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.3.3" date="2019-08-08">
         <description>
           <p>New</p>
