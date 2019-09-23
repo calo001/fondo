@@ -1,0 +1,477 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.calo001.fondo package.
+# Onno Giesmann <nutzer3105@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.calo001.fondo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-08 23:29-0500\n"
+"PO-Revision-Date: 2019-08-27 04:00+0300\n"
+"Last-Translator: Caglar Turali\n"
+"Language-Team: \n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/configs/Strings.vala:28
+msgid "Today"
+msgstr "Bugün"
+
+#: src/configs/Strings.vala:29
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: src/configs/Strings.vala:30
+msgid "Visit web site"
+msgstr "Web sitesini ziyaret et"
+
+#: src/configs/Strings.vala:31
+msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
+msgstr "Unsplash Fotoğrafları: Birbirinden Güzel Ücretsiz Görüntüler 🎁"
+
+#: src/configs/Strings.vala:32
+msgid "Photo by "
+msgstr "Fotoğrafçı "
+
+#: src/configs/Strings.vala:33
+msgid " on Unsplash"
+msgstr " / Unsplash"
+
+#: src/configs/Strings.vala:34
+msgid "Share"
+msgstr "Paylaş"
+
+#: src/configs/Strings.vala:35
+msgid "Email"
+msgstr "E-posta"
+
+#: src/configs/Strings.vala:36
+msgid "Copy link"
+msgstr "Bağlantıyı kopyala"
+
+#: src/configs/Strings.vala:37
+msgid "Options"
+msgstr "Seçenekler"
+
+#: src/configs/Strings.vala:38
+msgid "Centered"
+msgstr "Ortala"
+
+#: src/configs/Strings.vala:39
+msgid "Scaled"
+msgstr "Ölçekle"
+
+#: src/configs/Strings.vala:40
+msgid "Zoom"
+msgstr "Yakınlaş"
+
+#: src/configs/Strings.vala:41
+msgid "Spanned"
+msgstr "Döşe"
+
+#: src/configs/Strings.vala:42
+msgid "Wallpaper ready!"
+msgstr "Duvar kâğıdı hazır!"
+
+#: src/configs/Strings.vala:43
+msgid "Your new wallpaper is ready!"
+msgstr "Yeni duvar kâğıdınız hazır!"
+
+#: src/configs/Strings.vala:44
+msgid "Check the network connection."
+msgstr "Ağ bağlantısını kontrol edin."
+
+#: src/configs/Strings.vala:45
+msgid "Retry"
+msgstr "Tekrar dene"
+
+#: src/configs/Strings.vala:46
+msgid "🌎  An amazing place in the world"
+msgstr "🌎  Dünyada muhteşem bir yer"
+
+#: src/configs/Strings.vala:47
+msgid "🌻 Nature"
+msgstr "🌻 Doğa"
+
+#: src/configs/Strings.vala:48
+msgid "🐹 Animal"
+msgstr "🐹 Havyanlar"
+
+#: src/configs/Strings.vala:49
+msgid "☕ Food & drink"
+msgstr "☕ Yiyecek ve içecek"
+
+#: src/configs/Strings.vala:50
+msgid "🌙 Space"
+msgstr "🌙 Uzay"
+
+#: src/configs/Strings.vala:51
+msgid "🏸 Sport"
+msgstr "🏸 Spor"
+
+#: src/configs/Strings.vala:52
+msgid "📊 Business & work"
+msgstr "📊 İş hayatı"
+
+#: src/configs/Strings.vala:53
+msgid "‍🎩 Fashion"
+msgstr "‍🎩 Moda"
+
+#: src/configs/Strings.vala:54
+msgid "🎨 Art & culture"
+msgstr "🎨 Sanat & kültür"
+
+#: src/configs/Strings.vala:55
+msgid "🏦 Architecture"
+msgstr "🏦 Mimari"
+
+#: src/configs/Strings.vala:56
+msgid "💻 Technology"
+msgstr "💻 Teknoloji"
+
+#: src/configs/Strings.vala:57
+msgid "🍁 Texture & pattern"
+msgstr "🍁 Doku & desen"
+
+#: src/configs/Strings.vala:58
+msgid "📑 Flat lay"
+msgstr "📑 Düz çekim"
+
+#: src/configs/Strings.vala:59
+msgid "Photos not found"
+msgstr "Fotoğraflar bulunamadı"
+
+#: src/configs/Strings.vala:60
+msgid "Loading ..."
+msgstr "Yükleniyor ..."
+
+#: src/configs/Strings.vala:61
+msgid "Close full screen"
+msgstr "Tam ekrandan çık"
+
+#: src/configs/Strings.vala:62
+msgid "Search photos Unsplash"
+msgstr "Unsplash fotoğraflarında ara"
+
+#: src/configs/Strings.vala:63
+msgid "History"
+msgstr "Geçmiş"
+
+#: src/configs/Strings.vala:64
+msgid "Light background"
+msgstr "Açık arkaplan"
+
+#: src/configs/Strings.vala:65
+msgid "Dark background"
+msgstr "Koyu arkaplan"
+
+#: src/configs/Strings.vala:66
+msgid "About"
+msgstr "Hakkında"
+
+#: src/configs/Strings.vala:67
+msgid "TODAY"
+msgstr "BUGÜN"
+
+#: src/configs/Strings.vala:68
+msgid "CATEGORIES"
+msgstr "KATEGORİLER"
+
+#: src/configs/Strings.vala:69
+msgid "HISTORY"
+msgstr "GEÇMİŞ"
+
+#: src/configs/Strings.vala:70
+msgid "No description available"
+msgstr "Açıklama bulunamadı"
+
+#: src/configs/Strings.vala:71
+msgid "Set as wallpaper"
+msgstr "Duvar kâğıdı olarak ayarla"
+
+#: src/configs/Strings.vala:72
+msgid "Details"
+msgstr "Detaylar"
+
+#: src/configs/Strings.vala:73
+msgid "Visit profile"
+msgstr "Profili incele"
+
+#: src/configs/Strings.vala:74
+msgid "Total results"
+msgstr "Toplam sonuçlar"
+
+#: src/configs/Strings.vala:75
+msgid "Find out what you like️"
+msgstr "Ne sevdiğini keşfet"
+
+#: src/configs/Strings.vala:76
+msgid "Try changing search terms."
+msgstr "Arama terimlerini değiştirmeyi deneyin."
+
+#: src/configs/Strings.vala:77
+msgid "Click on a photo to add it to the history."
+msgstr "Geçmişe eklemek için bir fotoğrafa tıklayın."
+
+#: src/configs/Strings.vala:78
+msgid "Network Error"
+msgstr "Ağ Hatası"
+
+#: src/configs/Strings.vala:79
+msgid "Landscape"
+msgstr "Yatay"
+
+#: src/configs/Strings.vala:80
+msgid "Portrait"
+msgstr "Dikey"
+
+#: src/configs/Strings.vala:81
+msgid "Any"
+msgstr "Karışık"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+#: data/com.github.calo001.fondo.desktop.in:3
+msgid "Fondo"
+msgstr "Fondo"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+#: data/com.github.calo001.fondo.desktop.in:4
+msgid "Find the most beautiful wallpapers"
+msgstr "En güzel duvar kâğıtlarını bulun"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr "Carlos Lopez"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:31
+msgid ""
+"Find a variety of the most beautiful wallpapers from Unsplash.com the "
+"world’s most generous community of photographers."
+msgstr ""
+"Dünyanın en cömert fotoğrafçı topluluğu Unsplash.com'dan en güzel duvar "
+"kağıtlarını keşfedin."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:32
+msgid ""
+"Fondo allows you to see thousands of beautiful photographs from the most "
+"recent to the one you are to looking for. Give a single click on a picture, "
+"wait until the download is complete and enjoy your new wallpaper!"
+msgstr ""
+"Fondo, en güncelinden en çok aradığınıza kadar binlerce güzel fotoğrafı "
+"görmenizi sağlar. Bir fotoğrafa tıklayın, indirme tamamlanıncaya kadar "
+"bekleyin ve yeni duvar kâğıdınızın keyfini çıkarın!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+msgid ""
+"Have a minimalist, simple and elegant interface, additionally, you can "
+"change from light mode to dark mode as you prefer."
+msgstr ""
+"Minimalist, sade ve zarif bir arayüze sahiptir. Ek olarak, açık ve koyu mod "
+"arasından istediğinizi seçebilirsiniz."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+msgid "Main features:"
+msgstr "Ana özellikler:"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:36
+msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
+msgstr ""
+"Sonsuzluk ve ötesine!: Daha fazla fotoğraf yüklemek için sonsuz kaydırmayı "
+"kullanın"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:37
+msgid "Find out what you like: Search by categories or type in the search bar"
+msgstr ""
+"Ne sevdiğinizi keşfedin: Kategorilere göre arayın veya arama çubuğuna yazın"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+msgid ""
+"Keep your favorite photos with you: Every new wallpaper is saved in the "
+"history"
+msgstr ""
+"Favori fotoğraflarınızı yanınızda bulundurun: Her yeni duvar kâğıdı geçmişe "
+"kaydedilir"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:39
+msgid ""
+"Share with your friends: Select a variety of options for sharing an Unsplash "
+"link to the photo"
+msgstr ""
+"Arkadaşlarınızla paylaşın: Fotoğrafların Unsplash bağlantısını paylaşmak "
+"için çeşitli seçenekler arasından birini seçin"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:40
+msgid "Filter by orientation: Portrait, Landscape or Any"
+msgstr "Yönlendirmeye göre filtreleyin: Dikey, Yatay veya Karışık"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:46
+#: data/com.github.calo001.fondo.appdata.xml.in:71
+#: data/com.github.calo001.fondo.appdata.xml.in:85
+#: data/com.github.calo001.fondo.appdata.xml.in:93
+#: data/com.github.calo001.fondo.appdata.xml.in:102
+#: data/com.github.calo001.fondo.appdata.xml.in:110
+msgid "New"
+msgstr "Yeni"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:48
+msgid "Added German translation"
+msgstr "Almanca çeviri eklendi"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:54
+msgid "Important fixes"
+msgstr "Önemli düzeltmeler"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:56
+msgid "Login screen does not use selected wallpaper"
+msgstr "Giriş ekranı seçili duvar kâğıdını kullanmıyor"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:57
+msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
+msgstr "Ubuntu Mate 18.04 üzerinde duvar kâğıdı uygulanmıyor"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:63
+msgid "Update"
+msgstr "Güncelleme"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:65
+msgid "Dutch (Netherlands) translation"
+msgstr "Hollandaca çeviri"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:73
+msgid "Keep your favorite photos with you, the photo history has arrived!"
+msgstr ""
+"En sevdiğiniz fotoğrafları yanınızda bulundurun, fotoğraf geçmişi eklendi!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:74
+msgid ""
+"New way of navigating with a bottom bar that allows you to go to: Today, "
+"Categories and History"
+msgstr ""
+"Bugün, Kategoriler ve Geçmiş arasında gezinmenizi sağlayan alt çubuk ile "
+"gezinmenin yeni yolu"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:75
+msgid ""
+"Speed up your search with the photo filter by Orientation: Portrait, "
+"Landscape or Any"
+msgstr ""
+"Yönlendirmeye göre filtreleme ile aramanızı hızlandırın: Dikey, Yatay veya "
+"Karışık"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:76
+msgid "Learn more about a photo with the Detail popup in the full screen view"
+msgstr ""
+"Tam ekran görünümünde Detaylar açılır penceresi ile fotoğraf hakkında daha "
+"fazlasını öğrenin"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:77
+msgid "Focus on Search entry with Ctrl+F"
+msgstr "Ctrl+F ile arama girdisine odaklanın"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:78
+msgid "When doing a search, the total number of results are displayed"
+msgstr "Arama yaparken toplam sonuç sayısını göster"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:79
+msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
+msgstr ""
+"Kaydırma çubuğunda renk geçişi animasyonu, kip değiştirme ve yer tutucu "
+"fotoğraf"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:87
+msgid "Remove G+ option from Share popup"
+msgstr "Paylaş açılır penceresinden G+ seçeneğini sil"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:95
+msgid "Update the set of screenshots"
+msgstr "Ekran görüntülerini güncelle"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:96
+msgid "Fix error in appdata"
+msgstr "Uygulama verisi (appdata) hatasını düzelt"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:104
+msgid "Added Dutch (Netherlands) translation"
+msgstr "Hollandaca çeviri eklendi"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:112
+msgid "Add french translations"
+msgstr "Fransızca çeviri eklendi"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:118
+#: data/com.github.calo001.fondo.appdata.xml.in:128
+msgid "Updates"
+msgstr "Güncellemeler"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:120
+msgid "Search by category and query"
+msgstr "Kategoriye ve sorguya göre ara"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:121
+msgid "New look and feel on hover a photo"
+msgstr "Üzerine gelinen fotoğraflar için yeni görünüm"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:122
+msgid "Add gradients to scrollbar and mode switch"
+msgstr "Kaydırma çubuğuna ve kip değiştirme ekranına renk geçişi eklendi"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:130
+msgid "New screenshots with awesome photos"
+msgstr "Muhteşem fotoğraflar içeren yeni ekran görüntüleri"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:131
+msgid "OARS data social-info set to mild"
+msgstr "OARS verisi social-info alanını mild'e ayarla"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:137
+msgid "Fixes and improvements"
+msgstr "Düzeltmeler ve iyileştirmeler"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:139
+msgid "Orthographic corrections in the Spanish translation"
+msgstr "İspanyolca çeviride ortografik düzeltmeler"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:140
+msgid "The photos are sorted from highest to lowest according to height"
+msgstr "Fotoğrafları yüksekliklerine göre en büyükten en küçüğe sırala"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:146
+msgid "A very nice update with new features"
+msgstr "Yeni özellikler içeren çok güzel bir güncelleme"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:148
+msgid "Responsive, resizable window"
+msgstr "Duyarlı, yeniden boyutlandırılabilir pencere"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:149
+msgid "Infinite scrolling: just scroll to keep loading new photos"
+msgstr "Sonsuz kaydırma: yeni fotoğraflar yüklemeye devam etmek için kaydırın"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:150
+msgid "Wallpaper options: set zoom, centered, and more"
+msgstr "Duvar kâğıdı seçenekleri: yakınlaş, ortala ve daha fazlası"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:151
+msgid "Improved icon and styling"
+msgstr "Simge ve stiller iyileştirildi"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:156
+msgid "Improved UI."
+msgstr "İyileştirilmiş arayüz."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:161
+msgid "Initial 1.0.0 release!"
+msgstr "İlk sürüm: 1.0.0!"
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr "com.github.calo001.fondo"
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr "wallpaper;unsplash;foto;image;photo;background;"
