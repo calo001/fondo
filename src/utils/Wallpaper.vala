@@ -117,7 +117,7 @@ namespace App.Utils {
             progress_visibility (true);
 
             if (!file_path.query_exists ()) {
-                full_picture_path.create_readwrite (FileCreateFlags.REPLACE_DESTINATION);
+                file_from_uri.create_readwrite (FileCreateFlags.REPLACE_DESTINATION);
 
                 file_from_uri.copy_async.begin (file_path, 
                     FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, 
