@@ -42,11 +42,6 @@ dependencies = [
     dependency('libsoup-2.4'),
     meson.get_compiler('vala').find_library('posix'),
 ]
-unity_dep = dependency('unity', required: false)
-if unity_dep.found()
-    dependencies += [unity_dep]
-    vala_args += ['-D', 'WITH_UNITY']
-endif
 
 e = executable('com.github.calo001.fondo',
     sources,

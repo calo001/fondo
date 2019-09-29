@@ -18,9 +18,6 @@
 
 using Gtk;
 using App.Configs;
-#if WITH_UNITY
-using Unity;
-#endif
 namespace App.Utils {
 
     /**
@@ -42,10 +39,6 @@ namespace App.Utils {
         // Base path for wallpaper picture
         private string BASE_DIR = Path.build_filename (Environment.get_user_data_dir (), "backgrounds") + "/";
 
-        // Progress bar in plank
-        #if WITH_UNITY
-        private LauncherEntry launcher;
-        #endif
         /***********************************
             Constructor
             * uri_endpoint is the direct url image
@@ -58,9 +51,6 @@ namespace App.Utils {
             this.bar = bar;
             this.img_file_name = username + "_" + id_photo + ".jpeg";
             this.full_picture_path = BASE_DIR + img_file_name;
-            #if WITH_UNITY
-                this.launcher = LauncherEntry.get_for_desktop_id (Constants.ID + ".desktop");
-            #endif
         }
 
         /***********************************************************************
@@ -124,11 +114,9 @@ namespace App.Utils {
             var file_path = File.new_for_path (full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
             var progress = 0.0;
+            progress_visibility (true);
 
             if (!file_path.query_exists ()) {
-                #if WITH_UNITY
-                launcher.progress_visible = true;
-                #endif
                 file_from_uri.copy_async.begin (file_path, 
                     FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, 
                     null, (current_num_bytes, total_num_bytes) => {
@@ -136,14 +124,14 @@ namespace App.Utils {
                         progress = (double) current_num_bytes / total_num_bytes;
                         total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
                         print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
-                        show_progress (progress);
+                        update_progress (progress);
 	                }, (obj, res) => {
                         try {
                             bool tmp = file_from_uri.copy_async.end (res);
                             print ("Result: %s\n", tmp.to_string ());
-                            #if WITH_UNITY
-                            launcher.progress_visible = false;
-                            #endif
+                            
+                            progress_visibility (false);
+
                             finish_download ();
                         } catch (Error e) {
                             show_message ("Error copy from URI to directory", e.message, "dialog-error");
@@ -171,11 +159,28 @@ namespace App.Utils {
         /***********************************************************************
             Method to show progress in download
         ***********************************************************************/
-        private void show_progress (double progress) {
+        private void update_progress (double progress) {
             bar.set_fraction (progress);
-            #if WITH_UNITY
-            launcher.progress = progress;
-            #endif
+            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
+                try {
+                    Granite.Services.Application.set_progress.end (res);
+                } catch (GLib.Error e) {
+                    critical (e.message);
+                }
+            });
+        }
+
+        /***********************************************************************
+            Method to hide progress in download
+        ***********************************************************************/
+        private void progress_visibility (bool visible) {
+            Granite.Services.Application.set_progress_visible.begin (visible, (obj, res) => {
+                try {
+                    Granite.Services.Application.set_progress_visible.end (res);
+                } catch (GLib.Error e) {
+                    critical (e.message);
+                }
+            });
         }
 
         /***********************************************************************
