@@ -117,6 +117,8 @@ namespace App.Utils {
             progress_visibility (true);
 
             if (!file_path.query_exists ()) {
+                full_picture_path.create_readwrite (FileCreateFlags.REPLACE_DESTINATION);
+
                 file_from_uri.copy_async.begin (file_path, 
                     FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, 
                     null, (current_num_bytes, total_num_bytes) => {
@@ -126,7 +128,7 @@ namespace App.Utils {
                         print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
                         update_progress (progress);
 	                }, (obj, res) => {
-                        /*try {
+                        try {
                             bool tmp = file_from_uri.copy_async.end (res);
                             print ("Result: %s\n", tmp.to_string ());
                             
@@ -136,7 +138,7 @@ namespace App.Utils {
                         } catch (Error e) {
                             show_message ("Error copy from URI to directory", e.message, "dialog-error");
                         }
-		                loop.quit ();*/
+		                loop.quit ();
 	                });
 			} else {
                 //print ("Picture %s already exist\n", img_file_name);
