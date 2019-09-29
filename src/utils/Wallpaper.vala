@@ -161,26 +161,26 @@ namespace App.Utils {
         ***********************************************************************/
         private void update_progress (double progress) {
             bar.set_fraction (progress);
-            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
+            /*Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
                 try {
                     Granite.Services.Application.set_progress.end (res);
                 } catch (GLib.Error e) {
                     critical (e.message);
                 }
-            });
+            });*/
         }
 
         /***********************************************************************
             Method to hide progress in download
         ***********************************************************************/
         private void progress_visibility (bool visible) {
-            Granite.Services.Application.set_progress_visible.begin (visible, (obj, res) => {
+            /*Granite.Services.Application.set_progress_visible.begin (visible, (obj, res) => {
                 try {
                     Granite.Services.Application.set_progress_visible.end (res);
                 } catch (GLib.Error e) {
                     critical (e.message);
                 }
-            });
+            });*/
         }
 
         /***********************************************************************
