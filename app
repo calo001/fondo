@@ -58,9 +58,6 @@ case $1 in
     clear_gschema
     sudo rm -rf ./build
     ;;
-"test")
-    test
-    ;;
 "generate-i18n")
     initialize
     ninja com.github.calo001.fondo-pot
