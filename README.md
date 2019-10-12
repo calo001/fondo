@@ -58,7 +58,6 @@ These dependencies must be present before building:
  - `libgtk-3-dev`
  - `libjson-glib-dev`
  - `libsoup2.4-dev`
- - `libunity-dev`
 
 
 Use the App script to simplify installation by running `./app install-deps`, in this case, make sure that `dpkg-dev` package is installed
