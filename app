@@ -69,10 +69,10 @@ case $1 in
     ;;
 "install-deps")
     checkdeps=$(which dpkg-checkbuilddeps)
-    output=$(($checkdeps ) 2>&1)
+    output=$(${checkdeps[@]} 2>&1)
     [ "$?" -eq "0" ] && echo "All dependencies are installed" && exit 0 ;
-    packages=$(echo "$output" | sed 's/dpkg-checkbuilddeps: erro: Unmet build dependencies: //g')
-    packages=$(echo "$packages" | sed -r -e 's/(\([>=<0-9. ]+\))+//g')
+    packages=$(echo $output | sed 's/dpkg-checkbuilddeps: error: Unmet build dependencies: //g')
+    packages=$(echo $packages | sed -r -e 's/(\([>=<0-9. ]+\))+//g')
     command="sudo apt install $packages"
     $command
     ;;
