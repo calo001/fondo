@@ -36,32 +36,25 @@ namespace App.Utils {
 
         public SchemaManager () {
             // check mate
-            try {
-                var schema_source = GLib.SettingsSchemaSource.get_default ();
+            var schema_source = GLib.SettingsSchemaSource.get_default ();
+            var schema = schema_source.lookup (mate_background_schema, true);
 
-                var schema = schema_source.lookup (mate_background_schema, true);
+            if (schema != null) {
+                settings = new GLib.Settings.full (schema, null, null);
+                env = Constants.IS_MATE;
+                return;
+            }
 
-                if (schema != null) {
-                    settings = new GLib.Settings.full (schema, null, null);
-                    env = Constants.IS_MATE;
-                    return;
+            schema = schema_source.lookup (gnome_background_schema, true);
+            
+            if (schema != null) {
+                settings = new GLib.Settings.full (schema, null, null);
+                env = Constants.IS_GNOME;
+                var schema_screensaver = schema_source.lookup (gnome_screensaver_schema, true);
+                if (schema_screensaver != null) {
+                    settings_screensaver = new GLib.Settings.full (schema_screensaver, null, null);
                 }
-
-                schema = schema_source.lookup (gnome_background_schema, true);
-
-                if (schema != null) {
-                    settings = new GLib.Settings.full (schema, null, null);
-                    env = Constants.IS_GNOME;
-
-                    var schema_screensaver = schema_source.lookup (gnome_screensaver_schema, true);
-                    if (schema_screensaver != null) {
-                        settings_screensaver = new GLib.Settings.full (schema_screensaver, null, null);
-                    }
-                    return;
-                }
-
-            } catch (Error e) {
-                print (e.message);
+                return;
             }
         }
 
