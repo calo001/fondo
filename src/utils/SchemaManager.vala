@@ -27,7 +27,9 @@ namespace App.Utils {
 
     public class SchemaManager {
         private GLib.Settings settings;
+        private GLib.Settings settings_screensaver;
         private const string gnome_background_schema = "org.gnome.desktop.background";
+        private const string gnome_screensaver_schema = "org.gnome.desktop.screensaver";
         private const string mate_background_schema = "org.mate.background";
 
         private int env = Constants.IS_GNOME;
@@ -50,8 +52,14 @@ namespace App.Utils {
                 if (schema != null) {
                     settings = new GLib.Settings.full (schema, null, null);
                     env = Constants.IS_GNOME;
+
+                    var schema_screensaver = schema_source.lookup (gnome_screensaver_schema, true);
+                    if (schema_screensaver != null) {
+                        settings_screensaver = new GLib.Settings.full (schema_screensaver, null, null);
+                    }
                     return;
                 }
+
             } catch (Error e) {
                 print (e.message);
             }
@@ -62,6 +70,9 @@ namespace App.Utils {
                 switch (env) {
                     case Constants.IS_GNOME:
                         settings.set_string ("picture-uri", "file://" + picture_path);
+                        if (settings_screensaver != null) {
+                            settings_screensaver.set_string ("picture-uri", "file://" + picture_path);
+                        }
                         break;
                     case Constants.IS_MATE:
                         settings.set_string ("picture-filename", picture_path);
