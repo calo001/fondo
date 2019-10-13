@@ -218,8 +218,8 @@
     <url type="help">https://github.com/calo001/fondo/issues</url>
     <update_contact>calo_lrc@hotmail.com</update_contact>
     <custom>
-        <value key="x-appcenter-color-primary">#82ffc4</value>
-        <value key="x-appcenter-color-primary-text">#000000</value>
+        <value key="x-appcenter-color-primary">#ff5757</value>
+        <value key="x-appcenter-color-primary-text">#ffffff</value>
         <value key="x-appcenter-suggested-price">0</value>
     </custom>
 </component>
