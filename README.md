@@ -1,5 +1,5 @@
 <div align="center">
-  <span align="center"> <img width="80" height="80" class="center" src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/com.github.calo001.fondo.png" alt="Icon"></span>
+  <span align="center"> <img width="120" height="120" class="center" src="https://raw.githubusercontent.com/calo001/fondo/master/data/images/com.github.calo001.fondo.png" alt="Icon"></span>
   <h1 align="center">Fondo</h1>
   <h3 align="center"></h3>
 </div>
