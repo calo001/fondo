@@ -22,6 +22,12 @@
     100% { background: linear-gradient(-45deg, @green 0%, @blue 100%); }
 }
 
+@keyframes gradient_progress {
+    0%   { background: linear-gradient(to right, @red, @pink); }
+    50%  { background: linear-gradient(to left,  @red, @pink); }
+    100% { background: linear-gradient(to right, @red, @pink); }
+}
+
 @keyframes opacity_anim {
     0%   { opacity: 0; }
     100% { opacity: 1; }

@@ -1,3 +1,11 @@
+com.github.calo001.fondo (1.3.6) bionic; urgency=low
+
+[FIX]
+  * #65 Error copy from URI to directory
+  * #68 No previews availible
+
+ -- Calo001 <calo_lrc@hotmail.com>  Sun, 27 Oct 2019 22:10:00 -0500
+
 com.github.calo001.fondo (1.3.5) bionic; urgency=low
 
 [FIX]

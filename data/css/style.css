@@ -18,12 +18,18 @@
 
 @import url("/com/github/calo001/fondo/css/animations.css");
 
-@define-color colorAccent rgb(18, 144, 141);
-@define-color colorAccentOpaque #2BB5CF;
-@define-color blue #009efd;
-@define-color green #2af598;
-@define-color red #ff5858;
-@define-color pink #db36a4;
+@define-color colorAccent #b224ef;
+@define-color colorAccentOpaque #b224ef;
+@define-color blue #b224ef;
+@define-color green #7579ff;
+@define-color red #f83600;
+@define-color pink #f9d423;
+
+@define-color semiTransparent alpha(@blue, 0.1);
+
+@define-color photoLight1 alpha(@blue, 0.16);
+@define-color photoLight2 alpha(@blue, 0.23);
+
 
 progressbar progress {
     background: linear-gradient(to right, @red, @pink);
@@ -34,12 +40,6 @@ progressbar progress {
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-}
-
-@keyframes gradient_progress {
-    0%   { background: linear-gradient(to right, @red, @pink); }
-    50%  { background: linear-gradient(to left,  @red, @pink); }
-    100% { background: linear-gradient(to right, @red, @pink); }
 }
 
 switch {
@@ -114,10 +114,10 @@ headerbar.dark entry {
 }
 
 flowboxchild:focus {
-	background: rgba(0,255,255, 0.1);
+	background: @semiTransparent;
 }
 
-progressbar trough{
+progressbar trough {
     border: none;
     box-shadow: none;
     background: rgba (255,255,255,0.3);
@@ -151,7 +151,7 @@ progressbar trough{
 }
 
 .photo:hover {
-    box-shadow: 0 14px 28px rgba(46,191,145,0.16), 0 10px 10px rgba(46,191,145,0.23);
+    box-shadow: 0 14px 28px @photoLight1, 0 10px 10px @photoLight2;
     background: linear-gradient(-45deg, @green 0%, @blue 100%);
     padding: 3px;
     animation-name: gradient_anim;

@@ -41,7 +41,12 @@
         </ul>
     </description>
     <releases>
-    <release version="1.3.5" date="2019-10-12">
+      <release version="1.3.6" date="2019-10-27">
+        <description>
+          <p>Custom colors for #DiaDeMuertos</p>
+        </description>
+      </release>
+      <release version="1.3.5" date="2019-10-12">
         <description>
           <p>Fix</p>
           <ul>
