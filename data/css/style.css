@@ -18,12 +18,12 @@
 
 @import url("/com/github/calo001/fondo/css/animations.css");
 
-@define-color colorAccent #b224ef;
-@define-color colorAccentOpaque #b224ef;
-@define-color blue #b224ef;
-@define-color green #7579ff;
-@define-color red #f83600;
-@define-color pink #f9d423;
+@define-color colorAccent #0ba360;
+@define-color colorAccentOpaque #0ba360;
+@define-color blue #0ba360;
+@define-color green #3cba92;
+@define-color red #FF416C;
+@define-color pink #e52d27;
 
 @define-color semiTransparent alpha(@blue, 0.1);
 
@@ -273,6 +273,7 @@ progressbar trough {
   animation-name: fancy_turn;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
+  
 }
 
 .btn-orientation {
