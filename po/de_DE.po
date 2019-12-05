@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-04 22:45-0600\n"
-"PO-Revision-Date: 2019-08-05 11:49+0200\n"
+"PO-Revision-Date: 2019-12-05 22:09+0100\n"
 "Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: src/configs/Strings.vala:28
 msgid "Today"
@@ -313,24 +314,24 @@ msgstr "Nach Ausrichtung filtern: Portrait, Landschaft oder ohne Filter"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:46
 msgid "Custom colors and icon for Christmas"
-msgstr ""
+msgstr "Benutzerdefinierte Farben und weihnachtliches Symbol"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:51
 msgid "Custom colors for #DiaDeMuertos"
-msgstr ""
+msgstr "Benutzerdefinierte Farben für #DiaDeMuertos"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:56
 #: data/com.github.calo001.fondo.appdata.xml.in:69
 msgid "Fix"
-msgstr ""
+msgstr "Repariert"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:58
 msgid "#65 Error copy from URI to directory"
-msgstr ""
+msgstr "#65 Fehler beim Kopieren der URL zum Verzeichnis"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:59
 msgid "#68 No previews availible"
-msgstr ""
+msgstr "#68 Keine Vorschauen verfügbar"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:65
 #: data/com.github.calo001.fondo.appdata.xml.in:77
@@ -343,17 +344,16 @@ msgid "New"
 msgstr "Neu"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:67
-#, fuzzy
 msgid "Added Turkish translation"
-msgstr "Französische Übersetzung hinzugefügt"
+msgstr "Türkische Übersetzung hinzugefügt"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:71
 msgid "German translation don't work"
-msgstr ""
+msgstr "Deutsche Übersetzung wird nicht angezeigt"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:79
 msgid "Added German translation"
-msgstr ""
+msgstr "Deutsche Übersetzung hinzugefügt"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:85
 msgid "Important fixes"
