@@ -1,248 +1,39 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.calo001.fondo package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Dutch translations for extra package.
+# Copyright (C) 2020 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Heimen Stoffels <vistausss@outlook.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.calo001.fondo\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-04 22:45-0600\n"
-"PO-Revision-Date: 2019-06-09 21:16+0200\n"
+"POT-Creation-Date: 2020-01-11 20:32+0100\n"
+"PO-Revision-Date: 2020-01-11 20:24+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
-"Language: nl_NL\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.3\n"
 
-#: src/configs/Strings.vala:28
-msgid "Today"
-msgstr "Vandaag"
-
-#: src/configs/Strings.vala:29
-msgid "Categories"
-msgstr "Categorieën"
-
-#: src/configs/Strings.vala:30
-msgid "Visit web site"
-msgstr "Website bezoeken"
-
-#: src/configs/Strings.vala:31
-msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr "Foto's van Unsplash: prachtige foto's, en helemaal gratis 🎁"
-
-#: src/configs/Strings.vala:32
-msgid "Photo by "
-msgstr "Foto gemaakt door "
-
-#: src/configs/Strings.vala:33
-msgid " on Unsplash"
-msgstr " op Unsplash"
-
-#: src/configs/Strings.vala:34
-msgid "Share"
-msgstr "Delen"
-
-#: src/configs/Strings.vala:35
-msgid "Email"
-msgstr "E-mail"
-
-#: src/configs/Strings.vala:36
-msgid "Copy link"
-msgstr "Link kopiëren"
-
-#: src/configs/Strings.vala:37
-msgid "Options"
-msgstr "Opties"
-
-#: src/configs/Strings.vala:38
-msgid "Centered"
-msgstr "Centreren"
-
-#: src/configs/Strings.vala:39
-msgid "Scaled"
-msgstr "Schalen"
-
-#: src/configs/Strings.vala:40
-msgid "Zoom"
-msgstr "Vergroten"
-
-#: src/configs/Strings.vala:41
-msgid "Spanned"
-msgstr "Omspannen"
-
-#: src/configs/Strings.vala:42
-msgid "Wallpaper ready!"
-msgstr "Achtergrond is klaar!"
-
-#: src/configs/Strings.vala:43
-msgid "Your new wallpaper is ready!"
-msgstr "Je nieuwe achtergrond is klaar voor gebruik!"
-
-#: src/configs/Strings.vala:44
-msgid "Check the network connection."
-msgstr "Controleer je internetverbinding."
-
-#: src/configs/Strings.vala:45
-msgid "Retry"
-msgstr "Opnieuw"
-
-#: src/configs/Strings.vala:46
-msgid "🌎  An amazing place in the world"
-msgstr "🌎  Een fantastische locatie, ergens op de wereld"
-
-#: src/configs/Strings.vala:47
-msgid "🌻 Nature"
-msgstr "🌻 Natuur"
-
-#: src/configs/Strings.vala:48
-msgid "🐹 Animal"
-msgstr "🐹 Dieren"
-
-#: src/configs/Strings.vala:49
-msgid "☕ Food & drink"
-msgstr "☕ Eten en drinken"
-
-#: src/configs/Strings.vala:50
-msgid "🌙 Space"
-msgstr "🌙 Het heelal"
-
-#: src/configs/Strings.vala:51
-msgid "🏸 Sport"
-msgstr "🏸 Sport"
-
-#: src/configs/Strings.vala:52
-msgid "📊 Business & work"
-msgstr "📊 Zakelijk en werk"
-
-#: src/configs/Strings.vala:53
-msgid "‍🎩 Fashion"
-msgstr "‍🎩 Mode"
-
-#: src/configs/Strings.vala:54
-msgid "🎨 Art & culture"
-msgstr "🎨 Kunst en cultuur"
-
-#: src/configs/Strings.vala:55
-msgid "🏦 Architecture"
-msgstr "🏦 Architectuur"
-
-#: src/configs/Strings.vala:56
-msgid "💻 Technology"
-msgstr "💻 Technologie"
-
-#: src/configs/Strings.vala:57
-msgid "🍁 Texture & pattern"
-msgstr "🍁 Textuur en patroon"
-
-#: src/configs/Strings.vala:58
-msgid "📑 Flat lay"
-msgstr "📑 Plat"
-
-#: src/configs/Strings.vala:59
-msgid "Photos not found"
-msgstr "Geen foto's gevonden"
-
-#: src/configs/Strings.vala:60
-msgid "Loading ..."
-msgstr "Bezig met laden..."
-
-#: src/configs/Strings.vala:61
-msgid "Close full screen"
-msgstr "Volledig scherm afsluiten"
-
-#: src/configs/Strings.vala:62
-msgid "Search photos Unsplash"
-msgstr "Zoek foto's op Unsplash"
-
-#: src/configs/Strings.vala:63
-msgid "History"
-msgstr "Geschiedenis"
-
-#: src/configs/Strings.vala:64
-msgid "Light background"
-msgstr "Lichte achtergrond"
-
-#: src/configs/Strings.vala:65
-msgid "Dark background"
-msgstr "Donkere achtergrond"
-
-#: src/configs/Strings.vala:66
-msgid "About"
-msgstr "Over"
-
-#: src/configs/Strings.vala:67
-msgid "TODAY"
-msgstr "VANDAAG"
-
-#: src/configs/Strings.vala:68
-msgid "CATEGORIES"
-msgstr "CATEGORIEËN"
-
-#: src/configs/Strings.vala:69
-msgid "HISTORY"
-msgstr "GESCHIEDENIS"
-
-#: src/configs/Strings.vala:70
-msgid "No description available"
-msgstr "Geen beschrijving beschikbaar"
-
-#: src/configs/Strings.vala:71
-msgid "Set as wallpaper"
-msgstr "Als bureaubladachtergrond instellen"
-
-#: src/configs/Strings.vala:72
-msgid "Details"
-msgstr "Gegevens"
-
-#: src/configs/Strings.vala:73
-msgid "Visit profile"
-msgstr "Bezoek profiel"
-
-#: src/configs/Strings.vala:74
-msgid "Total results"
-msgstr "Totaal aantal resultaten"
-
-#: src/configs/Strings.vala:75
-msgid "Find out what you like️"
-msgstr "Ontdek wat je leuk vindt️"
-
-#: src/configs/Strings.vala:76
-msgid "Try changing search terms."
-msgstr "Probeer zoektermen te veranderen."
-
-#: src/configs/Strings.vala:77
-msgid "Click on a photo to add it to the history."
-msgstr "Klik op een foto om deze aan de geschiedenis toe te voegen."
-
-#: src/configs/Strings.vala:78
-msgid "Network Error"
-msgstr "Netwerkfout"
-
-#: src/configs/Strings.vala:79
-msgid "Landscape"
-msgstr "Horizontaal"
-
-#: src/configs/Strings.vala:80
-msgid "Portrait"
-msgstr "Verticaal"
-
-#: src/configs/Strings.vala:81
-msgid "Any"
-msgstr "Ieder"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:7
 #: data/com.github.calo001.fondo.desktop.in:3
+#: data/com.github.calo001.fondo.appdata.xml.in:7
 msgid "Fondo"
 msgstr "Fondo"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:8
 #: data/com.github.calo001.fondo.desktop.in:4
+#: data/com.github.calo001.fondo.appdata.xml.in:8
 msgid "Find the most beautiful wallpapers"
 msgstr "Vind de mooiste bureaubladachtergronden"
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr "com.github.calo001.fondo"
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr "bureaubladachtergrond;unsplash;foto;afbeelding;achtergrond;bureaublad;"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:9
 msgid "Carlos Lopez"
@@ -495,11 +286,3 @@ msgstr "Verbeterd uiterlijk"
 #: data/com.github.calo001.fondo.appdata.xml.in:192
 msgid "Initial 1.0.0 release!"
 msgstr "Initiële uitgave '1.0.0'!"
-
-#: data/com.github.calo001.fondo.desktop.in:5
-msgid "com.github.calo001.fondo"
-msgstr "com.github.calo001.fondo"
-
-#: data/com.github.calo001.fondo.desktop.in:11
-msgid "wallpaper;unsplash;foto;image;photo;background;"
-msgstr "bureaubladachtergrond;unsplash;foto;afbeelding;achtergrond;bureaublad;"
