@@ -57,7 +57,7 @@ namespace App.Configs {
         public abstract const string CATEGORY_TEXTURE_PATTERN = _("🍁 Texture & pattern");
         public abstract const string CATEGORY_FLATLAY = _("📑 Flat lay");
         public abstract const string PHOTOS_NOT_FOUND = _("Photos not found");
-        public abstract const string LOADING = _("Loading ...");
+        public abstract const string LOADING = _("Loading …");
         public abstract const string CLOSE = _("Close full screen");
         public abstract const string SEARCH_PHOTOS_UNSPLASH = _("Search photos Unsplash");
         public abstract const string HISTORY = _("History");

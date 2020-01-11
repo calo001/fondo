@@ -146,8 +146,8 @@ msgid "Photos not found"
 msgstr "Fotos no encontradas"
 
 #: src/configs/Strings.vala:60
-msgid "Loading ..."
-msgstr "Cargando ..."
+msgid "Loading …"
+msgstr "Cargando …"
 
 #: src/configs/Strings.vala:61
 msgid "Close full screen"
@@ -280,7 +280,7 @@ msgstr "Características principales"
 #: data/com.github.calo001.fondo.appdata.xml.in:36
 msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
 msgstr ""
-"Al infinito... ¡y más allá!: Usa el scroll infinito para cargar más fotos"
+"Al infinito… ¡y más allá!: Usa el scroll infinito para cargar más fotos"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:37
 msgid "Find out what you like: Search by categories or type in the search bar"

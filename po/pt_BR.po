@@ -146,8 +146,8 @@ msgid "Photos not found"
 msgstr "Fotos não encontradas"
 
 #: src/configs/Strings.vala:60
-msgid "Loading ..."
-msgstr "Carregando ..."
+msgid "Loading …"
+msgstr "Carregando …"
 
 #: src/configs/Strings.vala:61
 msgid "Close full screen"

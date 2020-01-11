@@ -23,7 +23,7 @@ namespace App.Windows {
 
     /**
      * Class responsible for creating the u window and will contain contain other widgets. 
-     * allowing the user to manipulate the window (resize it, move it, close it, ...).
+     * allowing the user to manipulate the window (resize it, move it, close it, …).
      *
      * @see Gtk.ApplicationWindow
      * @since 1.0.0
