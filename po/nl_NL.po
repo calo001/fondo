@@ -147,7 +147,7 @@ msgid "Photos not found"
 msgstr "Geen foto's gevonden"
 
 #: src/configs/Strings.vala:60
-msgid "Loading …"
+msgid "Loading…"
 msgstr "Bezig met laden…"
 
 #: src/configs/Strings.vala:61
