@@ -15,4 +15,3 @@ if not environ.get('DESTDIR'):
     subprocess.call(['update-desktop-database', '-q', desktop_database_dir])
     print('Updating icon cache…')
     subprocess.call(['gtk-update-icon-cache', '-qtf', path.join(datadir, 'icons', 'hicolor')])
-
