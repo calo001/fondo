@@ -1,4 +1,4 @@
-sources += files(
+sources = files(
     'Configs/Constants.vala',
     'Configs/Settings.vala',
     'Configs/Strings.vala',
