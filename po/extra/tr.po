@@ -1,248 +1,39 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.calo001.fondo package.
-# Onno Giesmann <nutzer3105@gmail.com>, 2019.
+# Turkish translations for extra package.
+# Copyright (C) 2020 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Onno Giesmann <nutzer3105@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.calo001.fondo\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-04 22:45-0600\n"
-"PO-Revision-Date: 2019-08-27 04:00+0300\n"
-"Last-Translator: Caglar Turali\n"
-"Language-Team: \n"
-"Language: tr_TR\n"
+"POT-Creation-Date: 2020-01-11 20:32+0100\n"
+"PO-Revision-Date: 2020-01-11 20:24+0100\n"
+"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
+"Language-Team: none\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/configs/Strings.vala:28
-msgid "Today"
-msgstr "Bugün"
-
-#: src/configs/Strings.vala:29
-msgid "Categories"
-msgstr "Kategoriler"
-
-#: src/configs/Strings.vala:30
-msgid "Visit web site"
-msgstr "Web sitesini ziyaret et"
-
-#: src/configs/Strings.vala:31
-msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr "Unsplash Fotoğrafları: Birbirinden Güzel Ücretsiz Görüntüler 🎁"
-
-#: src/configs/Strings.vala:32
-msgid "Photo by "
-msgstr "Fotoğrafçı "
-
-#: src/configs/Strings.vala:33
-msgid " on Unsplash"
-msgstr " / Unsplash"
-
-#: src/configs/Strings.vala:34
-msgid "Share"
-msgstr "Paylaş"
-
-#: src/configs/Strings.vala:35
-msgid "Email"
-msgstr "E-posta"
-
-#: src/configs/Strings.vala:36
-msgid "Copy link"
-msgstr "Bağlantıyı kopyala"
-
-#: src/configs/Strings.vala:37
-msgid "Options"
-msgstr "Seçenekler"
-
-#: src/configs/Strings.vala:38
-msgid "Centered"
-msgstr "Ortala"
-
-#: src/configs/Strings.vala:39
-msgid "Scaled"
-msgstr "Ölçekle"
-
-#: src/configs/Strings.vala:40
-msgid "Zoom"
-msgstr "Yakınlaş"
-
-#: src/configs/Strings.vala:41
-msgid "Spanned"
-msgstr "Döşe"
-
-#: src/configs/Strings.vala:42
-msgid "Wallpaper ready!"
-msgstr "Duvar kâğıdı hazır!"
-
-#: src/configs/Strings.vala:43
-msgid "Your new wallpaper is ready!"
-msgstr "Yeni duvar kâğıdınız hazır!"
-
-#: src/configs/Strings.vala:44
-msgid "Check the network connection."
-msgstr "Ağ bağlantısını kontrol edin."
-
-#: src/configs/Strings.vala:45
-msgid "Retry"
-msgstr "Tekrar dene"
-
-#: src/configs/Strings.vala:46
-msgid "🌎  An amazing place in the world"
-msgstr "🌎  Dünyada muhteşem bir yer"
-
-#: src/configs/Strings.vala:47
-msgid "🌻 Nature"
-msgstr "🌻 Doğa"
-
-#: src/configs/Strings.vala:48
-msgid "🐹 Animal"
-msgstr "🐹 Havyanlar"
-
-#: src/configs/Strings.vala:49
-msgid "☕ Food & drink"
-msgstr "☕ Yiyecek ve içecek"
-
-#: src/configs/Strings.vala:50
-msgid "🌙 Space"
-msgstr "🌙 Uzay"
-
-#: src/configs/Strings.vala:51
-msgid "🏸 Sport"
-msgstr "🏸 Spor"
-
-#: src/configs/Strings.vala:52
-msgid "📊 Business & work"
-msgstr "📊 İş hayatı"
-
-#: src/configs/Strings.vala:53
-msgid "‍🎩 Fashion"
-msgstr "‍🎩 Moda"
-
-#: src/configs/Strings.vala:54
-msgid "🎨 Art & culture"
-msgstr "🎨 Sanat & kültür"
-
-#: src/configs/Strings.vala:55
-msgid "🏦 Architecture"
-msgstr "🏦 Mimari"
-
-#: src/configs/Strings.vala:56
-msgid "💻 Technology"
-msgstr "💻 Teknoloji"
-
-#: src/configs/Strings.vala:57
-msgid "🍁 Texture & pattern"
-msgstr "🍁 Doku & desen"
-
-#: src/configs/Strings.vala:58
-msgid "📑 Flat lay"
-msgstr "📑 Düz çekim"
-
-#: src/configs/Strings.vala:59
-msgid "Photos not found"
-msgstr "Fotoğraflar bulunamadı"
-
-#: src/configs/Strings.vala:60
-msgid "Loading…"
-msgstr "Yükleniyor…"
-
-#: src/configs/Strings.vala:61
-msgid "Close full screen"
-msgstr "Tam ekrandan çık"
-
-#: src/configs/Strings.vala:62
-msgid "Search photos Unsplash"
-msgstr "Unsplash fotoğraflarında ara"
-
-#: src/configs/Strings.vala:63
-msgid "History"
-msgstr "Geçmiş"
-
-#: src/configs/Strings.vala:64
-msgid "Light background"
-msgstr "Açık arkaplan"
-
-#: src/configs/Strings.vala:65
-msgid "Dark background"
-msgstr "Koyu arkaplan"
-
-#: src/configs/Strings.vala:66
-msgid "About"
-msgstr "Hakkında"
-
-#: src/configs/Strings.vala:67
-msgid "TODAY"
-msgstr "BUGÜN"
-
-#: src/configs/Strings.vala:68
-msgid "CATEGORIES"
-msgstr "KATEGORİLER"
-
-#: src/configs/Strings.vala:69
-msgid "HISTORY"
-msgstr "GEÇMİŞ"
-
-#: src/configs/Strings.vala:70
-msgid "No description available"
-msgstr "Açıklama bulunamadı"
-
-#: src/configs/Strings.vala:71
-msgid "Set as wallpaper"
-msgstr "Duvar kâğıdı olarak ayarla"
-
-#: src/configs/Strings.vala:72
-msgid "Details"
-msgstr "Detaylar"
-
-#: src/configs/Strings.vala:73
-msgid "Visit profile"
-msgstr "Profili incele"
-
-#: src/configs/Strings.vala:74
-msgid "Total results"
-msgstr "Toplam sonuçlar"
-
-#: src/configs/Strings.vala:75
-msgid "Find out what you like️"
-msgstr "Ne sevdiğini keşfet"
-
-#: src/configs/Strings.vala:76
-msgid "Try changing search terms."
-msgstr "Arama terimlerini değiştirmeyi deneyin."
-
-#: src/configs/Strings.vala:77
-msgid "Click on a photo to add it to the history."
-msgstr "Geçmişe eklemek için bir fotoğrafa tıklayın."
-
-#: src/configs/Strings.vala:78
-msgid "Network Error"
-msgstr "Ağ Hatası"
-
-#: src/configs/Strings.vala:79
-msgid "Landscape"
-msgstr "Yatay"
-
-#: src/configs/Strings.vala:80
-msgid "Portrait"
-msgstr "Dikey"
-
-#: src/configs/Strings.vala:81
-msgid "Any"
-msgstr "Karışık"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:7
 #: data/com.github.calo001.fondo.desktop.in:3
+#: data/com.github.calo001.fondo.appdata.xml.in:7
 msgid "Fondo"
 msgstr "Fondo"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:8
 #: data/com.github.calo001.fondo.desktop.in:4
+#: data/com.github.calo001.fondo.appdata.xml.in:8
 msgid "Find the most beautiful wallpapers"
 msgstr "En güzel duvar kâğıtlarını bulun"
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr "com.github.calo001.fondo"
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr "wallpaper;unsplash;foto;image;photo;background;"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:9
 msgid "Carlos Lopez"
@@ -498,11 +289,3 @@ msgstr "İyileştirilmiş arayüz."
 #: data/com.github.calo001.fondo.appdata.xml.in:192
 msgid "Initial 1.0.0 release!"
 msgstr "İlk sürüm: 1.0.0!"
-
-#: data/com.github.calo001.fondo.desktop.in:5
-msgid "com.github.calo001.fondo"
-msgstr "com.github.calo001.fondo"
-
-#: data/com.github.calo001.fondo.desktop.in:11
-msgid "wallpaper;unsplash;foto;image;photo;background;"
-msgstr "wallpaper;unsplash;foto;image;photo;background;"

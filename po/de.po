@@ -1,7 +1,7 @@
-# Spanish translations for com.github.calo001.fondo package.
+# German translations for com.github.calo001.fondo package.
 # Copyright (C) 2020 THE com.github.calo001.fondo'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.calo001.fondo package.
-# Automatically generated, 2020.
+# Onno Giesmann <nutzer3105@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
@@ -9,9 +9,9 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-11 20:32+0100\n"
 "PO-Revision-Date: 2020-01-11 20:23+0100\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
 "Language-Team: none\n"
-"Language: es\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,51 +19,51 @@ msgstr ""
 
 #: src/configs/Strings.vala:28
 msgid "Today"
-msgstr "Hoy"
+msgstr "Heute"
 
 #: src/configs/Strings.vala:29
 msgid "Categories"
-msgstr "Categorias"
+msgstr "Kategorien"
 
 #: src/configs/Strings.vala:30
 msgid "Visit web site"
-msgstr "Visita el sitio web"
+msgstr "Internetseite besuchen"
 
 #: src/configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr "Fotos de Unsplash: Hermosas imágenes y fotografías gratuitas 🎁"
+msgstr "Fotos von Unsplash: Schöne kostenlose Bilder & Fotos 🎁"
 
 #: src/configs/Strings.vala:32
 msgid "Photo by "
-msgstr "Foto por"
+msgstr "Foto von "
 
 #: src/configs/Strings.vala:33
 msgid " on Unsplash"
-msgstr " en Unsplash"
+msgstr " auf Unsplash"
 
 #: src/configs/Strings.vala:34
 msgid "Share"
-msgstr "Compartir"
+msgstr "Teilen"
 
 #: src/configs/Strings.vala:35
 msgid "Email"
-msgstr "Correo"
+msgstr "E-Mail"
 
 #: src/configs/Strings.vala:36
 msgid "Copy link"
-msgstr "Copiar vínculo"
+msgstr "Link kopieren"
 
 #: src/configs/Strings.vala:37
 msgid "Options"
-msgstr "Opciones"
+msgstr "Optionen"
 
 #: src/configs/Strings.vala:38
 msgid "Centered"
-msgstr "Centrado"
+msgstr "Zentriert"
 
 #: src/configs/Strings.vala:39
 msgid "Scaled"
-msgstr "Escalado"
+msgstr "Skaliert"
 
 #: src/configs/Strings.vala:40
 msgid "Zoom"
@@ -71,164 +71,164 @@ msgstr "Zoom"
 
 #: src/configs/Strings.vala:41
 msgid "Spanned"
-msgstr "Extendido"
+msgstr "Gestreckt"
 
 #: src/configs/Strings.vala:42
 msgid "Wallpaper ready!"
-msgstr "¡Fondo de pantalla listo!"
+msgstr "Hintergrundbild ist fertig!"
 
 #: src/configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
-msgstr "Tu nuevo fondo de pantalla está listo"
+msgstr "Ihr neues Hintergrundbild ist da!"
 
 #: src/configs/Strings.vala:44
 msgid "Check the network connection."
-msgstr "Revisa la conexión a internet"
+msgstr "Überprüfen Sie die Internetverbindung."
 
 #: src/configs/Strings.vala:45
 msgid "Retry"
-msgstr "Reintenta"
+msgstr "Nochmal versuchen"
 
 #: src/configs/Strings.vala:46
 msgid "🌎  An amazing place in the world"
-msgstr "🌎  Un lugar increíble en el mundo"
+msgstr "🌎  Ein besonderer Ort auf der Welt"
 
 #: src/configs/Strings.vala:47
 msgid "🌻 Nature"
-msgstr "🌻 Naturaleza"
+msgstr "🌻 Natur"
 
 #: src/configs/Strings.vala:48
 msgid "🐹 Animal"
-msgstr "🐹 Animal"
+msgstr "🐹 Tiere"
 
 #: src/configs/Strings.vala:49
 msgid "☕ Food & drink"
-msgstr "☕ Comida & bebida"
+msgstr "☕ Essen & Trinken"
 
 #: src/configs/Strings.vala:50
 msgid "🌙 Space"
-msgstr "🌙 Espacio"
+msgstr "🌙 Weltraum"
 
 #: src/configs/Strings.vala:51
 msgid "🏸 Sport"
-msgstr "🏸 Deporte"
+msgstr "🏸 Sport"
 
 #: src/configs/Strings.vala:52
 msgid "📊 Business & work"
-msgstr "📊 Negocios & trabajo"
+msgstr "📊 Geschäft & Arbeit"
 
 #: src/configs/Strings.vala:53
 msgid "‍🎩 Fashion"
-msgstr "🎩 Moda"
+msgstr "‍🎩 Mode"
 
 #: src/configs/Strings.vala:54
 msgid "🎨 Art & culture"
-msgstr "🎨 Arte & cultura"
+msgstr "🎨 Kunst & Kultur"
 
 #: src/configs/Strings.vala:55
 msgid "🏦 Architecture"
-msgstr "🏦 Arquitectura"
+msgstr "🏦 Architektur"
 
 #: src/configs/Strings.vala:56
 msgid "💻 Technology"
-msgstr "💻 Tecnología"
+msgstr "💻 Technologie"
 
 #: src/configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
-msgstr "🍁 Textura & patron"
+msgstr "🍁 Texturen & Muster"
 
 #: src/configs/Strings.vala:58
 msgid "📑 Flat lay"
-msgstr "📑 Flat lay"
+msgstr "📑 Legebild"
 
 #: src/configs/Strings.vala:59
 msgid "Photos not found"
-msgstr "Fotos no encontradas"
+msgstr "Keine Fotos gefunden"
 
 #: src/configs/Strings.vala:60
-msgid "Loading…"
-msgstr "Cargando…"
+msgid "Loading ..."
+msgstr "Wird geladen ..."
 
 #: src/configs/Strings.vala:61
 msgid "Close full screen"
-msgstr "Salir de pantalla completa"
+msgstr "Vollbildansicht schließen"
 
 #: src/configs/Strings.vala:62
 msgid "Search photos Unsplash"
-msgstr "Busca fotos de Unsplash"
+msgstr "Suche nach Fotos auf Unsplash"
 
 #: src/configs/Strings.vala:63
 msgid "History"
-msgstr "Historial"
+msgstr "Verlauf"
 
 #: src/configs/Strings.vala:64
 msgid "Light background"
-msgstr "Fondo claro"
+msgstr "Heller Hintergrund"
 
 #: src/configs/Strings.vala:65
 msgid "Dark background"
-msgstr "Fondo oscuro"
+msgstr "Dunkler Hintergrund"
 
 #: src/configs/Strings.vala:66
 msgid "About"
-msgstr "Acerca de"
+msgstr "Über"
 
 #: src/configs/Strings.vala:67
 msgid "TODAY"
-msgstr "HOY"
+msgstr "HEUTE"
 
 #: src/configs/Strings.vala:68
 msgid "CATEGORIES"
-msgstr "CATEGORIAS"
+msgstr "KATEGORIEN"
 
 #: src/configs/Strings.vala:69
 msgid "HISTORY"
-msgstr "HISTORIAL"
+msgstr "VERLAUF"
 
 #: src/configs/Strings.vala:70
 msgid "No description available"
-msgstr "No hay descripción disponible"
+msgstr "Keine Beschreibung verfügbar"
 
 #: src/configs/Strings.vala:71
 msgid "Set as wallpaper"
-msgstr "Establecer como fondo de pantalla"
+msgstr "Als Hintergrundbild einstellen"
 
 #: src/configs/Strings.vala:72
 msgid "Details"
-msgstr "Detalles"
+msgstr "Details"
 
 #: src/configs/Strings.vala:73
 msgid "Visit profile"
-msgstr "Visitar perfil"
+msgstr "Profil ansehen"
 
 #: src/configs/Strings.vala:74
 msgid "Total results"
-msgstr "Total de resultados"
+msgstr "Gesamtergebnisse"
 
 #: src/configs/Strings.vala:75
 msgid "Find out what you like️"
-msgstr "Busca lo que te gusta"
+msgstr "Suchen Sie sich heraus, was Ihnen gefällt"
 
 #: src/configs/Strings.vala:76
 msgid "Try changing search terms."
-msgstr "Intenta cambiando el término de búsqueda."
+msgstr "Versuchen Sie es mit anderen Suchbegriffen."
 
 #: src/configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
-msgstr "Click a una foto para agregarla al historial."
+msgstr "Klicken Sie auf ein Foto, um es dem Verlauf hinzuzufügen."
 
 #: src/configs/Strings.vala:78
 msgid "Network Error"
-msgstr "Error de red"
+msgstr "Netzwerkfehler"
 
 #: src/configs/Strings.vala:79
 msgid "Landscape"
-msgstr "Horizontal"
+msgstr "Landschaft"
 
 #: src/configs/Strings.vala:80
 msgid "Portrait"
-msgstr "Vertical"
+msgstr "Portrait"
 
 #: src/configs/Strings.vala:81
 msgid "Any"
-msgstr "Cualquiera"
+msgstr "Alles"
