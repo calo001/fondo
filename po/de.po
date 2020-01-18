@@ -148,7 +148,7 @@ msgstr "Keine Fotos gefunden"
 #: src/Configs/Strings.vala:60
 #, fuzzy
 msgid "Loading…"
-msgstr "Wird geladen ..."
+msgstr "Wird geladen…"
 
 #: src/Configs/Strings.vala:61
 msgid "Close full screen"
