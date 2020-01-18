@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-11 20:32+0100\n"
+"POT-Creation-Date: 2020-01-18 23:28+0100\n"
 "PO-Revision-Date: 2020-01-11 20:23+0100\n"
 "Last-Translator: Rafael Campos Nunes <rafaelnunes@engineer.com>\n"
 "Language-Team: none\n"
@@ -17,219 +17,219 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/configs/Strings.vala:28
+#: src/Configs/Strings.vala:28
 msgid "Today"
 msgstr "Hoje"
 
-#: src/configs/Strings.vala:29
+#: src/Configs/Strings.vala:29
 msgid "Categories"
 msgstr "Categorias"
 
-#: src/configs/Strings.vala:30
+#: src/Configs/Strings.vala:30
 msgid "Visit web site"
 msgstr "Visite o site"
 
-#: src/configs/Strings.vala:31
+#: src/Configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
 msgstr "Unsplash fotos: Belas fotos e fotos grátis 🎁"
 
-#: src/configs/Strings.vala:32
+#: src/Configs/Strings.vala:32
 msgid "Photo by "
 msgstr "Foto por"
 
-#: src/configs/Strings.vala:33
+#: src/Configs/Strings.vala:33
 msgid " on Unsplash"
 msgstr " Por Unsplash"
 
-#: src/configs/Strings.vala:34
+#: src/Configs/Strings.vala:34
 msgid "Share"
 msgstr "Compartilhar"
 
-#: src/configs/Strings.vala:35
+#: src/Configs/Strings.vala:35
 msgid "Email"
 msgstr "Email"
 
-#: src/configs/Strings.vala:36
+#: src/Configs/Strings.vala:36
 msgid "Copy link"
 msgstr "Copiar link"
 
-#: src/configs/Strings.vala:37
+#: src/Configs/Strings.vala:37
 msgid "Options"
 msgstr "Opções"
 
-#: src/configs/Strings.vala:38
+#: src/Configs/Strings.vala:38
 msgid "Centered"
 msgstr "Centralizado"
 
-#: src/configs/Strings.vala:39
+#: src/Configs/Strings.vala:39
 msgid "Scaled"
 msgstr "Escalonado"
 
-#: src/configs/Strings.vala:40
+#: src/Configs/Strings.vala:40
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/configs/Strings.vala:41
+#: src/Configs/Strings.vala:41
 msgid "Spanned"
 msgstr "Esticado"
 
-#: src/configs/Strings.vala:42
+#: src/Configs/Strings.vala:42
 msgid "Wallpaper ready!"
 msgstr "Wallpaper pronto!"
 
-#: src/configs/Strings.vala:43
+#: src/Configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
 msgstr "Seu novo wallpaper está pronto"
 
-#: src/configs/Strings.vala:44
+#: src/Configs/Strings.vala:44
 msgid "Check the network connection."
 msgstr "Verifique a conexão de rede."
 
-#: src/configs/Strings.vala:45
+#: src/Configs/Strings.vala:45
 msgid "Retry"
 msgstr "Tente novamente"
 
-#: src/configs/Strings.vala:46
+#: src/Configs/Strings.vala:46
 msgid "🌎  An amazing place in the world"
 msgstr "🌎  Um lugar incrível no mundo"
 
-#: src/configs/Strings.vala:47
+#: src/Configs/Strings.vala:47
 msgid "🌻 Nature"
 msgstr "🌻 Natureza"
 
-#: src/configs/Strings.vala:48
+#: src/Configs/Strings.vala:48
 msgid "🐹 Animal"
 msgstr "🐹 Animal"
 
-#: src/configs/Strings.vala:49
+#: src/Configs/Strings.vala:49
 msgid "☕ Food & drink"
 msgstr "☕ Comida e bebida"
 
-#: src/configs/Strings.vala:50
+#: src/Configs/Strings.vala:50
 msgid "🌙 Space"
 msgstr "🌙 Espaço"
 
-#: src/configs/Strings.vala:51
+#: src/Configs/Strings.vala:51
 msgid "🏸 Sport"
 msgstr "🏸 Esporte"
 
-#: src/configs/Strings.vala:52
+#: src/Configs/Strings.vala:52
 msgid "📊 Business & work"
 msgstr "📊 Negócios e trabalho"
 
-#: src/configs/Strings.vala:53
+#: src/Configs/Strings.vala:53
 msgid "‍🎩 Fashion"
 msgstr "🎩 Moda"
 
-#: src/configs/Strings.vala:54
+#: src/Configs/Strings.vala:54
 #, fuzzy
 msgid "🎨 Art & culture"
 msgstr "🎨 Arte y cultura"
 
-#: src/configs/Strings.vala:55
+#: src/Configs/Strings.vala:55
 msgid "🏦 Architecture"
 msgstr "🏦 Arquitetura"
 
-#: src/configs/Strings.vala:56
+#: src/Configs/Strings.vala:56
 msgid "💻 Technology"
 msgstr "💻 Tecnologia"
 
-#: src/configs/Strings.vala:57
+#: src/Configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
 msgstr "🍁 Textura e padrão"
 
-#: src/configs/Strings.vala:58
+#: src/Configs/Strings.vala:58
 msgid "📑 Flat lay"
 msgstr "📑 Flat lay"
 
-#: src/configs/Strings.vala:59
+#: src/Configs/Strings.vala:59
 msgid "Photos not found"
 msgstr "Fotos não encontradas"
 
-#: src/configs/Strings.vala:60
+#: src/Configs/Strings.vala:60
 msgid "Loading ..."
 msgstr "Carregando ..."
 
-#: src/configs/Strings.vala:61
+#: src/Configs/Strings.vala:61
 msgid "Close full screen"
 msgstr "Fechar a tela inteira"
 
-#: src/configs/Strings.vala:62
+#: src/Configs/Strings.vala:62
 msgid "Search photos Unsplash"
 msgstr "Pesquisar fotos Unsplash"
 
-#: src/configs/Strings.vala:63
+#: src/Configs/Strings.vala:63
 msgid "History"
 msgstr "Histórico"
 
-#: src/configs/Strings.vala:64
+#: src/Configs/Strings.vala:64
 msgid "Light background"
 msgstr "Fundo de tela branco"
 
-#: src/configs/Strings.vala:65
+#: src/Configs/Strings.vala:65
 msgid "Dark background"
 msgstr "Fundo de tela preto"
 
-#: src/configs/Strings.vala:66
+#: src/Configs/Strings.vala:66
 msgid "About"
 msgstr "Cerca de"
 
-#: src/configs/Strings.vala:67
+#: src/Configs/Strings.vala:67
 msgid "TODAY"
 msgstr "HOJE"
 
-#: src/configs/Strings.vala:68
+#: src/Configs/Strings.vala:68
 msgid "CATEGORIES"
 msgstr "CATEGORIAS"
 
-#: src/configs/Strings.vala:69
+#: src/Configs/Strings.vala:69
 msgid "HISTORY"
 msgstr "HISTÓRICO"
 
-#: src/configs/Strings.vala:70
+#: src/Configs/Strings.vala:70
 msgid "No description available"
 msgstr "Descrição não disponível"
 
-#: src/configs/Strings.vala:71
+#: src/Configs/Strings.vala:71
 msgid "Set as wallpaper"
 msgstr "Definir como Papel de Parede"
 
-#: src/configs/Strings.vala:72
+#: src/Configs/Strings.vala:72
 msgid "Details"
 msgstr "Detalhes"
 
-#: src/configs/Strings.vala:73
+#: src/Configs/Strings.vala:73
 msgid "Visit profile"
 msgstr "Visitar perfil"
 
-#: src/configs/Strings.vala:74
+#: src/Configs/Strings.vala:74
 msgid "Total results"
 msgstr "Resultados totais"
 
-#: src/configs/Strings.vala:75
+#: src/Configs/Strings.vala:75
 msgid "Find out what you like️"
 msgstr "Descubra o que você gosta"
 
-#: src/configs/Strings.vala:76
+#: src/Configs/Strings.vala:76
 msgid "Try changing search terms."
 msgstr "Tente alterar os termos de pesquisa."
 
-#: src/configs/Strings.vala:77
+#: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
 msgstr "Clique em uma foto para adicioná-la ao histórico."
 
-#: src/configs/Strings.vala:78
+#: src/Configs/Strings.vala:78
 msgid "Network Error"
 msgstr "Erro de rede"
 
-#: src/configs/Strings.vala:79
+#: src/Configs/Strings.vala:79
 msgid "Landscape"
 msgstr "Horizontal"
 
-#: src/configs/Strings.vala:80
+#: src/Configs/Strings.vala:80
 msgid "Portrait"
 msgstr "Vertical"
 
-#: src/configs/Strings.vala:81
+#: src/Configs/Strings.vala:81
 msgid "Any"
 msgstr "Qualquera"
