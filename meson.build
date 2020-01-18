@@ -1,36 +1,21 @@
-project('com.github.calo001.fondo', ['vala', 'c'],
-    version : '1.3.7',
-    license: 'GPL-3.0'
-)
+project('com.github.calo001.fondo', 'vala', 'c', version : '1.3.7', license: 'GPL-3.0')
 
-add_project_arguments([
-        '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name())
-    ],
-    language: 'c',
-)
 
 gnome = import('gnome')
 i18n = import('i18n')
 
-gresource = gnome.compile_resources(
-    'as-resources', 'data/com.github.calo001.fondo.gresource.xml',
+add_project_arguments(
+    '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
+    language: 'c'
+)
+
+asresources = gnome.compile_resources(
+    'as-resources',
+    join_paths('data', meson.project_name()) + '.gresource.xml',
     source_dir: 'data',
     c_name: 'as'
 )
 
-conf = configuration_data()
-conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
-configure_file(output: 'config.h', configuration: conf)
-config_h_dir = include_directories('.')
-
-c_args = [
-  '-include', 'config.h'
-]
-vala_args = []
-sources = files()
-
-subdir('data')
-subdir('po')
 subdir('src')
 
 dependencies = [
@@ -43,13 +28,15 @@ dependencies = [
     meson.get_compiler('vala').find_library('posix'),
 ]
 
-e = executable('com.github.calo001.fondo',
+executable(
+    meson.project_name(),
     sources,
-    gresource,
-    c_args: c_args,
-    vala_args: vala_args,
+    asresources,
     dependencies: dependencies,
-    install : true
+    install: true
 )
+
+subdir('data')
+subdir('po')
 
 meson.add_install_script('meson/post_install.py')
