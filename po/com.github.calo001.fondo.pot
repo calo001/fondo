@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-11 20:32+0100\n"
+"POT-Creation-Date: 2020-01-18 23:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,218 +17,218 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/configs/Strings.vala:28
+#: src/Configs/Strings.vala:28
 msgid "Today"
 msgstr ""
 
-#: src/configs/Strings.vala:29
+#: src/Configs/Strings.vala:29
 msgid "Categories"
 msgstr ""
 
-#: src/configs/Strings.vala:30
+#: src/Configs/Strings.vala:30
 msgid "Visit web site"
 msgstr ""
 
-#: src/configs/Strings.vala:31
+#: src/Configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
 msgstr ""
 
-#: src/configs/Strings.vala:32
+#: src/Configs/Strings.vala:32
 msgid "Photo by "
 msgstr ""
 
-#: src/configs/Strings.vala:33
+#: src/Configs/Strings.vala:33
 msgid " on Unsplash"
 msgstr ""
 
-#: src/configs/Strings.vala:34
+#: src/Configs/Strings.vala:34
 msgid "Share"
 msgstr ""
 
-#: src/configs/Strings.vala:35
+#: src/Configs/Strings.vala:35
 msgid "Email"
 msgstr ""
 
-#: src/configs/Strings.vala:36
+#: src/Configs/Strings.vala:36
 msgid "Copy link"
 msgstr ""
 
-#: src/configs/Strings.vala:37
+#: src/Configs/Strings.vala:37
 msgid "Options"
 msgstr ""
 
-#: src/configs/Strings.vala:38
+#: src/Configs/Strings.vala:38
 msgid "Centered"
 msgstr ""
 
-#: src/configs/Strings.vala:39
+#: src/Configs/Strings.vala:39
 msgid "Scaled"
 msgstr ""
 
-#: src/configs/Strings.vala:40
+#: src/Configs/Strings.vala:40
 msgid "Zoom"
 msgstr ""
 
-#: src/configs/Strings.vala:41
+#: src/Configs/Strings.vala:41
 msgid "Spanned"
 msgstr ""
 
-#: src/configs/Strings.vala:42
+#: src/Configs/Strings.vala:42
 msgid "Wallpaper ready!"
 msgstr ""
 
-#: src/configs/Strings.vala:43
+#: src/Configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
 msgstr ""
 
-#: src/configs/Strings.vala:44
+#: src/Configs/Strings.vala:44
 msgid "Check the network connection."
 msgstr ""
 
-#: src/configs/Strings.vala:45
+#: src/Configs/Strings.vala:45
 msgid "Retry"
 msgstr ""
 
-#: src/configs/Strings.vala:46
+#: src/Configs/Strings.vala:46
 msgid "🌎  An amazing place in the world"
 msgstr ""
 
-#: src/configs/Strings.vala:47
+#: src/Configs/Strings.vala:47
 msgid "🌻 Nature"
 msgstr ""
 
-#: src/configs/Strings.vala:48
+#: src/Configs/Strings.vala:48
 msgid "🐹 Animal"
 msgstr ""
 
-#: src/configs/Strings.vala:49
+#: src/Configs/Strings.vala:49
 msgid "☕ Food & drink"
 msgstr ""
 
-#: src/configs/Strings.vala:50
+#: src/Configs/Strings.vala:50
 msgid "🌙 Space"
 msgstr ""
 
-#: src/configs/Strings.vala:51
+#: src/Configs/Strings.vala:51
 msgid "🏸 Sport"
 msgstr ""
 
-#: src/configs/Strings.vala:52
+#: src/Configs/Strings.vala:52
 msgid "📊 Business & work"
 msgstr ""
 
-#: src/configs/Strings.vala:53
+#: src/Configs/Strings.vala:53
 msgid "‍🎩 Fashion"
 msgstr ""
 
-#: src/configs/Strings.vala:54
+#: src/Configs/Strings.vala:54
 msgid "🎨 Art & culture"
 msgstr ""
 
-#: src/configs/Strings.vala:55
+#: src/Configs/Strings.vala:55
 msgid "🏦 Architecture"
 msgstr ""
 
-#: src/configs/Strings.vala:56
+#: src/Configs/Strings.vala:56
 msgid "💻 Technology"
 msgstr ""
 
-#: src/configs/Strings.vala:57
+#: src/Configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
 msgstr ""
 
-#: src/configs/Strings.vala:58
+#: src/Configs/Strings.vala:58
 msgid "📑 Flat lay"
 msgstr ""
 
-#: src/configs/Strings.vala:59
+#: src/Configs/Strings.vala:59
 msgid "Photos not found"
 msgstr ""
 
-#: src/configs/Strings.vala:60
+#: src/Configs/Strings.vala:60
 msgid "Loading…"
 msgstr ""
 
-#: src/configs/Strings.vala:61
+#: src/Configs/Strings.vala:61
 msgid "Close full screen"
 msgstr ""
 
-#: src/configs/Strings.vala:62
+#: src/Configs/Strings.vala:62
 msgid "Search photos Unsplash"
 msgstr ""
 
-#: src/configs/Strings.vala:63
+#: src/Configs/Strings.vala:63
 msgid "History"
 msgstr ""
 
-#: src/configs/Strings.vala:64
+#: src/Configs/Strings.vala:64
 msgid "Light background"
 msgstr ""
 
-#: src/configs/Strings.vala:65
+#: src/Configs/Strings.vala:65
 msgid "Dark background"
 msgstr ""
 
-#: src/configs/Strings.vala:66
+#: src/Configs/Strings.vala:66
 msgid "About"
 msgstr ""
 
-#: src/configs/Strings.vala:67
+#: src/Configs/Strings.vala:67
 msgid "TODAY"
 msgstr ""
 
-#: src/configs/Strings.vala:68
+#: src/Configs/Strings.vala:68
 msgid "CATEGORIES"
 msgstr ""
 
-#: src/configs/Strings.vala:69
+#: src/Configs/Strings.vala:69
 msgid "HISTORY"
 msgstr ""
 
-#: src/configs/Strings.vala:70
+#: src/Configs/Strings.vala:70
 msgid "No description available"
 msgstr ""
 
-#: src/configs/Strings.vala:71
+#: src/Configs/Strings.vala:71
 msgid "Set as wallpaper"
 msgstr ""
 
-#: src/configs/Strings.vala:72
+#: src/Configs/Strings.vala:72
 msgid "Details"
 msgstr ""
 
-#: src/configs/Strings.vala:73
+#: src/Configs/Strings.vala:73
 msgid "Visit profile"
 msgstr ""
 
-#: src/configs/Strings.vala:74
+#: src/Configs/Strings.vala:74
 msgid "Total results"
 msgstr ""
 
-#: src/configs/Strings.vala:75
+#: src/Configs/Strings.vala:75
 msgid "Find out what you like️"
 msgstr ""
 
-#: src/configs/Strings.vala:76
+#: src/Configs/Strings.vala:76
 msgid "Try changing search terms."
 msgstr ""
 
-#: src/configs/Strings.vala:77
+#: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
 msgstr ""
 
-#: src/configs/Strings.vala:78
+#: src/Configs/Strings.vala:78
 msgid "Network Error"
 msgstr ""
 
-#: src/configs/Strings.vala:79
+#: src/Configs/Strings.vala:79
 msgid "Landscape"
 msgstr ""
 
-#: src/configs/Strings.vala:80
+#: src/Configs/Strings.vala:80
 msgid "Portrait"
 msgstr ""
 
-#: src/configs/Strings.vala:81
+#: src/Configs/Strings.vala:81
 msgid "Any"
 msgstr ""
