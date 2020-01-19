@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.calo001.fondo package.
+# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.calo001.fondo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-18 22:57-0600\n"
+"PO-Revision-Date: 2020-01-19 14:15+0100\n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian <LL@li.org>\n"
+"Language:Italian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Configs/Strings.vala:28
+msgid "Today"
+msgstr "Oggi"
+
+#: src/Configs/Strings.vala:29
+msgid "Categories"
+msgstr "Categorie"
+
+#: src/Configs/Strings.vala:30
+msgid "Visit web site"
+msgstr "Visita Sito Web"
+
+#: src/Configs/Strings.vala:31
+msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
+msgstr "Foto da Unsplash: belle immagini e immagini gratis 🎁"
+
+#: src/Configs/Strings.vala:32
+msgid "Photo by "
+msgstr "Foto di"
+
+#: src/Configs/Strings.vala:33
+msgid " on Unsplash"
+msgstr "su Unsplash"
+
+#: src/Configs/Strings.vala:34
+msgid "Share"
+msgstr "Condividi"
+
+#: src/Configs/Strings.vala:35
+msgid "Email"
+msgstr "Email"
+
+#: src/Configs/Strings.vala:36
+msgid "Copy link"
+msgstr "Copia link"
+
+#: src/Configs/Strings.vala:37
+msgid "Options"
+msgstr "Opzioni"
+
+#: src/Configs/Strings.vala:38
+msgid "Centered"
+msgstr "Centrato"
+
+#: src/Configs/Strings.vala:39
+msgid "Scaled"
+msgstr "Scalato"
+
+#: src/Configs/Strings.vala:40
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/Configs/Strings.vala:41
+msgid "Spanned"
+msgstr "Ampliato"
+
+#: src/Configs/Strings.vala:42
+msgid "Wallpaper ready!"
+msgstr "Wallpaper pronto!"
+
+#: src/Configs/Strings.vala:43
+msgid "Your new wallpaper is ready!"
+msgstr "Il tuo nuovo wallpaper è pronto!"
+
+#: src/Configs/Strings.vala:44
+msgid "Check the network connection."
+msgstr "Controlla la tua connessione di rete"
+
+#: src/Configs/Strings.vala:45
+msgid "Retry"
+msgstr "Riprova"
+
+#: src/Configs/Strings.vala:46
+msgid "🌎  An amazing place in the world"
+msgstr "🌎 Un posto fantastico nel mondo"
+
+#: src/Configs/Strings.vala:47
+msgid "🌻 Nature"
+msgstr "🌻 Natura"
+
+#: src/Configs/Strings.vala:48
+msgid "🐹 Animal"
+msgstr "🐹 Animali"
+
+#: src/Configs/Strings.vala:49
+msgid "☕ Food & drink"
+msgstr "☕ Cibo e bevande"
+
+#: src/Configs/Strings.vala:50
+msgid "🌙 Space"
+msgstr "🌙 Spazio"
+
+#: src/Configs/Strings.vala:51
+msgid "🏸 Sport"
+msgstr "🏸 Sport"
+
+#: src/Configs/Strings.vala:52
+msgid "📊 Business & work"
+msgstr "📊 Lavoro e affari"
+
+#: src/Configs/Strings.vala:53
+msgid "‍🎩 Fashion"
+msgstr "‍🎩 Moda"
+
+#: src/Configs/Strings.vala:54
+msgid "🎨 Art & culture"
+msgstr "🎨 Arte e cultura"
+
+#: src/Configs/Strings.vala:55
+msgid "🏦 Architecture"
+msgstr "🏦 Architettura"
+
+#: src/Configs/Strings.vala:56
+msgid "💻 Technology"
+msgstr "💻 Tecnologia"
+
+#: src/Configs/Strings.vala:57
+msgid "🍁 Texture & pattern"
+msgstr "🍁 Texture e modello"
+
+#: src/Configs/Strings.vala:58
+msgid "📑 Flat lay"
+msgstr ""
+
+#: src/Configs/Strings.vala:59
+msgid "Photos not found"
+msgstr "Foto non trovate"
+
+#: src/Configs/Strings.vala:60
+msgid "Loading…"
+msgstr "Caricamento…"
+
+#: src/Configs/Strings.vala:61
+msgid "Close full screen"
+msgstr "Chiudi schermo intero"
+
+#: src/Configs/Strings.vala:62
+msgid "Search photos Unsplash"
+msgstr "Cerca foto su Unsplash"
+
+#: src/Configs/Strings.vala:63
+msgid "History"
+msgstr "Cronologia"
+
+#: src/Configs/Strings.vala:64
+msgid "Light background"
+msgstr "Sfondo chiaro"
+
+#: src/Configs/Strings.vala:65
+msgid "Dark background"
+msgstr "Sfondo scuro"
+
+#: src/Configs/Strings.vala:66
+msgid "About"
+msgstr "Informazioni su"
+
+#: src/Configs/Strings.vala:67
+msgid "TODAY"
+msgstr "OGGI"
+
+#: src/Configs/Strings.vala:68
+msgid "CATEGORIES"
+msgstr "CATEGORIE"
+
+#: src/Configs/Strings.vala:69
+msgid "HISTORY"
+msgstr "CRONOLOGIA"
+
+#: src/Configs/Strings.vala:70
+msgid "No description available"
+msgstr "Nessuna descrizione disponibile"
+
+#: src/Configs/Strings.vala:71
+msgid "Set as wallpaper"
+msgstr "Imposta come wallpaper"
+
+#: src/Configs/Strings.vala:72
+msgid "Details"
+msgstr "Dettagli"
+
+#: src/Configs/Strings.vala:73
+msgid "Visit profile"
+msgstr "Visita profilo"
+
+#: src/Configs/Strings.vala:74
+msgid "Total results"
+msgstr "Risultati totali"
+
+#: src/Configs/Strings.vala:75
+msgid "Find out what you like️"
+msgstr "Scopri cosa ti piace️"
+
+#: src/Configs/Strings.vala:76
+msgid "Try changing search terms."
+msgstr "Prova a cambiare i termini di ricerca."
+
+#: src/Configs/Strings.vala:77
+msgid "Click on a photo to add it to the history."
+msgstr "Fai clic su una foto per aggiungerla alla cronologia."
+
+#: src/Configs/Strings.vala:78
+msgid "Network Error"
+msgstr "Errore di rete"
+
+#: src/Configs/Strings.vala:79
+msgid "Landscape"
+msgstr "Paesaggio"
+
+#: src/Configs/Strings.vala:80
+msgid "Portrait"
+msgstr "Ritratto"
+
+#: src/Configs/Strings.vala:81
+msgid "Any"
+msgstr "Qualsiasi"
