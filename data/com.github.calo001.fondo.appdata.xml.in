@@ -41,6 +41,18 @@
         </ul>
     </description>
     <releases>
+      <release version="1.3.8" date="2020-01-18">
+        <description>
+          <p>Fist year release!</p>
+          <ul>
+            <li>Back to the classic appearance.</li>
+            <li>Fix language codes.</li>
+            <li>Improve the way translations files are setting.</li>
+            <li>The width and height are shown in each photo.</li>
+            <li>Fix greeter don't getting wallpaper set via Fondo.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.3.7" date="2019-11-4">
         <description>
           <p>Custom colors and icon for Christmas</p>
@@ -228,8 +240,8 @@
     <url type="help">https://github.com/calo001/fondo/issues</url>
     <update_contact>calo_lrc@hotmail.com</update_contact>
     <custom>
-        <value key="x-appcenter-color-primary">#ff5757</value>
-        <value key="x-appcenter-color-primary-text">#ffffff</value>
+        <value key="x-appcenter-color-primary">#82ffc4</value>
+        <value key="x-appcenter-color-primary-text">#000000</value>
         <value key="x-appcenter-suggested-price">0</value>
     </custom>
 </component>
