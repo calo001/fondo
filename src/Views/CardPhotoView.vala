@@ -43,6 +43,7 @@ namespace App.Views {
         private Button                  btn_share;
         private Button                  photo_button;
         private LinkButton              label_autor;
+        private Label                   label_dimensions;
         private Wallpaper               wallpaper;
         private AppConnection           connection;
         private ProgressBar             bar;
@@ -142,6 +143,16 @@ namespace App.Views {
             btn_share.can_default = true;
 
             /******************************************
+                        Image dimensions
+            ******************************************/
+            var text_dimensions = @"$(photo.width.to_string ()) x $(photo.height.to_string ())  px";
+            label_dimensions = new Gtk.Label(text_dimensions);
+            label_dimensions.get_style_context ().add_class ("label_dimens");
+            label_dimensions.margin = 8;
+            label_dimensions.halign = Gtk.Align.END;
+            label_dimensions.valign = Gtk.Align.END;
+
+            /******************************************
                     Popover for share
             ******************************************/
             popupShare = new SharePopover (this.photo.user.name, this.photo.id, btn_share);
@@ -175,6 +186,7 @@ namespace App.Views {
 
             overlay.add_overlay (btn_view);
             overlay.add_overlay (btn_share);
+            overlay.add_overlay (label_dimensions);
             overlay.add (image);
             overlay.width_request = w_photo;
             overlay.height_request = h_photo;

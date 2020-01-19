@@ -1,14 +1,14 @@
 # Spanish translations for com.github.calo001.fondo package.
-# Copyright (C) 2018 THE com.github.calo001.fondo'S COPYRIGHT HOLDER
+# Copyright (C) 2020 THE com.github.calo001.fondo'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.calo001.fondo package.
-# Automatically generated, 2018.
+# Automatically generated, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-04 22:45-0600\n"
-"PO-Revision-Date: 2018-09-11 11:49-0500\n"
+"POT-Creation-Date: 2020-01-18 22:57-0600\n"
+"PO-Revision-Date: 2020-01-11 20:23+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -17,489 +17,218 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/configs/Strings.vala:28
+#: src/Configs/Strings.vala:28
 msgid "Today"
 msgstr "Hoy"
 
-#: src/configs/Strings.vala:29
+#: src/Configs/Strings.vala:29
 msgid "Categories"
 msgstr "Categorias"
 
-#: src/configs/Strings.vala:30
+#: src/Configs/Strings.vala:30
 msgid "Visit web site"
 msgstr "Visita el sitio web"
 
-#: src/configs/Strings.vala:31
+#: src/Configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
 msgstr "Fotos de Unsplash: Hermosas imágenes y fotografías gratuitas 🎁"
 
-#: src/configs/Strings.vala:32
+#: src/Configs/Strings.vala:32
 msgid "Photo by "
 msgstr "Foto por"
 
-#: src/configs/Strings.vala:33
+#: src/Configs/Strings.vala:33
 msgid " on Unsplash"
 msgstr " en Unsplash"
 
-#: src/configs/Strings.vala:34
+#: src/Configs/Strings.vala:34
 msgid "Share"
 msgstr "Compartir"
 
-#: src/configs/Strings.vala:35
+#: src/Configs/Strings.vala:35
 msgid "Email"
 msgstr "Correo"
 
-#: src/configs/Strings.vala:36
+#: src/Configs/Strings.vala:36
 msgid "Copy link"
 msgstr "Copiar vínculo"
 
-#: src/configs/Strings.vala:37
+#: src/Configs/Strings.vala:37
 msgid "Options"
 msgstr "Opciones"
 
-#: src/configs/Strings.vala:38
+#: src/Configs/Strings.vala:38
 msgid "Centered"
 msgstr "Centrado"
 
-#: src/configs/Strings.vala:39
+#: src/Configs/Strings.vala:39
 msgid "Scaled"
 msgstr "Escalado"
 
-#: src/configs/Strings.vala:40
+#: src/Configs/Strings.vala:40
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/configs/Strings.vala:41
+#: src/Configs/Strings.vala:41
 msgid "Spanned"
 msgstr "Extendido"
 
-#: src/configs/Strings.vala:42
+#: src/Configs/Strings.vala:42
 msgid "Wallpaper ready!"
 msgstr "¡Fondo de pantalla listo!"
 
-#: src/configs/Strings.vala:43
+#: src/Configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
 msgstr "Tu nuevo fondo de pantalla está listo"
 
-#: src/configs/Strings.vala:44
+#: src/Configs/Strings.vala:44
 msgid "Check the network connection."
 msgstr "Revisa la conexión a internet"
 
-#: src/configs/Strings.vala:45
+#: src/Configs/Strings.vala:45
 msgid "Retry"
 msgstr "Reintenta"
 
-#: src/configs/Strings.vala:46
+#: src/Configs/Strings.vala:46
 msgid "🌎  An amazing place in the world"
 msgstr "🌎  Un lugar increíble en el mundo"
 
-#: src/configs/Strings.vala:47
+#: src/Configs/Strings.vala:47
 msgid "🌻 Nature"
 msgstr "🌻 Naturaleza"
 
-#: src/configs/Strings.vala:48
+#: src/Configs/Strings.vala:48
 msgid "🐹 Animal"
 msgstr "🐹 Animal"
 
-#: src/configs/Strings.vala:49
+#: src/Configs/Strings.vala:49
 msgid "☕ Food & drink"
 msgstr "☕ Comida & bebida"
 
-#: src/configs/Strings.vala:50
+#: src/Configs/Strings.vala:50
 msgid "🌙 Space"
 msgstr "🌙 Espacio"
 
-#: src/configs/Strings.vala:51
+#: src/Configs/Strings.vala:51
 msgid "🏸 Sport"
 msgstr "🏸 Deporte"
 
-#: src/configs/Strings.vala:52
+#: src/Configs/Strings.vala:52
 msgid "📊 Business & work"
 msgstr "📊 Negocios & trabajo"
 
-#: src/configs/Strings.vala:53
+#: src/Configs/Strings.vala:53
 msgid "‍🎩 Fashion"
 msgstr "🎩 Moda"
 
-#: src/configs/Strings.vala:54
+#: src/Configs/Strings.vala:54
 msgid "🎨 Art & culture"
 msgstr "🎨 Arte & cultura"
 
-#: src/configs/Strings.vala:55
+#: src/Configs/Strings.vala:55
 msgid "🏦 Architecture"
 msgstr "🏦 Arquitectura"
 
-#: src/configs/Strings.vala:56
+#: src/Configs/Strings.vala:56
 msgid "💻 Technology"
 msgstr "💻 Tecnología"
 
-#: src/configs/Strings.vala:57
+#: src/Configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
 msgstr "🍁 Textura & patron"
 
-#: src/configs/Strings.vala:58
+#: src/Configs/Strings.vala:58
 msgid "📑 Flat lay"
 msgstr "📑 Flat lay"
 
-#: src/configs/Strings.vala:59
+#: src/Configs/Strings.vala:59
 msgid "Photos not found"
 msgstr "Fotos no encontradas"
 
-#: src/configs/Strings.vala:60
-msgid "Loading ..."
-msgstr "Cargando ..."
+#: src/Configs/Strings.vala:60
+msgid "Loading…"
+msgstr "Cargando…"
 
-#: src/configs/Strings.vala:61
+#: src/Configs/Strings.vala:61
 msgid "Close full screen"
 msgstr "Salir de pantalla completa"
 
-#: src/configs/Strings.vala:62
+#: src/Configs/Strings.vala:62
 msgid "Search photos Unsplash"
 msgstr "Busca fotos de Unsplash"
 
-#: src/configs/Strings.vala:63
+#: src/Configs/Strings.vala:63
 msgid "History"
 msgstr "Historial"
 
-#: src/configs/Strings.vala:64
+#: src/Configs/Strings.vala:64
 msgid "Light background"
 msgstr "Fondo claro"
 
-#: src/configs/Strings.vala:65
+#: src/Configs/Strings.vala:65
 msgid "Dark background"
 msgstr "Fondo oscuro"
 
-#: src/configs/Strings.vala:66
+#: src/Configs/Strings.vala:66
 msgid "About"
 msgstr "Acerca de"
 
-#: src/configs/Strings.vala:67
+#: src/Configs/Strings.vala:67
 msgid "TODAY"
 msgstr "HOY"
 
-#: src/configs/Strings.vala:68
+#: src/Configs/Strings.vala:68
 msgid "CATEGORIES"
 msgstr "CATEGORIAS"
 
-#: src/configs/Strings.vala:69
+#: src/Configs/Strings.vala:69
 msgid "HISTORY"
 msgstr "HISTORIAL"
 
-#: src/configs/Strings.vala:70
+#: src/Configs/Strings.vala:70
 msgid "No description available"
 msgstr "No hay descripción disponible"
 
-#: src/configs/Strings.vala:71
+#: src/Configs/Strings.vala:71
 msgid "Set as wallpaper"
 msgstr "Establecer como fondo de pantalla"
 
-#: src/configs/Strings.vala:72
+#: src/Configs/Strings.vala:72
 msgid "Details"
 msgstr "Detalles"
 
-#: src/configs/Strings.vala:73
+#: src/Configs/Strings.vala:73
 msgid "Visit profile"
 msgstr "Visitar perfil"
 
-#: src/configs/Strings.vala:74
+#: src/Configs/Strings.vala:74
 msgid "Total results"
 msgstr "Total de resultados"
 
-#: src/configs/Strings.vala:75
+#: src/Configs/Strings.vala:75
 msgid "Find out what you like️"
 msgstr "Busca lo que te gusta"
 
-#: src/configs/Strings.vala:76
+#: src/Configs/Strings.vala:76
 msgid "Try changing search terms."
 msgstr "Intenta cambiando el término de búsqueda."
 
-#: src/configs/Strings.vala:77
+#: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
 msgstr "Click a una foto para agregarla al historial."
 
-#: src/configs/Strings.vala:78
+#: src/Configs/Strings.vala:78
 msgid "Network Error"
 msgstr "Error de red"
 
-#: src/configs/Strings.vala:79
+#: src/Configs/Strings.vala:79
 msgid "Landscape"
 msgstr "Horizontal"
 
-#: src/configs/Strings.vala:80
+#: src/Configs/Strings.vala:80
 msgid "Portrait"
 msgstr "Vertical"
 
-#: src/configs/Strings.vala:81
+#: src/Configs/Strings.vala:81
 msgid "Any"
 msgstr "Cualquiera"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:7
-#: data/com.github.calo001.fondo.desktop.in:3
-msgid "Fondo"
-msgstr "Fondo"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:8
-#: data/com.github.calo001.fondo.desktop.in:4
-msgid "Find the most beautiful wallpapers"
-msgstr "Encuentra los fondos de pantalla más increíbles"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:9
-msgid "Carlos Lopez"
-msgstr "Carlos Lopez"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:31
-msgid ""
-"Find a variety of the most beautiful wallpapers from Unsplash.com the "
-"world’s most generous community of photographers."
-msgstr ""
-"Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash."
-"con la comunidad de fotógrafos más generosa del mundo"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:32
-msgid ""
-"Fondo allows you to see thousands of beautiful photographs from the most "
-"recent to the one you are to looking for. Give a single click on a picture, "
-"wait until the download is complete and enjoy your new wallpaper!"
-msgstr ""
-"Fondo te permite ver miles de hermosas fotografías desde la más reciente "
-"hasta la que estás buscando. Da un solo clic en una imagen, espera a que la "
-"descarga termine y ¡disfruta de tu nuevo fondo de pantalla!"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:33
-msgid ""
-"Have a minimalist, simple and elegant interface, additionally, you can "
-"change from light mode to dark mode as you prefer."
-msgstr ""
-"Usa una interfaz minimalista, simple y elegante, además, puedes cambiar del "
-"modo claro al oscuro como prefieras"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:34
-msgid "Main features:"
-msgstr "Características principales"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:36
-msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
-msgstr ""
-"Al infinito... ¡y más allá!: Usa el scroll infinito para cargar más fotos"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:37
-msgid "Find out what you like: Search by categories or type in the search bar"
-msgstr ""
-"Encuentra lo que te gusta: Busca por categorias o escribe lo que quieras en "
-"la barra de búsqueda"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:38
-msgid ""
-"Keep your favorite photos with you: Every new wallpaper is saved in the "
-"history"
-msgstr ""
-"Quédate con tus fotos favoritas: Cada nuevo fondo de pantalla es guardado en "
-"el historial"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:39
-msgid ""
-"Share with your friends: Select a variety of options for sharing an Unsplash "
-"link to the photo"
-msgstr ""
-"Comparte con tus amigos: Selecciona una variedad de opciones para compartir "
-"un link de una foto de Unsplash"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:40
-msgid "Filter by orientation: Portrait, Landscape or Any"
-msgstr "Filtra por orientación: Vertical, Horizontal o Cualquiera"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:46
-msgid "Custom colors and icon for Christmas"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:51
-msgid "Custom colors for #DiaDeMuertos"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:56
-#: data/com.github.calo001.fondo.appdata.xml.in:69
-msgid "Fix"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:58
-msgid "#65 Error copy from URI to directory"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:59
-msgid "#68 No previews availible"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:65
-#: data/com.github.calo001.fondo.appdata.xml.in:77
-#: data/com.github.calo001.fondo.appdata.xml.in:102
-#: data/com.github.calo001.fondo.appdata.xml.in:116
-#: data/com.github.calo001.fondo.appdata.xml.in:124
-#: data/com.github.calo001.fondo.appdata.xml.in:133
-#: data/com.github.calo001.fondo.appdata.xml.in:141
-msgid "New"
-msgstr "Nuevo"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:67
-#, fuzzy
-msgid "Added Turkish translation"
-msgstr "Agregada traducción a francés"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:71
-msgid "German translation don't work"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:79
-msgid "Added German translation"
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:85
-msgid "Important fixes"
-msgstr "Correcciones importantes"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:87
-msgid "Login screen does not use selected wallpaper"
-msgstr "Pantalla de login no usa el fondo de pantalla seleccionado"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:88
-msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
-msgstr "Fondo de pantalla no cambia cuando en Ubuntu Mate 18.04"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:94
-msgid "Update"
-msgstr "Actualización"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:96
-msgid "Dutch (Netherlands) translation"
-msgstr "Traducción a Dutch (Netherlands)"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:104
-msgid "Keep your favorite photos with you, the photo history has arrived!"
-msgstr "Quédate con tus fotos favoritas, '¡El historial de fotos ha llegado!"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:105
-msgid ""
-"New way of navigating with a bottom bar that allows you to go to: Today, "
-"Categories and History"
-msgstr ""
-"Nueva forma de navegación con una Barra Inferior que te permite ir a: Hoy, "
-"Categorias e Historial"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:106
-msgid ""
-"Speed up your search with the photo filter by Orientation: Portrait, "
-"Landscape or Any"
-msgstr ""
-"Agiliza tu búsqueda con el filtrador de fotos por orientación: Horizontal, "
-"Vertical o Cualquiera"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:107
-msgid "Learn more about a photo with the Detail popup in the full screen view"
-msgstr ""
-"Conoce más sobre una foto con el popup de Detalle en la vista de pantalla "
-"completa"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:108
-msgid "Focus on Search entry with Ctrl+F"
-msgstr "Enfoca la barra de búsqueda con Ctrl+F"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:109
-msgid "When doing a search, the total number of results are displayed"
-msgstr "Cuando se hace una búsqueda, se muestra el número total de resultados"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:110
-msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
-msgstr ""
-"Animación de degradadao en el scrollbar, mode switch y placeholder de la foto"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:118
-msgid "Remove G+ option from Share popup"
-msgstr "Quita la opción de G+ en el popup de Compartir"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:126
-msgid "Update the set of screenshots"
-msgstr "Actualiza el conjunto de capturas de pantalla"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:127
-msgid "Fix error in appdata"
-msgstr "Arregar error en appdata"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:135
-msgid "Added Dutch (Netherlands) translation"
-msgstr "Agregada traducción a Dutch (Netherlands)"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:143
-msgid "Add french translations"
-msgstr "Agregada traducción a francés"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:149
-#: data/com.github.calo001.fondo.appdata.xml.in:159
-msgid "Updates"
-msgstr "Actualizaciones"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:151
-msgid "Search by category and query"
-msgstr "Búsca por categoría y consulta"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:152
-msgid "New look and feel on hover a photo"
-msgstr "Nueva apariencia al pasar encima de una foto"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:153
-msgid "Add gradients to scrollbar and mode switch"
-msgstr "Degradados en el scrollbar y mode switch"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:161
-msgid "New screenshots with awesome photos"
-msgstr "Nuevas capturas de pantalla con asombrosas fotos"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:162
-msgid "OARS data social-info set to mild"
-msgstr "OARS data social-info establecida en mild"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:168
-msgid "Fixes and improvements"
-msgstr "Correcciones y mejoras"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:170
-msgid "Orthographic corrections in the Spanish translation"
-msgstr "Correcciones ortográficas en la traducción al español"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:171
-msgid "The photos are sorted from highest to lowest according to height"
-msgstr "Las fotos son ordenadas de la más grande a la pequeña en altura"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:177
-msgid "A very nice update with new features"
-msgstr "Una incríble actualización con nuevas características"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:179
-msgid "Responsive, resizable window"
-msgstr "Responsiva, la ventana es redimensionable"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:180
-msgid "Infinite scrolling: just scroll to keep loading new photos"
-msgstr "Scroll infinito, solo navega hacia abajo para cargar más fotos"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:181
-msgid "Wallpaper options: set zoom, centered, and more"
-msgstr "Opciones de fondo de pantalla, zoom, centrado y más"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:182
-msgid "Improved icon and styling"
-msgstr "Icono mejorado y más estilo"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:187
-msgid "Improved UI."
-msgstr "Mejora de UI"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:192
-msgid "Initial 1.0.0 release!"
-msgstr "Lanzamiento inicial 1.0.0"
-
-#: data/com.github.calo001.fondo.desktop.in:5
-msgid "com.github.calo001.fondo"
-msgstr "com.github.calo001.fondo"
-
-#: data/com.github.calo001.fondo.desktop.in:11
-msgid "wallpaper;unsplash;foto;image;photo;background;"
-msgstr "wallpaper;unsplash;foto;image;photo;background;"

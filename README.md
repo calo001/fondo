@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/calo001/fondo">
-    <img src="https://img.shields.io/badge/Version-1.3.7-orange.svg">
+    <img src="https://img.shields.io/badge/Version-1.3.8-orange.svg">
   </a>
   <a href="https://github.com/calo001/fondo/blob/master/LICENSE.md">
     <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
@@ -112,7 +112,7 @@ Fondo is and will always be free for the world 🌎️. If you like the project 
 
 <p align="center">
   <a href="http://unsplash.com" target="_blank">
-    <img src="resources/unsplash_logo.png" alt="Screenshot">
+    <img src="resources/unsplash_logo.png" alt="Screenshot" width="300px">
   </a>
 </p>
 <p align="center">
@@ -137,6 +137,7 @@ Gifted by the world’s most generous community of photographers. 🎁
 - [Rafael C. Nunes](https://github.com/rafaelcn) Brazilian Portuguese
 - [NathanBnm](https://github.com/NathanBnm) French
 - [Heimen Stoffels](https://github.com/Vistaus) Dutch (Netherlands)
+- [Onno Giesmann](https://github.com/Etamuk) Turkish and German
 
 ## License
 

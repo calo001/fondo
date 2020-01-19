@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-18 22:57-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.github.calo001.fondo.desktop.in:3
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+msgid "Fondo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.desktop.in:4
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+msgid "Find the most beautiful wallpapers"
+msgstr ""
+
+#: data/com.github.calo001.fondo.desktop.in:5
+msgid "com.github.calo001.fondo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:31
+msgid ""
+"Find a variety of the most beautiful wallpapers from Unsplash.com the "
+"world’s most generous community of photographers."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:32
+msgid ""
+"Fondo allows you to see thousands of beautiful photographs from the most "
+"recent to the one you are to looking for. Give a single click on a picture, "
+"wait until the download is complete and enjoy your new wallpaper!"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+msgid ""
+"Have a minimalist, simple and elegant interface, additionally, you can "
+"change from light mode to dark mode as you prefer."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+msgid "Main features:"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:36
+msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:37
+msgid "Find out what you like: Search by categories or type in the search bar"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+msgid ""
+"Keep your favorite photos with you: Every new wallpaper is saved in the "
+"history"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:39
+msgid ""
+"Share with your friends: Select a variety of options for sharing an Unsplash "
+"link to the photo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:40
+msgid "Filter by orientation: Portrait, Landscape or Any"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:46
+msgid "Fist year release!"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:48
+msgid "Back to the classic appearance."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:49
+msgid "Fix language codes."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:50
+msgid "Improve the way translations files are setting."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:51
+msgid "The width and height are shown in each photo."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:52
+msgid "Fix greeter don't getting wallpaper set via Fondo."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:58
+msgid "Custom colors and icon for Christmas"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:63
+msgid "Custom colors for #DiaDeMuertos"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:68
+#: data/com.github.calo001.fondo.appdata.xml.in:81
+msgid "Fix"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:70
+msgid "#65 Error copy from URI to directory"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:71
+msgid "#68 No previews availible"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:77
+#: data/com.github.calo001.fondo.appdata.xml.in:89
+#: data/com.github.calo001.fondo.appdata.xml.in:114
+#: data/com.github.calo001.fondo.appdata.xml.in:128
+#: data/com.github.calo001.fondo.appdata.xml.in:136
+#: data/com.github.calo001.fondo.appdata.xml.in:145
+#: data/com.github.calo001.fondo.appdata.xml.in:153
+msgid "New"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:79
+msgid "Added Turkish translation"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:83
+msgid "German translation don't work"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:91
+msgid "Added German translation"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:97
+msgid "Important fixes"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:99
+msgid "Login screen does not use selected wallpaper"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:100
+msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:106
+msgid "Update"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:108
+msgid "Dutch (Netherlands) translation"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:116
+msgid "Keep your favorite photos with you, the photo history has arrived!"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:117
+msgid ""
+"New way of navigating with a bottom bar that allows you to go to: Today, "
+"Categories and History"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:118
+msgid ""
+"Speed up your search with the photo filter by Orientation: Portrait, "
+"Landscape or Any"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:119
+msgid "Learn more about a photo with the Detail popup in the full screen view"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:120
+msgid "Focus on Search entry with Ctrl+F"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:121
+msgid "When doing a search, the total number of results are displayed"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:122
+msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:130
+msgid "Remove G+ option from Share popup"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:138
+msgid "Update the set of screenshots"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:139
+msgid "Fix error in appdata"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:147
+msgid "Added Dutch (Netherlands) translation"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:155
+msgid "Add french translations"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:161
+#: data/com.github.calo001.fondo.appdata.xml.in:171
+msgid "Updates"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:163
+msgid "Search by category and query"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:164
+msgid "New look and feel on hover a photo"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:165
+msgid "Add gradients to scrollbar and mode switch"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:173
+msgid "New screenshots with awesome photos"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:174
+msgid "OARS data social-info set to mild"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:180
+msgid "Fixes and improvements"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:182
+msgid "Orthographic corrections in the Spanish translation"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:183
+msgid "The photos are sorted from highest to lowest according to height"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:189
+msgid "A very nice update with new features"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:191
+msgid "Responsive, resizable window"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:192
+msgid "Infinite scrolling: just scroll to keep loading new photos"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:193
+msgid "Wallpaper options: set zoom, centered, and more"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:194
+msgid "Improved icon and styling"
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:199
+msgid "Improved UI."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:204
+msgid "Initial 1.0.0 release!"
+msgstr ""

@@ -1,3 +1,1 @@
-src/configs/Strings.vala
-data/com.github.calo001.fondo.appdata.xml.in
-data/com.github.calo001.fondo.desktop.in
+src/Configs/Strings.vala

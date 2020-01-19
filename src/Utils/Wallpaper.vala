@@ -31,10 +31,11 @@ namespace App.Utils {
         // Signal to inform that download is finished
         public signal void finish_download ();
 
-        private string              uri_endpoint;                   // URI http of picture in unsplash
-        public  string              full_picture_path {get; set;}   // Path for wallpaper picture
-        private ProgressBar         bar;                            // Downloading Progress
-        private string              img_file_name;                  // Based on id_photo & username
+        private string                  uri_endpoint;                   // URI http of picture in unsplash
+        public  string                  full_picture_path {get; set;}   // Path for wallpaper picture
+        private ProgressBar             bar;                            // Downloading Progress
+        private string                  img_file_name;                  // Based on id_photo & username
+        private AccountsServiceUser?    accounts_service;
 
         // Base path for wallpaper picture
         private string BASE_DIR = Path.build_filename (Environment.get_user_data_dir (), "backgrounds") + "/";
@@ -51,6 +52,7 @@ namespace App.Utils {
             this.bar = bar;
             this.img_file_name = username + "_" + id_photo + ".jpeg";
             this.full_picture_path = BASE_DIR + img_file_name;
+            this.accounts_service = AccountServiceProvider.get_instance ();
         }
 
         /***********************************************************************
@@ -206,49 +208,47 @@ namespace App.Utils {
          public void set_to_login_screen () {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
-                set_to_greeter (variable);
+                var greeter_file = set_to_greeter (variable);
+                if (greeter_file != null) {
+                    if (accounts_service != null) {
+                        accounts_service.background_file = greeter_file.get_path ();
+                    }
+                }
             }
         }
 
-        private void set_to_greeter (string variable) {
-            MainLoop loop = new MainLoop ();
-                File? dest = null;
-                var file_path = File.new_for_path (full_picture_path);
-                var greeter_data_dir = Path.build_filename (variable, "wallpaper");
-                var folder = File.new_for_path (greeter_data_dir);
-                if (folder.query_exists ()) {
-                    try {
-                        var enumerator = folder.enumerate_children ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
-                        FileInfo? info = null;
-                        while ((info = enumerator.next_file ()) != null) {
-                            enumerator.get_child (info).@delete ();
-                        }
-                    } catch (Error e) {
-                        show_message ("Error", e.message, "dialog-error");
+        private File? set_to_greeter (string source) {
+            File? dest = null;
+            var file_path = File.new_for_path (full_picture_path);
+            var greeter_data_dir = Path.build_filename (source, "wallpaper");
+            var folder = File.new_for_path (greeter_data_dir);
+            if (folder.query_exists ()) {
+                try {
+                    var enumerator = folder.enumerate_children ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
+                    FileInfo? info = null;
+                    while ((info = enumerator.next_file ()) != null) {
+                        enumerator.get_child (info).@delete ();
                     }
-                } else {
-                    try{
-                        folder.make_directory_with_parents();
-                    } catch (Error e){
-                        show_message ("Error", e.message, "dialog-error");
-                    }
+                } catch (Error e) {
+                    show_message ("Error", e.message, "dialog-error");
                 }
+            } else {
+                try{
+                    folder.make_directory_with_parents();
+                } catch (Error e){
+                    show_message ("Error", e.message, "dialog-error");
+                }
+            }
 
-                dest = File.new_for_path (Path.build_filename (greeter_data_dir, img_file_name));
+            dest = File.new_for_path (Path.build_filename (greeter_data_dir, img_file_name));
+            try {
+                file_path.copy (dest, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA);
+                FileUtils.chmod (dest.get_path (), 0604);
+            } catch (Error e) {
+                show_message ("Error", e.message, "dialog-error");
+            }
 
-                file_path.copy_async.begin(dest, FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, null,
-                (current_num_bytes, total_num_bytes) => {
-                    print ("USR %" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
-                }, (obj, res) => {
-                    try {
-                        bool tmp = file_path.copy_async.end (res);
-                        print ("USR Result: %s\n", tmp.to_string ());
-                        Posix.chmod (Path.build_filename (greeter_data_dir, img_file_name), 0644);
-                    } catch (Error e) {
-                        show_message ("Error", e.message, "dialog-error");
-                    }
-                        loop.quit ();
-                });
+            return dest;
         }
 
         /************************************

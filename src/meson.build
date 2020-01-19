@@ -1,46 +1,47 @@
-sources += files(
-    'configs/Constants.vala',
-    'configs/Settings.vala',
-    'configs/Strings.vala',
+sources = files(
+    'Configs/Constants.vala',
+    'Configs/Settings.vala',
+    'Configs/Strings.vala',
+    'Configs/AccountServiceProvider.vala',
     
-    'controllers/AppController.vala',
+    'Controllers/AppController.vala',
 
-    'views/PhotosView.vala',
-    'views/AppViewError.vala',
-    'views/CardPhotoView.vala',
-    'views/ButtonCategory.vala',
-    'views/CategoriesView.vala',
-    'views/EmptyHistoryView.vala',
-    'views/EmptyView.vala',
-    'views/LoadingView.vala',
-    'views/FilterOptionsView.vala',
+    'Views/PhotosView.vala',
+    'Views/AppViewError.vala',
+    'Views/CardPhotoView.vala',
+    'Views/ButtonCategory.vala',
+    'Views/CategoriesView.vala',
+    'Views/EmptyHistoryView.vala',
+    'Views/EmptyView.vala',
+    'Views/LoadingView.vala',
+    'Views/FilterOptionsView.vala',
 
-    'popovers/MenuPopover.vala',
-    'popovers/WallpaperPopover.vala',
-    'popovers/SharePopover.vala',
-    'popovers/PhotoDetailPopover.vala',
+    'Popovers/MenuPopover.vala',
+    'Popovers/WallpaperPopover.vala',
+    'Popovers/SharePopover.vala',
+    'Popovers/PhotoDetailPopover.vala',
 
-    'models/Photo.vala',
-    'models/SearchResult.vala',
+    'Models/Photo.vala',
+    'Models/SearchResult.vala',
 
-    'utils/Wallpaper.vala',
-    'utils/Networking.vala',
-    'utils/JsonManager.vala',
-    'utils/SchemaManager.vala',
+    'Utils/Wallpaper.vala',
+    'Utils/Networking.vala',
+    'Utils/JsonManager.vala',
+    'Utils/SchemaManager.vala',
 
-    'widgets/BottonNavbar.vala',
-    'widgets/ButtonTab.vala',
-    'widgets/HeaderBar.vala',
-    'widgets/LabelTop.vala',
-    'widgets/LabelTotalResults.vala',
+    'Widgets/BottonNavbar.vala',
+    'Widgets/ButtonTab.vala',
+    'Widgets/HeaderBar.vala',
+    'Widgets/LabelTop.vala',
+    'Widgets/LabelTotalResults.vala',
 
-    'services/Connection.vala',
+    'Services/Connection.vala',
 
-    'enums/Navigation.vala',
+    'Enums/Navigation.vala',
 
     'Application.vala',
     'Main.vala',
 
-    'windows/PreviewWindow.vala',
-    'windows/Window.vala'
+    'Windows/PreviewWindow.vala',
+    'Windows/Window.vala'
 )
