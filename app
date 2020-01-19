@@ -62,6 +62,7 @@ case $1 in
     initialize
     ninja com.github.calo001.fondo-pot
     ninja com.github.calo001.fondo-update-po
+    ninja extra-update-po
     ;;
 "install")
     initialize
