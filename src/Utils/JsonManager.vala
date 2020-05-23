@@ -53,7 +53,7 @@ namespace App.Utils {
                 var data_stream = new DataOutputStream (file_stream);
                 data_stream.put_string(json_string);
             } catch (Error e) {
-                warning ("Failet to save notes: " + e.message);
+                warning ("Failet to save history: " + e.message);
             }
         }
 
@@ -115,6 +115,25 @@ namespace App.Utils {
             }
             stored_photos.append (photo);
             return stored_photos;
+        }
+
+        public bool delete_photo_by_id (string id) {
+            Photo? photo_deleted = null;
+            List<Photo> stored_photos = load_from_file ();
+
+            stored_photos.foreach ((photo) => {
+                if (photo.id == id) {
+                    photo_deleted = photo;
+                }
+            });
+
+            if (photo_deleted != null) {
+                stored_photos.remove (photo_deleted);
+                save_history (stored_photos);
+                return true;
+            }
+            
+            return false;
         }
     }
 

@@ -33,6 +33,21 @@
     100% { opacity: 1; }
 }
 
+.deleted {
+    animation-name: opacity_fade_out;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    opacity: 0;
+  }
+  
+  
+  @keyframes opacity_fade_out {
+      0%   { opacity: 1;}
+      30%  { opacity: 0.3;}
+      60%  { opacity: 1;}
+      100% { opacity: 0;}
+  }
+
 @keyframes fancy_turn {
     0%   { -gtk-icon-transform: rotate(0deg); }
     20%  { -gtk-icon-transform: rotate(-30deg); }

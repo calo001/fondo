@@ -21,6 +21,7 @@ using App.Connection;
 using App.Models;
 using App.Connection;
 using App.Configs;
+using App.Enums;
 
 namespace App.Views {
 
@@ -90,12 +91,12 @@ namespace App.Views {
         /********************************************
            Method to insert new photos from a list
         ********************************************/
-        public void insert_cards (List<Photo?> photos, bool sort = true) {
+        public void insert_cards (List<Photo?> photos, bool sort = true, TypeCard typeCard = NORMAL) {
             this.photos = photos;
             if (sort) this.photos.sort(compare);
 
             foreach (var photo in this.photos) {
-                var card = new CardPhotoView (photo);
+                var card = new CardPhotoView (photo, typeCard);
                 this.add(card);
                 card.show_all();
             }
