@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the com.github.calo001.fondo package.
 # ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
