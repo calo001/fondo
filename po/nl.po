@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-18 22:57-0600\n"
-"PO-Revision-Date: 2020-01-11 20:23+0100\n"
+"POT-Creation-Date: 2020-05-23 17:09-0500\n"
+"PO-Revision-Date: 2020-05-24 12:50+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
 "Language: nl\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -146,7 +147,6 @@ msgid "Photos not found"
 msgstr "Geen foto's gevonden"
 
 #: src/Configs/Strings.vala:60
-#, fuzzy
 msgid "Loading…"
 msgstr "Bezig met laden…"
 
@@ -192,7 +192,7 @@ msgstr "Geen beschrijving beschikbaar"
 
 #: src/Configs/Strings.vala:71
 msgid "Set as wallpaper"
-msgstr "Als bureaubladachtergrond instellen"
+msgstr "Instellen als achtergrond"
 
 #: src/Configs/Strings.vala:72
 msgid "Details"
@@ -200,7 +200,7 @@ msgstr "Gegevens"
 
 #: src/Configs/Strings.vala:73
 msgid "Visit profile"
-msgstr "Bezoek profiel"
+msgstr "Profiel bekijken"
 
 #: src/Configs/Strings.vala:74
 msgid "Total results"
@@ -212,7 +212,7 @@ msgstr "Ontdek wat je leuk vindt️"
 
 #: src/Configs/Strings.vala:76
 msgid "Try changing search terms."
-msgstr "Probeer zoektermen te veranderen."
+msgstr "Probeer andere zoektermen."
 
 #: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
@@ -232,4 +232,12 @@ msgstr "Verticaal"
 
 #: src/Configs/Strings.vala:81
 msgid "Any"
-msgstr "Ieder"
+msgstr "Beiden"
+
+#: src/Configs/Strings.vala:82
+msgid "Delete a photo from history"
+msgstr "Foto verwijderen uit geschiedenis"
+
+#: src/Configs/Strings.vala:83
+msgid "Are you sure you want to delete the photo from history?"
+msgstr "Weet je zeker dat je de foto wilt verwijderen uit de geschiedenis?"

@@ -24,6 +24,7 @@ using App.Widgets;
 using App.Popover;
 using App.Windows;
 using Gtk;
+using App.Enums;
 
 namespace App.Views {
 
@@ -41,6 +42,7 @@ namespace App.Views {
         private Granite.AsyncImage      image;
         private Button                  btn_view;
         private Button                  btn_share;
+        private Button                  btn_delete;
         private Button                  photo_button;
         private LinkButton              label_autor;
         private Label                   label_dimensions;
@@ -50,6 +52,7 @@ namespace App.Views {
         private Revealer                revealer;
         private Overlay                 overlay;
         private Photo                   photo;
+        private TypeCard                type_card;
         public  WallpaperPopover        popup;
         public  SharePopover            popupShare;
 
@@ -59,9 +62,10 @@ namespace App.Views {
         /***********************************
                     Constructor
         ************************************/
-        public CardPhotoView (Photo photo) {
+        public CardPhotoView (Photo photo, TypeCard type_card = NORMAL) {
             this.connection = AppConnection.get_instance();
             this.photo = photo;
+            this.type_card = type_card;
             this.can_focus = false;
             this.orientation = Gtk.Orientation.VERTICAL;
             this.halign = Gtk.Align.CENTER;
@@ -116,33 +120,6 @@ namespace App.Views {
             });
 
             /******************************************
-                        Fullscreen button
-            ******************************************/
-            btn_view = new Gtk.Button.from_icon_name ("window-maximize-symbolic");
-            btn_view.get_style_context ().add_class ("button-action");
-            btn_view.get_style_context ().remove_class ("button");
-            btn_view.get_style_context ().add_class ("transition");
-            btn_view.can_focus = false;
-            btn_view.margin = 8;
-            btn_view.halign = Gtk.Align.END;
-            btn_view.valign = Gtk.Align.START;
-            btn_view.can_default = true;
-
-            /******************************************
-                        Share button
-            ******************************************/
-            btn_share = new Gtk.Button.from_icon_name ("mail-send-symbolic");
-            btn_share.get_style_context ().add_class ("button-action");
-            btn_share.get_style_context ().remove_class ("button");
-            btn_share.get_style_context ().add_class ("transition");
-            btn_share.can_focus = false;
-            btn_share.margin = 8;
-            btn_share.margin_top = 42;
-            btn_share.halign = Gtk.Align.END;
-            btn_share.valign = Gtk.Align.START;
-            btn_share.can_default = true;
-
-            /******************************************
                         Image dimensions
             ******************************************/
             var text_dimensions = @"$(photo.width.to_string ()) x $(photo.height.to_string ())  px";
@@ -151,6 +128,10 @@ namespace App.Views {
             label_dimensions.margin = 8;
             label_dimensions.halign = Gtk.Align.END;
             label_dimensions.valign = Gtk.Align.END;
+            
+            setup_fullscreen_btn ();
+            setup_share_btn ();
+            setup_delete_btn ();
 
             /******************************************
                     Popover for share
@@ -175,7 +156,46 @@ namespace App.Views {
                 prev_win.closed_preview.connect (() => {
                     this.set_sensitive (true);
                 });
-		    });
+            });
+            
+            btn_delete.button_release_event.connect (() => {
+                this.set_sensitive (false);
+                var dialog_delete = new Granite.MessageDialog.with_image_from_icon_name (
+                    S.DELETE_PHOTO_DIALOG_TITLE,
+                    S.DELETE_PHOTO_DIALOG_MESSAGE,
+                    "edit-delete",
+                    Gtk.ButtonsType.NONE
+                );
+
+                dialog_delete.add_buttons ("Cancel", Gtk.ButtonsType.CANCEL, "Ok", Gtk.ButtonsType.OK);
+                
+                dialog_delete.close.connect (() => {
+                    this.set_sensitive (true);
+                });
+
+                dialog_delete.response.connect ((dialog, response) => {
+                    switch (response) {
+                        case Gtk.ButtonsType.CANCEL:
+                            this.set_sensitive (true);
+                            dialog_delete.destroy ();
+                            break;
+                        case Gtk.ButtonsType.OK:
+                            JsonManager jsonManager = new JsonManager ();
+                            bool result = jsonManager.delete_photo_by_id (photo.id);
+
+                            if (result) {
+                                delete_parent_flow ();
+                                delete_photo_file (photo);
+                            }
+
+                            this.set_sensitive (true);
+                            dialog_delete.destroy ();
+                            break;
+                    }
+                });
+                dialog_delete.run ();
+                return true;
+            });
 
             /********************************************************
                     Create Overlay (contain img, btnFullScreen)
@@ -186,6 +206,7 @@ namespace App.Views {
 
             overlay.add_overlay (btn_view);
             overlay.add_overlay (btn_share);
+            overlay.add_overlay (btn_delete);
             overlay.add_overlay (label_dimensions);
             overlay.add (image);
             overlay.width_request = w_photo;
@@ -286,6 +307,77 @@ namespace App.Views {
             } else {
                 return Constants.LANDSCAPE;   
             }
+        }
+
+        /*************************************************
+        Delete parent view
+        **************************************************/
+        public void delete_parent_flow () {
+            Gtk.Widget widget_parent = this.get_parent ();
+            Gtk.StyleContext style = widget_parent.get_style_context ();
+            style.changed.connect (() => {
+                var state = style.get_state ();
+                var opacity = style.get_property ("opacity", state);
+                if (opacity.get_double () <= 0.0) {
+                    widget_parent.destroy ();
+                }
+            });
+            style.add_class ("deleted");
+        }
+
+        private void delete_photo_file (Photo photo) {
+            FileManager file_manager = new FileManager();
+            file_manager.delete_photo (photo);
+        }
+
+        /******************************************
+                        Delete button
+            ******************************************/
+        private void setup_delete_btn () {
+            if (type_card == TypeCard.HISTORY) {
+                btn_delete = new Gtk.Button.from_icon_name ("edit-delete-symbolic");
+                btn_delete.get_style_context ().add_class ("button-action");
+                btn_delete.get_style_context ().remove_class ("button");
+                btn_delete.get_style_context ().add_class ("transition");
+                btn_delete.can_focus = false;
+                btn_delete.margin = 8;
+                btn_delete.margin_top = 76;
+                btn_delete.halign = Gtk.Align.END;
+                btn_delete.valign = Gtk.Align.START;
+                btn_delete.can_default = true;
+            }
+        }
+
+        /******************************************
+                        Share button
+        ******************************************/
+        private void setup_share_btn () {
+            btn_share = new Gtk.Button.from_icon_name ("mail-send-symbolic");
+            btn_share.get_style_context ().add_class ("button-action");
+            btn_share.get_style_context ().remove_class ("button");
+            btn_share.get_style_context ().add_class ("transition");
+            btn_share.can_focus = false;
+            btn_share.margin = 8;
+            btn_share.margin_top = 42;
+            btn_share.halign = Gtk.Align.END;
+            btn_share.valign = Gtk.Align.START;
+            btn_share.can_default = true;
+        }
+
+        /******************************************
+                    Fullscreen button
+        ******************************************/
+        private void setup_fullscreen_btn () {
+            btn_view = new Gtk.Button.from_icon_name ("window-maximize-symbolic");
+            btn_view.get_style_context ().add_class ("button-action");
+            btn_view.get_style_context ().remove_class ("button");
+            btn_view.get_style_context ().add_class ("transition");
+            btn_view.can_focus = false;
+            btn_view.margin = 8;
+            btn_view.halign = Gtk.Align.END;
+            btn_view.valign = Gtk.Align.START;
+            btn_view.can_default = true;
+
         }
     }
 

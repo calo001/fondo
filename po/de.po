@@ -1,21 +1,22 @@
-# German translations for com.github.calo001.fondo package.
-# Copyright (C) 2020 THE com.github.calo001.fondo'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.calo001.fondo package.
-# Onno Giesmann <nutzer3105@gmail.com>, 2020.
+# Onno Giesmann <nutzer3105@gmail.com>, 2019-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-18 22:57-0600\n"
-"PO-Revision-Date: 2020-01-11 20:23+0100\n"
+"PO-Revision-Date: 2020-01-19 14:10+0100\n"
 "Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
-"Language-Team: none\n"
+"Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -31,7 +32,7 @@ msgstr "Internetseite besuchen"
 
 #: src/Configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr "Fotos von Unsplash: Schöne kostenlose Bilder & Fotos 🎁"
+msgstr "Fotos von Unsplash: Wunderbare kostenlose Bilder & Fotos 🎁"
 
 #: src/Configs/Strings.vala:32
 msgid "Photo by "
@@ -146,7 +147,6 @@ msgid "Photos not found"
 msgstr "Keine Fotos gefunden"
 
 #: src/Configs/Strings.vala:60
-#, fuzzy
 msgid "Loading…"
 msgstr "Wird geladen…"
 
@@ -233,3 +233,11 @@ msgstr "Portrait"
 #: src/Configs/Strings.vala:81
 msgid "Any"
 msgstr "Alles"
+
+#: src/Configs/Strings.vala:82
+msgid "Delete a photo from history"
+msgstr ""
+
+#: src/Configs/Strings.vala:83
+msgid "Are you sure you want to delete the photo from history?"
+msgstr ""

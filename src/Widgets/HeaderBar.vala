@@ -105,6 +105,7 @@ namespace App.Widgets {
              * Menú options button
              */
             var menu_button = new Gtk.Button.from_icon_name ("view-more-horizontal-symbolic", Gtk.IconSize.LARGE_TOOLBAR );
+            menu_button.valign = Gtk.Align.CENTER;
             menu_button.tooltip_text = S.ABOUT;
 
             var pop_menu = new MenuPopover (menu_button);

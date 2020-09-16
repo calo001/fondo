@@ -22,6 +22,7 @@ using App.Connection;
 using App.Configs;
 using App.Windows;
 using App.Utils;
+using App.Enums;
 
 namespace App.Controllers {
 
@@ -196,7 +197,7 @@ namespace App.Controllers {
                 if (history.length () > 0) {
                     stack_visible (STACK_HISTORY);
                     history_view.clean_list ();
-                    history_view.insert_cards (history, false);
+                    history_view.insert_cards (history, false, HISTORY);
                 } else {
                     stack_visible (STACK_EMPTY_HISTORY);
                 }

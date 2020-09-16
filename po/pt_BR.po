@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-18 22:57-0600\n"
+"POT-Creation-Date: 2020-05-23 17:09-0500\n"
 "PO-Revision-Date: 2020-01-11 20:23+0100\n"
 "Last-Translator: Rafael Campos Nunes <rafaelnunes@engineer.com>\n"
 "Language-Team: none\n"
@@ -31,7 +31,7 @@ msgstr "Visite o site"
 
 #: src/Configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr "Unsplash fotos: Belas fotos e fotos grátis 🎁"
+msgstr "Unsplash fotos: Fotos e imagens lindas e gratuitas 🎁"
 
 #: src/Configs/Strings.vala:32
 msgid "Photo by "
@@ -39,7 +39,7 @@ msgstr "Foto por"
 
 #: src/Configs/Strings.vala:33
 msgid " on Unsplash"
-msgstr " Por Unsplash"
+msgstr " em Unsplash"
 
 #: src/Configs/Strings.vala:34
 msgid "Share"
@@ -79,7 +79,7 @@ msgstr "Wallpaper pronto!"
 
 #: src/Configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
-msgstr "Seu novo wallpaper está pronto"
+msgstr "Seu novo papel de parede está pronto"
 
 #: src/Configs/Strings.vala:44
 msgid "Check the network connection."
@@ -124,7 +124,7 @@ msgstr "🎩 Moda"
 #: src/Configs/Strings.vala:54
 #, fuzzy
 msgid "🎨 Art & culture"
-msgstr "🎨 Arte y cultura"
+msgstr "🎨 Arte e cultura"
 
 #: src/Configs/Strings.vala:55
 msgid "🏦 Architecture"
@@ -136,7 +136,7 @@ msgstr "💻 Tecnologia"
 
 #: src/Configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
-msgstr "🍁 Textura e padrão"
+msgstr "🍁 Textura e padrões"
 
 #: src/Configs/Strings.vala:58
 msgid "📑 Flat lay"
@@ -152,11 +152,11 @@ msgstr "Carregando…"
 
 #: src/Configs/Strings.vala:61
 msgid "Close full screen"
-msgstr "Fechar a tela inteira"
+msgstr "Fechar tela cheia"
 
 #: src/Configs/Strings.vala:62
 msgid "Search photos Unsplash"
-msgstr "Pesquisar fotos Unsplash"
+msgstr "Pesquisar fotos em Unsplash"
 
 #: src/Configs/Strings.vala:63
 msgid "History"
@@ -168,11 +168,11 @@ msgstr "Fundo de tela branco"
 
 #: src/Configs/Strings.vala:65
 msgid "Dark background"
-msgstr "Fundo de tela preto"
+msgstr "Fundo de tela escuro"
 
 #: src/Configs/Strings.vala:66
 msgid "About"
-msgstr "Cerca de"
+msgstr "Sobre"
 
 #: src/Configs/Strings.vala:67
 msgid "TODAY"
@@ -232,4 +232,12 @@ msgstr "Vertical"
 
 #: src/Configs/Strings.vala:81
 msgid "Any"
-msgstr "Qualquera"
+msgstr "Qualquer um"
+
+#: src/Configs/Strings.vala:82
+msgid "Delete a photo from history"
+msgstr "Remover esta foto do histórico"
+
+#: src/Configs/Strings.vala:83
+msgid "Are you sure you want to delete the photo from history?"
+msgstr "Você tem certeza que deseja remover esta foto do histórico?"

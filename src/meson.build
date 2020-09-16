@@ -27,6 +27,7 @@ sources = files(
     'Utils/Wallpaper.vala',
     'Utils/Networking.vala',
     'Utils/JsonManager.vala',
+    'Utils/FileManager.vala',
     'Utils/SchemaManager.vala',
 
     'Widgets/BottonNavbar.vala',
@@ -38,6 +39,7 @@ sources = files(
     'Services/Connection.vala',
 
     'Enums/Navigation.vala',
+    'Enums/TypeCard.vala',
 
     'Application.vala',
     'Main.vala',
