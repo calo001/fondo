@@ -200,7 +200,7 @@ progressbar trough {
     background-color: rgba(0,0,0,0.2);
 }
 
-.button-action:hover {
+.button-action:hover, .button-action:checked {
     background: linear-gradient(@gradientAccent1, @gradientAccent2);
     color: #FFFFFF;
     border: none;
