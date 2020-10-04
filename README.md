@@ -138,6 +138,9 @@ Gifted by the world’s most generous community of photographers. 🎁
 - [NathanBnm](https://github.com/NathanBnm) French
 - [Heimen Stoffels](https://github.com/Vistaus) Dutch (Netherlands)
 - [Onno Giesmann](https://github.com/Etamuk) Turkish and German
+- [Milo Ivir](https://github.com/milotype) Croatian
+
+Fondo is translated into several languages. If your language is missing or incomplete, please help to [translate](https://github.com/calo001/fondo/tree/master/po) Fondo into your language.
 
 ## License
 
