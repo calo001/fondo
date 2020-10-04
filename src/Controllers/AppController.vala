@@ -164,12 +164,21 @@ namespace App.Controllers {
 
             multiple_wallpaper.multiple_selection.connect ( ( ismultiple )=>{
                 view.setMultiple (ismultiple);
+                search_view.setMultiple (ismultiple);
+                history_view.setMultiple (ismultiple);
             });
 
             view.multiple_selected.connect ( (photo_list) => {
                 multiple_wallpaper.update_photos(photo_list);
             });
 
+            search_view.multiple_selected.connect ( (photo_list) => {
+                multiple_wallpaper.update_photos(photo_list);
+            });
+
+            history_view.multiple_selected.connect ( (photo_list) => {
+                multiple_wallpaper.update_photos(photo_list);
+            });
 
             view_error.retry.connect(() => {
                 check_internet();
