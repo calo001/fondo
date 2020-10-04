@@ -61,9 +61,9 @@ namespace App.Utils {
         }
 
         /**
-         *  Writes an XML background file and returns the path
+         *  Writes an XML background file and returns the file
         */
-        public string write_background () {
+        public File write_background () {
             try {
                 string xml_text = this.generate_xml ();
 
@@ -81,13 +81,12 @@ namespace App.Utils {
                     written += dos.write (data[written:data.length]);
                 }
 
-                print("Archivo %s escrito correctamente.", collection_file.get_path ());
-                return collection_file.get_path ();
+                print("File %s written successfully.\n", collection_file.get_path ());
+
             } catch (Error e) {
                 stderr.printf ("%s\n", e.message);
-                return null;
             }
-
+            return collection_file;
         }
 
         private string generate_starttime () {
