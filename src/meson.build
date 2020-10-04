@@ -31,6 +31,8 @@ sources = files(
     'Utils/JsonManager.vala',
     'Utils/FileManager.vala',
     'Utils/SchemaManager.vala',
+    'Utils/MultiWallpaper.vala',
+    'Utils/XMLBackground.vala',
 
     'Widgets/BottonNavbar.vala',
     'Widgets/ButtonTab.vala',

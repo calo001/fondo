@@ -39,7 +39,7 @@ namespace App.Views {
         public signal void set_as_wallpaper(string opt = "zoom");
         public signal void toggled_multiple(bool multiple);
 
-        public  File                    file_photo;
+        private File                    file_photo;
         private Granite.AsyncImage      image;
         private Button                  btn_view;
         private Button                  btn_share;
@@ -416,6 +416,10 @@ namespace App.Views {
             btn_select.can_default = true;
             btn_select.set_no_show_all(true);
             btn_select.set_visible(false);
+        }
+
+        public Photo get_photo() {
+            return this.photo;
         }
     }
 

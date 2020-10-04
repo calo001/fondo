@@ -16,6 +16,9 @@
 *
 */
 using App.Configs;
+using App.Utils;
+using App.Models;
+using App.Connection;
 
 namespace App.Views {
 
@@ -29,9 +32,11 @@ namespace App.Views {
         public signal void close_multiple_view ();
         public signal void multiple_selection (bool isMultiple);
 
-        private unowned List<CardPhotoView?>    selected_photos;
-        private bool                            is_multiple;
-        private Gtk.Label                       label_info;
+        private unowned List<CardPhotoView?>        selected_photos;
+        private bool                                is_multiple;
+        private Gtk.Label                           label_info;
+        private Gtk.ProgressBar                     image_bar;   // Global Generation bar
+        private Gtk.ProgressBar                     global_bar;   // Global Generation bar
 
         /**
          * Constructs a new {@code MultipleWallpaperView} object.
@@ -50,8 +55,25 @@ namespace App.Views {
                 multiple_selection(is_multiple);
             });
 
+
+            Gtk.Button generate_btn = new Gtk.Button();
+            generate_btn.set_label("Generate!");
+            generate_btn.valign = Gtk.Align.CENTER;
+            generate_btn.tooltip_text = "Generate";
+            generate_btn.clicked.connect ( ()=> {
+                print("Generate!!!!");
+                generate_multiple_wallpaper();
+            });
+
+            image_bar = new Gtk.ProgressBar ();
+            global_bar = new Gtk.ProgressBar ();
+
             attach (label_info,         0, 0, 1, 1);
             attach (multiple_select,    0, 1, 1, 1);
+            attach (generate_btn,       0, 2, 1, 1);
+            attach (image_bar,          0, 3, 1, 1);
+            attach (global_bar,         0, 4, 1, 1);
+
         }
 
         public void update_photos(List<CardPhotoView?> photos) {
@@ -59,6 +81,26 @@ namespace App.Views {
             string selected_num = "Selected: %d\n".printf((int) photos.length());
 
             label_info.set_text(selected_num);
+        }
+
+        public void generate_multiple_wallpaper() {
+            AppConnection connection = AppConnection.get_instance();
+            List<Wallpaper> wallpaper_list = new List<Wallpaper>();
+            selected_photos.foreach( ( photo_card ) => {
+                Photo photo = photo_card.get_photo();
+
+                string? url_photo = connection.get_url_photo(photo.links.download_location);
+                Wallpaper wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name, image_bar);
+                if (wallpaper.download_picture()) {
+                    print("Success!!: %s\n", wallpaper.full_picture_path);
+                    wallpaper_list.append(wallpaper);
+                } else {
+                    print("Error\n");
+                }
+            });
+
+            MultiWallpaper multiple_wallpaper = new MultiWallpaper(wallpaper_list);
+            multiple_wallpaper.set_wallpaper();
         }
     }
 }

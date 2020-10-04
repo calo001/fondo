@@ -254,7 +254,7 @@ namespace App.Utils {
         /************************************
            Dialog that show error messages
         ************************************/
-        private void show_message (string txt_primary, string txt_secondary, string icon) {
+        public static void show_message (string txt_primary, string txt_secondary, string icon) {
             var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 txt_primary,
                 txt_secondary,
