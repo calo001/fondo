@@ -39,6 +39,7 @@
           <li>Share with your friends: Select a variety of options for sharing an Unsplash link to the photo</li>
           <li>Filter by orientation: Portrait, Landscape or Any</li>
         </ul>
+        <p>Fondo is translated into several languages. If your language is missing or incomplete, please help to [translate](https://github.com/calo001/fondo/tree/master/po) Fondo into your language.</p>
     </description>
     <releases>
     <release version="1.3.9" date="2020-05-23">
