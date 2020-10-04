@@ -285,6 +285,26 @@ progressbar trough {
   
 }
 
+.multiple_wallpaper_popup {
+  padding: 1em 0 1em 0;
+}
+
+.mw_head {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 4px;
+}
+
+.mw_info {
+  font-size: 1.2em;
+  padding-left: 1em;
+}
+
+.generate_btn {
+  margin-right: 1em;
+}
+
+
 .btn-orientation {
   border-radius: 50%;
   padding: 2em;

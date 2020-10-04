@@ -31,7 +31,7 @@ namespace App.Popover {
             Object (
                 relative_to: relative_to
             );
-            get_style_context ().add_class ("pop-menu");
+            get_style_context ().add_class ("multiple_wallpaper_popup");
             set_modal (true);
 
             var grid = new Gtk.Grid ();

@@ -35,57 +35,84 @@ namespace App.Views {
         private unowned List<CardPhotoView?>        selected_photos;
         private bool                                is_multiple;
         private Gtk.Label                           label_info;
-        private Gtk.ProgressBar                     image_bar;   // Global Generation bar
+        private Gtk.Label                           generate_label;
+        private Gtk.Button                          generate_btn;
+        private Gtk.ProgressBar                     image_bar;   // Single image Generation bar
         private Gtk.ProgressBar                     global_bar;   // Global Generation bar
 
         /**
          * Constructs a new {@code MultipleWallpaperView} object.
          */
         public MultipleWallpaperView () {
+            this.set_column_spacing (50);
+            this.set_row_spacing (10);
+
             is_multiple = false;
 
-            label_info = new Gtk.Label ("Select multiple Wallpapers");
+            label_info = new Gtk.Label ("Wallpaper Slideshow");
+            label_info.get_style_context ().add_class ("mw_head");
 
-            Gtk.Button multiple_select = new Gtk.Button();
-            multiple_select.set_label("Activate Multiple Selection");
-            multiple_select.valign = Gtk.Align.CENTER;
-            multiple_select.tooltip_text = "Selección múltiple";
-            multiple_select.clicked.connect ( ()=> {
-                is_multiple = !is_multiple;
+            var mode_switch = new Granite.ModeSwitch.from_icon_name ("video-display-symbolic", "view-grid-symbolic");
+            mode_switch.primary_icon_tooltip_text = "Set single wallpaper";
+            mode_switch.secondary_icon_tooltip_text = "Set wallpaper slideshow";
+            mode_switch.valign = Gtk.Align.CENTER;
+            mode_switch.halign = Gtk.Align.CENTER;
+            mode_switch.button_release_event.connect( () => {
+                is_multiple = !mode_switch.active;
                 multiple_selection(is_multiple);
+                update_visibility ();
+
+                return true;
             });
 
 
-            Gtk.Button generate_btn = new Gtk.Button();
+            generate_btn = new Gtk.Button();
+            generate_btn.get_style_context ().add_class ("generate_btn");
             generate_btn.set_label("Generate!");
             generate_btn.valign = Gtk.Align.CENTER;
             generate_btn.tooltip_text = "Generate";
+            generate_btn.set_no_show_all(true);
             generate_btn.clicked.connect ( ()=> {
                 print("Generate!!!!");
                 generate_multiple_wallpaper();
             });
 
-            image_bar = new Gtk.ProgressBar ();
-            global_bar = new Gtk.ProgressBar ();
+            generate_label = new Gtk.Label ("Select 1 or more wallpapers");
+            generate_label.get_style_context ().add_class ("mw_info");
+            generate_label.set_no_show_all(true);
 
-            attach (label_info,         0, 0, 1, 1);
-            attach (multiple_select,    0, 1, 1, 1);
-            attach (generate_btn,       0, 2, 1, 1);
-            attach (image_bar,          0, 3, 1, 1);
-            attach (global_bar,         0, 4, 1, 1);
+            image_bar = new Gtk.ProgressBar ();
+            image_bar.set_no_show_all(true);
+            global_bar = new Gtk.ProgressBar ();
+            global_bar.get_style_context ().add_class ("global_progress_bar");
+            global_bar.set_no_show_all(true);
+
+            attach (label_info,         0, 0, 3, 1);
+            attach (mode_switch,        0, 1, 3, 1);
+            attach (generate_label,     0, 2, 2, 1);
+            attach (generate_btn,       2, 2, 1, 1);
+            attach (image_bar,          0, 3, 3, 1);
+            attach (global_bar,         0, 4, 3, 1);
 
         }
 
         public void update_photos(List<CardPhotoView?> photos) {
             selected_photos = photos;
-            string selected_num = "Selected: %d\n".printf((int) photos.length());
+            string selected_num = "%d selected".printf(get_num_selected());
 
-            label_info.set_text(selected_num);
+            generate_label.set_text(selected_num);
+            update_visibility ();
         }
 
         public void generate_multiple_wallpaper() {
             AppConnection connection = AppConnection.get_instance();
             List<Wallpaper> wallpaper_list = new List<Wallpaper>();
+
+            global_bar.set_visible(true);
+            image_bar.set_visible(true);
+            double progress_step = 1.0 / get_num_selected();
+            double global_progress = 0;
+
             selected_photos.foreach( ( photo_card ) => {
                 Photo photo = photo_card.get_photo();
 
@@ -94,13 +121,71 @@ namespace App.Views {
                 if (wallpaper.download_picture()) {
                     print("Success!!: %s\n", wallpaper.full_picture_path);
                     wallpaper_list.append(wallpaper);
+                    global_progress += progress_step;
                 } else {
                     print("Error\n");
                 }
+
+                // Update global bar
+                update_global_progress(global_progress);
             });
 
             MultiWallpaper multiple_wallpaper = new MultiWallpaper(wallpaper_list);
             multiple_wallpaper.set_wallpaper();
+
+            // Hide progress
+            end_global_progress();
+        }
+
+        /**
+         * Updates visibility of elements depending on wether multiple
+         * selection is active
+         */
+        private void update_visibility () {
+            generate_label.set_visible(is_multiple);
+            if (get_num_selected () > 0) {
+                generate_btn.set_visible(is_multiple);
+            }
+        }
+
+        private int get_num_selected () {
+            if (selected_photos != null) {
+                return (int) selected_photos.length();
+            } else {
+                return 0;
+            }
+        }
+
+        private void end_global_progress () {
+            global_bar.set_visible(false);
+            image_bar.set_visible(false);
+            Granite.Services.Application.set_progress_visible.begin (false, (obj, res) => {
+                try {
+                    Granite.Services.Application.set_progress_visible.end (res);
+                } catch (GLib.Error e) {
+                    critical (e.message);
+                }
+            });
+            show_notify_success();
+        }
+
+        private void update_global_progress (double progress) {
+            global_bar.set_fraction (progress);
+            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
+                try {
+                    Granite.Services.Application.set_progress.end (res);
+                } catch (GLib.Error e) {
+                    critical (e.message);
+                }
+            });
+        }
+
+        private void show_notify_success () {
+            var notification = new Notification ("Wallpaper slideshow ready!");
+            notification.set_body ("Your new wallpaper slideshow is downloaded and set!");
+            var icon = new ThemedIcon ("com.github.calo001.fondo.success");
+            notification.set_icon (icon);
+            GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
     }
 }
