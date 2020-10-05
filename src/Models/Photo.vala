@@ -36,13 +36,13 @@ namespace App.Models {
         public string alt_description { get; set; }
         public Urls urls { get; set; }
         public PhotoLinks links { get; set; }
-        public unowned List<Object?> categories { get; set; }
+        // public string[] categories { get; set; }
         public bool sponsored { get; set; }
         public User sponsored_by { get; set; }
         public int64 sponsored_impressions_id { get; set; }
         public int64 likes { get; set; }
         public bool liked_by_user { get; set; }
-        public unowned List<Object?> current_user_collections { get; set; }
+        // public string[] current_user_collections { get; set; }
         public User user { get; set; }
         public Sponsorship sponsorship { get; set; }
         public unowned List<Tag> tags { get; set; }
@@ -159,6 +159,8 @@ namespace App.Models {
             List<Photo?> list = new List<Photo?> ();
             unowned Json.Array array = root.get_array ();
 
+            if (array == null) return list;
+
             foreach (unowned Json.Node item in array.get_elements ()) {
                 Photo photo = one_from_json (item);
                 if (photo != null) {
@@ -171,10 +173,13 @@ namespace App.Models {
         public static Photo one_from_json(Json.Node root) {
             var photo = Json.gobject_deserialize (typeof (Photo) , root) as Photo;
             
-            var tags = root.get_object ().get_array_member ("tags");
-            foreach (unowned Json.Node item in tags.get_elements ()) {
-                Tag tag = Json.gobject_deserialize (typeof (Tag) , item) as Tag;
-                if (tag != null) photo.tags.append (tag);
+            var root_object = root.get_object ();
+            if (root_object.has_member("tags")) {
+                var tags = root_object.get_array_member ("tags");
+                foreach (unowned Json.Node item in tags.get_elements ()) {
+                    Tag tag = Json.gobject_deserialize (typeof (Tag) , item) as Tag;
+                    if (tag != null) photo.tags.append (tag);
+                }
             }
             return photo;
         }
