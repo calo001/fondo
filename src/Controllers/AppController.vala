@@ -54,6 +54,7 @@ namespace App.Controllers {
         private LabelTop                   search_label;
         private LabelTop                   history_label;
         private LabelTotalResults          total_label;
+        private MultipleWallpaperView      multiple_wallpaper;
 
         private int                        num_page;
         private int                        num_page_search;
@@ -84,8 +85,6 @@ namespace App.Controllers {
 
             // window setup
             window  =       new Window (this.application);
-            headerbar =     new App.Widgets.HeaderBar ();
-            window.set_titlebar (this.headerbar);
 
             // Stack for views
             stack = new Gtk.Stack ();
@@ -105,6 +104,11 @@ namespace App.Controllers {
             search_view =           new PhotosView ();
             history_view =          new PhotosView ();
             view_error =            new AppViewError();
+            multiple_wallpaper =    new MultipleWallpaperView ();
+
+            // Configure headerbar
+            headerbar =     new App.Widgets.HeaderBar (multiple_wallpaper);
+            window.set_titlebar (this.headerbar);
 
             view.applying_filter.connect ( () => {
                 check_filter ();
@@ -156,6 +160,24 @@ namespace App.Controllers {
             headerbar.search_activated.connect ( ( search )=>{
                 search_query (search);
                 bottonNavbar.clean_all ();
+            });
+
+            multiple_wallpaper.multiple_selection.connect ( ( ismultiple )=>{
+                view.setMultiple (ismultiple);
+                search_view.setMultiple (ismultiple);
+                history_view.setMultiple (ismultiple);
+            });
+
+            view.multiple_selected.connect ( (photo_list) => {
+                multiple_wallpaper.update_photos(photo_list);
+            });
+
+            search_view.multiple_selected.connect ( (photo_list) => {
+                multiple_wallpaper.update_photos(photo_list);
+            });
+
+            history_view.multiple_selected.connect ( (photo_list) => {
+                multiple_wallpaper.update_photos(photo_list);
             });
 
             view_error.retry.connect(() => {

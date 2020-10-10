@@ -200,7 +200,7 @@ progressbar trough {
     background-color: rgba(0,0,0,0.2);
 }
 
-.button-action:hover {
+.button-action:hover, .button-action:checked {
     background: linear-gradient(@gradientAccent1, @gradientAccent2);
     color: #FFFFFF;
     border: none;
@@ -284,6 +284,26 @@ progressbar trough {
   animation-timing-function: ease-in-out;
   
 }
+
+.multiple_wallpaper_popup {
+  padding: 1em 0 1em 0;
+}
+
+.mw_head {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 4px;
+}
+
+.mw_info {
+  font-size: 1.2em;
+  padding-left: 1em;
+}
+
+.generate_btn {
+  margin-right: 1em;
+}
+
 
 .btn-orientation {
   border-radius: 50%;

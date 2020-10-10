@@ -37,12 +37,14 @@ namespace App.Views {
     public class CardPhotoView : Gtk.Box {
 
         public signal void set_as_wallpaper(string opt = "zoom");
+        public signal void toggled_multiple(bool multiple);
 
         private File                    file_photo;
         private Granite.AsyncImage      image;
         private Button                  btn_view;
         private Button                  btn_share;
         private Button                  btn_delete;
+        private ToggleButton            btn_select;
         private Button                  photo_button;
         private LinkButton              label_autor;
         private Label                   label_dimensions;
@@ -132,6 +134,7 @@ namespace App.Views {
             setup_fullscreen_btn ();
             setup_share_btn ();
             setup_delete_btn ();
+            setup_select_btn ();
 
             /******************************************
                     Popover for share
@@ -207,6 +210,7 @@ namespace App.Views {
             overlay.add_overlay (btn_view);
             overlay.add_overlay (btn_share);
             overlay.add_overlay (btn_delete);
+            overlay.add_overlay (btn_select);
             overlay.add_overlay (label_dimensions);
             overlay.add (image);
             overlay.width_request = w_photo;
@@ -225,7 +229,11 @@ namespace App.Views {
                 if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
                     popup.set_visible (true);
                 } else {
-                    setup_wallpaper();
+                    if (is_multiple_select()) {
+                        toggle_btn_select ();
+                    } else {
+                        setup_wallpaper ();
+                    }
                 }
                 return true;
             } );
@@ -264,6 +272,14 @@ namespace App.Views {
             this.add(photo_button);
             this.add(revealer);
             this.add(label_autor);
+
+            /*****************************************
+                        Multiple Selection
+            *****************************************/
+            btn_select.button_release_event.connect (() => {
+                toggle_btn_select();
+                return true;
+            });
         }
 
         /***********************************
@@ -330,6 +346,11 @@ namespace App.Views {
             file_manager.delete_photo (photo);
         }
 
+
+        public void activate_selection_btn(bool multiple) {
+            btn_select.set_visible(multiple);
+        }
+
         /******************************************
                         Delete button
             ******************************************/
@@ -378,6 +399,39 @@ namespace App.Views {
             btn_view.valign = Gtk.Align.START;
             btn_view.can_default = true;
 
+        }
+
+        //
+        //
+        private void setup_select_btn () {
+            Gtk.Image buttonIcon = new Gtk.Image ();
+            buttonIcon.gicon = new ThemedIcon ("object-select-symbolic");
+            btn_select = new Gtk.ToggleButton();
+            btn_select.set_image(buttonIcon);
+            btn_select.set_always_show_image(true);
+            btn_select.get_style_context ().add_class ("button-action");
+            btn_select.get_style_context ().remove_class ("button");
+            btn_select.get_style_context ().add_class ("transition");
+            btn_select.can_focus = false;
+            btn_select.margin = 8;
+            btn_select.halign = Gtk.Align.START;
+            btn_select.valign = Gtk.Align.START;
+            btn_select.can_default = true;
+            btn_select.set_no_show_all(true);
+            btn_select.set_visible(false);
+        }
+
+        private void toggle_btn_select () {
+            btn_select.set_active(!btn_select.get_active());
+            toggled_multiple(btn_select.get_active());
+        }
+
+        public Photo get_photo () {
+            return this.photo;
+        }
+
+        public bool is_multiple_select () {
+            return btn_select.get_visible();
         }
     }
 
