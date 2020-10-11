@@ -19,6 +19,7 @@ using App.Configs;
 using App.Utils;
 using App.Models;
 using App.Connection;
+using App.Widgets;
 
 namespace App.Views {
 
@@ -31,6 +32,7 @@ namespace App.Views {
 
         public signal void close_multiple_view ();
         public signal void multiple_selection (bool isMultiple);
+        public signal void delete_selected (CardPhotoView photo_card);
 
         private unowned List<CardPhotoView?>        selected_photos;
         private bool                                is_multiple;
@@ -39,6 +41,7 @@ namespace App.Views {
         private Gtk.Button                          generate_btn;
         private Gtk.ProgressBar                     image_bar;   // Single image Generation bar
         private Gtk.ProgressBar                     global_bar;   // Global Generation bar
+        private MultiplePreviewWidget               images_preview;
 
         /**
          * Constructs a new {@code MultipleWallpaperView} object.
@@ -87,12 +90,19 @@ namespace App.Views {
             global_bar.get_style_context ().add_class ("global_progress_bar");
             global_bar.set_no_show_all(true);
 
+            images_preview = new MultiplePreviewWidget();
+            images_preview.delete_preview_image.connect ((photo_card) => {
+                photo_card.set_select (false);
+                delete_selected (photo_card);
+            });
+
             attach (label_info,         0, 0, 3, 1);
             attach (mode_switch,        0, 1, 3, 1);
             attach (generate_label,     0, 2, 2, 1);
             attach (generate_btn,       2, 2, 1, 1);
             attach (image_bar,          0, 3, 3, 1);
             attach (global_bar,         0, 4, 3, 1);
+            attach (images_preview,     0, 5, 3, 1);
 
         }
 
@@ -102,6 +112,7 @@ namespace App.Views {
 
             generate_label.set_text(selected_num);
             update_visibility ();
+            images_preview.generate (photos);
         }
 
         public void generate_multiple_wallpaper() {

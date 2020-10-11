@@ -39,6 +39,7 @@ sources = files(
     'Widgets/HeaderBar.vala',
     'Widgets/LabelTop.vala',
     'Widgets/LabelTotalResults.vala',
+    'Widgets/MultiplePreviewWidget.vala',
 
     'Services/Connection.vala',
 

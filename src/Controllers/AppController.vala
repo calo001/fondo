@@ -168,6 +168,10 @@ namespace App.Controllers {
                 history_view.setMultiple (ismultiple);
             });
 
+            multiple_wallpaper.delete_selected.connect ( (photo_card) => {
+                view.remove_selected_card (photo_card);
+            });
+
             view.multiple_selected.connect ( (photo_list) => {
                 multiple_wallpaper.update_photos(photo_list);
             });
