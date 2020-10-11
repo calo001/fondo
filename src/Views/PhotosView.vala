@@ -40,7 +40,7 @@ namespace App.Views {
         // Signals and updates on user changed multiple selection
         public signal void multiple_selected (List<CardPhotoView?> photos);
         private List<CardPhotoView?> selected_photos = new List<CardPhotoView?> ();
-        bool active_multiple_selection = false;
+        bool active_multiple_selection = true;
 
         private unowned List<Photo?> photos;
 

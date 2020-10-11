@@ -229,11 +229,7 @@ namespace App.Views {
                 if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
                     popup.set_visible (true);
                 } else {
-                    if (is_multiple_select()) {
-                        toggle_btn_select ();
-                    } else {
-                        setup_wallpaper ();
-                    }
+                    setup_wallpaper ();
                 }
                 return true;
             } );

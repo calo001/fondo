@@ -50,7 +50,7 @@ namespace App.Views {
             this.set_column_spacing (50);
             this.set_row_spacing (10);
 
-            is_multiple = false;
+            is_multiple = true;
 
             label_info = new Gtk.Label ("Wallpaper Slideshow");
             label_info.get_style_context ().add_class ("mw_head");
@@ -60,6 +60,7 @@ namespace App.Views {
             mode_switch.secondary_icon_tooltip_text = "Set wallpaper slideshow";
             mode_switch.valign = Gtk.Align.CENTER;
             mode_switch.halign = Gtk.Align.CENTER;
+            mode_switch.active = true;
             mode_switch.button_release_event.connect( () => {
                 is_multiple = !mode_switch.active;
                 multiple_selection(is_multiple);
@@ -97,13 +98,14 @@ namespace App.Views {
             });
 
             attach (label_info,         0, 0, 3, 1);
-            attach (mode_switch,        0, 1, 3, 1);
+            // attach (mode_switch,        0, 1, 3, 1);
             attach (generate_label,     0, 2, 2, 1);
             attach (generate_btn,       2, 2, 1, 1);
             attach (image_bar,          0, 3, 3, 1);
             attach (global_bar,         0, 4, 3, 1);
             attach (images_preview,     0, 5, 3, 1);
 
+            update_visibility();
         }
 
         public void update_photos(List<CardPhotoView?> photos) {
