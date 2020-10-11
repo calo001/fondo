@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-18 22:57-0600\n"
+"POT-Creation-Date: 2020-10-10 22:00-0500\n"
 "PO-Revision-Date: 2020-01-19 14:15+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
-"Language:Italian\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -231,3 +231,11 @@ msgstr "Ritratto"
 #: src/Configs/Strings.vala:81
 msgid "Any"
 msgstr "Qualsiasi"
+
+#: src/Configs/Strings.vala:82
+msgid "Delete a photo from history"
+msgstr ""
+
+#: src/Configs/Strings.vala:83
+msgid "Are you sure you want to delete the photo from history?"
+msgstr ""
