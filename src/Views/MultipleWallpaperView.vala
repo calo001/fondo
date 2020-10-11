@@ -55,21 +55,6 @@ namespace App.Views {
             label_info = new Gtk.Label ("Wallpaper Slideshow");
             label_info.get_style_context ().add_class ("mw_head");
 
-            var mode_switch = new Granite.ModeSwitch.from_icon_name ("video-display-symbolic", "view-grid-symbolic");
-            mode_switch.primary_icon_tooltip_text = "Set single wallpaper";
-            mode_switch.secondary_icon_tooltip_text = "Set wallpaper slideshow";
-            mode_switch.valign = Gtk.Align.CENTER;
-            mode_switch.halign = Gtk.Align.CENTER;
-            mode_switch.active = true;
-            mode_switch.button_release_event.connect( () => {
-                is_multiple = !mode_switch.active;
-                multiple_selection(is_multiple);
-                update_visibility ();
-
-                return true;
-            });
-
-
             generate_btn = new Gtk.Button();
             generate_btn.get_style_context ().add_class ("generate_btn");
             generate_btn.set_label("Generate!");
@@ -77,7 +62,6 @@ namespace App.Views {
             generate_btn.tooltip_text = "Generate";
             generate_btn.set_no_show_all(true);
             generate_btn.clicked.connect ( ()=> {
-                print("Generate!!!!");
                 generate_multiple_wallpaper();
             });
 
@@ -98,7 +82,6 @@ namespace App.Views {
             });
 
             attach (label_info,         0, 0, 3, 1);
-            // attach (mode_switch,        0, 1, 3, 1);
             attach (generate_label,     0, 2, 2, 1);
             attach (generate_btn,       2, 2, 1, 1);
             attach (image_bar,          0, 3, 3, 1);
@@ -132,7 +115,7 @@ namespace App.Views {
                 string? url_photo = connection.get_url_photo(photo.links.download_location);
                 Wallpaper wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name, image_bar);
                 if (wallpaper.download_picture()) {
-                    print("Success!!: %s\n", wallpaper.full_picture_path);
+                    print("Success!: %s\n", wallpaper.full_picture_path);
                     wallpaper_list.append(wallpaper);
                     global_progress += progress_step;
                 } else {

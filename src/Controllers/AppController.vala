@@ -170,6 +170,8 @@ namespace App.Controllers {
 
             multiple_wallpaper.delete_selected.connect ( (photo_card) => {
                 view.remove_selected_card (photo_card);
+                search_view.remove_selected_card (photo_card);
+                history_view.remove_selected_card (photo_card);
             });
 
             view.multiple_selected.connect ( (photo_list) => {

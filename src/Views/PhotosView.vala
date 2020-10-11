@@ -145,8 +145,10 @@ namespace App.Views {
         }
 
         public void remove_selected_card (CardPhotoView photo_card) {
-            this.selected_photos.remove(photo_card);
-            multiple_selected(selected_photos);
+            if (this.selected_photos.index(photo_card) >= 0) {
+                this.selected_photos.remove(photo_card);
+                multiple_selected(selected_photos);
+            }
         }
 
         CompareFunc<Photo?> compare = (a, b) => {
