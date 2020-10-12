@@ -31,16 +31,14 @@ namespace App.Views {
     public class MultipleWallpaperView : Gtk.Grid {
 
         public signal void close_multiple_view ();
-        public signal void multiple_selection (bool isMultiple);
-        public signal void delete_selected (CardPhotoView photo_card);
 
-        private unowned List<CardPhotoView?>        selected_photos;
+        private List<CardPhotoView?>                selected_photos;
         private bool                                is_multiple;
         private Gtk.Label                           label_info;
         private Gtk.Label                           generate_label;
         private Gtk.Button                          generate_btn;
         private Gtk.ProgressBar                     image_bar;   // Single image Generation bar
-        private Gtk.ProgressBar                     global_bar;   // Global Generation bar
+        private Gtk.ProgressBar                     global_bar;  // Global Generation bar
         private MultiplePreviewWidget               images_preview;
 
         /**
@@ -49,6 +47,7 @@ namespace App.Views {
         public MultipleWallpaperView () {
             this.set_column_spacing (50);
             this.set_row_spacing (10);
+            selected_photos = new List<CardPhotoView>();
 
             is_multiple = true;
 
@@ -78,7 +77,7 @@ namespace App.Views {
             images_preview = new MultiplePreviewWidget();
             images_preview.delete_preview_image.connect ((photo_card) => {
                 photo_card.set_select (false);
-                delete_selected (photo_card);
+                remove_card(photo_card);
             });
 
             attach (label_info,         0, 0, 3, 1);
@@ -91,13 +90,23 @@ namespace App.Views {
             update_visibility();
         }
 
-        public void update_photos(List<CardPhotoView?> photos) {
-            selected_photos = photos;
-            string selected_num = "%d selected".printf(get_num_selected());
 
+        public void remove_card (CardPhotoView new_card) {
+            selected_photos.remove(new_card);
+
+            string selected_num = "%d selected".printf(get_num_selected());
             generate_label.set_text(selected_num);
             update_visibility ();
-            images_preview.generate (photos);
+            images_preview.delete_card(new_card);
+        }
+
+        public void add_card (CardPhotoView new_card) {
+            selected_photos.append(new_card);
+
+            string selected_num = "%d selected".printf(get_num_selected());
+            generate_label.set_text(selected_num);
+            update_visibility ();
+            images_preview.attach_photo (new_card);
         }
 
         public void generate_multiple_wallpaper() {
@@ -183,5 +192,6 @@ namespace App.Views {
             notification.set_icon (icon);
             GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
+
     }
 }

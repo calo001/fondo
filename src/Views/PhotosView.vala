@@ -38,8 +38,9 @@ namespace App.Views {
         public signal void applying_filter ();
 
         // Signals and updates on user changed multiple selection
-        public signal void multiple_selected (List<CardPhotoView?> photos);
-        private List<CardPhotoView?> selected_photos = new List<CardPhotoView?> ();
+        public signal void selected_card (CardPhotoView photo_card);
+        public signal void removed_card (CardPhotoView photo_card);
+
         bool active_multiple_selection = true;
 
         private unowned List<Photo?> photos;
@@ -127,11 +128,10 @@ namespace App.Views {
                 this.add(card);
                 card.toggled_multiple.connect( ( is_selected ) => {
                     if (is_selected) {
-                        selected_photos.append(card);
+                        selected_card(card);
                     } else {
-                         selected_photos.remove(card);
+                        removed_card(card);
                     }
-                    multiple_selected(selected_photos);
                 });
                 card.show_all();
             }
@@ -145,10 +145,10 @@ namespace App.Views {
         }
 
         public void remove_selected_card (CardPhotoView photo_card) {
-            if (this.selected_photos.index(photo_card) >= 0) {
-                this.selected_photos.remove(photo_card);
-                multiple_selected(selected_photos);
-            }
+            // if (this.selected_photos.index(photo_card) >= 0) {
+            //     this.selected_photos.remove(photo_card);
+            //     multiple_selected(selected_photos);
+            // }
         }
 
         CompareFunc<Photo?> compare = (a, b) => {

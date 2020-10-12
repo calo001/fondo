@@ -30,50 +30,19 @@ namespace App.Widgets {
 
         public signal void delete_preview_image(CardPhotoView photo_card);
 
-        private List<CardPhotoView> current_photo_cards;
-
+        private List<CardPhotoView>                          current_photo_cards;
+        private Gee.HashMap<CardPhotoView, Gtk.FlowBoxChild> card_widget_map;
         public MultiplePreviewWidget () {
             this.set_max_children_per_line(2);
             this.set_min_children_per_line(2);
             this.get_style_context ().add_class ("images_preview_grid");
 
             current_photo_cards = new List<CardPhotoView>();
+            card_widget_map = new Gee.HashMap<CardPhotoView, Gtk.FlowBoxChild>();
         }
 
 
-        public void find_changed_element(List<CardPhotoView> photos) {
-            List<CardPhotoView> new_elements = new List<CardPhotoView>();
-            for (int i = 0; i < photos.length(); i++) {
-                bool included = false;
-                for (int j = 0; j < current_photo_cards.length(); j++) {
-                    if (photos.nth_data(i) == current_photo_cards.nth_data(j)) {
-                        included |= true;
-                        break;
-                    }
-                }
-                if (!included) {
-                    new_elements.append(photos.nth_data(i));
-                }
-            }
-            add_elements(new_elements);
-        }
-
-
-        public void add_elements (List<CardPhotoView> photos) {
-            photos.foreach ((photo_card) => {
-                attach_photo(0, photo_card);
-                current_photo_cards.append(photo_card);
-            });
-        }
-
-
-        public void generate (List<CardPhotoView> photos) {
-            find_changed_element(photos);
-        }
-
-
-        private void attach_photo (int photo_num, CardPhotoView single_card) {
-            print("2F - %s\n",single_card == null ? "true" : "false");
+        public void attach_photo (CardPhotoView single_card) {
             File file_photo = single_card.get_file_photo();
             Photo photo = single_card.get_photo();
             var image = new Granite.AsyncImage(true, true);
@@ -82,9 +51,6 @@ namespace App.Widgets {
             image.get_style_context ().add_class ("gradient_back");
             var w_max = 80;
             var h_max = 60;
-            // var w_photo = (int) w_max;
-            // var h_photo = (int) h_max;
-
 
             var w_photo = (int) photo.width;
             var h_photo = (int) photo.height;
@@ -114,6 +80,7 @@ namespace App.Widgets {
             var child = new Gtk.FlowBoxChild();
             child.add(overlay);
             child.set_visible(true);
+            card_widget_map.set(single_card, child);
 
             var btn_delete = new Gtk.Button.from_icon_name ("window-close-symbolic");
             btn_delete.get_style_context ().add_class ("button-action");
@@ -124,7 +91,6 @@ namespace App.Widgets {
             btn_delete.can_default = true;
             btn_delete.clicked.connect (() => {
                 delete_preview_image(single_card);
-                delete_children_special(child);
                 current_photo_cards.remove(single_card);
             });
 
@@ -135,9 +101,10 @@ namespace App.Widgets {
             show_all();
         }
 
-        private void delete_children_special (Gtk.Widget element) {
-            element.set_no_show_all(true);
-            element.set_visible(false);
+        public void delete_card (CardPhotoView card) {
+            current_photo_cards.remove(card);
+            var child_widget = card_widget_map.get(card);
+            this.remove(child_widget);
         }
 
         private static int[] scale (int w_h_photo, int w_h_card, int width, int height) {
