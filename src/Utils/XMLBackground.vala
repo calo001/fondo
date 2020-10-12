@@ -111,19 +111,26 @@ namespace App.Utils {
 
         private string generate_static (string background, int duration) {
             string duration_str = "%g.0".printf (duration);
+            string safe_background = scape_string(background);
             return "<static>\n" +
                 "\t<duration>" + duration_str + "</duration>\n" +
-                "\t<file>" + background + "</file>\n" +
+                "\t<file>" + safe_background + "</file>\n" +
                 "</static>\n";
         }
 
         private string generate_transition (string background_from, string background_to, int duration) {
             string duration_str = "%g.0".printf (duration);
+            string safe_bkg_from = scape_string(background_from);
+            string safe_bkg_to = scape_string(background_to);
             return "<transition>\n" +
                 "\t<duration>" + duration_str + "</duration>\n" +
-                "\t<from>" + background_from + "</from>\n" +
-                "\t<to>" + background_to + "</to>\n" +
+                "\t<from>" + safe_bkg_from + "</from>\n" +
+                "\t<to>" + safe_bkg_to + "</to>\n" +
                 "</transition>\n";
+        }
+
+        private string scape_string(string unsafe_string) {
+            return GLib.Markup.escape_text(unsafe_string);
         }
     }
 }
