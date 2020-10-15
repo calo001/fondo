@@ -229,11 +229,7 @@ namespace App.Views {
                 if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
                     popup.set_visible (true);
                 } else {
-                    if (is_multiple_select()) {
-                        toggle_btn_select ();
-                    } else {
-                        setup_wallpaper ();
-                    }
+                    setup_wallpaper ();
                 }
                 return true;
             } );
@@ -426,12 +422,24 @@ namespace App.Views {
             toggled_multiple(btn_select.get_active());
         }
 
+        public void set_select (bool selected) {
+            btn_select.set_active(selected);
+        }
+
         public Photo get_photo () {
             return this.photo;
         }
 
+        public File get_file_photo () {
+            return this.file_photo;
+        }
+
         public bool is_multiple_select () {
             return btn_select.get_visible();
+        }
+
+        public string get_string () {
+            return this.photo.id;
         }
     }
 

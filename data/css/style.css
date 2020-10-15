@@ -313,6 +313,14 @@ progressbar trough {
   border: none;
 }
 
+.images_preview_grid {
+  padding: 0 2em 0 2em;
+}
+
+.image_grid {
+  margin: 0.5em;
+}
+
 .btn-orientation:checked {
   background: rgba(255,255,255,0.1);
   box-shadow: 0 7px 12px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
