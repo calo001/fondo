@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-10 22:00-0500\n"
-"PO-Revision-Date: 2020-01-19 14:10+0100\n"
+"PO-Revision-Date: 2020-10-16 22:02+0200\n"
 "Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -236,8 +236,8 @@ msgstr "Alles"
 
 #: src/Configs/Strings.vala:82
 msgid "Delete a photo from history"
-msgstr ""
+msgstr "Ein Foto aus dem Verlauf entfernen"
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
-msgstr ""
+msgstr "Sind Sie sicher, dass Sie das Foto aus dem Verlauf entfernen möchten?"
