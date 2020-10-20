@@ -90,10 +90,12 @@ namespace App.Views {
             var download_lbl = new Gtk.Label ("Preparing slideshow ...");
             download_lbl.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             download_lbl.margin_start = 8;
+            download_lbl.set_hexpand(true);
 
             global_bar = new Gtk.ProgressBar ();
             global_bar.get_style_context ().add_class ("global_progress_bar");
             global_bar.margin_start = 8;
+            global_bar.set_hexpand(true);
 
             download_container.attach (loading_spinner,    0, 1, 1, 2);
             download_container.attach (download_lbl,       1, 1, 1, 1);
