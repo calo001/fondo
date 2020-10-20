@@ -298,7 +298,10 @@ namespace App.Views {
             revealer.set_reveal_child (true);
 
             string? url_photo = connection.get_url_photo(photo.links.download_location);
-            wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name, bar);
+            wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
+            wallpaper.on_progress.connect ((p) => {
+                update_global_progress (p, wallpaper);
+            });
             wallpaper.finish_download.connect (() => {
                 this.set_sensitive (true);
                 JsonManager jsonManager = new JsonManager ();
@@ -306,6 +309,20 @@ namespace App.Views {
                 jsonManager.save_history (history);
             });
             wallpaper.update_wallpaper (opt);
+        }
+
+        /*
+         * Set progress for bar widget and Granite service
+         */
+        private void update_global_progress (double progress, Wallpaper wallpaper) {
+            bar.set_fraction (progress);
+            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
+                try {
+                    Granite.Services.Application.set_progress.end (res);
+                } catch (GLib.Error e) {
+                    critical (e.message);
+                }
+            });
         }
 
         /*************************************************
@@ -401,7 +418,7 @@ namespace App.Views {
         //
         private void setup_select_btn () {
             Gtk.Image buttonIcon = new Gtk.Image ();
-            buttonIcon.gicon = new ThemedIcon ("object-select-symbolic");
+            buttonIcon.gicon = new ThemedIcon ("view-paged-symbolic");
             btn_select = new Gtk.ToggleButton();
             btn_select.set_image(buttonIcon);
             btn_select.set_always_show_image(true);
@@ -418,7 +435,14 @@ namespace App.Views {
         }
 
         private void toggle_btn_select () {
-            btn_select.set_active(!btn_select.get_active());
+            if (btn_select.get_active()) {
+                btn_select.get_style_context ().remove_class ("button-clicked");
+                set_select(false);
+            } else {
+                btn_select.get_style_context ().add_class ("button-clicked");
+                set_select(true);
+            }
+            
             toggled_multiple(btn_select.get_active());
         }
 

@@ -147,7 +147,10 @@ namespace App.Windows {
         *****************************/
         public void load_content () {
             string? url_photo = connection.get_url_photo(photo.links.download_location);
-            wallpaper = new Wallpaper(url_photo, photo.id, photo.user.name, bar);
+            wallpaper = new Wallpaper(url_photo, photo.id, photo.user.name);
+            wallpaper.on_progress.connect ((p) => {
+                update_global_progress (p , wallpaper);
+            });
             wallpaper.download_picture ();
             var path_wallpaper = wallpaper.full_picture_path;
 
@@ -167,6 +170,22 @@ namespace App.Windows {
             // Show image
             image.set_from_file_async.begin (file_photo, w_photo, h_photo, true);
             stack.set_visible_child_name ("image");
+        }
+
+        /*
+         * Set progress for bar widget and Granite service
+         */
+        private void update_global_progress (double progress, Wallpaper wallpaper) {
+            bar.set_fraction (progress);
+            print ("\n\nProgreso: ");
+            print (progress.to_string ());
+            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
+                try {
+                    Granite.Services.Application.set_progress.end (res);
+                } catch (GLib.Error e) {
+                    critical (e.message);
+                }
+            });
         }
 
         /***************************

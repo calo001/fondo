@@ -81,6 +81,6 @@ namespace App.Configs {
         public abstract const string ANY = _("Any");
         public abstract const string DELETE_PHOTO_DIALOG_TITLE = _("Delete a photo from history");
         public abstract const string DELETE_PHOTO_DIALOG_MESSAGE = _("Are you sure you want to delete the photo from history?");
-
+        public abstract const string WALLPAPER_SLIDESHOW = _("Wallpaper Slideshow");
     }
 }

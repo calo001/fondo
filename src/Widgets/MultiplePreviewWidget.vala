@@ -33,9 +33,10 @@ namespace App.Widgets {
         private List<CardPhotoView>                          current_photo_cards;
         private Gee.HashMap<CardPhotoView, Gtk.FlowBoxChild> card_widget_map;
         public MultiplePreviewWidget () {
-            this.set_max_children_per_line(2);
-            this.set_min_children_per_line(2);
+            this.set_max_children_per_line(3);
+            this.set_min_children_per_line(3);
             this.get_style_context ().add_class ("images_preview_grid");
+            this.homogeneous = true;
 
             current_photo_cards = new List<CardPhotoView>();
             card_widget_map = new Gee.HashMap<CardPhotoView, Gtk.FlowBoxChild>();
@@ -47,8 +48,6 @@ namespace App.Widgets {
             Photo photo = single_card.get_photo();
             var image = new Granite.AsyncImage(true, true);
             image.get_style_context(). add_class ("image_grid");
-            image.get_style_context ().add_class ("backimg");
-            image.get_style_context ().add_class ("gradient_back");
             var w_max = 80;
             var h_max = 60;
 

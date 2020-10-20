@@ -150,6 +150,12 @@ progressbar trough {
     border: none;
 }
 
+.button-clicked image {
+    animation-name: zoom;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+}
+
 .photo:hover {
     box-shadow: 0 14px 28px @photoLight1, 0 10px 10px @photoLight2;
     background: linear-gradient(-45deg, @gradientPrimary2 0%, @gradientPrimary1 100%);
@@ -189,6 +195,10 @@ progressbar trough {
 	padding: 5px;
     box-shadow: none;
     background-color: rgba(0,0,0,0.2);
+}
+
+.button-action image {
+    color: #FFFFFF;
 }
 
 .label_dimens {
@@ -281,12 +291,15 @@ progressbar trough {
 .active image {
   animation-name: fancy_turn;
   animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  
+  animation-timing-function: ease-in-out; 
 }
 
 .multiple_wallpaper_popup {
-  padding: 1em 0 1em 0;
+  padding: 1em;
+}
+
+.multiple_wallpaper_container {
+  padding: 1em 0;
 }
 
 .mw_head {
@@ -300,10 +313,19 @@ progressbar trough {
   padding-left: 1em;
 }
 
-.generate_btn {
-  margin-right: 1em;
+.action_suggest_btn {
+  background: linear-gradient(@gradientAccent1, @gradientAccent2);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0, 0, 8px, 8px;
+  padding: 0.5em;
 }
 
+.item_added image {
+    animation-name: fancy_turn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out; 
+}
 
 .btn-orientation {
   border-radius: 50%;
@@ -314,7 +336,7 @@ progressbar trough {
 }
 
 .images_preview_grid {
-  padding: 0 2em 0 2em;
+  padding: 0 1em 0 1em;
 }
 
 .image_grid {

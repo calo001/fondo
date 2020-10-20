@@ -41,11 +41,11 @@
   }
   
   
-  @keyframes opacity_fade_out {
-      0%   { opacity: 1;}
-      30%  { opacity: 0.3;}
-      60%  { opacity: 1;}
-      100% { opacity: 0;}
+@keyframes opacity_fade_out {
+    0%   { opacity: 1;}
+    30%  { opacity: 0.3;}
+    60%  { opacity: 1;}
+    100% { opacity: 0;}
   }
 
 @keyframes fancy_turn {
@@ -54,4 +54,11 @@
     40%  { -gtk-icon-transform: rotate(0deg); }
     80%  { -gtk-icon-transform: rotate(30deg); }
     100% { -gtk-icon-transform: rotate(0deg); }
+}
+
+@keyframes zoom {
+    0%   { -gtk-icon-transform: scale(1); }
+    20%  { -gtk-icon-transform: scale(0.8); }
+    50%  { -gtk-icon-transform: scale(1.2); }
+    100% { -gtk-icon-transform: scale(1); }
 }
