@@ -33,15 +33,26 @@
         <p>Have a minimalist, simple and elegant interface, additionally, you can change from light mode to dark mode as you prefer.</p>
         <p>Main features:</p>
         <ul>
-          <li>To infinity and beyond!: Use the infinite scroll to load more photos</li>
-          <li>Find out what you like: Search by categories or type in the search bar</li>
-          <li>Keep your favorite photos with you: Every new wallpaper is saved in the history</li>
-          <li>Share with your friends: Select a variety of options for sharing an Unsplash link to the photo</li>
-          <li>Filter by orientation: Portrait, Landscape or Any</li>
+          <li>🌀️ To infinity and beyond!: Use the infinite scroll to load more photos</li>
+          <li>🖼️ Find out what you like: Search by categories or type in the search bar</li>
+          <li>🕚️ Keep your favorite photos with you: Every new wallpaper is saved in the history</li>
+          <li>📬️ Share with your friends: Select a variety of options for sharing an Unsplash link to the photo</li>
+          <li>🔄️ Filter by orientation: Portrait, Landscape or Any</li>
         </ul>
     </description>
     <releases>
-    <release version="1.3.9" date="2020-05-23">
+      <release version="1.3.10" date="2020-10-10">
+        <description>
+          <p>New and updated languages</p>
+          <ul>
+            <li>Croatian by Milo Ivir</li>
+            <li>Italian by Albano Battistella</li>
+            <li>Portuguese Portugal by André Barata</li>
+            <li>Brazilian Portuguese by costaht</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.3.9" date="2020-05-23">
         <description>
           <p>Free up space!</p>
           <ul>
