@@ -63,9 +63,9 @@ namespace App.Views {
 
             generate_btn = new Gtk.Button();
             generate_btn.get_style_context ().add_class ("action_suggest_btn");
-            generate_btn.set_label("Generate!");
+            generate_btn.set_label(S.SLIDESHOW_GENERATE_BTN);
             generate_btn.valign = Gtk.Align.CENTER;
-            generate_btn.tooltip_text = "Generate";
+            generate_btn.tooltip_text = S.SLIDESHOW_GENERATE_TOOLTIP;
             generate_btn.set_no_show_all(true);
             generate_btn.clicked.connect ( ()=> {
                 show_preparing_progress (STACK_SLIDESHOW_DOWNLADING);
@@ -77,7 +77,7 @@ namespace App.Views {
             image_info.xalign = 1;
             image_info.expand = true;
 
-            generate_label = new Gtk.Label ("Select 1 or more photos by clicking on ");
+            generate_label = new Gtk.Label (S.SLIDESHOW_SELECT_ONE);
             generate_label.get_style_context ().add_class ("mw_info");
             generate_label.set_no_show_all(true);
             generate_label.xalign = 0;
@@ -87,7 +87,7 @@ namespace App.Views {
             download_container = new Gtk.Grid ();
             download_container.get_style_context ().add_class ("multiple_wallpaper_popup");
 
-            var download_lbl = new Gtk.Label ("Preparing slideshow ...");
+            var download_lbl = new Gtk.Label (S.SLIDESHOW_GENERATE_PROGRESS);
             download_lbl.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             download_lbl.margin_start = 8;
             download_lbl.set_hexpand(true);
@@ -129,9 +129,9 @@ namespace App.Views {
 
             string selected_num = "";
             if (get_num_selected () > 0) {
-                selected_num = "%d photos selected".printf(get_num_selected());
+                selected_num = S.SLIDESHOW_SELECTED_N.printf(get_num_selected());
             } else {
-                selected_num = "Select 1 or more photos by clicking on ";
+                selected_num = S.SLIDESHOW_SELECT_ONE;
             }
 
             generate_label.set_text(selected_num);
@@ -142,7 +142,7 @@ namespace App.Views {
         public void add_card (CardPhotoView new_card) {
             selected_photos.append(new_card);
 
-            string selected_num = "%d photos selected".printf(get_num_selected());
+            string selected_num = S.SLIDESHOW_SELECTED_N.printf(get_num_selected());
             generate_label.set_text(selected_num);
             update_visibility ();
             images_preview.attach_photo (new_card);
@@ -224,7 +224,7 @@ namespace App.Views {
 
         private void update_global_progress (double progress, Wallpaper wallpaper) {
             global_bar.set_fraction (progress);
-            print ("\n\nProgreso: ");
+            print ("\n\nProgress: ");
             print (progress.to_string ());
             Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
                 try {
@@ -236,8 +236,8 @@ namespace App.Views {
         }
 
         private void show_notify_success () {
-            var notification = new Notification ("Wallpaper slideshow ready!");
-            notification.set_body ("Your new wallpaper slideshow is downloaded and set!");
+            var notification = new Notification (S.SLIDESHOW_NOTIFY_HEAD);
+            notification.set_body (S.SLIDESHOW_NOTIFY_BODY);
             var icon = new ThemedIcon ("com.github.calo001.fondo.success");
             notification.set_icon (icon);
             GLib.Application.get_default ().send_notification ("notify.app", notification);
