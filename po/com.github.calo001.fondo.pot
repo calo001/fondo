@@ -240,3 +240,36 @@ msgstr ""
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
 msgstr ""
+
+#: src/Configs/Strings.vala:84
+msgid "Wallpaper Slideshow"
+msgstr ""
+
+#: src/Configs/Strings.vala:85
+msgid "Select 1 or more photos by clicking on "
+msgstr ""
+
+#: src/Configs/Strings.vala:86
+msgid "Generate!"
+msgstr ""
+
+#: src/Configs/Strings.vala:87
+msgid "Generate slideshow"
+msgstr ""
+
+#: src/Configs/Strings.vala:88
+#, c-format
+msgid "%d photos selected"
+msgstr ""
+
+#: src/Configs/Strings.vala:89
+msgid "Your new wallpaper slideshow is downloaded and set!"
+msgstr ""
+
+#: src/Configs/Strings.vala:90
+msgid "Wallpaper slideshow ready!"
+msgstr ""
+
+#: src/Configs/Strings.vala:91
+msgid "Preparing slideshow ..."
+msgstr ""

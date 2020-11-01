@@ -24,6 +24,7 @@
         <file alias="128-com.github.calo001.fondo-success.svg" compressed="true" preprocess="xml-stripblanks">images/icons/128/com.github.calo001.fondo.success.svg</file>
 
         <file alias="unsplashlogo.svg" compressed="true" preprocess="xml-stripblanks">images/unsplashlogo.svg</file>
+        <file alias="fondo-slideshow.svg" compressed="true" preprocess="xml-stripblanks">images/fondo-slideshow.svg</file>
         
         <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">images/online-account-facebook.svg</file>
         <file alias="online-account-reddit.svg" compressed="true" preprocess="xml-stripblanks">images/online-account-reddit.svg</file>

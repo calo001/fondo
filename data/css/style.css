@@ -150,6 +150,12 @@ progressbar trough {
     border: none;
 }
 
+.button-clicked image {
+    animation-name: zoom;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+}
+
 .photo:hover {
     box-shadow: 0 14px 28px @photoLight1, 0 10px 10px @photoLight2;
     background: linear-gradient(-45deg, @gradientPrimary2 0%, @gradientPrimary1 100%);
@@ -191,6 +197,10 @@ progressbar trough {
     background-color: rgba(0,0,0,0.2);
 }
 
+.button-action image {
+    color: #FFFFFF;
+}
+
 .label_dimens {
     color: #FFFFFF;
     border-radius: 10px;
@@ -200,7 +210,7 @@ progressbar trough {
     background-color: rgba(0,0,0,0.2);
 }
 
-.button-action:hover {
+.button-action:hover, .button-action:checked {
     background: linear-gradient(@gradientAccent1, @gradientAccent2);
     color: #FFFFFF;
     border: none;
@@ -281,8 +291,40 @@ progressbar trough {
 .active image {
   animation-name: fancy_turn;
   animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  
+  animation-timing-function: ease-in-out; 
+}
+
+.multiple_wallpaper_popup {
+  padding: 1em;
+}
+
+.multiple_wallpaper_container {
+  padding: 1em 0;
+}
+
+.mw_head {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 4px;
+}
+
+.mw_info {
+  font-size: 1.2em;
+  padding-left: 1em;
+}
+
+.action_suggest_btn {
+  background: linear-gradient(@gradientAccent1, @gradientAccent2);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0, 0, 8px, 8px;
+  padding: 0.5em;
+}
+
+.item_added image {
+    animation-name: fancy_turn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out; 
 }
 
 .btn-orientation {
@@ -291,6 +333,14 @@ progressbar trough {
   background: none;
   box-shadow: none;
   border: none;
+}
+
+.images_preview_grid {
+  padding: 0 1em 0 1em;
+}
+
+.image_grid {
+  margin: 0.5em;
 }
 
 .btn-orientation:checked {

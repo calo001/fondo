@@ -29,6 +29,7 @@ namespace App.Widgets {
      */
     public class HeaderBar : Gtk.HeaderBar {
         public Gtk.SearchEntry      search {get; set;}
+        private Gtk.Button          multiple_menu; 
         public signal void          search_view ();
         public signal void          search_activated (string value);
 
@@ -38,7 +39,7 @@ namespace App.Widgets {
          * @see App.Configs.Properties
          * @see icon_settings
          */
-        public HeaderBar () {
+        public HeaderBar (MultipleWallpaperView multiple_wallpaper) {
             this.set_title ("Fondo");
             this.show_close_button = true;
 
@@ -113,9 +114,25 @@ namespace App.Widgets {
                 pop_menu.popup ();
             });
 
+
+            Gtk.Image multiple_icon = new Gtk.Image ();
+            multiple_icon.gicon = new ThemedIcon ("emblem-photos-symbolic");
+
+            multiple_menu = new Gtk.Button();
+            var popup_multiple = new MultipleWallpaperPopover (multiple_menu, multiple_wallpaper);
+            multiple_menu.set_image(multiple_icon);
+            multiple_menu.set_always_show_image(true);
+            multiple_menu.valign = Gtk.Align.CENTER;
+            multiple_menu.tooltip_text = "Selección múltiple";
+            multiple_menu.clicked.connect ( ()=> {
+               popup_multiple.popup ();
+            });
+
+
             this.set_custom_title (search);
             this.pack_end (menu_button);
             this.pack_end (mode_switch);
+            this.pack_end (multiple_menu);
         }
 
         /************************ 

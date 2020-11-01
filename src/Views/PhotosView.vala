@@ -37,6 +37,12 @@ namespace App.Views {
         public string filtermodeview { get; set; }
         public signal void applying_filter ();
 
+        // Signals and updates on user changed multiple selection
+        public signal void selected_card (CardPhotoView photo_card);
+        public signal void removed_card (CardPhotoView photo_card);
+
+        bool active_multiple_selection = true;
+
         private unowned List<Photo?> photos;
 
         public PhotosView () {
@@ -61,13 +67,35 @@ namespace App.Views {
         }
 
         /********************************************
+          Updates all childs to show selection button
+        ********************************************/
+        public void setMultiple (bool isMultiple) {
+        // iterar en photos y habilitar el boton de selección
+            active_multiple_selection = isMultiple;
+            forall ( ( child ) => {
+                var flowboxchild = ((Gtk.FlowBoxChild) child).get_child();
+                CardPhotoView photoCard = ((CardPhotoView) flowboxchild);
+                photoCard.activate_selection_btn(active_multiple_selection);
+            });
+
+            if (isMultiple) {
+                this.set_selection_mode(Gtk.SelectionMode.MULTIPLE);
+            }
+            else {
+                this.set_selection_mode(Gtk.SelectionMode.NONE);
+            }
+        }
+
+        /********************************************
            Method to set visibility to childflowbox
         ********************************************/
         private void updateVisibility () {
             forall ( ( child ) => {
                 var flowboxchild = ((Gtk.FlowBoxChild) child).get_child();
-                var photo_view_size = ((CardPhotoView) flowboxchild).size();
+                CardPhotoView photoCard = ((CardPhotoView) flowboxchild);
+                var photo_view_size = photoCard.size();
                 applyVisibility (flowboxchild, photo_view_size);
+                photoCard.activate_selection_btn(active_multiple_selection);
             });
             applying_filter ();
         }
@@ -98,6 +126,13 @@ namespace App.Views {
             foreach (var photo in this.photos) {
                 var card = new CardPhotoView (photo, typeCard);
                 this.add(card);
+                card.toggled_multiple.connect( ( is_selected ) => {
+                    if (is_selected) {
+                        selected_card(card);
+                    } else {
+                        removed_card(card);
+                    }
+                });
                 card.show_all();
             }
             updateVisibility ();
@@ -107,6 +142,13 @@ namespace App.Views {
             this.@foreach ( (widget) => {
                 widget.destroy();
             });
+        }
+
+        public void remove_selected_card (CardPhotoView photo_card) {
+            // if (this.selected_photos.index(photo_card) >= 0) {
+            //     this.selected_photos.remove(photo_card);
+            //     multiple_selected(selected_photos);
+            // }
         }
 
         CompareFunc<Photo?> compare = (a, b) => {

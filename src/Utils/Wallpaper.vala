@@ -30,10 +30,11 @@ namespace App.Utils {
 
         // Signal to inform that download is finished
         public signal void finish_download ();
+        public signal void on_progress (double progress);
 
         private string                  uri_endpoint;                   // URI http of picture in unsplash
         public  string                  full_picture_path {get; set;}   // Path for wallpaper picture
-        private ProgressBar             bar;                            // Downloading Progress
+        private double                  progress;                            // Downloading Progress
         private string                  img_file_name;                  // Based on id_photo & username
         private AccountsServiceUser?    accounts_service;
 
@@ -47,9 +48,8 @@ namespace App.Utils {
             * username is used for naming the file
             * bar to update progress
         ************************************/
-        public Wallpaper (string uri_endpoint, string id_photo, string username, ProgressBar bar) {
+        public Wallpaper (string uri_endpoint, string id_photo, string username) {
             this.uri_endpoint = uri_endpoint;
-            this.bar = bar;
             this.img_file_name = username + "_" + id_photo + ".jpeg";
             this.full_picture_path = BASE_DIR + img_file_name;
             this.accounts_service = AccountServiceProvider.get_instance ();
@@ -143,7 +143,7 @@ namespace App.Utils {
 			} else {
                 //print ("Picture %s already exist\n", img_file_name);
                 finish_download ();
-				bar.set_fraction (1);
+				update_progress (1);
 				return true;
             }
             loop.run ();
@@ -162,14 +162,7 @@ namespace App.Utils {
             Method to show progress in download
         ***********************************************************************/
         private void update_progress (double progress) {
-            bar.set_fraction (progress);
-            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
+            on_progress (progress);
         }
 
         /***********************************************************************
@@ -254,7 +247,7 @@ namespace App.Utils {
         /************************************
            Dialog that show error messages
         ************************************/
-        private void show_message (string txt_primary, string txt_secondary, string icon) {
+        public static void show_message (string txt_primary, string txt_secondary, string icon) {
             var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 txt_primary,
                 txt_secondary,
