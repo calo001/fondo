@@ -23,8 +23,9 @@ using App.Utils;
 using App.Widgets;
 using App.Popover;
 using App.Windows;
-using Gtk;
 using App.Enums;
+using App.Delegate;
+using Gtk;
 
 namespace App.Views {
 
@@ -60,6 +61,7 @@ namespace App.Views {
 
         private int                     w_photo;
         private int                     h_photo;
+        public bool                     is_for_greeter {get; set;}
 
         /***********************************
                     Constructor
@@ -304,11 +306,15 @@ namespace App.Views {
             });
             wallpaper.finish_download.connect (() => {
                 this.set_sensitive (true);
-                JsonManager jsonManager = new JsonManager ();
-                var history = jsonManager.add_photo (photo);
-                jsonManager.save_history (history);
+                save_to_history ();
             });
             wallpaper.update_wallpaper (opt);
+        }
+
+        public void save_to_history () {
+            JsonManager jsonManager = new JsonManager ();
+            var history = jsonManager.add_photo (photo);
+            jsonManager.save_history (history);
         }
 
         /*
@@ -411,7 +417,6 @@ namespace App.Views {
             btn_view.halign = Gtk.Align.END;
             btn_view.valign = Gtk.Align.START;
             btn_view.can_default = true;
-
         }
 
         //

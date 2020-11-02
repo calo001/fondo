@@ -28,89 +28,92 @@ namespace App.Widgets {
      */
     public class MultiplePreviewWidget : Gtk.FlowBox {
 
-        public signal void delete_preview_image(CardPhotoView photo_card);
+        public signal void delete_preview_image (CardPhotoView photo_card);
 
-        private List<CardPhotoView>                          current_photo_cards;
-        private Gee.HashMap<CardPhotoView, Gtk.FlowBoxChild> card_widget_map;
+        private Gee.HashMap<CardPhotoView, MultipleCardFlowBoxChild> card_widget_map;
+
         public MultiplePreviewWidget () {
             this.set_max_children_per_line(3);
             this.set_min_children_per_line(3);
-            this.get_style_context ().add_class ("images_preview_grid");
+            this.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
             this.homogeneous = true;
-
-            current_photo_cards = new List<CardPhotoView>();
-            card_widget_map = new Gee.HashMap<CardPhotoView, Gtk.FlowBoxChild>();
+            card_widget_map = new Gee.HashMap<CardPhotoView, MultipleCardFlowBoxChild>();
         }
-
 
         public void attach_photo (CardPhotoView single_card) {
             File file_photo = single_card.get_file_photo();
             Photo photo = single_card.get_photo();
-            var image = new Granite.AsyncImage(true, true);
-            image.get_style_context(). add_class ("image_grid");
-            var w_max = 80;
-            var h_max = 60;
+            MultipleCardFlowBoxChild flow_multiple = new MultipleCardFlowBoxChild (photo, file_photo);
 
-            var w_photo = (int) photo.width;
-            var h_photo = (int) photo.height;
+            card_widget_map.set(single_card, flow_multiple);
 
-            // Resize photo with a max height and width
-            if (w_photo > w_max) {
-                int[] scale_res = scale (w_photo, w_max, w_photo, h_photo);
-                w_photo = scale_res[0];
-                h_photo = scale_res[1];
-                if (h_photo > h_max) {
-                    scale_res = scale (h_photo, h_max, w_photo, h_photo);
-                    w_photo = scale_res[0];
-                    h_photo = scale_res[1];
-                }
-            }
-
-            image.set_from_file_async.begin(file_photo, w_photo, h_photo, false, null, (res) => {
-                image.get_style_context ().remove_class ("gradient_back");
+            flow_multiple.on_delete.connect ( () => {
+                print ("on delete\n");
+                delete_preview_image (single_card);
+                delete_card (single_card);
             });
 
-
-            var overlay = new Gtk.Overlay();
-            overlay.add (image);
-            overlay.width_request = w_photo;
-            overlay.height_request = h_photo;
-
-            var child = new Gtk.FlowBoxChild();
-            child.add(overlay);
-            child.set_visible(true);
-            card_widget_map.set(single_card, child);
-
-            var btn_delete = new Gtk.Button.from_icon_name ("window-close-symbolic");
-            btn_delete.get_style_context ().add_class ("button-action");
-            btn_delete.get_style_context ().remove_class ("button");
-            btn_delete.can_focus = false;
-            btn_delete.halign = Gtk.Align.END;
-            btn_delete.valign = Gtk.Align.START;
-            btn_delete.can_default = true;
-            btn_delete.clicked.connect (() => {
-                delete_preview_image(single_card);
-                current_photo_cards.remove(single_card);
+            flow_multiple.on_click.connect ( () => {
+                print ("on click\n");
+                update_indicator (single_card);
             });
 
-            overlay.add_overlay (btn_delete);
-
-            this.add(child);
-
+            setup_fist (single_card);
+            this.add(flow_multiple);
             show_all();
         }
 
-        public void delete_card (CardPhotoView card) {
-            current_photo_cards.remove(card);
-            var child_widget = card_widget_map.get(card);
-            this.remove(child_widget);
+        private void setup_fist (CardPhotoView single_card) {
+            if (card_widget_map.size == 1) {
+                var child_widget = card_widget_map.get (single_card);
+                child_widget.show_indicator (true);
+                single_card.is_for_greeter = true;
+            }
         }
 
-        private static int[] scale (int w_h_photo, int w_h_card, int width, int height) {
-            double card_scale = (double) w_h_card / (double) w_h_photo;
-            var w_photo = (int)(width * card_scale);
-            var h_photo = (int)(height * card_scale);
-            return {w_photo, h_photo};
+        public void delete_card (CardPhotoView card) {
+            var child_widget = card_widget_map.get(card);
+            this.remove(child_widget);
+            card_widget_map.unset (card);
+            if (card.is_for_greeter) {
+                set_greeter_default ();
+            }
+        }
+
+        private void set_greeter_default () {
+            if (card_widget_map.size > 0 && this.get_children ().length () > 0) {
+                MultipleCardFlowBoxChild child = (MultipleCardFlowBoxChild) this.get_children ().nth_data (0);
+                card_widget_map.@foreach ( (card) => {
+                    if (card.value == child) {
+                        card.value.show_indicator (true);
+                        card.key.is_for_greeter = true;        
+                    }
+                    return true;
+                });
+            }
+        }        
+
+        private void update_indicator (CardPhotoView single_card) {
+            var child_widget = card_widget_map.get (single_card);
+            card_widget_map.@foreach ( (card) => {
+                if (child_widget == card.value) {
+                    card.value.show_indicator (true);
+                    card.key.is_for_greeter = true;
+                } else {
+                    card.value.show_indicator (false);
+                    card.key.is_for_greeter = false;
+                }
+                return true;
+            });
+        }
+
+        public void clear_all () {
+            card_widget_map.@foreach( (card) => {
+                delete_card (card.key);
+                return true;
+            } );
+            card_widget_map = new Gee.HashMap<CardPhotoView, MultipleCardFlowBoxChild>();
+            this.forall ( (flow_b) => remove(flow_b) );
         }
     }
 }

@@ -34,8 +34,7 @@ namespace App.Utils {
 
         private string                  uri_endpoint;                   // URI http of picture in unsplash
         public  string                  full_picture_path {get; set;}   // Path for wallpaper picture
-        private double                  progress;                            // Downloading Progress
-        private string                  img_file_name;                  // Based on id_photo & username
+        public string                   img_file_name;                  // Based on id_photo & username
         private AccountsServiceUser?    accounts_service;
 
         // Base path for wallpaper picture
@@ -64,8 +63,11 @@ namespace App.Utils {
         public void update_wallpaper (string opt = "zoom") {
             if (check_directory ()) {
                 if (download_picture ()) {
+                    print ("set wallpaper\n");
                     set_wallpaper (opt);
+                    print ("show notify\n");
                     show_notify ();
+                    print ("set to login screen\n");
                     set_to_login_screen ();
                 } else {
                     show_message ("Error", "Download issue", "dialog-warning");
@@ -198,7 +200,7 @@ namespace App.Utils {
             * Base from:
             * https://github.com/elementary/switchboard-plug-pantheon-shell/blob/master/set-wallpaper-contract/set-wallpaper.vala
         ***********************************************************************/
-         public void set_to_login_screen () {
+        public void set_to_login_screen () {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
                 var greeter_file = set_to_greeter (variable);

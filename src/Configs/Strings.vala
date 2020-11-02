@@ -82,12 +82,5 @@ namespace App.Configs {
         public abstract const string DELETE_PHOTO_DIALOG_TITLE = _("Delete a photo from history");
         public abstract const string DELETE_PHOTO_DIALOG_MESSAGE = _("Are you sure you want to delete the photo from history?");
         public abstract const string WALLPAPER_SLIDESHOW = _("Wallpaper Slideshow");
-        public abstract const string SLIDESHOW_SELECT_ONE = _("Select 1 or more photos by clicking on ");
-        public abstract const string SLIDESHOW_GENERATE_BTN = _("Generate!");
-        public abstract const string SLIDESHOW_GENERATE_TOOLTIP = _("Generate slideshow");
-        public abstract const string SLIDESHOW_SELECTED_N = _("%d photos selected");
-        public abstract const string SLIDESHOW_NOTIFY_BODY = _("Your new wallpaper slideshow is downloaded and set!");
-        public abstract const string SLIDESHOW_NOTIFY_HEAD = _("Wallpaper slideshow ready!");
-        public abstract const string SLIDESHOW_GENERATE_PROGRESS = _("Preparing slideshow ...");
     }
 }
