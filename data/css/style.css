@@ -188,7 +188,7 @@ progressbar trough {
 
 .button-action {
     color: #FFFFFF;
-    border: none;
+    border: solid 0.8px white;
     border-radius: 20px;
     font-size: 1.3em;
     font-weight: bold;
@@ -213,7 +213,7 @@ progressbar trough {
 .button-action:hover, .button-action:checked {
     background: linear-gradient(@gradientAccent1, @gradientAccent2);
     color: #FFFFFF;
-    border: none;
+    border: solid 0.8px @gradientAccent1;
 }
 
 .button-action-popup {
@@ -296,6 +296,7 @@ progressbar trough {
 
 .multiple_wallpaper_popup {
   padding: 1em;
+  padding-bottom: 0.1em;
 }
 
 .multiple_wallpaper_container {
@@ -308,6 +309,15 @@ progressbar trough {
   padding: 4px;
 }
 
+.multiple_wallpaper_popup .toggle:checked {
+  background: alpha(@colorAccent, 0.1);
+  border: 0.5px solid @colorAccent;
+}
+
+.multiple_wallpaper_popup .toggle {
+	border-width: 0.5px;
+}
+
 .mw_info {
   font-size: 1.2em;
   padding-left: 1em;
@@ -317,7 +327,7 @@ progressbar trough {
   background: linear-gradient(@gradientAccent1, @gradientAccent2);
   color: #FFFFFF;
   border: none;
-  border-radius: 0, 0, 8px, 8px;
+  
   padding: 0.5em;
 }
 
@@ -335,12 +345,13 @@ progressbar trough {
   border: none;
 }
 
-.images_preview_grid {
-  padding: 0 1em 0 1em;
+.help {
+  font-size: 0.9em;
+  opacity: 0.7;
 }
 
 .image_grid {
-  margin: 0.5em;
+  margin: 1.4em;
 }
 
 .btn-orientation:checked {
