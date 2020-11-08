@@ -63,11 +63,8 @@ namespace App.Utils {
         public void update_wallpaper (string opt = "zoom") {
             if (check_directory ()) {
                 if (download_picture ()) {
-                    print ("set wallpaper\n");
                     set_wallpaper (opt);
-                    print ("show notify\n");
                     show_notify ();
-                    print ("set to login screen\n");
                     set_to_login_screen ();
                 } else {
                     show_message ("Error", "Download issue", "dialog-warning");
@@ -118,7 +115,6 @@ namespace App.Utils {
             var file_path = File.new_for_path (full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
             var progress = 0.0;
-            update_progress (progress);
 
             if (!file_path.query_exists ()) {
                 file_from_uri.copy_async.begin (file_path, 
@@ -136,13 +132,11 @@ namespace App.Utils {
                         } catch (Error e) {
                             show_message ("Error copy from URI to directory", e.message, "dialog-error");
                         }
-                        update_progress (1);
 		                loop.quit ();
 	                });
 			} else {
                 GLib.message ("Picture %s already exist\n", img_file_name);
                 finish_download ();
-                update_progress (1);
 				return true;
             }
             loop.run ();
@@ -163,19 +157,6 @@ namespace App.Utils {
         private void update_progress (double progress) {
             on_progress (progress);
         }
-
-        /***********************************************************************
-            Method to hide progress in download
-        ***********************************************************************/
-        // private void progress_visibility (bool visible) {
-        //     Granite.Services.Application.set_progress_visible.begin (visible, (obj, res) => {
-        //         try {
-        //             Granite.Services.Application.set_progress_visible.end (res);
-        //         } catch (GLib.Error e) {
-        //             critical (e.message);
-        //         }
-        //     });
-        // }
 
         /***********************************************************************
             Method to show desktop notification

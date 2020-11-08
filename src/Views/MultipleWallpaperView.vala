@@ -34,7 +34,7 @@ namespace App.Views {
         public signal void close_multiple_view ();
 
         private List<CardPhotoView?>                selected_photos;
-        private bool                                is_multiple;
+        //private bool                                is_multiple;
         private Gtk.Label                           label_info;
         private Gtk.Label                           generate_label;
         private Gtk.Button                          generate_btn;
@@ -56,7 +56,6 @@ namespace App.Views {
         public MultipleWallpaperView () {
             this.set_row_spacing (12);
             selected_photos = new List<CardPhotoView>();
-            is_multiple = true;
 
             label_info = new Gtk.Label (S.WALLPAPER_SLIDESHOW);
             label_info.get_style_context ().add_class ("mw_head");
@@ -80,7 +79,6 @@ namespace App.Views {
             generate_label = new Gtk.Label (S.SLIDESHOW_SELECT_PHOTOS_BY);
             generate_label.get_style_context ().add_class ("mw_info");
             generate_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-            generate_label.set_no_show_all(true);
             generate_label.xalign = 0;
 
             var loading_spinner = new LoadingView ();
@@ -88,13 +86,17 @@ namespace App.Views {
             download_container = new Gtk.Grid ();
             download_container.get_style_context ().add_class ("multiple_wallpaper_popup");
 
-            var download_lbl = new Gtk.Label (S.PREPARING_SLIDESHOW);
+            var download_lbl = new Gtk.Label (S.PREPARING_SLIDESHOW) {
+                expand = true,
+                margin_start = 8
+            };
             download_lbl.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            download_lbl.margin_start = 8;
 
-            global_bar = new Gtk.ProgressBar ();
+            global_bar = new Gtk.ProgressBar () {
+                expand = true,
+                margin_start = 8
+            };
             global_bar.get_style_context ().add_class ("global_progress_bar");
-            global_bar.margin_start = 8;
 
             download_container.attach (loading_spinner,    0, 1, 1, 2);
             download_container.attach (download_lbl,       1, 1, 1, 1);
@@ -189,12 +191,15 @@ namespace App.Views {
             if (get_num_selected() > 0) {
                 images_preview.set_no_show_all (false);
                 images_preview.set_visible (true);
+                stack.set_visible (true);
                 greeter_desc_container.set_no_show_all (false);
                 greeter_desc_container.show_all ();
                 greeter_desc_container.set_visible (true);
             } else {
                 images_preview.set_visible (false);
                 greeter_desc_container.set_visible (false);
+                GLib.message ("set visible false generate btn");
+                stack.set_visible (false);
             }
         }
 
@@ -254,12 +259,12 @@ namespace App.Views {
 
                 step ++;
             });
+            
+            hide_progress ();
 
             MultiWallpaper multiple_wallpaper = new MultiWallpaper(wallpaper_list);
             var periodicity = get_periodicity_seconds ();
             multiple_wallpaper.set_wallpaper (periodicity);
-
-            hide_progress ();
         }
 
         private void stop_dock_progress () {
@@ -279,6 +284,7 @@ namespace App.Views {
             close_popup ();
             show_notify_success ();
             show_preparing_progress (STACK_BUTTON);
+            update_visibility ();
             stop_dock_progress ();
         }
 
@@ -318,7 +324,7 @@ namespace App.Views {
          * selection is active
          */
         private void update_visibility () {
-            generate_label.set_visible(is_multiple);
+            //generate_label.set_visible(is_multiple);
             if (get_num_selected () > 0) {
                 show_preparing_progress (STACK_BUTTON);
             } else {
@@ -374,8 +380,9 @@ namespace App.Views {
             stack.set_visible (true);
 
             if (stack_name == STACK_BUTTON) {
-                generate_btn.set_visible (is_multiple);
+                generate_btn.set_visible (true);
             } else {
+                generate_btn.set_visible (false);
                 download_container.show_all ();
             }
 

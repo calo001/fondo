@@ -50,10 +50,10 @@ namespace App.Utils {
             for (int i = 0; i < num_backgrounds; i++) {
                 string current = this.background_list.nth_data(i);
                 full_string += generate_static(current, static_time);
-                if (i + 1 < num_backgrounds) {
-                    string next = this.background_list.nth_data(i+1);
-                    full_string += generate_transition(current, next, transition_time);
-                }
+                
+                var next_transition = i + 1 >= num_backgrounds ? 0 : i + 1;
+                string next = this.background_list.nth_data(next_transition);
+                full_string += generate_transition(current, next, transition_time);    
             }
             full_string += "</background>";
 

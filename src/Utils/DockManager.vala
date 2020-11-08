@@ -22,6 +22,7 @@ using App.Models;
 namespace App.Dock {
     public void start () {
         progress_dock_visibility (true);
+        update_dock_progress (0);
     }
 
     public void stop () {

@@ -297,9 +297,9 @@ namespace App.Views {
         * Update the wallpaper
         **************************************************/
         public void setup_wallpaper (string opt = "zoom") {
-            this.set_sensitive (false);
             revealer.set_reveal_child (true);
             start_global_progress ();
+            this.set_sensitive (false);
 
             string? url_photo = connection.get_url_photo(photo.links.download_location);
             wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
@@ -307,6 +307,7 @@ namespace App.Views {
             wallpaper.on_progress.connect ((p) => {
                 update_global_progress (p, wallpaper);
             });
+            
             wallpaper.finish_download.connect (() => {
                 stop_global_progress ();
                 this.set_sensitive (true);
