@@ -34,6 +34,7 @@ sources = files(
     'Utils/MultiWallpaper.vala',
     'Utils/XMLBackground.vala',
     'Utils/Delegates.vala',
+    'Utils/DockManager.vala',
 
     'Widgets/BottonNavbar.vala',
     'Widgets/ButtonTab.vala',
