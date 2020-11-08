@@ -48,13 +48,11 @@ namespace App.Widgets {
             card_widget_map.set(single_card, flow_multiple);
 
             flow_multiple.on_delete.connect ( () => {
-                print ("on delete\n");
                 delete_preview_image (single_card);
                 delete_card (single_card);
             });
 
             flow_multiple.on_click.connect ( () => {
-                print ("on click\n");
                 update_indicator (single_card);
             });
 

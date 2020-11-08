@@ -75,7 +75,7 @@ namespace App.Utils {
                 var schemaManager = new SchemaManager();
                 string background_path = background_file.get_path();
                 schemaManager.set_wallpaper (background_path, picture_options);
-                print("Seteado!");
+                GLib.message ("Seteado!");
             }
         }
 

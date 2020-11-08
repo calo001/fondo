@@ -66,7 +66,7 @@ namespace App.Views {
 
             generate_btn = new Gtk.Button();
             generate_btn.get_style_context ().add_class ("action_suggest_btn");
-            generate_btn.set_label("Generate!");
+            generate_btn.set_label(S.SLIDESHOW_GENERATE);
             generate_btn.valign = Gtk.Align.CENTER;
             generate_btn.set_no_show_all (true);
             generate_btn.clicked.connect ( ()=> {
@@ -78,7 +78,7 @@ namespace App.Views {
             image_info.xalign = 1;
             image_info.expand = true;
 
-            generate_label = new Gtk.Label ("Select 1 or more photos by clicking on ");
+            generate_label = new Gtk.Label (S.SLIDESHOW_SELECT_PHOTOS_BY);
             generate_label.get_style_context ().add_class ("mw_info");
             generate_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
             generate_label.set_no_show_all(true);
@@ -89,7 +89,7 @@ namespace App.Views {
             download_container = new Gtk.Grid ();
             download_container.get_style_context ().add_class ("multiple_wallpaper_popup");
 
-            var download_lbl = new Gtk.Label ("Preparing slideshow ...");
+            var download_lbl = new Gtk.Label (S.PREPARING_SLIDESHOW);
             download_lbl.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             download_lbl.margin_start = 8;
 
@@ -117,30 +117,30 @@ namespace App.Views {
             stack.homogeneous = false;
 
             mode_button = new Granite.Widgets.ModeButton () {
-                tooltip_text = "Selecciona peridiocidad"
+                tooltip_text = S.SLIDESHOW_PERIODICITY
             };
 
             mode_button.set_no_show_all(true);
-            mode_button.append_text ("30 minutes");
-            mode_button.append_text ("1 hour");
-            mode_button.append_text ("1 day");
+            mode_button.append_text (S.SLIDESHOW_30_MIN);
+            mode_button.append_text (S.SLIDESHOW_1_HOUR);
+            mode_button.append_text (S.SLIDESHOW_1_DAY);
             mode_button.selected = 0;
 
             greeter_desc_container = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8) {
                 halign = Gtk.Align.CENTER,
-                tooltip_text = "Puede cambiar la foto para usar como pantalla de bloqueo dando clic en una de las fotos seleccionadas."
+                tooltip_text = S.GREETER_DESCRIPTION_CONTAINER
             };
             var greeter_description_icon = new Gtk.Image () {
                 gicon = new ThemedIcon ("user-available")
             };
-            var greeter_description_lbl = new Gtk.Label ("Usar en pantalla de bloqueo");
+            var greeter_description_lbl = new Gtk.Label (S.USER_IN_GREETER);
             greeter_description_lbl.get_style_context ().add_class ("help");
 
             greeter_desc_container.add (greeter_description_icon);
             greeter_desc_container.add (greeter_description_lbl);
             greeter_desc_container.set_no_show_all (true);
 
-            toast_more_photos = new Granite.Widgets.Toast ("Agrega al menos dos fotos.");
+            toast_more_photos = new Granite.Widgets.Toast (S.SLIDESHOW_MIN_PHOTOS);
 
             attach (image_header,               0, 0, 3, 1);
             attach (label_info,                 0, 1, 3, 1);
@@ -199,12 +199,22 @@ namespace App.Views {
             }
         }
 
+        private string get_period_description () {
+            var seconds = get_periodicity_seconds ();
+            switch (seconds) {
+                case 1800: return S.SLIDESHOW_30_MIN;
+                case 3600: return S.SLIDESHOW_1_HOUR;
+                case 86400: return S.SLIDESHOW_1_DAY;
+                default: return S.SLIDESHOW_30_MIN;
+            }
+        }
+
         private string get_selected_description () {
             int num_selected = get_num_selected();
             if (num_selected > 1) {
-                return "%d photos selected". printf(num_selected);
+                return S.SLIDESHOW_PHOTOS_SELECTED. printf(num_selected);
             } else {
-                return "%d photo selected". printf(num_selected);
+                return S.SLIDESHOW_PHOTO_SELECTED. printf(num_selected);
             }
         }
 
@@ -226,16 +236,16 @@ namespace App.Views {
                 });
 
                 if (wallpaper.download_picture()) {
-                    print("Success!: %s\n", wallpaper.full_picture_path);
+                    GLib.message ("Success!: %s\n", wallpaper.full_picture_path);
                     save_to_history (photo_card);
                     wallpaper_list.append(wallpaper);
 
                     if (photo_card.is_for_greeter) {
-                        print ("Greeter selected");
+                        GLib.message ("Greeter selected");
                         setup_login_screen (wallpaper);
                     }
                 } else {
-                    print("Error\n");
+                    GLib.critical ("Error\n");
                 }
 
                 step ++;
@@ -243,7 +253,6 @@ namespace App.Views {
 
             MultiWallpaper multiple_wallpaper = new MultiWallpaper(wallpaper_list);
             var periodicity = get_periodicity_seconds ();
-            print ("periodicity " + periodicity.to_string ());
             multiple_wallpaper.set_wallpaper (periodicity);
 
             // Hide progress
@@ -254,7 +263,6 @@ namespace App.Views {
 
         private int get_periodicity_seconds () {
             var selected = mode_button.selected;
-            print ("selected " + selected.to_string ());
             switch (selected) {
                 case 0: return 1800;
                 case 1: return 3600;
@@ -264,7 +272,6 @@ namespace App.Views {
         }
 
         private void setup_login_screen (Wallpaper wallpaper) {
-            //Wallpaper wallpaper = new Wallpaper ("", "", "");
             wallpaper.set_to_login_screen ();
         }
 
@@ -301,9 +308,9 @@ namespace App.Views {
         private void update_message_visibity () {
             string selected_num = "";
             if (get_num_selected () > 0) {
-                selected_num = "%d photos selected".printf(get_num_selected());
+                selected_num = S.SLIDESHOW_PHOTOS_SELECTED.printf(get_num_selected());
             } else {
-                selected_num = "Select 1 or more photos by clicking on ";
+                selected_num = S.SLIDESHOW_SELECT_PHOTOS_BY;
             }
 
             generate_label.set_text(selected_num);
@@ -348,8 +355,6 @@ namespace App.Views {
 
         private void update_global_progress (double progress, Wallpaper wallpaper) {
             global_bar.set_fraction (progress);
-            print ("\n\nProgreso: ");
-            print (progress.to_string ());
             Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
                 try {
                     Granite.Services.Application.set_progress.end (res);
@@ -360,8 +365,8 @@ namespace App.Views {
         }
 
         private void show_notify_success () {
-            var notification = new Notification ("Wallpaper slideshow ready!");
-            notification.set_body ("Your new wallpaper slideshow is downloaded and set!");
+            var notification = new Notification (S.SLIDESHOW_NOTIFICATION_TITLE);
+            notification.set_body (S.SLIDESHOW_NOTIFICATION_BODY.printf(get_period_description ()));
             var icon = new ThemedIcon ("com.github.calo001.fondo.success");
             notification.set_icon (icon);
             GLib.Application.get_default ().send_notification ("notify.app", notification);

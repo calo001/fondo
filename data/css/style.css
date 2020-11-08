@@ -327,7 +327,6 @@ progressbar trough {
   background: linear-gradient(@gradientAccent1, @gradientAccent2);
   color: #FFFFFF;
   border: none;
-  
   padding: 0.5em;
 }
 
