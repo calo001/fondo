@@ -144,7 +144,7 @@ progressbar trough {
 
 .photo {
     background: none;
-    border-radius: 4px;
+    border-radius: 6px;
     box-shadow: none;
     padding: 3px;
     border: none;
@@ -164,6 +164,10 @@ progressbar trough {
     animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+.photo:hover image {
+    opacity: 0.9;
 }
 
 .backimg {
@@ -279,6 +283,7 @@ progressbar trough {
 }
 
 .btn_round {
+    border-radius: 30px;
     font-weight: bold;
     font-size: 1.2em;
     padding: 4px;
@@ -286,6 +291,7 @@ progressbar trough {
 
 .active {
     background: rgba(0,0,0,0.13);
+    border-radius: 0%;
 }
 
 .active image {
@@ -320,7 +326,6 @@ progressbar trough {
 
 .mw_info {
   font-size: 1.2em;
-  padding-left: 1em;
 }
 
 .action_suggest_btn {
