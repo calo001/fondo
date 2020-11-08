@@ -118,34 +118,31 @@ namespace App.Utils {
             var file_path = File.new_for_path (full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
             var progress = 0.0;
-            progress_visibility (true);
+            update_progress (progress);
 
             if (!file_path.query_exists ()) {
                 file_from_uri.copy_async.begin (file_path, 
                     FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, 
                     null, (current_num_bytes, total_num_bytes) => {
-                        // Report copy-status:
                         progress = (double) current_num_bytes / total_num_bytes;
                         total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
-                        print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
+                        GLib.message ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
                         update_progress (progress);
 	                }, (obj, res) => {
                         try {
                             bool tmp = file_from_uri.copy_async.end (res);
-                            print ("Result: %s\n", tmp.to_string ());
-                            
-                            progress_visibility (false);
-
+                            GLib.message ("Result: %s\n", tmp.to_string ());
                             finish_download ();
                         } catch (Error e) {
                             show_message ("Error copy from URI to directory", e.message, "dialog-error");
                         }
+                        update_progress (1);
 		                loop.quit ();
 	                });
 			} else {
-                //print ("Picture %s already exist\n", img_file_name);
+                GLib.message ("Picture %s already exist\n", img_file_name);
                 finish_download ();
-				update_progress (1);
+                update_progress (1);
 				return true;
             }
             loop.run ();
@@ -170,15 +167,15 @@ namespace App.Utils {
         /***********************************************************************
             Method to hide progress in download
         ***********************************************************************/
-        private void progress_visibility (bool visible) {
-            Granite.Services.Application.set_progress_visible.begin (visible, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress_visible.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
-        }
+        // private void progress_visibility (bool visible) {
+        //     Granite.Services.Application.set_progress_visible.begin (visible, (obj, res) => {
+        //         try {
+        //             Granite.Services.Application.set_progress_visible.end (res);
+        //         } catch (GLib.Error e) {
+        //             critical (e.message);
+        //         }
+        //     });
+        // }
 
         /***********************************************************************
             Method to show desktop notification

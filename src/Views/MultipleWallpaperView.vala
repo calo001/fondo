@@ -54,8 +54,7 @@ namespace App.Views {
          * Constructs a new {@code MultipleWallpaperView} object.
          */
         public MultipleWallpaperView () {
-            this.set_column_spacing (20);
-            this.set_row_spacing (10);
+            this.set_row_spacing (12);
             selected_photos = new List<CardPhotoView>();
             is_multiple = true;
 
@@ -146,7 +145,7 @@ namespace App.Views {
             attach (label_info,                 0, 1, 3, 1);
             attach (mode_button,                0, 2, 3, 1);
             attach (generate_label,             0, 3, 1, 1);
-            attach (image_info,                 1, 3, 1, 1);
+            attach (image_info,                 2, 3, 1, 1);
             attach (images_preview,             0, 4, 3, 1);
             attach (stack,                      0, 6, 3, 1);
             attach (toast_more_photos,          0, 7, 3, 1);
@@ -218,12 +217,13 @@ namespace App.Views {
             }
         }
 
-        public void generate_multiple_wallpaper() {
+        public void generate_multiple_wallpaper () {
             AppConnection connection = AppConnection.get_instance();
             List<Wallpaper> wallpaper_list = new List<Wallpaper>();
 
             double global_progress = 0;
             int step = 0;
+            start_dock_progress ();
 
             selected_photos.foreach( ( photo_card ) => {
                 Photo photo = photo_card.get_photo();
@@ -232,18 +232,22 @@ namespace App.Views {
                 Wallpaper wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
                 wallpaper.on_progress.connect ((p) => {
                     global_progress = calculate_progress (p, step);
-                    update_global_progress (global_progress, wallpaper);
+                    global_bar.set_fraction (global_progress);
+                    update_global_progress (global_progress);
                 });
 
-                if (wallpaper.download_picture()) {
-                    GLib.message ("Success!: %s\n", wallpaper.full_picture_path);
+                wallpaper.finish_download.connect (() => {
                     save_to_history (photo_card);
-                    wallpaper_list.append(wallpaper);
+                    wallpaper_list.prepend (wallpaper);
 
                     if (photo_card.is_for_greeter) {
                         GLib.message ("Greeter selected");
                         setup_login_screen (wallpaper);
                     }
+                });
+                
+                if (wallpaper.download_picture ()) {
+                    GLib.message ("Success!: %s\n", wallpaper.full_picture_path);
                 } else {
                     GLib.critical ("Error\n");
                 }
@@ -255,10 +259,27 @@ namespace App.Views {
             var periodicity = get_periodicity_seconds ();
             multiple_wallpaper.set_wallpaper (periodicity);
 
-            // Hide progress
-            end_global_progress ();
+            hide_progress ();
+        }
+
+        private void stop_dock_progress () {
+            App.Dock.stop ();
+        }
+
+        private void start_dock_progress () {
+            App.Dock.start ();
+        }
+
+        private void update_global_progress (double progress) {
+            App.Dock.update_dock_progress (progress);
+        }
+
+        private void hide_progress () {
             clean_selected_photos ();
             close_popup ();
+            show_notify_success ();
+            show_preparing_progress (STACK_BUTTON);
+            stop_dock_progress ();
         }
 
         private int get_periodicity_seconds () {
@@ -339,29 +360,6 @@ namespace App.Views {
         private double calculate_progress (double progress_step, int step) {
             var progress = (progress_step / (double) selected_photos.length()) + (double) (step * (1 / (double) selected_photos.length())) ;
             return progress;
-        }
-
-        private void end_global_progress () {
-            show_preparing_progress (STACK_BUTTON);
-            Granite.Services.Application.set_progress_visible.begin (false, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress_visible.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
-            show_notify_success ();
-        }
-
-        private void update_global_progress (double progress, Wallpaper wallpaper) {
-            global_bar.set_fraction (progress);
-            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
         }
 
         private void show_notify_success () {

@@ -81,7 +81,7 @@ namespace App.Utils {
                     written += dos.write (data[written:data.length]);
                 }
 
-                print("File %s written successfully.\n", collection_file.get_path ());
+                GLib.message ("File %s written successfully.\n", collection_file.get_path ());
 
             } catch (Error e) {
                 stderr.printf ("%s\n", e.message);

@@ -92,6 +92,7 @@ namespace App.Views {
             image = new Granite.AsyncImage(true, true);
             image.get_style_context ().add_class ("backimg");
             image.get_style_context ().add_class ("gradient_back");
+            image.get_style_context ().add_class ("transition");
             image.has_tooltip = true;
             var w_max = 310;
             var h_max = 430;
@@ -298,13 +299,16 @@ namespace App.Views {
         public void setup_wallpaper (string opt = "zoom") {
             this.set_sensitive (false);
             revealer.set_reveal_child (true);
+            start_global_progress ();
 
             string? url_photo = connection.get_url_photo(photo.links.download_location);
             wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
+            
             wallpaper.on_progress.connect ((p) => {
                 update_global_progress (p, wallpaper);
             });
             wallpaper.finish_download.connect (() => {
+                stop_global_progress ();
                 this.set_sensitive (true);
                 save_to_history ();
             });
@@ -322,13 +326,19 @@ namespace App.Views {
          */
         private void update_global_progress (double progress, Wallpaper wallpaper) {
             bar.set_fraction (progress);
-            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
+            update_dock_progress (progress);
+        }
+
+        private void stop_global_progress () {
+            App.Dock.stop ();
+        }
+
+        private void start_global_progress () {
+            App.Dock.start ();
+        }
+
+        private void update_dock_progress (double progress) {
+            App.Dock.update_dock_progress (progress);
         }
 
         /*************************************************
