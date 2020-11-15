@@ -33,6 +33,8 @@ sources = files(
     'Utils/SchemaManager.vala',
     'Utils/MultiWallpaper.vala',
     'Utils/XMLBackground.vala',
+    'Utils/Delegates.vala',
+    'Utils/DockManager.vala',
 
     'Widgets/BottonNavbar.vala',
     'Widgets/ButtonTab.vala',
@@ -40,6 +42,7 @@ sources = files(
     'Widgets/LabelTop.vala',
     'Widgets/LabelTotalResults.vala',
     'Widgets/MultiplePreviewWidget.vala',
+    'Widgets/MultipleCardFlowBoxChild.vala',
 
     'Services/Connection.vala',
 

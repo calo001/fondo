@@ -47,7 +47,7 @@ namespace App.Utils {
          * static_time: number of seconds a background is shown
          * transition_time: number of seconds of animation to change between two backgrounds
          */
-        public File generate_xml (int static_time = 1800, int transition_time = 2) {
+        public File generate_xml (int static_time, int transition_time = 2) {
             List<string> wallpapers_path = new List<string> ();
 
             foreach (Wallpaper wallpaper in this.wallpapers) {
@@ -55,7 +55,7 @@ namespace App.Utils {
             }
 
             DateTime start = new DateTime.now_local ();
-            static_time = 3600/2 - transition_time;
+            static_time -= transition_time;
 
             XMLBackground xml_background = new XMLBackground(full_collection_path, wallpapers_path, static_time, transition_time, start);
 
@@ -67,15 +67,15 @@ namespace App.Utils {
          * Generates a background xml file with multiple wallpapers and sets it
          * as background.
          */
-        public void set_wallpaper (string picture_options = "zoom") {
-            File background_file = generate_xml ();
+        public void set_wallpaper (int static_time = 1800, string picture_options = "zoom") {
+            File background_file = generate_xml (static_time);
             if (!background_file.query_exists ()) {
                 Wallpaper.show_message ("Error", "XML Background error on generation", "dialog-error");
             } else {
                 var schemaManager = new SchemaManager();
                 string background_path = background_file.get_path();
                 schemaManager.set_wallpaper (background_path, picture_options);
-                print("Seteado!");
+                GLib.message ("Seteado!");
             }
         }
 
