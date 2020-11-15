@@ -34,8 +34,7 @@ namespace App.Utils {
 
         private string                  uri_endpoint;                   // URI http of picture in unsplash
         public  string                  full_picture_path {get; set;}   // Path for wallpaper picture
-        private double                  progress;                            // Downloading Progress
-        private string                  img_file_name;                  // Based on id_photo & username
+        public string                   img_file_name;                  // Based on id_photo & username
         private AccountsServiceUser?    accounts_service;
 
         // Base path for wallpaper picture
@@ -116,24 +115,19 @@ namespace App.Utils {
             var file_path = File.new_for_path (full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
             var progress = 0.0;
-            progress_visibility (true);
 
             if (!file_path.query_exists ()) {
                 file_from_uri.copy_async.begin (file_path, 
                     FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, 
                     null, (current_num_bytes, total_num_bytes) => {
-                        // Report copy-status:
                         progress = (double) current_num_bytes / total_num_bytes;
                         total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
-                        print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
+                        GLib.message ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
                         update_progress (progress);
 	                }, (obj, res) => {
                         try {
                             bool tmp = file_from_uri.copy_async.end (res);
-                            print ("Result: %s\n", tmp.to_string ());
-                            
-                            progress_visibility (false);
-
+                            GLib.message ("Result: %s\n", tmp.to_string ());
                             finish_download ();
                         } catch (Error e) {
                             show_message ("Error copy from URI to directory", e.message, "dialog-error");
@@ -141,9 +135,8 @@ namespace App.Utils {
 		                loop.quit ();
 	                });
 			} else {
-                //print ("Picture %s already exist\n", img_file_name);
+                GLib.message ("Picture %s already exist\n", img_file_name);
                 finish_download ();
-				update_progress (1);
 				return true;
             }
             loop.run ();
@@ -166,19 +159,6 @@ namespace App.Utils {
         }
 
         /***********************************************************************
-            Method to hide progress in download
-        ***********************************************************************/
-        private void progress_visibility (bool visible) {
-            Granite.Services.Application.set_progress_visible.begin (visible, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress_visible.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
-        }
-
-        /***********************************************************************
             Method to show desktop notification
             Update cache icons: sudo update-icon-caches /usr/share/icons/*
         ***********************************************************************/
@@ -198,7 +178,7 @@ namespace App.Utils {
             * Base from:
             * https://github.com/elementary/switchboard-plug-pantheon-shell/blob/master/set-wallpaper-contract/set-wallpaper.vala
         ***********************************************************************/
-         public void set_to_login_screen () {
+        public void set_to_login_screen () {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
                 var greeter_file = set_to_greeter (variable);

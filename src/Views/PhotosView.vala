@@ -144,13 +144,6 @@ namespace App.Views {
             });
         }
 
-        public void remove_selected_card (CardPhotoView photo_card) {
-            // if (this.selected_photos.index(photo_card) >= 0) {
-            //     this.selected_photos.remove(photo_card);
-            //     multiple_selected(selected_photos);
-            // }
-        }
-
         CompareFunc<Photo?> compare = (a, b) => {
             double c = (int) a.width / (int) a.height;
             double d = (int) b.width / (int) b.height;

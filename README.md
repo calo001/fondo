@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/calo001/fondo">
-    <img src="https://img.shields.io/badge/Version-1.3.10-orange.svg">
+    <img src="https://img.shields.io/badge/Version-1.4.0-orange.svg">
   </a>
   <a href="https://github.com/calo001/fondo/blob/master/LICENSE.md">
     <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
@@ -115,6 +115,7 @@ Gifted by the world’s most generous community of photographers. 🎁
 
 ### 💞️ Support, help & inspiration
 
+- <img src="https://avatars1.githubusercontent.com/u/667239" width=15 alt="Víctor Fernández"> [Víctor Fernández](https://github.com/vfrico) for your appreciable help in the implementation of the slideshow wallpaper feature!
 - <img src="https://avatars1.githubusercontent.com/u/4183007" width=15 alt="KJ Lawrence"> [KJ Lawrence](https://github.com/kjlaw89) for making easier the development of apps for elementary OS with [Archetype](https://appcenter.elementary.io/com.github.kjlaw89.archetype/)
 - <img src="https://avatars3.githubusercontent.com/u/611168" width=15 alt="Cassidy James Blaede"> [Cassidy James Blaede](https://github.com/cassidyjames) for his apps to use as code examples
 - <img src="https://avatars1.githubusercontent.com/u/7277719" width=15 alt="Daniel Foré"> [Daniel Foré](https://github.com/danrabbit) for his help in the google + community

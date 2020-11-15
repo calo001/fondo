@@ -23,8 +23,9 @@ using App.Utils;
 using App.Widgets;
 using App.Popover;
 using App.Windows;
-using Gtk;
 using App.Enums;
+using App.Delegate;
+using Gtk;
 
 namespace App.Views {
 
@@ -60,6 +61,7 @@ namespace App.Views {
 
         private int                     w_photo;
         private int                     h_photo;
+        public bool                     is_for_greeter {get; set;}
 
         /***********************************
                     Constructor
@@ -90,6 +92,7 @@ namespace App.Views {
             image = new Granite.AsyncImage(true, true);
             image.get_style_context ().add_class ("backimg");
             image.get_style_context ().add_class ("gradient_back");
+            image.get_style_context ().add_class ("transition");
             image.has_tooltip = true;
             var w_max = 310;
             var h_max = 430;
@@ -294,21 +297,29 @@ namespace App.Views {
         * Update the wallpaper
         **************************************************/
         public void setup_wallpaper (string opt = "zoom") {
-            this.set_sensitive (false);
             revealer.set_reveal_child (true);
+            start_global_progress ();
+            this.set_sensitive (false);
 
             string? url_photo = connection.get_url_photo(photo.links.download_location);
             wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
+            
             wallpaper.on_progress.connect ((p) => {
                 update_global_progress (p, wallpaper);
             });
+            
             wallpaper.finish_download.connect (() => {
+                stop_global_progress ();
                 this.set_sensitive (true);
-                JsonManager jsonManager = new JsonManager ();
-                var history = jsonManager.add_photo (photo);
-                jsonManager.save_history (history);
+                save_to_history ();
             });
             wallpaper.update_wallpaper (opt);
+        }
+
+        public void save_to_history () {
+            JsonManager jsonManager = new JsonManager ();
+            var history = jsonManager.add_photo (photo);
+            jsonManager.save_history (history);
         }
 
         /*
@@ -316,13 +327,19 @@ namespace App.Views {
          */
         private void update_global_progress (double progress, Wallpaper wallpaper) {
             bar.set_fraction (progress);
-            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
+            update_dock_progress (progress);
+        }
+
+        private void stop_global_progress () {
+            App.Dock.stop ();
+        }
+
+        private void start_global_progress () {
+            App.Dock.start ();
+        }
+
+        private void update_dock_progress (double progress) {
+            App.Dock.update_dock_progress (progress);
         }
 
         /*************************************************
@@ -411,7 +428,6 @@ namespace App.Views {
             btn_view.halign = Gtk.Align.END;
             btn_view.valign = Gtk.Align.START;
             btn_view.can_default = true;
-
         }
 
         //

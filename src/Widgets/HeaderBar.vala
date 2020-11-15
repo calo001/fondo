@@ -115,8 +115,10 @@ namespace App.Widgets {
             });
 
 
-            Gtk.Image multiple_icon = new Gtk.Image ();
-            multiple_icon.gicon = new ThemedIcon ("emblem-photos-symbolic");
+            Gtk.Image multiple_icon = new Gtk.Image () {
+                gicon = new ThemedIcon ("focus-legacy-systray-symbolic.symbolic"),
+                icon_size = Gtk.IconSize.LARGE_TOOLBAR
+            };
 
             multiple_menu = new Gtk.Button();
             var popup_multiple = new MultipleWallpaperPopover (multiple_menu, multiple_wallpaper);
