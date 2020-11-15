@@ -163,27 +163,27 @@ namespace App.Controllers {
             });
 
             view.selected_card.connect ( (photo_card) => {
-                multiple_wallpaper.add_card(photo_card);
+                multiple_wallpaper.add_card (photo_card);
             });
 
             search_view.selected_card.connect ( (photo_card) => {
-                multiple_wallpaper.add_card(photo_card);
+                multiple_wallpaper.add_card (photo_card);
             });
 
             history_view.selected_card.connect ( (photo_card) => {
-                multiple_wallpaper.add_card(photo_card);
+                multiple_wallpaper.add_card (photo_card);
             });
 
             view.removed_card.connect ( (photo_card) => {
-                multiple_wallpaper.remove_card(photo_card);
+                multiple_wallpaper.remove_card (photo_card);
             });
 
             search_view.removed_card.connect ( (photo_card) => {
-                multiple_wallpaper.remove_card(photo_card);
+                multiple_wallpaper.remove_card (photo_card);
             });
 
             history_view.removed_card.connect ( (photo_card) => {
-                multiple_wallpaper.remove_card(photo_card);
+                multiple_wallpaper.remove_card (photo_card);
             });
 
             view_error.retry.connect(() => {

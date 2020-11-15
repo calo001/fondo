@@ -33,7 +33,6 @@ namespace App.Utils {
         private int                     transition_time;
         private DateTime                start_time;
 
-
         public XMLBackground (string collection_file, List<string> wallpapers_path_list, int static_time, int transition_time, DateTime start_time) {
             this.background_list = wallpapers_path_list;
             this.collection_file = File.new_for_path(collection_file);
@@ -53,11 +52,19 @@ namespace App.Utils {
                 
                 var next_transition = i + 1 >= num_backgrounds ? 0 : i + 1;
                 string next = this.background_list.nth_data(next_transition);
-                full_string += generate_transition(current, next, transition_time);    
+                full_string += generate_transition(current, next, get_transition_time ());    
             }
             full_string += "</background>";
 
             return full_string;
+        }
+
+        private int get_transition_time () {
+            var desktop_name = Environment.get_variable ("XDG_CURRENT_DESKTOP");
+            if (desktop_name == "Pantheon") {
+                return 0;
+            }
+            return transition_time;
         }
 
         /**
