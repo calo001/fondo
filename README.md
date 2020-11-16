@@ -96,16 +96,26 @@ Options:
 
 Fondo is and will always be free for the world 🌎️. If you like the project and would like to fund and contribute to my work, you can do it via Patreon or Paypal.Me:
 
-<p align="center">
-  <a href="https://www.paypal.me/calo001" target="_blank" style="margin:0;border:0"><img src="resources/paypalme.png" alt="Paypal.Me" style="margin:0;border:0"></a><a href="https://www.patreon.com/carloslr" target="_blank" style="margin:0;border:0"><img src="resources/become_a_patron_button.png" alt="Patreon" style="margin:0;border:0"></a>
-</p>
-
+<table>
+  <tr>
+    <td style="border: none; padding: 0;">
+      <a href="https://www.paypal.me/calo001" target="_blank">
+        <img src="resources/paypalme.png" alt="Screenshot"/>
+        </a>
+    </td>
+    <td style="border: none; padding: 0;">
+      <a href="https://www.patreon.com/carloslr" target="_blank">
+        <img src="resources/become_a_patron_button.png" alt="Screenshot"/>
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## 💜️ Special thanks
 
 <p align="center">
   <a href="http://unsplash.com" target="_blank">
-    <img src="resources/unsplash_logo.png" alt="Screenshot" width="300px">
+    <img src="resources/unsplash_logo.png" alt="Screenshot" width="500px">
   </a>
 </p>
 <p align="center">
