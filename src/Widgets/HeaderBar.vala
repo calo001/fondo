@@ -114,9 +114,9 @@ namespace App.Widgets {
                 pop_menu.popup ();
             });
 
-
+            var themed_icon_multiple = new ThemedIcon ("focus-legacy-systray-symbolic.symbolic");
             Gtk.Image multiple_icon = new Gtk.Image () {
-                gicon = new ThemedIcon ("focus-legacy-systray-symbolic.symbolic"),
+                gicon = themed_icon_multiple,
                 icon_size = Gtk.IconSize.LARGE_TOOLBAR
             };
 

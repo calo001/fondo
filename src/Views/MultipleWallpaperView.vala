@@ -131,9 +131,12 @@ namespace App.Views {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = S.GREETER_DESCRIPTION_CONTAINER
             };
+            
+            ThemedIcon themed_icon_greeter_descp = new ThemedIcon ("user-available");
             var greeter_description_icon = new Gtk.Image () {
-                gicon = new ThemedIcon ("user-available")
+                gicon = themed_icon_greeter_descp
             };
+
             var greeter_description_lbl = new Gtk.Label (S.USER_IN_GREETER);
             greeter_description_lbl.get_style_context ().add_class ("help");
 
