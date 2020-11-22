@@ -142,7 +142,7 @@ namespace App.Views {
             /******************************************
                     Popover for share
             ******************************************/
-            popupShare = new SharePopover (this.photo.user.name, this.photo.id, btn_share);
+            popupShare = new SharePopover (photo, btn_share);
             btn_share.button_release_event.connect ( () => {
                 popupShare.set_visible (true);
                 return true;
