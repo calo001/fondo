@@ -249,7 +249,7 @@ progressbar trough {
 	border-radius: 50%;
 	padding: 7px;
 	border: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 5px 8px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 }
 
 .prev-window {
@@ -302,7 +302,7 @@ progressbar trough {
 
 .multiple_wallpaper_popup {
   padding: 1em;
-  padding-bottom: 0.1em;
+  padding-bottom: 0;
 }
 
 .multiple_wallpaper_container {
