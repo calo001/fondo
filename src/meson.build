@@ -43,6 +43,7 @@ sources = files(
     'Widgets/LabelTotalResults.vala',
     'Widgets/MultiplePreviewWidget.vala',
     'Widgets/MultipleCardFlowBoxChild.vala',
+    'Widgets/DownloadContainerWidget.vala',
 
     'Services/Connection.vala',
 

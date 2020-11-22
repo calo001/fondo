@@ -31,7 +31,8 @@ namespace App.Views {
             Object (
                 orientation: Gtk.Orientation.VERTICAL,
                 valign: Gtk.Align.CENTER,
-                halign: Gtk.Align.CENTER
+                halign: Gtk.Align.CENTER,
+                margin_bottom: 12
             );
             
             var spinner = new Gtk.Spinner();

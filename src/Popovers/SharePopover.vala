@@ -15,30 +15,48 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * 
 */
+
+using App.Connection;
 using App.Configs;
+using App.Widgets;
+using App.Models;
+using App.Utils;
 
 namespace App.Popover {
     public class SharePopover : Gtk.Popover {  
+        private DownloadContainerWidget                     download_container;
+        private Gtk.Button                                  open_file_btn;
+        private Gtk.Stack                                   stack;
+        private Photo                                       photo;
+        private string                                      local_file_path;
         public string body { get; set; }
         public string uri { get; set; }
         public string autor { get; set; }
+        private const string STACK_BUTTON =                 "open_button";
+        private const string STACK_DOWNLADING =             "downloading";
     
-        public SharePopover (string autor, string uri, Gtk.Widget relative_to) {
+        public SharePopover (Photo photo, Gtk.Widget relative_to) {
             Object (
-                autor: autor,
-                body: S.PHOTO_BY + autor + S.ON_UNSPLASH,
-                uri: @"https://unsplash.com/photos/$uri",
+                autor: photo.user.name,
+                body: S.PHOTO_BY + photo.user.name + S.ON_UNSPLASH,
+                uri: @"https://unsplash.com/photos/$(photo.id)",
                 relative_to: relative_to,
                 position: Gtk.PositionType.BOTTOM,
                 modal: true
             );
-       
-            var share_label = new Gtk.Label (S.SHARE);
-            var autor_label = new Gtk.Label (body);
-            autor_label.hexpand = true;
-            autor_label.halign = Gtk.Align.START;
-            autor_label.selectable = true;
-            share_label.halign = Gtk.Align.START;
+
+            this.photo = photo;
+
+            var share_label = new Gtk.Label (S.SHARE) {
+                expand = true,
+                halign = Gtk.Align.START
+            };
+            var autor_label = new Gtk.Label (body) {
+                hexpand = true,
+                halign = Gtk.Align.START,
+                selectable = true,
+                halign = Gtk.Align.START
+            };
             autor_label.get_style_context ().add_class ("h3");
             share_label.get_style_context ().add_class ("h1");
 
@@ -73,10 +91,10 @@ namespace App.Popover {
             var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
             copy_link_button.tooltip_text = S.COPY_LINK;
             copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-    
-            var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
-            size_group.add_widget (email_button);
-            size_group.add_widget (copy_link_button);
+
+            var download_button = new Gtk.Button.from_icon_name ("browser-download-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            download_button.tooltip_text = S.DOWNLOAD;
+            download_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
             var service_grid = new Gtk.Grid ();
             service_grid.margin = 6;
@@ -88,22 +106,57 @@ namespace App.Popover {
             service_grid.add (telegram_button);
             service_grid.add (whatsapp_button);
 
+            download_container = new DownloadContainerWidget (S.DOWNLOADING) {
+                margin_start = 12,
+                margin_end = 12,
+                margin_bottom = 12
+            };
+
+            open_file_btn = new Gtk.Button.with_label (S.OPEN_FOLDER) {
+                expand = true,
+                margin = 16
+            };
+
+            open_file_btn.clicked.connect ( () => {
+                show_file_uri ();
+                hide ();
+            });
+
+            open_file_btn.get_style_context ().add_class ("action_suggest_btn");
+            open_file_btn.get_style_context ().add_class ("text-button");
+
+            stack = new Gtk.Stack () {
+                transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT,
+                no_show_all = true,
+                homogeneous = false
+            };
+            
+
+            stack.add_named (download_container,    STACK_DOWNLADING);
+            stack.add_named (open_file_btn,             STACK_BUTTON);
+
             var system_grid = new Gtk.Grid ();
             system_grid.margin = 8;
             system_grid.margin_start = 16;
-            system_grid.attach (share_label, 0,0,1,1);
-            system_grid.attach (autor_label, 0,1,1,1);
-            system_grid.attach (copy_link_button, 1,0,1,2);
+            system_grid.attach (share_label,        0,0,1,1);
+            system_grid.attach (autor_label,        0,1,3,1);
+            system_grid.attach (copy_link_button,   1,0,1,1);
+            system_grid.attach (download_button,    2,0,1,1);
     
             var grid = new Gtk.Grid ();
             grid.orientation = Gtk.Orientation.VERTICAL;
             grid.add (system_grid);
             grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             grid.add (service_grid);
+            grid.add (stack);
             grid.show_all ();
             copy_link_button.grab_focus ();
     
             add (grid);
+
+            download_button.clicked.connect (() => {
+                show_dialog ();
+            });
     
             copy_link_button.clicked.connect (() => {
                 var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
@@ -173,6 +226,58 @@ namespace App.Popover {
                 }
                 hide ();
             });
+        }
+
+        public void show_dialog () {
+            var filter = new Gtk.FileFilter();
+            filter.set_filter_name (_("Photo"));
+            filter.add_pattern ("*.jpg");
+            
+            var dialog = new Gtk.FileChooserNative (_("Save File"), null, Gtk.FileChooserAction.SAVE, _("Save"), _("Cancel"));
+            dialog.add_filter (filter);
+            dialog.set_do_overwrite_confirmation (true);
+
+            if (dialog.run() == Gtk.ResponseType.ACCEPT) {
+                var file_path = dialog.get_filename();
+                // save photo
+                print (file_path);
+                save_file (file_path);
+            }
+        }
+
+        private void save_file (string file_path) {
+            AppConnection connection = AppConnection.get_instance();
+            string? url_photo = connection.get_url_photo (photo.links.download_location);
+            Wallpaper wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
+            wallpaper.on_progress.connect ((progress) => {
+                show_progress (progress);
+            });
+
+            wallpaper.finish_download.connect (() => {
+                show_open_file_browser (file_path);
+            });        
+
+            wallpaper.download_picture (file_path, true);
+        }
+
+        private void show_progress (double progress) {
+            download_container.show_all ();
+            open_file_btn.show_all ();
+            stack.set_visible (true);
+            stack.set_visible_child_name (STACK_DOWNLADING);
+            download_container.set_progress (progress);
+        }
+
+        private void show_open_file_browser (string file_path) {
+            stack.set_visible_child_name (STACK_BUTTON);
+            local_file_path = file_path;
+        }
+
+        private void show_file_uri () throws Error {
+            AppInfo app_info = AppInfo.get_default_for_type ("inode/directory", true);
+            var file_list = new List<File> ();
+            file_list.append (File.new_for_path (local_file_path));
+            app_info.launch (file_list, get_window ().get_screen ().get_display ().get_app_launch_context ());
         }
     }
 }
