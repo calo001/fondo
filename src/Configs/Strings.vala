@@ -98,5 +98,8 @@ namespace App.Configs {
         public abstract const string SLIDESHOW_GENERATE = _("Generate!");
         public abstract const string SLIDESHOW_XML_ERROR = _("Error on generate slideshow");
         public abstract const string ERROR = _("Error");
+        public abstract const string DOWNLOAD = _("Download photo");
+        public abstract const string DOWNLOADING = _("Downloading ...");
+        public abstract const string OPEN_FOLDER = _("Show in File Browser ...");
     }
 }
