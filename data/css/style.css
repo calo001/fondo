@@ -101,7 +101,7 @@ radio:checked {
     font-size: 2.5em;
 }
 
-entry {
+.entry {
 	border: none;
     background: rgba(0,0,0,0.05);
     border-radius: 20px;
@@ -272,10 +272,6 @@ progressbar trough {
 
 .btn-category:hover {
     opacity: 0.8;
-}
-
-.text-button {
-    border-radius: 20px;
 }
 
 .suggested-action {
