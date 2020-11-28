@@ -74,6 +74,7 @@ namespace App.Widgets {
             search.margin = 3;
             search.expand = true;
             search.sensitive = false;
+            search.get_style_context ().add_class ("entry");
             search.tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Ctrl>F"},
                 S.SEARCH_TOOLTIP
