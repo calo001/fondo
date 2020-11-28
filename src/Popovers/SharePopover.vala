@@ -277,7 +277,17 @@ namespace App.Popover {
             AppInfo app_info = AppInfo.get_default_for_type ("inode/directory", true);
             var file_list = new List<File> ();
             file_list.append (File.new_for_path (local_file_path));
-            app_info.launch (file_list, get_window ().get_screen ().get_display ().get_app_launch_context ());
+            //app_info.launch (file_list, get_window ().get_screen ().get_display ().get_app_launch_context ());
+            //AppInfo.launch_default_for_uri_async (local_file_path, null, null);
+            show_file_anyway (local_file_path);
+        }
+
+        private void show_file_anyway (string uri) {
+            //try {
+                GLib.AppInfo.launch_default_for_uri ("file://" + uri, (AppLaunchContext) null);
+            //} catch (Error e) {
+            //    critical (e.message);
+            //}
         }
     }
 }
