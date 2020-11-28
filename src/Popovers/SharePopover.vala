@@ -118,7 +118,15 @@ namespace App.Popover {
             };
 
             open_file_btn.clicked.connect ( () => {
-                show_file_uri ();
+                //show_file_uri ();
+                //AppInfo.launch_default_for_uri_async (, null, null).begin ();
+                AppInfo.launch_default_for_uri_async.begin ("file://" + local_file_path, null, null, (obj, res) => {
+                    try {
+                        AppInfo.launch_default_for_uri_async.end (res);
+                    } catch (Error error) {
+                        warning (error.message);
+                    }
+                });
                 hide ();
             });
 
@@ -278,8 +286,7 @@ namespace App.Popover {
             var file_list = new List<File> ();
             file_list.append (File.new_for_path (local_file_path));
             //app_info.launch (file_list, get_window ().get_screen ().get_display ().get_app_launch_context ());
-            //AppInfo.launch_default_for_uri_async (local_file_path, null, null);
-            show_file_anyway (local_file_path);
+            //show_file_anyway (local_file_path);
         }
 
         private void show_file_anyway (string uri) {
