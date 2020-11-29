@@ -47,9 +47,8 @@ namespace App.Models {
         public Sponsorship sponsorship { get; set; }
         public unowned List<Tag> tags { get; set; }
 
-        public string autor_link () {
-            return @"https://unsplash.com/@$(this.user.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral";
-        }
+        public string file_name { owned get { return @"$(user.username)_$(id).jpg"; } }
+        public string autor_link { owned get { return @"https://unsplash.com/@$(this.user.username)?utm_source=$(Constants.PROGRAME_NAME)&utm_medium=referral"; } }
     }
 
     /**

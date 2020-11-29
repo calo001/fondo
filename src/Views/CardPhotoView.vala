@@ -240,7 +240,7 @@ namespace App.Views {
             /******************************************
                         Create Label Autor
             ******************************************/
-            label_autor = new Gtk.LinkButton.with_label(photo.autor_link (), photo.user.name);
+            label_autor = new Gtk.LinkButton.with_label(photo.autor_link, photo.user.name);
             label_autor.get_style_context ().add_class ("button");
             label_autor.get_style_context ().remove_class ("link");
             label_autor.get_style_context ().add_class ("transition");

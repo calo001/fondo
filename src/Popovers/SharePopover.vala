@@ -118,15 +118,8 @@ namespace App.Popover {
             };
 
             open_file_btn.clicked.connect ( () => {
-                //show_file_uri ();
-                //AppInfo.launch_default_for_uri_async (, null, null).begin ();
-                AppInfo.launch_default_for_uri_async.begin ("file://" + local_file_path, null, null, (obj, res) => {
-                    try {
-                        AppInfo.launch_default_for_uri_async.end (res);
-                    } catch (Error error) {
-                        warning (error.message);
-                    }
-                });
+                GLib.message ("file://" + local_file_path);
+                App.Utils.show_file_in_filemanager.begin("file://" + local_file_path);
                 hide ();
             });
 
@@ -162,9 +155,7 @@ namespace App.Popover {
     
             add (grid);
 
-            download_button.clicked.connect (() => {
-                show_dialog ();
-            });
+            download_button.clicked.connect (show_dialog);
     
             copy_link_button.clicked.connect (() => {
                 var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
@@ -238,17 +229,17 @@ namespace App.Popover {
 
         public void show_dialog () {
             var filter = new Gtk.FileFilter();
-            filter.set_filter_name (_("Photo"));
+            filter.set_filter_name (S.JPEG_IMAGE_FILTER);
             filter.add_pattern ("*.jpg");
+            filter.add_pattern ("*.jpeg");
             
-            var dialog = new Gtk.FileChooserNative (_("Save File"), null, Gtk.FileChooserAction.SAVE, _("Save"), _("Cancel"));
+            var dialog = new Gtk.FileChooserNative (S.SAVE_PHOTO, null, Gtk.FileChooserAction.SAVE, S.SAVE_BUTTON, S.CANCEL_BUTTON);
             dialog.add_filter (filter);
+            dialog.set_current_name(photo.file_name);
             dialog.set_do_overwrite_confirmation (true);
 
             if (dialog.run() == Gtk.ResponseType.ACCEPT) {
                 var file_path = dialog.get_filename();
-                // save photo
-                print (file_path);
                 save_file (file_path);
             }
         }
@@ -279,22 +270,6 @@ namespace App.Popover {
         private void show_open_file_browser (string file_path) {
             stack.set_visible_child_name (STACK_BUTTON);
             local_file_path = file_path;
-        }
-
-        private void show_file_uri () throws Error {
-            AppInfo app_info = AppInfo.get_default_for_type ("inode/directory", true);
-            var file_list = new List<File> ();
-            file_list.append (File.new_for_path (local_file_path));
-            //app_info.launch (file_list, get_window ().get_screen ().get_display ().get_app_launch_context ());
-            //show_file_anyway (local_file_path);
-        }
-
-        private void show_file_anyway (string uri) {
-            //try {
-                GLib.AppInfo.launch_default_for_uri ("file://" + uri, (AppLaunchContext) null);
-            //} catch (Error e) {
-            //    critical (e.message);
-            //}
         }
     }
 }
