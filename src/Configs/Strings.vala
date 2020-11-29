@@ -100,6 +100,10 @@ namespace App.Configs {
         public abstract const string ERROR = _("Error");
         public abstract const string DOWNLOAD = _("Download photo");
         public abstract const string DOWNLOADING = _("Downloading ...");
-        public abstract const string OPEN_FOLDER = _("Show in File Browser ...");
+        public abstract const string OPEN_FOLDER = _("Show in File Browser");
+        public abstract const string JPEG_IMAGE_FILTER = _("JPEG images");
+        public abstract const string SAVE_PHOTO = _("Save photo");
+        public abstract const string SAVE_BUTTON = _("Save");
+        public abstract const string CANCEL_BUTTON = _("Cancel");
     }
 }
