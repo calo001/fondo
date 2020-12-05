@@ -15,11 +15,13 @@ sources = files(
     'Views/EmptyView.vala',
     'Views/LoadingView.vala',
     'Views/FilterOptionsView.vala',
+    'Views/MultipleWallpaperView.vala',
 
     'Popovers/MenuPopover.vala',
     'Popovers/WallpaperPopover.vala',
     'Popovers/SharePopover.vala',
     'Popovers/PhotoDetailPopover.vala',
+    'Popovers/MultipleWallpaperPopover.vala',
 
     'Models/Photo.vala',
     'Models/SearchResult.vala',
@@ -29,12 +31,18 @@ sources = files(
     'Utils/JsonManager.vala',
     'Utils/FileManager.vala',
     'Utils/SchemaManager.vala',
+    'Utils/MultiWallpaper.vala',
+    'Utils/XMLBackground.vala',
+    'Utils/Delegates.vala',
+    'Utils/DockManager.vala',
 
     'Widgets/BottonNavbar.vala',
     'Widgets/ButtonTab.vala',
     'Widgets/HeaderBar.vala',
     'Widgets/LabelTop.vala',
     'Widgets/LabelTotalResults.vala',
+    'Widgets/MultiplePreviewWidget.vala',
+    'Widgets/MultipleCardFlowBoxChild.vala',
 
     'Services/Connection.vala',
 
