@@ -40,7 +40,6 @@
           <li>🔄️ Filter by orientation: Portrait, Landscape or Any.</li>
           <li>🖼️ Create an amazing slideshow on your desktop by selecting your favorites photos.</li>
         </ul>
-        <p>Fondo is translated into several languages. If your language is missing or incomplete, please help to [translate](https://github.com/calo001/fondo/tree/master/po) Fondo into your language.</p>
     </description>
     <releases>
       <release version="1.4.0" date="2020-11-15">
@@ -256,6 +255,7 @@
     <url type="homepage">https://github.com/calo001/fondo</url>
     <url type="bugtracker">https://github.com/calo001/fondo/issues</url>
     <url type="help">https://github.com/calo001/fondo/issues</url>
+    <url type="translate">https://github.com/calo001/fondo/tree/master/po</url>
     <update_contact>calo_lrc@hotmail.com</update_contact>
     <custom>
         <value key="x-appcenter-color-primary">#82ffc4</value>
