@@ -237,11 +237,11 @@ msgstr "Alles"
 
 #: src/Configs/Strings.vala:82
 msgid "Delete a photo from history"
-msgstr "Foto aus dem Verlauf entfernen"
+msgstr "Ein Foto aus dem Verlauf entfernen"
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
-msgstr "Soll das Foto wirklich aus dem Verlauf entfernt werden?"
+msgstr "Sind Sie sicher, dass Sie das Foto aus dem Verlauf entfernen möchten?"
 
 #: src/Configs/Strings.vala:84
 #, fuzzy
