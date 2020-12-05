@@ -2,21 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.calo001.fondo package.
 # Onno Giesmann <nutzer3105@gmail.com>, 2019-2020.
+# Milo Ivir <mail@milotype.de>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-15 12:03-0600\n"
-"PO-Revision-Date: 2020-01-19 14:10+0100\n"
-"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
+"POT-Creation-Date: 2020-01-18 22:57-0600\n"
+"PO-Revision-Date: 2020-10-04 13:53+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -236,11 +237,11 @@ msgstr "Alles"
 
 #: src/Configs/Strings.vala:82
 msgid "Delete a photo from history"
-msgstr ""
+msgstr "Foto aus dem Verlauf entfernen"
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
-msgstr ""
+msgstr "Soll das Foto wirklich aus dem Verlauf entfernt werden?"
 
 #: src/Configs/Strings.vala:84
 #, fuzzy

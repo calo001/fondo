@@ -1,23 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.calo001.fondo package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Milo Ivir <mail@milotype.de>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-15 12:03-0600\n"
-"PO-Revision-Date: 2020-07-18 18:19+0200\n"
+"POT-Creation-Date: 2020-05-23 17:09-0500\n"
+"PO-Revision-Date: 2020-10-04 14:57+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -33,11 +34,11 @@ msgstr "Posjeti web-stranicu"
 
 #: src/Configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr "Fotografije od Unsplash: Lijepe besplatne slike i fotografije 🎁"
+msgstr "Unsplash slike: Lijepe besplatne slike 🎁"
 
 #: src/Configs/Strings.vala:32
 msgid "Photo by "
-msgstr "Autor fotografije "
+msgstr "Autor slike "
 
 #: src/Configs/Strings.vala:33
 msgid " on Unsplash"
@@ -101,7 +102,7 @@ msgstr "🌻 Priroda"
 
 #: src/Configs/Strings.vala:48
 msgid "🐹 Animal"
-msgstr "🐹 Životinja"
+msgstr "🐹 Životinje"
 
 #: src/Configs/Strings.vala:49
 msgid "☕ Food & drink"
@@ -137,7 +138,7 @@ msgstr "💻 Tehnologija"
 
 #: src/Configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
-msgstr "🍁 Tekstura i mustra"
+msgstr "🍁 Teksture i mustre"
 
 #: src/Configs/Strings.vala:58
 msgid "📑 Flat lay"
@@ -145,7 +146,7 @@ msgstr "📑 Pogled odozgo"
 
 #: src/Configs/Strings.vala:59
 msgid "Photos not found"
-msgstr "Fotografije nisu pronađene"
+msgstr "Slike nisu pronađene"
 
 #: src/Configs/Strings.vala:60
 msgid "Loading…"
@@ -157,7 +158,7 @@ msgstr "Zatvori cjeloekranski prikaz"
 
 #: src/Configs/Strings.vala:62
 msgid "Search photos Unsplash"
-msgstr "Traži fotografije na Unsplash"
+msgstr "Traži slike na Unsplash"
 
 #: src/Configs/Strings.vala:63
 msgid "History"
@@ -217,7 +218,7 @@ msgstr "Pokušaj tražiti neki drugi pojam."
 
 #: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
-msgstr "Za dodavanje fotografije u kronologiju, pritisni je."
+msgstr "Za dodavanje slike u kronologiju, pritisni je."
 
 #: src/Configs/Strings.vala:78
 msgid "Network Error"
@@ -237,7 +238,7 @@ msgstr "Sve"
 
 #: src/Configs/Strings.vala:82
 msgid "Delete a photo from history"
-msgstr "Izbriši fotografiju iz kronologije"
+msgstr "Izbriši sliku iz kronologije"
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"

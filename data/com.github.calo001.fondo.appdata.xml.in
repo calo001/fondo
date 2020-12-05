@@ -255,6 +255,7 @@
     <url type="homepage">https://github.com/calo001/fondo</url>
     <url type="bugtracker">https://github.com/calo001/fondo/issues</url>
     <url type="help">https://github.com/calo001/fondo/issues</url>
+    <url type="translate">https://github.com/calo001/fondo/tree/master/po</url>
     <update_contact>calo_lrc@hotmail.com</update_contact>
     <custom>
         <value key="x-appcenter-color-primary">#82ffc4</value>
