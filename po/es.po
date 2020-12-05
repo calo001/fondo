@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-10 22:00-0500\n"
+"POT-Creation-Date: 2020-11-15 12:03-0600\n"
 "PO-Revision-Date: 2020-01-11 20:23+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -240,3 +240,79 @@ msgstr "Elimina una foto del historial"
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
 msgstr "¿Seguro que quieres eliminar la foto del historial?"
+
+#: src/Configs/Strings.vala:84
+#, fuzzy
+msgid "Wallpaper Slideshow"
+msgstr "¡Fondo de pantalla listo!"
+
+#: src/Configs/Strings.vala:85
+msgid "Preparing slideshow ..."
+msgstr "Preparando galería de fondos de pantalla ..."
+
+#: src/Configs/Strings.vala:86
+msgid "Select a period of time to change the wallpaper in the slideshow."
+msgstr "Selecciona un periodo de tiempo para cambiar el fondo de pantalla en la galería."
+
+#: src/Configs/Strings.vala:87
+msgid ""
+"You can change the photo to use on the lock screen by clicking on one of the "
+"selected photos."
+msgstr "Puedes cambiar el fondo de pantalla usado en la pantalla de bloqueo dando clic en una de las fotos seleccionadas"
+
+#: src/Configs/Strings.vala:88
+#, fuzzy
+msgid "Use on lock screen"
+msgstr "Usar en pantalla de bloqueo"
+
+#: src/Configs/Strings.vala:89
+msgid "Add at least two photos"
+msgstr "Agrega al menos dos fotos"
+
+#: src/Configs/Strings.vala:90
+#, c-format
+msgid "%d photos selected"
+msgstr "%d fotos seleccionadas"
+
+#: src/Configs/Strings.vala:91
+#, c-format
+msgid "%d photo selected"
+msgstr "%d foto seleccionada"
+
+#: src/Configs/Strings.vala:92
+msgid "Select 1 or more photos by clicking on "
+msgstr "Selecciona una o más fotos dando clic en "
+
+#: src/Configs/Strings.vala:93
+#, fuzzy
+msgid "Wallpaper slideshow ready!"
+msgstr "¡Galería de fondos de pantalla listo!"
+
+#: src/Configs/Strings.vala:94
+#, c-format
+msgid "Enjoy a new beautiful wallpaper every %s"
+msgstr "Disfruta de un nuevo fondo de pantalla cada %s"
+
+#: src/Configs/Strings.vala:95
+msgid "30 minutes"
+msgstr "30 minutos"
+
+#: src/Configs/Strings.vala:96
+msgid "1 hour"
+msgstr "1 hora"
+
+#: src/Configs/Strings.vala:97
+msgid "1 day"
+msgstr "1 día"
+
+#: src/Configs/Strings.vala:98
+msgid "Generate!"
+msgstr "¡Generar!"
+
+#: src/Configs/Strings.vala:99
+msgid "Error on generate slideshow"
+msgstr "Error al crear galería de fondos de pantalla"
+
+#: src/Configs/Strings.vala:100
+msgid "Error"
+msgstr "Error"

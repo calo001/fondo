@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-10 22:00-0500\n"
+"POT-Creation-Date: 2020-11-15 12:03-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,4 +239,77 @@ msgstr ""
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
+msgstr ""
+
+#: src/Configs/Strings.vala:84
+msgid "Wallpaper Slideshow"
+msgstr ""
+
+#: src/Configs/Strings.vala:85
+msgid "Preparing slideshow ..."
+msgstr ""
+
+#: src/Configs/Strings.vala:86
+msgid "Select a period of time to change the wallpaper in the slideshow."
+msgstr ""
+
+#: src/Configs/Strings.vala:87
+msgid ""
+"You can change the photo to use on the lock screen by clicking on one of the "
+"selected photos."
+msgstr ""
+
+#: src/Configs/Strings.vala:88
+msgid "Use on lock screen"
+msgstr ""
+
+#: src/Configs/Strings.vala:89
+msgid "Add at least two photos"
+msgstr ""
+
+#: src/Configs/Strings.vala:90
+#, c-format
+msgid "%d photos selected"
+msgstr ""
+
+#: src/Configs/Strings.vala:91
+#, c-format
+msgid "%d photo selected"
+msgstr ""
+
+#: src/Configs/Strings.vala:92
+msgid "Select 1 or more photos by clicking on "
+msgstr ""
+
+#: src/Configs/Strings.vala:93
+msgid "Wallpaper slideshow ready!"
+msgstr ""
+
+#: src/Configs/Strings.vala:94
+#, c-format
+msgid "Enjoy a new beautiful wallpaper every %s"
+msgstr ""
+
+#: src/Configs/Strings.vala:95
+msgid "30 minutes"
+msgstr ""
+
+#: src/Configs/Strings.vala:96
+msgid "1 hour"
+msgstr ""
+
+#: src/Configs/Strings.vala:97
+msgid "1 day"
+msgstr ""
+
+#: src/Configs/Strings.vala:98
+msgid "Generate!"
+msgstr ""
+
+#: src/Configs/Strings.vala:99
+msgid "Error on generate slideshow"
+msgstr ""
+
+#: src/Configs/Strings.vala:100
+msgid "Error"
 msgstr ""

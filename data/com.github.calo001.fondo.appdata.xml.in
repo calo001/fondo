@@ -33,22 +33,20 @@
         <p>Have a minimalist, simple and elegant interface, additionally, you can change from light mode to dark mode as you prefer.</p>
         <p>Main features:</p>
         <ul>
-          <li>🌀️ To infinity and beyond!: Use the infinite scroll to load more photos</li>
-          <li>🖼️ Find out what you like: Search by categories or type in the search bar</li>
-          <li>🕚️ Keep your favorite photos with you: Every new wallpaper is saved in the history</li>
-          <li>📬️ Share with your friends: Select a variety of options for sharing an Unsplash link to the photo</li>
-          <li>🔄️ Filter by orientation: Portrait, Landscape or Any</li>
+          <li>🌠️ To infinity and beyond!: Use the infinite scroll to load more photos.</li>
+          <li>🔍️ Find out what you like: Search by categories or type in the search bar.</li>
+          <li>🕒️ Keep your favorite photos with you: Every new wallpaper is saved in the history.</li>
+          <li>📬️ Share with your friends: Select a variety of options for sharing an Unsplash link to the photo.</li>
+          <li>🔄️ Filter by orientation: Portrait, Landscape or Any.</li>
+          <li>🖼️ Create an amazing slideshow on your desktop by selecting your favorites photos.</li>
         </ul>
     </description>
     <releases>
-      <release version="1.3.10" date="2020-10-10">
+      <release version="1.4.0" date="2020-11-15">
         <description>
-          <p>New and updated languages</p>
+          <p>Wallpaper slideshow!</p>
           <ul>
-            <li>Croatian by Milo Ivir</li>
-            <li>Italian by Albano Battistella</li>
-            <li>Portuguese Portugal by André Barata</li>
-            <li>Brazilian Portuguese by costaht</li>
+            <li>Select a set of photos to create the most beautiful wallpaper slideshow on your desktop.</li>
           </ul>
         </description>
       </release>
@@ -257,6 +255,7 @@
     <url type="homepage">https://github.com/calo001/fondo</url>
     <url type="bugtracker">https://github.com/calo001/fondo/issues</url>
     <url type="help">https://github.com/calo001/fondo/issues</url>
+    <url type="translate">https://github.com/calo001/fondo/tree/master/po</url>
     <update_contact>calo_lrc@hotmail.com</update_contact>
     <custom>
         <value key="x-appcenter-color-primary">#82ffc4</value>

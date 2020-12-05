@@ -81,6 +81,22 @@ namespace App.Configs {
         public abstract const string ANY = _("Any");
         public abstract const string DELETE_PHOTO_DIALOG_TITLE = _("Delete a photo from history");
         public abstract const string DELETE_PHOTO_DIALOG_MESSAGE = _("Are you sure you want to delete the photo from history?");
-
+        public abstract const string WALLPAPER_SLIDESHOW = _("Wallpaper Slideshow");
+        public abstract const string PREPARING_SLIDESHOW = _("Preparing slideshow ...");
+        public abstract const string SLIDESHOW_PERIODICITY = _("Select a period of time to change the wallpaper in the slideshow.");
+        public abstract const string GREETER_DESCRIPTION_CONTAINER = _("You can change the photo to use on the lock screen by clicking on one of the selected photos.");
+        public abstract const string USER_IN_GREETER = _("Use on lock screen");
+        public abstract const string SLIDESHOW_MIN_PHOTOS = _("Add at least two photos");
+        public abstract const string SLIDESHOW_PHOTOS_SELECTED = _("%d photos selected");
+        public abstract const string SLIDESHOW_PHOTO_SELECTED = _("%d photo selected");
+        public abstract const string SLIDESHOW_SELECT_PHOTOS_BY = _("Select 1 or more photos by clicking on ");
+        public abstract const string SLIDESHOW_NOTIFICATION_TITLE = _("Wallpaper slideshow ready!");
+        public abstract const string SLIDESHOW_NOTIFICATION_BODY = _("Enjoy a new beautiful wallpaper every %s");
+        public abstract const string SLIDESHOW_30_MIN = _("30 minutes");
+        public abstract const string SLIDESHOW_1_HOUR = _("1 hour");
+        public abstract const string SLIDESHOW_1_DAY = _("1 day");
+        public abstract const string SLIDESHOW_GENERATE = _("Generate!");
+        public abstract const string SLIDESHOW_XML_ERROR = _("Error on generate slideshow");
+        public abstract const string ERROR = _("Error");
     }
 }
