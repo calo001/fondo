@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-23 17:09-0500\n"
+"POT-Creation-Date: 2020-12-05 18:53-0600\n"
 "PO-Revision-Date: 2020-01-11 20:24+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -70,136 +70,178 @@ msgid "Main features:"
 msgstr "Características principales"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:36
-msgid "To infinity and beyond!: Use the infinite scroll to load more photos"
+#, fuzzy
+msgid "🌠️ To infinity and beyond!: Use the infinite scroll to load more photos."
 msgstr ""
 "Al infinito... ¡y más allá!: Usa el scroll infinito para cargar más fotos"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:37
-msgid "Find out what you like: Search by categories or type in the search bar"
+#, fuzzy
+msgid ""
+"🔍️ Find out what you like: Search by categories or type in the search bar."
 msgstr ""
 "Encuentra lo que te gusta: Busca por categorias o escribe lo que quieras en "
 "la barra de búsqueda"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:38
+#, fuzzy
 msgid ""
-"Keep your favorite photos with you: Every new wallpaper is saved in the "
-"history"
+"🕒️ Keep your favorite photos with you: Every new wallpaper is saved in the "
+"history."
 msgstr ""
 "Quédate con tus fotos favoritas: Cada nuevo fondo de pantalla es guardado en "
 "el historial"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:39
+#, fuzzy
 msgid ""
-"Share with your friends: Select a variety of options for sharing an Unsplash "
-"link to the photo"
+"📬️ Share with your friends: Select a variety of options for sharing an "
+"Unsplash link to the photo."
 msgstr ""
 "Comparte con tus amigos: Selecciona una variedad de opciones para compartir "
 "un link de una foto de Unsplash"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:40
-msgid "Filter by orientation: Portrait, Landscape or Any"
+#, fuzzy
+msgid "🔄️ Filter by orientation: Portrait, Landscape or Any."
 msgstr "Filtra por orientación: Vertical, Horizontal o Cualquiera"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:46
+#: data/com.github.calo001.fondo.appdata.xml.in:41
+msgid ""
+"🖼️ Create an amazing slideshow on your desktop by selecting your favorites "
+"photos."
+msgstr ""
+"🖼️ Crea una asombrosa galería de fondos de pantalla en tu escritorio "
+"seleccionando tus fotos favoritas."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:42
+msgid "🔽️ Download any photo you like."
+msgstr "🔽️ Descarga cualquier foto que te agrade."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:48
+msgid "Download any photo in your file system"
+msgstr "Descarga cualquier foto en tu sistema de archivos"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:50
+msgid "Click on share photo to find the download option."
+msgstr "Clic en Compartir foto para encontrar la opción de descarga"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:51
+msgid "Updated translation for Italian, Dutch, and German languages."
+msgstr "Traducciones actualizadas para los lenguajes italiano y alemán."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:57
+msgid "Wallpaper slideshow!"
+msgstr "Galería de fondos de pantalla"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:59
+msgid ""
+"Select a set of photos to create the most beautiful wallpaper slideshow on "
+"your desktop."
+msgstr ""
+"Selecciona un conjunto de fotos para crear la galería de fondos de pantalla "
+"más increíble en tu escritorio."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:65
 msgid "Free up space!"
 msgstr "¡Libera espacio!"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:48
+#: data/com.github.calo001.fondo.appdata.xml.in:67
 msgid "Delete photos from history."
 msgstr "Elimina fotos del historial."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:54
+#: data/com.github.calo001.fondo.appdata.xml.in:73
 msgid "Fist year release!"
 msgstr "Lanzamiento inicial 1.0.0"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:56
+#: data/com.github.calo001.fondo.appdata.xml.in:75
 msgid "Back to the classic appearance."
 msgstr "De regreso a la apariencia clásica."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:57
+#: data/com.github.calo001.fondo.appdata.xml.in:76
 msgid "Fix language codes."
 msgstr "Correción en códigos de lenguajes."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:58
+#: data/com.github.calo001.fondo.appdata.xml.in:77
 msgid "Improve the way translations files are setting."
 msgstr "Mejora en la estructura de los archivos de traducción."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:59
+#: data/com.github.calo001.fondo.appdata.xml.in:78
 msgid "The width and height are shown in each photo."
 msgstr "El ancho y el alto se muestran en cada foto."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:60
+#: data/com.github.calo001.fondo.appdata.xml.in:79
 msgid "Fix greeter don't getting wallpaper set via Fondo."
 msgstr "Se corrige el error en greeter que no mostraba el fondo de pantalla."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:66
+#: data/com.github.calo001.fondo.appdata.xml.in:85
 msgid "Custom colors and icon for Christmas"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:71
+#: data/com.github.calo001.fondo.appdata.xml.in:90
 msgid "Custom colors for #DiaDeMuertos"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:76
-#: data/com.github.calo001.fondo.appdata.xml.in:89
+#: data/com.github.calo001.fondo.appdata.xml.in:95
+#: data/com.github.calo001.fondo.appdata.xml.in:108
 msgid "Fix"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:78
+#: data/com.github.calo001.fondo.appdata.xml.in:97
 msgid "#65 Error copy from URI to directory"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:79
+#: data/com.github.calo001.fondo.appdata.xml.in:98
 msgid "#68 No previews availible"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:85
-#: data/com.github.calo001.fondo.appdata.xml.in:97
-#: data/com.github.calo001.fondo.appdata.xml.in:122
-#: data/com.github.calo001.fondo.appdata.xml.in:136
-#: data/com.github.calo001.fondo.appdata.xml.in:144
-#: data/com.github.calo001.fondo.appdata.xml.in:153
-#: data/com.github.calo001.fondo.appdata.xml.in:161
+#: data/com.github.calo001.fondo.appdata.xml.in:104
+#: data/com.github.calo001.fondo.appdata.xml.in:116
+#: data/com.github.calo001.fondo.appdata.xml.in:141
+#: data/com.github.calo001.fondo.appdata.xml.in:155
+#: data/com.github.calo001.fondo.appdata.xml.in:163
+#: data/com.github.calo001.fondo.appdata.xml.in:172
+#: data/com.github.calo001.fondo.appdata.xml.in:180
 msgid "New"
 msgstr "Nuevo"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:87
+#: data/com.github.calo001.fondo.appdata.xml.in:106
 msgid "Added Turkish translation"
 msgstr "Agregada traducción a francés"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:91
+#: data/com.github.calo001.fondo.appdata.xml.in:110
 msgid "German translation don't work"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:99
+#: data/com.github.calo001.fondo.appdata.xml.in:118
 msgid "Added German translation"
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:105
+#: data/com.github.calo001.fondo.appdata.xml.in:124
 msgid "Important fixes"
 msgstr "Correcciones importantes"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:107
+#: data/com.github.calo001.fondo.appdata.xml.in:126
 msgid "Login screen does not use selected wallpaper"
 msgstr "Pantalla de login no usa el fondo de pantalla seleccionado"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:108
+#: data/com.github.calo001.fondo.appdata.xml.in:127
 msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
 msgstr "Fondo de pantalla no cambia cuando en Ubuntu Mate 18.04"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:114
+#: data/com.github.calo001.fondo.appdata.xml.in:133
 msgid "Update"
 msgstr "Actualización"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:116
+#: data/com.github.calo001.fondo.appdata.xml.in:135
 msgid "Dutch (Netherlands) translation"
 msgstr "Traducción a Dutch (Netherlands)"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:124
+#: data/com.github.calo001.fondo.appdata.xml.in:143
 msgid "Keep your favorite photos with you, the photo history has arrived!"
 msgstr "Quédate con tus fotos favoritas, '¡El historial de fotos ha llegado!"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:125
+#: data/com.github.calo001.fondo.appdata.xml.in:144
 msgid ""
 "New way of navigating with a bottom bar that allows you to go to: Today, "
 "Categories and History"
@@ -207,7 +249,7 @@ msgstr ""
 "Nueva forma de navegación con una Barra Inferior que te permite ir a: Hoy, "
 "Categorias e Historial"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:126
+#: data/com.github.calo001.fondo.appdata.xml.in:145
 msgid ""
 "Speed up your search with the photo filter by Orientation: Portrait, "
 "Landscape or Any"
@@ -215,106 +257,106 @@ msgstr ""
 "Agiliza tu búsqueda con el filtrador de fotos por orientación: Horizontal, "
 "Vertical o Cualquiera"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:127
+#: data/com.github.calo001.fondo.appdata.xml.in:146
 msgid "Learn more about a photo with the Detail popup in the full screen view"
 msgstr ""
 "Conoce más sobre una foto con el popup de Detalle en la vista de pantalla "
 "completa"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:128
+#: data/com.github.calo001.fondo.appdata.xml.in:147
 msgid "Focus on Search entry with Ctrl+F"
 msgstr "Enfoca la barra de búsqueda con Ctrl+F"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:129
+#: data/com.github.calo001.fondo.appdata.xml.in:148
 msgid "When doing a search, the total number of results are displayed"
 msgstr "Cuando se hace una búsqueda, se muestra el número total de resultados"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:130
+#: data/com.github.calo001.fondo.appdata.xml.in:149
 msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
 msgstr ""
 "Animación de degradadao en el scrollbar, mode switch y placeholder de la foto"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:138
+#: data/com.github.calo001.fondo.appdata.xml.in:157
 msgid "Remove G+ option from Share popup"
 msgstr "Quita la opción de G+ en el popup de Compartir"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:146
+#: data/com.github.calo001.fondo.appdata.xml.in:165
 msgid "Update the set of screenshots"
 msgstr "Actualiza el conjunto de capturas de pantalla"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:147
+#: data/com.github.calo001.fondo.appdata.xml.in:166
 msgid "Fix error in appdata"
 msgstr "Arregar error en appdata"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:155
+#: data/com.github.calo001.fondo.appdata.xml.in:174
 msgid "Added Dutch (Netherlands) translation"
 msgstr "Agregada traducción a Dutch (Netherlands)"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:163
+#: data/com.github.calo001.fondo.appdata.xml.in:182
 msgid "Add french translations"
 msgstr "Agregada traducción a francés"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:169
-#: data/com.github.calo001.fondo.appdata.xml.in:179
+#: data/com.github.calo001.fondo.appdata.xml.in:188
+#: data/com.github.calo001.fondo.appdata.xml.in:198
 msgid "Updates"
 msgstr "Actualizaciones"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:171
+#: data/com.github.calo001.fondo.appdata.xml.in:190
 msgid "Search by category and query"
 msgstr "Búsca por categoría y consulta"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:172
+#: data/com.github.calo001.fondo.appdata.xml.in:191
 msgid "New look and feel on hover a photo"
 msgstr "Nueva apariencia al pasar encima de una foto"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:173
+#: data/com.github.calo001.fondo.appdata.xml.in:192
 msgid "Add gradients to scrollbar and mode switch"
 msgstr "Degradados en el scrollbar y mode switch"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:181
+#: data/com.github.calo001.fondo.appdata.xml.in:200
 msgid "New screenshots with awesome photos"
 msgstr "Nuevas capturas de pantalla con asombrosas fotos"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:182
+#: data/com.github.calo001.fondo.appdata.xml.in:201
 msgid "OARS data social-info set to mild"
 msgstr "OARS data social-info establecida en mild"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:188
+#: data/com.github.calo001.fondo.appdata.xml.in:207
 msgid "Fixes and improvements"
 msgstr "Correcciones y mejoras"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:190
+#: data/com.github.calo001.fondo.appdata.xml.in:209
 msgid "Orthographic corrections in the Spanish translation"
 msgstr "Correcciones ortográficas en la traducción al español"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:191
+#: data/com.github.calo001.fondo.appdata.xml.in:210
 msgid "The photos are sorted from highest to lowest according to height"
 msgstr "Las fotos son ordenadas de la más grande a la pequeña en altura"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:197
+#: data/com.github.calo001.fondo.appdata.xml.in:216
 msgid "A very nice update with new features"
 msgstr "Una incríble actualización con nuevas características"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:199
+#: data/com.github.calo001.fondo.appdata.xml.in:218
 msgid "Responsive, resizable window"
 msgstr "Responsiva, la ventana es redimensionable"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:200
+#: data/com.github.calo001.fondo.appdata.xml.in:219
 msgid "Infinite scrolling: just scroll to keep loading new photos"
 msgstr "Scroll infinito, solo navega hacia abajo para cargar más fotos"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:201
+#: data/com.github.calo001.fondo.appdata.xml.in:220
 msgid "Wallpaper options: set zoom, centered, and more"
 msgstr "Opciones de fondo de pantalla, zoom, centrado y más"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:202
+#: data/com.github.calo001.fondo.appdata.xml.in:221
 msgid "Improved icon and styling"
 msgstr "Icono mejorado y más estilo"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:207
+#: data/com.github.calo001.fondo.appdata.xml.in:226
 msgid "Improved UI."
 msgstr "Mejora de UI"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:212
+#: data/com.github.calo001.fondo.appdata.xml.in:231
 msgid "Initial 1.0.0 release!"
 msgstr "Lanzamiento inicial 1.0.0"

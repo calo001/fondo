@@ -23,8 +23,9 @@ using App.Utils;
 using App.Widgets;
 using App.Popover;
 using App.Windows;
-using Gtk;
 using App.Enums;
+using App.Delegate;
+using Gtk;
 
 namespace App.Views {
 
@@ -60,6 +61,7 @@ namespace App.Views {
 
         private int                     w_photo;
         private int                     h_photo;
+        public bool                     is_for_greeter {get; set;}
 
         /***********************************
                     Constructor
@@ -90,6 +92,7 @@ namespace App.Views {
             image = new Granite.AsyncImage(true, true);
             image.get_style_context ().add_class ("backimg");
             image.get_style_context ().add_class ("gradient_back");
+            image.get_style_context ().add_class ("transition");
             image.has_tooltip = true;
             var w_max = 310;
             var h_max = 430;
@@ -139,7 +142,7 @@ namespace App.Views {
             /******************************************
                     Popover for share
             ******************************************/
-            popupShare = new SharePopover (this.photo.user.name, this.photo.id, btn_share);
+            popupShare = new SharePopover (photo, btn_share);
             btn_share.button_release_event.connect ( () => {
                 popupShare.set_visible (true);
                 return true;
@@ -229,11 +232,7 @@ namespace App.Views {
                 if (event.type == Gdk.EventType.BUTTON_RELEASE && event.button == 3) {
                     popup.set_visible (true);
                 } else {
-                    if (is_multiple_select()) {
-                        toggle_btn_select ();
-                    } else {
-                        setup_wallpaper ();
-                    }
+                    setup_wallpaper ();
                 }
                 return true;
             } );
@@ -241,7 +240,7 @@ namespace App.Views {
             /******************************************
                         Create Label Autor
             ******************************************/
-            label_autor = new Gtk.LinkButton.with_label(photo.autor_link (), photo.user.name);
+            label_autor = new Gtk.LinkButton.with_label(photo.autor_link, photo.user.name);
             label_autor.get_style_context ().add_class ("button");
             label_autor.get_style_context ().remove_class ("link");
             label_autor.get_style_context ().add_class ("transition");
@@ -298,18 +297,50 @@ namespace App.Views {
         * Update the wallpaper
         **************************************************/
         public void setup_wallpaper (string opt = "zoom") {
-            this.set_sensitive (false);
             revealer.set_reveal_child (true);
+            start_global_progress ();
+            this.set_sensitive (false);
 
             string? url_photo = connection.get_url_photo(photo.links.download_location);
-            wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name, bar);
+            wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
+            
+            wallpaper.on_progress.connect ((p) => {
+                update_global_progress (p);
+            });
+            
             wallpaper.finish_download.connect (() => {
+                update_global_progress (1);
+                stop_global_progress ();
                 this.set_sensitive (true);
-                JsonManager jsonManager = new JsonManager ();
-                var history = jsonManager.add_photo (photo);
-                jsonManager.save_history (history);
+                save_to_history ();
             });
             wallpaper.update_wallpaper (opt);
+        }
+
+        public void save_to_history () {
+            JsonManager jsonManager = new JsonManager ();
+            var history = jsonManager.add_photo (photo);
+            jsonManager.save_history (history);
+        }
+
+        /*
+         * Set progress for bar widget and Granite service
+         */
+        private void update_global_progress (double progress) {
+            bar.set_fraction (progress);
+            update_dock_progress (progress);
+        }
+
+        private void stop_global_progress () {
+            App.Dock.stop ();
+        }
+
+        private void start_global_progress () {
+            App.Dock.start ();
+        }
+
+        private void update_dock_progress (double progress) {
+            App.Dock.update_dock_progress (progress);
         }
 
         /*************************************************
@@ -398,14 +429,13 @@ namespace App.Views {
             btn_view.halign = Gtk.Align.END;
             btn_view.valign = Gtk.Align.START;
             btn_view.can_default = true;
-
         }
 
         //
         //
         private void setup_select_btn () {
             Gtk.Image buttonIcon = new Gtk.Image ();
-            buttonIcon.gicon = new ThemedIcon ("object-select-symbolic");
+            buttonIcon.gicon = new ThemedIcon ("view-paged-symbolic");
             btn_select = new Gtk.ToggleButton();
             btn_select.set_image(buttonIcon);
             btn_select.set_always_show_image(true);
@@ -422,16 +452,35 @@ namespace App.Views {
         }
 
         private void toggle_btn_select () {
-            btn_select.set_active(!btn_select.get_active());
+            if (btn_select.get_active()) {
+                btn_select.get_style_context ().remove_class ("button-clicked");
+                set_select(false);
+            } else {
+                btn_select.get_style_context ().add_class ("button-clicked");
+                set_select(true);
+            }
+            
             toggled_multiple(btn_select.get_active());
+        }
+
+        public void set_select (bool selected) {
+            btn_select.set_active(selected);
         }
 
         public Photo get_photo () {
             return this.photo;
         }
 
+        public File get_file_photo () {
+            return this.file_photo;
+        }
+
         public bool is_multiple_select () {
             return btn_select.get_visible();
+        }
+
+        public string get_string () {
+            return this.photo.id;
         }
     }
 

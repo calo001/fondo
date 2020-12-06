@@ -162,22 +162,28 @@ namespace App.Controllers {
                 bottonNavbar.clean_all ();
             });
 
-            multiple_wallpaper.multiple_selection.connect ( ( ismultiple )=>{
-                view.setMultiple (ismultiple);
-                search_view.setMultiple (ismultiple);
-                history_view.setMultiple (ismultiple);
+            view.selected_card.connect ( (photo_card) => {
+                multiple_wallpaper.add_card (photo_card);
             });
 
-            view.multiple_selected.connect ( (photo_list) => {
-                multiple_wallpaper.update_photos(photo_list);
+            search_view.selected_card.connect ( (photo_card) => {
+                multiple_wallpaper.add_card (photo_card);
             });
 
-            search_view.multiple_selected.connect ( (photo_list) => {
-                multiple_wallpaper.update_photos(photo_list);
+            history_view.selected_card.connect ( (photo_card) => {
+                multiple_wallpaper.add_card (photo_card);
             });
 
-            history_view.multiple_selected.connect ( (photo_list) => {
-                multiple_wallpaper.update_photos(photo_list);
+            view.removed_card.connect ( (photo_card) => {
+                multiple_wallpaper.remove_card (photo_card);
+            });
+
+            search_view.removed_card.connect ( (photo_card) => {
+                multiple_wallpaper.remove_card (photo_card);
+            });
+
+            history_view.removed_card.connect ( (photo_card) => {
+                multiple_wallpaper.remove_card (photo_card);
             });
 
             view_error.retry.connect(() => {

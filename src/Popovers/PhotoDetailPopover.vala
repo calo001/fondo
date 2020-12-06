@@ -139,7 +139,7 @@ namespace App.Popover {
             btn_set_wallpaper.halign = Gtk.Align.CENTER;
             btn_set_wallpaper.get_style_context (). add_class ("suggested-action");
 
-            var btn_user_profile = new Gtk.LinkButton.with_label (photo.autor_link (), S.USER_PROFILE);
+            var btn_user_profile = new Gtk.LinkButton.with_label (photo.autor_link, S.USER_PROFILE);
             btn_user_profile.halign = Gtk.Align.CENTER;
             btn_user_profile.get_style_context ().add_class ("button");
             btn_user_profile.get_style_context ().remove_class ("link");

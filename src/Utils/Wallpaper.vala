@@ -30,11 +30,11 @@ namespace App.Utils {
 
         // Signal to inform that download is finished
         public signal void finish_download ();
+        public signal void on_progress (double progress);
 
         private string                  uri_endpoint;                   // URI http of picture in unsplash
         public  string                  full_picture_path {get; set;}   // Path for wallpaper picture
-        private ProgressBar             bar;                            // Downloading Progress
-        private string                  img_file_name;                  // Based on id_photo & username
+        public string                   img_file_name;                  // Based on id_photo & username
         private AccountsServiceUser?    accounts_service;
 
         // Base path for wallpaper picture
@@ -47,9 +47,8 @@ namespace App.Utils {
             * username is used for naming the file
             * bar to update progress
         ************************************/
-        public Wallpaper (string uri_endpoint, string id_photo, string username, ProgressBar bar) {
+        public Wallpaper (string uri_endpoint, string id_photo, string username) {
             this.uri_endpoint = uri_endpoint;
-            this.bar = bar;
             this.img_file_name = username + "_" + id_photo + ".jpeg";
             this.full_picture_path = BASE_DIR + img_file_name;
             this.accounts_service = AccountServiceProvider.get_instance ();
@@ -110,30 +109,24 @@ namespace App.Utils {
             * Update progress via show_progress method
             * Emit finish_download signal
         ***********************************************************************/
-        public bool download_picture () {
+        public bool download_picture (string? full_file_path = null, bool overwrite = false) {
             MainLoop loop = new MainLoop ();
-
-            var file_path = File.new_for_path (full_picture_path);
+            var file_path = File.new_for_path (full_file_path != null ? full_file_path : full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
             var progress = 0.0;
-            progress_visibility (true);
 
-            if (!file_path.query_exists ()) {
+            if (overwrite || !file_path.query_exists ()) {
                 file_from_uri.copy_async.begin (file_path, 
                     FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, 
                     null, (current_num_bytes, total_num_bytes) => {
-                        // Report copy-status:
                         progress = (double) current_num_bytes / total_num_bytes;
                         total_num_bytes = total_num_bytes == 0 ? Constants.SIZE_IMAGE_AVERAGE : total_num_bytes;
-                        print ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
+                        GLib.message ("%" + int64.FORMAT + " bytes of %" + int64.FORMAT + " bytes copied.\n", current_num_bytes, total_num_bytes);
                         update_progress (progress);
 	                }, (obj, res) => {
                         try {
                             bool tmp = file_from_uri.copy_async.end (res);
-                            print ("Result: %s\n", tmp.to_string ());
-                            
-                            progress_visibility (false);
-
+                            GLib.message ("Result: %s\n", tmp.to_string ());
                             finish_download ();
                         } catch (Error e) {
                             show_message ("Error copy from URI to directory", e.message, "dialog-error");
@@ -141,9 +134,8 @@ namespace App.Utils {
 		                loop.quit ();
 	                });
 			} else {
-                //print ("Picture %s already exist\n", img_file_name);
+                GLib.message ("Picture %s already exist\n", img_file_name);
                 finish_download ();
-				bar.set_fraction (1);
 				return true;
             }
             loop.run ();
@@ -162,27 +154,7 @@ namespace App.Utils {
             Method to show progress in download
         ***********************************************************************/
         private void update_progress (double progress) {
-            bar.set_fraction (progress);
-            Granite.Services.Application.set_progress.begin (progress, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
-        }
-
-        /***********************************************************************
-            Method to hide progress in download
-        ***********************************************************************/
-        private void progress_visibility (bool visible) {
-            Granite.Services.Application.set_progress_visible.begin (visible, (obj, res) => {
-                try {
-                    Granite.Services.Application.set_progress_visible.end (res);
-                } catch (GLib.Error e) {
-                    critical (e.message);
-                }
-            });
+            on_progress (progress);
         }
 
         /***********************************************************************
@@ -205,7 +177,7 @@ namespace App.Utils {
             * Base from:
             * https://github.com/elementary/switchboard-plug-pantheon-shell/blob/master/set-wallpaper-contract/set-wallpaper.vala
         ***********************************************************************/
-         public void set_to_login_screen () {
+        public void set_to_login_screen () {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
                 var greeter_file = set_to_greeter (variable);

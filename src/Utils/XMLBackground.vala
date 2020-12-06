@@ -33,7 +33,6 @@ namespace App.Utils {
         private int                     transition_time;
         private DateTime                start_time;
 
-
         public XMLBackground (string collection_file, List<string> wallpapers_path_list, int static_time, int transition_time, DateTime start_time) {
             this.background_list = wallpapers_path_list;
             this.collection_file = File.new_for_path(collection_file);
@@ -50,14 +49,22 @@ namespace App.Utils {
             for (int i = 0; i < num_backgrounds; i++) {
                 string current = this.background_list.nth_data(i);
                 full_string += generate_static(current, static_time);
-                if (i + 1 < num_backgrounds) {
-                    string next = this.background_list.nth_data(i+1);
-                    full_string += generate_transition(current, next, transition_time);
-                }
+                
+                var next_transition = i + 1 >= num_backgrounds ? 0 : i + 1;
+                string next = this.background_list.nth_data(next_transition);
+                full_string += generate_transition(current, next, get_transition_time ());    
             }
             full_string += "</background>";
 
             return full_string;
+        }
+
+        private int get_transition_time () {
+            var desktop_name = Environment.get_variable ("XDG_CURRENT_DESKTOP");
+            if (desktop_name == "Pantheon") {
+                return 0;
+            }
+            return transition_time;
         }
 
         /**
@@ -81,7 +88,7 @@ namespace App.Utils {
                     written += dos.write (data[written:data.length]);
                 }
 
-                print("File %s written successfully.\n", collection_file.get_path ());
+                GLib.message ("File %s written successfully.\n", collection_file.get_path ());
 
             } catch (Error e) {
                 stderr.printf ("%s\n", e.message);
@@ -111,19 +118,26 @@ namespace App.Utils {
 
         private string generate_static (string background, int duration) {
             string duration_str = "%g.0".printf (duration);
+            string safe_background = scape_string(background);
             return "<static>\n" +
                 "\t<duration>" + duration_str + "</duration>\n" +
-                "\t<file>" + background + "</file>\n" +
+                "\t<file>" + safe_background + "</file>\n" +
                 "</static>\n";
         }
 
         private string generate_transition (string background_from, string background_to, int duration) {
             string duration_str = "%g.0".printf (duration);
+            string safe_bkg_from = scape_string(background_from);
+            string safe_bkg_to = scape_string(background_to);
             return "<transition>\n" +
                 "\t<duration>" + duration_str + "</duration>\n" +
-                "\t<from>" + background_from + "</from>\n" +
-                "\t<to>" + background_to + "</to>\n" +
+                "\t<from>" + safe_bkg_from + "</from>\n" +
+                "\t<to>" + safe_bkg_to + "</to>\n" +
                 "</transition>\n";
+        }
+
+        private string scape_string(string unsafe_string) {
+            return GLib.Markup.escape_text(unsafe_string);
         }
     }
 }

@@ -1,22 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.calo001.fondo package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Milo Ivir <mail@milotype.de>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-23 17:09-0500\n"
-"PO-Revision-Date: 2020-07-18 18:19+0200\n"
+"POT-Creation-Date: 2020-12-05 18:53-0600\n"
+"PO-Revision-Date: 2020-10-04 14:57+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -32,11 +33,11 @@ msgstr "Posjeti web-stranicu"
 
 #: src/Configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr "Fotografije od Unsplash: Lijepe besplatne slike i fotografije 🎁"
+msgstr "Unsplash slike: Lijepe besplatne slike 🎁"
 
 #: src/Configs/Strings.vala:32
 msgid "Photo by "
-msgstr "Autor fotografije "
+msgstr "Autor slike "
 
 #: src/Configs/Strings.vala:33
 msgid " on Unsplash"
@@ -100,7 +101,7 @@ msgstr "🌻 Priroda"
 
 #: src/Configs/Strings.vala:48
 msgid "🐹 Animal"
-msgstr "🐹 Životinja"
+msgstr "🐹 Životinje"
 
 #: src/Configs/Strings.vala:49
 msgid "☕ Food & drink"
@@ -136,7 +137,7 @@ msgstr "💻 Tehnologija"
 
 #: src/Configs/Strings.vala:57
 msgid "🍁 Texture & pattern"
-msgstr "🍁 Tekstura i mustra"
+msgstr "🍁 Teksture i mustre"
 
 #: src/Configs/Strings.vala:58
 msgid "📑 Flat lay"
@@ -144,7 +145,7 @@ msgstr "📑 Pogled odozgo"
 
 #: src/Configs/Strings.vala:59
 msgid "Photos not found"
-msgstr "Fotografije nisu pronađene"
+msgstr "Slike nisu pronađene"
 
 #: src/Configs/Strings.vala:60
 msgid "Loading…"
@@ -156,7 +157,7 @@ msgstr "Zatvori cjeloekranski prikaz"
 
 #: src/Configs/Strings.vala:62
 msgid "Search photos Unsplash"
-msgstr "Traži fotografije na Unsplash"
+msgstr "Traži slike na Unsplash"
 
 #: src/Configs/Strings.vala:63
 msgid "History"
@@ -216,7 +217,7 @@ msgstr "Pokušaj tražiti neki drugi pojam."
 
 #: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
-msgstr "Za dodavanje fotografije u kronologiju, pritisni je."
+msgstr "Za dodavanje slike u kronologiju, pritisni je."
 
 #: src/Configs/Strings.vala:78
 msgid "Network Error"
@@ -236,8 +237,112 @@ msgstr "Sve"
 
 #: src/Configs/Strings.vala:82
 msgid "Delete a photo from history"
-msgstr "Izbriši fotografiju iz kronologije"
+msgstr "Izbriši sliku iz kronologije"
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
 msgstr "Stvarno želiš izbrisati fotografiju iz kronologije?"
+
+#: src/Configs/Strings.vala:84
+#, fuzzy
+msgid "Wallpaper Slideshow"
+msgstr "Slika pozadine spremna!"
+
+#: src/Configs/Strings.vala:85
+msgid "Preparing slideshow ..."
+msgstr ""
+
+#: src/Configs/Strings.vala:86
+msgid "Select a period of time to change the wallpaper in the slideshow."
+msgstr ""
+
+#: src/Configs/Strings.vala:87
+msgid ""
+"You can change the photo to use on the lock screen by clicking on one of the "
+"selected photos."
+msgstr ""
+
+#: src/Configs/Strings.vala:88
+#, fuzzy
+msgid "Use on lock screen"
+msgstr "Zatvori cjeloekranski prikaz"
+
+#: src/Configs/Strings.vala:89
+msgid "Add at least two photos"
+msgstr ""
+
+#: src/Configs/Strings.vala:90
+#, c-format
+msgid "%d photos selected"
+msgstr ""
+
+#: src/Configs/Strings.vala:91
+#, c-format
+msgid "%d photo selected"
+msgstr ""
+
+#: src/Configs/Strings.vala:92
+msgid "Select 1 or more photos by clicking on "
+msgstr ""
+
+#: src/Configs/Strings.vala:93
+#, fuzzy
+msgid "Wallpaper slideshow ready!"
+msgstr "Slika pozadine spremna!"
+
+#: src/Configs/Strings.vala:94
+#, c-format
+msgid "Enjoy a new beautiful wallpaper every %s"
+msgstr ""
+
+#: src/Configs/Strings.vala:95
+msgid "30 minutes"
+msgstr ""
+
+#: src/Configs/Strings.vala:96
+msgid "1 hour"
+msgstr ""
+
+#: src/Configs/Strings.vala:97
+msgid "1 day"
+msgstr ""
+
+#: src/Configs/Strings.vala:98
+msgid "Generate!"
+msgstr ""
+
+#: src/Configs/Strings.vala:99
+msgid "Error on generate slideshow"
+msgstr ""
+
+#: src/Configs/Strings.vala:100
+msgid "Error"
+msgstr ""
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr ""
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr ""
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr ""
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
+msgstr ""

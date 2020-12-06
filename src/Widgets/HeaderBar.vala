@@ -29,6 +29,7 @@ namespace App.Widgets {
      */
     public class HeaderBar : Gtk.HeaderBar {
         public Gtk.SearchEntry      search {get; set;}
+        private Gtk.Button          multiple_menu; 
         public signal void          search_view ();
         public signal void          search_activated (string value);
 
@@ -73,6 +74,7 @@ namespace App.Widgets {
             search.margin = 3;
             search.expand = true;
             search.sensitive = false;
+            search.get_style_context ().add_class ("entry");
             search.tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Ctrl>F"},
                 S.SEARCH_TOOLTIP
@@ -113,11 +115,13 @@ namespace App.Widgets {
                 pop_menu.popup ();
             });
 
+            var themed_icon_multiple = new ThemedIcon ("focus-legacy-systray-symbolic.symbolic");
+            Gtk.Image multiple_icon = new Gtk.Image () {
+                gicon = themed_icon_multiple,
+                icon_size = Gtk.IconSize.LARGE_TOOLBAR
+            };
 
-            Gtk.Image multiple_icon = new Gtk.Image ();
-            multiple_icon.gicon = new ThemedIcon ("view-grid-symbolic");
-
-            Gtk.Button multiple_menu = new Gtk.Button();
+            multiple_menu = new Gtk.Button();
             var popup_multiple = new MultipleWallpaperPopover (multiple_menu, multiple_wallpaper);
             multiple_menu.set_image(multiple_icon);
             multiple_menu.set_always_show_image(true);

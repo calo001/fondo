@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-23 17:09-0500\n"
+"POT-Creation-Date: 2020-12-05 18:53-0600\n"
 "PO-Revision-Date: 2020-01-11 20:23+0100\n"
 "Last-Translator: Rafael Campos Nunes <rafaelnunes@engineer.com>\n"
 "Language-Team: none\n"
@@ -241,3 +241,107 @@ msgstr "Remover esta foto do histórico"
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
 msgstr "Você tem certeza que deseja remover esta foto do histórico?"
+
+#: src/Configs/Strings.vala:84
+#, fuzzy
+msgid "Wallpaper Slideshow"
+msgstr "Wallpaper pronto!"
+
+#: src/Configs/Strings.vala:85
+msgid "Preparing slideshow ..."
+msgstr ""
+
+#: src/Configs/Strings.vala:86
+msgid "Select a period of time to change the wallpaper in the slideshow."
+msgstr ""
+
+#: src/Configs/Strings.vala:87
+msgid ""
+"You can change the photo to use on the lock screen by clicking on one of the "
+"selected photos."
+msgstr ""
+
+#: src/Configs/Strings.vala:88
+#, fuzzy
+msgid "Use on lock screen"
+msgstr "Fechar tela cheia"
+
+#: src/Configs/Strings.vala:89
+msgid "Add at least two photos"
+msgstr ""
+
+#: src/Configs/Strings.vala:90
+#, c-format
+msgid "%d photos selected"
+msgstr ""
+
+#: src/Configs/Strings.vala:91
+#, c-format
+msgid "%d photo selected"
+msgstr ""
+
+#: src/Configs/Strings.vala:92
+msgid "Select 1 or more photos by clicking on "
+msgstr ""
+
+#: src/Configs/Strings.vala:93
+#, fuzzy
+msgid "Wallpaper slideshow ready!"
+msgstr "Wallpaper pronto!"
+
+#: src/Configs/Strings.vala:94
+#, c-format
+msgid "Enjoy a new beautiful wallpaper every %s"
+msgstr ""
+
+#: src/Configs/Strings.vala:95
+msgid "30 minutes"
+msgstr ""
+
+#: src/Configs/Strings.vala:96
+msgid "1 hour"
+msgstr ""
+
+#: src/Configs/Strings.vala:97
+msgid "1 day"
+msgstr ""
+
+#: src/Configs/Strings.vala:98
+msgid "Generate!"
+msgstr ""
+
+#: src/Configs/Strings.vala:99
+msgid "Error on generate slideshow"
+msgstr ""
+
+#: src/Configs/Strings.vala:100
+msgid "Error"
+msgstr ""
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr ""
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr ""
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr ""
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
+msgstr ""
