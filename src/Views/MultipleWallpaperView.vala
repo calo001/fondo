@@ -34,14 +34,12 @@ namespace App.Views {
         public signal void close_multiple_view ();
 
         private List<CardPhotoView?>                selected_photos;
-        //private bool                                is_multiple;
         private Gtk.Label                           label_info;
         private Gtk.Label                           generate_label;
         private Gtk.Button                          generate_btn;
         private Gtk.Image                           image_header;
         private Gtk.Image                           image_info;
-        private Gtk.Grid                            download_container;
-        private Gtk.ProgressBar                     global_bar;
+        private DownloadContainerWidget             download_container;
         private Gtk.Stack                           stack;
         private Gtk.Box                             greeter_desc_container;
         private Granite.Widgets.Toast               toast_more_photos;
@@ -81,26 +79,7 @@ namespace App.Views {
             generate_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
             generate_label.xalign = 0;
 
-            var loading_spinner = new LoadingView ();
-
-            download_container = new Gtk.Grid ();
-            download_container.get_style_context ().add_class ("multiple_wallpaper_popup");
-
-            var download_lbl = new Gtk.Label (S.PREPARING_SLIDESHOW) {
-                expand = true,
-                margin_start = 8
-            };
-            download_lbl.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-
-            global_bar = new Gtk.ProgressBar () {
-                expand = true,
-                margin_start = 8
-            };
-            global_bar.get_style_context ().add_class ("global_progress_bar");
-
-            download_container.attach (loading_spinner,    0, 1, 1, 2);
-            download_container.attach (download_lbl,       1, 1, 1, 1);
-            download_container.attach (global_bar,         1, 2, 2, 1);
+            download_container = new DownloadContainerWidget (S.PREPARING_SLIDESHOW);
 
             images_preview = new MultiplePreviewWidget();
             images_preview.set_no_show_all (true);
@@ -240,7 +219,7 @@ namespace App.Views {
                 Wallpaper wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
                 wallpaper.on_progress.connect ((p) => {
                     global_progress = calculate_progress (p, step);
-                    global_bar.set_fraction (global_progress);
+                    download_container.set_progress (global_progress);
                     update_global_progress (global_progress);
                 });
 

@@ -36,8 +36,7 @@ namespace App.Popover {
 
             var grid = new Gtk.Grid ();
 
-
-            grid.attach (multiple_view,       0, 3, 1, 1);
+            grid.attach (multiple_view,       0, 0, 1, 1);
             grid.show_all ();
             add (grid);
 

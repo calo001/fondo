@@ -109,14 +109,13 @@ namespace App.Utils {
             * Update progress via show_progress method
             * Emit finish_download signal
         ***********************************************************************/
-        public bool download_picture () {
+        public bool download_picture (string? full_file_path = null, bool overwrite = false) {
             MainLoop loop = new MainLoop ();
-
-            var file_path = File.new_for_path (full_picture_path);
+            var file_path = File.new_for_path (full_file_path != null ? full_file_path : full_picture_path);
             var file_from_uri = File.new_for_uri (uri_endpoint);
             var progress = 0.0;
 
-            if (!file_path.query_exists ()) {
+            if (overwrite || !file_path.query_exists ()) {
                 file_from_uri.copy_async.begin (file_path, 
                     FileCopyFlags.OVERWRITE | FileCopyFlags.ALL_METADATA, GLib.Priority.DEFAULT, 
                     null, (current_num_bytes, total_num_bytes) => {

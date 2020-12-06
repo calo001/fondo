@@ -101,7 +101,7 @@ radio:checked {
     font-size: 2.5em;
 }
 
-entry {
+.entry {
 	border: none;
     background: rgba(0,0,0,0.05);
     border-radius: 20px;
@@ -249,7 +249,7 @@ progressbar trough {
 	border-radius: 50%;
 	padding: 7px;
 	border: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 5px 8px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 }
 
 .prev-window {
@@ -272,10 +272,6 @@ progressbar trough {
 
 .btn-category:hover {
     opacity: 0.8;
-}
-
-.text-button {
-    border-radius: 20px;
 }
 
 .suggested-action {
@@ -302,7 +298,7 @@ progressbar trough {
 
 .multiple_wallpaper_popup {
   padding: 1em;
-  padding-bottom: 0.1em;
+  padding-bottom: 0;
 }
 
 .multiple_wallpaper_container {

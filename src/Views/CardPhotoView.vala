@@ -142,7 +142,7 @@ namespace App.Views {
             /******************************************
                     Popover for share
             ******************************************/
-            popupShare = new SharePopover (this.photo.user.name, this.photo.id, btn_share);
+            popupShare = new SharePopover (photo, btn_share);
             btn_share.button_release_event.connect ( () => {
                 popupShare.set_visible (true);
                 return true;
@@ -240,7 +240,7 @@ namespace App.Views {
             /******************************************
                         Create Label Autor
             ******************************************/
-            label_autor = new Gtk.LinkButton.with_label(photo.autor_link (), photo.user.name);
+            label_autor = new Gtk.LinkButton.with_label(photo.autor_link, photo.user.name);
             label_autor.get_style_context ().add_class ("button");
             label_autor.get_style_context ().remove_class ("link");
             label_autor.get_style_context ().add_class ("transition");
@@ -305,10 +305,11 @@ namespace App.Views {
             wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
             
             wallpaper.on_progress.connect ((p) => {
-                update_global_progress (p, wallpaper);
+                update_global_progress (p);
             });
             
             wallpaper.finish_download.connect (() => {
+                update_global_progress (1);
                 stop_global_progress ();
                 this.set_sensitive (true);
                 save_to_history ();
@@ -325,7 +326,7 @@ namespace App.Views {
         /*
          * Set progress for bar widget and Granite service
          */
-        private void update_global_progress (double progress, Wallpaper wallpaper) {
+        private void update_global_progress (double progress) {
             bar.set_fraction (progress);
             update_dock_progress (progress);
         }
