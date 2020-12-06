@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-15 12:03-0600\n"
+"POT-Creation-Date: 2020-12-05 18:53-0600\n"
 "PO-Revision-Date: 2020-01-11 20:23+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -252,13 +252,17 @@ msgstr "Preparando galería de fondos de pantalla ..."
 
 #: src/Configs/Strings.vala:86
 msgid "Select a period of time to change the wallpaper in the slideshow."
-msgstr "Selecciona un periodo de tiempo para cambiar el fondo de pantalla en la galería."
+msgstr ""
+"Selecciona un periodo de tiempo para cambiar el fondo de pantalla en la "
+"galería."
 
 #: src/Configs/Strings.vala:87
 msgid ""
 "You can change the photo to use on the lock screen by clicking on one of the "
 "selected photos."
-msgstr "Puedes cambiar el fondo de pantalla usado en la pantalla de bloqueo dando clic en una de las fotos seleccionadas"
+msgstr ""
+"Puedes cambiar el fondo de pantalla usado en la pantalla de bloqueo dando "
+"clic en una de las fotos seleccionadas"
 
 #: src/Configs/Strings.vala:88
 #, fuzzy
@@ -316,3 +320,31 @@ msgstr "Error al crear galería de fondos de pantalla"
 #: src/Configs/Strings.vala:100
 msgid "Error"
 msgstr "Error"
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr "Descarga foto"
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr "Descargando ..."
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr "Mostrar en explorador de archivos"
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr "Imagenes JPEG"
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr "Guardar foto"
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr "Guardar"
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
+msgstr "Cancelar"

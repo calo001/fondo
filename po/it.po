@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-15 12:03-0600\n"
+"POT-Creation-Date: 2020-12-05 18:53-0600\n"
 "PO-Revision-Date: 2020-11-18 14:15+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
@@ -250,15 +250,16 @@ msgstr "Preparazione della presentazione ..."
 
 #: src/Configs/Strings.vala:86
 msgid "Select a period of time to change the wallpaper in the slideshow."
-msgstr "Seleziona un periodo di tempo per cambiare lo sfondo nella presentazione."
+msgstr ""
+"Seleziona un periodo di tempo per cambiare lo sfondo nella presentazione."
 
 #: src/Configs/Strings.vala:87
 msgid ""
 "You can change the photo to use on the lock screen by clicking on one of the "
 "selected photos."
 msgstr ""
-"Puoi modificare la foto da utilizzare nella schermata di blocco facendo clic su una delle"
-"foto selezionate."
+"Puoi modificare la foto da utilizzare nella schermata di blocco facendo clic "
+"su una dellefoto selezionate."
 
 #: src/Configs/Strings.vala:88
 msgid "Use on lock screen"
@@ -314,3 +315,31 @@ msgstr "Errore durante la generazione della presentazione"
 #: src/Configs/Strings.vala:100
 msgid "Error"
 msgstr "Errore"
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr ""
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr ""
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr ""
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
+msgstr ""

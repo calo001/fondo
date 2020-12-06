@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-15 12:03-0600\n"
+"POT-Creation-Date: 2020-12-05 18:53-0600\n"
 "PO-Revision-Date: 2020-01-11 20:23+0100\n"
 "Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
 "Language-Team: none\n"
@@ -315,4 +315,32 @@ msgstr ""
 
 #: src/Configs/Strings.vala:100
 msgid "Error"
+msgstr ""
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr ""
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr ""
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr ""
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
 msgstr ""

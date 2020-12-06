@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-23 17:09-0500\n"
+"POT-Creation-Date: 2020-12-05 18:53-0600\n"
 "PO-Revision-Date: 2020-10-04 14:57+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
@@ -16,9 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -318,4 +317,32 @@ msgstr ""
 
 #: src/Configs/Strings.vala:100
 msgid "Error"
+msgstr ""
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr ""
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr ""
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr ""
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
 msgstr ""
