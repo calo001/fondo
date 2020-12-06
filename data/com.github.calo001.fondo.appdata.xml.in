@@ -39,9 +39,19 @@
           <li>📬️ Share with your friends: Select a variety of options for sharing an Unsplash link to the photo.</li>
           <li>🔄️ Filter by orientation: Portrait, Landscape or Any.</li>
           <li>🖼️ Create an amazing slideshow on your desktop by selecting your favorites photos.</li>
+          <li>🔽️ Download any photo you like.</li>
         </ul>
     </description>
     <releases>
+      <release version="1.5.0" date="2020-12-05">
+        <description>
+          <p>Download any photo in your file system</p>
+          <ul>
+            <li>Click on share photo to find the download option.</li>
+            <li>Updated translation for Italian, Dutch, and German languages.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.4.0" date="2020-11-15">
         <description>
           <p>Wallpaper slideshow!</p>
