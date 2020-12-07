@@ -40,11 +40,11 @@ namespace App.Widgets {
         public MultiplePreviewWidget () {
             this.set_min_content_width(SCROLLABLE_WIDTH);
             this.halign = Gtk.Align.FILL;
+            this.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
 
             flowbox = new Gtk.FlowBox();
             flowbox.set_max_children_per_line(ITEMS_PER_ROW);
             flowbox.set_min_children_per_line(ITEMS_PER_ROW);
-            flowbox.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
             flowbox.homogeneous = true;
             card_widget_map = new Gee.HashMap<CardPhotoView, MultipleCardFlowBoxChild>();
 
