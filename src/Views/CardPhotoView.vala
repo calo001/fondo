@@ -386,18 +386,18 @@ namespace App.Views {
                         Delete button
             ******************************************/
         private void setup_delete_btn () {
-            if (type_card == TypeCard.HISTORY) {
-                btn_delete = new Gtk.Button.from_icon_name ("edit-delete-symbolic");
-                btn_delete.get_style_context ().add_class ("button-action");
-                btn_delete.get_style_context ().remove_class ("button");
-                btn_delete.get_style_context ().add_class ("transition");
-                btn_delete.can_focus = false;
-                btn_delete.margin = 8;
-                btn_delete.margin_top = 76;
-                btn_delete.halign = Gtk.Align.END;
-                btn_delete.valign = Gtk.Align.START;
-                btn_delete.can_default = true;
-            }
+            btn_delete = new Gtk.Button.from_icon_name ("edit-delete-symbolic");
+            btn_delete.get_style_context ().add_class ("button-action");
+            btn_delete.get_style_context ().remove_class ("button");
+            btn_delete.get_style_context ().add_class ("transition");
+            btn_delete.can_focus = false;
+            btn_delete.margin = 8;
+            btn_delete.margin_top = 76;
+            btn_delete.halign = Gtk.Align.END;
+            btn_delete.valign = Gtk.Align.START;
+            btn_delete.can_default = true;
+            btn_delete.set_no_show_all(true);
+            btn_delete.set_visible(type_card == TypeCard.HISTORY);
         }
 
         /******************************************
