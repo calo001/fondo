@@ -26,18 +26,30 @@ namespace App.Widgets {
      * a list of selected wallpapers
      *
      */
-    public class MultiplePreviewWidget : Gtk.FlowBox {
+    public class MultiplePreviewWidget : Gtk.ScrolledWindow {
 
         public signal void delete_preview_image (CardPhotoView photo_card);
 
         private Gee.HashMap<CardPhotoView, MultipleCardFlowBoxChild> card_widget_map;
+        private Gtk.FlowBox flowbox;
+        private const int ITEMS_PER_ROW = 3;
+        private const int VISIBLE_ROWS = 3;
+        private const int SCROLLABLE_WIDTH = 350;
+        private const int SCROLLABLE_ROW_HEIGHT = 100;
 
         public MultiplePreviewWidget () {
-            this.set_max_children_per_line(3);
-            this.set_min_children_per_line(3);
+            this.set_min_content_width(SCROLLABLE_WIDTH);
+            this.halign = Gtk.Align.FILL;
             this.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
-            this.homogeneous = true;
+
+            flowbox = new Gtk.FlowBox();
+            flowbox.set_max_children_per_line(ITEMS_PER_ROW);
+            flowbox.set_min_children_per_line(ITEMS_PER_ROW);
+            flowbox.homogeneous = true;
             card_widget_map = new Gee.HashMap<CardPhotoView, MultipleCardFlowBoxChild>();
+
+            this.add(flowbox);
+            flowbox.show();
         }
 
         public void attach_photo (CardPhotoView single_card) {
@@ -57,8 +69,19 @@ namespace App.Widgets {
             });
 
             setup_fist (single_card);
-            this.add(flow_multiple);
+            flowbox.add(flow_multiple);
+            recalculate_scroll_size(card_widget_map.size);
             show_all();
+        }
+
+        private void recalculate_scroll_size (int num_items) {
+            if (num_items == 0) {
+                this.set_min_content_height(0);
+            } else {
+                double current_rows = Math.ceil((double)num_items/VISIBLE_ROWS);
+                int rows = int.min(VISIBLE_ROWS, (int)current_rows);
+                this.set_min_content_height(SCROLLABLE_ROW_HEIGHT * rows);
+            }
         }
 
         private void setup_fist (CardPhotoView single_card) {
@@ -71,7 +94,7 @@ namespace App.Widgets {
 
         public void delete_card (CardPhotoView card) {
             var child_widget = card_widget_map.get(card);
-            this.remove(child_widget);
+            flowbox.remove(child_widget);
             card_widget_map.unset (card);
             if (card.is_for_greeter) {
                 set_greeter_default ();
@@ -79,8 +102,8 @@ namespace App.Widgets {
         }
 
         private void set_greeter_default () {
-            if (card_widget_map.size > 0 && this.get_children ().length () > 0) {
-                MultipleCardFlowBoxChild child = (MultipleCardFlowBoxChild) this.get_children ().nth_data (0);
+            if (card_widget_map.size > 0 && flowbox.get_children ().length () > 0) {
+                MultipleCardFlowBoxChild child = (MultipleCardFlowBoxChild) flowbox.get_children ().nth_data (0);
                 card_widget_map.@foreach ( (card) => {
                     if (card.value == child) {
                         card.value.show_indicator (true);
@@ -111,7 +134,7 @@ namespace App.Widgets {
                 return true;
             } );
             card_widget_map = new Gee.HashMap<CardPhotoView, MultipleCardFlowBoxChild>();
-            this.forall ( (flow_b) => remove(flow_b) );
+            flowbox.forall ( (flow_b) => remove(flow_b) );
         }
     }
 }

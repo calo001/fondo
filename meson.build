@@ -33,6 +33,7 @@ executable(
     sources,
     asresources,
     dependencies: dependencies,
+    link_args: ['-lm'],
     install: true
 )
 
