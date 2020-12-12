@@ -131,7 +131,6 @@ namespace App.Popover {
                 no_show_all = true,
                 homogeneous = false
             };
-            
 
             stack.add_named (download_container,    STACK_DOWNLADING);
             stack.add_named (open_file_btn,             STACK_BUTTON);
@@ -158,8 +157,8 @@ namespace App.Popover {
             download_button.clicked.connect (show_dialog);
     
             copy_link_button.clicked.connect (() => {
-                var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
-                clipboard.set_text (this.uri, -1);
+                copy_to_clipboard ();
+                show_clipboard_notification (this.uri);
                 hide ();
             });
     
@@ -270,6 +269,19 @@ namespace App.Popover {
         private void show_open_file_browser (string file_path) {
             stack.set_visible_child_name (STACK_BUTTON);
             local_file_path = file_path;
+        }
+
+        private void copy_to_clipboard () {
+            var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
+            clipboard.set_text (this.uri, -1);
+        }
+
+        private void show_clipboard_notification(string url) {
+            var notification = new Notification (S.CLIPBOARD_TITLE_NOTIFICATION);
+            notification.set_body (S.CLIPBOARD_MSG_NOTIFICATION.printf (url));
+            var icon = new ThemedIcon ("com.github.calo001.fondo.success");
+            notification.set_icon (icon);
+            GLib.Application.get_default ().send_notification ("notify.app", notification);
         }
     }
 }

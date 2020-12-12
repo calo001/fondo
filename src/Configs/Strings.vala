@@ -105,5 +105,7 @@ namespace App.Configs {
         public abstract const string SAVE_PHOTO = _("Save photo");
         public abstract const string SAVE_BUTTON = _("Save");
         public abstract const string CANCEL_BUTTON = _("Cancel");
+        public abstract const string CLIPBOARD_TITLE_NOTIFICATION = _("Share photo");
+        public abstract const string CLIPBOARD_MSG_NOTIFICATION = _("The link %s has been copied to the clipboard!");
     }
 }
