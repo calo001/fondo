@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 18:53-0600\n"
+"POT-Creation-Date: 2020-12-11 23:50-0600\n"
 "PO-Revision-Date: 2020-11-16 17:13+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
@@ -345,4 +345,14 @@ msgstr ""
 
 #: src/Configs/Strings.vala:107
 msgid "Cancel"
+msgstr ""
+
+#: src/Configs/Strings.vala:108
+#, fuzzy
+msgid "Share photo"
+msgstr ""
+
+#: src/Configs/Strings.vala:109
+#, c-format
+msgid "The link %s has been copied to the clipboard!"
 msgstr ""
