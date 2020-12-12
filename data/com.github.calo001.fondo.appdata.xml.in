@@ -43,6 +43,16 @@
         </ul>
     </description>
     <releases>
+      <release version="1.5.1" date="2020-12-11">
+        <description>
+          <p>Updates and fixes</p>
+          <ul>
+            <li>Fix warnings of parsing json.</li>
+            <li>Fix wallpaper overflow.</li>
+            <li>Show notification when a link is copied.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.5.0" date="2020-12-05">
         <description>
           <p>Download any photo in your file system</p>

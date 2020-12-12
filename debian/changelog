@@ -1,3 +1,13 @@
+com.github.calo001.fondo (1.5.1) bionic; urgency=low
+
+[FIX]
+  * Fix warnings of parsing json.
+  * Fix wallpaper overflow.
+[UPDATE]
+  * Show notification when a link is copied.
+
+ -- Calo001 <calo_lrc@hotmail.com>  Fri, 11 Dec 2020 22:10:00 -0500
+
 com.github.calo001.fondo (1.5.0) bionic; urgency=low
 
 [NEW]

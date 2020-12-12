@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/calo001/fondo">
-    <img src="https://img.shields.io/badge/Version-1.5.0-orange.svg">
+    <img src="https://img.shields.io/badge/Version-1.5.1-orange.svg">
   </a>
   <a href="https://github.com/calo001/fondo/blob/master/LICENSE.md">
     <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
@@ -133,9 +133,12 @@ Gifted by the world’s most generous community of photographers. 🎁
 - <img src="https://avatars1.githubusercontent.com/u/1813095" width=15 alt="Andres Lopez"> [Andres Lopez](https://github.com/andreslopezrm) ideas and support
 - <img src="https://avatars1.githubusercontent.com/u/34428308" width=15 alt="VeckCol"> [VeckCol](https://github.com/VeckCol) ideas, support and translations
 
-### 📦️ Flatpak maintainers
+### 📦️ Flatpak maintainers and contributors
 - <img src="https://avatars1.githubusercontent.com/u/7660997" width=15 alt="Bilal Elmoussaoui"> [Bilal Elmoussaoui](https://github.com/bilelmoussaoui)
 - <img src="https://avatars1.githubusercontent.com/u/18240966" width=15 alt="Yi-Soo An"> [Yi-Soo An](https://github.com/memnoth)
+- <img src="https://avatars1.githubusercontent.com/u/114441" width=15 alt="Hubert Figuière"> [Hubert Figuière](https://github.com/hfiguiere)
+- <img src="https://avatars1.githubusercontent.com/u/18240966" width=15 alt="Leesoo Ahn"> [Leesoo Ahn](https://github.com/memnoth)
+- <img src="https://avatars1.githubusercontent.com/u/26097419" width=15 alt="Leandro Stanger"> [Leandro Stanger](https://github.com/LeandroStanger)
 
 ### 🔤️ Translators
 - <img src="https://avatars1.githubusercontent.com/u/3271143" width=15 alt="Rafael C. Nunes"> [Rafael C. Nunes](https://github.com/rafaelcn) Brazilian Portuguese
