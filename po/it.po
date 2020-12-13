@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-11 23:50-0600\n"
-"PO-Revision-Date: 2020-11-18 14:15+0100\n"
+"PO-Revision-Date: 2020-12-13 14:15+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
 "Language: it\n"
@@ -138,7 +138,7 @@ msgstr "🍁 Texture e modello"
 
 #: src/Configs/Strings.vala:58
 msgid "📑 Flat lay"
-msgstr ""
+msgstr "📑 Posa piatta"
 
 #: src/Configs/Strings.vala:59
 msgid "Photos not found"
@@ -318,38 +318,38 @@ msgstr "Errore"
 
 #: src/Configs/Strings.vala:101
 msgid "Download photo"
-msgstr ""
+msgstr "Scarica foto"
 
 #: src/Configs/Strings.vala:102
 msgid "Downloading ..."
-msgstr ""
+msgstr "Download in corso ..."
 
 #: src/Configs/Strings.vala:103
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Mostra nel File Browser"
 
 #: src/Configs/Strings.vala:104
 msgid "JPEG images"
-msgstr ""
+msgstr "Immagini JPEG"
 
 #: src/Configs/Strings.vala:105
 msgid "Save photo"
-msgstr ""
+msgstr "Salva foto"
 
 #: src/Configs/Strings.vala:106
 msgid "Save"
-msgstr ""
+msgstr "Salva"
 
 #: src/Configs/Strings.vala:107
 msgid "Cancel"
-msgstr ""
+msgstr "Cancella"
 
 #: src/Configs/Strings.vala:108
 #, fuzzy
 msgid "Share photo"
-msgstr ""
+msgstr "Condividi foto"
 
 #: src/Configs/Strings.vala:109
 #, c-format
 msgid "The link %s has been copied to the clipboard!"
-msgstr ""
+msgstr "Il collegamento %s è stato copiato negli appunti!"
