@@ -233,7 +233,7 @@ msgstr "Uspravno"
 
 #: src/Configs/Strings.vala:81
 msgid "Any"
-msgstr "Sve"
+msgstr "Bilo koji"
 
 #: src/Configs/Strings.vala:82
 msgid "Delete a photo from history"
