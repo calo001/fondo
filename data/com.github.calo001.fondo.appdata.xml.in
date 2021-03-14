@@ -43,6 +43,15 @@
         </ul>
     </description>
     <releases>
+      <release version="1.5.2" date="2021-03-13">
+        <description>
+          <p>Updates and fixes</p>
+          <ul>
+            <li>Fix #140 Images not downloading.</li>
+            <li>New languages and updates.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.5.1" date="2020-12-11">
         <description>
           <p>Updates and fixes</p>

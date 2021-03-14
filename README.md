@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/calo001/fondo">
-    <img src="https://img.shields.io/badge/Version-1.5.1-orange.svg">
+    <img src="https://img.shields.io/badge/Version-1.5.2-orange.svg">
   </a>
   <a href="https://github.com/calo001/fondo/blob/master/LICENSE.md">
     <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
@@ -149,6 +149,10 @@ Gifted by the world’s most generous community of photographers. 🎁
 - <img src="https://avatars1.githubusercontent.com/u/43657314" width=15 alt="Milo Ivir"> [Milo Ivir](https://github.com/milotype) German/Croatian
 - <img src="https://avatars1.githubusercontent.com/u/34811668" width=15 alt="Albano Battistella"> [Albano Battistella](https://github.com/albanobattistella) Italian
 - <img src="https://avatars1.githubusercontent.com/u/62076029" width=15 alt="André Barata"> [André Barata](https://github.com/rottenpants466) Portuguese Portugal
+- <img src="https://avatars.githubusercontent.com/u/43172509" width=15 alt="Miljan Trajkovic"> [Miljan Trajkovic](https://github.com/youngLights14) Serbian
+- <img src="https://avatars.githubusercontent.com/u/12966757" width=15 alt="Tomina"> [Tomina](https://github.com/Thomaash) Czech
+- <img src="https://avatars.githubusercontent.com/u/44338472" width=15 alt="Endless-Lemniscate"> [Endless-Lemniscate](https://github.com/Endless-Lemniscate) Russian
+
 
 ### 🗃️ Extra contributions
 - <img src="https://avatars1.githubusercontent.com/u/10796736" width=15 alt="Marius Meisenzahl"> [Marius Meisenzahl](https://github.com/meisenzahl)

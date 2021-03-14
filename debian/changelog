@@ -1,3 +1,12 @@
+com.github.calo001.fondo (1.5.2) bionic; urgency=low
+
+[FIX]
+  * #140 Images not downloading.
+[UPDATE]
+  * new languages and updates.
+
+ -- Calo001 <calo_lrc@hotmail.com>  Sun, 14 MAr 2021 22:10:00 -0500
+
 com.github.calo001.fondo (1.5.1) bionic; urgency=low
 
 [FIX]
