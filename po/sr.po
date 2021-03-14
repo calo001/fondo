@@ -1,0 +1,358 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.calo001.fondo package.
+# Miljan Trajković <miljan1403@gmail.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.calo001.fondo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-11 23:50-0600\n"
+"PO-Revision-Date: 2020-10-04 14:57+0200\n"
+"Last-Translator: Miljan Trajković <miljan1403@gmail.com>\n"
+"Language-Team: Serbian\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: src/Configs/Strings.vala:28
+msgid "Today"
+msgstr "Danas"
+
+#: src/Configs/Strings.vala:29
+msgid "Categories"
+msgstr "Kategorije"
+
+#: src/Configs/Strings.vala:30
+msgid "Visit web site"
+msgstr "Poseti veb-stranicu"
+
+#: src/Configs/Strings.vala:31
+msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
+msgstr "Unsplash slike: Lepe besplatne slike 🎁"
+
+#: src/Configs/Strings.vala:32
+msgid "Photo by "
+msgstr "Autor slike "
+
+#: src/Configs/Strings.vala:33
+msgid " on Unsplash"
+msgstr " na Unsplash-u"
+
+#: src/Configs/Strings.vala:34
+msgid "Share"
+msgstr "Podeli"
+
+#: src/Configs/Strings.vala:35
+msgid "Email"
+msgstr "Email"
+
+#: src/Configs/Strings.vala:36
+msgid "Copy link"
+msgstr "Kopiraj adresu"
+
+#: src/Configs/Strings.vala:37
+msgid "Options"
+msgstr "Opcije"
+
+#: src/Configs/Strings.vala:38
+msgid "Centered"
+msgstr "Centrirano"
+
+#: src/Configs/Strings.vala:39
+msgid "Scaled"
+msgstr "Skalirano"
+
+#: src/Configs/Strings.vala:40
+msgid "Zoom"
+msgstr "Zum"
+
+#: src/Configs/Strings.vala:41
+msgid "Spanned"
+msgstr "Rastegnuto"
+
+#: src/Configs/Strings.vala:42
+msgid "Wallpaper ready!"
+msgstr "Slika pozadine spremna!"
+
+#: src/Configs/Strings.vala:43
+msgid "Your new wallpaper is ready!"
+msgstr "Tvoja nova slika pozadine je spremna!"
+
+#: src/Configs/Strings.vala:44
+msgid "Check the network connection."
+msgstr "Proveri vezu s internetom."
+
+#: src/Configs/Strings.vala:45
+msgid "Retry"
+msgstr "Pokušaj ponovo"
+
+#: src/Configs/Strings.vala:46
+msgid "🌎  An amazing place in the world"
+msgstr "🌎  Spektakularno mesto na svetu"
+
+#: src/Configs/Strings.vala:47
+msgid "🌻 Nature"
+msgstr "🌻 Priroda"
+
+#: src/Configs/Strings.vala:48
+msgid "🐹 Animal"
+msgstr "🐹 Životinje"
+
+#: src/Configs/Strings.vala:49
+msgid "☕ Food & drink"
+msgstr "☕ Hrana i piće"
+
+#: src/Configs/Strings.vala:50
+msgid "🌙 Space"
+msgstr "🌙 Svemir"
+
+#: src/Configs/Strings.vala:51
+msgid "🏸 Sport"
+msgstr "🏸 Sport"
+
+#: src/Configs/Strings.vala:52
+msgid "📊 Business & work"
+msgstr "📊 Poslovanje i delatnost"
+
+#: src/Configs/Strings.vala:53
+msgid "‍🎩 Fashion"
+msgstr "‍🎩 Moda"
+
+#: src/Configs/Strings.vala:54
+msgid "🎨 Art & culture"
+msgstr "🎨 Umetnost i kultura"
+
+#: src/Configs/Strings.vala:55
+msgid "🏦 Architecture"
+msgstr "🏦 Arhitektura"
+
+#: src/Configs/Strings.vala:56
+msgid "💻 Technology"
+msgstr "💻 Tehnologija"
+
+#: src/Configs/Strings.vala:57
+msgid "🍁 Texture & pattern"
+msgstr "🍁 Teksture i šabloni"
+
+#: src/Configs/Strings.vala:58
+msgid "📑 Flat lay"
+msgstr "📑 Pogled odozgo"
+
+#: src/Configs/Strings.vala:59
+msgid "Photos not found"
+msgstr "Slike nisu pronađene"
+
+#: src/Configs/Strings.vala:60
+msgid "Loading…"
+msgstr "Učitava se…"
+
+#: src/Configs/Strings.vala:61
+msgid "Close full screen"
+msgstr "Zatvori celoekranski prikaz"
+
+#: src/Configs/Strings.vala:62
+msgid "Search photos Unsplash"
+msgstr "Traži slike na Unsplash-u"
+
+#: src/Configs/Strings.vala:63
+msgid "History"
+msgstr "Istorija"
+
+#: src/Configs/Strings.vala:64
+msgid "Light background"
+msgstr "Svetla pozadina"
+
+#: src/Configs/Strings.vala:65
+msgid "Dark background"
+msgstr "Tamna pozadina"
+
+#: src/Configs/Strings.vala:66
+msgid "About"
+msgstr "O nama"
+
+#: src/Configs/Strings.vala:67
+msgid "TODAY"
+msgstr "DANAS"
+
+#: src/Configs/Strings.vala:68
+msgid "CATEGORIES"
+msgstr "KATEGORIJE"
+
+#: src/Configs/Strings.vala:69
+msgid "HISTORY"
+msgstr "ISTORIJA"
+
+#: src/Configs/Strings.vala:70
+msgid "No description available"
+msgstr "Nema opisa"
+
+#: src/Configs/Strings.vala:71
+msgid "Set as wallpaper"
+msgstr "Postavi kao sliku pozadine"
+
+#: src/Configs/Strings.vala:72
+msgid "Details"
+msgstr "Detalji"
+
+#: src/Configs/Strings.vala:73
+msgid "Visit profile"
+msgstr "Pogledaj profil"
+
+#: src/Configs/Strings.vala:74
+msgid "Total results"
+msgstr "Ukupni broj rezultata"
+
+#: src/Configs/Strings.vala:75
+msgid "Find out what you like️"
+msgstr "Pronađi ono što ti se sviđa"
+
+#: src/Configs/Strings.vala:76
+msgid "Try changing search terms."
+msgstr "Pokušaj tražiti neki drugi pojam."
+
+#: src/Configs/Strings.vala:77
+msgid "Click on a photo to add it to the history."
+msgstr "Za dodavanje slike u istoriju, pritisni je."
+
+#: src/Configs/Strings.vala:78
+msgid "Network Error"
+msgstr "Greška u mreži"
+
+#: src/Configs/Strings.vala:79
+msgid "Landscape"
+msgstr "Polegnuto"
+
+#: src/Configs/Strings.vala:80
+msgid "Portrait"
+msgstr "Uspravno"
+
+#: src/Configs/Strings.vala:81
+msgid "Any"
+msgstr "Bilo koji"
+
+#: src/Configs/Strings.vala:82
+msgid "Delete a photo from history"
+msgstr "Izbriši sliku iz istorije"
+
+#: src/Configs/Strings.vala:83
+msgid "Are you sure you want to delete the photo from history?"
+msgstr "Da li si siguran da želiš da obrišeš sliku iz istorije"
+
+#: src/Configs/Strings.vala:84
+#, fuzzy
+msgid "Wallpaper Slideshow"
+msgstr "Slajder pozadina"
+
+#: src/Configs/Strings.vala:85
+msgid "Preparing slideshow ..."
+msgstr "Pripremanje slajdera pozadina ..."
+
+#: src/Configs/Strings.vala:86
+msgid "Select a period of time to change the wallpaper in the slideshow."
+msgstr "Odaberite vremenski period promene pozadina kod slajdera."
+
+#: src/Configs/Strings.vala:87
+msgid ""
+"You can change the photo to use on the lock screen by clicking on one of the "
+"selected photos."
+msgstr ""
+
+#: src/Configs/Strings.vala:88
+#, fuzzy
+msgid "Use on lock screen"
+msgstr "Koristi na zaključanom ekranu"
+
+#: src/Configs/Strings.vala:89
+msgid "Add at least two photos"
+msgstr "Dodaj barem dve slike"
+
+#: src/Configs/Strings.vala:90
+#, c-format
+msgid "%d photos selected"
+msgstr "%d slika odabrano"
+
+#: src/Configs/Strings.vala:91
+#, c-format
+msgid "%d photo selected"
+msgstr "%d jedna slika odabrana"
+
+#: src/Configs/Strings.vala:92
+msgid "Select 1 or more photos by clicking on "
+msgstr "Odaberi jednu ili više slika tako što ćeš kliknuti na "
+
+#: src/Configs/Strings.vala:93
+#, fuzzy
+msgid "Wallpaper slideshow ready!"
+msgstr "Slajder pozadina je spreman!"
+
+#: src/Configs/Strings.vala:94
+#, c-format
+msgid "Enjoy a new beautiful wallpaper every %s"
+msgstr "Uživaj u novim prelepim pozadinama svakog/e %s"
+
+#: src/Configs/Strings.vala:95
+msgid "30 minutes"
+msgstr "30 minuta"
+
+#: src/Configs/Strings.vala:96
+msgid "1 hour"
+msgstr "1 sat"
+
+#: src/Configs/Strings.vala:97
+msgid "1 day"
+msgstr "1 dan"
+
+#: src/Configs/Strings.vala:98
+msgid "Generate!"
+msgstr "Stvori!"
+
+#: src/Configs/Strings.vala:99
+msgid "Error on generate slideshow"
+msgstr "Greška pri stvaranju slajdera pozadina"
+
+#: src/Configs/Strings.vala:100
+msgid "Error"
+msgstr "Greška"
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr "Preuzmi sliku"
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr "Preuzimanje ..."
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr "Pokaži u pregledaču datoteka"
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr "JPEG slike"
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr "Sačuvaj sliku"
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr "Sačuvaj"
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
+msgstr "Otkaži"
+
+#: src/Configs/Strings.vala:108
+#, fuzzy
+msgid "Share photo"
+msgstr "Podeli sliku"
+
+#: src/Configs/Strings.vala:109
+#, c-format
+msgid "The link %s has been copied to the clipboard!"
+msgstr "Adresa %s je kopirana u međuspremnik!"
