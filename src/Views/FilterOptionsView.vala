@@ -55,7 +55,7 @@ namespace App.Views {
             button_portrait.join_group (button_landscape);
             button_any.join_group (button_landscape);
 
-            var lbl_filter = new Gtk.Label ("Orientation");
+            var lbl_filter = new Gtk.Label (S.ORIENTATION);
             lbl_filter.get_style_context ().add_class ("filter_option");
 
             button_landscape.clicked.connect ( () => {
