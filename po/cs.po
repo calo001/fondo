@@ -1,0 +1,358 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.calo001.fondo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.calo001.fondo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-26 22:48+0100\n"
+"PO-Revision-Date: 2020-12-26 21:14+0100\n"
+"Last-Translator: Tomina <tomina@vycital.eu>\n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+
+#: src/Configs/Strings.vala:28
+msgid "Today"
+msgstr "Dnes"
+
+#: src/Configs/Strings.vala:29
+msgid "Categories"
+msgstr "Kategorie"
+
+#: src/Configs/Strings.vala:30
+msgid "Visit web site"
+msgstr "Navštívit web"
+
+#: src/Configs/Strings.vala:31
+msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
+msgstr "Fotky z Unsplashe: Krásný fotky a obrázky zdarma"
+
+#: src/Configs/Strings.vala:32
+msgid "Photo by "
+msgstr "Foto od "
+
+#: src/Configs/Strings.vala:33
+msgid " on Unsplash"
+msgstr " na Unsplashi"
+
+#: src/Configs/Strings.vala:34
+msgid "Share"
+msgstr "Sdílet"
+
+#: src/Configs/Strings.vala:35
+msgid "Email"
+msgstr "Email"
+
+#: src/Configs/Strings.vala:36
+msgid "Copy link"
+msgstr "Zkopírovat odkaz"
+
+#: src/Configs/Strings.vala:37
+msgid "Options"
+msgstr "Možnosti"
+
+#: src/Configs/Strings.vala:38
+msgid "Centered"
+msgstr "Vystředěná"
+
+#: src/Configs/Strings.vala:39
+msgid "Scaled"
+msgstr "Oddálená"
+
+#: src/Configs/Strings.vala:40
+msgid "Zoom"
+msgstr "Přiblížený"
+
+#: src/Configs/Strings.vala:41
+msgid "Spanned"
+msgstr "Zdeformovaná"
+
+#: src/Configs/Strings.vala:42
+msgid "Wallpaper ready!"
+msgstr "Tapeta je připravená!"
+
+#: src/Configs/Strings.vala:43
+msgid "Your new wallpaper is ready!"
+msgstr "Tvoje nová tapeta je připravená!"
+
+#: src/Configs/Strings.vala:44
+msgid "Check the network connection."
+msgstr "Zkontroluj si připojení k Internetu."
+
+#: src/Configs/Strings.vala:45
+msgid "Retry"
+msgstr "Zkusit znova"
+
+#: src/Configs/Strings.vala:46
+msgid "🌎  An amazing place in the world"
+msgstr "🌎  Skvělý místo na světě"
+
+#: src/Configs/Strings.vala:47
+msgid "🌻 Nature"
+msgstr "🌻 Příroda"
+
+#: src/Configs/Strings.vala:48
+msgid "🐹 Animal"
+msgstr "🐹 Zvířátka"
+
+#: src/Configs/Strings.vala:49
+msgid "☕ Food & drink"
+msgstr "☕ Jídlo a pití"
+
+#: src/Configs/Strings.vala:50
+msgid "🌙 Space"
+msgstr "🌙 Vesmír"
+
+#: src/Configs/Strings.vala:51
+msgid "🏸 Sport"
+msgstr "🏸 Sport"
+
+#: src/Configs/Strings.vala:52
+msgid "📊 Business & work"
+msgstr "📊 Byznys"
+
+#: src/Configs/Strings.vala:53
+msgid "‍🎩 Fashion"
+msgstr "‍🎩 Móda"
+
+#: src/Configs/Strings.vala:54
+msgid "🎨 Art & culture"
+msgstr "🎨 Umění a kultůra"
+
+#: src/Configs/Strings.vala:55
+msgid "🏦 Architecture"
+msgstr "🏦 Architektůra"
+
+#: src/Configs/Strings.vala:56
+msgid "💻 Technology"
+msgstr "💻 Technologie"
+
+#: src/Configs/Strings.vala:57
+msgid "🍁 Texture & pattern"
+msgstr "🍁 Textury a vzory"
+
+#: src/Configs/Strings.vala:58
+msgid "📑 Flat lay"
+msgstr "📑 Zátiší"
+
+#: src/Configs/Strings.vala:59
+msgid "Photos not found"
+msgstr "Fotky nenalezeny"
+
+#: src/Configs/Strings.vala:60
+msgid "Loading…"
+msgstr "Načítá se…"
+
+#: src/Configs/Strings.vala:61
+msgid "Close full screen"
+msgstr "Zavřít zobrazení na celou obrazovku"
+
+#: src/Configs/Strings.vala:62
+msgid "Search photos Unsplash"
+msgstr "Hledat fotky na Unsplashi"
+
+#: src/Configs/Strings.vala:63
+msgid "History"
+msgstr "Historie"
+
+#: src/Configs/Strings.vala:64
+msgid "Light background"
+msgstr "Světlý pozadí"
+
+#: src/Configs/Strings.vala:65
+msgid "Dark background"
+msgstr "Tmavý pozadí"
+
+#: src/Configs/Strings.vala:66
+msgid "About"
+msgstr "O aplikaci"
+
+#: src/Configs/Strings.vala:67
+msgid "TODAY"
+msgstr "DNES"
+
+#: src/Configs/Strings.vala:68
+msgid "CATEGORIES"
+msgstr "KATEGORIE"
+
+#: src/Configs/Strings.vala:69
+msgid "HISTORY"
+msgstr "HISTORIE"
+
+#: src/Configs/Strings.vala:70
+msgid "No description available"
+msgstr "Žádný popis neni k dispozici"
+
+#: src/Configs/Strings.vala:71
+msgid "Set as wallpaper"
+msgstr "Nastavit jako tapetu"
+
+#: src/Configs/Strings.vala:72
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: src/Configs/Strings.vala:73
+msgid "Visit profile"
+msgstr "Navštívit profil"
+
+#: src/Configs/Strings.vala:74
+msgid "Total results"
+msgstr "Celkem výsledků"
+
+#: src/Configs/Strings.vala:75
+msgid "Find out what you like️"
+msgstr "Najdi, co se ti líbí"
+
+#: src/Configs/Strings.vala:76
+msgid "Try changing search terms."
+msgstr "Zkus změnit hledaný termíny."
+
+#: src/Configs/Strings.vala:77
+msgid "Click on a photo to add it to the history."
+msgstr "Pro přidání fotky do historie na ni klikni."
+
+#: src/Configs/Strings.vala:78
+msgid "Network Error"
+msgstr "Chyba sítě"
+
+#: src/Configs/Strings.vala:79
+msgid "Landscape"
+msgstr "Na šířku"
+
+#: src/Configs/Strings.vala:80
+msgid "Portrait"
+msgstr "Na výšku"
+
+#: src/Configs/Strings.vala:81
+msgid "Any"
+msgstr "Jakákoli"
+
+#: src/Configs/Strings.vala:82
+msgid "Delete a photo from history"
+msgstr "Smazat fotku z historie"
+
+#: src/Configs/Strings.vala:83
+msgid "Are you sure you want to delete the photo from history?"
+msgstr "Vážně chceš smazat tuto fotku z historie?"
+
+#: src/Configs/Strings.vala:84
+msgid "Wallpaper Slideshow"
+msgstr "Prezentace tapet"
+
+#: src/Configs/Strings.vala:85
+msgid "Preparing slideshow ..."
+msgstr "Prezentace se připravuje…"
+
+#: src/Configs/Strings.vala:86
+msgid "Select a period of time to change the wallpaper in the slideshow."
+msgstr "Vyber prodlevu mezi změnama tapet v prezentaci."
+
+#: src/Configs/Strings.vala:87
+msgid ""
+"You can change the photo to use on the lock screen by clicking on one of the "
+"selected photos."
+msgstr ""
+"Pro změnu fotky na zamčený obrazovce na nějakou z vybraných fotek klikni."
+
+#: src/Configs/Strings.vala:88
+msgid "Use on lock screen"
+msgstr "Použít na zamčený obrazovce"
+
+#: src/Configs/Strings.vala:89
+msgid "Add at least two photos"
+msgstr "Přidej minimálně dvě fotky"
+
+#: src/Configs/Strings.vala:90
+#, fuzzy, c-format
+msgid "%d photos selected"
+msgstr "je vybraná %d fotka"
+
+#: src/Configs/Strings.vala:91
+#, fuzzy, c-format
+msgid "%d photo selected"
+msgstr "je vybraná %d fotka"
+
+#: src/Configs/Strings.vala:92
+msgid "Select 1 or more photos by clicking on "
+msgstr "Vyber jednu nebo více fotek kliknutím na ně "
+
+#: src/Configs/Strings.vala:93
+msgid "Wallpaper slideshow ready!"
+msgstr "Tvoje prezentace je připravená!"
+
+#: src/Configs/Strings.vala:94
+#, c-format
+msgid "Enjoy a new beautiful wallpaper every %s"
+msgstr "Užij si novou krásnou tapetu co %s"
+
+#: src/Configs/Strings.vala:95
+msgid "30 minutes"
+msgstr "30 minut"
+
+#: src/Configs/Strings.vala:96
+msgid "1 hour"
+msgstr "1 hodinu"
+
+#: src/Configs/Strings.vala:97
+msgid "1 day"
+msgstr "1 den"
+
+#: src/Configs/Strings.vala:98
+msgid "Generate!"
+msgstr "Vygenerovat!"
+
+#: src/Configs/Strings.vala:99
+msgid "Error on generate slideshow"
+msgstr "Chyba při generování prezentace"
+
+#: src/Configs/Strings.vala:100
+msgid "Error"
+msgstr "Chyba"
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr "Stáhnout fotku"
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr "Stahuje se…"
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr "Zobrazit v Souborech"
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr "JPEG obrázky"
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr "Uložit fotku"
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr "Uložit"
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: src/Configs/Strings.vala:108
+msgid "Share photo"
+msgstr "Sdílet fotku"
+
+#: src/Configs/Strings.vala:109
+#, c-format
+msgid "The link %s has been copied to the clipboard!"
+msgstr "Odkaz %s byl úspěšně zkopírovaný do schránky!"
+
+#: src/Configs/Strings.vala:110
+msgid "Orientation"
+msgstr "Orientace"

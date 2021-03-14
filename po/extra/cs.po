@@ -1,0 +1,367 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-26 21:54+0100\n"
+"PO-Revision-Date: 2020-12-26 22:41+0100\n"
+"Last-Translator: Tomina <tomina@vycital.eu>\n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+
+#: data/com.github.calo001.fondo.desktop.in:3
+#: data/com.github.calo001.fondo.appdata.xml.in:7
+msgid "Fondo"
+msgstr "Fondo"
+
+#: data/com.github.calo001.fondo.desktop.in:4
+#: data/com.github.calo001.fondo.appdata.xml.in:8
+msgid "Find the most beautiful wallpapers"
+msgstr "Najdi ty nejkrásnější tapety"
+
+#: data/com.github.calo001.fondo.desktop.in:11
+msgid "wallpaper;unsplash;foto;image;photo;background;"
+msgstr "tapety;unsplash;fotky;obrázky;foto;pozadí;"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr "Carlos Lopez"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:31
+msgid ""
+"Find a variety of the most beautiful wallpapers from Unsplash.com the world’s "
+"most generous community of photographers."
+msgstr ""
+"Najdi bezpočet krásných tapet od nejštědřejší komunity fotografů na světy "
+"z Unsplash.com."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:32
+msgid ""
+"Fondo allows you to see thousands of beautiful photographs from the most "
+"recent to the one you are to looking for. Give a single click on a picture, "
+"wait until the download is complete and enjoy your new wallpaper!"
+msgstr ""
+"Fondi ti umožňuje najít tisíce krásných fotek od těch nejnovějších až po tu, "
+"co hledáš. Jednou klikni na fotku, počkej na její stažení a užívej si svoji "
+"novou tapetu!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:33
+msgid ""
+"Have a minimalist, simple and elegant interface, additionally, you can change "
+"from light mode to dark mode as you prefer."
+msgstr ""
+"Má minimalistický, jednoduchý a elegantní rozhraní, navíc si můžeš nastavit "
+"světlý nebo tmavý motiv podle chuti."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:34
+msgid "Main features:"
+msgstr "Hlavní funkcionalita:"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:36
+msgid "🌠️ To infinity and beyond!: Use the infinite scroll to load more photos."
+msgstr ""
+"🌠️ Do nekonečna a ještě dál!: Použij nekonečný rolování pro načítání dalších "
+"fotek."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:37
+msgid ""
+"🔍️ Find out what you like: Search by categories or type in the search bar."
+msgstr ""
+"🔍️ Najdi to, co se ti líbí: Hledej podle kategorií nebo něco napiš do "
+"vyhledávacího pole."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:38
+msgid ""
+"🕒️ Keep your favorite photos with you: Every new wallpaper is saved in the "
+"history."
+msgstr "🕒️ Nech si svoje oblíbený fotky: Všechny tapety jsou uložený v historii."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:39
+msgid ""
+"📬️ Share with your friends: Select a variety of options for sharing an "
+"Unsplash link to the photo."
+msgstr ""
+"📬️ Sdílej s přáteli: Vyber si z množství možností pro sdílený odkazu na danou "
+"fotku na Unsplashi."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:40
+msgid "🔄️ Filter by orientation: Portrait, Landscape or Any."
+msgstr "🔄️ Filtruj podle orientace: Na výšku, Na šířku nebo Jakákoli."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:41
+msgid ""
+"🖼️ Create an amazing slideshow on your desktop by selecting your favorites "
+"photos."
+msgstr "🖼️ Vytvoř si úžasnou prezentaci na svý ploše ze svých oblíbených fotek."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:42
+msgid "🔽️ Download any photo you like."
+msgstr "🔽️ Stáhni si jakoukoli fotku, co se ti líbí."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:48
+msgid "Updates and fixes"
+msgstr "Aktualizace a opravy"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:50
+msgid "Fix warnings of parsing json."
+msgstr "Oprava varování při parsování JSONu."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:51
+msgid "Fix wallpaper overflow."
+msgstr "Oprava přetečení tapety."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:52
+msgid "Show notification when a link is copied."
+msgstr "Zobrazení notifikace při zkopírování odkazu."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:58
+msgid "Download any photo in your file system"
+msgstr "Stažení jakýkoli fotky do tvýho file systému"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:60
+msgid "Click on share photo to find the download option."
+msgstr "Tlačítko pro stažení je schovaný pod tlačítkem sdílet."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:61
+msgid "Updated translation for Italian, Dutch, and German languages."
+msgstr "Aktualizace překladů do italštiny, nizozemštiny a němčiny."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:67
+msgid "Wallpaper slideshow!"
+msgstr "Prezentace tapet!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:69
+msgid ""
+"Select a set of photos to create the most beautiful wallpaper slideshow on "
+"your desktop."
+msgstr ""
+"Vyber si několik tapet a vytvoř si tu nejkrásnější prezentaci tapet na svym "
+"desktopu."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:75
+msgid "Free up space!"
+msgstr "Uvolni místo!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:77
+msgid "Delete photos from history."
+msgstr "Smaž fotky z historie."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:83
+msgid "Fist year release!"
+msgstr "Prvoroční vydání!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:85
+msgid "Back to the classic appearance."
+msgstr "Zpět ke klasickýmu designu."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:86
+msgid "Fix language codes."
+msgstr "Oprava kódů jazyků."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:87
+msgid "Improve the way translations files are setting."
+msgstr "Zlepšení způsobu nastavování překladových souborů."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:88
+msgid "The width and height are shown in each photo."
+msgstr "Výška a šířka se zobrazuje u každý fotky."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:89
+msgid "Fix greeter don't getting wallpaper set via Fondo."
+msgstr "Oprava nenastavování tapety Fondem."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:95
+msgid "Custom colors and icon for Christmas"
+msgstr "Speciální barvy a ikona pro Vánoce"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:100
+msgid "Custom colors for #DiaDeMuertos"
+msgstr "Speciální barvy pro #DiaDeMuertos"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:105
+#: data/com.github.calo001.fondo.appdata.xml.in:118
+msgid "Fix"
+msgstr "Opravy"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:107
+msgid "#65 Error copy from URI to directory"
+msgstr "#64 Chyba při kopírování z URI do adresáře"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:108
+msgid "#68 No previews availible"
+msgstr "#68 Nejsou k dispozici žádný náhledy"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:114
+#: data/com.github.calo001.fondo.appdata.xml.in:126
+#: data/com.github.calo001.fondo.appdata.xml.in:151
+#: data/com.github.calo001.fondo.appdata.xml.in:165
+#: data/com.github.calo001.fondo.appdata.xml.in:173
+#: data/com.github.calo001.fondo.appdata.xml.in:182
+#: data/com.github.calo001.fondo.appdata.xml.in:190
+msgid "New"
+msgstr "Nový"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:116
+msgid "Added Turkish translation"
+msgstr "Překlad do turečtiny"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:120
+msgid "German translation don't work"
+msgstr "Nefunkční překlad do němčiny"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:128
+msgid "Added German translation"
+msgstr "Přidán překlad do němčiny"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:134
+msgid "Important fixes"
+msgstr "Důležitý opravy"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:136
+msgid "Login screen does not use selected wallpaper"
+msgstr "Přihlašovací obrazovka nepoužívá vybranou tapetu"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:137
+msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
+msgstr "Tapety se nemění při nastavení na Ubuntu Mate 18.04"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:143
+msgid "Update"
+msgstr "Aktualizace"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:145
+msgid "Dutch (Netherlands) translation"
+msgstr "Překlad do nizozemštiny"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:153
+msgid "Keep your favorite photos with you, the photo history has arrived!"
+msgstr "Ponechej si svoje oblíbený fotky, byla přidaná historie historie!"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:154
+msgid ""
+"New way of navigating with a bottom bar that allows you to go to: Today, "
+"Categories and History"
+msgstr ""
+"Nová navigace pomocí panelu ve spodní části okna aplikace: Dnes, Kategorie "
+"a Historie"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:155
+msgid ""
+"Speed up your search with the photo filter by Orientation: Portrait, "
+"Landscape or Any"
+msgstr ""
+"Zrychli svoje vyhledávání pomocí filtrování dle orientace: Na výšku, Na šířku "
+"nebo Jakákoli"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:156
+msgid "Learn more about a photo with the Detail popup in the full screen view"
+msgstr ""
+"Zjisti víc o fotce pomocí detailu v zobrazení na celou obrazovku (detaily sou "
+"většinou v angličtině)"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:157
+msgid "Focus on Search entry with Ctrl+F"
+msgstr "Vyhledávej pomocí Ctrl+F"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:158
+msgid "When doing a search, the total number of results are displayed"
+msgstr "Celkový počet výsledků se zobrazuje při vyhledávání"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:159
+msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
+msgstr ""
+"Přechodová animace na posuvníku, při přepnutí módu a v průběhu načítání fotky"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:167
+msgid "Remove G+ option from Share popup"
+msgstr "Odstranění G+ ze sdílení"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:175
+msgid "Update the set of screenshots"
+msgstr "Aktualizace snímků obrazovky"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:176
+msgid "Fix error in appdata"
+msgstr "Opravy chyby v appdatech"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:184
+msgid "Added Dutch (Netherlands) translation"
+msgstr "Přidán překlad do nizozemštiny"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:192
+msgid "Add french translations"
+msgstr "Přidán překlad do francouštiny"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:198
+#: data/com.github.calo001.fondo.appdata.xml.in:208
+msgid "Updates"
+msgstr "Aktualizace"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:200
+msgid "Search by category and query"
+msgstr "Vyhledávej podle kategorie a textu"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:201
+msgid "New look and feel on hover a photo"
+msgstr "Nový vzhled při najetí na fotku"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:202
+msgid "Add gradients to scrollbar and mode switch"
+msgstr "Přidání přechodu na posuvník a přepnutí módu"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:210
+msgid "New screenshots with awesome photos"
+msgstr "Nový snímky obrazovky s úžasnýma fotkama"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:211
+msgid "OARS data social-info set to mild"
+msgstr "OARS data social-info nastaveno na mírný"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:217
+msgid "Fixes and improvements"
+msgstr "Opravy a vylepšení"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:219
+msgid "Orthographic corrections in the Spanish translation"
+msgstr "Pravopisný opravy v překladech do španělštiny"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:220
+msgid "The photos are sorted from highest to lowest according to height"
+msgstr "Fotky se řadí od nejvyšší po nejnižší dle výšky"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:226
+msgid "A very nice update with new features"
+msgstr "Fajn aktualizace s novou funkcionalitou"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:228
+msgid "Responsive, resizable window"
+msgstr "Responzivnost, možnost změnit velikost okna"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:229
+msgid "Infinite scrolling: just scroll to keep loading new photos"
+msgstr "Nekonečný rolování: prostě roluj a budou se ti načítat další fotky"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:230
+msgid "Wallpaper options: set zoom, centered, and more"
+msgstr "Možnosti nastavení tapety: přiblížená, vycentrovaná a další"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:231
+msgid "Improved icon and styling"
+msgstr "Vylepšená ikona a styly"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:236
+msgid "Improved UI."
+msgstr "Vylepšený UI."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:241
+msgid "Initial 1.0.0 release!"
+msgstr "Úvodní verze 1.0.0!"
