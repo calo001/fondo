@@ -108,7 +108,6 @@ namespace App.Configs {
         public abstract const string CLIPBOARD_TITLE_NOTIFICATION = _("Share photo");
         public abstract const string CLIPBOARD_MSG_NOTIFICATION = _("The link %s has been copied to the clipboard!");
         public abstract const string ORIENTATION = _("Orientation");
-        public abstract const string USE_IN_LOGIN = _("Usar en pantalla de login");
         public abstract const string RESULTS = _("results");
         public abstract const string GALLERY = _("Gallery");
     }

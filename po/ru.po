@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-19 22:10-0600\n"
+"POT-Creation-Date: 2021-03-14 00:08-0600\n"
 "PO-Revision-Date: 2020-12-19 22:13+0100\n"
 "Last-Translator: Gennadiy Shishkin <Endless-Lemniscate@yandex.ru>\n"
 "Language-Team: Russian\n"
@@ -250,8 +250,7 @@ msgstr "Подготовка слайдшоу ..."
 
 #: src/Configs/Strings.vala:86
 msgid "Select a period of time to change the wallpaper in the slideshow."
-msgstr ""
-"Выберите периодичность смены обоев."
+msgstr "Выберите периодичность смены обоев."
 
 #: src/Configs/Strings.vala:87
 msgid ""
@@ -352,3 +351,15 @@ msgstr "Поделиться фотографией"
 #, c-format
 msgid "The link %s has been copied to the clipboard!"
 msgstr "Ссылка %s скопирована в буфер обмена!"
+
+#: src/Configs/Strings.vala:110
+msgid "Orientation"
+msgstr ""
+
+#: src/Configs/Strings.vala:111
+msgid "results"
+msgstr ""
+
+#: src/Configs/Strings.vala:112
+msgid "Gallery"
+msgstr ""

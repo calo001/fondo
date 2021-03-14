@@ -84,7 +84,7 @@ namespace App.Widgets {
             indicator_greeter.valign = Gtk.Align.END;
             indicator_greeter.set_no_show_all (true);
             indicator_greeter.set_has_tooltip (true);
-            indicator_greeter.tooltip_text = S.USE_IN_LOGIN;
+            indicator_greeter.tooltip_text = S.USER_IN_GREETER;
 
             overlay.add_overlay (btn_delete);
 
