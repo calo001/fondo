@@ -134,7 +134,7 @@ namespace App.Widgets {
                 return true;
             } );
             card_widget_map = new Gee.HashMap<CardPhotoView, MultipleCardFlowBoxChild>();
-            flowbox.forall ( (flow_b) => remove(flow_b) );
+            flowbox.forall ( (flow_b) => flowbox.remove(flow_b) );
         }
     }
 }
