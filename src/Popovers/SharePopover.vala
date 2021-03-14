@@ -245,7 +245,7 @@ namespace App.Popover {
 
         private void save_file (string file_path) {
             AppConnection connection = AppConnection.get_instance();
-            string? url_photo = connection.get_url_photo (photo.links.download_location);
+            string? url_photo = connection.get_url_photo (photo.id);
             Wallpaper wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
             wallpaper.on_progress.connect ((progress) => {
                 show_progress (progress);

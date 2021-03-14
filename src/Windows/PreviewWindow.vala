@@ -146,7 +146,7 @@ namespace App.Windows {
             * Show message (ESC to exit)
         *****************************/
         public void load_content () {
-            string? url_photo = connection.get_url_photo(photo.links.download_location);
+            string? url_photo = connection.get_url_photo(photo.id);
             wallpaper = new Wallpaper(url_photo, photo.id, photo.user.name);
             wallpaper.on_progress.connect ((p) => {
                 update_global_progress (p , wallpaper);

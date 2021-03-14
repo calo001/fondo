@@ -215,7 +215,7 @@ namespace App.Views {
             selected_photos.foreach( ( photo_card ) => {
                 Photo photo = photo_card.get_photo();
 
-                string? url_photo = connection.get_url_photo(photo.links.download_location);
+                string? url_photo = connection.get_url_photo(photo.id);
                 Wallpaper wallpaper = new Wallpaper (url_photo, photo.id, photo.user.name);
                 wallpaper.on_progress.connect ((p) => {
                     global_progress = calculate_progress (p, step);

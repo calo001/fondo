@@ -103,10 +103,8 @@ namespace App.Connection {
         }
 
         // Get an image from: links_download_location
-        public string? get_url_photo (string links_download_location) {
-            string uri = links_download_location +
-                         "/?client_id=" +
-                         Constants.ACCESS_KEY_UNSPLASH;
+        public string? get_url_photo (string id) {
+            string uri = @"$(Constants.API_UNSPLASH)/photos/$(id)/download?client_id=$(Constants.ACCESS_KEY_UNSPLASH)";
 
             var message = new Soup.Message ("GET", uri);
             string? image = null;
