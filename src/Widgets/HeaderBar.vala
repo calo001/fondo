@@ -126,7 +126,7 @@ namespace App.Widgets {
             multiple_menu.set_image(multiple_icon);
             multiple_menu.set_always_show_image(true);
             multiple_menu.valign = Gtk.Align.CENTER;
-            multiple_menu.tooltip_text = "Selección múltiple";
+            multiple_menu.tooltip_text = S.GALLERY;
             multiple_menu.clicked.connect ( ()=> {
                popup_multiple.popup ();
             });

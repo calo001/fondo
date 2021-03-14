@@ -16,6 +16,8 @@
 * 
 */
 
+using App.Configs;
+
 namespace App.Widgets {
 
     /**
@@ -25,7 +27,7 @@ namespace App.Widgets {
     public class LabelTotalResults : Gtk.Label {
         public LabelTotalResults (string total) {
             Object (    
-                label: " results",
+                label: S.RESULTS,
                 wrap: true,
                 margin_start: 25,
                 margin_end: 25
@@ -34,7 +36,7 @@ namespace App.Widgets {
         }
         
         public void update_total (string total) {
-            this.label = total + " results";
+            this.label = @"$(total) $(S.RESULTS)";
         }
     }
 }

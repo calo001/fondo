@@ -18,6 +18,7 @@
 
 using App.Views;
 using App.Models;
+using App.Configs;
 
 namespace App.Widgets {
 
@@ -83,7 +84,7 @@ namespace App.Widgets {
             indicator_greeter.valign = Gtk.Align.END;
             indicator_greeter.set_no_show_all (true);
             indicator_greeter.set_has_tooltip (true);
-            indicator_greeter.tooltip_text = "Usar en pantalla de login";
+            indicator_greeter.tooltip_text = S.USE_IN_LOGIN;
 
             overlay.add_overlay (btn_delete);
 
