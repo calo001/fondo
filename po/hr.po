@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-14 00:08-0600\n"
-"PO-Revision-Date: 2020-10-04 14:57+0200\n"
+"PO-Revision-Date: 2021-06-10 18:23+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
@@ -65,11 +65,11 @@ msgstr "Centrirano"
 
 #: src/Configs/Strings.vala:39
 msgid "Scaled"
-msgstr "Skalirano"
+msgstr "Proporcionalno"
 
 #: src/Configs/Strings.vala:40
 msgid "Zoom"
-msgstr "Zoom"
+msgstr "Uvećanje"
 
 #: src/Configs/Strings.vala:41
 msgid "Spanned"
@@ -217,7 +217,7 @@ msgstr "Pokušaj tražiti neki drugi pojam."
 
 #: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
-msgstr "Za dodavanje slike u kronologiju, pritisni je."
+msgstr "Pritisni sliku koju želiš dodati u kronologiju."
 
 #: src/Configs/Strings.vala:78
 msgid "Network Error"
@@ -225,15 +225,15 @@ msgstr "Greška u mreži"
 
 #: src/Configs/Strings.vala:79
 msgid "Landscape"
-msgstr "Polegnuto"
+msgstr "Polegnuti"
 
 #: src/Configs/Strings.vala:80
 msgid "Portrait"
-msgstr "Uspravno"
+msgstr "Uspravni"
 
 #: src/Configs/Strings.vala:81
 msgid "Any"
-msgstr "Sve"
+msgstr "Svi"
 
 #: src/Configs/Strings.vala:82
 msgid "Delete a photo from history"
@@ -241,130 +241,129 @@ msgstr "Izbriši sliku iz kronologije"
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
-msgstr "Stvarno želiš izbrisati fotografiju iz kronologije?"
+msgstr "Stvarno želiš izbrisati sliku iz kronologije?"
 
 #: src/Configs/Strings.vala:84
-#, fuzzy
 msgid "Wallpaper Slideshow"
-msgstr "Slika pozadine spremna!"
+msgstr "Prezentacija slika pozadine"
 
 #: src/Configs/Strings.vala:85
 msgid "Preparing slideshow ..."
-msgstr ""
+msgstr "Pripremanje prezentacije …"
 
 #: src/Configs/Strings.vala:86
 msgid "Select a period of time to change the wallpaper in the slideshow."
 msgstr ""
+"Odaberi vremensko razdoblje za mijenjanje slike pozadine u prezentaciji."
 
 #: src/Configs/Strings.vala:87
 msgid ""
 "You can change the photo to use on the lock screen by clicking on one of the "
 "selected photos."
 msgstr ""
+"Sliku za zaključani ekran možeš promijeniti pritiskom na jednu od odabranih "
+"slika."
 
 #: src/Configs/Strings.vala:88
-#, fuzzy
 msgid "Use on lock screen"
-msgstr "Zatvori cjeloekranski prikaz"
+msgstr "Koristi za zaključani ekran"
 
 #: src/Configs/Strings.vala:89
 msgid "Add at least two photos"
-msgstr ""
+msgstr "Dodaj barem dvije slike"
 
 #: src/Configs/Strings.vala:90
 #, c-format
 msgid "%d photos selected"
-msgstr ""
+msgstr "%d slike odabrane"
 
 #: src/Configs/Strings.vala:91
 #, c-format
 msgid "%d photo selected"
-msgstr ""
+msgstr "%d slika odabrana"
 
 #: src/Configs/Strings.vala:92
 msgid "Select 1 or more photos by clicking on "
-msgstr ""
+msgstr "Odaberi jednu ili više slika pritiskom na "
 
 #: src/Configs/Strings.vala:93
-#, fuzzy
 msgid "Wallpaper slideshow ready!"
-msgstr "Slika pozadine spremna!"
+msgstr "Prezentacija slika pozadine spremna!"
 
 #: src/Configs/Strings.vala:94
 #, c-format
 msgid "Enjoy a new beautiful wallpaper every %s"
-msgstr ""
+msgstr "Uživaj u predivnoj slici pozadine svakih %s"
 
 #: src/Configs/Strings.vala:95
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minuta"
 
 #: src/Configs/Strings.vala:96
 msgid "1 hour"
-msgstr ""
+msgstr "1 sat"
 
 #: src/Configs/Strings.vala:97
 msgid "1 day"
-msgstr ""
+msgstr "1 dan"
 
 #: src/Configs/Strings.vala:98
 msgid "Generate!"
-msgstr ""
+msgstr "Generiraj!"
 
 #: src/Configs/Strings.vala:99
 msgid "Error on generate slideshow"
-msgstr ""
+msgstr "Greška u generiranju prezentacije"
 
 #: src/Configs/Strings.vala:100
 msgid "Error"
-msgstr ""
+msgstr "Greška"
 
 #: src/Configs/Strings.vala:101
 msgid "Download photo"
-msgstr ""
+msgstr "Preuzmi sliku"
 
 #: src/Configs/Strings.vala:102
 msgid "Downloading ..."
-msgstr ""
+msgstr "Preuzimanje …"
 
 #: src/Configs/Strings.vala:103
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Pokaži u pregledniku datoteka"
 
 #: src/Configs/Strings.vala:104
 msgid "JPEG images"
-msgstr ""
+msgstr "JPEG slike"
 
 #: src/Configs/Strings.vala:105
 msgid "Save photo"
-msgstr ""
+msgstr "Spremi sliku"
 
 #: src/Configs/Strings.vala:106
 msgid "Save"
-msgstr ""
+msgstr "Spremi"
 
 #: src/Configs/Strings.vala:107
 msgid "Cancel"
-msgstr ""
+msgstr "Odustani"
 
 #: src/Configs/Strings.vala:108
 msgid "Share photo"
-msgstr ""
+msgstr "Dijeli sliku"
 
 #: src/Configs/Strings.vala:109
 #, c-format
 msgid "The link %s has been copied to the clipboard!"
-msgstr ""
+msgstr "Poveznica %s je kopirana u međuspremnik!"
 
 #: src/Configs/Strings.vala:110
 msgid "Orientation"
-msgstr ""
+msgstr "Format"
 
 #: src/Configs/Strings.vala:111
-#, fuzzy
 msgid "results"
-msgstr "rezultata"
+msgstr "rezultati"
 
 #: src/Configs/Strings.vala:112
 msgid "Gallery"
-msgstr ""
+msgstr "Galerija"
