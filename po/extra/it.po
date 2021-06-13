@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
+# ITALIAN TRANSLATION.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2020,2021.
 #
 msgid ""
 msgstr ""
@@ -70,89 +70,84 @@ msgid "Main features:"
 msgstr "Caratteristiche principali:"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:36
-#, fuzzy
 msgid "🌠️ To infinity and beyond!: Use the infinite scroll to load more photos."
-msgstr ""
-"Verso l'infinito e oltre !: Usa lo scorrimento infinito per caricare più foto"
+msgstr""
+"🌠️ Verso l'infinito e oltre!: usa lo scorrimento infinito per caricare più foto."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:37
-#, fuzzy
 msgid ""
 "🔍️ Find out what you like: Search by categories or type in the search bar."
 msgstr ""
-"Scopri cosa ti piace: cerca per categorie o digita nella barra di ricerca"
+"🔍️ Scopri cosa ti piace: cerca per categorie o digita nella barra di ricerca."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:38
-#, fuzzy
 msgid ""
 "🕒️ Keep your favorite photos with you: Every new wallpaper is saved in the "
 "history."
 msgstr ""
-"Mantieni le tue foto preferite con te: ogni nuovo sfondo viene salvato "
-"nellacronologia"
+"🕒️ Tieni le tue foto preferite con te: ogni nuovo sfondo viene salvato nella cartella "
+"cronologia."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:39
-#, fuzzy
 msgid ""
 "📬️ Share with your friends: Select a variety of options for sharing an "
 "Unsplash link to the photo."
 msgstr ""
-"Condividi con i tuoi amici: seleziona una varietà di opzioni per condividere "
-"un Unsplashlink alla foto"
+"📬️ Condividi con i tuoi amici: seleziona una varietà di opzioni per condividere un "
+"Unsplash link alla foto."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:40
-#, fuzzy
 msgid "🔄️ Filter by orientation: Portrait, Landscape or Any."
-msgstr "Filtra per orientamento: Ritratto, Paesaggio o altro"
+msgstr "🔄️ Filtra per orientamento: Ritratto, Paesaggio o altro."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:41
 msgid ""
 "🖼️ Create an amazing slideshow on your desktop by selecting your favorites "
 "photos."
 msgstr ""
+🖼️ Crea una fantastica presentazione sul tuo desktop selezionando le tue fotografie "
+"preferite.
 
 #: data/com.github.calo001.fondo.appdata.xml.in:42
 msgid "🔽️ Download any photo you like."
-msgstr ""
+msgstr "🔽️ Scarica qualsiasi foto che ti piace."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:48
 #: data/com.github.calo001.fondo.appdata.xml.in:57
-#, fuzzy
 msgid "Updates and fixes"
-msgstr "Correzioni importanti"
+msgstr "Aggiornamenti e correzioni"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:50
 msgid "Fix #140 Images not downloading."
-msgstr ""
+msgstr "Risolto il problema #140 Immagini non scaricate."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:51
-#, fuzzy
 msgid "New languages and updates."
-msgstr "Corretti codici delle lingue."
+msgstr "Nuove lingue e aggiornamenti."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:59
 msgid "Fix warnings of parsing json."
-msgstr ""
+msgstr "Corretti gli avvisi di analisi di json."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:60
 msgid "Fix wallpaper overflow."
-msgstr ""
+msgstr "Risolto il problema con l'overflow dello sfondo."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:61
 msgid "Show notification when a link is copied."
-msgstr ""
+msgstr "Mostra notifica quando viene copiato un collegamento."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:67
 msgid "Download any photo in your file system"
-msgstr ""
+msgstr "Scarica qualsiasi foto nel tuo file system"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:69
 msgid "Click on share photo to find the download option."
-msgstr ""
+msgstr "Fare clic su Condividi foto per trovare l'opzione di download."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:70
 msgid "Updated translation for Italian, Dutch, and German languages."
-msgstr ""
+msgstr "Traduzione aggiornata per le lingue italiana, olandese e tedesca."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:76
 msgid "Wallpaper slideshow!"
@@ -163,14 +158,16 @@ msgid ""
 "Select a set of photos to create the most beautiful wallpaper slideshow on "
 "your desktop."
 msgstr ""
+"Seleziona una serie di foto per creare la presentazione di sfondi più bella sul"
+"tuo desktop".
 
 #: data/com.github.calo001.fondo.appdata.xml.in:84
 msgid "Free up space!"
-msgstr ""
+msgstr "Libera spazio!"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:86
 msgid "Delete photos from history."
-msgstr ""
+msgstr "Elimina le foto dalla cronologia."
 
 #: data/com.github.calo001.fondo.appdata.xml.in:92
 msgid "Fist year release!"
@@ -208,7 +205,7 @@ msgstr "Colori personalizzati per #DiaDeMuertos"
 #: data/com.github.calo001.fondo.appdata.xml.in:114
 #: data/com.github.calo001.fondo.appdata.xml.in:127
 msgid "Fix"
-msgstr "Corretti"
+msgstr "Corretto"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:116
 msgid "#65 Error copy from URI to directory"
