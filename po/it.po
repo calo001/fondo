@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.calo001.fondo package.
-# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2020.
+# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2020,2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-14 00:08-0600\n"
-"PO-Revision-Date: 2020-12-13 14:15+0100\n"
+"PO-Revision-Date: 2021-06-13 14:15+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
 "Language: it\n"
@@ -345,7 +345,6 @@ msgid "Cancel"
 msgstr "Cancella"
 
 #: src/Configs/Strings.vala:108
-#, fuzzy
 msgid "Share photo"
 msgstr "Condividi foto"
 
@@ -356,13 +355,12 @@ msgstr "Il collegamento %s è stato copiato negli appunti!"
 
 #: src/Configs/Strings.vala:110
 msgid "Orientation"
-msgstr ""
+msgstr "Orientamento"
 
 #: src/Configs/Strings.vala:111
-#, fuzzy
 msgid "results"
 msgstr "risultati"
 
 #: src/Configs/Strings.vala:112
 msgid "Gallery"
-msgstr ""
+msgstr "Galleria"
