@@ -44,55 +44,45 @@ namespace App.Utils {
         }
 
         private void init () {
-            message ("Theme manager init");
-            var mode = app_settings.mode_theme;
-                switch (mode) {
-                    case "follow-system":
-                        gtk_settings.gtk_application_prefer_dark_theme = (
-                            granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK
-                        );
-                    break;
-                    case "light":
-                        gtk_settings.gtk_application_prefer_dark_theme = false;
-                    break;
-                    case "dark":
-                        gtk_settings.gtk_application_prefer_dark_theme = true;  
-                    break;
-                }
-    
-            message ("setup notify");
+            initial_app_mode ();
+            mode_change_configuration ();
+            mode_app_change_configuration ();
+        }
+
+        private void initial_app_mode () {
+            apply_mode (app_settings.mode_theme);
+        }
+
+        private void mode_change_configuration () {
             granite_settings.notify["prefers-color-scheme"].connect (() => {
-                message ("notify color scheme change");
                 if (app_settings.mode_theme == "follow-system") {
                     gtk_settings.gtk_application_prefer_dark_theme = (
                         granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK
                     );
                 }
             });
+        }
 
-            //  granite_settings.notify["prefers_accent_color"].connect (() => {
-            //      message ("notify accent color scheme change");
-            //      Gtk.StyleContext.reset_widgets (
-            //          Gdk.Screen.get_default ()
-            //      );
-            //  });
-
+        private void mode_app_change_configuration () {
             app_settings.notify["mode-theme"].connect (() => {
-                message ("theme mode change");
-                switch (app_settings.mode_theme) {
-                    case "follow-system":
-                        gtk_settings.gtk_application_prefer_dark_theme = (
-                            granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK
-                        );
-                    break;
-                    case "light":
-                        gtk_settings.gtk_application_prefer_dark_theme = false;
-                    break;
-                    case "dark":
-                        gtk_settings.gtk_application_prefer_dark_theme = true;  
-                    break;
-                }
+                apply_mode (app_settings.mode_theme);
             });
+        }
+
+        private void apply_mode (string mode) {
+            switch (mode) {
+                case "follow-system":
+                    gtk_settings.gtk_application_prefer_dark_theme = (
+                        granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK
+                    );
+                break;
+                case "light":
+                    gtk_settings.gtk_application_prefer_dark_theme = false;
+                break;
+                case "dark":
+                    gtk_settings.gtk_application_prefer_dark_theme = true;  
+                break;
+            }
         }
     }
 }

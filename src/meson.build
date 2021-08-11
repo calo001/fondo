@@ -17,7 +17,6 @@ sources = files(
     'Views/MultipleWallpaperView.vala',
     'Views/DarkModeOption.vala',
 
-    'Popovers/MenuPopover.vala',
     'Popovers/WallpaperPopover.vala',
     'Popovers/SharePopover.vala',
     'Popovers/PhotoDetailPopover.vala',

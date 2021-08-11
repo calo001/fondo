@@ -93,7 +93,6 @@ namespace App.Widgets {
             menu_button.valign = Gtk.Align.CENTER;
             menu_button.tooltip_text = S.ABOUT;
 
-            var pop_menu = new MenuPopover (menu_button);
             menu_button.clicked.connect ( ()=> {
                 on_menu_click ();
             });
