@@ -15,6 +15,7 @@ sources = files(
     'Views/LoadingView.vala',
     'Views/FilterOptionsView.vala',
     'Views/MultipleWallpaperView.vala',
+    'Views/DarkModeOption.vala',
 
     'Popovers/MenuPopover.vala',
     'Popovers/WallpaperPopover.vala',
@@ -35,6 +36,7 @@ sources = files(
     'Utils/Delegates.vala',
     'Utils/DockManager.vala',
     'Utils/ContractorManager.vala',
+    'Utils/ThemeManager.vala',
 
     'Widgets/BottonNavbar.vala',
     'Widgets/ButtonTab.vala',
@@ -49,6 +51,7 @@ sources = files(
 
     'Enums/Navigation.vala',
     'Enums/TypeCard.vala',
+    'Enums/ScreenMode.vala',
 
     'Application.vala',
     'Main.vala',

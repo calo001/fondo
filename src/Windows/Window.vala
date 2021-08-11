@@ -28,10 +28,15 @@ namespace App.Windows {
      * @see Gtk.ApplicationWindow
      * @since 1.0.0
      */
-    public class Window : Gtk.ApplicationWindow {
+    public class Window : Hdy.ApplicationWindow {
          
         public static GLib.Settings g_settings;
         public signal void search_accel ();
+
+        construct {
+            Hdy.init ();
+        }
+        
         /**
          * Constructs a new {@code Window} object.
          *

@@ -25,6 +25,7 @@ dependencies = [
     dependency('gtk+-3.0'),
     dependency('json-glib-1.0'),
     dependency('libsoup-2.4'),
+    dependency('libhandy-1', version: '>=0.91.0'),
     meson.get_compiler('vala').find_library('posix'),
 ]
 

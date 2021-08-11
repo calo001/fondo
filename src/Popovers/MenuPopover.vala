@@ -42,7 +42,7 @@ namespace App.Popover {
             unsplash_button.tooltip_text = S.UNSPLASH_DESCRIPTION;
             unsplash_button.get_style_context ().add_class ("unsplash_logo");
 
-            var filter_grid = new FilterOptionsView (this);
+            var filter_grid = new FilterOptionsView ();
 
             grid.attach (unsplash_button,   0, 1, 1, 1);
             grid.attach (filter_grid,       0, 2, 1, 1);

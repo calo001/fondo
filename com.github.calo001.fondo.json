@@ -21,6 +21,8 @@
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
         
         "--talk-name=org.elementary.Contractor",
+        "--system-talk-name=org.freedesktop.Accounts",
+        "--system-talk-name=io.elementary.pantheon.AccountsService",
 
         "--metadata=X-DConf=migrate-path=/com/github/calo001/fondo/"
     ],
