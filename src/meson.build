@@ -16,6 +16,7 @@ sources = files(
     'Views/FilterOptionsView.vala',
     'Views/MultipleWallpaperView.vala',
     'Views/DarkModeOption.vala',
+    'Views/SettingsView.vala',
 
     'Popovers/WallpaperPopover.vala',
     'Popovers/SharePopover.vala',
@@ -50,7 +51,6 @@ sources = files(
 
     'Enums/Navigation.vala',
     'Enums/TypeCard.vala',
-    'Enums/ScreenMode.vala',
 
     'Application.vala',
     'Main.vala',

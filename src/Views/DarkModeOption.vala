@@ -26,7 +26,6 @@ namespace App.Views {
      */
     public class DarkModeOption : Gtk.Box {
         public string filtermode { get; set; }
-        public signal void mode_selected (App.Enums.ScreenMode mode);
         private App.Configs.Settings app_settings = App.Configs.Settings.get_instance ();
 
         /**

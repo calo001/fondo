@@ -55,6 +55,7 @@ namespace App.Controllers {
         private LabelTop                   history_label;
         private LabelTotalResults          total_label;
         private MultipleWallpaperView      multiple_wallpaper;
+        private SettingsView               settings_view;
         private Hdy.Flap                   flap;
 
         private int                        num_page;
@@ -240,50 +241,18 @@ namespace App.Controllers {
             box_stack.add (stack);
             box_stack.add (bottonNavbar);
 
-            var lateral = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-            lateral.vexpand = true;
-            lateral.width_request = 300;
-            lateral.get_style_context ().add_class ("lateral-panel");
-
-            var lbl_logo = new Gtk.Label ("Powered by Unsplash");
-            lbl_logo.get_style_context ().add_class ("h4");
-            lbl_logo.halign = Gtk.Align.START; 
-            lbl_logo.margin_top = 8;
-            lbl_logo.margin_start = 16;
-
-            var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
-            var logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/unsplashlogo.svg");
-            var unsplash_button = new Gtk.LinkButton(unsplash_link);
-            unsplash_button.always_show_image = true;
-            unsplash_button.image = logo;
-            unsplash_button.label = null;
-            unsplash_button.margin = 8;
-            unsplash_button.halign = Gtk.Align.CENTER;
-            unsplash_button.tooltip_text = S.UNSPLASH_DESCRIPTION;
-            unsplash_button.get_style_context ().add_class ("unsplash_logo");
-            unsplash_button.get_style_context ().add_class ("transition");
-
-            var filter_grid = new FilterOptionsView ();
-            var dark_mode_view = new DarkModeOption ();
-
-            lateral.add (lbl_logo);
-            lateral.add (unsplash_button);
-            lateral.add (filter_grid);
-            lateral.add (dark_mode_view);
-
             flap = new Hdy.Flap();
             flap.flap_position = Gtk.PackType.END;
             flap.fold_policy = Hdy.FlapFoldPolicy.ALWAYS;
             flap.transition_type = Hdy.FlapTransitionType.SLIDE;
 
             flap.notify.connect((s, p) => {
-                message ("reveal_progress change");
                 box_stack.opacity = 1.2 - flap.reveal_progress;
             });
 
-            var window_handle = new Hdy.WindowHandle ();
-            window_handle.add (lateral);
-            flap.set_flap (window_handle);
+            settings_view = new SettingsView();
+            
+            flap.set_flap (settings_view);
             flap.set_content (box_stack);
 
             window.add (flap);
