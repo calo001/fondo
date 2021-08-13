@@ -2,7 +2,6 @@ sources = files(
     'Configs/Constants.vala',
     'Configs/Settings.vala',
     'Configs/Strings.vala',
-    'Configs/AccountServiceProvider.vala',
     
     'Controllers/AppController.vala',
 
@@ -16,8 +15,10 @@ sources = files(
     'Views/LoadingView.vala',
     'Views/FilterOptionsView.vala',
     'Views/MultipleWallpaperView.vala',
+    'Views/DarkModeOption.vala',
+    'Views/SettingsView.vala',
+    'Views/CreditsView.vala',
 
-    'Popovers/MenuPopover.vala',
     'Popovers/WallpaperPopover.vala',
     'Popovers/SharePopover.vala',
     'Popovers/PhotoDetailPopover.vala',
@@ -35,6 +36,8 @@ sources = files(
     'Utils/XMLBackground.vala',
     'Utils/Delegates.vala',
     'Utils/DockManager.vala',
+    'Utils/ContractorManager.vala',
+    'Utils/ThemeManager.vala',
 
     'Widgets/BottonNavbar.vala',
     'Widgets/ButtonTab.vala',

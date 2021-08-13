@@ -55,6 +55,8 @@ namespace App.Controllers {
         private LabelTop                   history_label;
         private LabelTotalResults          total_label;
         private MultipleWallpaperView      multiple_wallpaper;
+        private SettingsView               settings_view;
+        private Hdy.Flap                   flap;
 
         private int                        num_page;
         private int                        num_page_search;
@@ -108,7 +110,9 @@ namespace App.Controllers {
 
             // Configure headerbar
             headerbar =     new App.Widgets.HeaderBar (multiple_wallpaper);
-            window.set_titlebar (this.headerbar);
+            headerbar.on_menu_click.connect(() => {
+                flap.reveal_flap = true;
+            });
 
             view.applying_filter.connect ( () => {
                 check_filter ();
@@ -233,9 +237,28 @@ namespace App.Controllers {
 
             // Window Overlay
             box_stack = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            box_stack.add (this.headerbar);
             box_stack.add (stack);
             box_stack.add (bottonNavbar);
-            window.add (box_stack);
+
+            flap = new Hdy.Flap();
+            flap.flap_position = Gtk.PackType.END;
+            flap.fold_policy = Hdy.FlapFoldPolicy.ALWAYS;
+            flap.transition_type = Hdy.FlapTransitionType.SLIDE;
+
+            flap.notify.connect((s, p) => {
+                box_stack.opacity = 1.2 - flap.reveal_progress;
+            });
+
+            settings_view = new SettingsView();
+            settings_view.on_close_click.connect (() => {
+                flap.reveal_flap = false;
+            });
+            
+            flap.set_flap (settings_view);
+            flap.set_content (box_stack);
+
+            window.add (flap);
             application.add_window (window);
 
             check_internet();

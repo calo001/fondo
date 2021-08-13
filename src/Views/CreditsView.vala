@@ -16,38 +16,41 @@
 * 
 */
 using App.Configs;
-using App.Views;
-namespace App.Popover {
+namespace App.Views {
 
     /**
-     * The {@code MenuPopover} class is responsible for displaying a popup menu content.
+     * The {@code CreditsView} class.
      *
-     * @since 1.3.0
+     * @since 1.0.0
      */
-    public class MenuPopover : Gtk.Popover {
-        public MenuPopover(Gtk.Widget relative_to) {
+    public class CreditsView : Gtk.Box {
+        /**
+         * Constructs a new {@code CreditsView} object.
+         */
+        public CreditsView () {
             Object (
-                relative_to: relative_to
-            );          
-            get_style_context ().add_class ("pop-menu");
-            set_modal (true);
+                orientation: Gtk.Orientation.VERTICAL
+            );
+            var lbl_logo = new Gtk.Label ("Powered by Unsplash");
+            lbl_logo.get_style_context ().add_class ("h4");
+            lbl_logo.halign = Gtk.Align.START; 
+            lbl_logo.margin_top = 8;
+            lbl_logo.margin_start = 16;
 
-            var grid = new Gtk.Grid ();
             var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
             var logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/unsplashlogo.svg");
             var unsplash_button = new Gtk.LinkButton(unsplash_link);
             unsplash_button.always_show_image = true;
             unsplash_button.image = logo;
             unsplash_button.label = null;
+            unsplash_button.margin = 8;
+            unsplash_button.halign = Gtk.Align.CENTER;
             unsplash_button.tooltip_text = S.UNSPLASH_DESCRIPTION;
             unsplash_button.get_style_context ().add_class ("unsplash_logo");
+            unsplash_button.get_style_context ().add_class ("transition");
 
-            var filter_grid = new FilterOptionsView (this);
-
-            grid.attach (unsplash_button,   0, 1, 1, 1);
-            grid.attach (filter_grid,       0, 2, 1, 1);
-            grid.show_all ();
-            add (grid);
+            add (lbl_logo);
+            add (unsplash_button);
         }
     }
 }

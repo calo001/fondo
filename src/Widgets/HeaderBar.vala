@@ -27,11 +27,12 @@ namespace App.Widgets {
      * @see Gtk.HeaderBar
      * @since 1.0.0
      */
-    public class HeaderBar : Gtk.HeaderBar {
+    public class HeaderBar : Hdy.HeaderBar {
         public Gtk.SearchEntry      search {get; set;}
         private Gtk.Button          multiple_menu; 
         public signal void          search_view ();
         public signal void          search_activated (string value);
+        public signal void          on_menu_click ();
 
         /**
          * Constructs a new {@code HeaderBar} object.
@@ -47,24 +48,6 @@ namespace App.Widgets {
             get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             get_style_context ().add_class ("output-header");
 
-            var gtk_settings = Gtk.Settings.get_default ();
-
-            /************************
-                Mode Switch widget
-            ************************/
-            var mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
-            mode_switch.primary_icon_tooltip_text = S.LIGHT_BACKGROUND;
-            mode_switch.secondary_icon_tooltip_text = S.DARK_BACKGROUND;
-            mode_switch.valign = Gtk.Align.CENTER;
-            mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
-
-            var context = get_style_context ();
-            mode_switch.notify["active"].connect (() => {
-                detect_dark_mode (gtk_settings, context);
-            });
-
-            App.Application.settings.bind ("use-dark-theme", mode_switch, "active", GLib.SettingsBindFlags.DEFAULT);
-
             /********************
              * Search Input
              *******************/
@@ -72,7 +55,7 @@ namespace App.Widgets {
             search = new Gtk.SearchEntry();
             search.placeholder_text = S.SEARCH_PHOTOS_UNSPLASH;
             search.margin = 3;
-            search.expand = true;
+            search.hexpand = true;
             search.sensitive = false;
             search.get_style_context ().add_class ("entry");
             search.tooltip_markup = Granite.markup_accel_tooltip (
@@ -110,9 +93,8 @@ namespace App.Widgets {
             menu_button.valign = Gtk.Align.CENTER;
             menu_button.tooltip_text = S.ABOUT;
 
-            var pop_menu = new MenuPopover (menu_button);
             menu_button.clicked.connect ( ()=> {
-                pop_menu.popup ();
+                on_menu_click ();
             });
 
             var themed_icon_multiple = new ThemedIcon ("focus-legacy-systray-symbolic.symbolic");
@@ -131,24 +113,9 @@ namespace App.Widgets {
                popup_multiple.popup ();
             });
 
-
-            this.set_custom_title (search);
+            this.custom_title = search;
+            this.pack_start (multiple_menu);
             this.pack_end (menu_button);
-            this.pack_end (mode_switch);
-            this.pack_end (multiple_menu);
-        }
-
-        /************************ 
-         * Toogle the dark mode
-        ************************/
-        public void detect_dark_mode (Gtk.Settings gtk_settings, Gtk.StyleContext context) {
-            if (gtk_settings.gtk_application_prefer_dark_theme) {
-                App.Configs.Settings.get_instance ().use_dark_theme = true;
-                context.add_class ("dark");
-            } else {
-                App.Configs.Settings.get_instance ().use_dark_theme = false;
-                context.remove_class ("dark");
-            }
         }
     }
 }

@@ -26,19 +26,19 @@ namespace App.Views {
      */
     public class FilterOptionsView : Gtk.Grid {
         public string filtermode { get; set; }
-        private Gtk.Popover popover;
+
         /**
          * Constructs a new {@code FilterOptionsView} object.
          */
-        public FilterOptionsView (Gtk.Popover popover) {
+        public FilterOptionsView () {
             Object (
-                margin: 0,
-                row_spacing: 0,
-                expand: true
+                margin: 16,
+                margin_top: 0,
+                row_spacing: 12,
+                expand: false
             );
 
             App.Application.settings.bind ("filter-mode", this, "filtermode", GLib.SettingsBindFlags.DEFAULT);
-            this.popover = popover;
 
             var button_landscape = new Gtk.RadioButton.with_label (null, S.LANDSCAPE);
             button_landscape.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
@@ -56,26 +56,25 @@ namespace App.Views {
             button_any.join_group (button_landscape);
 
             var lbl_filter = new Gtk.Label (S.ORIENTATION);
-            lbl_filter.get_style_context ().add_class ("filter_option");
+            lbl_filter.get_style_context ().add_class ("h4");
+            lbl_filter.halign = Gtk.Align.START; 
+            lbl_filter.margin_top = 8;
 
             button_landscape.clicked.connect ( () => {
                 if (button_landscape.active) {
                     filtermode = Constants.LANDSCAPE;
-                    popover.popdown ();
                 }
             });
 
             button_portrait.clicked.connect ( () => {
                 if (button_portrait.active) {
                     filtermode = Constants.PORTRAIT;
-                    popover.popdown ();
                 }
             });
 
             button_any.clicked.connect ( () => {
                 if (button_any.active) {
                     filtermode = Constants.ANY;
-                    popover.popdown ();
                 }
             });
 

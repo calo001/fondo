@@ -57,10 +57,10 @@ namespace App.Configs {
         public int window_height { get; set; }
 
         /**
-         * This property will represent the prefer dark theme.
-         * Variable of type {@code bool} as declared.
+         * This property will represent the prefer ui mode.
+         * Variable of type {@code string} as declared.
          */
-        public bool use_dark_theme {get; set;}
+        public string mode_theme {get; set;}
         
         /**
          * This property will represent window must to open in maximized

@@ -180,7 +180,6 @@ namespace App.Views {
             } else {
                 images_preview.set_visible (false);
                 greeter_desc_container.set_visible (false);
-                GLib.message ("set visible false generate btn");
                 stack.set_visible (false);
             }
         }
@@ -208,6 +207,7 @@ namespace App.Views {
             AppConnection connection = AppConnection.get_instance();
             List<Wallpaper> wallpaper_list = new List<Wallpaper>();
 
+            Wallpaper? wallpaper_greeter = null;
             double global_progress = 0;
             int step = 0;
             start_dock_progress ();
@@ -228,8 +228,7 @@ namespace App.Views {
                     wallpaper_list.prepend (wallpaper);
 
                     if (photo_card.is_for_greeter) {
-                        GLib.message ("Greeter selected");
-                        setup_login_screen (wallpaper);
+                        wallpaper_greeter = wallpaper;
                     }
                 });
                 
@@ -247,6 +246,11 @@ namespace App.Views {
             MultiWallpaper multiple_wallpaper = new MultiWallpaper(wallpaper_list);
             var periodicity = get_periodicity_seconds ();
             multiple_wallpaper.set_wallpaper (periodicity);
+
+            if (wallpaper_greeter != null) {
+                message ("Wallpaper in greeter");
+                setup_login_screen (wallpaper_greeter);
+            }
         }
 
         private void stop_dock_progress () {
@@ -280,8 +284,14 @@ namespace App.Views {
             }
         }
 
+        /*
+         * The timeout is used to avoid that the wallpaper contractor rewrites the greeter file
+        */
         private void setup_login_screen (Wallpaper wallpaper) {
-            wallpaper.set_to_login_screen ();
+            Timeout.add_seconds (1, () => {
+                wallpaper.set_to_login_screen ();
+                return false;
+            });
         }
 
         private void save_to_history (CardPhotoView card_to_save) {

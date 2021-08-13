@@ -5,3 +5,4 @@ debian/com.github.calo001.fondo.substvars
 debian/com.github.calo001.fondo/
 debian/debhelper-build-stamp
 debian/files
+.flatpak-builder/

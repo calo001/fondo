@@ -5,6 +5,11 @@
         <value nick="landscape" value="1"/>
         <value nick="portrait" value="2"/>
     </enum>
+    <enum id="com.github.calo001.fondo.mode-theme">
+        <value nick="follow-system" value="0"/>
+        <value nick="light" value="1"/>
+        <value nick="dark" value="2"/>
+    </enum>
     <schema id="com.github.calo001.fondo" path="/com/github/calo001/fondo/">
         <key name="window-x" type="i">
             <default>-1</default>
@@ -30,10 +35,10 @@
             <description>Most recent window width of Fondo</description>
         </key>
 
-        <key name="use-dark-theme" type="b">
-            <default>false</default>
-            <summary>Dark Theme</summary>
-            <description>Prefer Dark Theme for Fondo</description>
+        <key name="mode-theme" enum="com.github.calo001.fondo.mode-theme">
+            <default>"follow-system"</default>
+            <summary>Mode Theme</summary>
+            <description>Mode Theme for Fondo</description>
         </key>
 
         <key name="maximized" type="b">

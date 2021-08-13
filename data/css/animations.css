@@ -17,15 +17,9 @@
 */
 
 @keyframes gradient_anim {
-    0%   { background: linear-gradient(-45deg, @gradientPrimary2 0%, @gradientPrimary1 100%); }
-    50%  { background: linear-gradient(-45deg, @gradientPrimary1 0%, @gradientPrimary2 100%); }
-    100% { background: linear-gradient(-45deg, @gradientPrimary2 0%, @gradientPrimary1 100%); }
-}
-
-@keyframes gradient_progress {
-    0%   { background: linear-gradient(to right, @gradientAccent1, @gradientAccent2); }
-    50%  { background: linear-gradient(to left,  @gradientAccent1, @gradientAccent2); }
-    100% { background: linear-gradient(to right, @gradientAccent1, @gradientAccent2); }
+    0%   { background: @accent_color; opacity: 0.9; }
+    50%  { background: @accent_color; opacity: 1.0; }
+    100% { background: @accent_color; opacity: 0.9; }
 }
 
 @keyframes opacity_anim {

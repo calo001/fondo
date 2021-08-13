@@ -34,8 +34,7 @@ namespace App.Utils {
 
         private string                  uri_endpoint;                   // URI http of picture in unsplash
         public  string                  full_picture_path {get; set;}   // Path for wallpaper picture
-        public string                   img_file_name;                  // Based on id_photo & username
-        private AccountsServiceUser?    accounts_service;
+        public  string                  img_file_name;                  // Based on id_photo & username
 
         // Base path for wallpaper picture
         private string BASE_DIR = Path.build_filename (Environment.get_user_data_dir (), "backgrounds") + "/";
@@ -51,7 +50,6 @@ namespace App.Utils {
             this.uri_endpoint = uri_endpoint;
             this.img_file_name = username + "_" + id_photo + ".jpeg";
             this.full_picture_path = BASE_DIR + img_file_name;
-            this.accounts_service = AccountServiceProvider.get_instance ();
         }
 
         /***********************************************************************
@@ -65,7 +63,6 @@ namespace App.Utils {
                 if (download_picture ()) {
                     set_wallpaper (opt);
                     show_notify ();
-                    set_to_login_screen ();
                 } else {
                     show_message ("Error", "Download issue", "dialog-warning");
                 }
@@ -134,7 +131,7 @@ namespace App.Utils {
 		                loop.quit ();
 	                });
 			} else {
-                GLib.message ("Picture %s already exist\n", img_file_name);
+                message ("Picture %s already exist\n", img_file_name);
                 finish_download ();
 				return true;
             }
@@ -146,8 +143,10 @@ namespace App.Utils {
             Method to update GSetting properties
         ***********************************************************************/
         public void set_wallpaper (string picture_options = "zoom") {
-            var schemaManager = new SchemaManager();
-            schemaManager.set_wallpaper (this.full_picture_path, picture_options);
+            App.Contractor.set_wallpaper_by_contract(
+                File.new_for_path(this.full_picture_path), 
+                () =>{}
+            );
         }
 
         /***********************************************************************
@@ -180,12 +179,7 @@ namespace App.Utils {
         public void set_to_login_screen () {
             var variable = Environment.get_variable ("XDG_GREETER_DATA_DIR");
             if (variable != null) {
-                var greeter_file = set_to_greeter (variable);
-                if (greeter_file != null) {
-                    if (accounts_service != null) {
-                        accounts_service.background_file = greeter_file.get_path ();
-                    }
-                }
+                set_to_greeter (variable);
             }
         }
 

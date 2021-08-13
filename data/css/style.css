@@ -18,99 +18,29 @@
 
 @import url("/com/github/calo001/fondo/css/animations.css");
 
-@define-color colorAccent #12908d;
-@define-color colorAccentOpaque #2BB5CF;
-@define-color gradientPrimary1 #009efd;
-@define-color gradientPrimary2 #2af598;
-@define-color gradientAccent1 #ff5858;
-@define-color gradientAccent2 #db36a4;
+@define-color gradientPrimary1 @accent_color;
+@define-color gradientPrimary2 shade(@accent_color, 0.8);
 
-@define-color semiTransparent alpha(@gradientPrimary1, 0.1);
+@define-color semiTransparent alpha(@accent_color, 0.1);
 
 @define-color photoLight1 alpha(@gradientPrimary1, 0.16);
 @define-color photoLight2 alpha(@gradientPrimary1, 0.23);
 
-
-progressbar progress {
-    background: linear-gradient(to right, @gradientAccent1, @gradientAccent2);
-    border:none;
+.lateral-panel {
+    background: alpha(@accent_color, 0.05);
+    background: linear-gradient(
+        90deg, 
+        alpha(gray, 0.2) 0%, 
+        alpha(gray, 0.1) 1%, 
+        alpha(gray, 0.05) 8%
+    );
     box-shadow: none;
-    border-radius: 25px;
-    animation-name: gradient_progress;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-switch {
     border: none;
-    box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.25);
-    animation-name: gradient_anim;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-scrollbar slider {
-    border: none;
-    animation-name: gradient_anim;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-.pop-menu {
-	background: alpha(black, 0.97);
-    color: white;
-	font-size: 1.1em;
-    box-shadow: none;
-    padding: 0;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 
-                0 2px 4px 0 rgba(0,0,0,0.08);
-    font-size: 1.2em;
-}
-
-.filter-popover {
-    border-radius: 8px 8px 0 0; 
-    background: rgba(255,255,255,0.05);
-}
-
-.unsplash_logo:hover {
-    opacity: 0.9;
-}
-
-.filter_option {
-    color: white;
-    font-weight: 600;
-}
-
-radio {
-  border: none;
-  box-shadow: none;
-  background: #3C4147;
-}
-
-radio:checked {
-  border: none;
-  box-shadow: none;
-  background: @colorAccentOpaque;
 }
 
 .hphoto {
     font-weight: bold;
     font-size: 2.5em;
-}
-
-.entry {
-	border: none;
-    background: rgba(0,0,0,0.05);
-    border-radius: 20px;
-	padding: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-headerbar.dark entry {
-	background: rgba(255,255,255,0.06);
 }
 
 flowboxchild:focus {
@@ -158,12 +88,12 @@ progressbar trough {
 
 .photo:hover {
     box-shadow: 0 14px 28px @photoLight1, 0 10px 10px @photoLight2;
-    background: linear-gradient(-45deg, @gradientPrimary2 0%, @gradientPrimary1 100%);
+    background: linear-gradient(
+        -45deg, 
+        @gradientPrimary2 0%, 
+        @gradientPrimary1 100%
+    );
     padding: 3px;
-    animation-name: gradient_anim;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
 .photo:hover image {
@@ -215,9 +145,9 @@ progressbar trough {
 }
 
 .button-action:hover, .button-action:checked {
-    background: linear-gradient(@gradientAccent1, @gradientAccent2);
+    background: linear-gradient(@gradientPrimary1, @gradientPrimary2);
     color: #FFFFFF;
-    border: solid 0.8px @gradientAccent1;
+    border: solid 0.8px @gradientPrimary1;
 }
 
 .button-action-popup {
@@ -228,12 +158,12 @@ progressbar trough {
 }
 
 .button-action-popup:hover {
-    background: linear-gradient(@gradientAccent1, @gradientAccent2);
+    background: linear-gradient(@gradientPrimary1, @gradientPrimary2);
     color: #FFFFFF;
 }
 
 .button-action-popup:focus {
-    border: 1px solid @colorAccentOpaque;
+    border: 1px solid alpha(@accent_color, 0.95);
 }
 
 .transition {
@@ -275,7 +205,7 @@ progressbar trough {
 }
 
 .suggested-action {
-    background: linear-gradient(@gradientAccent1, @gradientAccent2);
+    background: linear-gradient(@gradientPrimary1, @gradientPrimary2);
 }
 
 .btn_round {
@@ -312,8 +242,8 @@ progressbar trough {
 }
 
 .multiple_wallpaper_popup .toggle:checked {
-  background: alpha(@colorAccent, 0.1);
-  border: 0.5px solid @colorAccent;
+  background: alpha(@accent_color, 0.1);
+  border: 0.5px solid @accent_color;
 }
 
 .multiple_wallpaper_popup .toggle {
@@ -325,7 +255,7 @@ progressbar trough {
 }
 
 .action_suggest_btn {
-  background: linear-gradient(@gradientAccent1, @gradientAccent2);
+  background: linear-gradient(@gradientPrimary1, @gradientPrimary2);
   color: #FFFFFF;
   border: none;
   padding: 0.5em;
