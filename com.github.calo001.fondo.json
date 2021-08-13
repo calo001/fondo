@@ -45,7 +45,7 @@
             "sources": [
                 {
                     "type": "dir",
-                    "path": "/home/carlos/elementaryprojects/fondoOdin"
+                    "path": "."
                 }
             ]
         }
