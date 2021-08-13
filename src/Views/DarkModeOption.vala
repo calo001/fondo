@@ -26,7 +26,7 @@ namespace App.Views {
      */
     public class DarkModeOption : Gtk.Box {
         public string filtermode { get; set; }
-        private App.Configs.Settings app_settings = App.Configs.Settings.get_instance ();
+        private App.Configs.Settings app_settings;
 
         /**
          * Constructs a new {@code DarkModeOption} object.
@@ -40,13 +40,16 @@ namespace App.Views {
                 homogeneous: true
             );
 
+            this.app_settings = App.Application.app_settings;
+
             var follow_system = new Gtk.Box(Gtk.Orientation.VERTICAL, 8);
-            var icon = new Gtk.Image () {
+            var icon_follow_system = new Gtk.Image () {
                 gicon = new ThemedIcon ("emblem-system"),
-                pixel_size = 32
+                pixel_size = 24
             };
+            icon_follow_system.margin = 4;
             var label_follow_system = new Gtk.Label("Folow system");
-            follow_system.add (icon);
+            follow_system.add (icon_follow_system);
             follow_system.add (label_follow_system);
 
             var force_light = new Gtk.Box(Gtk.Orientation.VERTICAL, 8);

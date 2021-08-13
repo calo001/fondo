@@ -33,6 +33,11 @@ namespace App {
         public AppController            controller;
         public static GLib.Settings     settings;
         private App.Utils.ThemeManager  theme_manager;
+
+        public static App.Configs.Settings  app_settings;
+        public static Gtk.Settings          gtk_settings;
+        public static Granite.Settings      granite_settins; 
+
         /**
          * Constructs a new {@code Application} object.
          */
@@ -56,14 +61,11 @@ namespace App {
             weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
             default_theme.add_resource_path ("/com/github/calo001/fondo/images");
 
-            var app_settings = App.Configs.Settings.get_instance ();
-            message ("init settins gtk");
-            var gtk_settings = Gtk.Settings.get_default ();
-            message ("init granite settins gtk");
-            var granite_settins = Granite.Settings.get_default ();
-            message ("init app settins gtk");
+            app_settings = App.Configs.Settings.get_instance ();
+            gtk_settings = Gtk.Settings.get_default ();
+            granite_settins = Granite.Settings.get_default ();
             settings = new GLib.Settings (Constants.ID);
-            message ("theme maneger");
+
             theme_manager = new App.Utils.ThemeManager(
                 gtk_settings,
                 app_settings,

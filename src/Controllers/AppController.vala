@@ -251,6 +251,9 @@ namespace App.Controllers {
             });
 
             settings_view = new SettingsView();
+            settings_view.on_close_click.connect (() => {
+                flap.reveal_flap = false;
+            });
             
             flap.set_flap (settings_view);
             flap.set_content (box_stack);

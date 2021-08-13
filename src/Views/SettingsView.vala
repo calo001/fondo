@@ -26,37 +26,32 @@ namespace App.Views {
      * @since 1.0.0
      */
     public class SettingsView : Gtk.Box {
+        public signal void on_close_click ();
+
         public SettingsView() {
-            var lateral = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+            var lateral = new Gtk.Grid();
             lateral.vexpand = true;
             lateral.width_request = 300;
             lateral.get_style_context ().add_class ("lateral-panel");
 
-            var lbl_logo = new Gtk.Label ("Powered by Unsplash");
-            lbl_logo.get_style_context ().add_class ("h4");
-            lbl_logo.halign = Gtk.Align.START; 
-            lbl_logo.margin_top = 8;
-            lbl_logo.margin_start = 16;
-
-            var unsplash_link = "https://unsplash.com/?utm_source=Fondo&utm_medium=referral";
-            var logo = new Gtk.Image.from_resource ("/com/github/calo001/fondo/images/unsplashlogo.svg");
-            var unsplash_button = new Gtk.LinkButton(unsplash_link);
-            unsplash_button.always_show_image = true;
-            unsplash_button.image = logo;
-            unsplash_button.label = null;
-            unsplash_button.margin = 8;
-            unsplash_button.halign = Gtk.Align.CENTER;
-            unsplash_button.tooltip_text = S.UNSPLASH_DESCRIPTION;
-            unsplash_button.get_style_context ().add_class ("unsplash_logo");
-            unsplash_button.get_style_context ().add_class ("transition");
-
+            var credits_view = new CreditsView ();
             var filter_grid = new FilterOptionsView ();
             var dark_mode_view = new DarkModeOption ();
+            var close_button = new Gtk.Button.with_label ("Close");
+            close_button.halign = Gtk.Align.END;
+            close_button.margin_top = 8;
+            close_button.margin_end = 8;
+            close_button.valign = Gtk.Align.START;
+            close_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-            lateral.add (lbl_logo);
-            lateral.add (unsplash_button);
-            lateral.add (filter_grid);
-            lateral.add (dark_mode_view);
+            close_button.clicked.connect (() => {
+                on_close_click ();
+            });
+
+            lateral.attach (close_button,   0, 0, 1, 1);
+            lateral.attach (credits_view,   0, 0, 1, 1);
+            lateral.attach (filter_grid,    0, 1, 1, 1);
+            lateral.attach (dark_mode_view, 0, 2, 1, 1);
 
             var window_handler = new Hdy.WindowHandle ();
             window_handler.add (lateral);
