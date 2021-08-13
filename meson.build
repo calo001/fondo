@@ -1,4 +1,4 @@
-project('com.github.calo001.fondo', 'vala', 'c', version : '1.5.2', license: 'GPL-3.0')
+project('com.github.calo001.fondo', 'vala', 'c', version : '1.6.0', license: 'GPL-3.0')
 
 
 gnome = import('gnome')
