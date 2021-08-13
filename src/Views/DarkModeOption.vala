@@ -92,7 +92,6 @@ namespace App.Views {
             mode_button.selected = selectedIndex;
 
             mode_button.notify["selected"].connect (() => {
-                message ("click on" + mode_button.selected.to_string ());
                 switch (mode_button.selected) {
                     case 0:
                     app_settings.mode_theme = "follow-system";
