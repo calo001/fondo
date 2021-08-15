@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-14 00:08-0600\n"
+"POT-Creation-Date: 2021-08-14 22:15-0500\n"
 "PO-Revision-Date: 2020-12-26 21:14+0100\n"
 "Last-Translator: Tomina <tomina@vycital.eu>\n"
 "Language-Team: \n"
@@ -358,10 +358,21 @@ msgid "Orientation"
 msgstr "Orientace"
 
 #: src/Configs/Strings.vala:111
-#, fuzzy
 msgid "results"
 msgstr ""
 
 #: src/Configs/Strings.vala:112
 msgid "Gallery"
+msgstr ""
+
+#: src/Configs/Strings.vala:113
+msgid "Dark"
+msgstr ""
+
+#: src/Configs/Strings.vala:114
+msgid "Light"
+msgstr ""
+
+#: src/Configs/Strings.vala:115 src/Configs/Strings.vala:116
+msgid "Follow system"
 msgstr ""

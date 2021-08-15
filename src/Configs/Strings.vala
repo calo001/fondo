@@ -110,5 +110,9 @@ namespace App.Configs {
         public abstract const string ORIENTATION = _("Orientation");
         public abstract const string RESULTS = _("results");
         public abstract const string GALLERY = _("Gallery");
+        public abstract const string DARK_MODE = _("Dark");
+        public abstract const string LIGHT_MODE = _("Light");
+        public abstract const string FOLLOW_SYSTEM_MODE = _("Follow system");
+        public abstract const string CLOSE_SETTINGS = _("Follow system");
     }
 }

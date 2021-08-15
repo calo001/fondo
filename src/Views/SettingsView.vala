@@ -37,7 +37,7 @@ namespace App.Views {
             var credits_view = new CreditsView ();
             var filter_grid = new FilterOptionsView ();
             var dark_mode_view = new DarkModeOption ();
-            var close_button = new Gtk.Button.with_label ("Close");
+            var close_button = new Gtk.Button.with_label (S.CLOSE_SETTINGS);
             close_button.halign = Gtk.Align.END;
             close_button.margin_top = 8;
             close_button.margin_end = 8;

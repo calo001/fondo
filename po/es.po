@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-14 00:08-0600\n"
+"POT-Creation-Date: 2021-08-14 22:15-0500\n"
 "PO-Revision-Date: 2020-01-11 20:23+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -372,5 +372,14 @@ msgstr "resultados"
 msgid "Gallery"
 msgstr "Galería"
 
-#~ msgid "Usar en pantalla de login"
-#~ msgstr "Usar en pantalla de login"
+#: src/Configs/Strings.vala:113
+msgid "Dark"
+msgstr "Oscuro"
+
+#: src/Configs/Strings.vala:114
+msgid "Light"
+msgstr "Claro"
+
+#: src/Configs/Strings.vala:115 src/Configs/Strings.vala:116
+msgid "Follow system"
+msgstr "Usar configuación del sistema"

@@ -48,7 +48,7 @@ namespace App.Views {
                 pixel_size = 24
             };
             icon_follow_system.margin = 4;
-            var label_follow_system = new Gtk.Label("Folow system");
+            var label_follow_system = new Gtk.Label(S.FOLLOW_SYSTEM_MODE);
             follow_system.add (icon_follow_system);
             follow_system.add (label_follow_system);
 
@@ -57,7 +57,7 @@ namespace App.Views {
                 gicon = new ThemedIcon ("weather-clear"),
                 pixel_size = 32
             };
-            var label_force_light = new Gtk.Label("Light");
+            var label_force_light = new Gtk.Label(S.LIGHT_MODE);
             force_light.add (icon_force_light);
             force_light.add (label_force_light);
 
@@ -66,7 +66,7 @@ namespace App.Views {
                 gicon = new ThemedIcon ("weather-clear-night"),
                 pixel_size = 32
             };
-            var label_force_dark = new Gtk.Label("Dark");
+            var label_force_dark = new Gtk.Label(S.DARK_MODE);
             force_dark.add (icon_force_dark);
             force_dark.add (label_force_dark);
 

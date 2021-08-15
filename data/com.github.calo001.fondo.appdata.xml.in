@@ -43,6 +43,16 @@
         </ul>
     </description>
     <releases>
+      <release version="1.6.0" date="2021-08-14">
+        <description>
+          <ul>
+            <li>Wallpaper methods have been fixed to work on Odin.</li>
+            <li>The settings panel is redesigned. </li>
+            <li>Now you can select dark, light, or follow system for the UI mode.</li>
+            <li>A lot of custom styles are removed.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.5.2" date="2021-03-13">
         <description>
           <p>Updates and fixes</p>
