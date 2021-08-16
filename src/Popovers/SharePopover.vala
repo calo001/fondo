@@ -60,7 +60,7 @@ namespace App.Popover {
             autor_label.get_style_context ().add_class ("h3");
             share_label.get_style_context ().add_class ("h1");
 
-            var email_button = new Gtk.Button.from_icon_name ("internet-mail", Gtk.IconSize.DND);
+            var email_button = new Gtk.Button.from_icon_name ("io.elementary.mail", Gtk.IconSize.DND);
             email_button.tooltip_text = S.EMAIL;
             email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
     
@@ -182,7 +182,7 @@ namespace App.Popover {
     
             twitter_button.clicked.connect (() => {
                 try {
-                    AppInfo.launch_default_for_uri ("http://twitter.com/home/?status=%s %s".printf (this.body, this.uri), null);
+                    AppInfo.launch_default_for_uri ("https://twitter.com/intent/tweet?text=%s %s".printf (this.body, this.uri), null);
                 } catch (Error e) {
                     warning ("%s", e.message);
                 }
