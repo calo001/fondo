@@ -114,20 +114,18 @@ flatpak run com.github.calo001.fondo
 Fondo is and will always be free for the world 🌎️. If you like the project and would like to fund and contribute to my work, you can do it via Patreon or Paypal.Me:
 
 <table>
-  <tr>
-    <td style="border: none; padding: 0;">
+  <p align="center">
       <a href="https://www.paypal.me/calo001" target="_blank">
-        <img src="resources/paypalme.png" alt="Screenshot" width="500px"/>
+        <img src="resources/paypalme.png" alt="Screenshot" width="300px"/>
         </a>
-    </td>
-  </tr>
+    </p>
 </table>
 
 ## 💜️ Special thanks
 
 <p align="center">
   <a href="http://unsplash.com" target="_blank">
-    <img src="resources/unsplash_logo.png" alt="Screenshot" width="500px">
+    <img src="resources/unsplash_logo.png" alt="Screenshot" width="300px">
   </a>
 </p>
 <p align="center">
