@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-14 22:15-0500\n"
+"POT-Creation-Date: 2021-08-16 04:15+0000\n"
 "PO-Revision-Date: 2020-11-16 17:30+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
@@ -35,10 +35,6 @@ msgstr "com.github.calo001.fondo"
 #: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
 msgstr "bureaubladachtergrond;unsplash;foto;afbeelding;achtergrond;bureaublad;"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:9
-msgid "Carlos Lopez"
-msgstr "Carlos Lopez"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:31
 msgid ""
@@ -112,289 +108,188 @@ msgstr ""
 msgid "🔽️ Download any photo you like."
 msgstr ""
 
-#: data/com.github.calo001.fondo.appdata.xml.in:49
-msgid "Wallpaper methods have been fixed to work on Odin."
-msgstr ""
+#~ msgid "Carlos Lopez"
+#~ msgstr "Carlos Lopez"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:50
-msgid "The settings panel is redesigned."
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:51
-msgid "Now you can select dark, light, or follow system for the UI mode."
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:52
-msgid "A lot of custom styles are removed."
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:58
-#: data/com.github.calo001.fondo.appdata.xml.in:67
 #, fuzzy
-msgid "Updates and fixes"
-msgstr "Belangrijke foutoplossingen"
+#~ msgid "Updates and fixes"
+#~ msgstr "Belangrijke foutoplossingen"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:60
-msgid "Fix #140 Images not downloading."
-msgstr ""
-
-#: data/com.github.calo001.fondo.appdata.xml.in:61
 #, fuzzy
-msgid "New languages and updates."
-msgstr "Taalcodes gerepareerd."
+#~ msgid "New languages and updates."
+#~ msgstr "Taalcodes gerepareerd."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:69
-msgid "Fix warnings of parsing json."
-msgstr ""
+#~ msgid "Wallpaper slideshow!"
+#~ msgstr "Diavoorstelling!"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:70
-msgid "Fix wallpaper overflow."
-msgstr ""
+#~ msgid ""
+#~ "Select a set of photos to create the most beautiful wallpaper slideshow "
+#~ "on your desktop."
+#~ msgstr ""
+#~ "Stel een prachtige diavoorstelling samen door je favoriete foto's te "
+#~ "selecteren."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:71
-msgid "Show notification when a link is copied."
-msgstr ""
+#~ msgid "Free up space!"
+#~ msgstr "Maak ruimte vrij!"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:77
-msgid "Download any photo in your file system"
-msgstr ""
+#~ msgid "Delete photos from history."
+#~ msgstr "Verwijder foto's uit de geschiedenis."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:79
-msgid "Click on share photo to find the download option."
-msgstr ""
+#~ msgid "Fist year release!"
+#~ msgstr "Eerste uitgave van het jaar!"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:80
-msgid "Updated translation for Italian, Dutch, and German languages."
-msgstr ""
+#~ msgid "Back to the classic appearance."
+#~ msgstr "Terug naar de klassieke vormgeving."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:86
-msgid "Wallpaper slideshow!"
-msgstr "Diavoorstelling!"
+#~ msgid "Fix language codes."
+#~ msgstr "Taalcodes gerepareerd."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:88
-msgid ""
-"Select a set of photos to create the most beautiful wallpaper slideshow on "
-"your desktop."
-msgstr ""
-"Stel een prachtige diavoorstelling samen door je favoriete foto's te "
-"selecteren."
+#~ msgid "Improve the way translations files are setting."
+#~ msgstr "Verbeteringen omtrent het omgaan met vertaalbestanden."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:94
-msgid "Free up space!"
-msgstr "Maak ruimte vrij!"
+#~ msgid "The width and height are shown in each photo."
+#~ msgstr "De breedte en hoogte van een foto worden voortaan getoond."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:96
-msgid "Delete photos from history."
-msgstr "Verwijder foto's uit de geschiedenis."
+#~ msgid "Fix greeter don't getting wallpaper set via Fondo."
+#~ msgstr "Opgelost: het vergrendelscherm werd niet voorzien van een foto."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:102
-msgid "Fist year release!"
-msgstr "Eerste uitgave van het jaar!"
+#~ msgid "Custom colors and icon for Christmas"
+#~ msgstr "Aangepaste kleuren en pictogram, speciaal voor kerst"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:104
-msgid "Back to the classic appearance."
-msgstr "Terug naar de klassieke vormgeving."
+#~ msgid "Custom colors for #DiaDeMuertos"
+#~ msgstr "Aangepaste kleuren voor #DiaDeMuertos"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:105
-msgid "Fix language codes."
-msgstr "Taalcodes gerepareerd."
+#~ msgid "Fix"
+#~ msgstr "Opgelost"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:106
-msgid "Improve the way translations files are setting."
-msgstr "Verbeteringen omtrent het omgaan met vertaalbestanden."
+#~ msgid "#65 Error copy from URI to directory"
+#~ msgstr "#65 Fout tijdens kopiëren van uri naar map"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:107
-msgid "The width and height are shown in each photo."
-msgstr "De breedte en hoogte van een foto worden voortaan getoond."
+#~ msgid "#68 No previews availible"
+#~ msgstr "#68 Geen voorvertoningen beschikbaar"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:108
-msgid "Fix greeter don't getting wallpaper set via Fondo."
-msgstr "Opgelost: het vergrendelscherm werd niet voorzien van een foto."
+#~ msgid "New"
+#~ msgstr "Nieuw"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:114
-msgid "Custom colors and icon for Christmas"
-msgstr "Aangepaste kleuren en pictogram, speciaal voor kerst"
+#~ msgid "Added Turkish translation"
+#~ msgstr "Turkse vertaling toegevoegd"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:119
-msgid "Custom colors for #DiaDeMuertos"
-msgstr "Aangepaste kleuren voor #DiaDeMuertos"
+#~ msgid "German translation don't work"
+#~ msgstr "Duitse vertaling werkte niet"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:124
-#: data/com.github.calo001.fondo.appdata.xml.in:137
-msgid "Fix"
-msgstr "Opgelost"
+#~ msgid "Added German translation"
+#~ msgstr "Duitse vertaling toegevoegd"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:126
-msgid "#65 Error copy from URI to directory"
-msgstr "#65 Fout tijdens kopiëren van uri naar map"
+#~ msgid "Important fixes"
+#~ msgstr "Belangrijke foutoplossingen"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:127
-msgid "#68 No previews availible"
-msgstr "#68 Geen voorvertoningen beschikbaar"
+#~ msgid "Login screen does not use selected wallpaper"
+#~ msgstr "Het aanmeldscherm gebruikte de gekozen achtergrond niet"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:133
-#: data/com.github.calo001.fondo.appdata.xml.in:145
-#: data/com.github.calo001.fondo.appdata.xml.in:170
-#: data/com.github.calo001.fondo.appdata.xml.in:184
-#: data/com.github.calo001.fondo.appdata.xml.in:192
-#: data/com.github.calo001.fondo.appdata.xml.in:201
-#: data/com.github.calo001.fondo.appdata.xml.in:209
-msgid "New"
-msgstr "Nieuw"
+#~ msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
+#~ msgstr "De achtergrond werd niet gewijzigd op Ubuntu Mate 18.04"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:135
-msgid "Added Turkish translation"
-msgstr "Turkse vertaling toegevoegd"
+#~ msgid "Update"
+#~ msgstr "Bijgewerkt"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:139
-msgid "German translation don't work"
-msgstr "Duitse vertaling werkte niet"
+#~ msgid "Dutch (Netherlands) translation"
+#~ msgstr "Nederlandse (Nederland) vertaling toegevoegd"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:147
-msgid "Added German translation"
-msgstr "Duitse vertaling toegevoegd"
+#~ msgid "Keep your favorite photos with you, the photo history has arrived!"
+#~ msgstr ""
+#~ "Houd je favoriete foto's bij je, de fotogeschiedenis is gearriveerd!"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:153
-msgid "Important fixes"
-msgstr "Belangrijke foutoplossingen"
+#~ msgid ""
+#~ "New way of navigating with a bottom bar that allows you to go to: Today, "
+#~ "Categories and History"
+#~ msgstr ""
+#~ "Nieuwe manier om te navigeren met een balk aan de onderzijde waarmee u "
+#~ "naar: Vandaag, Categorieën en Geschiedenis kunt gaan"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:155
-msgid "Login screen does not use selected wallpaper"
-msgstr "Het aanmeldscherm gebruikte de gekozen achtergrond niet"
+#~ msgid ""
+#~ "Speed up your search with the photo filter by Orientation: Portrait, "
+#~ "Landscape or Any"
+#~ msgstr ""
+#~ "Versnel uw zoekopdracht met het fotofilter op Orientation: horizontaal, "
+#~ "verticaal of any"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:156
-msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
-msgstr "De achtergrond werd niet gewijzigd op Ubuntu Mate 18.04"
+#~ msgid ""
+#~ "Learn more about a photo with the Detail popup in the full screen view"
+#~ msgstr ""
+#~ "Meer informatie over een foto met de detailpop-up in de weergave op "
+#~ "volledig scherm"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:162
-msgid "Update"
-msgstr "Bijgewerkt"
+#~ msgid "Focus on Search entry with Ctrl+F"
+#~ msgstr "Richt u op een zoekopdracht met Ctrl + F"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:164
-msgid "Dutch (Netherlands) translation"
-msgstr "Nederlandse (Nederland) vertaling toegevoegd"
+#~ msgid "When doing a search, the total number of results are displayed"
+#~ msgstr "Tijdens het zoeken wordt het totale aantal resultaten weergegeven"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:172
-msgid "Keep your favorite photos with you, the photo history has arrived!"
-msgstr "Houd je favoriete foto's bij je, de fotogeschiedenis is gearriveerd!"
+#~ msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
+#~ msgstr ""
+#~ "Gradiëntanimatie in schuifbalk, modusomschakeling en plaatshouderfoto"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:173
-msgid ""
-"New way of navigating with a bottom bar that allows you to go to: Today, "
-"Categories and History"
-msgstr ""
-"Nieuwe manier om te navigeren met een balk aan de onderzijde waarmee u naar: "
-"Vandaag, Categorieën en Geschiedenis kunt gaan"
+#~ msgid "Remove G+ option from Share popup"
+#~ msgstr "Google+ verwijderd als deelmogelijkheid"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:174
-msgid ""
-"Speed up your search with the photo filter by Orientation: Portrait, "
-"Landscape or Any"
-msgstr ""
-"Versnel uw zoekopdracht met het fotofilter op Orientation: horizontaal, "
-"verticaal of any"
+#~ msgid "Update the set of screenshots"
+#~ msgstr "Schermfoto's bijgewerkt"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:175
-msgid "Learn more about a photo with the Detail popup in the full screen view"
-msgstr ""
-"Meer informatie over een foto met de detailpop-up in de weergave op volledig "
-"scherm"
+#~ msgid "Fix error in appdata"
+#~ msgstr "Fout opgelost in appdata"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:176
-msgid "Focus on Search entry with Ctrl+F"
-msgstr "Richt u op een zoekopdracht met Ctrl + F"
+#~ msgid "Added Dutch (Netherlands) translation"
+#~ msgstr "Nederlandse (Nederland) vertaling toegevoegd"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:177
-msgid "When doing a search, the total number of results are displayed"
-msgstr "Tijdens het zoeken wordt het totale aantal resultaten weergegeven"
+#~ msgid "Add french translations"
+#~ msgstr "Franse vertaling toegevoegd"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:178
-msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
-msgstr "Gradiëntanimatie in schuifbalk, modusomschakeling en plaatshouderfoto"
+#~ msgid "Updates"
+#~ msgstr "Updates"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:186
-msgid "Remove G+ option from Share popup"
-msgstr "Google+ verwijderd als deelmogelijkheid"
+#~ msgid "Search by category and query"
+#~ msgstr "Zoeken op categorie en zoekopdracht"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:194
-msgid "Update the set of screenshots"
-msgstr "Schermfoto's bijgewerkt"
+#~ msgid "New look and feel on hover a photo"
+#~ msgstr "Nieuwe fotoweergave bij zweven over foto's"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:195
-msgid "Fix error in appdata"
-msgstr "Fout opgelost in appdata"
+#~ msgid "Add gradients to scrollbar and mode switch"
+#~ msgstr "Kleurverloop toegevoegd aan scrollbalk en schakelen tullen modi"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:203
-msgid "Added Dutch (Netherlands) translation"
-msgstr "Nederlandse (Nederland) vertaling toegevoegd"
+#~ msgid "New screenshots with awesome photos"
+#~ msgstr "Nieuwe schermafbeeldingen met fantastische foto's"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:211
-msgid "Add french translations"
-msgstr "Franse vertaling toegevoegd"
+#~ msgid "OARS data social-info set to mild"
+#~ msgstr "OARS-gegevens voor social-info ingesteld op mild"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:217
-#: data/com.github.calo001.fondo.appdata.xml.in:227
-msgid "Updates"
-msgstr "Updates"
+#~ msgid "Fixes and improvements"
+#~ msgstr "Opgeloste fouten en verbeteringen"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:219
-msgid "Search by category and query"
-msgstr "Zoeken op categorie en zoekopdracht"
+#~ msgid "Orthographic corrections in the Spanish translation"
+#~ msgstr "Verbeteringen aan de Spaanse vertaling"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:220
-msgid "New look and feel on hover a photo"
-msgstr "Nieuwe fotoweergave bij zweven over foto's"
+#~ msgid "The photos are sorted from highest to lowest according to height"
+#~ msgstr ""
+#~ "De foto's worden gesorteerd van grootste-naar-kleinste, op basis van de "
+#~ "hoogte"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:221
-msgid "Add gradients to scrollbar and mode switch"
-msgstr "Kleurverloop toegevoegd aan scrollbalk en schakelen tullen modi"
+#~ msgid "A very nice update with new features"
+#~ msgstr "Een hele fijne update met nieuwe functies"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:229
-msgid "New screenshots with awesome photos"
-msgstr "Nieuwe schermafbeeldingen met fantastische foto's"
+#~ msgid "Responsive, resizable window"
+#~ msgstr "Automatisch schaalbaar venster"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:230
-msgid "OARS data social-info set to mild"
-msgstr "OARS-gegevens voor social-info ingesteld op mild"
+#~ msgid "Infinite scrolling: just scroll to keep loading new photos"
+#~ msgstr "Oneindig scrollen: blijf scrollen om meer foto's te laden"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:236
-msgid "Fixes and improvements"
-msgstr "Opgeloste fouten en verbeteringen"
+#~ msgid "Wallpaper options: set zoom, centered, and more"
+#~ msgstr "Achtergrondopties: stel het zoomniveau, de uitlijning en meer in"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:238
-msgid "Orthographic corrections in the Spanish translation"
-msgstr "Verbeteringen aan de Spaanse vertaling"
+#~ msgid "Improved icon and styling"
+#~ msgstr "Pictogram en stijl verbeterd"
 
-#: data/com.github.calo001.fondo.appdata.xml.in:239
-msgid "The photos are sorted from highest to lowest according to height"
-msgstr ""
-"De foto's worden gesorteerd van grootste-naar-kleinste, op basis van de "
-"hoogte"
+#~ msgid "Improved UI."
+#~ msgstr "Verbeterd uiterlijk."
 
-#: data/com.github.calo001.fondo.appdata.xml.in:245
-msgid "A very nice update with new features"
-msgstr "Een hele fijne update met nieuwe functies"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:247
-msgid "Responsive, resizable window"
-msgstr "Automatisch schaalbaar venster"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:248
-msgid "Infinite scrolling: just scroll to keep loading new photos"
-msgstr "Oneindig scrollen: blijf scrollen om meer foto's te laden"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:249
-msgid "Wallpaper options: set zoom, centered, and more"
-msgstr "Achtergrondopties: stel het zoomniveau, de uitlijning en meer in"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:250
-msgid "Improved icon and styling"
-msgstr "Pictogram en stijl verbeterd"
-
-#: data/com.github.calo001.fondo.appdata.xml.in:255
-msgid "Improved UI."
-msgstr "Verbeterd uiterlijk."
-
-#: data/com.github.calo001.fondo.appdata.xml.in:260
-msgid "Initial 1.0.0 release!"
-msgstr "De allereerste uitgave, 1.0.0!"
+#~ msgid "Initial 1.0.0 release!"
+#~ msgstr "De allereerste uitgave, 1.0.0!"

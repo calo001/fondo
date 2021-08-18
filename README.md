@@ -77,6 +77,7 @@ git clone https://github.com/calo001/fondo.git && cd fondo
 
 ### 👨‍💻️ Development
 
+#### Using ./app script
 Fondo includes a script to simplify the development process. This script can be accessed in the main project directory through `./app`.
 
 ```
@@ -92,6 +93,22 @@ Options:
   uninstall         Removes the application from the system (requires sudo)
 ```
 
+#### Using Flatpak
+
+If you prefer to use Flatpak to try or compile Fondo from source code, you can do it by using the command line:
+
+```
+flatpak-builder build  com.github.calo001.fondo.json --user --install --force-clean
+```
+
+Then, execute Fondo by using:
+
+```
+flatpak run com.github.calo001.fondo
+```
+
+>To run these commands, you need to have Flatpak installed, Check the [Quick Setup](https://flatpak.org/setup/), and follow the instructions to install it depending on your OS.
+
 ## 🍵️ Support me
 
 Fondo is and will always be free for the world 🌎️. If you like the project and would like to fund and contribute to my work, you can do it via Patreon or Paypal.Me:
@@ -102,11 +119,6 @@ Fondo is and will always be free for the world 🌎️. If you like the project 
       <a href="https://www.paypal.me/calo001" target="_blank">
         <img src="resources/paypalme.png" alt="Screenshot"/>
         </a>
-    </td>
-    <td style="border: none; padding: 0;">
-      <a href="https://www.patreon.com/carloslr" target="_blank">
-        <img src="resources/become_a_patron_button.png" alt="Screenshot"/>
-      </a>
     </td>
   </tr>
 </table>
