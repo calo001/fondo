@@ -117,7 +117,7 @@ Fondo is and will always be free for the world 🌎️. If you like the project 
   <tr>
     <td style="border: none; padding: 0;">
       <a href="https://www.paypal.me/calo001" target="_blank">
-        <img src="resources/paypalme.png" alt="Screenshot"/>
+        <img src="resources/paypalme.png" alt="Screenshot" width="500px"/>
         </a>
     </td>
   </tr>
