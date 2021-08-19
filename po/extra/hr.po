@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 04:15+0000\n"
+"POT-Creation-Date: 2021-08-18 23:13-0500\n"
 "PO-Revision-Date: 2020-10-04 15:33+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
@@ -36,6 +36,10 @@ msgstr "com.github.calo001.fondo"
 #: data/com.github.calo001.fondo.desktop.in:11
 msgid "wallpaper;unsplash;foto;image;photo;background;"
 msgstr "slika pozadine;unsplash;foto;slika;fotografija;pozadina;"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:9
+msgid "Carlos Lopez"
+msgstr "Carlos Lopez"
 
 #: data/com.github.calo001.fondo.appdata.xml.in:31
 msgid ""
@@ -114,177 +118,292 @@ msgstr ""
 msgid "🔽️ Download any photo you like."
 msgstr ""
 
-#~ msgid "Carlos Lopez"
-#~ msgstr "Carlos Lopez"
+#: data/com.github.calo001.fondo.appdata.xml.in:49
+msgid "Hide progressbar when download finishes."
+msgstr ""
 
+#: data/com.github.calo001.fondo.appdata.xml.in:56
+msgid "Wallpaper methods have been fixed to work on Odin."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:57
+msgid "The settings panel is redesigned."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:58
+msgid "Now you can select dark, light, or follow system for the UI mode."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:59
+msgid "A lot of custom styles are removed."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:65
+#: data/com.github.calo001.fondo.appdata.xml.in:74
 #, fuzzy
-#~ msgid "Updates and fixes"
-#~ msgstr "Važni ispravci"
+msgid "Updates and fixes"
+msgstr "Važni ispravci"
 
+#: data/com.github.calo001.fondo.appdata.xml.in:67
+msgid "Fix #140 Images not downloading."
+msgstr ""
+
+#: data/com.github.calo001.fondo.appdata.xml.in:68
 #, fuzzy
-#~ msgid "New languages and updates."
-#~ msgstr "Ispravljeni jezični kodovi."
+msgid "New languages and updates."
+msgstr "Ispravljeni jezični kodovi."
 
-#~ msgid "Free up space!"
-#~ msgstr "Izbriši memoriju!"
+#: data/com.github.calo001.fondo.appdata.xml.in:76
+msgid "Fix warnings of parsing json."
+msgstr ""
 
-#~ msgid "Delete photos from history."
-#~ msgstr "Izbriši slike iz kronologije."
+#: data/com.github.calo001.fondo.appdata.xml.in:77
+msgid "Fix wallpaper overflow."
+msgstr ""
 
-#~ msgid "Fist year release!"
-#~ msgstr "Izdanje prve godine!"
+#: data/com.github.calo001.fondo.appdata.xml.in:78
+msgid "Show notification when a link is copied."
+msgstr ""
 
-#~ msgid "Back to the classic appearance."
-#~ msgstr "Vraćen je klasični izgeld."
+#: data/com.github.calo001.fondo.appdata.xml.in:84
+msgid "Download any photo in your file system"
+msgstr ""
 
-#~ msgid "Fix language codes."
-#~ msgstr "Ispravljeni jezični kodovi."
+#: data/com.github.calo001.fondo.appdata.xml.in:86
+msgid "Click on share photo to find the download option."
+msgstr ""
 
-#~ msgid "Improve the way translations files are setting."
-#~ msgstr "Poboljšan način postavljanja prevodilačkih datoteka."
+#: data/com.github.calo001.fondo.appdata.xml.in:87
+msgid "Updated translation for Italian, Dutch, and German languages."
+msgstr ""
 
-#~ msgid "The width and height are shown in each photo."
-#~ msgstr "Za svaku sliku prikazuju se širina i visina."
+#: data/com.github.calo001.fondo.appdata.xml.in:93
+msgid "Wallpaper slideshow!"
+msgstr ""
 
-#~ msgid "Fix greeter don't getting wallpaper set via Fondo."
-#~ msgstr ""
-#~ "Ispravljen uvodni ekran koji ne dobiva sliku pozadine postavljenu putem "
-#~ "Fondoa."
+#: data/com.github.calo001.fondo.appdata.xml.in:95
+msgid ""
+"Select a set of photos to create the most beautiful wallpaper slideshow on "
+"your desktop."
+msgstr ""
 
-#~ msgid "Custom colors and icon for Christmas"
-#~ msgstr "Prilagođene boje i ikone za Božić"
+#: data/com.github.calo001.fondo.appdata.xml.in:101
+msgid "Free up space!"
+msgstr "Izbriši memoriju!"
 
-#~ msgid "Custom colors for #DiaDeMuertos"
-#~ msgstr "Prilagođene boje za #Dan Svih svetih"
+#: data/com.github.calo001.fondo.appdata.xml.in:103
+msgid "Delete photos from history."
+msgstr "Izbriši slike iz kronologije."
 
-#~ msgid "Fix"
-#~ msgstr "Popravi"
+#: data/com.github.calo001.fondo.appdata.xml.in:109
+msgid "Fist year release!"
+msgstr "Izdanje prve godine!"
 
-#~ msgid "#65 Error copy from URI to directory"
-#~ msgstr "#65 Greška kopiranja iz URI adrese u mapu"
+#: data/com.github.calo001.fondo.appdata.xml.in:111
+msgid "Back to the classic appearance."
+msgstr "Vraćen je klasični izgeld."
 
-#~ msgid "#68 No previews availible"
-#~ msgstr "#68 Pregledi nisu dostupni"
+#: data/com.github.calo001.fondo.appdata.xml.in:112
+msgid "Fix language codes."
+msgstr "Ispravljeni jezični kodovi."
 
-#~ msgid "New"
-#~ msgstr "Novo"
+#: data/com.github.calo001.fondo.appdata.xml.in:113
+msgid "Improve the way translations files are setting."
+msgstr "Poboljšan način postavljanja prevodilačkih datoteka."
 
-#~ msgid "Added Turkish translation"
-#~ msgstr "Dodan je turski prijevod"
+#: data/com.github.calo001.fondo.appdata.xml.in:114
+msgid "The width and height are shown in each photo."
+msgstr "Za svaku sliku prikazuju se širina i visina."
 
-#~ msgid "German translation don't work"
-#~ msgstr "Njemački prijevod ne radi"
+#: data/com.github.calo001.fondo.appdata.xml.in:115
+msgid "Fix greeter don't getting wallpaper set via Fondo."
+msgstr ""
+"Ispravljen uvodni ekran koji ne dobiva sliku pozadine postavljenu putem "
+"Fondoa."
 
-#~ msgid "Added German translation"
-#~ msgstr "Dodan je njemački prijevod"
+#: data/com.github.calo001.fondo.appdata.xml.in:121
+msgid "Custom colors and icon for Christmas"
+msgstr "Prilagođene boje i ikone za Božić"
 
-#~ msgid "Important fixes"
-#~ msgstr "Važni ispravci"
+#: data/com.github.calo001.fondo.appdata.xml.in:126
+msgid "Custom colors for #DiaDeMuertos"
+msgstr "Prilagođene boje za #Dan Svih svetih"
 
-#~ msgid "Login screen does not use selected wallpaper"
-#~ msgstr "Ekran prijave ne koristi odabranu sliku pozadine"
+#: data/com.github.calo001.fondo.appdata.xml.in:131
+#: data/com.github.calo001.fondo.appdata.xml.in:144
+msgid "Fix"
+msgstr "Popravi"
 
-#~ msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
-#~ msgstr "Slika pozadine se ne mijenja kad se primijeni na Ubuntu Mate 18.04"
+#: data/com.github.calo001.fondo.appdata.xml.in:133
+msgid "#65 Error copy from URI to directory"
+msgstr "#65 Greška kopiranja iz URI adrese u mapu"
 
-#~ msgid "Update"
-#~ msgstr "Aktualiziranje"
+#: data/com.github.calo001.fondo.appdata.xml.in:134
+msgid "#68 No previews availible"
+msgstr "#68 Pregledi nisu dostupni"
 
-#~ msgid "Dutch (Netherlands) translation"
-#~ msgstr "Nizozemski prijevod"
+#: data/com.github.calo001.fondo.appdata.xml.in:140
+#: data/com.github.calo001.fondo.appdata.xml.in:152
+#: data/com.github.calo001.fondo.appdata.xml.in:177
+#: data/com.github.calo001.fondo.appdata.xml.in:191
+#: data/com.github.calo001.fondo.appdata.xml.in:199
+#: data/com.github.calo001.fondo.appdata.xml.in:208
+#: data/com.github.calo001.fondo.appdata.xml.in:216
+msgid "New"
+msgstr "Novo"
 
-#~ msgid "Keep your favorite photos with you, the photo history has arrived!"
-#~ msgstr "Čuvaj svoje omiljene slike – uvedena je kronologija slika!"
+#: data/com.github.calo001.fondo.appdata.xml.in:142
+msgid "Added Turkish translation"
+msgstr "Dodan je turski prijevod"
 
-#~ msgid ""
-#~ "New way of navigating with a bottom bar that allows you to go to: Today, "
-#~ "Categories and History"
-#~ msgstr ""
-#~ "Novi način navigacije s donjom trakom koja omogućava premještanje na: "
-#~ "Danas, Kategorije i Kronologija"
+#: data/com.github.calo001.fondo.appdata.xml.in:146
+msgid "German translation don't work"
+msgstr "Njemački prijevod ne radi"
 
-#~ msgid ""
-#~ "Speed up your search with the photo filter by Orientation: Portrait, "
-#~ "Landscape or Any"
-#~ msgstr ""
-#~ "Ubrzaj pretragu s filtrom slika po formatu: uspravno, polegnuto ili sve"
+#: data/com.github.calo001.fondo.appdata.xml.in:154
+msgid "Added German translation"
+msgstr "Dodan je njemački prijevod"
 
-#~ msgid ""
-#~ "Learn more about a photo with the Detail popup in the full screen view"
-#~ msgstr ""
-#~ "Saznaj više o slici pomoću skočnog prozora s detaljima u cjeloekranskom "
-#~ "prikazu"
+#: data/com.github.calo001.fondo.appdata.xml.in:160
+msgid "Important fixes"
+msgstr "Važni ispravci"
 
-#~ msgid "Focus on Search entry with Ctrl+F"
-#~ msgstr "Fokusiranje na unos pretrage pomoću Ctrl+F"
+#: data/com.github.calo001.fondo.appdata.xml.in:162
+msgid "Login screen does not use selected wallpaper"
+msgstr "Ekran prijave ne koristi odabranu sliku pozadine"
 
-#~ msgid "When doing a search, the total number of results are displayed"
-#~ msgstr "Prilikom pretraživanja, prikazuje se ukupni broj rezultata"
+#: data/com.github.calo001.fondo.appdata.xml.in:163
+msgid "Wallpaper doesn't change when applying on Ubuntu Mate 18.04"
+msgstr "Slika pozadine se ne mijenja kad se primijeni na Ubuntu Mate 18.04"
 
-#~ msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
-#~ msgstr ""
-#~ "Animacija prijelaza u traci klizača, mijenjanje modusa i slike za "
-#~ "rezervirano mjesto"
+#: data/com.github.calo001.fondo.appdata.xml.in:169
+msgid "Update"
+msgstr "Aktualiziranje"
 
-#~ msgid "Remove G+ option from Share popup"
-#~ msgstr "Uklonjena G+ opcija iz skočnog prozora „Dijeli”"
+#: data/com.github.calo001.fondo.appdata.xml.in:171
+msgid "Dutch (Netherlands) translation"
+msgstr "Nizozemski prijevod"
 
-#~ msgid "Update the set of screenshots"
-#~ msgstr "Aktualiziran komplet snimki ekrana"
+#: data/com.github.calo001.fondo.appdata.xml.in:179
+msgid "Keep your favorite photos with you, the photo history has arrived!"
+msgstr "Čuvaj svoje omiljene slike – uvedena je kronologija slika!"
 
-#~ msgid "Fix error in appdata"
-#~ msgstr "Ispravljena greška u appdata"
+#: data/com.github.calo001.fondo.appdata.xml.in:180
+msgid ""
+"New way of navigating with a bottom bar that allows you to go to: Today, "
+"Categories and History"
+msgstr ""
+"Novi način navigacije s donjom trakom koja omogućava premještanje na: Danas, "
+"Kategorije i Kronologija"
 
-#~ msgid "Added Dutch (Netherlands) translation"
-#~ msgstr "Dodan nizozemski (Nizozemska) prijevod"
+#: data/com.github.calo001.fondo.appdata.xml.in:181
+msgid ""
+"Speed up your search with the photo filter by Orientation: Portrait, "
+"Landscape or Any"
+msgstr ""
+"Ubrzaj pretragu s filtrom slika po formatu: uspravno, polegnuto ili sve"
 
-#~ msgid "Add french translations"
-#~ msgstr "Dodan francuski prijevod"
+#: data/com.github.calo001.fondo.appdata.xml.in:182
+msgid "Learn more about a photo with the Detail popup in the full screen view"
+msgstr ""
+"Saznaj više o slici pomoću skočnog prozora s detaljima u cjeloekranskom "
+"prikazu"
 
-#~ msgid "Updates"
-#~ msgstr "Aktualiziranja"
+#: data/com.github.calo001.fondo.appdata.xml.in:183
+msgid "Focus on Search entry with Ctrl+F"
+msgstr "Fokusiranje na unos pretrage pomoću Ctrl+F"
 
-#~ msgid "Search by category and query"
-#~ msgstr "Pretraživanje po kategorijama i upit"
+#: data/com.github.calo001.fondo.appdata.xml.in:184
+msgid "When doing a search, the total number of results are displayed"
+msgstr "Prilikom pretraživanja, prikazuje se ukupni broj rezultata"
 
-#~ msgid "New look and feel on hover a photo"
-#~ msgstr "Novi izgled i način rada prelaženja mišem preko slike"
+#: data/com.github.calo001.fondo.appdata.xml.in:185
+msgid "Gradient animation in scrollbar, mode switch and placeholder photo"
+msgstr ""
+"Animacija prijelaza u traci klizača, mijenjanje modusa i slike za "
+"rezervirano mjesto"
 
-#~ msgid "Add gradients to scrollbar and mode switch"
-#~ msgstr "Dodavanje prijelaza u kliznu traku i prebacivanje modusa"
+#: data/com.github.calo001.fondo.appdata.xml.in:193
+msgid "Remove G+ option from Share popup"
+msgstr "Uklonjena G+ opcija iz skočnog prozora „Dijeli”"
 
-#~ msgid "New screenshots with awesome photos"
-#~ msgstr "Nove snimke ekrana s nevjerojatnim slikama"
+#: data/com.github.calo001.fondo.appdata.xml.in:201
+msgid "Update the set of screenshots"
+msgstr "Aktualiziran komplet snimki ekrana"
 
-#~ msgid "OARS data social-info set to mild"
-#~ msgstr "OARS-podaci za društvene podatke postavljeni na blago"
+#: data/com.github.calo001.fondo.appdata.xml.in:202
+msgid "Fix error in appdata"
+msgstr "Ispravljena greška u appdata"
 
-#~ msgid "Fixes and improvements"
-#~ msgstr "Ispravci i poboljšanja"
+#: data/com.github.calo001.fondo.appdata.xml.in:210
+msgid "Added Dutch (Netherlands) translation"
+msgstr "Dodan nizozemski (Nizozemska) prijevod"
 
-#~ msgid "Orthographic corrections in the Spanish translation"
-#~ msgstr "Pravopisni ispravci u španjolskom prijevodu"
+#: data/com.github.calo001.fondo.appdata.xml.in:218
+msgid "Add french translations"
+msgstr "Dodan francuski prijevod"
 
-#~ msgid "The photos are sorted from highest to lowest according to height"
-#~ msgstr "Slike su razvrstane od najveće do najmanje, prema visini"
+#: data/com.github.calo001.fondo.appdata.xml.in:224
+#: data/com.github.calo001.fondo.appdata.xml.in:234
+msgid "Updates"
+msgstr "Aktualiziranja"
 
-#~ msgid "A very nice update with new features"
-#~ msgstr "Lijepa nadogradnja s novim funkcijama"
+#: data/com.github.calo001.fondo.appdata.xml.in:226
+msgid "Search by category and query"
+msgstr "Pretraživanje po kategorijama i upit"
 
-#~ msgid "Responsive, resizable window"
-#~ msgstr "Prilagođavajuća i promijenjiva veličina prozora"
+#: data/com.github.calo001.fondo.appdata.xml.in:227
+msgid "New look and feel on hover a photo"
+msgstr "Novi izgled i način rada prelaženja mišem preko slike"
 
-#~ msgid "Infinite scrolling: just scroll to keep loading new photos"
-#~ msgstr "Beskonačno klizanje: kliži dolje za učitavanje daljnjih slika"
+#: data/com.github.calo001.fondo.appdata.xml.in:228
+msgid "Add gradients to scrollbar and mode switch"
+msgstr "Dodavanje prijelaza u kliznu traku i prebacivanje modusa"
 
-#~ msgid "Wallpaper options: set zoom, centered, and more"
-#~ msgstr "Opcije slike pozadine: postavi zoom, centriraj i dr."
+#: data/com.github.calo001.fondo.appdata.xml.in:236
+msgid "New screenshots with awesome photos"
+msgstr "Nove snimke ekrana s nevjerojatnim slikama"
 
-#~ msgid "Improved icon and styling"
-#~ msgstr "Poboljšanja ikona i stiliziranje"
+#: data/com.github.calo001.fondo.appdata.xml.in:237
+msgid "OARS data social-info set to mild"
+msgstr "OARS-podaci za društvene podatke postavljeni na blago"
 
-#~ msgid "Improved UI."
-#~ msgstr "Poboljšanjo korisničko sučelje."
+#: data/com.github.calo001.fondo.appdata.xml.in:243
+msgid "Fixes and improvements"
+msgstr "Ispravci i poboljšanja"
 
-#~ msgid "Initial 1.0.0 release!"
-#~ msgstr "Izvorno izdanje 1.0.0!"
+#: data/com.github.calo001.fondo.appdata.xml.in:245
+msgid "Orthographic corrections in the Spanish translation"
+msgstr "Pravopisni ispravci u španjolskom prijevodu"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:246
+msgid "The photos are sorted from highest to lowest according to height"
+msgstr "Slike su razvrstane od najveće do najmanje, prema visini"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:252
+msgid "A very nice update with new features"
+msgstr "Lijepa nadogradnja s novim funkcijama"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:254
+msgid "Responsive, resizable window"
+msgstr "Prilagođavajuća i promijenjiva veličina prozora"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:255
+msgid "Infinite scrolling: just scroll to keep loading new photos"
+msgstr "Beskonačno klizanje: kliži dolje za učitavanje daljnjih slika"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:256
+msgid "Wallpaper options: set zoom, centered, and more"
+msgstr "Opcije slike pozadine: postavi zoom, centriraj i dr."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:257
+msgid "Improved icon and styling"
+msgstr "Poboljšanja ikona i stiliziranje"
+
+#: data/com.github.calo001.fondo.appdata.xml.in:262
+msgid "Improved UI."
+msgstr "Poboljšanjo korisničko sučelje."
+
+#: data/com.github.calo001.fondo.appdata.xml.in:267
+msgid "Initial 1.0.0 release!"
+msgstr "Izvorno izdanje 1.0.0!"

@@ -43,6 +43,13 @@
         </ul>
     </description>
     <releases>
+      <release version="1.6.1" date="2021-08-18">
+        <description>
+          <ul>
+            <li>Hide progressbar when download finishes.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.6.0" date="2021-08-14">
         <description>
           <ul>
