@@ -259,6 +259,12 @@ namespace App.Views {
             bar.margin_start = 4;
             bar.margin_end = 4;
 
+            bar.notify["fraction"].connect(() => {
+                if (bar.fraction == 1.0) {
+                    bar.visible = false;
+                }
+            });
+
             /******************************************
                         Revealer for progress
             ******************************************/
