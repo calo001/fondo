@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-18 23:13-0500\n"
-"PO-Revision-Date: 2020-12-26 21:14+0100\n"
-"Last-Translator: Tomina <tomina@vycital.eu>\n"
+"PO-Revision-Date: 2021-08-23 10:45+0100\n"
+"Last-Translator: Ma-TA <00mt01@gmail.com>\n"
 "Language-Team: \n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Navštívit web"
 
 #: src/Configs/Strings.vala:31
 msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
-msgstr "Fotky z Unsplashe: Krásný fotky a obrázky zdarma"
+msgstr "Fotky z Unsplash.com: Krásné fotky a obrázky zdarma"
 
 #: src/Configs/Strings.vala:32
 msgid "Photo by "
@@ -40,7 +40,7 @@ msgstr "Foto od "
 
 #: src/Configs/Strings.vala:33
 msgid " on Unsplash"
-msgstr " na Unsplashi"
+msgstr " na Unsplash.com"
 
 #: src/Configs/Strings.vala:34
 msgid "Share"
@@ -56,43 +56,43 @@ msgstr "Zkopírovat odkaz"
 
 #: src/Configs/Strings.vala:37
 msgid "Options"
-msgstr "Možnosti"
+msgstr "Předvolby"
 
 #: src/Configs/Strings.vala:38
 msgid "Centered"
-msgstr "Vystředěná"
+msgstr "Vycentrovat"
 
 #: src/Configs/Strings.vala:39
 msgid "Scaled"
-msgstr "Oddálená"
+msgstr "Oddálit"
 
 #: src/Configs/Strings.vala:40
 msgid "Zoom"
-msgstr "Přiblížený"
+msgstr "Přiblížit"
 
 #: src/Configs/Strings.vala:41
 msgid "Spanned"
-msgstr "Zdeformovaná"
+msgstr "Roztáhnout"
 
 #: src/Configs/Strings.vala:42
 msgid "Wallpaper ready!"
-msgstr "Tapeta je připravená!"
+msgstr "Tapeta je připravena!"
 
 #: src/Configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
-msgstr "Tvoje nová tapeta je připravená!"
+msgstr "Vaše nová tapeta je připravena!"
 
 #: src/Configs/Strings.vala:44
 msgid "Check the network connection."
-msgstr "Zkontroluj si připojení k Internetu."
+msgstr "Zkontrolujte připojení k internetu."
 
 #: src/Configs/Strings.vala:45
 msgid "Retry"
-msgstr "Zkusit znova"
+msgstr "Zkusit znovu"
 
 #: src/Configs/Strings.vala:46
 msgid "🌎  An amazing place in the world"
-msgstr "🌎  Skvělý místo na světě"
+msgstr "🌎  Skvělé místo na světě"
 
 #: src/Configs/Strings.vala:47
 msgid "🌻 Nature"
@@ -100,7 +100,7 @@ msgstr "🌻 Příroda"
 
 #: src/Configs/Strings.vala:48
 msgid "🐹 Animal"
-msgstr "🐹 Zvířátka"
+msgstr "🐹 Fauna"
 
 #: src/Configs/Strings.vala:49
 msgid "☕ Food & drink"
@@ -124,11 +124,11 @@ msgstr "‍🎩 Móda"
 
 #: src/Configs/Strings.vala:54
 msgid "🎨 Art & culture"
-msgstr "🎨 Umění a kultůra"
+msgstr "🎨 Umění a kultura"
 
 #: src/Configs/Strings.vala:55
 msgid "🏦 Architecture"
-msgstr "🏦 Architektůra"
+msgstr "🏦 Architektura"
 
 #: src/Configs/Strings.vala:56
 msgid "💻 Technology"
@@ -156,7 +156,7 @@ msgstr "Zavřít zobrazení na celou obrazovku"
 
 #: src/Configs/Strings.vala:62
 msgid "Search photos Unsplash"
-msgstr "Hledat fotky na Unsplashi"
+msgstr "Hledat fotky na Unsplash.com"
 
 #: src/Configs/Strings.vala:63
 msgid "History"
@@ -164,11 +164,11 @@ msgstr "Historie"
 
 #: src/Configs/Strings.vala:64
 msgid "Light background"
-msgstr "Světlý pozadí"
+msgstr "Světlé pozadí"
 
 #: src/Configs/Strings.vala:65
 msgid "Dark background"
-msgstr "Tmavý pozadí"
+msgstr "Tmavé pozadí"
 
 #: src/Configs/Strings.vala:66
 msgid "About"
@@ -188,11 +188,11 @@ msgstr "HISTORIE"
 
 #: src/Configs/Strings.vala:70
 msgid "No description available"
-msgstr "Žádný popis neni k dispozici"
+msgstr "Žádný popis není k dispozici"
 
 #: src/Configs/Strings.vala:71
 msgid "Set as wallpaper"
-msgstr "Nastavit jako tapetu"
+msgstr "Nastavit jako pozadí"
 
 #: src/Configs/Strings.vala:72
 msgid "Details"
@@ -204,19 +204,19 @@ msgstr "Navštívit profil"
 
 #: src/Configs/Strings.vala:74
 msgid "Total results"
-msgstr "Celkem výsledků"
+msgstr "Výsledků celkem"
 
 #: src/Configs/Strings.vala:75
 msgid "Find out what you like️"
-msgstr "Najdi, co se ti líbí"
+msgstr "Najděte, co se vám líbí"
 
 #: src/Configs/Strings.vala:76
 msgid "Try changing search terms."
-msgstr "Zkus změnit hledaný termíny."
+msgstr "Zkuste změnit hledaná slova."
 
 #: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
-msgstr "Pro přidání fotky do historie na ni klikni."
+msgstr "Pro přidání fotky do historie na ni klikněte."
 
 #: src/Configs/Strings.vala:78
 msgid "Network Error"
@@ -240,7 +240,7 @@ msgstr "Smazat fotku z historie"
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
-msgstr "Vážně chceš smazat tuto fotku z historie?"
+msgstr "Opravdu chcete smazat tuto fotku z historie?"
 
 #: src/Configs/Strings.vala:84
 msgid "Wallpaper Slideshow"
@@ -252,45 +252,45 @@ msgstr "Prezentace se připravuje…"
 
 #: src/Configs/Strings.vala:86
 msgid "Select a period of time to change the wallpaper in the slideshow."
-msgstr "Vyber prodlevu mezi změnama tapet v prezentaci."
+msgstr "Zvolte prodlevu mezi změnami tapet v prezentaci."
 
 #: src/Configs/Strings.vala:87
 msgid ""
 "You can change the photo to use on the lock screen by clicking on one of the "
 "selected photos."
 msgstr ""
-"Pro změnu fotky na zamčený obrazovce na nějakou z vybraných fotek klikni."
+"Pro změnu pozadí na uzamknuté obrazovce klikněte na jednu z vybraných fotek."
 
 #: src/Configs/Strings.vala:88
 msgid "Use on lock screen"
-msgstr "Použít na zamčený obrazovce"
+msgstr "Použít na uzamknuté obrazovce"
 
 #: src/Configs/Strings.vala:89
 msgid "Add at least two photos"
-msgstr "Přidej minimálně dvě fotky"
+msgstr "Přidejte minimálně dvě fotky"
 
 #: src/Configs/Strings.vala:90
 #, fuzzy, c-format
 msgid "%d photos selected"
-msgstr "je vybraná %d fotka"
+msgstr "je vybrána %d fotka"
 
 #: src/Configs/Strings.vala:91
 #, fuzzy, c-format
 msgid "%d photo selected"
-msgstr "je vybraná %d fotka"
+msgstr "je vybrána %d fotka"
 
 #: src/Configs/Strings.vala:92
 msgid "Select 1 or more photos by clicking on "
-msgstr "Vyber jednu nebo více fotek kliknutím na ně "
+msgstr "Vyberte jednu nebo více fotek kliknutím na ně "
 
 #: src/Configs/Strings.vala:93
 msgid "Wallpaper slideshow ready!"
-msgstr "Tvoje prezentace je připravená!"
+msgstr "Vaše prezentace je připravena!"
 
 #: src/Configs/Strings.vala:94
 #, c-format
 msgid "Enjoy a new beautiful wallpaper every %s"
-msgstr "Užij si novou krásnou tapetu co %s"
+msgstr "Užijte si novou krásnou tapetu co %s"
 
 #: src/Configs/Strings.vala:95
 msgid "30 minutes"
@@ -306,11 +306,11 @@ msgstr "1 den"
 
 #: src/Configs/Strings.vala:98
 msgid "Generate!"
-msgstr "Vygenerovat!"
+msgstr "Vytvořit!"
 
 #: src/Configs/Strings.vala:99
 msgid "Error on generate slideshow"
-msgstr "Chyba při generování prezentace"
+msgstr "Chyba při vytváření prezentace"
 
 #: src/Configs/Strings.vala:100
 msgid "Error"
@@ -351,7 +351,7 @@ msgstr "Sdílet fotku"
 #: src/Configs/Strings.vala:109
 #, c-format
 msgid "The link %s has been copied to the clipboard!"
-msgstr "Odkaz %s byl úspěšně zkopírovaný do schránky!"
+msgstr "Odkaz %s byl úspěšně zkopírován do schránky!"
 
 #: src/Configs/Strings.vala:110
 msgid "Orientation"
@@ -359,24 +359,24 @@ msgstr "Orientace"
 
 #: src/Configs/Strings.vala:111
 msgid "results"
-msgstr ""
+msgstr "ks"
 
 #: src/Configs/Strings.vala:112
 msgid "Gallery"
-msgstr ""
+msgstr "Galerie"
 
 #: src/Configs/Strings.vala:113
 msgid "Dark"
-msgstr ""
+msgstr "Tmavý"
 
 #: src/Configs/Strings.vala:114
 msgid "Light"
-msgstr ""
+msgstr "Světlý"
 
 #: src/Configs/Strings.vala:115
 msgid "Follow system"
-msgstr ""
+msgstr "Podle systému"
 
 #: src/Configs/Strings.vala:116
 msgid "Close settings"
-msgstr ""
+msgstr "Zavřít nastavení"
