@@ -114,5 +114,6 @@ namespace App.Configs {
         public abstract const string LIGHT_MODE = _("Light");
         public abstract const string FOLLOW_SYSTEM_MODE = _("Follow system");
         public abstract const string CLOSE_SETTINGS = _("Close settings");
+        public abstract const string STYLE_HEADER_LABEL = _("Visual style");
     }
 }

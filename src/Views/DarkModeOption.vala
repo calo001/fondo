@@ -119,7 +119,7 @@ namespace App.Views {
                 }
             });
 
-            var lbl_mode_optios = new Gtk.Label ("Estilo");
+            var lbl_mode_optios = new Gtk.Label (S.STYLE_HEADER_LABEL);
             lbl_mode_optios.get_style_context ().add_class ("h4");
             lbl_mode_optios.margin_top = 8;
             lbl_mode_optios.halign = Gtk.Align.START;

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-18 23:13-0500\n"
+"POT-Creation-Date: 2021-08-24 22:19-0500\n"
 "PO-Revision-Date: 2020-10-04 13:53+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
@@ -382,4 +382,8 @@ msgstr ""
 
 #: src/Configs/Strings.vala:116
 msgid "Close settings"
+msgstr ""
+
+#: src/Configs/Strings.vala:117
+msgid "Visual style"
 msgstr ""
