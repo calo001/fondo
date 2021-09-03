@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 22:19-0500\n"
-"PO-Revision-Date: 2020-10-04 13:53+0200\n"
+"PO-Revision-Date: 2021-09-03 19:51+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -225,11 +225,11 @@ msgstr "Netzwerkfehler"
 
 #: src/Configs/Strings.vala:79
 msgid "Landscape"
-msgstr "Landschaft"
+msgstr "Querformat"
 
 #: src/Configs/Strings.vala:80
 msgid "Portrait"
-msgstr "Portrait"
+msgstr "Hochformat"
 
 #: src/Configs/Strings.vala:81
 msgid "Any"
@@ -244,146 +244,147 @@ msgid "Are you sure you want to delete the photo from history?"
 msgstr "Sind Sie sicher, dass Sie das Foto aus dem Verlauf entfernen möchten?"
 
 #: src/Configs/Strings.vala:84
-#, fuzzy
 msgid "Wallpaper Slideshow"
-msgstr "Hintergrundbild ist fertig!"
+msgstr "Bildschirmhintergrund Diashow"
 
 #: src/Configs/Strings.vala:85
 msgid "Preparing slideshow ..."
-msgstr ""
+msgstr "Diashow vorbereiten ..."
 
 #: src/Configs/Strings.vala:86
 msgid "Select a period of time to change the wallpaper in the slideshow."
 msgstr ""
+"Wählen Sie einen Zeitraum aus, in dem das Hintergrundbild in der Diashow "
+"geändert werden soll."
 
 #: src/Configs/Strings.vala:87
 msgid ""
 "You can change the photo to use on the lock screen by clicking on one of the "
 "selected photos."
 msgstr ""
+"Wählen Sie einen Zeitraum aus, in dem das Hintergrundbild in der Diashow "
+"geändert werden soll."
 
 #: src/Configs/Strings.vala:88
-#, fuzzy
 msgid "Use on lock screen"
-msgstr "Vollbildansicht schließen"
+msgstr "Auf dem Sperrbildschirm verwenden"
 
 #: src/Configs/Strings.vala:89
 msgid "Add at least two photos"
-msgstr ""
+msgstr "Mindestens zwei Fotos hinzufügen"
 
 #: src/Configs/Strings.vala:90
 #, c-format
 msgid "%d photos selected"
-msgstr ""
+msgstr "%d Fotos ausgewählt"
 
 #: src/Configs/Strings.vala:91
 #, c-format
 msgid "%d photo selected"
-msgstr ""
+msgstr "%d Fotos ausgewählt"
 
 #: src/Configs/Strings.vala:92
 msgid "Select 1 or more photos by clicking on "
-msgstr ""
+msgstr "Wählen Sie 1 oder mehrere Fotos aus, indem Sie auf "
 
 #: src/Configs/Strings.vala:93
-#, fuzzy
 msgid "Wallpaper slideshow ready!"
-msgstr "Hintergrundbild ist fertig!"
+msgstr "Hintergrundbild-Diashow bereit!"
 
 #: src/Configs/Strings.vala:94
 #, c-format
 msgid "Enjoy a new beautiful wallpaper every %s"
-msgstr ""
+msgstr "Genießen Sie alle %s ein neues schönes Hintergrundbild"
 
 #: src/Configs/Strings.vala:95
 msgid "30 minutes"
-msgstr ""
+msgstr "30 Minuten"
 
 #: src/Configs/Strings.vala:96
 msgid "1 hour"
-msgstr ""
+msgstr "1 Stunde"
 
 #: src/Configs/Strings.vala:97
 msgid "1 day"
-msgstr ""
+msgstr "1 Tag"
 
 #: src/Configs/Strings.vala:98
 msgid "Generate!"
-msgstr ""
+msgstr "Erstellen!"
 
 #: src/Configs/Strings.vala:99
 msgid "Error on generate slideshow"
-msgstr ""
+msgstr "Fehler bei der Erstellung einer Diashow"
 
 #: src/Configs/Strings.vala:100
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: src/Configs/Strings.vala:101
 msgid "Download photo"
-msgstr ""
+msgstr "Foto herunterladen"
 
 #: src/Configs/Strings.vala:102
 msgid "Downloading ..."
-msgstr ""
+msgstr "Herunterladen ..."
 
 #: src/Configs/Strings.vala:103
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Im Datei anzeigen"
 
 #: src/Configs/Strings.vala:104
 msgid "JPEG images"
-msgstr ""
+msgstr "JPEG Bilder"
 
 #: src/Configs/Strings.vala:105
 msgid "Save photo"
-msgstr ""
+msgstr "Foto speichern"
 
 #: src/Configs/Strings.vala:106
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: src/Configs/Strings.vala:107
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: src/Configs/Strings.vala:108
 msgid "Share photo"
-msgstr ""
+msgstr "Foto teilen"
 
 #: src/Configs/Strings.vala:109
 #, c-format
 msgid "The link %s has been copied to the clipboard!"
-msgstr ""
+msgstr "Der Link %s wurde in die Zwischenablage kopiert!"
 
 #: src/Configs/Strings.vala:110
 msgid "Orientation"
-msgstr ""
+msgstr "Ausrichtung"
 
 #: src/Configs/Strings.vala:111
 msgid "results"
-msgstr ""
+msgstr "Ergebnisse"
 
 #: src/Configs/Strings.vala:112
 msgid "Gallery"
-msgstr ""
+msgstr "Galerie"
 
 #: src/Configs/Strings.vala:113
 msgid "Dark"
-msgstr ""
+msgstr "Dunkel"
 
 #: src/Configs/Strings.vala:114
 msgid "Light"
-msgstr ""
+msgstr "Hell"
 
 #: src/Configs/Strings.vala:115
 msgid "Follow system"
-msgstr ""
+msgstr "Wie im System"
 
 #: src/Configs/Strings.vala:116
 msgid "Close settings"
-msgstr ""
+msgstr "Einstellungen schließen"
 
 #: src/Configs/Strings.vala:117
 msgid "Visual style"
-msgstr ""
+msgstr "Visueller Stil"
