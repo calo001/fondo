@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 22:19-0500\n"
-"PO-Revision-Date: 2021-09-03 19:51+0200\n"
+"PO-Revision-Date: 2021-09-05 08:16+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -281,11 +281,11 @@ msgstr "%d Fotos ausgewählt"
 #: src/Configs/Strings.vala:91
 #, c-format
 msgid "%d photo selected"
-msgstr "%d Fotos ausgewählt"
+msgstr "%d Foto ausgewählt"
 
 #: src/Configs/Strings.vala:92
 msgid "Select 1 or more photos by clicking on "
-msgstr "Wählen Sie 1 oder mehrere Fotos aus, indem Sie auf "
+msgstr "Wählen Sie 1 oder mehrere Fotos aus, indem Sie darauf klicken "
 
 #: src/Configs/Strings.vala:93
 msgid "Wallpaper slideshow ready!"
