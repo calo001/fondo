@@ -1,0 +1,39 @@
+app-id: com.github.calo001.fondo
+runtime: io.elementary.Platform
+runtime-version: '6'
+sdk: io.elementary.Sdk
+command: com.github.calo001.fondo
+finish-args:
+- "--share=network"
+- "--share=ipc"
+- "--socket=x11"
+- "--socket=wayland"
+- "--talk-name=org.gtk.vfs"
+- "--talk-name=org.gtk.vfs.*"
+- "--talk-name=org.freedesktop.FileManager1"
+- "--filesystem=/var/lib/lightdm-data:rw"
+- "--filesystem=xdg-run/dconf"
+- "--filesystem=~/.config/dconf:ro"
+- "--talk-name=ca.desrt.dconf"
+- "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+- "--talk-name=org.elementary.Contractor"
+- "--system-talk-name=org.freedesktop.Accounts"
+- "--system-talk-name=io.elementary.pantheon.AccountsService"
+- "--metadata=X-DConf=migrate-path=/com/github/calo001/fondo/"
+cleanup:
+- "/include"
+- "/lib/pkgconfig"
+- "/man"
+- "/share/doc"
+- "/share/gtk-doc"
+- "/share/man"
+- "/share/pkgconfig"
+- "/share/vala"
+- "*.la"
+- "*.a"
+modules:
+- name: fondo
+  buildsystem: meson
+  sources:
+  - type: dir
+    path: "."

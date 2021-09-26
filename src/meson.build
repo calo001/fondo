@@ -59,3 +59,5 @@ sources = files(
     'Windows/PreviewWindow.vala',
     'Windows/Window.vala'
 )
+
+subdir('background')

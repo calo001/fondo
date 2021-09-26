@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Fondo
+Comment=Find the most beautiful wallpapers
+Icon=com.github.calo001.fondo
+Exec=com.github.calo001.fondo.background
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Utility;Network;System;
+Keywords=wallpaper;unsplash;foto;image;photo;background;
+X-GNOME-UsesNotifications=true
+NoDisplay=true
