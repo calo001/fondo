@@ -1,0 +1,390 @@
+# Romanian translations for com.github.calo001.fondo package.
+# Copyright (C) 2020 THE com.github.calo001.fondo'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.calo001.fondo package.
+# Valentin, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.calo001.fondo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-24 22:19-0500\n"
+"PO-Revision-Date: 2020-01-11 20:23+0100\n"
+"Last-Translator: Valentin\n"
+"Language-Team: none\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/Configs/Strings.vala:28
+msgid "Today"
+msgstr "Azi"
+
+#: src/Configs/Strings.vala:29
+msgid "Categories"
+msgstr "Categorii"
+
+#: src/Configs/Strings.vala:30
+msgid "Visit web site"
+msgstr "Vizitați site-ul"
+
+#: src/Configs/Strings.vala:31
+msgid "Photos from Unsplash: Beautiful Free Images & Pictures 🎁"
+msgstr "Fotografii de pe Unsplash: Imagini și Poze frumoase și gratuite"
+
+#: src/Configs/Strings.vala:32
+msgid "Photo by "
+msgstr "Fotografi de către"
+
+#: src/Configs/Strings.vala:33
+msgid " on Unsplash"
+msgstr " de pe Unsplash"
+
+#: src/Configs/Strings.vala:34
+msgid "Share"
+msgstr "Distribuie"
+
+#: src/Configs/Strings.vala:35
+msgid "Email"
+msgstr "E-mail"
+
+#: src/Configs/Strings.vala:36
+msgid "Copy link"
+msgstr "Copiază link"
+
+#: src/Configs/Strings.vala:37
+msgid "Options"
+msgstr "Opțiuni imagine"
+
+#: src/Configs/Strings.vala:38
+msgid "Centered"
+msgstr "Centrată"
+
+#: src/Configs/Strings.vala:39
+msgid "Scaled"
+msgstr "La scară redusă"
+
+#: src/Configs/Strings.vala:40
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/Configs/Strings.vala:41
+msgid "Spanned"
+msgstr "Întinsă"
+
+#: src/Configs/Strings.vala:42
+msgid "Wallpaper ready!"
+msgstr "Fundal desktop pregătit!"
+
+#: src/Configs/Strings.vala:43
+msgid "Your new wallpaper is ready!"
+msgstr "Noul fundal este gata!"
+
+#: src/Configs/Strings.vala:44
+msgid "Check the network connection."
+msgstr "Verificați-vă conexiunea la rețea."
+
+#: src/Configs/Strings.vala:45
+msgid "Retry"
+msgstr "Reîncercați"
+
+#: src/Configs/Strings.vala:46
+msgid "🌎  An amazing place in the world"
+msgstr "🌎  Un loc grozav din lumea asta"
+
+#: src/Configs/Strings.vala:47
+msgid "🌻 Nature"
+msgstr "🌻 Natura"
+
+#: src/Configs/Strings.vala:48
+msgid "🐹 Animal"
+msgstr "🐹 Animale"
+
+#: src/Configs/Strings.vala:49
+msgid "☕ Food & drink"
+msgstr "☕ Mâncare și băuturi"
+
+#: src/Configs/Strings.vala:50
+msgid "🌙 Space"
+msgstr "🌙 Cosmos"
+
+#: src/Configs/Strings.vala:51
+msgid "🏸 Sport"
+msgstr "🏸 Sport"
+
+#: src/Configs/Strings.vala:52
+msgid "📊 Business & work"
+msgstr "📊 Afaceri și muncă"
+
+#: src/Configs/Strings.vala:53
+msgid "‍🎩 Fashion"
+msgstr "🎩 Modă"
+
+#: src/Configs/Strings.vala:54
+msgid "🎨 Art & culture"
+msgstr "🎨 Artă și cultură"
+
+#: src/Configs/Strings.vala:55
+msgid "🏦 Architecture"
+msgstr "🏦 Architectură"
+
+#: src/Configs/Strings.vala:56
+msgid "💻 Technology"
+msgstr "💻 Tehnologie"
+
+#: src/Configs/Strings.vala:57
+msgid "🍁 Texture & pattern"
+msgstr "🍁 Textură și tipare"
+
+#: src/Configs/Strings.vala:58
+msgid "📑 Flat lay"
+msgstr "📑 Imagini pozate de sus"
+
+#: src/Configs/Strings.vala:59
+msgid "Photos not found"
+msgstr "Fotografii indisponibile"
+
+#: src/Configs/Strings.vala:60
+msgid "Loading…"
+msgstr "Se încarcă..."
+
+#: src/Configs/Strings.vala:61
+msgid "Close full screen"
+msgstr "Închide full screen"
+
+#: src/Configs/Strings.vala:62
+msgid "Search photos Unsplash"
+msgstr "Caută fotografii pe Unsplash"
+
+#: src/Configs/Strings.vala:63
+msgid "History"
+msgstr "Istoric"
+
+#: src/Configs/Strings.vala:64
+msgid "Light background"
+msgstr "Temă deschisă"
+
+#: src/Configs/Strings.vala:65
+msgid "Dark background"
+msgstr "Temă întunecată"
+
+#: src/Configs/Strings.vala:66
+msgid "About"
+msgstr "Despre"
+
+#: src/Configs/Strings.vala:67
+msgid "TODAY"
+msgstr "Azi"
+
+#: src/Configs/Strings.vala:68
+msgid "CATEGORIES"
+msgstr "CATEGORII"
+
+#: src/Configs/Strings.vala:69
+msgid "HISTORY"
+msgstr "ISTORIC"
+
+#: src/Configs/Strings.vala:70
+msgid "No description available"
+msgstr "Descriere indisponibilă"
+
+#: src/Configs/Strings.vala:71
+msgid "Set as wallpaper"
+msgstr "Setați ca imagine pentru desktop"
+
+#: src/Configs/Strings.vala:72
+msgid "Details"
+msgstr "Detalii"
+
+#: src/Configs/Strings.vala:73
+msgid "Visit profile"
+msgstr "Vizitați profilul"
+
+#: src/Configs/Strings.vala:74
+msgid "Total results"
+msgstr "Rezultate totale"
+
+#: src/Configs/Strings.vala:75
+msgid "Find out what you like️"
+msgstr "Găsește ce îți place"
+
+#: src/Configs/Strings.vala:76
+msgid "Try changing search terms."
+msgstr "Modifică termenii de căutare."
+
+#: src/Configs/Strings.vala:77
+msgid "Click on a photo to add it to the history."
+msgstr "Click pe poză pentru a o adăuga în istoric."
+
+#: src/Configs/Strings.vala:78
+msgid "Network Error"
+msgstr "Eroare rețea"
+
+#: src/Configs/Strings.vala:79
+msgid "Landscape"
+msgstr "Peisaj"
+
+#: src/Configs/Strings.vala:80
+msgid "Portrait"
+msgstr "Portret"
+
+#: src/Configs/Strings.vala:81
+msgid "Any"
+msgstr "Oricare"
+
+#: src/Configs/Strings.vala:82
+msgid "Delete a photo from history"
+msgstr "Ștergeți imaginea din istoric"
+
+#: src/Configs/Strings.vala:83
+msgid "Are you sure you want to delete the photo from history?"
+msgstr "Sunteți sigur că vreți să ștergeți imaginea din istoric?"
+
+#: src/Configs/Strings.vala:84
+#, fuzzy
+msgid "Wallpaper Slideshow"
+msgstr "Imagini în succesiune"
+
+#: src/Configs/Strings.vala:85
+msgid "Preparing slideshow ..."
+msgstr "Preparare succesiune..."
+
+#: src/Configs/Strings.vala:86
+msgid "Select a period of time to change the wallpaper in the slideshow."
+msgstr "Selectați perioada de timp pentru a schimba imaginile din succesiune"
+
+#: src/Configs/Strings.vala:87
+msgid ""
+"You can change the photo to use on the lock screen by clicking on one of the "
+"selected photos."
+msgstr ""
+"Puteți schimba fundalul folosit atunci când ecranul este încuiat apăsând pentru una dintre"
+"Imagini selectate"
+
+#: src/Configs/Strings.vala:88
+#, fuzzy
+msgid "Use on lock screen"
+msgstr "Folosiți pentru ecranul încuiat."
+
+#: src/Configs/Strings.vala:89
+msgid "Add at least two photos"
+msgstr "Adaugă cel puțin două fotografii"
+
+#: src/Configs/Strings.vala:90
+#, c-format
+msgid "%d photos selected"
+msgstr "%d fotografii selectate"
+
+#: src/Configs/Strings.vala:91
+#, c-format
+msgid "%d photo selected"
+msgstr "%d fotografie selectată"
+
+#: src/Configs/Strings.vala:92
+msgid "Select 1 or more photos by clicking on "
+msgstr "Selectați 1 sau mai multe fotografii făcând click"
+
+#: src/Configs/Strings.vala:93
+#, fuzzy
+msgid "Wallpaper slideshow ready!"
+msgstr "Succesiunea de imagini este gata!"
+
+#: src/Configs/Strings.vala:94
+#, c-format
+msgid "Enjoy a new beautiful wallpaper every %s"
+msgstr "Bucurați-vă de un nou fundal superb la fiecare %s"
+
+#: src/Configs/Strings.vala:95
+msgid "30 minutes"
+msgstr "30 de minute"
+
+#: src/Configs/Strings.vala:96
+msgid "1 hour"
+msgstr "1 oră"
+
+#: src/Configs/Strings.vala:97
+msgid "1 day"
+msgstr "1 zi"
+
+#: src/Configs/Strings.vala:98
+msgid "Generate!"
+msgstr "Generează"
+
+#: src/Configs/Strings.vala:99
+msgid "Error on generate slideshow"
+msgstr "Eroare de generare a succesiunii de imagini"
+
+#: src/Configs/Strings.vala:100
+msgid "Error"
+msgstr "Eroare"
+
+#: src/Configs/Strings.vala:101
+msgid "Download photo"
+msgstr "Descărcați fotografie"
+
+#: src/Configs/Strings.vala:102
+msgid "Downloading ..."
+msgstr "Se descarcă..."
+
+#: src/Configs/Strings.vala:103
+msgid "Show in File Browser"
+msgstr "Arată în navigatorul de fișiere"
+
+#: src/Configs/Strings.vala:104
+msgid "JPEG images"
+msgstr "Imagine JPEG"
+
+#: src/Configs/Strings.vala:105
+msgid "Save photo"
+msgstr "Salvează fotografie"
+
+#: src/Configs/Strings.vala:106
+msgid "Save"
+msgstr "Salvează"
+
+#: src/Configs/Strings.vala:107
+msgid "Cancel"
+msgstr "Anulează"
+
+#: src/Configs/Strings.vala:108
+msgid "Share photo"
+msgstr "Distribuie fotografie"
+
+#: src/Configs/Strings.vala:109
+#, c-format
+msgid "The link %s has been copied to the clipboard!"
+msgstr "Acest link %s a fost copiat în clipboard"
+
+#: src/Configs/Strings.vala:110
+msgid "Orientation"
+msgstr "Tip"
+
+#: src/Configs/Strings.vala:111
+#, fuzzy
+msgid "results"
+msgstr "Rezultate"
+
+#: src/Configs/Strings.vala:112
+msgid "Gallery"
+msgstr "Galerie"
+
+#: src/Configs/Strings.vala:113
+msgid "Dark"
+msgstr "Întunecat"
+
+#: src/Configs/Strings.vala:114
+msgid "Light"
+msgstr "Luminos"
+
+#: src/Configs/Strings.vala:115
+msgid "Follow system"
+msgstr "Tema sistemului"
+
+#: src/Configs/Strings.vala:116
+msgid "Close settings"
+msgstr "Închide setările"
+
+#: src/Configs/Strings.vala:117
+msgid "Visual style"
+msgstr "Stil vizualizare"
