@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: com.github.calo001.fondo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 22:19-0500\n"
-"PO-Revision-Date: 2020-01-11 20:23+0100\n"
+"PO-Revision-Date: 2023-02-28 18:39-0500\n"
 "Last-Translator: Rafael Campos Nunes <rafaelnunes@engineer.com>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: src/Configs/Strings.vala:28
 msgid "Today"
@@ -35,7 +36,7 @@ msgstr "Unsplash fotos: Fotos e imagens lindas e gratuitas 🎁"
 
 #: src/Configs/Strings.vala:32
 msgid "Photo by "
-msgstr "Foto por"
+msgstr "Foto por "
 
 #: src/Configs/Strings.vala:33
 msgid " on Unsplash"
@@ -79,7 +80,7 @@ msgstr "Wallpaper pronto!"
 
 #: src/Configs/Strings.vala:43
 msgid "Your new wallpaper is ready!"
-msgstr "Seu novo papel de parede está pronto"
+msgstr "Seu novo papel de parede está pronto!"
 
 #: src/Configs/Strings.vala:44
 msgid "Check the network connection."
@@ -122,9 +123,8 @@ msgid "‍🎩 Fashion"
 msgstr "🎩 Moda"
 
 #: src/Configs/Strings.vala:54
-#, fuzzy
 msgid "🎨 Art & culture"
-msgstr "🎨 Arte e cultura"
+msgstr "🎨 Arte & cultura"
 
 #: src/Configs/Strings.vala:55
 msgid "🏦 Architecture"
@@ -140,7 +140,7 @@ msgstr "🍁 Textura e padrões"
 
 #: src/Configs/Strings.vala:58
 msgid "📑 Flat lay"
-msgstr "📑 Flat lay"
+msgstr "📑 Exposição plana"
 
 #: src/Configs/Strings.vala:59
 msgid "Photos not found"
@@ -164,11 +164,11 @@ msgstr "Histórico"
 
 #: src/Configs/Strings.vala:64
 msgid "Light background"
-msgstr "Fundo de tela branco"
+msgstr "Tema claro"
 
 #: src/Configs/Strings.vala:65
 msgid "Dark background"
-msgstr "Fundo de tela escuro"
+msgstr "Tema escuro"
 
 #: src/Configs/Strings.vala:66
 msgid "About"
@@ -188,11 +188,11 @@ msgstr "HISTÓRICO"
 
 #: src/Configs/Strings.vala:70
 msgid "No description available"
-msgstr "Descrição não disponível"
+msgstr "Nenhuma descrição disponível"
 
 #: src/Configs/Strings.vala:71
 msgid "Set as wallpaper"
-msgstr "Definir como Papel de Parede"
+msgstr "Definir como papel de parede"
 
 #: src/Configs/Strings.vala:72
 msgid "Details"
@@ -204,7 +204,7 @@ msgstr "Visitar perfil"
 
 #: src/Configs/Strings.vala:74
 msgid "Total results"
-msgstr "Resultados totais"
+msgstr "Resultado total"
 
 #: src/Configs/Strings.vala:75
 msgid "Find out what you like️"
@@ -216,11 +216,11 @@ msgstr "Tente alterar os termos de pesquisa."
 
 #: src/Configs/Strings.vala:77
 msgid "Click on a photo to add it to the history."
-msgstr "Clique em uma foto para adicioná-la ao histórico."
+msgstr "Clique em uma imagem para adicioná-la ao histórico."
 
 #: src/Configs/Strings.vala:78
 msgid "Network Error"
-msgstr "Erro de rede"
+msgstr "Erro de Rede"
 
 #: src/Configs/Strings.vala:79
 msgid "Landscape"
@@ -236,145 +236,143 @@ msgstr "Qualquer um"
 
 #: src/Configs/Strings.vala:82
 msgid "Delete a photo from history"
-msgstr "Remover esta foto do histórico"
+msgstr "Remover esta imagem do histórico"
 
 #: src/Configs/Strings.vala:83
 msgid "Are you sure you want to delete the photo from history?"
-msgstr "Você tem certeza que deseja remover esta foto do histórico?"
+msgstr "Você tem certeza que deseja remover esta imagem do histórico?"
 
 #: src/Configs/Strings.vala:84
-#, fuzzy
 msgid "Wallpaper Slideshow"
-msgstr "Wallpaper pronto!"
+msgstr "Papel de Parede Dinâmico"
 
 #: src/Configs/Strings.vala:85
 msgid "Preparing slideshow ..."
-msgstr ""
+msgstr "Criando papel de parede dinâmico"
 
 #: src/Configs/Strings.vala:86
 msgid "Select a period of time to change the wallpaper in the slideshow."
-msgstr ""
+msgstr "Escolha um intervalo de tempo para troca de plano de fundo."
 
 #: src/Configs/Strings.vala:87
 msgid ""
 "You can change the photo to use on the lock screen by clicking on one of the "
 "selected photos."
 msgstr ""
+"Você pode alterar a imagem a ser utilizada na tela de bloqueio clicando em "
+"uma das imagens selecionadas."
 
 #: src/Configs/Strings.vala:88
-#, fuzzy
 msgid "Use on lock screen"
-msgstr "Fechar tela cheia"
+msgstr "Usar na tela de bloqueio"
 
 #: src/Configs/Strings.vala:89
 msgid "Add at least two photos"
-msgstr ""
+msgstr "Adicione pelo menos duas imagens"
 
 #: src/Configs/Strings.vala:90
 #, c-format
 msgid "%d photos selected"
-msgstr ""
+msgstr "%d imagens selecionadas"
 
 #: src/Configs/Strings.vala:91
 #, c-format
 msgid "%d photo selected"
-msgstr ""
+msgstr "%d imagens selecionadas"
 
 #: src/Configs/Strings.vala:92
 msgid "Select 1 or more photos by clicking on "
-msgstr ""
+msgstr "Selecione uma ou mais imagens clicando em "
 
 #: src/Configs/Strings.vala:93
-#, fuzzy
 msgid "Wallpaper slideshow ready!"
-msgstr "Wallpaper pronto!"
+msgstr "Plano de fundo dinâmico criado!"
 
 #: src/Configs/Strings.vala:94
 #, c-format
 msgid "Enjoy a new beautiful wallpaper every %s"
-msgstr ""
+msgstr "Custa um novo e lindo papel de parede a cada %s"
 
 #: src/Configs/Strings.vala:95
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutos"
 
 #: src/Configs/Strings.vala:96
 msgid "1 hour"
-msgstr ""
+msgstr "1 hora"
 
 #: src/Configs/Strings.vala:97
 msgid "1 day"
-msgstr ""
+msgstr "1 dia"
 
 #: src/Configs/Strings.vala:98
 msgid "Generate!"
-msgstr ""
+msgstr "Criar!"
 
 #: src/Configs/Strings.vala:99
 msgid "Error on generate slideshow"
-msgstr ""
+msgstr "Erro ao gerar plano de fundo dinâmico"
 
 #: src/Configs/Strings.vala:100
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 #: src/Configs/Strings.vala:101
 msgid "Download photo"
-msgstr ""
+msgstr "Baixar imagem"
 
 #: src/Configs/Strings.vala:102
 msgid "Downloading ..."
-msgstr ""
+msgstr "Baixando..."
 
 #: src/Configs/Strings.vala:103
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Mostrar no Gerenciador de Arquivos"
 
 #: src/Configs/Strings.vala:104
 msgid "JPEG images"
-msgstr ""
+msgstr "Imagens JPEG"
 
 #: src/Configs/Strings.vala:105
 msgid "Save photo"
-msgstr ""
+msgstr "Salvar Imagem"
 
 #: src/Configs/Strings.vala:106
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 #: src/Configs/Strings.vala:107
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: src/Configs/Strings.vala:108
 msgid "Share photo"
-msgstr ""
+msgstr "Compartilhar Imagem"
 
 #: src/Configs/Strings.vala:109
 #, c-format
 msgid "The link %s has been copied to the clipboard!"
-msgstr ""
+msgstr "O link %s foi copiado para área de transferência!"
 
 #: src/Configs/Strings.vala:110
 msgid "Orientation"
-msgstr ""
+msgstr "Orientação"
 
 #: src/Configs/Strings.vala:111
-#, fuzzy
 msgid "results"
 msgstr "resultados"
 
 #: src/Configs/Strings.vala:112
 msgid "Gallery"
-msgstr ""
+msgstr "Galeria"
 
 #: src/Configs/Strings.vala:113
 msgid "Dark"
-msgstr ""
+msgstr "Escuro"
 
 #: src/Configs/Strings.vala:114
 msgid "Light"
-msgstr ""
+msgstr "Claro"
 
 #: src/Configs/Strings.vala:115
 msgid "Follow system"
@@ -382,8 +380,8 @@ msgstr ""
 
 #: src/Configs/Strings.vala:116
 msgid "Close settings"
-msgstr ""
+msgstr "Fechar configurações"
 
 #: src/Configs/Strings.vala:117
 msgid "Visual style"
-msgstr ""
+msgstr "Estilo visual"
